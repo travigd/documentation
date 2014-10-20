@@ -1,5 +1,5 @@
 ---
-layouyt: docs
+layout: docs
 title: "Running the Event Store"
 ---
 
