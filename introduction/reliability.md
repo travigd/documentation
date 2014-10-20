@@ -1,3 +1,8 @@
+---
+layout: docs
+title: "Reliability"
+---
+
 Reliability needs to be looked at from a holistic perspective. Even though the Event Store treats data transactionally with full durability assurances, this will not help you if the hardware on your machine does not support it.
 
 Many consumer grade disks lie about making things durable to appear faster. This is all good until you have a power outage and lose information. Many consumer grade SSDs in particular will lie to you. Windows by default on a client installation will also enable disk caching.
