@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="http://geteventstore.com/css/main3.css">
+    <link rel="stylesheet" href="./css/main4.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto:400,400italic,700,700italic">
+</head>
+
+<body>
+    <header class="site-banner">
+        <div class="inner-container">
+            <h1 class="site-logo">
+                <a href="http://docs.geteventstore.dev">
+                    <img src="http://geteventstore.com/images/logo--white.svg" alt="Event Store logo">
+                </a>         
+            </h1>
+            <ul class="site-navigation">
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/features">Features</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/downloads">Downloads</a></li>
+                <li class="site-navigation__item"><a href="https://github.com/eventstore/eventstore/wiki">Docs</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/appliances">Appliances</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/community">Community</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/support">Support</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="docs">
+        <div class="inner-container">
+        <aside class="docs-sidebar">
+            <h1 class="docs-sidebar__title">Version 3.0.0</h1>
+            <ul class="docs-sidebar__list">
+                <li><a href="#">Introduction</a></li>
+                <li><a href="#">Quick Start</a></li>
+                <li>
+                    <a href="#">Developers</a>
+                    <ul>
+                        <li>
+                            <a href="#">Concepts</a>
+                            <ul>
+                                <li><a href="#">Event Sourcing</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <div class="docs-content">
+            <div class="docs-breadcrumbs">
+                <a href="http://docs.geteventstore.dev">Docs</a> &rsaquo; 
+                Deploy with Puppet <!-- Breadcrumbs do not work yet. -->
+            </div>
+            <h1>Deploy with Puppet</h1>
+            <p><strong>currently v2</strong></p>
+
+<p>To get started you need a RPM package of event store. You can make an <a href="https://github.com/haf/fpm-recipes/tree/master/eventstore">EventStore RPM</a> on CentOS.</p>
+
+<p>Once you have your package, you need to have a puppet module for automating the deployment. <a href="https://github.com/haf/puppet-eventstore">There’s puppet-eventstore</a> to do that - it will ensure the package you just created is installed and allow you to give parameters to EventStore.</p>
+
+<p>The module has a dependency on <a href="https://github.com/haf/puppet-supervisor">puppet-supervisor</a> which is used to run the server, which in turn requires the package <a href="https://github.com/haf/fpm-recipes/tree/master/python-supervisor">python-supervisor</a>. The RPM has a dependency on a <a href="https://github.com/haf/fpm-recipes/tree/master/mono">mono</a> package.</p>
+
+        </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto:400,400italic,700,700italic">
+</body>
+</html>
