@@ -27,7 +27,7 @@ $ mono-sgen EventStore.SingleNode.exe --db ./ESData
 
 The open source version of Event Store is distributed as a console application. There are separate distributions for Windows on .NET and Linux on Mono.
 
-The executable for the open source version of Event Store is <code>EventStore.SingleNode.exe</code>.
+The executable for the open source version of Event Store is `EventStore.SingleNode.exe`.
 
 **Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.** for more on [Command Line Arguments](Command-Line-Arguments).
 
