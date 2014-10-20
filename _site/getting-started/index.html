@@ -48,13 +48,13 @@
                 Getting Started <!-- Breadcrumbs do not work yet. -->
             </div>
             <h1>Getting Started</h1>
-            <p>This document describes how to “Get Started” with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.</p>
+            <p>This document describes how to &quot;Get Started&quot; with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.</p>
 
-<p><strong>This setup is intended as an experimental setup or for a developer’s machine, it is not intended to describe a production setup</strong></p>
+<p><strong>This setup is intended as an experimental setup or for a developer&#39;s machine, it is not intended to describe a production setup</strong></p>
 
 <p>This document assumes that you also have <a href="http://curl.haxx.se/">curl</a> installed on your machine.</p>
 
-<h3 id="installation">Installation</h3>
+<h3>Installation</h3>
 
 <p>To start go to http://geteventstore.com and download the binaries into a folder. For this document it is assumed that you are in windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup. See <a href="Installing">the installing document</a> for more details on installing in other environments and installing from source.</p>
 
@@ -68,267 +68,264 @@
 
 <p>The Event Store should be now up and running on your machine. You can browse to http://127.0.0.1:2113/ to see the admin console. The console will ask for a username and password. By default it is admin:changeit.</p>
 
-<h3 id="writing-events-to-an-event-stream">Writing Events to an Event Stream</h3>
+<h3>Writing Events to an Event Stream</h3>
 
-<p>The first operation we will look at is how to write to a stream. The Event Store operates on a concept of Event Streams. These are partition points in the system. If you are Event Sourcing a domain model a stream would equate to an aggregate. The Event Store can easily handle hundreds of millions of streams. Don’t be afraid to make many of them.</p>
+<p>The first operation we will look at is how to write to a stream. The Event Store operates on a concept of Event Streams. These are partition points in the system. If you are Event Sourcing a domain model a stream would equate to an aggregate. The Event Store can easily handle hundreds of millions of streams. Don&#39;t be afraid to make many of them.</p>
 
-<p>To begin let’s open notepad. Copy and paste the following event definition into notepad and save it as event.txt.</p>
+<p>To begin let&#39;s open notepad. Copy and paste the following event definition into notepad and save it as event.txt.</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;eventId&quot;</span><span class="p">:</span> <span class="s2">&quot;fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;eventType&quot;</span><span class="p">:</span> <span class="s2">&quot;event-type&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
 
-<p>```json
-[
-  {
-    “eventId”: “fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4”,
-    “eventType”: “event-type”,
-    “data”: {</p>
-
-<pre><code>  "a": "1"
-}   } ] ``` *you can also post events as XML, same format but set the Content-Type to XML*
-</code></pre>
+      <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p><em>you can also post events as XML, same format but set the Content-Type to XML</em></p>
 
 <p>Now to write our event to a stream we would issue the following curl command.</p>
 
-<p><code>curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"</code></p>
+<p><code>curl -i -d @event.txt &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/json&quot;</code></p>
 
 <p>Note - from version 3.0 rc9 there has been a change to how events are posted. See the <a href="https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ">post about this release here</a>.</p>
 
 <p>So for the above to work, use the following which has a new Content-Type which allows the old format:</p>
 
-<p><code>curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"</code></p>
+<p><code>curl -i -d @event.txt &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;</code></p>
 
 <p>This gives the following result:</p>
-
-<p>```http
-HTTP/1.1 201 Created
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
-Access-Control-Allow-Origin: *
-Location: http://127.0.0.1:2113/streams/newstream/0
-Content-Type: text/plain; charset: utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Fri, 28 Jun 2013 12:17:59 GMT
-Content-Length: 0
-Keep-Alive: timeout=15,max=100</p>
-
-<p>```</p>
-
-<p>If you go to your UI after this command and to the “Streams” tab. You will see your stream has recently been created, if you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an html representation of your stream (or you can navigate directly to http://127.0.0.1:2113/streams/newstream).</p>
+<div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Access-Control-Allow-Methods</span><span class="o">:</span> <span class="l">POST, DELETE, GET, OPTIONS</span>
+<span class="na">Access-Control-Allow-Headers</span><span class="o">:</span> <span class="l">Content-Type, X-Requested-With, X-PINGOTHER</span>
+<span class="na">Access-Control-Allow-Origin</span><span class="o">:</span> <span class="l">*</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">http://127.0.0.1:2113/streams/newstream/0</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/plain; charset: utf-8</span>
+<span class="na">Server</span><span class="o">:</span> <span class="l">Mono-HTTPAPI/1.0</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Fri, 28 Jun 2013 12:17:59 GMT</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">0</span>
+<span class="na">Keep-Alive</span><span class="o">:</span> <span class="l">timeout=15,max=100</span>
+</code></pre></div>
+<p>If you go to your UI after this command and to the &quot;Streams&quot; tab. You will see your stream has recently been created, if you post to a stream that doesn&#39;t exist the Event Store will create it. You can then click on it to get an html representation of your stream (or you can navigate directly to http://127.0.0.1:2113/streams/newstream).</p>
 
 <p>You can also setup <a href="HTTP-Security">Access Control Lists</a> on your streams by changing the metadata of the stream.</p>
 
-<h3 id="reading-from-a-stream">Reading From a Stream</h3>
+<h3>Reading From a Stream</h3>
 
 <p>Reading from a stream is quite easy as all streams are exposed as <a href="http://tools.ietf.org/html/rfc4287">atom feeds</a>. Many environments have an existing method for reading atom feeds. </p>
 
-<p>Let’s try to get the data out of our stream. Just like with our browser we will navigate to the “head” uri of the stream http://127.0.0.1:2113/streams/newstream. We can do this with curl.</p>
+<p>Let&#39;s try to get the data out of our stream. Just like with our browser we will navigate to the &quot;head&quot; uri of the stream http://127.0.0.1:2113/streams/newstream. We can do this with curl.</p>
 
-<p><code>curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream"</code></p>
+<p><code>curl -i -H &quot;Accept:application/atom+xml&quot; &quot;http://127.0.0.1:2113/streams/newstream&quot;</code></p>
+<div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Access-Control-Allow-Methods</span><span class="o">:</span> <span class="l">POST, DELETE, GET, OPTIONS</span>
+<span class="na">Access-Control-Allow-Headers</span><span class="o">:</span> <span class="l">Content-Type, X-Requested-With, X-PINGOTHER</span>
+<span class="na">Access-Control-Allow-Origin</span><span class="o">:</span> <span class="l">*</span>
+<span class="na">Cache-Control</span><span class="o">:</span> <span class="l">max-age=0, no-cache, must-revalidate</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;0;-1296467268&quot;</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/atom+xml; charset: utf-8</span>
+<span class="na">Server</span><span class="o">:</span> <span class="l">Mono-HTTPAPI/1.0</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Sat, 29 Jun 2013 18:02:21 GMT</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">998</span>
+<span class="na">Keep-Alive</span><span class="o">:</span> <span class="l">timeout=15,max=100</span>
 
-<p>```http
-HTTP/1.1 200 OK
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
-Access-Control-Allow-Origin: *
-Cache-Control: max-age=0, no-cache, must-revalidate
-Vary: Accept
-ETag: “0;-1296467268”
-Content-Type: application/atom+xml; charset: utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Sat, 29 Jun 2013 18:02:21 GMT
-Content-Length: 998
-Keep-Alive: timeout=15,max=100</p>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-   <title>Event stream 'newstream'</title>
-   <id>http://127.0.0.1:2113/streams/newstream</id>
-   <updated>2013-06-29T14:45:06.550308Z</updated>
-   <author>
-      <name>EventStore</name>
-   </author>
-   <link href="http://127.0.0.1:2113/streams/newstream" rel="self" />
-   <link href="http://127.0.0.1:2113/streams/newstream/head/backward/20" rel="first" />
-   <link href="http://127.0.0.1:2113/streams/newstream/0/forward/20" rel="last" />
-   <link href="http://127.0.0.1:2113/streams/newstream/1/forward/20" rel="previous" />
-   <link href="http://127.0.0.1:2113/streams/newstream/metadata" rel="metadata" />
-   <entry>
-      <title>0@newstream</title>
-      <id>http://127.0.0.1:2113/streams/newstream/0</id>
-      <updated>2013-06-29T14:45:06.550308Z</updated>
-      <author>
-         <name>EventStore</name>
-      </author>
-      <summary>event-type</summary>
-      <link href="http://127.0.0.1:2113/streams/newstream/0" rel="edit" />
-      <link href="http://127.0.0.1:2113/streams/newstream/0" rel="alternate" />
-   </entry>
-</feed>
-<p>```</p>
-
+<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;feed</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;title&gt;</span>Event stream &#39;newstream&#39;<span class="nt">&lt;/title&gt;</span>
+   <span class="nt">&lt;id&gt;</span>http://127.0.0.1:2113/streams/newstream<span class="nt">&lt;/id&gt;</span>
+   <span class="nt">&lt;updated&gt;</span>2013-06-29T14:45:06.550308Z<span class="nt">&lt;/updated&gt;</span>
+   <span class="nt">&lt;author&gt;</span>
+      <span class="nt">&lt;name&gt;</span>EventStore<span class="nt">&lt;/name&gt;</span>
+   <span class="nt">&lt;/author&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://127.0.0.1:2113/streams/newstream&quot;</span> <span class="na">rel=</span><span class="s">&quot;self&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://127.0.0.1:2113/streams/newstream/head/backward/20&quot;</span> <span class="na">rel=</span><span class="s">&quot;first&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://127.0.0.1:2113/streams/newstream/0/forward/20&quot;</span> <span class="na">rel=</span><span class="s">&quot;last&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://127.0.0.1:2113/streams/newstream/1/forward/20&quot;</span> <span class="na">rel=</span><span class="s">&quot;previous&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://127.0.0.1:2113/streams/newstream/metadata&quot;</span> <span class="na">rel=</span><span class="s">&quot;metadata&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;entry&gt;</span>
+      <span class="nt">&lt;title&gt;</span>0@newstream<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;id&gt;</span>http://127.0.0.1:2113/streams/newstream/0<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;updated&gt;</span>2013-06-29T14:45:06.550308Z<span class="nt">&lt;/updated&gt;</span>
+      <span class="nt">&lt;author&gt;</span>
+         <span class="nt">&lt;name&gt;</span>EventStore<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;/author&gt;</span>
+      <span class="nt">&lt;summary&gt;</span>event-type<span class="nt">&lt;/summary&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://127.0.0.1:2113/streams/newstream/0&quot;</span> <span class="na">rel=</span><span class="s">&quot;edit&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://127.0.0.1:2113/streams/newstream/0&quot;</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/entry&gt;</span>
+<span class="nt">&lt;/feed&gt;</span>
+</code></pre></div>
 <p>This curl command told the system that we wanted the feed returned to us in <code>atom+xml</code> (<em>pro tip: you can also try <code>application/vnd.eventstore.atom+json</code> if you prefer json like we do!</em>). The feed that we pulled has a single item inside of it, the one we recently posted. We would then get the event by issuing a GET to the alternate uri.</p>
 
-<p><code>curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"</code></p>
+<p><code>curl -i http://127.0.0.1:2113/streams/newstream/0 -H &quot;Accept: application/json&quot;</code></p>
+<div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Access-Control-Allow-Methods</span><span class="o">:</span> <span class="l">GET, OPTIONS</span>
+<span class="na">Access-Control-Allow-Headers</span><span class="o">:</span> <span class="l">Content-Type, X-Requested-With, X-PINGOTHER</span>
+<span class="na">Access-Control-Allow-Origin</span><span class="o">:</span> <span class="l">*</span>
+<span class="na">Cache-Control</span><span class="o">:</span> <span class="l">max-age=31536000, public</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json; charset: utf-8</span>
+<span class="na">Server</span><span class="o">:</span> <span class="l">Mono-HTTPAPI/1.0</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Wed, 03 Jul 2013 11:09:12 GMT</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">14</span>
+<span class="na">Keep-Alive</span><span class="o">:</span> <span class="l">timeout=15,max=100</span>
 
-<p>```http
-HTTP/1.1 200 OK
-Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
-Access-Control-Allow-Origin: *
-Cache-Control: max-age=31536000, public
-Vary: Accept
-Content-Type: application/json; charset: utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Wed, 03 Jul 2013 11:09:12 GMT
-Content-Length: 14
-Keep-Alive: timeout=15,max=100</p>
-
-<p>{
-  “a”: “1”
-}
-```</p>
-
+<span class="p">{</span>
+  <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>This will return our event that we had originally posted. You can also get your event as XML (set Accept: text/xml). In order to read a single page feed we would just get the feed and then iterate through the event links executing gets. This may feel inefficient at first but remember the event  uris and most of the page uris are infinitely cachable. We can also get the events in the feed itself if prefered by using ?embed=body. There is further discussion on this <a href="Reading-Streams-%28HTTP%29">here</a></p>
 
-<p>Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the “last” link and then continue to read the “previous” page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using “first” then “next”.</p>
+<p>Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the &quot;last&quot; link and then continue to read the &quot;previous&quot; page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using &quot;first&quot; then &quot;next&quot;.</p>
 
-<h3 id="subcribing-to-stream-to-get-updates">Subcribing to Stream to get Updates</h3>
+<h3>Subcribing to Stream to get Updates</h3>
 
-<p>Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in atom. As new events arrive new “previous” links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an atleast once assurance with the following code you would simply save the last Uri you had received.</p>
+<p>Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in atom. As new events arrive new &quot;previous&quot; links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an atleast once assurance with the following code you would simply save the last Uri you had received.</p>
 
 <p>If you prefer JavaScript an example can be found in our own source base as we have the ability to run projections in the browser from atomfeeds. You can find the code for this <a href="https://github.com/EventStore/EventStore/blob/22fd3562f97037afc256745fe011eabaef62db60/src/EventStore/EventStore.SingleNode.Web/singlenode-web/js/projections/es.projection.js">JavaScript Example</a>. <em>To see this in action take a look at the browser chat example</em></p>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ServiceModel.Syndication</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Xml</span><span class="p">;</span>
 
-<p>```csharp
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.ServiceModel.Syndication;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Xml;</p>
+<span class="k">namespace</span> <span class="nn">AtomPoller</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="n">SyndicationLink</span>
+<span class="nf">GetNamedLink</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">SyndicationLink</span><span class="p">&gt;</span> <span class="n">links</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">links</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">link</span> <span class="p">=&gt;</span> <span class="n">link</span><span class="p">.</span><span class="n">RelationshipType</span> <span class="p">==</span> <span class="n">name</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">static</span> <span class="n">Uri</span> <span class="nf">GetLast</span><span class="p">(</span><span class="n">Uri</span> <span class="n">head</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">WebRequest</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Credentials</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NetworkCredential</span><span class="p">(</span><span class="s">&quot;admin&quot;</span><span class="p">,</span> <span class="s">&quot;changeit&quot;</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Accept</span> <span class="p">=</span> <span class="s">&quot;application/atom+xml&quot;</span><span class="p">;</span>
+            <span class="k">try</span>
+            <span class="p">{</span>
+                <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebResponse</span><span class="p">)</span> <span class="n">request</span><span class="p">.</span><span class="n">GetResponse</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">StatusCode</span> <span class="p">==</span> <span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">NotFound</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+                    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">xmlreader</span> <span class="p">=</span>
+<span class="n">XmlReader</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">GetResponseStream</span><span class="p">()))</span>
+                    <span class="p">{</span>
+                        <span class="kt">var</span> <span class="n">feed</span> <span class="p">=</span> <span class="n">SyndicationFeed</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">xmlreader</span><span class="p">);</span>
+                        <span class="kt">var</span> <span class="n">last</span> <span class="p">=</span> <span class="n">GetNamedLink</span><span class="p">(</span><span class="n">feed</span><span class="p">.</span><span class="n">Links</span><span class="p">,</span> <span class="s">&quot;last&quot;</span><span class="p">);</span>
+                        <span class="k">return</span> <span class="p">(</span><span class="n">last</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">?</span> <span class="n">last</span><span class="p">.</span><span class="n">Uri</span> <span class="p">:</span>
+<span class="n">GetNamedLink</span><span class="p">(</span><span class="n">feed</span><span class="p">.</span><span class="n">Links</span><span class="p">,</span> <span class="s">&quot;self&quot;</span><span class="p">).</span><span class="n">Uri</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">catch</span><span class="p">(</span><span class="n">WebException</span> <span class="n">ex</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(((</span><span class="n">HttpWebResponse</span><span class="p">)</span> <span class="n">ex</span><span class="p">.</span><span class="n">Response</span><span class="p">).</span><span class="n">StatusCode</span> <span class="p">==</span>
+<span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">NotFound</span><span class="p">)</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+                <span class="k">throw</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-<p>namespace AtomPoller
-{
-    class Program
-    {
-        private static SyndicationLink
-GetNamedLink(IEnumerable<syndicationlink> links, string name)
-        {
-            return links.FirstOrDefault(link =&gt; link.RelationshipType == name);
-        }
-        static Uri GetLast(Uri head)
-        {
-            var request = (HttpWebRequest)WebRequest.Create(head);
-            request.Credentials = new NetworkCredential("admin", "changeit");
-            request.Accept = "application/atom+xml";
-            try
-            {
-                using (var response = (HttpWebResponse) request.GetResponse())
-                {
-                    if (response.StatusCode == HttpStatusCode.NotFound)
-                        return null;
-                    using (var xmlreader =
-XmlReader.Create(response.GetResponseStream()))
-                    {
-                        var feed = SyndicationFeed.Load(xmlreader);
-                        var last = GetNamedLink(feed.Links, "last");
-                        return (last != null) ? last.Uri :
-GetNamedLink(feed.Links, "self").Uri;
-                    }
-                }
-            }
-            catch(WebException ex)
-            {
-                if (((HttpWebResponse) ex.Response).StatusCode ==
-HttpStatusCode.NotFound) return null;
-                throw;
-            }
-        }</syndicationlink></p>
+        <span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">ProcessItem</span><span class="p">(</span><span class="n">SyndicationItem</span> <span class="n">item</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">Title</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+            <span class="c1">//get events</span>
+            <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span>
+<span class="p">(</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">WebRequest</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">GetNamedLink</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">Links</span><span class="p">,</span>
+<span class="s">&quot;alternate&quot;</span><span class="p">).</span><span class="n">Uri</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Credentials</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NetworkCredential</span><span class="p">(</span><span class="s">&quot;admin&quot;</span><span class="p">,</span> <span class="s">&quot;changeit&quot;</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Accept</span> <span class="p">=</span> <span class="s">&quot;application/json&quot;</span><span class="p">;</span>
+            <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GetResponse</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">streamReader</span> <span class="p">=</span> <span class="k">new</span>
+<span class="n">StreamReader</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">GetResponseStream</span><span class="p">());</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">streamReader</span><span class="p">.</span><span class="n">ReadToEnd</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-<pre><code>    private static void ProcessItem(SyndicationItem item)
-    {
-        Console.WriteLine(item.Title.Text);
-        //get events
-        var request = (HttpWebRequest)WebRequest.Create(GetNamedLink(item.Links, "alternate").Uri);
-        request.Credentials = new NetworkCredential("admin", "changeit");
-        request.Accept = "application/json";
-        using (var response = request.GetResponse())
-        {
-            var streamReader = new StreamReader(response.GetResponseStream());
-            Console.WriteLine(streamReader.ReadToEnd());
-        }
-    }
+        <span class="k">static</span> <span class="n">Uri</span> <span class="nf">ReadPrevious</span><span class="p">(</span><span class="n">Uri</span> <span class="n">uri</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">WebRequest</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">uri</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Credentials</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NetworkCredential</span><span class="p">(</span><span class="s">&quot;admin&quot;</span><span class="p">,</span> <span class="s">&quot;changeit&quot;</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Accept</span> <span class="p">=</span> <span class="s">&quot;application/atom+xml&quot;</span><span class="p">;</span>
+            <span class="n">using</span><span class="p">(</span><span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GetResponse</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">using</span><span class="p">(</span><span class="kt">var</span> <span class="n">xmlreader</span> <span class="p">=</span>
+<span class="n">XmlReader</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">GetResponseStream</span><span class="p">()))</span>
+                <span class="p">{</span>
+                    <span class="kt">var</span> <span class="n">feed</span> <span class="p">=</span> <span class="n">SyndicationFeed</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">xmlreader</span><span class="p">);</span>
+                    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">feed</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">Reverse</span><span class="p">())</span>
+                    <span class="p">{</span>
+                        <span class="n">ProcessItem</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="kt">var</span> <span class="n">prev</span> <span class="p">=</span> <span class="n">GetNamedLink</span><span class="p">(</span><span class="n">feed</span><span class="p">.</span><span class="n">Links</span><span class="p">,</span> <span class="s">&quot;previous&quot;</span><span class="p">);</span>
+                    <span class="k">return</span> <span class="n">prev</span> <span class="p">==</span> <span class="k">null</span> <span class="p">?</span> <span class="n">uri</span> <span class="p">:</span> <span class="n">prev</span><span class="p">.</span><span class="n">Uri</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-    static Uri ReadPrevious(Uri uri)
-    {
-        var request = (HttpWebRequest)WebRequest.Create(uri);
-        request.Credentials = new NetworkCredential("admin", "changeit");
-        request.Accept = "application/atom+xml";
-        using(var response = request.GetResponse())
-        {
-            using(var xmlreader = XmlReader.Create(response.GetResponseStream()))
-            {
-                var feed = SyndicationFeed.Load(xmlreader);
-                foreach (var item in feed.Items.Reverse())
-                {
-                    ProcessItem(item);
-                }
-                var prev = GetNamedLink(feed.Links, "previous");
-                return prev == null ? uri : prev.Uri;
-            }
-        }
-    }
+        <span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">PostMessage</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">message</span> <span class="p">=</span> <span class="s">&quot;[{&#39;eventType&#39;:&#39;MyFirstEvent&#39;, &#39;eventId&#39; :</span>
+<span class="err">&#39;</span><span class="s">&quot; +Guid.NewGuid() +&quot;</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">data</span><span class="err">&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">name</span><span class="sc">&#39;:&#39;</span><span class="n">hello</span> <span class="n">world</span><span class="p">!</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">number</span><span class="err">&#39;</span> <span class="p">:</span> <span class="s">&quot;</span>
+<span class="p">+</span> <span class="k">new</span> <span class="n">Random</span><span class="p">().</span><span class="n">Next</span><span class="p">()</span> <span class="p">+</span> <span class="s">&quot;}}]&quot;</span><span class="p">;</span>
+            <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span>
+<span class="n">WebRequest</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s">&quot;http://127.0.0.1:2113/streams/yourstream&quot;</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Method</span> <span class="p">=</span> <span class="s">&quot;POST&quot;</span><span class="p">;</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">&quot;application/json&quot;</span><span class="p">;</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">ContentLength</span> <span class="p">=</span> <span class="n">message</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+            <span class="n">using</span><span class="p">(</span><span class="kt">var</span> <span class="n">sw</span><span class="p">=</span> <span class="k">new</span> <span class="n">StreamWriter</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">GetRequestStream</span><span class="p">()))</span>
+            <span class="p">{</span>
+                <span class="n">sw</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">using</span><span class="p">(</span><span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">request</span><span class="p">.</span><span class="n">GetResponse</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">response</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-    private static void PostMessage()
-    {
-        var message = "[{'eventType':'MyFirstEvent', 'eventId' : '" +Guid.NewGuid() +"', 'data' : {'name':'hello world!', 'number' : " + new Random().Next() + "}}]";
-        var request = WebRequest.Create("http://127.0.0.1:2113/streams/yourstream");
-        request.Method = "POST";
-        request.ContentType = "application/json";
-        request.ContentLength = message.Length;
-        using(var sw= new StreamWriter(request.GetRequestStream()))
-        {
-            sw.Write(message);
-        }
-        using(var response = request.GetResponse())
-        {
-            response.Close();
-        }
-    }
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Timer</span><span class="p">(</span><span class="n">o</span> <span class="p">=&gt;</span> <span class="n">PostMessage</span><span class="p">(),</span> <span class="k">null</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">1000</span><span class="p">);</span>
+            <span class="n">Uri</span> <span class="n">last</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Press any key to exit.&quot;</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">stop</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">last</span> <span class="p">==</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">stop</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">last</span> <span class="p">=</span> <span class="n">GetLast</span><span class="p">(</span><span class="k">new</span>
+<span class="n">Uri</span><span class="p">(</span><span class="s">&quot;http://127.0.0.1:2113/streams/yourstream&quot;</span><span class="p">));</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">last</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="m">1000</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">KeyAvailable</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">stop</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
 
-    static void Main(string[] args)
-    {
-        var timer = new Timer(o =&gt; PostMessage(), null, 1000, 1000);
-        Uri last = null;
-        Console.WriteLine("Press any key to exit.");
-        var stop = false;
-        while (last == null &amp;&amp; !stop)
-        {
-            last = GetLast(new Uri("http://127.0.0.1:2113/streams/yourstream"));
-            if(last == null) Thread.Sleep(1000);
-            if (Console.KeyAvailable)
-            {
-                stop = true;
-            }
-        }
-
-        while(!stop)
-        {
-            var current = ReadPrevious(last);
-            if(last == current)
-            {
-                Thread.Sleep(1000);
-            }
-            last = current;
-            if(Console.KeyAvailable)
-            {
-                stop = true;
-            }
-        }
-    }
-} } ```
-</code></pre>
-
+            <span class="k">while</span><span class="p">(!</span><span class="n">stop</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">current</span> <span class="p">=</span> <span class="n">ReadPrevious</span><span class="p">(</span><span class="n">last</span><span class="p">);</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">last</span> <span class="p">==</span> <span class="n">current</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="m">1000</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="n">last</span> <span class="p">=</span> <span class="n">current</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">KeyAvailable</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">stop</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
         </div>
         </div>
     </div>
