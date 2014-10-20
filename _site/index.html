@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="http://geteventstore.com/css/main3.css">
+    <link rel="stylesheet" href="./css/main4.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto:400,400italic,700,700italic">
+</head>
+
+<body>
+    <header class="site-banner">
+        <div class="inner-container">
+            <h1 class="site-logo">
+                <a href="http://docs.geteventstore.dev">
+                    <img src="http://geteventstore.com/images/logo--white.svg" alt="Event Store logo">
+                </a>         
+            </h1>
+            <ul class="site-navigation">
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/features">Features</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/downloads">Downloads</a></li>
+                <li class="site-navigation__item"><a href="https://github.com/eventstore/eventstore/wiki">Docs</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/appliances">Appliances</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/community">Community</a></li>
+                <li class="site-navigation__item"><a href="http://docs.geteventstore.dev/support">Support</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="docs">
+        <div class="inner-container">
+        <aside class="docs-sidebar">
+            <h1 class="docs-sidebar__title">Version 3.0.0</h1>
+            <ul class="docs-sidebar__list">
+                <li><a href="#">Introduction</a></li>
+                <li><a href="#">Quick Start</a></li>
+                <li>
+                    <a href="#">Developers</a>
+                    <ul>
+                        <li>
+                            <a href="#">Concepts</a>
+                            <ul>
+                                <li><a href="#">Event Sourcing</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <div class="docs-content">
+            <div class="docs-breadcrumbs">
+                <a href="http://docs.geteventstore.dev">Docs</a> &rsaquo; 
+                Documentation <!-- Breadcrumbs do not work yet. -->
+            </div>
+            <h1>Documentation</h1>
+            <p>Documentation is still a work-in-progress, and pull requests are accepted gratefully! Currently our blog has a lot more information on features which are not yet well documented here - a list of posts is below.</p>
+
+<p>Binaries for the open source version, and information on the commercial versions (which add management and monitoring tools as well as commercial support) are available at the Event Store website (<a href="http://www.geteventstore.com">http://www.geteventstore.com</a>). If you have a commercial support contract, please raise support issues via ZenDesk. Our discussion forum is hosted on <a href="https://groups.google.com/forum/?fromgroups#!forum/event-store">Google Groups</a>.</p>
+
+<p>The latest build of the .NET Client API is available as a package named <a href="http://nuget.org/packages/EventStore.Client">EventStore.Client</a> on NuGet. This is often more up-to-date than the version bundled with the server (which things like the test client utility use). <em>Note: the Event Store server is versioned separately from the .NET Client API (and any others)</em>.</p>
+
+<p><em>PLEASE NOTE: User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the <code>--run-projections=all</code> command line parameter (or equivalent as per the <a href="wiki/Command-Line-Arguments">command line options</a> page).</em></p>
+
+<h2 id="contents">Contents</h2>
+
+<h3 id="getting-started">Getting Started</h3>
+
+<ul>
+  <li><a href="http://docs.geteventstore.dev/getting-started">Getting Started with the Atom HTTP API</a></li>
+  <li><a href="http://ges-stuff.tumblr.com/post/50099154651/a-ges-quickstart-amazon-ami">Getting Started on Amazon EC2</a></li>
+  <li><a href="http://docs.geteventstore.dev/deploy-with-puppet">Deploy with puppet</a></li>
+</ul>
+
+<h3 id="introduction">Introduction</h3>
+
+<ul>
+  <li><a href="wiki/Event-Sourcing-Basics">Event Sourcing Basics</a></li>
+  <li><a href="wiki/Running-the-Event-Store">Running the Event Store</a>
+    <ul>
+      <li><a href="wiki/Running-the-Event-Store#on-windows-and-net">Windows / .NET</a></li>
+      <li><a href="wiki/Running-the-Event-Store#on-linux-and-mono">Linux / Mono</a></li>
+      <li><a href="wiki/Command-Line-Arguments">Command Line Options</a></li>
+      <li><a href="wiki/Setting-up-an-OSS-cluster">Clustering (Open Source)</a></li>
+      <li><a href="wiki/Database-Backup">Database Backup</a></li>
+    </ul>
+  </li>
+  <li><a href="wiki/Architectural-Overview">Internal Architectural Overview</a></li>
+  <li><a href="wiki/Reliability">Reliability</a></li>
+</ul>
+
+<h3 id="cross-api-concepts">Cross-API Concepts</h3>
+
+<ul>
+  <li><a href="wiki/Reserved-Names">Reserved Names</a></li>
+  <li><a href="wiki/Optimistic-Concurrency-&amp;-Idempotence">Optimistic Concurrency &amp; Idempotence</a></li>
+  <li><a href="wiki/Client-Error-Handling">Client Error Handling</a></li>
+  <li>[Which API to Use?] (wiki/Which-API)</li>
+  <li>[Stream Metadata] (wiki/Stream-Metadata-Parameters)</li>
+  <li>[Config Options] (wiki/Command-Line-Arguments)</li>
+  <li><a href="wiki/Access-Control-Lists">Access Control Lists</a></li>
+</ul>
+
+<h3 id="http-api">HTTP API</h3>
+
+<ul>
+  <li><a href="wiki/HTTP-Overview">Overview</a></li>
+  <li><a href="wiki/Creating-a-Stream-%28HTTP%29">Creating a stream</a></li>
+  <li><a href="wiki/Writing-to-a-Stream-%28HTTP%29">Writing to a stream</a></li>
+  <li>[Reading streams] (wiki/Reading-Streams-%28HTTP%29)</li>
+  <li><a href="wiki/Deleting-a-Stream-%28HTTP%29">Deleting a stream</a></li>
+  <li><a href="wiki/Stream-Metadata-%28HTTP%29">Stream Metadata</a></li>
+  <li>[Optional HTTP Headers] (wiki/Optional-Http-Headers)</li>
+  <li>[Setup] (wiki/Architecture-Setup%28HTTP%29)</li>
+  <li>[Security] (wiki/HTTP-Security)</li>
+  <li>[Setting up SSL in Linux] (wiki/Setting-Up-SSL-In-Linux)</li>
+  <li>[Setting up SSL in Windows] (wiki/Setting-Up-SSL-In-Windows)</li>
+  <li>[Setting up Varnish in Linux] (wiki/Setting-Up-Varnish-In-Linux)</li>
+</ul>
+
+<h3 id="net-api">.NET API</h3>
+
+<ul>
+  <li><a href="wiki/Overview-%28.NET-API%29">Overview</a></li>
+  <li><a href="wiki/Connection-Options-%28.NET-API%29">Connection Options</a></li>
+  <li><a href="wiki/Writing-Events-%28.NET-API%29">Writing to a stream</a></li>
+  <li><a href="wiki/Reading-Streams-%28.NET-API%29">Reading streams</a></li>
+  <li><a href="wiki/Subscriptions-%28.NET-API%29">Subscriptions</a></li>
+  <li>Implementing a repository</li>
+</ul>
+
+<h3 id="projections">Projections</h3>
+
+<p><em>Note: Projections are still experimental and as such we have not yet documented them here. However, there are two series of blog posts about how they can be used, which are listed below under the Related Blog Posts section below.</em></p>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<ul>
+  <li>Implementing a Client API</li>
+</ul>
+
+<h2 id="related-blog-posts">Related Blog Posts</h2>
+
+<p>The following blog posts talk about the Event Store and may be useful for features that aren’t yet documented here. If you know of any others, please let us know!</p>
+
+<h3 id="event-store-blog---getting-started-series">Event Store Blog - Getting Started Series</h3>
+
+<ul>
+  <li><a href="http://geteventstore.com/blog/20130220/getting-started-part-1-introduction/">Part 1 - Introduction</a></li>
+  <li><a href="http://geteventstore.com/blog/20130220/getting-started-part-2-implementing-the-commondomain-repository-interface/">Part 2 - Implementing the CommonDomain repository interface</a></li>
+  <li><a href="http://geteventstore.com/blog/20130306/getting-started-part-3-subscriptions/">Part 3 - Subscriptions</a></li>
+</ul>
+
+<h3 id="event-store-blog---projections-series">Event Store Blog - Projections Series</h3>
+
+<ul>
+  <li><a href="http://geteventstore.com/blog/20130212/projections-1-theory/">Part 1 - Projections Theory</a></li>
+  <li><a href="http://geteventstore.com/blog/20130213/projections-2-a-simple-sep-projection/">Part 2 - A Simple SEP Projection</a></li>
+  <li><a href="http://geteventstore.com/blog/20130215/projections-3-using-state/">Part 3 - Using State</a></li>
+  <li><a href="http://geteventstore.com/blog/20130217/projections-intermission/">Intermission - A Case Study</a></li>
+  <li><a href="http://geteventstore.com/blog/20130218/projections-4-event-matching/">Part 4 - Event Matching</a></li>
+  <li><a href="http://geteventstore.com/blog/20130218/projections-5-indexing/">Part 5 - Indexing</a></li>
+  <li><a href="http://geteventstore.com/blog/20130227/projections-6-an-indexing-use-case/">Part 6 - An Indexing Use Case</a></li>
+  <li><a href="http://geteventstore.com/blog/20130309/projections-7-multiple-streams/">Part 7 - Multiple Streams</a></li>
+  <li><a href="http://geteventstore.com/blog/20130309/projections-8-internal-indexing/">Part 8 - Internal Indexing</a></li>
+</ul>
+
+<h3 id="rob-ashton---projections-series">Rob Ashton - Projections Series</h3>
+
+<ul>
+  <li><a href="http://codeofrob.com/entries/playing-with-the-eventstore.html">Part 1 - Introduction to the EventStore</a></li>
+  <li><a href="http://codeofrob.com/entries/pushing-data-into-streams-in-the-eventstore.html">Part 2 - Pushing data into the EventStore</a></li>
+  <li><a href="http://codeofrob.com/entries/basic-projections-in-the-eventstore.html">Part 3 - Projections in the EventStore</a></li>
+  <li><a href="http://codeofrob.com/entries/re-partitioning-streams-in-the-event-store-for-better-projections.html">Part 4 - Re-partitioning streams in the EventStore</a></li>
+  <li><a href="http://codeofrob.com/entries/creating-a-projection-per-stream-in-the-eventstore.html">Part 5 - Creating a projection per stream</a></li>
+  <li><a href="http://codeofrob.com/entries/less-abstract,-pumping-data-from-github-into-the-eventstore.html">Part 6 - Pumping data from Github into the EventStore</a></li>
+  <li><a href="http://codeofrob.com/entries/evented-github-adventure---emitting-commits-as-their-own-events.html">Part 7 - Emitting new events from a projection</a></li>
+  <li><a href="http://codeofrob.com/entries/evented-github-adventure---who-writes-the-sweariest-commit-messages.html">Part 8 - Who is the sweariest of them all?</a></li>
+  <li><a href="http://codeofrob.com/entries/evented-github-adventure---temporal-queries,-who-doesnt-trust-their-hardware.html">Part 9 - Temporal queries in the event store</a></li>
+  <li><a href="http://codeofrob.com/entries/evented-github-adventure---crossing-the-streams-to-gain-real-insights.html">Part 10 - Projections from multiple streams</a></li>
+  <li><a href="http://codeofrob.com/entries/evented-github-adventure---temporal-averages.html">Part 11 - Temporal averages</a></li>
+  <li><a href="http://codeofrob.com/entries/evented-github-adventure---database-storage-and-backing-up.html">Part 12 - (Aside) Database storage and backing up</a></li>
+  <li><a href="http://codeofrob.com/entries/evented-github-adventure---sentiment-analysis-of-github-commits.html">Part 13 - Sentiment analysis of github commits</a></li>
+</ul>
+
+<p>There is also a <a href="http://skillsmatter.com/podcast/design-architecture/event-store-as-a-read-model">video of Greg Young’s “In The Brain” session</a> recorded at SkillsMatter in London about using projections for Complex Event Processing.</p>
+
+<h3 id="other-posts">Other Posts</h3>
+
+<ul>
+  <li><a href="http://geteventstore.com/blog/20130301/ensuring-writes-multi-node-replication/">Ensuring Writes</a> - describes how writing works in our commercial highly available product.</li>
+  <li><a href="http://geteventstore.com/blog/20130210/the-cost-of-creating-a-stream/">The Cost of Creating a Stream</a></li>
+  <li><a href="http://geteventstore.com/blog/20120921/a-useful-piece-of-code-1/">Various Hash Implementations (BSD Licensed!)</a></li>
+</ul>
+
+<p><img src="https://gaproxy-1.apphb.com/UA-40176181-1/Wiki/Home/" alt="Google analytics pixel" /></p>
+
+        </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto:400,400italic,700,700italic">
+</body>
+</html>
