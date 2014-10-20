@@ -3,13 +3,11 @@ layout: docs
 title: "Getting Started"
 ---
 
-This document describes how to "Get Started" with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.
+This document describes how to get started with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.
 
-**This setup is intended as an experimental setup or for a developer's machine, it is not intended to describe a production setup**
+**This setup is intended as an experimental setup or for a developer’s machine, it is not intended to describe a production setup. This document assumes that you also have [curl](http://curl.haxx.se/) installed on your machine.**
 
-This document assumes that you also have [curl](http://curl.haxx.se/) installed on your machine.
-
-### Installation
+## Installation
 
 To start go to http://geteventstore.com and download the binaries into a folder. For this document it is assumed that you are in windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup. See [the installing document](Installing) for more details on installing in other environments and installing from source.
 
@@ -27,7 +25,7 @@ netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 
 The Event Store should be now up and running on your machine. You can browse to http://127.0.0.1:2113/ to see the admin console. The console will ask for a username and password. By default it is admin:changeit.
 
-### Writing Events to an Event Stream
+## Writing Events to an Event Stream
 
 The first operation we will look at is how to write to a stream. The Event Store operates on a concept of Event Streams. These are partition points in the system. If you are Event Sourcing a domain model a stream would equate to an aggregate. The Event Store can easily handle hundreds of millions of streams. Don't be afraid to make many of them.
 
@@ -82,7 +80,7 @@ If you go to your UI after this command and to the "Streams" tab. You will see y
 
 You can also setup [Access Control Lists](HTTP-Security) on your streams by changing the metadata of the stream.
 
-### Reading From a Stream
+## Reading From a Stream
 
 Reading from a stream is quite easy as all streams are exposed as [atom feeds](http://tools.ietf.org/html/rfc4287). Many environments have an existing method for reading atom feeds. 
 
@@ -161,7 +159,7 @@ This will return our event that we had originally posted. You can also get your 
 
 Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the *last* link and then continue to read the *previous* page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using *first* then *next*.
 
-### Subcribing to Stream to get Updates
+## Subcribing to Stream to get Updates
 
 Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in atom. As new events arrive new *previous* links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an atleast once assurance with the following code you would simply save the last URI you had received.
 
