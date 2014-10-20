@@ -7,7 +7,7 @@ The Event Store runs as a server, to which many clients can connect either over 
 
 ## Running the Open Source version
 
-### tl;dr version
+### TL;DR version
 
 A typical command line for starting the Event Store is:
 
