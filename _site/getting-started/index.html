@@ -38,6 +38,7 @@
                 <li><a href="http://docs.geteventstore.com/introduction">Introduction</a>
                     <ul>
                         <li><a href="http://docs.geteventstore.com/introduction">Event Sourcing Basics</a></li>
+                        <li><a href="http://docs.geteventstore.com/running-the-event-store">Running the Event Store</a></li>
                     </ul>
                 </li>
             </ul>
@@ -48,27 +49,23 @@
                 Getting Started <!-- Breadcrumbs do not work yet. -->
             </div>
             <h1>Getting Started</h1>
-            <p>This document describes how to &quot;Get Started&quot; with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.</p>
+            <p>This document describes how to get started with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.</p>
 
-<p><strong>This setup is intended as an experimental setup or for a developer&#39;s machine, it is not intended to describe a production setup</strong></p>
+<p><strong>This setup is intended as an experimental setup or for a developer’s machine, it is not intended to describe a production setup. This document assumes that you also have <a href="http://curl.haxx.se/">curl</a> installed on your machine.</strong></p>
 
-<p>This document assumes that you also have <a href="http://curl.haxx.se/">curl</a> installed on your machine.</p>
-
-<h3>Installation</h3>
+<h2>Installation</h2>
 
 <p>To start go to http://geteventstore.com and download the binaries into a folder. For this document it is assumed that you are in windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup. See <a href="Installing">the installing document</a> for more details on installing in other environments and installing from source.</p>
 
 <p>Once you have the zip file unzipped, open up an administrator console. cd into the directory where you have installed the Event Store. On the command line enter:</p>
-
-<p><code>EventStore.SingleNode.exe --db ./db --log ./logs</code></p>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">EventStore.SingleNode.exe --db ./db --log ./logs
+</code></pre></div>
 <p>This will start the EventStore and will put the database in the path ./db and the logs in ./logs. You can view further command line options (there are many!) <a href="Command-Line-Arguments">here</a>. It is important to note that it is being run in an admin context because it will start a HTTP server through http.sys. If you were to be running in a more permanent situation you would probably want to provide for an ACL in windows such as:</p>
-
-<p><code>netsh http add urlacl url=http://+:2113/ user=DOMAIN\username</code></p>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
+</code></pre></div>
 <p>The Event Store should be now up and running on your machine. You can browse to http://127.0.0.1:2113/ to see the admin console. The console will ask for a username and password. By default it is admin:changeit.</p>
 
-<h3>Writing Events to an Event Stream</h3>
+<h2>Writing Events to an Event Stream</h2>
 
 <p>The first operation we will look at is how to write to a stream. The Event Store operates on a concept of Event Streams. These are partition points in the system. If you are Event Sourcing a domain model a stream would equate to an aggregate. The Event Store can easily handle hundreds of millions of streams. Don&#39;t be afraid to make many of them.</p>
 
@@ -110,14 +107,13 @@
 
 <p>You can also setup <a href="HTTP-Security">Access Control Lists</a> on your streams by changing the metadata of the stream.</p>
 
-<h3>Reading From a Stream</h3>
+<h2>Reading From a Stream</h2>
 
 <p>Reading from a stream is quite easy as all streams are exposed as <a href="http://tools.ietf.org/html/rfc4287">atom feeds</a>. Many environments have an existing method for reading atom feeds. </p>
 
 <p>Let&#39;s try to get the data out of our stream. Just like with our browser we will navigate to the &quot;head&quot; uri of the stream http://127.0.0.1:2113/streams/newstream. We can do this with curl.</p>
-
-<p><code>curl -i -H &quot;Accept:application/atom+xml&quot; &quot;http://127.0.0.1:2113/streams/newstream&quot;</code></p>
-<div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre><code class="language-text" data-lang="text">curl -i -H &quot;Accept:application/atom+xml&quot; &quot;http://127.0.0.1:2113/streams/newstream&quot;
+</code></pre></div><div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Access-Control-Allow-Methods</span><span class="o">:</span> <span class="l">POST, DELETE, GET, OPTIONS</span>
 <span class="na">Access-Control-Allow-Headers</span><span class="o">:</span> <span class="l">Content-Type, X-Requested-With, X-PINGOTHER</span>
 <span class="na">Access-Control-Allow-Origin</span><span class="o">:</span> <span class="l">*</span>
@@ -157,9 +153,8 @@
 <span class="nt">&lt;/feed&gt;</span>
 </code></pre></div>
 <p>This curl command told the system that we wanted the feed returned to us in <code>atom+xml</code> (<em>pro tip: you can also try <code>application/vnd.eventstore.atom+json</code> if you prefer json like we do!</em>). The feed that we pulled has a single item inside of it, the one we recently posted. We would then get the event by issuing a GET to the alternate uri.</p>
-
-<p><code>curl -i http://127.0.0.1:2113/streams/newstream/0 -H &quot;Accept: application/json&quot;</code></p>
-<div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre><code class="language-text" data-lang="text">curl -i http://127.0.0.1:2113/streams/newstream/0 -H &quot;Accept: application/json&quot;
+</code></pre></div><div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Access-Control-Allow-Methods</span><span class="o">:</span> <span class="l">GET, OPTIONS</span>
 <span class="na">Access-Control-Allow-Headers</span><span class="o">:</span> <span class="l">Content-Type, X-Requested-With, X-PINGOTHER</span>
 <span class="na">Access-Control-Allow-Origin</span><span class="o">:</span> <span class="l">*</span>
@@ -177,11 +172,11 @@
 </code></pre></div>
 <p>This will return our event that we had originally posted. You can also get your event as XML (set Accept: text/xml). In order to read a single page feed we would just get the feed and then iterate through the event links executing gets. This may feel inefficient at first but remember the event  uris and most of the page uris are infinitely cachable. We can also get the events in the feed itself if prefered by using ?embed=body. There is further discussion on this <a href="Reading-Streams-%28HTTP%29">here</a></p>
 
-<p>Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the &quot;last&quot; link and then continue to read the &quot;previous&quot; page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using &quot;first&quot; then &quot;next&quot;.</p>
+<p>Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the <em>last</em> link and then continue to read the <em>previous</em> page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using <em>first</em> then <em>next</em>.</p>
 
-<h3>Subcribing to Stream to get Updates</h3>
+<h2>Subcribing to Stream to get Updates</h2>
 
-<p>Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in atom. As new events arrive new &quot;previous&quot; links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an atleast once assurance with the following code you would simply save the last Uri you had received.</p>
+<p>Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in atom. As new events arrive new <em>previous</em> links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an atleast once assurance with the following code you would simply save the last URI you had received.</p>
 
 <p>If you prefer JavaScript an example can be found in our own source base as we have the ability to run projections in the browser from atomfeeds. You can find the code for this <a href="https://github.com/EventStore/EventStore/blob/22fd3562f97037afc256745fe011eabaef62db60/src/EventStore/EventStore.SingleNode.Web/singlenode-web/js/projections/es.projection.js">JavaScript Example</a>. <em>To see this in action take a look at the browser chat example</em></p>
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
