@@ -1,4 +1,9 @@
-##Messaging
+---
+layout: docs
+title: "Internal Architectural Overview"
+---
+
+## Messaging
 
 The overall architecture style of the Event Store is [SEDA (Staged Event Driven Architecture)](http://www.eecs.harvard.edu/~mdw/proj/seda/). Messages flow forward through queues internally (including the Transaction File which is also a queue). There are communication end points that flow forward through series of queues to be processed. All operations are purely asynchronous. The core processing is handled on a single thread reading requests off of a single concurrent queue.
 
@@ -8,7 +13,7 @@ Due to the way the architecture works the main monitoring points of the Event St
 
 The most common queue to be slow is the storage write as it writes to storage in a durable fashion. It uses fsync/flushfile buffers to ensure that data is persisted to disk and will survive say a power outage on the machine. At the time of writing the storage writer is capable of writing about 15,000 transactions to disk per second on the open source single node version. This is well beyond the needs of most systems.
 
-##Transaction File
+## Transaction File
 
 The Event Store provides durable storage including handling cases where the power may be turned off on a machine. It does this through the use of a commit log. The commit log is a conceptual constantly appending file (though it is not implemented this way). Every write to the event store appends to this file.
 
@@ -18,11 +23,11 @@ The commit log is built not as one large file but as a series of small files imp
 
 This results in no seeks being necessary for writes. While less of a problem with SSDs this can drastically help with performance of spindle drives. It also allows for the possibility that data for the Event Store (both indexes and the transaction file) could be stored on write once media.
 
-Entire TFChunks are cached. This is done by loading the entire chunk into unmanaged memory. Most of the memory usage by the Event Store is unmanaged. It is rare to see it use more than a few hundred megabytes in managed heaps. Even in these scenarios most of the memory is in the large object heap (LOH) and point to native types such as <code>byte[]</code> to put a minimum load possible on the garbage collector.
+Entire TFChunks are cached. This is done by loading the entire chunk into unmanaged memory. Most of the memory usage by the Event Store is unmanaged. It is rare to see it use more than a few hundred megabytes in managed heaps. Even in these scenarios most of the memory is in the large object heap (LOH) and point to native types such as `byte[]` to put a minimum load possible on the garbage collector.
 
-##Scavenging
+## Scavenging
 
-The chunks in the Transaction File are periodically scavenged to remove deleted or old data depending on stream rules such as <code>$maxCount</code> in stream metadata and can be compacted (wouldn't it be awful to have 5000 160kb files?).
+The chunks in the Transaction File are periodically scavenged to remove deleted or old data depending on stream rules such as `$maxCount` in stream metadata and can be compacted (wouldn't it be awful to have 5000 160kb files?).
 
 This process generates new chunks, and switches them out atomically deleting them once they are no longer in use by readers. This gives the benefit that once completed, TFChunks are immutable. This includes the current chunk - since it is only written to sequentially, it will never seek back to overwrite something.
 
@@ -32,7 +37,7 @@ When you begin scavenging however this location can move. As part of the process
 
 Chunks that are completed also have an MD5 checksum to validate the data inside of them, since disks do occasionally go bad or mangle data. This checksum is checked periodically to validate that the data has not been corrupted.
 
-##Index
+## Index
 
 There is only one index in the Event Store. For building application level indexes, projections should be used. The index is immutable.
 
@@ -59,5 +64,3 @@ PTables also get compacted into larger PTables over time. During this operation 
 1 million items takes about 3 seconds to rebuild an index for from the transaction file so even in catastrophic scenarios in reasonably large systems a rebuild of an index is a strategy to consider.
 
 This may sound like a familiar setup for a transactional engine. It is known as a log structured merge tree.
-
-![Google analytics pixel](https://gaproxy-1.apphb.com/UA-40176181-1/Wiki/Architectural-Overview)
