@@ -14,6 +14,7 @@ We can create a stream.
 ```
 ouro@ouroboros:~$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo -H "Content-Type: application/json"
 ```
+
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -32,6 +33,7 @@ Then delete the stream with a HTTP DELETE to the stream resource.
 ```
 ouro@ouroboros$ curl -v -X DELETE http://127.0.0.1:2113/streams/foo
 ```
+
 ```http
 HTTP/1.1 204 Stream deleted
 Content-Length: 0
@@ -50,6 +52,7 @@ By default when you delete a stream it will be soft deleted. This means that you
 ```
 ouro@ouroboros$ curl -i http://127.0.0.1:2113/streams/foo
 ```
+
 ```http
 HTTP/1.1 404 Not Found
 Content-Length: 0
@@ -68,6 +71,7 @@ You can if desired recreate the stream by appending new events to it (just like 
 ouro@ouroboroscurl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo -H "Conte
 nt-Type:application/json"
 ```
+
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -86,6 +90,7 @@ Now if you get a from a stream that has been soft deleted then recreated you wil
 ```
 ouro@bouroboros$ curl -i http://127.0.0.1:2113/streams/foo
 ```
+
 ```http
 HTTP/1.1 200 OK
 Cache-Control: max-age=0, no-cache, must-revalidate
@@ -101,7 +106,7 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:49:34 GMT
 ```
 
-```javacript
+```javascript
 {
   "title": "Event stream 'foo'",
   "id": "http://127.0.0.1:2113/streams/foo",
@@ -158,8 +163,8 @@ So far we have been looking at soft deletes. You can also execute hard deletes o
 
 ```
 ouro@ouroboros$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
-
 ```
+
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -178,6 +183,7 @@ Then the delete as before but with the permanent delete header
 ```
 ouro@ouroboros$ curl -v -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete:true"
 ```
+
 ```http
 HTTP/1.1 204 Stream deleted
 Content-Length: 0
@@ -195,6 +201,7 @@ This stream is now permanently deleted unlike before where you received a 404 th
 ```
 ouro@ouroboros$ curl -i http://127.0.0.1:2113/streams/foo2
 ```
+
 ```http
 HTTP/1.1 410 Deleted
 Content-Length: 0
@@ -212,6 +219,7 @@ If you try to recreate the stream as in the above example you will also receive 
 ```
 ouro@ouroboros$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
 ```
+
 ```http
 HTTP/1.1 410 Stream deleted
 Content-Length: 0
@@ -229,6 +237,7 @@ The same applies if you try to delete an already deleted stream. You will receiv
 ```
 ouro@ouroboros$ curl -i -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete: true"
 ```
+
 ```http
 HTTP/1.1 410 Stream deleted
 Content-Length: 0

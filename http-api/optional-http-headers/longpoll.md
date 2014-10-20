@@ -13,9 +13,10 @@ The use of the ES-LongPoll header can be seen in the following curl command.
 
 First go to the head of the stream (in this case we are using the default chat of the chat sample)
 
-```code
+```
 ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat -H "Accept: application/json"
 ```
+
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -31,6 +32,7 @@ Date: Thu, 08 May 2014 10:12:27 GMT
 Content-Length: 1348
 Keep-Alive: timeout=15,max=100
 ```
+
 ```json
 {
   "title": "Event stream 'chat-GeneralChat'",
@@ -87,9 +89,10 @@ Keep-Alive: timeout=15,max=100
 
 Then grab the previous rel link http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 and try it. Note it brings back an empty feed.
 
-```code
+```
 ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json"
 ```
+
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
@@ -105,6 +108,7 @@ Date: Thu, 08 May 2014 10:13:58 GMT
 Content-Length: 843
 Keep-Alive: timeout=15,max=100
 ```
+
 ```javascript
 {
   "title": "Event stream 'chat-GeneralChat'",
@@ -143,7 +147,8 @@ Keep-Alive: timeout=15,max=100
 
 Note the entries section is empty (there is no further data that can be provided). Now try that URI with a long poll header
 
-```code
+```
 ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json" -H "ES-LongPoll: 10"
 ```
+
 If you do not insert any events into the stream while this is running it will take 10 seconds for the http request to finish. If you append an event to the stream while its running (by say putting a chat in the chat room) you will see the result for that request when the event is appended.
