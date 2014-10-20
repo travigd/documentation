@@ -41,17 +41,22 @@ To begin let's open notepad. Copy and paste the following event definition into 
   }
 ]
 ```
+
 *you can also post events as XML, same format but set the Content-Type to XML*
 
 Now to write our event to a stream we would issue the following curl command.
 
-<code>curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"</code>
+```
+curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
+```
 
 Note - from version 3.0 rc9 there has been a change to how events are posted. See the [post about this release here](https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ).
 
 So for the above to work, use the following which has a new Content-Type which allows the old format:
 
-<code>curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"</code>
+```
+curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
+```
 
 This gives the following result:
 

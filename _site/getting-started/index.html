@@ -87,15 +87,13 @@
 <p><em>you can also post events as XML, same format but set the Content-Type to XML</em></p>
 
 <p>Now to write our event to a stream we would issue the following curl command.</p>
-
-<p><code>curl -i -d @event.txt &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/json&quot;</code></p>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">curl -i -d @event.txt &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/json&quot;
+</code></pre></div>
 <p>Note - from version 3.0 rc9 there has been a change to how events are posted. See the <a href="https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ">post about this release here</a>.</p>
 
 <p>So for the above to work, use the following which has a new Content-Type which allows the old format:</p>
-
-<p><code>curl -i -d @event.txt &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;</code></p>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">curl -i -d @event.txt &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;
+</code></pre></div>
 <p>This gives the following result:</p>
 <div class="highlight"><pre><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
 <span class="na">Access-Control-Allow-Methods</span><span class="o">:</span> <span class="l">POST, DELETE, GET, OPTIONS</span>
