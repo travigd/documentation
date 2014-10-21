@@ -49,7 +49,7 @@ Each record in the index is 16 bytes:
 - 4 bytes for the sequence number
 - 8 bytes for the original position the record had in the log.
 
-This identifier of a record is quite useful as you can avoid additional lookups when writing the record to disk, however this can change due to scavenging of the transaction file (see <a href="#scavenging">here</a> about the remapping of IDs during scavenging).
+This identifier of a record is quite useful as you can avoid additional lookups when writing the record to disk, however this can change due to scavenging of the transaction file.
 
 As transactions are written to the Transaction File, an in-memory index is appended. A query hits the in memory index. The in-memory index is at this time implemented as a hash of sorted lists with a fine grained lock on the stream.
 
