@@ -9,7 +9,7 @@ Binaries for the open source version, and information on the commercial versions
 
 The latest build of the .NET Client API is available as a package named [EventStore.Client](http://nuget.org/packages/EventStore.Client) on NuGet. This is often more up-to-date than the version bundled with the server (which things like the test client utility use). *Note: the Event Store server is versioned separately from the .NET Client API (and any others)*.
 
-*NOTE: User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line options]({{ site.url }}/introduction/command-line-arguments) page).*
+*NOTE: User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line arguments]({{ site.url }}/introduction/command-line-arguments) page).*
 
 ## Projections
 
