@@ -5,15 +5,19 @@ title: ".NET API: Reading Specific Streams"
 
 The client API can be used to read events from a stream starting from either end of the stream. There are a pair of methods for each direction, one asynchronous and one blocking. The blocking variants use the asynchronous versions underneath, but block awaiting a result.
 
-##Methods
+## Methods
 
-###Reading a stream forwards
+### Reading a stream forwards
 
-- `Task&lt;StreamEventsSlice&gt; **ReadStreamEventsForwardAsync**(string stream, int start, int count, bool resolveLinkTos)`
+```csharp
+Task<StreamEventsSlice> ReadStreamEventsForwardAsync(string stream, int start, int count, bool resolveLinkTos)
+```
 
-- `StreamEventsSlice **ReadStreamEventsForward**(string stream, int start, int count, bool resolveLinkTos)`
+```csharp
+StreamEventsSlice ReadStreamEventsForward(string stream, int start, int count, bool resolveLinkTos)
+```
 
-###Reading a stream backwards
+### Reading a stream backwards
 
 - `Task&lt;StreamEventsSlice&gt; **ReadStreamEventsBackwardAsync**(string stream, int start, int count, bool resolveLinkTos)`
 
