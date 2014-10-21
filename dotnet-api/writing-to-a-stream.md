@@ -97,8 +97,8 @@ The `AppendToStreamAsync` and `AppendToStream` write events atomically to the en
 
 The parameters are:
 
-- `string `stream` - the name of the stream to which to append.
+- `string stream` - the name of the stream to which to append.
 
-- `int `expectedVersion` - the version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](Optimistic-Concurrency-&-Idempotence) for a broader discussion of this.
+- `int expectedVersion` - the version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](Optimistic-Concurrency-&-Idempotence) for a broader discussion of this.
 
-- `IEnumerable<EventData> `events` - the events to append. There is also an overload of each method which takes the events as a `params` array.
+- `IEnumerable<EventData> events` - the events to append. There is also an overload of each method which takes the events as a `params` array.
