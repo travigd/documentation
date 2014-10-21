@@ -3,13 +3,13 @@ title: "Documentation"
 layout: docs
 ---
 
-Documentation is still a work-in-progress, and pull requests are accepted gratefully! Currently our blog has a lot more information on features which are not yet well documented here - a list of posts is below.
+Documentation is still a work-in-progress, and [pull requests](https://github.com/eventstore/docs.geteventstore.com) are gratefully accepted! Currently our [blog](http://geteventstore.com/blog) has a lot more information on features which are not yet well documented here. A list of posts is below.
 
-Binaries for the open source version, and information on the commercial versions (which add management and monitoring tools as well as commercial support) are available at the Event Store website ([http://www.geteventstore.com](http://www.geteventstore.com)). If you have a commercial support contract, please raise support issues via ZenDesk. Our discussion forum is hosted on [Google Groups](https://groups.google.com/forum/?fromgroups#!forum/event-store).
+Binaries for the open source version, and information on the commercial versions (which add management and monitoring tools as well as commercial support) are available at the [Event Store website](http://www.geteventstore.com). If you have a commercial support contract, please raise support issues via [Zendesk](http://support.geteventstore.com). Our discussion forum is hosted on [Google Groups](https://groups.google.com/forum/?fromgroups#!forum/event-store).
 
 The latest build of the .NET Client API is available as a package named [EventStore.Client](http://nuget.org/packages/EventStore.Client) on NuGet. This is often more up-to-date than the version bundled with the server (which things like the test client utility use). *Note: the Event Store server is versioned separately from the .NET Client API (and any others)*.
 
-*PLEASE NOTE: User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line options](wiki/Command-Line-Arguments) page).*
+*NOTE: User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line options]({{ site.url }}/introduction/command-line-arguments) page).*
 
 ## Projections
 
@@ -21,15 +21,15 @@ The latest build of the .NET Client API is available as a package named [EventSt
 
 ## Related Blog Posts
 
-The following blog posts talk about the Event Store and may be useful for features that aren't yet documented here. If you know of any others, please let us know!
+The following blog posts talk about the Event Store and may be useful for features that aren’t yet documented here. If you know of any others, please let us know!
 
-### Event Store Blog - Getting Started Series
+### Getting Started Series
 
 - [Part 1 - Introduction](http://geteventstore.com/blog/20130220/getting-started-part-1-introduction/)
 - [Part 2 - Implementing the CommonDomain repository interface](http://geteventstore.com/blog/20130220/getting-started-part-2-implementing-the-commondomain-repository-interface/)
 - [Part 3 - Subscriptions](http://geteventstore.com/blog/20130306/getting-started-part-3-subscriptions/)
 
-### Event Store Blog - Projections Series
+### Projections Series
 
 - [Part 1 - Projections Theory](http://geteventstore.com/blog/20130212/projections-1-theory/)
 - [Part 2 - A Simple SEP Projection](http://geteventstore.com/blog/20130213/projections-2-a-simple-sep-projection/)
@@ -41,7 +41,7 @@ The following blog posts talk about the Event Store and may be useful for featur
 - [Part 7 - Multiple Streams](http://geteventstore.com/blog/20130309/projections-7-multiple-streams/)
 - [Part 8 - Internal Indexing](http://geteventstore.com/blog/20130309/projections-8-internal-indexing/)
 
-###Rob Ashton - Projections Series
+### Rob Ashton’s Projections Series
 
 - [Part 1 - Introduction to the EventStore](http://codeofrob.com/entries/playing-with-the-eventstore.html)
 - [Part 2 - Pushing data into the EventStore](http://codeofrob.com/entries/pushing-data-into-streams-in-the-eventstore.html)
@@ -57,7 +57,7 @@ The following blog posts talk about the Event Store and may be useful for featur
 - [Part 12 - (Aside) Database storage and backing up](http://codeofrob.com/entries/evented-github-adventure---database-storage-and-backing-up.html)
 - [Part 13 - Sentiment analysis of github commits](http://codeofrob.com/entries/evented-github-adventure---sentiment-analysis-of-github-commits.html)
 
-There is also a [video of Greg Young's "In The Brain" session](http://skillsmatter.com/podcast/design-architecture/event-store-as-a-read-model) recorded at SkillsMatter in London about using projections for Complex Event Processing.
+There is also a [video of Greg Young’s “In The Brain” session](http://skillsmatter.com/podcast/design-architecture/event-store-as-a-read-model) recorded at SkillsMatter in London about using projections for Complex Event Processing.
 
 ### Other Posts
 
