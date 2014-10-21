@@ -11,41 +11,69 @@ An optimistic concurrency check can be made during the write by specifying the v
 
 ###Appending to a stream in a single write
 
-- `Task **AppendToStreamAsync**(string stream, int expectedVersion, IEnumerable<EventData> events)`
+```csharp
+Task AppendToStreamAsync(string stream, int expectedVersion, IEnumerable<EventData> events)
+```
 
-- `Task **AppendToStreamAsync**(string stream, int expectedVersion, params EventData[] events)`
+```csharp
+Task AppendToStreamAsync(string stream, int expectedVersion, params EventData[] events)
+```
 
-- `void **AppendToStream**(string stream, int expectedVersion, IEnumerable<EventData> events)`
+```csharp
+void AppendToStream(string stream, int expectedVersion, IEnumerable<EventData> events)
+```
 
-- `void **AppendToStream**(string stream, int expectedVersion, params EventData[] events)`
+```csharp
+void AppendToStream(string stream, int expectedVersion, params EventData[] events)
+```
 
-###Using a transaction to append to a stream across multiple writes
+### Using a transaction to append to a stream across multiple writes
 
-####On `EventStoreConnection`:
+#### On `EventStoreConnection`:
 
-- `Task&lt;EventStoreTransaction&gt; **StartTransactionAsync**(string stream, int expectedVersion)`
+```csharp
+Task<EventStoreTransaction> StartTransactionAsync(string stream, int expectedVersion)
+```
 
-- `EventStoreTransaction **StartTransaction**(string stream, int expectedVersion)`
+```csharp
+EventStoreTransaction StartTransaction(string stream, int expectedVersion)
+```
 
-- `EventStoreTransaction **ContinueTransaction**(long transactionId)`
+```csharp
+EventStoreTransaction ContinueTransaction(long transactionId)
+```
 
-####On `EventStoreTransaction`:
+#### On `EventStoreTransaction`:
 
-- `Task **WriteAsync**(IEnumerable&lt;EventData&gt; events)`
+```csharp
+Task WriteAsync(IEnumerable<EventData> events)
+```
 
-- `Task **WriteAsync**(params EventData[] events)`
+```csharp
+Task WriteAsync(params EventData[] events)
+```
 
-- `void **Write**(IEnumerable&lt;EventData&gt; events)`
+```csharp
+void Write(IEnumerable<EventData> events)
+```
 
-- `void **Write**(params EventData[] events)`
+```csharp
+void Write(params EventData[] events)
+```
 
-- `Task **CommitAsync**()`
+```csharp
+Task CommitAsync()
+```
 
-- `void **Commit**()`
+```csharp
+void Commit()
+```
 
-- `void **Rollback**()`
+```csharp
+void Rollback()
+```
 
-##EventData
+## EventData
 
 The writing methods all use a type named `EventData` to represent an event to be stored. Instances of `EventData` are immutable.
 
@@ -53,24 +81,24 @@ The Event Store does not have any built-in serialization, so the body and metada
 
 The members on `EventData` are:
 
-- `Guid **EventId**` - A unique ID for the event. This is used in idempotency checks (see below).
+- `Guid EventId` - A unique ID for the event. This is used in idempotency checks (see below).
 
-- `string **Type**` - The name of the event type. This can be used later for [pattern matching in projections](wiki/Pattern-Matching-%28Projections%29), so should be a &ldquo;friendly&rdquo; name rather than a CLR type name, for example.
+- `string Type` - The name of the event type. This can be used later for [pattern matching in projections](wiki/Pattern-Matching-%28Projections%29), so should be a “friendly” name rather than a CLR type name, for example.
 
-- `bool **IsJson**` - If the data and metadata fields are serialized as JSON, this should be set to true. Setting this to `true` will cause the projections framework to attempt to deserialize the data and metadata later.
+- `bool IsJson` - If the data and metadata fields are serialized as JSON, this should be set to true. Setting this to `true` will cause the projections framework to attempt to deserialize the data and metadata later.
 
-- `byte[] **Data**` - The serialized data representing the event to be stored.
+- `byte[] Data` - The serialized data representing the event to be stored.
 
-- `byte[] **Metadata**` - The serialized data representing metadata about the event to be stored.
+- `byte[] `Metadata` - The serialized data representing metadata about the event to be stored.
 
-##Appending to a stream in a single write
+## Appending to a stream in a single write
 
 The `AppendToStreamAsync` and `AppendToStream` write events atomically to the end of a stream, working in an async and blocking manner respectively.
 
 The parameters are:
 
-- `string **stream**` - the name of the stream to which to append.
+- `string `stream` - the name of the stream to which to append.
 
-- `int **expectedVersion**` - the version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](Optimistic-Concurrency-&-Idempotence) for a broader discussion of this.
+- `int `expectedVersion` - the version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](Optimistic-Concurrency-&-Idempotence) for a broader discussion of this.
 
-- `IEnumerable&lt;EventData&gt; **events**` - the events to append. There is also an overload of each method which takes the events as a `params` array.
+- `IEnumerable<EventData> `events` - the events to append. There is also an overload of each method which takes the events as a `params` array.
