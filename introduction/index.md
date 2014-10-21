@@ -7,7 +7,7 @@ This document is intended to be an introduction to the concepts behind the Event
 
 ## What is an Event Store?
 
-The Event Store is a database for supporting the concept of [Event Sourcing]. Event Sourcing is a very old idea that has become popular again over recent years. As we will see there are many interesting opportunities that can become available when a problem is looked at through an Event Sourcing perspective.
+The Event Store is a database for supporting the concept of Event Sourcing. Event Sourcing is a very old idea that has become popular again over recent years. As we will see there are many interesting opportunities that can become available when a problem is looked at through an Event Sourcing perspective.
 
 If you happen to be familiar with functional programming, you may wish to jump to the Event Store viewed as a functional database section.
 
@@ -23,13 +23,13 @@ The goal of this section is to introduce the concept of event sourcing and to sh
 
 *An event is something that has happened in the past.*
 
-All events should be represented as verbs in the past tense such as CustomerRelocated, CargoShipped, or InventoryLossageRecorded. For those who speak French, it should be in Passé Composé - they are things that have completed in the past.
+All events should be represented as verbs in the past tense such as CustomerRelocated, CargoShipped, or InventoryLossageRecorded. For those who speak French, it should be in Passé Composé. They are things that have completed in the past.
 
-There are interesting examples in the English language where it is tempting to use nouns as opposed to verbs in the past tense, for "Earthquake" or "Capsize", as a congressman recently worried about Guam. Avoid the temptation to use names like this; instead stick with the usage of verbs in the past tense when creating Domain Events.
+There are interesting examples in the English language where it is tempting to use nouns as opposed to verbs in the past tense, for “Earthquake” or “Capsize”, as a congressman recently worried about Guam. Avoid the temptation to use names like this. Instead stick with the usage of verbs in the past tense when creating Domain Events.
 
-It is absolutely imperative that events always be verbs in the past tense, as they are part of the Ubiquitous Language, if a Domain Driven Design approach is being taken. Consider the differences in the Ubiquitous Language when we discuss the side effects from relocating a customer - the event makes the concept explicit where as previously the changes that would occur within an aggregate or between multiple aggregates were left as an implicit concept that needed to be explored and defined.
+It is absolutely imperative that events always be verbs in the past tense, as they are part of the Ubiquitous Language, if a Domain Driven Design approach is being taken. Consider the differences in the Ubiquitous Language when we discuss the side effects from relocating a customer. The event makes the concept explicit where as previously the changes that would occur within an aggregate or between multiple aggregates were left as an implicit concept that needed to be explored and defined.
 
-As an example, in most systems the fact that a side effect occurred is simply found by a tool such as Hibernate or Entity Framework. If there is a change to the side effects of a use case, it is an implicit concept. The introduction of the event makes the concept explicit and part of the Ubiquitous Language; relocating a customer does not just change some stuff - relocating a customer produces a <code>CustomerRelocatedEvent</code> which is explicitly defined within the language.
+As an example, in most systems the fact that a side effect occurred is simply found by a tool such as Hibernate or Entity Framework. If there is a change to the side effects of a use case, it is an implicit concept. The introduction of the event makes the concept explicit and part of the Ubiquitous Language. Relocating a customer does not just change some stuff; relocating a customer produces a `CustomerRelocatedEvent` which is explicitly defined within the language.
 
 In terms of code, an event is simply a data holding structure such as this:
 
@@ -48,21 +48,21 @@ public class InventoryItemDeactivated {
 
 ### Other definitions
 
-There is a related concept to a Domain Event in this description that is defined in Streamlined Object Modeling (SOM). Many people use the term "Domain Event" in SOM when discussing "The Event Principle":
+There is a related concept to a Domain Event in this description that is defined in Streamlined Object Modeling (SOM). Many people use the term “Domain Event” in SOM when discussing “The Event Principle”:
 
 > Model the event of people interacting at a place with a thing with a transaction object. Model a point-in-time interaction as a transaction with a single timestamp; model a time-interval interaction as a transaction with multiple timestamps. <cite>Jill Nicola, 2002ll, p. 23</cite>
 
 Although many people use the terminology of a Domain Event to describe this concept the terminology does not have the same definition as a Domain Event in the context of this document. SOM uses another terminology for the concept that better describes what the object is, a Transaction. The concept of a transaction object is an important one in a domain and absolutely deserves to have a name. An example of such a transaction might be a player swinging a bat, this is an action that occurred at a given point in time and should be modeled as such in the domain, this is not however the same as a Domain Event.
 
-This also differs from Martin Fowler's example of what a Domain Event is:
+This also differs from Martin Fowler’s example of what a Domain Event is:
 
-> Example: I go to Babur's for a meal on Tuesday, and pay by credit card. This might be modeled as an event, whose type is "Make Purchase", whose subject is my credit card, and whose occurred date is Tuesday. If Babur's uses an old manual system and doesn't transmit the transaction until Friday, then the noticed date would be Friday. <cite>Fowler</cite>
+> Example: I go to Babur’s for a meal on Tuesday, and pay by credit card. This might be modeled as an event, whose type is “Make Purchase”, whose subject is my credit card, and whose occurred date is Tuesday. If Babur’s uses an old manual system and doesn’t transmit the transaction until Friday, then the noticed date would be Friday. <cite>Fowler</cite>
 
-Furthermore 
+Furthermore
 
 > By funneling inputs of a system into streams of Domain Events you can keep a record of all the inputs to a system. This helps you to organize your processing logic, and also allows you to keep an audit log of the system. <cite>Fowler</cite> 
 
-The astute reader may pick up that what Martin is actually describing here is a command - the language "Make Purchase" is wrong for if this is to be considered an event. A purchase was made - therefore, it makes far more sense to introduce a PurchaseMade event.
+The astute reader may pick up that what Martin is actually describing here is a command - the language “Make Purchase” is wrong for if this is to be considered an event. A purchase was made therefore it makes far more sense to introduce a PurchaseMade event.
 
 Martin did actually make a purchase at the location, they did actually charge his credit card, and he likely ate and enjoyed his food. All of these things are in the past tense, they have already happened and cannot be undone.
 
@@ -70,7 +70,7 @@ An example such as the sales example given also tends to lead towards a secondar
 
 A further example of the linguistic problems involved can be shown in error conditions. How should the domain handle the fact that a client told it to do something that it cannot? This condition can exist for many reasons but let's imagine a simple one of the client simply not having enough information to be able to source the event in a known correct way.
 
-Linguistically the command/event separation makes much more sense here as the command arrives in the imperative "Place Sale" while the event is in the past tense "SaleCompleted". It is quite natural for the domain to reject a client attempting to "Place a sale"; it is not natural for the domain to tell the client that something in the past tense no longer happened. Consider the discussion with a domain expert; does the domain have a time machine? Parallel realities are far too complex and costly to model in most business systems.
+Linguistically the command/event separation makes much more sense here as the command arrives in the imperative “Place Sale” while the event is in the past tense “SaleCompleted”. It is quite natural for the domain to reject a client attempting to “Place a sale”; it is not natural for the domain to tell the client that something in the past tense no longer happened. Consider the discussion with a domain expert; does the domain have a time machine? Parallel realities are far too complex and costly to model in most business systems.
 
 These are exactly the problems that have led to the separation of the concepts of Commands and Events. This separation makes the language much clearer and although subtle it tends to lead developers towards a clearer understanding of context based solely on the language being used. Dual definitions of a concept force the developer to recognize and distinguish context, this weight can translate into both ramp up time for new developers on a project and another thing a member of the team needs to remember. Anytime a team member needs to remember something to distinguish context there is a higher probability that it will be overlooked or mistaken for another context. Being explicit in the language and avoiding dual definitions helps make things clearer both for domain experts, the developers, and anyone who may be consuming the API.
 
@@ -81,7 +81,7 @@ When most people consider storage for an object they tend to think about it in a
 Consider for a moment the creation of a small Order object for a web based sale system. Most developers would envision something similar to what is represented in Figure 1. That is a structural viewpoint of what the Order is. An Order has n Line Items and Shipping Information. Of course this is a simplified view of what an Order is, but it can be seen that the focus is upon the structure of the order and its parts.
 
 ![A simplified structural model of an order][1] 
-This is not the only way that this data can be viewed. Previously in the area of discussions there was a discussion about the concept of a transaction. Developers deal with the concept of transactions regularly, they can be viewed as representing the change between a point and the next subsequent point. They are also regularly called "Deltas".
+This is not the only way that this data can be viewed. Previously in the area of discussions there was a discussion about the concept of a transaction. Developers deal with the concept of transactions regularly, they can be viewed as representing the change between a point and the next subsequent point. They are also regularly called “Deltas”.
 
 The delta is between two static states can always be defined but more often than not this is left to be an implicit concept, usually relegated to a framework such as Hibernate in the Java world or Entity Framework in the Microsoft world. These frameworks save the original state and then calculate the differences with the new state and update the backing data model accordingly. The making of these deltas explicit can be highly valuable both in terms of technical benefits and more importantly in business benefits.
 
@@ -268,9 +268,11 @@ How do software teams justify looking at their Magic 8 Ball to predict what the 
 
 Much of what we have discussed can be looked at through a functional programming perspective as well. For developers in functional languages such as Scala or Haskell this should feel natural to you, for C# developers it should feel familiar, and for Java developers I hear that Scala is a nice language. All kidding aside...
 
-When we "replay" an event stream we are returning a series of events. An event is essentially a serialized method call. We left fold something that redefines what those methods mean to us today in order to get our current state. This can be seen explicitly when looking at how the projections work in JavaScript. We define a function as:
+When we “replay” an event stream we are returning a series of events. An event is essentially a serialized method call. We left fold something that redefines what those methods mean to us today in order to get our current state. This can be seen explicitly when looking at how the projections work in JavaScript. We define a function as:
 
-<pre>when([SomePatternMatch], function(state, event) { return new state; });</pre>
+```
+when([SomePatternMatch], function(state, event) { return new state; });
+```
 
 These functions are then chained over the event stream resulting at the end with a state object. The state is passed from one function to the next allowing each function to transform it. Said differently, Current State is a [left fold][6] of previous facts. We can further continue this to say that a snapshot is nothing but a memoization of the left fold. When looked at from this perspective one could state that an Event Store is actually a functional database. [CQRS Video]: http://dddcqrs.com [Event Sourcing]: http://martinfowler.com/eaaDev/EventSourcing.html [Getting Started]: http://todo
 
@@ -280,5 +282,3 @@ These functions are then chained over the event stream resulting at the end with
  [4]: img/replaying-without-snapshot.png "An event stream"
  [5]: img/replaying-with-snapshot.png "An event stream with embedded snapshot"
  [6]: http://en.wikipedia.org/wiki/Fold_%28higher-order_function%29
-
-![Google analytics pixel](https://gaproxy-1.apphb.com/UA-40176181-1/Wiki/Event-Sourcing-Basics/)
