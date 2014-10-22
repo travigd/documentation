@@ -15,9 +15,9 @@ $white-off: #D3DBE3;
 }
 
 html {
-    font-size: 100%;
-    @media all and (max-width: 600px), all and (max-device-width: 600px) {
-        font-size: 87.5%;
+    font-size: 87.5%;
+    @media (min-width: 45rem) {
+        font-size: 100%;
     }
 }
 
@@ -65,12 +65,13 @@ pre, code {
 }
 
 pre {
-    margin: 1.5rem 0 1.5rem -0.75rem;
+    margin: 1.5rem 0;
     padding: 0.75rem;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
-    @media all and (max-width: 45rem), all and (max-device-width: 45rem) {
-        margin: 1.5rem 0;
+    @media (min-width: 45rem) {
+        margin: 1.5rem 0 1.5rem -0.75rem;
+        
     }
     code {
         background-color: transparent;
@@ -156,7 +157,7 @@ pre {
 
 .docs-content {
     float: left;
-    width: calc(100% - 21rem);
+    width: 100%;
     h1 {
         padding: 0 0 1.5rem;
         @extend %underlined;
@@ -170,8 +171,8 @@ pre {
         max-width: 100%;
         max-height: 15rem;
     }
-    @media all and (max-width: 45rem), all and (max-device-width: 45rem) {
-        width: 100%;
+    @media (min-width: 45rem) {
+        width: calc(100% - 21rem);
     }
 }
 
