@@ -3,6 +3,8 @@ title: "Documentation"
 layout: docs
 ---
 
+<p class="docs-lead">This documentation is hosted on GitHub (See <a href="https://github.com/eventstore/docs.geteventstore.com">EventStore/docs.geteventstore.com</a>. We are very much open to pull requests. We have a reward programme for people who make significant contributions to our code and documentation.</p>
+
 Documentation is still a work-in-progress, and [pull requests](https://github.com/eventstore/docs.geteventstore.com) are gratefully accepted! Currently our [blog](http://geteventstore.com/blog) has a lot more information on features which are not yet well documented here. A list of posts is below.
 
 Binaries for the open source version, and information on the commercial versions (which add management and monitoring tools as well as commercial support) are available at the [Event Store website](http://www.geteventstore.com). If you have a commercial support contract, please raise support issues via [Zendesk](http://support.geteventstore.com). Our discussion forum is hosted on [Google Groups](https://groups.google.com/forum/?fromgroups#!forum/event-store).
