@@ -3,7 +3,7 @@ title: "Documentation"
 layout: docs
 ---
 
-<p class="docs-lead">This documentation is hosted on GitHub (See <a href="https://github.com/eventstore/docs.geteventstore.com">EventStore/docs.geteventstore.com</a>. We are very much open to pull requests. We have a reward programme for people who make significant contributions to our code and documentation.</p>
+<p class="docs-lead">This documentation is hosted on GitHub. <a href="https://github.com/eventstore/docs.geteventstore.com">We are very much open to pull requests</a>. We have a reward programme for people who make significant contributions to our code and documentation.</p>
 
 *NOTE: User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line arguments]({{ site.url }}/introduction/command-line-arguments) page).*
 
