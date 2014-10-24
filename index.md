@@ -3,7 +3,7 @@ title: "Documentation"
 layout: docs
 ---
 
-<p class="docs-lead">This documentation is hosted on GitHub. <a href="https://github.com/eventstore/docs.geteventstore.com">We are very much open to pull requests</a>. We have a reward programme for people who make significant contributions to our code and documentation.</p>
+<p class="docs-lead">This documentation is hosted on GitHub. The repository is public, and <a href="https://github.com/eventstore/docs.geteventstore.com">we are very much open to pull requests</a>. We’ve got a bunch of stickers, Ouro plushies, beer tokens and more set aside ready to send out to people who contribute to our code and documentation.</p>
 
 ## Projections
 
