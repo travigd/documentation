@@ -5,12 +5,6 @@ layout: docs
 
 <p class="docs-lead">This documentation is hosted on GitHub (See <a href="https://github.com/eventstore/docs.geteventstore.com">EventStore/docs.geteventstore.com</a>. We are very much open to pull requests. We have a reward programme for people who make significant contributions to our code and documentation.</p>
 
-Documentation is still a work-in-progress, and [pull requests](https://github.com/eventstore/docs.geteventstore.com) are gratefully accepted! Currently our [blog](http://geteventstore.com/blog) has a lot more information on features which are not yet well documented here. A list of posts is below.
-
-Binaries for the open source version, and information on the commercial versions (which add management and monitoring tools as well as commercial support) are available at the [Event Store website](http://www.geteventstore.com). If you have a commercial support contract, please raise support issues via [Zendesk](http://support.geteventstore.com). Our discussion forum is hosted on [Google Groups](https://groups.google.com/forum/?fromgroups#!forum/event-store).
-
-The latest build of the .NET Client API is available as a package named [EventStore.Client](http://nuget.org/packages/EventStore.Client) on NuGet. This is often more up-to-date than the version bundled with the server (which things like the test client utility use). *Note: the Event Store server is versioned separately from the .NET Client API (and any others)*.
-
 *NOTE: User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line arguments]({{ site.url }}/introduction/command-line-arguments) page).*
 
 ## Projections
