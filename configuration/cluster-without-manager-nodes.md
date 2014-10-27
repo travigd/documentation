@@ -1,16 +1,15 @@
 ---
 layout: docs
-title: "Setting up a Cluster"
+title: "Setting up a Cluster using only Database Nodes (OSS)"
 ---
 
-Effective September of 2013 all of the clustering code for Event Store has been open sourced (under the normal BSD-3 license as the rest of the code). This document will look at how you can setup a highly available cluster.
+Effective September of 2013 all of the clustering code for Event Store has been open sourced (under the normal BSD-3 license as the rest of the code). This document will look at how you can setup a highly available cluster using just the open source components.
 
 When setting up a cluster you will generally want an odd number of nodes. This is due to the fact that the Event Store uses a quorum based algorithm to handle high availability. 
 
+##Running on Same Machine
 
-## Running on Same Machine
-
-To start with we will set up three nodes running on a single machine run each command in its own console window, remember that you either need admin privileges or have setup ACLs with IIS if running in windows (no configuration should be needed in *nix). Replace "yourip" with whatever ip you want to run on.
+To start with we will set up three nodes running on a single machine run each command in its own console window, remember that you either need admin privileges or have setup ACLs with IIS if running in windows (no configuration should be needed in Unix-like operating systems). Replace "127.0.0.1" with whatever IP address you want to run on. Note that this must be an interface actually present on the machine.
 
 ```
 start EventStore.ClusterNode.exe --mem-db --log .\logs\log1 --int-ip 127.0.0.1 --ext-ip 127.0.0.1 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=1113 --ext-http-port=1114 --cluster-size=3 --discover-via-dns=false --gossip-seed=127.0.0.1:2113,127.0.0.1:3113
@@ -25,7 +24,7 @@ You should now have three nodes running together in a cluster. If you kill one o
 The main thing of importance here is understanding the "gossip seeds". You are instructing seed locations for when the node first comes up and needs to begin gossiping. Any node can be a seed. By giving each node the other nodes you ensure that there will always be another node to gossip with if a quorum can be built. If you wanted to move this to run on three machines the change would just be changing the ips in the command lines to something such as
 
 ```
-EventStore.ClusterNode.exe --log c:\dbs\cluster\log1 --int-ip 192.168.0.1 --ext-ip 192.168.0.1 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=2113 --ext-http-port=2114 --cluster-size=3 --discover-via-dns=false --gossip-seed=192.168.0.2:2113,192.168.0.3:2113
+EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log1 --int-ip 192.168.0.1 --ext-ip 192.168.0.1 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=2113 --ext-http-port=2114 --cluster-size=3 --discover-via-dns=false --gossip-seed=192.168.0.2:2113,192.168.0.3:2113
 EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log2 --int-ip 192.168.0.2 --ext-ip 192.168.0.2 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=2113 --ext-http-port=2114 --cluster-size=3 --discover-via-dns=false --gossip-seed=192.168.0.1:2113,192.168.0.3:2113
 EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log3 --int-ip 192.168.0.3 --ext-ip 192.168.0.3 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=2113 --ext-http-port=2114 --cluster-size=3 --discover-via-dns=false --gossip-seed=192.168.0.1:2113,192.168.0.2:2113
 ```
