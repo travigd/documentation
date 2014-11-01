@@ -20,7 +20,7 @@ myevent.txt
 ```
 
 ```bash
-ouro@ouroboros:~$ curl -i -d@/home/greg/my:2113/streams/newstream -H "Content-Type:application/json" -H "ES-EventType: SomeEvent" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E"
+ouro@ouroboros:~$ curl -i -d@/home/greg/myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E"
 ```
 
 ```http
@@ -83,7 +83,7 @@ It is generally recommended to include an event id if possible as it will result
 When posting to either the stream or to the returned redirect it is required that clients include the "EventType" header. If you forget to include the header you will be given an error.
 
 ```bash
-ouro@ouroboros:~$ curl -i -d @/home/greg/my:2113/streams/newstream" -H "Content-Type:application/json"
+ouro@ouroboros:~$ curl -i -d @/home/greg/myevent.json "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
 ```
 
 ```http
