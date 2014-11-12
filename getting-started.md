@@ -14,7 +14,7 @@ To start go to http://geteventstore.com and download the binaries into a folder.
 Once you have the zip file unzipped, open up an administrator console. cd into the directory where you have installed the Event Store. On the command line enter:
 
 ```
-EventStore.SingleNode.exe --db ./db --log ./logs
+EventStore.ClusterNode.exe --db ./db --log ./logs
 ```
 
 This will start the EventStore and will put the database in the path ./db and the logs in ./logs. You can view further [command line arguments]({{ site.url }}/introduction/command-line-arguments) (there are many!). It is important to note that it is being run in an admin context because it will start a HTTP server through http.sys. If you were to be running in a more permanent situation you would probably want to provide for an ACL in windows such as:
