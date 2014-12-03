@@ -4,7 +4,7 @@
 
 ## Conventions
 
-### File Naming
+### File Names
 
 - File and directory names are all lowercase.
 - Spaces are replaced with dashes.
