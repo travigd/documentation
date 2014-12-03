@@ -97,6 +97,8 @@ version: "3.0.0"
 Lorem ipsum dolor sit amet…
 ```
 
+For `index.md` pages you should also include `pinned: true`.
+
 ### Formatting and Typesetting
 
 The content of our documentation is written by many developers. This list of basic formatting guidelines should help us maintain a consistent use of language throughout the docs.
