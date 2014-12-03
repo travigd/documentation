@@ -2,6 +2,17 @@
 
 **This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are automatically built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
 
+## Versioning
+
+The Event Store documentation is available for multiple versions of Event Store and its APIs. By default the website shows the documentation for the latest stable release of each component. Current sections and versions are:
+
+| Section      | Versions                           |
+| :----------- | :--------------------------------- |
+| Introduction | Not versioned, always shows latest |
+| Server       | 3.0.1 (latest), 3.0.0              |
+| HTTP API     | 3.0.1 (latest), 3.0.0              |
+| .NET API     | 3.0.1 (latest), 3.0.0              |
+
 ## Conventions
 
 ### File Names
