@@ -1,6 +1,7 @@
 ---
-layout: docs
 title: "Optimistic Concurrency & Idempotence"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 ## Idempotency
