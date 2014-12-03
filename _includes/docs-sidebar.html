@@ -1,60 +1,48 @@
 <ul class="docs-sidebar__list">
-                <li><a href="{{ site.url }}">Home</a></li>
-                <li><span class="docs-sidebar__heading">Getting Started</span>
-                    <ul>
-                        <li><a href="{{ site.url }}/getting-started">Getting Started</a></li>
-                        <li><a href="{{ site.url }}/deploy-with-puppet">Deploy with Puppet</a></li>
-                    </ul>
-                </li>
-                <li><span class="docs-sidebar__heading">Introduction</span>
-                    <ul>
-                        <li><a href="{{ site.url }}/introduction">Event Sourcing Basics</a></li>
-                        <li><a href="{{ site.url }}/introduction/running-the-event-store">Running the Event Store</a></li>
-                        <li><a href="{{ site.url }}/introduction/command-line-arguments">Command Line Arguments</a></li>
-                        <li><a href="{{ site.url }}/introduction/internal-architectural-overview">Internal Architectural Overview</a></li>
-                        <li><a href="{{ site.url }}/introduction/reliability">Reliability</a></li>
-                    </ul>
-                </li>
-                <li><span class="docs-sidebar__heading">Operations</span>
-                    <ul>
-                        <li><a href="{{ site.url }}/configuration/cluster-with-manager-nodes">Clustering (Commercial)</a></li>
-                        <li><a href="{{ site.url }}/configuration/cluster-without-manager-nodes">Clustering (OSS)</a></li>
-                        <li><a href="{{ site.url }}/configuration/database-backup">Database Backup</a></li>
-                    </ul>
+    <li><a href="{{ site.url }}">Home</a></li>
+
+    {% for section in site.top_level_sections %}
+        {% if page.section == section or page.section == "Introduction" %}
+            {% assign sectionClass = "expanded" %}
+        {% else %}
+            {% assign sectionClass = "collapsed" %}
+        {% endif %}
+
+        {% if section == "Introduction" %}
+            {% assign sectionClass = "expanded" %}
+        {% endif %}
+
+        <li>
+            <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__heading {{ sectionClass }}">{{ section }}</span>
+            {% assign pages = site.pages | where:"section",section | where:"exclude_from_sidebar", false %}
+
+            {% assign versions = pages | group_by: "version" | order_by "name" | reverse %}
+            <ul>
+            {% for version in versions %}
+            {% if page.section == section and page.version == version.name %}
+                {% assign versionClass = "expanded" %}
+            {% else %} 
+                {% assign versionClass = "collapsed" %}
+            {% endif %}
+            {% if section == "Introduction" %}
+                {% assign versionClass = "expanded" %}
+            {% endif %}
                 <li>
-                <li><span class="docs-sidebar__heading">Cross-API Concepts</span>
+                    <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__version {{ versionClass }}">{{ version.name }}</span>
                     <ul>
-                        <li><a href="{{ site.url }}/cross-api-concepts/reserved-names">Reserved Names</a></li>
-                        <li><a href="{{ site.url }}/cross-api-concepts/optimistic-concurrency-and-idempotence">Optimistic Concurrency & Idempotence</a></li>
-                        <li><a href="{{ site.url }}/cross-api-concepts/client-error-handling">Client Error Handling</a></li>
-                        <li><a href="{{ site.url }}/cross-api-concepts/which-api">Which API to Use?</a></li>
-                        <li><a href="{{ site.url }}/cross-api-concepts/stream-metadata">Stream Metadata</a></li>
-                        <li><a href="{{ site.url }}/cross-api-concepts/access-control-lists">Access Control Lists</a></li>
+                    {% assign pinnedItems = version.items | where:"pinned", true | order_by: "title" %}
+                    {% assign normalItems = version.items | where:"pinned", false | order_by: "title" %}
+
+                    {% for item in pinnedItems %}
+                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+                    {% endfor %}
+                    {% for item in normalItems %}
+                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+                    {% endfor %}
                     </ul>
                 </li>
-                <li><span class="docs-sidebar__heading">HTTP API</span>
-                    <ul>
-                        <li><a href="{{ site.url }}/http-api/overview">Overview</a></li>
-                        <li><a href="{{ site.url }}/http-api/creating-a-stream">Creating a Stream</a></li>
-                        <li><a href="{{ site.url }}/http-api/writing-to-a-stream">Writing to a Stream</a></li>
-                        <li><a href="{{ site.url }}/http-api/reading-streams">Reading Streams</a></li>
-                        <li><a href="{{ site.url }}/http-api/deleting-a-stream">Deleting a Stream</a></li>
-                        <li><a href="{{ site.url }}/http-api/stream-metadata">Stream Metadata</a></li>
-                        <li><a href="{{ site.url }}/http-api/optional-http-headers">Optional HTTP Headers</a></li>
-                        <li><a href="{{ site.url }}/http-api/architecture-setup">Architecture Setup</a></li>
-                        <li><a href="{{ site.url }}/http-api/security">Security</a></li>
-                        <li><a href="{{ site.url }}/http-api/setting-up-ssl-in-linux">Setting up SSL in Linux</a></li>
-                        <li><a href="{{ site.url }}/http-api/setting-up-ssl-in-windows">Setting up SSL in Windows</a></li>
-                        <li><a href="{{ site.url }}/http-api/setting-up-varnish-in-linux">Setting up Varnish in Linux</a></li>
-                        <li><a href="{{ site.url }}/http-api/errors">Errors</a></li>
-                    </ul>
-                </li>
-                <li><span class="docs-sidebar__heading">.NET API</span>
-                    <ul>
-                        <li><a href="{{ site.url }}/dotnet-api/overview">Overview</a></li>
-                        <li><a href="{{ site.url }}/dotnet-api/connection-options">Connection Options</a></li>
-                        <li><a href="{{ site.url }}/dotnet-api/writing-to-a-stream">Writing to a Stream</a></li>
-                        <li><a href="{{ site.url }}/dotnet-api/reading-streams">Reading Streams</a></li>
-                    </ul>
-                </li>
+            {% endfor %}
             </ul>
+        </li>        
+    {% endfor %}
+</ul>
