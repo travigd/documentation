@@ -2,6 +2,7 @@
 title: "Overview"
 section: "HTTP API"
 version: 3.0.1
+pinned: true
 ---
 
 The Event Store provides a native interface of AtomPub over HTTP. This section
