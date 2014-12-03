@@ -4,29 +4,6 @@
 >
 > What follows is documentation for how to use the Event Store documentation. It’s really meta. If you’re planning to make updates or contributions then read on; otherwise head on over to the [website](http://docs.geteventstore.com).
 
-## How to Contribute
-
-### Small Edits
-
-1. Make changes (fix typos or grammar, improve wording etc)
-2. Check to see if older versions need updating too.
-3. Send a pull request!
-
-### New Pages and Sections
-
-1. Create new pages and/or sections. Follow the [Conventions](#conventions) below.
-2. If you create a new section, add an entry for it to the `top_level_sections` list on `_config.yml` in an appropriate place (this list determines the order the sections are listed in the navigation sidebar).
-3. Send a pull request!
-
-### Creating a New Version
-
-1. Duplicate the section’s latest version directory and rename it to reflect the latest version number. For example, copy `/server/3.0.0/` to `/server/3.0.1/`.
-
-   > Pre-release documentation should be denoted with `-pre` on the version number, like `/server/3.0.1-pre/`. This way the documentation will show up on the website, but won’t be the default version.
-2. In the new version’s directory update all `.md` files to include the new version number in the front matter (see [Front Matter](#front-matter) below).
-3. Make edits to files in the new version as appropriate. Pages can be created or deleted when necessary.
-4. Send a pull request!
-
 ## Versioning
 
 The Event Store documentation is available for multiple versions of Event Store and its APIs. By default the website shows documentation for the latest stable release of each component. Current sections and versions are:
@@ -37,6 +14,31 @@ The Event Store documentation is available for multiple versions of Event Store 
 | Server       | 3.0.1 (latest), 3.0.0              |
 | .NET API     | 3.0.1 (latest), 3.0.0              |
 | HTTP API     | 3.0.1 (latest), 3.0.0              |
+
+## How to Contribute
+
+### Small Edits
+
+1. Make changes (fix typos or grammar, improve wording etc).
+2. Check to see if older versions need updating too.
+3. Send a pull request!
+
+### New Pages and Sections
+
+1. Create new pages and/or sections. Follow the [Conventions](#conventions) below.
+2. If you create a new section, add an entry for it to the `top_level_sections` list on `_config.yml` in an appropriate place (this list determines the order the sections are listed in the navigation sidebar).
+3. Add any new sections to the table at the top of this README.
+4. Send a pull request!
+
+### Creating a New Version
+
+1. Duplicate the section’s latest version directory and rename it to reflect the latest version number. For example, copy `/server/3.0.0/` to `/server/3.0.1/`.
+
+   > Pre-release documentation should be denoted with `-pre` on the version number, like `/server/3.0.1-pre/`. This way the documentation will show up on the website, but won’t be the default version.
+2. In the new version’s directory update all `.md` files to include the new version number in the front matter (see [Front Matter](#front-matter) below).
+3. Make edits to files in the new version as appropriate. Pages can be created or deleted when necessary.
+4. Update the version table at the top of this README.
+5. Send a pull request!
 
 ## Conventions
 
