@@ -53,4 +53,6 @@ title: "Writing to a Stream"
 section: ".NET API"
 version: "3.0.0"
 ---
+
+Lorem ipsum dolor sit amet…
 ```
