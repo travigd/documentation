@@ -4,7 +4,7 @@
 
 ## Versioning
 
-The Event Store documentation is available for multiple versions of Event Store and its APIs. By default the website shows the documentation for the latest stable release of each component. Current sections and versions are:
+The Event Store documentation is available for multiple versions of Event Store and its APIs. By default the website shows documentation for the latest stable release of each component. Current sections and versions are:
 
 | Section      | Versions                           |
 | :----------- | :--------------------------------- |
@@ -44,7 +44,7 @@ http://docs.geteventstore.com/dotnet-api/3.0.0/writing-to-a-stream/index.html
 
 ### Front Matter
 
-Every page written in markdown has front matter, which specifies information about the page to Jekyll. We specify a title for the page, the section it belongs to, and the version for that section. Title and section should be [title case](http://en.wiktionary.org/wiki/title_case), and the version number should be in the format X.X.X.
+Every page written for Jekyll in markdown has front matter, which specifies information about the page. We specify a title for the page, the section it belongs to, and the version for that section. Title and section should be [title case](http://en.wiktionary.org/wiki/title_case), and the version number should be in the format X.X.X.
 
 For example:
 ```jekyll
