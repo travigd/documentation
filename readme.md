@@ -39,7 +39,17 @@ The Event Store documentation is available for multiple versions of Event Store 
 3. Make edits to files in the new version as appropriate. Pages can be created or deleted when necessary.
 4. To change the default version of a section (i.e. the one that displays when you visit the un-versioned URL) edit the `index.md` file in the section root to reflect the new version number.
 
-   For example, if you were moving the `dotnet-api` section to `3.0.1` you would edit `/dotnet-api/index.md` to include the line `latest-version: 3.0.1`. Now users who visit `http://docs.geteventstore.com/dotnet-api/` will be redirected to `http://docs.geteventstore.com/dotnet-api/3.0.1/`.
+   For example, if you were moving the `dotnet-api` section to `3.0.1` you would edit `/dotnet-api/index.md` to include the line `latest-version: 3.0.1`. Now users who visit
+
+   ```
+   http://docs.geteventstore.com/dotnet-api/
+   ```
+
+   will be redirected to
+
+   ```
+   http://docs.geteventstore.com/dotnet-api/3.0.1/
+   ```
 4. Update the version table at the top of this README.
 5. Send a pull request!
 
