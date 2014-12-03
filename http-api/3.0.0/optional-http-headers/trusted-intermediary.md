@@ -1,6 +1,8 @@
 ---
-layout: docs
 title: "Optional HTTP Headers: Trusted Intermediary"
+section: "HTTP API"
+version: 3.0.0
+exclude_from_sidebar: true
 ---
 
 The trusted intermediary header is related to supporting a common security architecture. There are thousands of possible methods of handling authentication in the world today and it is impossible for us to support them all. The general idea behind the header is that you can configure a trusted intermediary to handle the authentication instead of the Event Store.

@@ -1,6 +1,7 @@
 ---
-layout: docs
 title: "Reserved Names"
+section: "Server"
+version: 3.0.0
 ---
 
 The Event Store uses event streams and metadata to support features internally. For example there are metadata flags on streams and events.

@@ -1,6 +1,6 @@
 ---
-layout: docs
 title: "Event Sourcing Basics"
+section: "Introduction"
 ---
 
 This document is intended to be an introduction to the concepts behind the Event Store.

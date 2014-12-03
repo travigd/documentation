@@ -1,6 +1,7 @@
 ---
-layout: docs
 title: "Optimistic Concurrency & Idempotence"
+section: ".NET API"
+version: 3.0.0
 ---
 
 Writing supports an optimistic concurrency check on the version of the stream to which events are to be written. The method of specifying what the expected version is depends whether writes are being made using the HTTP or .NET API.

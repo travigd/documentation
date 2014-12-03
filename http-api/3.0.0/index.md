@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Overview"
+title: "Overview"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 The Event Store provides a native interface of AtomPub over HTTP. This section

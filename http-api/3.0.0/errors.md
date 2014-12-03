@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Errors"
+title: "Errors"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 There are many error conditions that can be returned from the writing or reading of a stream. All of these can be identified by their status codes and should be relatively easy to diagnose. This document lists some of the cases that can result in errors.

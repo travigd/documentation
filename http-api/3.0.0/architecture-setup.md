@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Architecture Setup"
+title: "Architecture Setup"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 This document will discuss the deployment possibilities for the Event Store when being used for AtomPub. Details of installing various parts discussed are contained in other documents. You should however also read up on other tools when mentioned.

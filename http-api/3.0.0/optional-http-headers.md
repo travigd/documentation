@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Optional HTTP Headers"
+title: "Optional HTTP Headers"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 The Event Store supports the use of a few custom HTTP headers for requests. 

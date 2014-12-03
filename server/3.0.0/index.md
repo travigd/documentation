@@ -1,6 +1,7 @@
 ---
-layout: docs
 title: "Running the Event Store"
+section: "Server"
+version: 3.0.0
 ---
 
 The Event Store runs as a server, to which many clients can connect either over HTTP or using one of the client APIs which operate using TCP. The open source version can run a single server node, whereas the commercial version can operate a highly available cluster of servers.

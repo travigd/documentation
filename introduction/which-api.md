@@ -1,6 +1,6 @@
 ---
-layout: docs
 title: "Which API to Use?"
+section: "Introduction"
 ---
 
 There are multiple interface over which you can communicate with the Event

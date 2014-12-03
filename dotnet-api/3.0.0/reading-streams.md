@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: ".NET API: Reading Specific Streams"
+title: "Reading Specific Streams"
+section: ".NET API"
+version: 3.0.0
 ---
 
 The client API can be used to read events from a stream starting from either end of the stream. There are a pair of methods for each direction, one asynchronous and one blocking. The blocking variants use the asynchronous versions underneath, but block awaiting a result.

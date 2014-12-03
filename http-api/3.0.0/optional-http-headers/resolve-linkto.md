@@ -1,6 +1,8 @@
 ---
-layout: docs
 title: "Optional HTTP Headers: Resolve LinkTo"
+section: "HTTP API"
+version: 3.0.0
+exclude_from_sidebar: true
 ---
 
 When using projections you can have links placed into another stream. By default the Event Store will always resolve linkTos for you returning the event that the link points to. You can use the ES-ResolveLinkTos: false HTTP header to tell the Event Store to return you the actual link and to not resolve it.

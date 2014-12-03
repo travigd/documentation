@@ -1,6 +1,8 @@
 ---
-layout: docs
 title: "Optional HTTP Headers: EventType"
+section: "HTTP API"
+version: 3.0.0
+exclude_from_sidebar: true
 ---
 
 *Note that this event is only available in version 3.0 or higher of the event store*

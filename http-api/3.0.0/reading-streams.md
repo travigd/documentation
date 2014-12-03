@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Reading Streams"
+title: "Reading Streams"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 Reading from streams with AtomPub can be a bit confusing if you have not done it before but we will go through in this document how reading works. Luckily for many environments the AtomPub protocol has already been implemented! *Being listed or not listed here by no means shows our official support for any of these.* The Event Store is compliant with the [Atom 1.0 Specification] (http://tools.ietf.org/html/rfc4287) as such many other systems have built in support for the Event Store.

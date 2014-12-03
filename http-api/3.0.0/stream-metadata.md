@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Stream Metadata"
+title: "Stream Metadata"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 Every stream in the Event Store has metadata associated with it. Internally,

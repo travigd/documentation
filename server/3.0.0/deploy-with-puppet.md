@@ -1,6 +1,7 @@
 ---
-layout: docs
 title: "Deploy with Puppet"
+section: "Server"
+version: 3.0.0
 ---
 
 **Currently v2**

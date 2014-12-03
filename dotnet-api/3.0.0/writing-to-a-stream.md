@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: ".NET API: Writing to a Stream"
+title: "Writing to a Stream"
+section: ".NET API"
+version: 3.0.0
 ---
 
 The client API can be used to write one or more events to a stream atomically. This can be done either by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.

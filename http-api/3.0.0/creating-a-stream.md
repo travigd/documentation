@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Creating a Stream"
+title: "Creating a Stream"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 *NOTE: As of Event Store 2.0.0, there is no explicit stream creation operation, as there is no longer a `$StreamCreated` as the first event in every stream.*

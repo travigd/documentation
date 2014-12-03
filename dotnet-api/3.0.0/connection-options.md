@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: ".NET API: Connection Options"
+title: "Connection Options"
+section: ".NET API"
+version: 3.0.0
 ---
 
 There are a number of different options which can be specified when making a connection to the Event Store using the client API. These options are encapsulated into an object of type `ConnectionSettings`, for which there is a fluent builder which aims to be reasonably descriptive. The `ConnectionSettings` object is passed as a parameter when creating whichever `IEventStoreConnection` implementation is needed.

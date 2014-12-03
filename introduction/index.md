@@ -1,6 +1,6 @@
 ---
-layout: docs
 title: "Getting Started"
+section: "Introduction"
 ---
 
 This document describes how to get started with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.

@@ -1,6 +1,6 @@
 ---
-layout: docs
 title: "Internal Architectural Overview"
+section: "Introduction"
 ---
 
 ## Messaging

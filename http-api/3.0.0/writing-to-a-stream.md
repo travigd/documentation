@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Writing to a Stream"
+title: "Writing to a Stream"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 Writing to a stream over http is simply a POST to the resource of the stream. If the stream does not exist then the stream will be implicitly created.

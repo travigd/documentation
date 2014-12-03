@@ -1,6 +1,8 @@
 ---
-layout: docs
 title: "Optional HTTP Headers: HardDelete"
+section: "HTTP API"
+version: 3.0.0
+exclude_from_sidebar: true
 ---
 
 The ES-HardDelete header controls the way to delete a stream. By default the Event Store will soft delete a stream allowing that stream to later be reused. If you set the ES-HardDelete header the stream will be permanently deleted.

@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Setting up SSL in Linux"
+title: "Setting up SSL in Linux"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 Setting up SSL in linux is the same as setting up any mono httplistener in linux for SSL. Numerous examples of this can be found online. We have copy/pasted one that we tested to work out. This methodology will likely work for other systems such as openbsd as well.

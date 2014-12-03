@@ -1,6 +1,7 @@
 ---
-layout: docs
 title: "Stream Metadata"
+section: "Server"
+version: 3.0.0
 ---
 
 Every stream in the event store has metadata associated with it. The Event Store itself supports some values being set in the metadata and you can write your own arbitrary data into stream metadata if you wish (such as how often to snapshot for your own code). All names starting with `$` are however a reserved space for internal settings. The currently supported internal settings are:

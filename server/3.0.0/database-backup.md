@@ -1,6 +1,7 @@
 ---
-layout: docs
 title: "Database Backup"
+section: "Server"
+version: 3.0.0
 ---
 
 Backing up an Event Store database is straightforward, however relies on having the steps carried out in the correct order as detailed below. *Many people do not rely on hot backups in a highly available cluster but instead increase their node counts to retain further copies of data.*

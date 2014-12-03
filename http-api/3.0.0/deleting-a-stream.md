@@ -1,6 +1,7 @@
 ---
-layout: docs
-title: "HTTP API: Deleting a Stream"
+title: "Deleting a Stream"
+section: "HTTP API"
+version: 3.0.0
 ---
 
 To delete a stream over the Atom interface is quite simple. Simply DELETE the resource. This process can be seen in the following curl commands and should be available from any environment.

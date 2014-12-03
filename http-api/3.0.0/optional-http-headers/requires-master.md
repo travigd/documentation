@@ -1,6 +1,8 @@
 ---
-layout: docs
 title: "Optional HTTP Headers: Requires Master"
+section: "HTTP API"
+version: 3.0.0
+exclude_from_sidebar: true
 ---
 
 When running in a clustered environmenty there are times when you only want an operation to happen on the current leader node. A client could get information in an eventually consistent fashion by gossiping with the servers (the TCP client included with the multi-node version does this).

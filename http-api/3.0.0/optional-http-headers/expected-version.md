@@ -1,6 +1,8 @@
 ---
-layout: docs
 title: "Optional HTTP Headers: Expected Version"
+section: "HTTP API"
+version: 3.0.0
+exclude_from_sidebar: true
 ---
 
 When writing to a stream it is often wanted to use an "Expected Version". This allows for optimistic concurrency with a stream, IE: my write can only succeed if I have seen everyone else's writes. This is used most commonly for a domain object projection. ExpectedVersion can be set as ES-ExpectedVersion: #.

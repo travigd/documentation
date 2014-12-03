@@ -1,6 +1,8 @@
 ---
-layout: docs
 title: "Optional HTTP Headers: LongPoll"
+section: "HTTP API"
+version: 3.0.0
+exclude_from_sidebar: true
 ---
 
 The ES-LongPoll header is used to instruct the server that when on the head link of a stream and no data is available the server should wait some period of time to see if data becomes available.
