@@ -6,7 +6,21 @@
 
 ## How to Contribute
 
-We absolutely welcome pull requests on this repository. If you spot a mistake, or want to contribute new content to our documentation please read on to find out how to make changes.
+### Small Edits
+
+If you notice a mistake in our docs, or if you feel you have a better way of explaining some concept described therein, please send us a pull request on this repository with the edits made. Be aware that any errors you correct may be present in earlier versions, so check those too and edit as appropriate.
+
+### New Pages and Sections
+
+New pages and sections can be added. Follow the [conventions](#conventions) below.
+
+### Moving to a New Version
+
+Sections can be versioned.
+
+1. Make copy of the latest version’s directory and rename it to reflect the latest version number. For example, copy `server/3.0.0` to `server/3.0.1`.
+   > Pre-release documentation should be denoted with `-pre` on the version number, like `server/3.0.1-pre`
+2. In the new version’s directory update all `.md` files to include the new version number in the front matter.
 
 ## Versioning
 
