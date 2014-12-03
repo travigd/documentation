@@ -1,16 +1,20 @@
 # Event Store Documentation
 
-This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).
-
-The website is hosted using [GitHub Pages](https://pages.github.com) from the gh-pages branch of this repository. Pages are built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
+**This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are automatically built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
 
 ## Conventions
 
 ### File Naming
 
-- File names are all lowercase.
-- Spaces are replaced with dashes (e.g. `dotnet-api.md`).
+- File and directory names are all lowercase.
+- Spaces are replaced with dashes.
 - Markdown files take the `.md` extension.
+
+For example:
+
+```
+/api/dotnet/3.0.0/writing-to-a-stream.md
+```
 
 ### Front Matter
 
