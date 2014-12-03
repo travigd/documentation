@@ -27,6 +27,13 @@ For example:
 /api/dotnet/3.0.0/writing-to-a-stream.md
 ```
 
+### URLs
+
+- `http://docs.geteventstore.com/`
+- `http://docs.geteventstore.com/[SECTION]/`
+- `http://docs.geteventstore.com/[SECTION]/[VERSION]/`
+- `http://docs.geteventstore.com/[SECTION]/[VERSION]/[FILENAME]/`
+
 ### Front Matter
 
 Every page written in markdown has front matter, which specifies information about the page to Jekyll. We specify a title for the page, the section it belongs to, and the version for that section. Title and section should be [title case](http://en.wiktionary.org/wiki/title_case), and the version number should be in the format X.X.X.
