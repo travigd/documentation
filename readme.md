@@ -12,14 +12,17 @@ If you notice a mistake in our docs, or if you feel you have a better way of exp
 
 ### New Pages and Sections
 
-New pages and sections can be added. Follow the [Conventions](#conventions) below.
+1. Create new pages and/or sections. Follow the [Conventions](#conventions) below.
+2. If you create a new section, add an entry to the `top_level_sections` list on `_config.yml`.
 
 ### Creating a New Version
 
 1. Duplicate the section’s latest version directory and rename it to reflect the latest version number. For example, copy `/server/3.0.0/` to `/server/3.0.1/`.
 
    > Pre-release documentation should be denoted with `-pre` on the version number, like `/server/3.0.1-pre/`. This way the documentation will show up on the website, but won’t be the default version.
-2. In the new version update all `.md` files to include the new version number in the front matter (see [Front Matter](#front-matter) below).
+2. In the new version’s directory update all `.md` files to include the new version number in the front matter (see [Front Matter](#front-matter) below).
+3. Make edits to files in the new version as appropriate. Pages can be created or deleted when necessary.
+4. 
 
 ## Versioning
 
