@@ -104,3 +104,4 @@ The content of our documentation is written by many developers. This list of bas
 - **Event Store** is two words in title case.
 - **.NET** is a brand name, and should always be set in uppercase.
 - **Acronyms** should always be set in uppercase.
+- **Code samples** should not have a line length of more than 80 characters.
