@@ -8,12 +8,15 @@
 
 ### Small Edits
 
-If you notice a mistake in our docs, or if you feel you have a better way of explaining some concept described therein, please send us a pull request on this repository with the edits made. Be aware that any errors you correct may be present in earlier versions so check those too and edit as appropriate.
+1. Make changes (fix typos or grammar, improve wording etc)
+2. Check to see if older versions need updating too.
+3. Send a pull request!
 
 ### New Pages and Sections
 
 1. Create new pages and/or sections. Follow the [Conventions](#conventions) below.
 2. If you create a new section, add an entry for it to the `top_level_sections` list on `_config.yml` in an appropriate place (this list determines the order the sections are listed in the navigation sidebar).
+3. Send a pull request!
 
 ### Creating a New Version
 
@@ -22,7 +25,7 @@ If you notice a mistake in our docs, or if you feel you have a better way of exp
    > Pre-release documentation should be denoted with `-pre` on the version number, like `/server/3.0.1-pre/`. This way the documentation will show up on the website, but won’t be the default version.
 2. In the new version’s directory update all `.md` files to include the new version number in the front matter (see [Front Matter](#front-matter) below).
 3. Make edits to files in the new version as appropriate. Pages can be created or deleted when necessary.
-4. 
+4. Send a pull request!
 
 ## Versioning
 
