@@ -96,3 +96,11 @@ version: "3.0.0"
 
 Lorem ipsum dolor sit amet…
 ```
+
+### Formatting and Typesetting
+
+The content of our documentation is written by many developers. This list of basic formatting guidelines should help us maintain a consistent use of language throughout the docs.
+
+- **Event Store** is two words in title case.
+- **.NET** is a brand name, and should always be set in uppercase.
+- **Acronyms** should always be set in uppercase.
