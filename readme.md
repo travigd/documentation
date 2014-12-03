@@ -10,8 +10,8 @@ The Event Store documentation is available for multiple versions of Event Store 
 | :----------- | :--------------------------------- |
 | Introduction | Not versioned, always shows latest |
 | Server       | 3.0.1 (latest), 3.0.0              |
-| HTTP API     | 3.0.1 (latest), 3.0.0              |
 | .NET API     | 3.0.1 (latest), 3.0.0              |
+| HTTP API     | 3.0.1 (latest), 3.0.0              |
 
 ## Conventions
 
@@ -24,15 +24,23 @@ The Event Store documentation is available for multiple versions of Event Store 
 For example:
 
 ```
-/api/dotnet/3.0.0/writing-to-a-stream.md
+/dotnet-api/3.0.0/writing-to-a-stream.md
 ```
 
 ### URLs
 
-- `http://docs.geteventstore.com/`
-- `http://docs.geteventstore.com/[SECTION]/`
-- `http://docs.geteventstore.com/[SECTION]/[VERSION]/`
-- `http://docs.geteventstore.com/[SECTION]/[VERSION]/[FILENAME]/`
+Published pages should be available at a URL with one of these formats:
+
+- `http://docs.geteventstore.com/index.html`
+- `http://docs.geteventstore.com/[SECTION]/index.html`
+- `http://docs.geteventstore.com/[SECTION]/[VERSION]/index.html`
+- `http://docs.geteventstore.com/[SECTION]/[VERSION]/[FILENAME]/index.html`
+
+For example:
+
+```
+http://docs.geteventstore.com/dotnet-api/3.0.0/writing-to-a-stream/index.html
+```
 
 ### Front Matter
 
