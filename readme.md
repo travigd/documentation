@@ -8,12 +8,12 @@
 
 The Event Store documentation is available for multiple versions of Event Store and its APIs. By default the website shows documentation for the latest stable release of each component. Current sections and versions are:
 
-| Section      | Versions                           |
-| :----------- | :--------------------------------- |
-| Introduction | Not versioned, always shows latest |
-| Server       | 3.0.1 (latest), 3.0.0              |
-| .NET API     | 3.0.1 (latest), 3.0.0              |
-| HTTP API     | 3.0.1 (latest), 3.0.0              |
+| Section      | Versions              |
+| :----------- | :-------------------- |
+| Introduction | Always shows latest   |
+| Server       | 3.0.1 (latest), 3.0.0 |
+| .NET API     | 3.0.1 (latest), 3.0.0 |
+| HTTP API     | 3.0.1 (latest), 3.0.0 |
 
 ## How to Contribute
 
