@@ -2,7 +2,7 @@
 
 **This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are automatically built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
 
-*What comes below is documentation for how to use the Event Store documentation. It’s really meta. You have been warned.*
+> What follows is documentation for how to use the Event Store documentation. It’s really meta. If you’re planning to make updates or contributions then read on; otherwise head on over to the [website](http://docs.geteventstore.com).
 
 ## Versioning
 
