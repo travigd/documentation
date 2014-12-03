@@ -16,9 +16,9 @@ New pages and sections can be added. Follow the [conventions](#conventions) belo
 
 ### Creating a New Version
 
-1. Duplicate the section’s latest version directory and rename it to reflect the latest version number. For example, copy `server/3.0.0/` to `server/3.0.1/`.
+1. Duplicate the section’s latest version directory and rename it to reflect the latest version number. For example, copy `/server/3.0.0/` to `/server/3.0.1/`.
 
-   > Pre-release documentation should be denoted with `-pre` on the version number, like `server/3.0.1-pre/`
+   > Pre-release documentation should be denoted with `-pre` on the version number, like `/server/3.0.1-pre/`. This way the documentation will show up on the website, but won’t be the default version.
 2. In the new version’s directory update all `.md` files to include the new version number in the front matter.
 
 ## Versioning
