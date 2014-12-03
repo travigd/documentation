@@ -8,12 +8,12 @@
 
 ### Small Edits
 
-If you notice a mistake in our docs, or if you feel you have a better way of explaining some concept described therein, please send us a pull request on this repository with the edits made. Be aware that any errors you correct may be present in earlier versions, so check those too and edit as appropriate.
+If you notice a mistake in our docs, or if you feel you have a better way of explaining some concept described therein, please send us a pull request on this repository with the edits made. Be aware that any errors you correct may be present in earlier versions so check those too and edit as appropriate.
 
 ### New Pages and Sections
 
 1. Create new pages and/or sections. Follow the [Conventions](#conventions) below.
-2. If you create a new section, add an entry to the `top_level_sections` list on `_config.yml`.
+2. If you create a new section, add an entry for it to the `top_level_sections` list on `_config.yml` in an appropriate place (this list determines the order the sections are listed in the navigation sidebar).
 
 ### Creating a New Version
 
