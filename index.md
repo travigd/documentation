@@ -18,7 +18,7 @@ is
 
 ## Projections
 
-User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line arguments]({{ site.url }}/introduction/command-line-arguments) page).
+User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line arguments]({{ site.url }}/server/latest/command-line-arguments) page).
 
 Projections are still experimental and as such we have not yet documented them here. However, there are two series of blog posts about how they can be used, which are listed below under the Related Blog Posts section below.
 
