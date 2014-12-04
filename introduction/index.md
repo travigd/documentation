@@ -10,7 +10,7 @@ This document describes how to get started with the Event Store providing you ar
 
 ## Installation
 
-To start go to http://geteventstore.com and download the binaries into a folder. For this document it is assumed that you are in windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup.
+To start go to [http://geteventstore.com/downloads](http://geteventstore.com/downloads) and download the binaries into a folder. For this document it is assumed that you are in windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup.
 
 Once you have the zip file unzipped, open up an administrator console. cd into the directory where you have installed the Event Store. On the command line enter:
 
@@ -18,13 +18,13 @@ Once you have the zip file unzipped, open up an administrator console. cd into t
 EventStore.ClusterNode.exe --db ./db --log ./logs
 ```
 
-This will start the EventStore and will put the database in the path ./db and the logs in ./logs. You can view further [command line arguments]({{ site.url }}/introduction/command-line-arguments) (there are many!). It is important to note that it is being run in an admin context because it will start a HTTP server through http.sys. If you were to be running in a more permanent situation you would probably want to provide for an ACL in windows such as:
+This will start the EventStore and will put the database in the path `./db` and the logs in `./logs`. You can view further command line arguments in the [server docs]({{ site.url }}/server) (there are many!). It is important to note that it is being run in an admin context because it will start a HTTP server through http.sys. If you were to be running in a more permanent situation you would probably want to provide for an ACL in windows such as:
 
 ```
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 ```
 
-The Event Store should be now up and running on your machine. You can browse to http://127.0.0.1:2113/ to see the admin console. The console will ask for a username and password. By default it is admin:changeit.
+The Event Store should be now up and running on your machine. You can browse to [http://127.0.0.1:2113/](http://127.0.0.1:2113/) to see the admin console. The console will ask for a username and password. By default it is admin:changeit.
 
 ## Writing Events to an Event Stream
 
@@ -79,7 +79,7 @@ Keep-Alive: timeout=15,max=100
 
 If you go to your UI after this command and to the “Streams” tab. You will see your stream has recently been created, if you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an html representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/streams/newstream](http://127.0.0.1:2113/streams/newstream)).
 
-You can also setup [Access Control Lists]({{ site.url }}/http-api/security) on your streams by changing the metadata of the stream.
+You can also setup Access Control Lists (see [server docs]({{ site.url }}/server)) on your streams by changing the metadata of the stream.
 
 ## Reading From a Stream
 
