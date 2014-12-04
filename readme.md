@@ -101,9 +101,8 @@ For `index.md` pages you should also include `pinned: true`.
 
 ### Formatting and Typesetting
 
-The content of our documentation is written by many developers. This list of basic formatting guidelines should help us maintain a consistent use of language throughout the docs.
+The content of our documentation is written by many developers. These formatting guidelines should help us maintain a consistent use of language throughout the docs.
 
-- **Event Store** is two words in title case.
-- **.NET** is a brand name, and should always be set in uppercase.
-- **Acronyms** should always be set in uppercase.
-- **Code samples** should not have a line length of more than 80 characters.
+- **Acronyms** should always be set in uppercase (e.g. API, HTTP, JVM)
+- **Brand Names** should be capitalised correctly (e.g. Event Store, JavaScript, .NET)
+- **Example code** should not have a line length of more than 80 characters
