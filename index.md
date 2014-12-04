@@ -5,6 +5,17 @@ layout: docs
 
 <p class="docs-lead">Event Store docs are hosted on GitHub. The repository is public, and <a href="https://github.com/eventstore/docs.geteventstore.com">it’s open to pull requests</a>. We’ve got a bunch of goodies, beer tokens and more ready to send out to people who contribute.</p>
 
+## Using These Docs
+
+The documentation is split into sections that can be independently versioned. The section version correlates to the version of software is applies to. Use the sidebar navigation to browse docs for the section and version you are interested in.
+
+If you want to share a link to the documentation, you can either use a version-specific URL or a “latest” URL. For example:
+
+- `http://docs.geteventstore.com/server/3.0.0/command-line-arguments/` for version 3.0.0
+- `http://docs.geteventstore.com/server/latest/command-line-arguments/` for the latest version
+
+is 
+
 ## Projections
 
 User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line arguments]({{ site.url }}/introduction/command-line-arguments) page).
