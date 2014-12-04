@@ -84,7 +84,7 @@ http://docs.geteventstore.com/dotnet-api/3.0.0/writing-to-a-stream/index.html
 
 ### Front Matter
 
-Every page written for Jekyll in markdown has front matter, which specifies information about the page. We specify a title for the page, the section it belongs to, and the version for that section. Title and section should be [title case](http://en.wiktionary.org/wiki/title_case), and the version number should be in the format X.X.X.
+Every page written for Jekyll in markdown has front matter, which specifies information about the page. We specify a title for the page, the section it belongs to, and the version for that section. Title and section should be [title case](http://en.wiktionary.org/wiki/title_case), and the version number should be in the format `X.X.X`.
 
 For example:
 ```markdown
