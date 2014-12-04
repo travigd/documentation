@@ -9,7 +9,7 @@ layout: docs
 
 The documentation is split into sections that can be independently versioned. The section version correlates to the version of software is applies to. Use the sidebar navigation to browse docs for the section and version you are interested in.
 
-If you want to share a link to the documentation, you can either use a version-specific URL or a “latest” URL. For example, use:
+If you want to share a link to the documentation, you can either use the version-specific URL format or the “latest” URL format. For example, use:
 
 ```
 http://docs.geteventstore.com/server/3.0.0/command-line-arguments/
