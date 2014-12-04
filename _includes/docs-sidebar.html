@@ -16,9 +16,9 @@
             <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__heading {{ sectionClass }}">{{ section }}</span>
             {% assign pages = site.pages | where:"section",section | where:"exclude_from_sidebar", false %}
 
-            {% assign versions = pages | group_by: "version" | order_by "name" | reverse %}
+            {% assign versions = pages | group_by: "version" | sort: "name" %}
             <ul>
-            {% for version in versions %}
+            {% for version in versions reversed %}
             {% if page.section == section and page.version == version.name %}
                 {% assign versionClass = "expanded" %}
             {% else %} 
@@ -28,7 +28,9 @@
                 {% assign versionClass = "expanded" %}
             {% endif %}
                 <li>
+                    {% if version.name != "" %}
                     <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__version {{ versionClass }}">{{ version.name }}</span>
+                    {% endif %}
                     <ul>
                     {% assign pinnedItems = version.items | where:"pinned", true | order_by: "title" %}
                     {% assign normalItems = version.items | where:"pinned", false | order_by: "title" %}
@@ -37,7 +39,7 @@
                         <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
                     {% endfor %}
                     {% for item in normalItems %}
-                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}.</a>
                     {% endfor %}
                     </ul>
                 </li>
