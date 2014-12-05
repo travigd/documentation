@@ -16,20 +16,20 @@ A typical command line for starting the Event Store is:
 On Windows and .NET (from an account with permission to listen for HTTP traffic):
 
 ```
-c:\EventStore> EventStore.SingleNode.exe --db .\ESData
+c:\EventStore> EventStore.ClusterNode.Exe --db .\ESData
 ```
 
 On Linux and Mono:
 
 ```
-$ mono-sgen EventStore.SingleNode.exe --db ./ESData
+$ mono-sgen EventStore.ClusterNode.Exe --db ./ESData
 ```
 
 ### Longer version
 
 The open source version of Event Store is distributed as a console application. There are separate distributions for Windows on .NET and Linux on Mono.
 
-The executable for the open source version of Event Store is `EventStore.SingleNode.exe`.
+The executable for the open source version of Event Store is `EventStore.ClusterNode.Exe`.
 
 **Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.** for more on [Command Line Arguments]({{ site.url }}/introduction/command-line-arguments).
 
