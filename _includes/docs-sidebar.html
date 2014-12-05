@@ -32,8 +32,8 @@
                     <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__version {{ versionClass }}">{{ version.name }}</span>
                     {% endif %}
                     <ul>
-                    {% assign pinnedItems = version.items | where:"pinned", true | order_by: "title" %}
-                    {% assign normalItems = version.items | where:"pinned", false | order_by: "title" %}
+                    {% assign pinnedItems = version.items | where:"pinned", true | sort: "title" %}
+                    {% assign normalItems = version.items | where:"pinned", false | sort: "title" %}
 
                     {% for item in pinnedItems %}
                         <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
