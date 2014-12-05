@@ -67,7 +67,7 @@ This example uses the synchronous `ReadStreamEventsForward` method in a loop to 
 *Note: it is unlikely that client code would need to actually build a list in this manner. It is far more likely that events would be passed into a left fold in order to derive the state of some object as of a given event.*
 
 ```csharp
-var streamEvents = new List&lt;ResolvedEvent&gt;();
+var streamEvents = new List<ResolvedEvent>();
 
 StreamEventsSlice currentSlice;
 var nextSliceStart = StreamPosition.Start;
