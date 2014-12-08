@@ -9,101 +9,36 @@ The .NET Client API communicates with the Event Store using over TCP, using leng
 
 ## EventStoreConnection
 
-The EventStoreConnection class is responsible for maintaining a full-duplex connection between the client and the event store server. EventStoreConnection is thread-safe, and it is recommended that only one instance per application is created.
+The `EventStoreConnection` class is responsible for maintaining a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe, and it is recommended that only one instance per application is created.
 
-All operations are handled fully asynchronously, returning either a Task or a Task\<T\>. There are versions of each of these methods which can be used in a synchronous manner, however they simply call .Wait() on the asynchronous version.
+All operations are handled fully asynchronously, returning either a `Task` or a `Task<T>`. If you need to execute synchronously, simply call `.Wait()` on the asynchronous version.
 
 To get maximum performance from the connection, it is recommended that it be used asynchronously.
 
-### Creating a connection
+## Quick Start
 
-A new connection can be created using the following static methods on the EventStoreConnection class:
+The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](./connection-options/), [Reading Specific Streams](./reading-streams/) and [Writing to a Stream](./writing-to-a-stream/)
 
-- `public static EventStoreConnection Create()`
-- `public static EventStoreConnection Create(ConnectionSettings settings)`
+```CSharp
+var connection = 
+    EventStoreConnection.Create(new IPEndPoint(IPAddress.Loopback, 1113));
 
-Before use, the instance must be connected to a server using one of:
+// Don't forget to tell the connection to connect!
+connection.ConnectAsync().Wait();
 
-- `public void Connect(IPEndPoint tcpEndPoint)`
-- `public Task ConnectAsync(IPEndPoint tcpEndPoint)`
+var myEvent = new EventData(Guid.NewGuid(), "testEvent", false,
+                            Encoding.UTF8.GetBytes("some data"),
+                            Encoding.UTF8.GetBytes("some metadata"));
 
-In both cases, an IPEndPoint is passed as a parameter in order to specify the IP address and port of the server.
+connection.AppendToStreamAsync("test-stream",
+                               ExpectedVersion.Any, myEvent).Wait();
 
-###ConnectionSettings
+var streamEvents = 
+    connection.ReadStreamEventsForwardAsync("test-stream", 0, 1, false).Result;
 
-The settings for the EventStoreConnection are specified via a builder.
+var returnedEvent = streamEvents.Events[0].Event;
 
-<table>
-<tr>
-<th>Builder Method</th>
-<th>Description</th>
-<tr>
-<td>`.DoNotLog`</td>
-<td>Configures the connection not to output log messages. This is the default.</td>
-</tr><tr>
-<td>`.UseCustomLogger(ILogger logger)`</td>
-<td>Configures the connection to output log messages to the given instance of `ILogger`.</td>
-</tr><tr>
-<td>`.UseConsoleLogger()`</td>
-<td>Configures the connection to output log messages to the console.</td>
-</tr><tr>
-<td>`.UseDebugLogger()`</td>
-<td>Configures the connection to output log messages to the listeners configured on `System.Diagnostics.Debug`.</td>
-</tr><tr>
-<td>`.EnableVerboseLogging()`</td>
-<td>Turns on verbose <see cref="EventStoreConnection"/> internal logging. Mostly useful for debugging the EventStoreConnection.</td>
-</tr><tr>
-<td>`.DisableVerboseLogging()`</td>
-<td>Turns off verbose <see cref="EventStoreConnection"/> internal logic logging.</td>
-</tr><tr>
-<td>`.LimitOperationsQueueTo(int limit)`</td>
-<td>Sets the limit for number of queued operations</td>
-</tr><tr>
-<td>`.LimitConcurrentOperationsTo(int limit)`</td>
-<td>Limits the number of concurrent operations that this connection can have</td>
-</tr><tr>
-<td>`.LimitAttemptsForOperationTo(int limit)`</td>
-<td>Limits the number of operation attempts. This limit includes the initial attempt.</td>
-</tr><tr>
-<td>`.LimitRetriesForOperationTo(int limit)`</td>
-<td>Limits the number of operation retries.</td>
-</tr><tr>
-<td>`.KeepRetrying()`</td>
-<td>Allows infinite operation retry attempts</td>
-</tr><tr>
-<td>`.LimitReconnectionsTo(int limit)`</td>
-<td>Limits the number of reconnections this connection can try to make.</td>
-</tr><tr>
-<td>`.KeepReconnecting()`</td>
-<td>Allows infinite reconnection attempts.</td>
-</tr><tr>
-<td>`.EnableOperationsForwarding()`</td>
-<td>Enables the forwarding of operations in the Event Store (only affects cluster version)</td>
-</tr><tr>
-<td>`.DisableOperationsForwarding()`</td>
-<td>Disables the forwarding operations in the Event Store (only affects cluster version)</td>
-</tr><tr>
-<td>`.SetReconnectionDelayTo(TimeSpan reconnectionDelay)`</td>
-<td>Sets the delay between reconnection attempts</td>
-</tr><tr>
-<td>`.SetOperationTimeoutTo(TimeSpan operationTimeout) </td>
-<td>Sets the operation timeout duration</td>
-</tr><tr>
-<td>`.SetTimeoutCheckPeriodTo(TimeSpan timeoutCheckPeriod)`</td>
-<td>Sets how often timeouts should be checked for.</td>
-</tr><tr>
-<td>`.OnErrorOccurred(Action<EventStoreConnection, Exception> handler)`</td>
-<td>Sets callback for internal connection errors.</td>
-</tr><tr>
-<td>`.OnClosed(Action<EventStoreConnection, string> handler)`</td>
-<td>Sets callback for when connection is closed.</td>
-</tr><tr>
-<td>`.OnConnected(Action<EventStoreConnection> handler)`</td>
-<td>Sets callback for when connection is established.</td>
-</tr><tr>
-<td>`.OnDisconnected(Action<EventStoreConnection> handler)`</td>
-<td>Sets callback for when connection is disconnected.</td>
-</tr><tr>
-<td>`.OnReconnecting(Action<EventStoreConnection> handler)`</td>
-<td>Sets callback for when reconnection attempt is made.</td>
-</tr></table>
+Console.WriteLine("Read event with data: {0}, metadata: {1}",
+    Encoding.UTF8.GetString(returnedEvent.Data),
+    Encoding.UTF8.GetString(returnedEvent.Metadata));
+```
