@@ -15,7 +15,7 @@ You can also get in and look at the state of your drives very easily on Linux. F
 
     sudo hdparm -I {drive} 
 
-eg `/dev/sda` to see whether caching is enabled on your drive. Be wary though - just because caching is disabled does not mean that all writes will actually be made fully durable. If you are in Linux you might want to consider adding
+e.g. `/dev/sda` to see whether caching is enabled on your drive. Be wary though. Just because caching is disabled does not mean that all writes will actually be made fully durable. If you are in Linux you might want to consider adding
 
 ```
  /dev/yourdrive {
@@ -25,4 +25,4 @@ eg `/dev/sda` to see whether caching is enabled on your drive. Be wary though - 
 
 to your `/etc/hdparm.conf`
 
-If you are running the clustered version you may wish to allow these unlikely events to happen. The drives will run faster with caching enabled and it is extraordinarily unlikely that would lose three machines at the same time with corruption (providing you don't plug then all into the same outlet!). If this were to happen you would just truncate your data and re-replicate from the other nodes. 
+If you are running the clustered version you may wish to allow these unlikely events to happen. The drives will run faster with caching enabled and it is extraordinarily unlikely that would lose three machines at the same time with corruption (providing you don’t plug then all into the same outlet!). If this were to happen you would just truncate your data and re-replicate from the other nodes. 

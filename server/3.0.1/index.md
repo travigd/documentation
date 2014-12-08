@@ -31,7 +31,7 @@ The open source version of Event Store is distributed as a console application. 
 
 The executable for the open source version of Event Store is `EventStore.ClusterNode.Exe`.
 
-**Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.** for more on [Command Line Arguments]({{ site.url }}/introduction/command-line-arguments).
+**Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.** for more on [Command Line Arguments](../command-line-arguments).
 
 ## Platform Specifics
 
@@ -57,7 +57,7 @@ There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-
 netsh http show urlacl
 ```
 
-Look for an entry on the port you're trying to use (`2113` unless you've specified a custom port) - it will probably look something like: `http://+:2113`. Then issue:
+Look for an entry on the port you’re trying to use (`2113` unless you’ve specified a custom port) - it will probably look something like: `http://+:2113`. Then issue:
 
 ```
 netsh http delete urlacl <the entry you just found>

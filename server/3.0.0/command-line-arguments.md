@@ -423,14 +423,14 @@ The following parameters are supported by the Event Store:
 	<td><code>--ssl-target-host=VALUE</code></td>
 	<td>SSL_TARGET_HOST</td>
 	<td>sslTargetHost</td>
-	<td>The target host of the server's ssl certificate</td>
+	<td>The target host of the server’s ssl certificate</td>
 	<td>na</td>
 </tr>
 <tr>
 	<td><code>--ssl-validate-server</code></td>
 	<td>SSL_VALIDATE_SERVER</td>
 	<td>sslValidateServer</td>
-	<td>Whether to validate that the server's certificate is trusted</td>
+	<td>Whether to validate that the server’s certificate is trusted</td>
 	<td>true</td>
 </tr>
 </table>
