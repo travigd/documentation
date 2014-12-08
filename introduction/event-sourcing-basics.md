@@ -274,7 +274,13 @@ When we “replay” an event stream we are returning a series of events. An eve
 when([SomePatternMatch], function(state, event) { return new state; });
 ```
 
-These functions are then chained over the event stream resulting at the end with a state object. The state is passed from one function to the next allowing each function to transform it. Said differently, Current State is a [left fold][6] of previous facts. We can further continue this to say that a snapshot is nothing but a memoization of the left fold. When looked at from this perspective one could state that an Event Store is actually a functional database. [CQRS Video]: http://dddcqrs.com [Event Sourcing]: http://martinfowler.com/eaaDev/EventSourcing.html [Getting Started]: http://todo
+These functions are then chained over the event stream resulting at the end with a state object. The state is passed from one function to the next allowing each function to transform it. Said differently, Current State is a [left fold][6] of previous facts. We can further continue this to say that a snapshot is nothing but a memoization of the left fold. When looked at from this perspective one could state that an Event Store is actually a functional database.
+
+## Further Reading
+
+- [CQRS Video](http://dddcqrs.com)
+- [Event Sourcing](http://martinfowler.com/eaaDev/EventSourcing.html)
+- [Getting Started](../)
 
  [1]: ../img/structural-model.png "A simplified structural model of an order"
  [2]: ../img/transactional-model.png "Transactional view of an order"
