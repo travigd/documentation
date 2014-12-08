@@ -40,7 +40,7 @@ The specified `expectedVersion` is compared to the `currentVersion` of the strea
 
 ### If `ExpectedVersion.Any` is specified
 
-*Idempotence is **not** guaranteed if `ExpectedVersion.Any` is used. The chance of a duplicate event being written is small, but it does exist.*
+*Idempotence is __not__ guaranteed if `ExpectedVersion.Any` is used. The chance of a duplicate event being written is small, but it does exist.*
 
 The idempotence check will yield one of three results:
 
