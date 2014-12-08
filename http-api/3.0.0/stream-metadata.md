@@ -4,28 +4,23 @@ section: "HTTP API"
 version: 3.0.0
 ---
 
-Every stream in the Event Store has metadata associated with it. Internally,
-the metadata includes such information as the ACL of the stream and the maximum
-count and age for the events in the stream. Client code can also put
-information into stream metadata for use with projections or through the client
-API. 
+Every stream in the Event Store has metadata associated with it. Internally, the metadata includes such information as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API. 
 
-Stream metadata is stored internally as JSON, and can be accessed over the HTTP
-APIs. 
+Stream metadata is stored internally as JSON, and can be accessed over the HTTP APIs. 
 
 ## Reading Stream Metadata
 
-To read the metadata, a `GET` request is issued to the attached metadata
-resource, which is currently of the form:
+To read the metadata, a `GET` request is issued to the attached metadata resource, which is currently of the form:
 
-`http://{eventstore}/streams/{stream-name}/metadata`
+```
+http://{eventstore}/streams/{stream-name}/metadata
+```
 
-However, you should not access metadata by constructing this URL yourself, as
-the right to change the resource address is reserved. Instead, you should
-follow the link for from the stream itself, which will enable your client to
-tolerate future changes to the addressing structure without breaking.
+However, you should not access metadata by constructing this URL yourself, as the right to change the resource address is reserved. Instead, you should follow the link for from the stream itself, which will enable your client to tolerate future changes to the addressing structure without breaking.
 
-`ouro@ouroboros:>curl -i http://127.0.0.1:2113/streams/$users --user admin:changeit`
+```
+ouro@ouroboros:>curl -i http://127.0.0.1:2113/streams/$users --user admin:changeit
+```
 
 ```http
 HTTP/1.1 200 OK
@@ -72,10 +67,11 @@ Date: Sun, 16 Jun 2013 15:08:49 GMT
 ...
 ```
 
-Once you have the URI of the metadata stream, a `GET` request will retrieve the
-metadata:
+Once you have the URI of the metadata stream, a `GET` request will retrieve the metadata:
 
-`ouro@ouroboros:> curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit`
+```
+ouro@ouroboros:> curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
+```
 
 ```http
 HTTP/1.1 200 OK
@@ -120,11 +116,11 @@ Date: Sun, 16 Jun 2013 13:18:29 GMT
 }
 ```
 
-Note that reading metadata may require that you pass credentials if you have
-security enabled, as in the examples above. If you do not pass credentials and
-they are required you will receive a 401 Unauthorized response.
+Note that reading metadata may require that you pass credentials if you have security enabled, as in the examples above. If you do not pass credentials and they are required you will receive a 401 Unauthorized response.
 
-`ouro@ouroboros:> curl -i http://127.0.0.1:2113/streams/$users/metadata`
+```
+ouro@ouroboros:> curl -i http://127.0.0.1:2113/streams/$users/metadata
+```
 
 ```http
 HTTP/1.1 401 Unauthorized
@@ -140,10 +136,9 @@ Date: Sun, 16 Jun 2013 13:20:22 GMT
 
 ## Writing Metadata
 
-To update the metadata for a stream, a `POST` should be made to the metadata
-resource. This will replace the current metadata with the information posted.
+To update the metadata for a stream, a `POST` should be made to the metadata resource. This will replace the current metadata with the information posted.
 
-metadata.txt
+### metadata.txt
 
 ```json
 [
@@ -158,8 +153,7 @@ metadata.txt
 ]
 ```
 
-User-specified metadata can also be added here. Some examples of good uses of
-user-specified metadata:
+User-specified metadata can also be added here. Some examples of good uses of user-specified metadata:
 
 - which adapter is responsible for populating a stream
 - which projection caused a stream to be created
@@ -185,8 +179,7 @@ Date: Sun, 16 Jun 2013 14:50:21 GMT
 
 ```
 
-If the specified user does not have permissions to write to the stream
-metadata, a 401 Unauthorized response will be given:
+If the specified user does not have permissions to write to the stream metadata, a 401 Unauthorized response will be given:
 
 ```
 ouro@ouroboros:> curl -i -d @data.txt http://127.0.0.1:2113/streams/$users/metadata --user invaliduser:invalidpass -H "Content-Type: application/json"
