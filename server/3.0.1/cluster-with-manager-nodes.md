@@ -197,7 +197,7 @@ To install the manager node on machine 1, the following command is used:
 C:\EventStore-HA-v3.0.1\> EventStore.WindowsManager.exe install -InstanceName es-cluster1 -ManagerConfig C:\EventStore-Config\manager.yaml
 ```
 
-The service will then be visible in the services list, with a description of "Event Store Manager (es-cluster1)".
+The service will then be visible in the services list, with a description of “Event Store Manager (es-cluster1)”.
 
 #### Uninstalling the service
 
@@ -209,14 +209,5 @@ C:\EventStore-HA-v3.0.1\> EventStore.WindowsManager.exe uninstall -InstanceName 
 
 #### Manually starting and stopping the service
 
-To manually start the manager node, the following command can be used:
-
-```
-net start es-cluster1
-```
-
-To manually stop the manager node, the following command can be used:
-
-```
-net stop es-cluster1
-```
+* To start the manager node use the `net start es-cluster1` command.
+* To stop the manager node use the `net stop es-cluster1` command.
