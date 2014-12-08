@@ -21,7 +21,7 @@ The goal of this section is to introduce the concept of event sourcing and to sh
 
 ### What is a Domain Event?
 
-*An event is something that has happened in the past.*
+> An event is something that has happened in the past.
 
 All events should be represented as verbs in the past tense such as CustomerRelocated, CargoShipped, or InventoryLossageRecorded. For those who speak French, it should be in Passé Composé. They are things that have completed in the past.
 
