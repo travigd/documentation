@@ -17,7 +17,7 @@ To get maximum performance from the connection, it is recommended that it be use
 
 ## Quick Start
 
-The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](../connection-options/), [Reading Specific Streams](../reading-streams/) and [Writing to a Stream](../writing-to-a-stream/)
+The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](./connection-options/), [Reading Specific Streams](./reading-streams/) and [Writing to a Stream](./writing-to-a-stream/)
 
 ```CSharp
 var connection = 
@@ -26,7 +26,6 @@ var connection =
 // Don't forget to tell the connection to connect!
 connection.ConnectAsync().Wait();
 
-// Events must be 
 var myEvent = new EventData(Guid.NewGuid(), "testEvent", false,
                             Encoding.UTF8.GetBytes("some data"),
                             Encoding.UTF8.GetBytes("some metadata"));
