@@ -18,7 +18,7 @@ Once you have the zip file unzipped, open up an administrator console. `cd` into
 EventStore.ClusterNode.exe --db ./db --log ./logs
 ```
 
-This will start the EventStore and will put the database in the path `./db` and the logs in `./logs`. You can view further command line arguments in the [server docs]({{ site.url }}/server) (there are many!). It is important to note that it is being run in an admin context because it will start a HTTP server through http.sys. If you were to be running in a more permanent situation you would probably want to provide for an ACL in windows such as:
+This will start the EventStore and will put the database in the path `./db` and the logs in `./logs`. You can view further command line arguments in the [server docs](/server) (there are many!). It is important to note that it is being run in an admin context because it will start a HTTP server through http.sys. If you were to be running in a more permanent situation you would probably want to provide for an ACL in windows such as:
 
 ```
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
@@ -79,7 +79,7 @@ Keep-Alive: timeout=15,max=100
 
 If you go to your UI after this command and to the “Streams” tab. You will see your stream has recently been created, if you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an html representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/streams/newstream](http://127.0.0.1:2113/streams/newstream)).
 
-You can also setup Access Control Lists (see [server docs]({{ site.url }}/server/latest)) on your streams by changing the metadata of the stream.
+You can also setup Access Control Lists (see [server docs](/server/latest)) on your streams by changing the metadata of the stream.
 
 ## Reading From a Stream
 
@@ -156,7 +156,7 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-This will return our event that we had originally posted. You can also get your event as XML (set Accept: text/xml). In order to read a single page feed we would just get the feed and then iterate through the event links executing gets. This may feel inefficient at first but remember the event  uris and most of the page uris are infinitely cachable. We can also get the events in the feed itself if prefered by using ?embed=body. There is further discussion on this [here]({{ site.url }}/http-api/latest/reading-streams).
+This will return our event that we had originally posted. You can also get your event as XML (set Accept: text/xml). In order to read a single page feed we would just get the feed and then iterate through the event links executing gets. This may feel inefficient at first but remember the event  uris and most of the page uris are infinitely cachable. We can also get the events in the feed itself if prefered by using ?embed=body. There is further discussion on this [here](/http-api/latest/reading-streams).
 
 Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the *last* link and then continue to read the *previous* page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using *first* then *next*.
 
