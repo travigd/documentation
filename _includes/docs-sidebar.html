@@ -6,7 +6,7 @@
             {% assign sectionClass = "expanded" %}
         {% else %}
             {% assign sectionClass = "collapsed" %}
-        {% endif %}`
+        {% endif %}
 
         {% if section == "Introduction" %}
             {% assign sectionClass = "expanded" %}
@@ -36,10 +36,10 @@
                     {% assign normalItems = version.items | where:"pinned", false | sort: "title" %}
 
                     {% for item in pinnedItems %}
-                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+                        <li><a href="{{ item.url }}">{{ item.title }}</a>
                     {% endfor %}
                     {% for item in normalItems %}
-                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+                        <li><a href="{{ item.url }}">{{ item.title }}</a>
                     {% endfor %}
                     </ul>
                 </li>
