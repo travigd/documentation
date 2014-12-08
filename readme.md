@@ -15,6 +15,8 @@ The Event Store documentation is available for multiple versions of Event Store 
 | .NET API     | 3.0.1 (latest), 3.0.0 |
 | HTTP API     | 3.0.1 (latest), 3.0.0 |
 
+The Event Store server uses [semantic versioning](http://semver.org). APIs are versioned based on the major server version they support.
+
 ## How to Contribute
 
 ### Small Edits
