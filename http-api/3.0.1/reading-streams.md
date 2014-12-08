@@ -46,7 +46,8 @@ Date: Sat, 29 Jun 2013 18:02:21 GMT
 Content-Length: 998
 Keep-Alive: timeout=15,max=100
 ```
-```
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
    <title>Event stream 'newstream'</title>
@@ -228,7 +229,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 04 Apr 2013 10:21:20 GMT
 Content-Length: 18093
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "title": "Event stream 'account-28'",
   "id": "http://127.0.0.1:2113/streams/account-28",
@@ -262,7 +265,6 @@ Keep-Alive: timeout=15,max=100
     }
   ],
   "entries": <SNIP>
-
 ```
 
 Using the rel links in this response it is possible to walk through all of the events in the stream either by going to the “last” URL and walking prev or by walking next from the “first” link.
@@ -290,7 +292,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 04 Apr 2013 10:27:50 GMT
 Content-Length: 17784
 Keep-Alive: timeout=15,max=100
- 
+```
+
+```json
 {
   "title": "Event stream 'account-28'",
   "id": "http://127.0.0.1:2113/streams/account-28",
@@ -319,7 +323,6 @@ Keep-Alive: timeout=15,max=100
     }
   ],
   "entries": [ <SNIP>
-
 ```
 
 You would then follow its “previous” link until you got back to the head of the document. This is the general way of reading back a stream. Once at the end you can continue reading events as they happen by polling the previous link and you will get events in near real time as they happen.
@@ -349,7 +352,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Sun, 30 Jun 2013 15:28:56 GMT
 Content-Length: 10000
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "title": "All events",
   "id": "http://127.0.0.1:2113/streams/%24all",
@@ -382,9 +387,7 @@ Keep-Alive: timeout=15,max=100
   "entries": [
     //snip
 ]
-
 ```
-
 
 ## Conditional Gets
 
@@ -419,7 +422,9 @@ Keep-Alive: timeout=15,max=100
 
 The server has told us in the headers that the ETag for this content is ETag: "2;248368668". We can use this in our next request if we are polling the stream for changes. We will put it in the header If-None-Match. This tells the server to check if the response will be the one we already know. 
 
-`ouro@ouroboros:~/src/EventStore.wiki$  curl -v --header 'If-None-Match: "2;248368668"`
+```
+ouro@ouroboros:~/src/EventStore.wiki$  curl -v --header 'If-None-Match: "2;248368668"
+```
 
 ```http
 http://127.0.0.1:2113/streams/newstream
@@ -438,8 +443,6 @@ Server: Mono-HTTPAPI/1.0
 Date: Wed, 03 Apr 2013 21:33:25 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
-
-
 ```
 
 When we do the conditional GET we will be returned a 304 not modified. If however the tags have changed it will be returned as normal. This can optimize not sending large streams over the wire if there have not been changes to the stream.
@@ -473,7 +476,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Sat, 29 Jun 2013 18:18:22 GMT
 Content-Length: 1501
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "title": "Event stream 'newstream'",
   "id": "http://127.0.0.1:2113/streams/newstream",
@@ -557,7 +562,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Mon, 01 Jul 2013 14:43:27 GMT
 Content-Length: 2184
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "title": "Event stream 'aaa'",
   "id": "http://127.0.0.1:2113/streams/aaa",
@@ -665,8 +672,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Sat, 29 Jun 2013 18:20:25 GMT
 Content-Length: 998
 Keep-Alive: timeout=15,max=100
+```
 
-
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
    <title>Event stream 'newstream'</title>
