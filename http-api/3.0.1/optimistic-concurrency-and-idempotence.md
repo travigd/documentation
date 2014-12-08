@@ -12,7 +12,7 @@ Provided the client maintains this the Event Store will treat all operations as 
 	
 As an example if you were to try:
 
-```
+```http
 ouro@ouroboros$ curl -i -d @/home/greg/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream444"
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
@@ -25,7 +25,7 @@ Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
 
-```
+```http
 ouro@ouroboros:$ curl -i -d @/home/greg/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream444"
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
@@ -42,7 +42,7 @@ Assuming you were posting to a new stream you would get the event written once (
 
 *This allows the client rule of “if you get unknown condition, retry” to work.*
 
-```
+```http
 ouro@ouroboros:~/src/retrospective$ curl -i "http://127.0.0.1:2113/streams/newstream444""
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
