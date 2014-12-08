@@ -6,7 +6,7 @@ version: 3.0.1
 
 There are many error conditions that can be returned from the writing or reading of a stream. All of these can be identified by their status codes and should be relatively easy to diagnose. This document lists some of the cases that can result in errors.
 
-Stream Never Created Get
+## Stream Never Created Get
 
 ```http
 ouro@ouroboros:~/src/EventStore.wiki$  curl -i -H "Accept:application/json" "http://127.0.0.1:2113/streams/anewstream"
@@ -22,9 +22,9 @@ Keep-Alive: timeout=15,max=100
 
 ```
 
-Unknown Content Type On Read of Stream
+## Unknown Content Type On Read of Stream
 
-Write to Stream with Invalid Content for Content Type
+## Write to Stream with Invalid Content for Content Type
 
 ```http
 oruo@ouroboros:~/src/EventStore.wiki$ cat ~/simpleevent.txt
@@ -59,7 +59,8 @@ Content-Length: 0
 Connection: close
 ```
 
-Security Denied
+## Security Denied
+
 ```http
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -u admin:foo
 HTTP/1.1 401 Unauthorized
@@ -72,5 +73,4 @@ Server: Mono-HTTPAPI/1.0
 Date: Fri, 28 Jun 2013 12:45:30 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
-
 ```
