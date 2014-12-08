@@ -3,25 +3,27 @@ title: "Documentation"
 layout: docs
 ---
 
-<p class="docs-lead">Event Store docs are hosted on GitHub. The repository is public, and <a href="https://github.com/eventstore/docs.geteventstore.com">it’s open to pull requests</a>. We’ve got a bunch of goodies, beer tokens and more ready to send out to people who contribute.</p>
+<p class="docs-lead">Event Store docs are hosted on GitHub. The repository is public, and <a href="https://github.com/eventstore/docs.geteventstore.com">it’s open to pull requests</a>. We’ve got a bunch of goodies ready to send out to people who make useful contributions.</p>
 
 ## Using These Docs
 
-The documentation is split into sections that can be independently versioned. The section version correlates to the version of software is applies to. Use the sidebar navigation to browse docs for the section and version you are interested in.
+If you’re new to Event Store and want to get started, read through the Introduction section. If you know what you are looking for use the navigation on the left (or top, in smaller browser windows) to find the section and version you are interested in.
 
-If you want to share a link to the documentation, you can either use the version-specific URL format or the “latest” URL format. For example, use:
+### Sharing Links
 
-```
-http://docs.geteventstore.com/server/3.0.0/command-line-arguments/
-```
-
-for version 3.0.0, and:
+If you want to share a link to the documentation, you can either use the version-specific URL format or the “latest” URL format. For example:
 
 ```
-http://docs.geteventstore.com/server/latest/command-line-arguments/
+http://docs.geteventstore.com/http-api/3.0.0/security
 ```
 
-for the latest version.
+always points to the Security page for **version 3.0.0 of the HTTP API**.
+
+```
+http://docs.geteventstore.com/http-api/latest/security
+```
+
+always points to the Security page for the **latest version of the HTTP API**.
 
 ## Projections
 
