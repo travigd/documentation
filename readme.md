@@ -19,11 +19,9 @@ The Event Store documentation is available for multiple versions of Event Store 
 
 ### Running Jekyll Locally
 
-This documentation is rendered by GitHub Pages using Jekyll. If you want to generate the site locally and test your changes, you will need to follow the instructions [here](https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll) to get Jekyll installed.
+This documentation is rendered by GitHub Pages using Jekyll. If you want to generate the site locally and test your changes, you will need to follow the instructions [here](https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll) to Ruby and Bundler installed.
 
-Once installed, navigate to the root of the repository and run `jekyll build`. The site will be generated into a folder named `_site`.
-
-Jekyll can also automatically rebuild the site as you save changes to the source files. Simply use `jekyll build --watch`.
+Once installed, navigate to the root of the repository and run `bundle install` followed by `bundle exec jekyll serve`. The site will be generated into a folder named `_site` and served from `http://localhost:4000`.
 
 ### Small Edits
 
