@@ -31,7 +31,7 @@ The open source version of Event Store is distributed as a console application. 
 
 The executable for the open source version of Event Store is `EventStore.ClusterNode.Exe`.
 
-**Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.** for more on [Command Line Arguments]({{ site.url }}/introduction/command-line-arguments).
+**Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.** for more on [Command Line Arguments](../command-line-arguments).
 
 ## Platform Specifics
 
