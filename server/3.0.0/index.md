@@ -57,7 +57,7 @@ There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-
 netsh http show urlacl
 ```
 
-Look for an entry on the port you're trying to use (`2113` unless you've specified a custom port) - it will probably look something like: `http://+:2113`. Then issue:
+Look for an entry on the port you’re trying to use (`2113` unless you’ve specified a custom port) - it will probably look something like: `http://+:2113`. Then issue:
 
 ```
 netsh http delete urlacl <the entry you just found>
