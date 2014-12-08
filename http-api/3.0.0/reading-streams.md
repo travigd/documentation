@@ -10,15 +10,17 @@ Reading from streams with AtomPub can be a bit confusing if you have not done it
 
 Note we haven’t actually tested or endorsed any of these libraries!
 
-| NET (BCL)   | `System.ServiceModel.SyndicationServices` |
+| Library     | Description                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------- |
+| NET (BCL)   | `System.ServiceModel.SyndicationServices`                                                            |
 | JVM         | [http://java-source.net/open-source/rss-rdf-tools](http://java-source.net/open-source/rss-rdf-tools) |
-| PHP         | [http://simplepie.org/](http://simplepie.org/) |
-| Ruby        | [http://simple-rss.rubyforge.org](http://simple-rss.rubyforge.org) |
-| Clojure     | [https://github.com/scsibug/feedparser-clj](https://github.com/scsibug/feedparser-clj) |
-| Go          | [https://github.com/jteeuwen/go-pkg-rss](https://github.com/jteeuwen/go-pkg-rss) |
-| Python      | [http://code.google.com/p/feedparser/](http://code.google.com/p/feedparser/) |
-| node.js     | [https://github.com/danmactough/node-feedparser](https://github.com/danmactough/node-feedparser) |
-| Objective C | [https://geekli.st/darvin/repos/MWFeedParser](https://geekli.st/darvin/repos/MWFeedParser) |
+| PHP         | [http://simplepie.org/](http://simplepie.org/)                                                       |
+| Ruby        | [http://simple-rss.rubyforge.org](http://simple-rss.rubyforge.org)                                   |
+| Clojure     | [https://github.com/scsibug/feedparser-clj](https://github.com/scsibug/feedparser-clj)               |
+| Go          | [https://github.com/jteeuwen/go-pkg-rss](https://github.com/jteeuwen/go-pkg-rss)                     |
+| Python      | [http://code.google.com/p/feedparser/](http://code.google.com/p/feedparser/)                         |
+| node.js     | [https://github.com/danmactough/node-feedparser](https://github.com/danmactough/node-feedparser)     |
+| Objective C | [https://geekli.st/darvin/repos/MWFeedParser](https://geekli.st/darvin/repos/MWFeedParser)           |
 
 *Feel free to add more!*
 
@@ -386,9 +388,11 @@ Keep-Alive: timeout=15,max=100
 
 ## Conditional Gets
 
-The head link also supports conditional gets through the use of ETAGS. The use of ETAGS is a well known HTTP construct described http://en.wikipedia.org/wiki/HTTP_ETag. The basic idea is that you can include the ETAG of your last request and issue a conditional get to the server. If nothing has changed it will not return the full feed. As an example consider we make the request:
+The head link also supports conditional gets through the use of ETAGS. The use of ETAGS is a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). The basic idea is that you can include the ETAG of your last request and issue a conditional get to the server. If nothing has changed it will not return the full feed. As an example consider we make the request:
 
-`ouro@ouroboros:~/src/EventStore.wiki$  curl -v http://127.0.0.1:2113/streams/newstream`
+```
+ouro@ouroboros:~/src/EventStore.wiki$  curl -v http://127.0.0.1:2113/streams/newstream
+```
 
 ```http
 GET /streams/newstream HTTP/1.1
@@ -449,9 +453,12 @@ Up until now the feeds that have come down have contained links that point back 
 Though these are mostly used by the StreamUI component in the webapi at present there are ways of embedding events and/or further metadata into your stream that are controlled by the embed= parameter.
 
 ### Rich
+
 The Rich embed mode will return more properties about the event (eventtype, streamid, position, etc) as can be seen in the following request.
 
-`ouro@ouroboros:~/src/EventStore.wiki$ curl -i http://127.0.0.1:2113/streams/newstream?embed=rich`
+```
+ouro@ouroboros:~/src/EventStore.wiki$ curl -i http://127.0.0.1:2113/streams/newstream?embed=rich
+```
 
 ```http
 HTTP/1.1 200 OK
