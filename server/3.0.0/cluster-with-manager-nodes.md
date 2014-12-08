@@ -9,7 +9,7 @@ Event Store allows several nodes to be run as a cluster, in order to achieve hig
 - With database nodes only (open source and commercial)
 - With manager nodes and database nodes (commercial only)
 
-This document covers setting up Event Store with manager nodes and database nodes. For documentation on setting up Event Store with only database nodes, see <here>.
+This document covers setting up Event Store with manager nodes and database nodes.
 
 ##Manager Nodes
 
