@@ -1,5 +1,5 @@
 <ul class="docs-sidebar__list">
-    <li><a href="{{ site.url }}">Documentation Home</a></li>
+    <li><a href="/">Documentation Home</a></li>
 
     {% for section in site.top_level_sections %}
         {% if page.section == section %}
@@ -36,10 +36,10 @@
                     {% assign normalItems = version.items | where:"pinned", false | sort: "title" %}
 
                     {% for item in pinnedItems %}
-                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+                        <li><a href="{{ item.url }}">{{ item.title }}</a>
                     {% endfor %}
                     {% for item in normalItems %}
-                        <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+                        <li><a href="{{ item.url }}">{{ item.title }}</a>
                     {% endfor %}
                     </ul>
                 </li>

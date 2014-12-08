@@ -27,7 +27,7 @@ Entire TFChunks are cached. This is done by loading the entire chunk into unmana
 
 ## Scavenging
 
-The chunks in the Transaction File are periodically scavenged to remove deleted or old data depending on stream rules such as `$maxCount` in stream metadata and can be compacted (wouldn't it be awful to have 5000 160kb files?).
+The chunks in the Transaction File are periodically scavenged to remove deleted or old data depending on stream rules such as `$maxCount` in stream metadata and can be compacted (wouldn’t it be awful to have 5000 160kb files?).
 
 This process generates new chunks, and switches them out atomically deleting them once they are no longer in use by readers. This gives the benefit that once completed, TFChunks are immutable. This includes the current chunk - since it is only written to sequentially, it will never seek back to overwrite something.
 
@@ -61,6 +61,6 @@ When a PTable is written a checksum is marked as to the last place in the transa
 
 PTables also get compacted into larger PTables over time. During this operation they are also scavenged for items that are to be removed. The merging of N PTables to 1 larger PTable is a linear opertation as they are all sorted. PTables once written to disk are immutable and have like tf chunks MD5 checksums. Unlike a failure in a TFChunk checksum however if a problem is found within the index it is simply rebuilt.
 
-1 million items takes about 3 seconds to rebuild an index for from the transaction file so even in catastrophic scenarios in reasonably large systems a rebuild of an index is a strategy to consider.
+1,000,000 items takes about 3 seconds to rebuild an index for from the transaction file so even in catastrophic scenarios in reasonably large systems a rebuild of an index is a strategy to consider.
 
 This may sound like a familiar setup for a transactional engine. It is known as a log structured merge tree.

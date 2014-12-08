@@ -55,7 +55,7 @@ Manager and database nodes need to know about one another in order to gossip. To
 - On each physical machine, the database node(s) are configured with a gossip seed of the internal HTTP interface of the manager running on the same physical machine.
 - The managers are configured to discover other managers in one of two ways:
     - via a DNS entry and a well-known gossip port
-    - via a list of other mananagers' addresses
+    - via a list of other managers’ addresses
 
 The preferred method is via a DNS entry. To set this up, a DNS entry is made for the cluster with an A record pointing to each member of the cluster. Each manager will then look up other nodes in the cluster during the startup process based on the DNS name. Since DNS only provides information about addresses, it is required for a consistent TCP port to be used across the cluster for gossip.
 
@@ -151,7 +151,7 @@ Log: d:\manager-log
 
 ### Watchdog Configuration
 
-The watchdog configuration file details which database nodes the manager is responsible for starting and supervising. Unlike the other configuration files, the manager configuration uses a custom format instead of YAML. Each node for which the manager is responsible has one line in the file, which starts with a `#` symbol, and then details the command line options to be given to the database node when it is started. Under normal circumstances this will just be the path to the database node's configuration file.
+The watchdog configuration file details which database nodes the manager is responsible for starting and supervising. Unlike the other configuration files, the manager configuration uses a custom format instead of YAML. Each node for which the manager is responsible has one line in the file, which starts with a `#` symbol, and then details the command line options to be given to the database node when it is started. Under normal circumstances this will just be the path to the database node’s configuration file.
 
 For the first node in the example cluster, the watchdog configuration file reads as follows:
 

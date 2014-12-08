@@ -111,6 +111,6 @@ For `index.md` pages you should also include `pinned: true`.
 
 The content of our documentation is written by many developers. These formatting guidelines should help us maintain a consistent use of language throughout the docs.
 
-- **Acronyms** should always be set in uppercase (e.g. API, HTTP, JVM)
-- **Brand Names** should be capitalised correctly (e.g. Event Store, JavaScript, .NET)
+- **Acronyms and abbreviations** should always be set in uppercase (e.g. API, HTTP, JVM)
+- **Brand names** should be capitalised correctly (e.g. Event Store, JavaScript, .NET)
 - **Example code** should not have a line length of more than 80 characters

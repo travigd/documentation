@@ -38,7 +38,7 @@ Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
 
-Assuming you were posting to a new stream you would get the event written once (and the stream created). The second event will return as the first but write again.
+Assuming you were posting to a new stream you would get the event written once (and the stream created). The second event will return as the first but not write again.
 
 *This allows the client rule of “if you get unknown condition, retry” to work.*
 
