@@ -14,7 +14,7 @@ To get maximum performance from the connection, it is recommended that it be use
 
 ## Creating a Connection
 
-The static `Create` methods on `EventStoreConnection` are used to create a new connection. All overloads allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events]()).
+The static `Create` methods on `EventStoreConnection` are used to create a new connection. All overloads allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events](#connection-events)).
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
         </tr>
         <tr>
             <td><code>Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)</code></td>
-            <td>Connects to a multi node cluster with custom settings</td>
+            <td>Connects to an Event Store HA cluster with custom settings (see <a href="#cluster-settings">Cluster Settings</a>)</td>
         </tr>
     </tbody>
 </table>
@@ -45,7 +45,7 @@ The connection returned by these methods is inactive. Use the `ConnectAsync()` m
 
 ## Customising Connection Settings
 
-There are a number of different options which can be specified when making a connection to the Event Store using the client API. These options are encapsulated into an object of type `ConnectionSettings` which is passed as a paramater to the `Create` methods listed above.
+Settings used for modifying the behaviour of an `EventStoreConnection` are encapsulated into an object of type `ConnectionSettings` which is passed as a paramater to the `Create` methods listed above.
 
 Instances of ConnectionSettings are created using a fluent builder class as follows:
 
@@ -53,11 +53,11 @@ Instances of ConnectionSettings are created using a fluent builder class as foll
 ConnectionSettings settings = ConnectionSettings.Create();
 ```
 
-This will create a `ConnectionSettings` with the default options. These can be overridden by chaining the additional builder methods described below.
+This will create an instance of `ConnectionSettings` with the default options. These can be overridden by chaining the additional builder methods described below.
 
 ### Logging
 
-The Client API can log information about what it is doing to a number of different destinations. By default, no logging is enabled.
+The .NET API can log information to a number of different destinations. By default, no logging is enabled.
 
 <table>
     <thead>
@@ -88,7 +88,7 @@ The Client API can log information about what it is doing to a number of differe
 
 ### User Credentials
 
-Event Store supports [Access Control Lists](/server/latest/access-control-lists/) which restrict permissions for a given stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set the default credentials for all operations on the connection:
+Event Store supports [Access Control Lists](/server/latest/access-control-lists/) which restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set some default credentials for all operations on the connection.
 
 <table>
     <thead>
@@ -113,11 +113,7 @@ UserCredentials credentials = new UserCredentials("username","password");
 
 ### Security
 
-The Client API and Event Store can communicate either over SSL or an unencrypted channel (by default). 
-
-<span class="note--warning">
-In production systems SSL-encrypted connections should *always* be used if credentials are being sent from the client to the Event Store and `validateServer` should be set to `true`.
-</span>
+The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default). 
 
 To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/setting-up-ssl-windows/)
 
@@ -134,7 +130,7 @@ To configure the client-side of the SSL connection, use the builder method below
             <td>Uses an SSL-encrypted connection where:
                 <dl>
                     <dt><code>targetHost</code></dt>
-                    <dd>Is the name specified on the SSL certificate installed on the server.</dd>
+                    <dd>Is the name specified on the SSL certificate installed on the server</dd>
                     <dt><code>validateServer</code></dt>
                     <dd>Controls whether or not the server certificate is validated upon connection</dd>
                 </dl>
@@ -143,9 +139,13 @@ To configure the client-side of the SSL connection, use the builder method below
     </tbody>
 </table>
 
-### Operation Node Preference
+<span class="note--warning">
+In production systems where credentials are being sent from the client to the Event Store, SSL-encryption should *always* be used and `validateServer` should be set to `true`.
+</span>
 
-When connecting to an Event Store HA cluster, you can specify that operations can be performed on any node, or only on the node which is the master:
+### Node Preference
+
+When connecting to an Event Store HA cluster, you can specify that operations can be performed on any node, or only on the node which is the master.
 
 <table>
     <thead>
@@ -156,19 +156,19 @@ When connecting to an Event Store HA cluster, you can specify that operations ca
     </thead>
     <tbody>
         <tr>
-            <td><code>PerformOnAnyNode()</code></td>
-            <td>Allow for writes to be forwarded and read requests served locally if node is not master</td>
+            <td><code>PerformOnMasterOnly()</code></td>
+            <td>Require all write and read requests to be served only by the master (Default)</td>
         </tr>
         <tr>
-            <td><code>PerformOnMasterOnly()</code></td>
-            <td>Require all write and read requests to be served only by master (Default)</td>
+            <td><code>PerformOnAnyNode()</code></td>
+            <td>Allow for writes to be forwarded and read requests to be served locally if the current node is not master</td>
         </tr>
     </tbody>
 </table>
 
 ### Handling Failures
 
-There following methods on the `ConnectionSettingsBuilder` which allow you to modify the way in which the connection handles failures.
+There following methods on the `ConnectionSettingsBuilder` allow you to modify the way in which the connection handles operation failures and connection issues.
 
 #### Reconnections
 
@@ -235,7 +235,7 @@ There following methods on the `ConnectionSettingsBuilder` which allow you to mo
         </tr>
         <tr>
             <td><code>KeepRetrying()</code></td>
-            <td>Allows infinite operation retry attempts</td>
+            <td>Allows infinite operation retries</td>
         </tr>
         <tr>
             <td><code>LimitOperationsQueueTo<br>(int limit)</code></td>
@@ -250,9 +250,9 @@ There following methods on the `ConnectionSettingsBuilder` which allow you to mo
 
 ## Cluster Settings
 
-When connecting to a multi-node cluster, you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily, this is used to tell the EventStoreConnection how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
+When connecting to an Event Store HA cluster, you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily, this is used to tell the EventStoreConnection how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
 
-### Connecting Using DNS
+### Using DNS Discovery
 
 DNS discovery uses a single DNS entry with several records listing all node IP addresses. The EventStoreConnection will then use a well known port to gossip with the nodes.
 
@@ -276,11 +276,11 @@ Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
         </tr>
         <tr>
             <td><code>SetMaxDiscoverAttempts(int maxDiscoverAttempts)</code></td>
-            <td>Sets the maximum number of attempts for discovery (Default: )</td>
+            <td>Sets the maximum number of attempts for discovery (Default: 10)</td>
         </tr>
         <tr>
             <td><code>SetGossipTimeout(TimeSpan timeout)</code></td>
-            <td>Sets the period after which gossip times out if none is received (Default: )</td>
+            <td>Sets the period after which gossip times out if none is received (Default: 1 second)</td>
         </tr>
     </tbody>
 </table>
@@ -292,7 +292,7 @@ If you are using the open source edition of Event Store HA, the gossip port shou
 
 ### Connecting Using Gossip Seeds
 
-The second supported method for node discovery uses a hardcoded set of `IPEndPoint`s.
+The second supported method for node discovery uses a hardcoded set of `IPEndPoint`s as gossip seeds.
 
 Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
 
@@ -310,22 +310,22 @@ Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
         </tr>
         <tr>
             <td><code>SetGossipSeedEndPoints(params GossipSeed[] gossipSeeds)</code></td>
-            <td>Sets gossip seed endpoints for the client with a specific `Host` header on the request</td>
+            <td>Same as above, but allows a specific `Host` header to be sent with all HTTP requests</td>
         </tr>
         <tr>
             <td><code>SetMaxDiscoverAttempts(int maxDiscoverAttempts)</code></td>
-            <td>Sets the maximum number of attempts for discovery (Default: )</td>
+            <td>Sets the maximum number of attempts for discovery (Default: 10)</td>
         </tr>
         <tr>
             <td><code>SetGossipTimeout(TimeSpan timeout)</code></td>
-            <td>Sets the period after which gossip times out if none is received (Default: )</td>
+            <td>Sets the period after which gossip times out if none is received (Default: 1 second)</td>
         </tr>
     </tbody>
 </table>
 
 ## Connection Events
 
-Once an instance of `EventStoreConnection` has been created, there are various events that your application can attach handlers to in order to be notified of changes to the status of the connection.
+`EventStoreConnection` exposes a number of events that your application can use in order to be notifed of changes to the status of the connection.
 
 <table>
     <thead>
