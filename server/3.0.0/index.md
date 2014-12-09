@@ -5,11 +5,11 @@ version: 3.0.0
 pinned: true
 ---
 
-The Event Store runs as a server, to which many clients can connect either over HTTP or using one of the client APIs which operate using TCP. Both the open source, and commercial versions, can be ran as either a single node, or a highly available cluster of nodes.
+The Event Store runs as a server, to which clients can connect either over HTTP or using one of the client APIs. Both the open source, and commercial versions, can be ran as either a single node, or as a highly available cluster of nodes.
+
+The open source version of Event Store is distributed as a console application, available to download from [here](http://geteventstore.com/downloads/). There are separate distributions for Windows on .NET and Linux/OS X on Mono.
 
 ## Running the Open Source version
-
-### TL;DR version
 
 A typical command line for starting the Event Store is:
 
@@ -19,35 +19,27 @@ On Windows and .NET (from an account with permission to listen for HTTP traffic)
 c:\EventStore> EventStore.ClusterNode.Exe --db .\ESData
 ```
 
-On Linux and Mono:
+On Linux/OS X and Mono:
 
 ```
-$ mono-sgen EventStore.ClusterNode.Exe --db ./ESData
+$ ./run-node.sh --db .\ESData
 ```
 
-### Longer version
-
-The open source version of Event Store is distributed as a console application. There are separate distributions for Windows on .NET and Linux on Mono.
-
-The executable for the open source version of Event Store is `EventStore.ClusterNode.Exe`.
-
-**Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.** for more on [Command Line Arguments](./command-line-arguments).
+<span class="note--warning">
+Note: Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.* For more information on Command Line Arguments look [here](./command-line-arguments).
+</span>
 
 ## Platform Specifics
 
 ### On Windows and .NET
 
-The Event Store has an HTTP interface - consequently the identity under which you want to run the Event Store must be configured have permission to listen to incoming HTTP requests, as detailed [here](http://msdn.microsoft.com/en-us/library/ms733768.aspx).
+The Event Store has an HTTP interface - consequently the identity under which you want to run the Event Store must have permission to listen to incoming HTTP requests, as detailed [here](http://msdn.microsoft.com/en-us/library/ms733768.aspx).
 
-In order to configure an account with permission to listen for incoming HTTP
-requests, you can execute the following in PowerShell or CMD running as
-administrator (replace `DOMAIN\username` with the actual account, and the port number if not running on the default of 2113)
+In order to configure an account with permission to listen for incoming HTTP requests, you can execute the following in PowerShell or the Command Prompt running as administrator (replace `DOMAIN\username` with the actual account details, and the port number if the default port is not being used.)
 
 ```
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 ```
-
-Also but the port may need to be opened on the machine or corporate firewall to allow access to the service.
 
 #### If you get 503 errors from the web UI
 
@@ -68,8 +60,8 @@ netsh http delete urlacl http://+:2113
 
 This should resolve the issue.
 
-### On Linux and Mono
+### On Linux/OS X
 
-Event Store runs on Mono version 3.2.3 or greater (as this was the first release after our patches were accepted).
+The Event Store builds for both Linux and OS X have the Mono runtime bundled in, this means that you do not need Mono installed locally to run Event Store.
 
-In order to use projections, you must export the environment variable `LD_LIBRARY_PATH` to include the installation path of the Event Store, where `libv8.so` and `libjs1.so` can be found.
+Although you can run the Event Store binary directly, a run-node shell script is provided which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of the Event Store, this is necessary if you are planning to use projections.
