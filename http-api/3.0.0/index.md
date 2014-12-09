@@ -5,9 +5,7 @@ version: 3.0.0
 pinned: true
 ---
 
-The Event Store provides a native interface of AtomPub over HTTP. This section
-of the documentation will document the options for reading and manipulating
-streams using the HTTP API.  
+The Event Store provides a native interface of AtomPub over HTTP.
 
 <span class="note">
 Examples in this section make use of the command line tool
@@ -27,9 +25,9 @@ streams of events in order to allow use cases to be implemented in a style best
 suited to them). It also opens up the possibility of using the Event Store as a
 queuing system.
 
-AtomPub is a RESTful protocol. Consequently, it can reuse many existing components, for example Reverse Proxies and client’s native HTTP caching. Since events stored in the Event Store are entirely immutable, cache expiration can be infinite. We can also leverage content type negotiation. Appropriately serialized events can be accessed as JSON or XML according to the request headers.
+AtomPub is a RESTful protocol that can reuse many existing components, for example Reverse Proxies and client’s native HTTP caching. Since events stored in the Event Store are entirely immutable, cache expiration can be infinite. We can also leverage content type negotiation. Appropriately serialized events can be accessed as JSON or XML according to the request headers.
 
-This all leads to an interesting scenario where, although at first glance HTTP would seem to be less efficient as a protocol than the native TCP api, it is in many cases actually more efficient after intermediary caching is brought into play. As an example, replaying a stream is a very common operation. This operation using HTTP will likely make only a single call to the Event Store (a head read) with the rest of the GETs being resolved from the local or intermediary cache.
+This all leads to an interesting scenario where, although at first glance HTTP would seem to be less efficient as a protocol than the native TCP API, it is in many cases actually more efficient after intermediary caching is brought into play. As an example, replaying a stream is a very common operation. This operation using HTTP will likely make only a single call to the Event Store (a head read) with the rest of the GETs being resolved from the local or intermediary cache.
 
 ## Factors affecting choice of API
 
@@ -61,7 +59,9 @@ In addition to those, these content types are also accepted for GET requests:
 
 There will likely be additions in the future for protobufs and bson.
 
-As an example you can either use `content-type` or you can use a `?format=xml` in the URL to decide the format type that you receive. This is due to some clients not dealing well with HTTP headers, it can also be useful with some caching systems as the URLs then are unique. This applies to all URLs used within the AtomPub system including `/event/{id}` links. The general prefered mechanism however is for you to set [Accept Headers] in your http request. All HTTP-based interactions with the Event Store support multiple formats. As of time of the writing the accepted content types for streams are `application/atom+xml`, `application/vnd.eventstore.atom+json`, `application/xml`, `application/json`, and `text`. This pattern is followed for atomsvc and atomcat as well. If you were to post with an accept of `application/atom+xml` then your repsonse will be `application/atom+xml`, if you did the same post with `application/xml` you will get back the atom feed in an XML format but without the `atom+xml` content type. as an example:
+As an example you can either use `content-type` or you can use a `?format=xml` in the URL to decide the format type that you receive. This is due to some clients not dealing well with HTTP headers, it can also be useful with some caching systems as the URLs then are unique. This applies to all URLs used within the AtomPub system including `/event/{id}` links. The general prefered mechanism however is for you to set [Accept Headers] in your http request. All HTTP-based interactions with the Event Store support multiple formats. As of time of the writing the accepted content types for streams are `application/atom+xml`, `application/vnd.eventstore.atom+json`, `application/xml`, `application/json`, and `text`. This pattern is followed for atomsvc and atomcat as well. If you were to post with an accept of `application/atom+xml` then your repsonse will be `application/atom+xml`, if you did the same post with `application/xml` you will get back the atom feed in an XML format but without the `atom+xml` content type.
+
+For example:
 
 ```
 ouro@ouroboros:~$ curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/anewstream"
@@ -76,7 +76,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Sat, 08 Sep 2012 11:14:52 GMT
 Content-Length: 1743
 Keep-Alive: timeout=15,max=100
+```
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Event stream 'anewstream'</title>
@@ -125,7 +127,6 @@ greg@ouroboros:~/src/EventStore.wiki$ curl -i -H "Accept:text/xml" "http://127.0
 ```
 
 ```http
-
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -138,8 +139,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Fri, 28 Jun 2013 16:29:42 GMT
 Content-Length: 1345
 Keep-Alive: timeout=15,max=100
+```
 
-
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
    <title>Event stream 'newstream'</title>
@@ -198,7 +200,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Fri, 28 Jun 2013 15:45:19 GMT
 Content-Length: 1750
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "title": "Event stream 'newstream'",
   "id": "http://127.0.0.1:2113/streams/newstream",
@@ -346,7 +350,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 13 Sep 2012 10:55:13 GMT
 Content-Length: 312
 Keep-Alive: timeout=15,max=100
+```
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ReadEventCompletedText>
    <correlationId>680fccc2-3c6c-4ed0-ad8a-b952bd446873</correlationId>
@@ -377,7 +383,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 13 Sep 2012 10:57:26 GMT
 Content-Length: 208
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "correlationId": "ed4bbdc6-c7ce-449e-bbda-0d903b1c82c3",
   "eventStreamId": "newstream",

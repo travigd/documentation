@@ -7,13 +7,15 @@ exclude_from_sidebar: true
 
 The ES-LongPoll header is used to instruct the server that when on the head link of a stream and no data is available the server should wait some period of time to see if data becomes available.
 
-**The long poll header is supported from version 2.1 and higher. Lower versions will ignore the header**
+<span class="note--warning">
+The long poll header is supported from version 2.1 and higher. Lower versions will ignore the header.
+</span>
 
-This can be used to provide lower latency for atom clients as opposed to client initiated polling. Instead of the client polling every say 5 seconds to get data from the feed the client would send up a request with "ES-LongPoll: 15". This instructs the backend to wait for up to 15 seconds before returning with no result. The latency is therefore lowered from the poll interval to about 10ms from the time an event is written until the time the http connection is notified.
+This can be used to provide lower latency for Atom clients as opposed to client initiated polling. Instead of the client polling every say 5 seconds to get data from the feed the client would send up a request with `ES-LongPoll: 15`. This instructs the backend to wait for up to 15 seconds before returning with no result. The latency is therefore lowered from the poll interval to about 10ms from the time an event is written until the time the http connection is notified.
 
-The use of the ES-LongPoll header can be seen in the following curl command.
+The use of the `ES-LongPoll` header can be seen in the following cURL command.
 
-First go to the head of the stream (in this case we are using the default chat of the chat sample)
+First go to the head of the stream (in this case we are using the default chat of the chat sample).
 
 ```
 ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat -H "Accept: application/json"
@@ -89,7 +91,7 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-Then grab the previous rel link http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 and try it. Note it brings back an empty feed.
+Then grab the previous `rel` link `http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20` and try it. Note it brings back an empty feed.
 
 ```
 ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json"
@@ -147,7 +149,7 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-Note the entries section is empty (there is no further data that can be provided). Now try that URI with a long poll header
+The entries section is empty (there is no further data that can be provided). Now try that URI with a long poll header.
 
 ```
 ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json" -H "ES-LongPoll: 10"

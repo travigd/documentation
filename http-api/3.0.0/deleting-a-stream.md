@@ -4,9 +4,11 @@ section: "HTTP API"
 version: 3.0.0
 ---
 
-To delete a stream over the Atom interface is quite simple. Simply DELETE the resource. This process can be seen in the following curl commands and should be available from any environment.
+To delete a stream over the Atom interface is quite simple. Simply DELETE the resource. This process can be seen in the following cURL commands and should be available from any environment.
 
-*Note that the documentation here applies to versions after 2.0.1 prior to 2.0.1 only hard deletes were available and the system uses that behaviour.*
+<span class="note">
+The documentation here applies to versions after 2.0.1. Prior to 2.0.1 only hard deletes were available and the system uses that behaviour.
+</span>
 
 ## Example
 
@@ -29,7 +31,7 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:39:12 GMT
 ```
 
-Then delete the stream with a HTTP DELETE to the stream resource.
+Then delete the stream with a `HTTP DELETE` to the stream resource.
 
 ```
 ouro@ouroboros$ curl -v -X DELETE http://127.0.0.1:2113/streams/foo
@@ -48,7 +50,7 @@ Date: Thu, 13 Mar 2014 20:40:05 GMT
 
 ```
 
-By default when you delete a stream it will be soft deleted. This means that you can recreate it later if you want to. This is done by setting the $tb metadata section as the client API does. If you try to GET a soft deleted stream you will receive a 404
+By default when you delete a stream it will be soft deleted. This means that you can recreate it later if you want to. This is done by setting the `$tb` metadata section as the client API does. If you try to GET a soft deleted stream you will receive a 404.
 
 ```
 ouro@ouroboros$ curl -i http://127.0.0.1:2113/streams/foo
@@ -66,7 +68,7 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:47:18 GMT
 ```
 
-You can if desired recreate the stream by appending new events to it (just like creating a new stream.
+If desired, recreate the stream by appending new events to it (just like creating a new stream).
 
 ```
 ouro@ouroboroscurl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo -H "Conte
@@ -160,7 +162,7 @@ Date: Thu, 13 Mar 2014 20:49:34 GMT
 }
 ```
 
-So far we have been looking at soft deletes. You can also execute hard deletes of a stream. These deletes are permanent and the stream can never be recreated. To issue a permanent delete of a stream the ES-HardDelete header is used.
+So far we have been looking at soft deletes. You can also execute hard deletes of a stream. These deletes are permanent and the stream can never be recreated. To issue a permanent delete of a stream the `ES-HardDelete` header is used.
 
 ```
 ouro@ouroboros$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
@@ -215,7 +217,7 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:57:01 GMT
 ```
 
-If you try to recreate the stream as in the above example you will also receive a 410 GONE
+If you try to recreate the stream as in the above example you will also receive a 410 GONE.
 
 ```
 ouro@ouroboros$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"

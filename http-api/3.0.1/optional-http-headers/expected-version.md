@@ -5,11 +5,11 @@ version: 3.0.1
 exclude_from_sidebar: true
 ---
 
-When writing to a stream it is often wanted to use an "Expected Version". This allows for optimistic concurrency with a stream, IE: my write can only succeed if I have seen everyone else's writes. This is used most commonly for a domain object projection. ExpectedVersion can be set as ES-ExpectedVersion: #.
+When writing to a stream it is often wanted to use an `Expected Version`. This allows for optimistic concurrency with a stream, IE: my write can only succeed if I have seen everyone else's writes. This is used most commonly for a domain object projection. ExpectedVersion can be set as `ES-ExpectedVersion: #`.
 
-By default the ES-ExpectedVersion is -2 (just append). You can set an actual version number as well or -1 to say that the stream should not exist when processing (eg you expect to be creating it).
+By default the `ES-ExpectedVersion` is `-2` (just append). You can set an actual version number as well or `-1` to say that the stream should not exist when processing (eg you expect to be creating it).
 
-In the following curl command ExpectedVersion is not set (and it will append or create/append to the stream).
+In the following cURL command `ExpectedVersion` is not set (and it will append or create/append to the stream).
 
 ```http
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i -d @/home/greg/test.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
@@ -25,7 +25,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-the stream "a new stream" would now have one event in it. If appending with an expected version of 3 this will not work.
+the stream `a new stream` would now have one event in it. If appending with an expected version of 3 this will not work.
 
 ```http
 

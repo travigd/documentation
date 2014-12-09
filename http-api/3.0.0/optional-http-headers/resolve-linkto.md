@@ -7,7 +7,7 @@ exclude_from_sidebar: true
 
 When using projections you can have links placed into another stream. By default the Event Store will always resolve linkTos for you returning the event that the link points to. You can use the ES-ResolveLinkTos: false HTTP header to tell the Event Store to return you the actual link and to not resolve it.
 
-The differences in behaviour can be seen in the following curl commands.
+The differences in behaviour can be seen in the following cURL commands.
 
 ```http
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i -u admin:changeit http://127.0.0.:2113/streams/testing2/7 -H "ES-ResolveLinkTos: true"
@@ -44,7 +44,9 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-Note that the content links are pointing back to the original $projections-$all stream (the linked events are being resolved back to where they point). With the header set the links (or embedded content) will instead point back to the actual linkTo events.
+<span class="note">
+The content links are pointing back to the original `$projections-$all` stream (the linked events are being resolved back to where they point). With the header set the links (or embedded content) will instead point back to the actual linkTo events.
+</span>
 
 ```http
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i -u admin:changeit http://127.0.0.:2113/streams/testing2/7 -H "ES-ResolveLinkTos: false"

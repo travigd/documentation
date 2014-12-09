@@ -8,11 +8,13 @@ The Event Store supports security over HTTP. This document is meant as an introd
 
 ## Authentication
 
-The Event Store supports authentication over basic authentication to internal users. These users can be created either through a RESTful api or through the admin console. Once users are configured standard basic authentication can be used on requests.
+The Event Store supports authentication over basic authentication to internal users. These users can be created either through a RESTful API or through the admin console. Once users are configured standard basic authentication can be used on requests.
 
-*The trusted intermediary header can also be used to provide for externalized authentication, you can read more about it [here](../optional-http-headers/trusted-intermediary) this can allow you to easily integrate almost any authentication system with the Event Store*
+<span class="note">
+The trusted intermediary header can also be used to provide for externalized authentication, you can read more about it [here](../optional-http-headers/trusted-intermediary) this can allow you to easily integrate almost any authentication system with the Event Store.
+</span>
 
-As an example if I were to use the default admin user admin:changeit I would include this in my request.
+As an example if I were to use the default admin user `admin:changeit` I would include this in my request.
 
 ```
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i 'http://127.0.0.1:2113/streams/$all' -u admin:changeit
