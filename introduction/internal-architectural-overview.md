@@ -9,7 +9,7 @@ The overall architecture style of the Event Store is [SEDA (Staged Event Driven 
 
 Messages first flow through a state machine that represents the state of the node. As an example in a distributed scenario you are not always allowed to write or if you are still initializing you are now allowed to read. Each request is also handled by a state machine that manages the lifecycle of that request including time outs.
 
-Due to the way the architecture works the main monitoring points of the Event Store are the statuses of its queues. The statuses can be viewed in the health area of the admin interface or through the http api. Speed and overall performance is dependent on the reader throughput and lengths of the various queues.
+Due to the way the architecture works the main monitoring points of the Event Store are the statuses of its queues. The statuses can be viewed in the health area of the admin interface or through the HTTP API. Speed and overall performance is dependent on the reader throughput and lengths of the various queues.
 
 The most common queue to be slow is the storage write as it writes to storage in a durable fashion. It uses fsync/flushfile buffers to ensure that data is persisted to disk and will survive say a power outage on the machine. At the time of writing the storage writer is capable of writing about 15,000 transactions to disk per second on the open source single node version. This is well beyond the needs of most systems.
 
@@ -27,9 +27,9 @@ Entire TFChunks are cached. This is done by loading the entire chunk into unmana
 
 ## Scavenging
 
-The chunks in the Transaction File are periodically scavenged to remove deleted or old data depending on stream rules such as `$maxCount` in stream metadata and can be compacted (wouldn’t it be awful to have 5000 160kb files?).
+The chunks in the Transaction File are periodically scavenged to remove deleted or old data depending on stream rules such as `$maxCount` in stream metadata and can be compacted (wouldn’t it be awful to have 5,000 160KB files?).
 
-This process generates new chunks, and switches them out atomically deleting them once they are no longer in use by readers. This gives the benefit that once completed, TFChunks are immutable. This includes the current chunk - since it is only written to sequentially, it will never seek back to overwrite something.
+This process generates new chunks, and switches them out atomically deleting them once they are no longer in use by readers. This gives the benefit that once completed, TFChunks are immutable. This includes the current chunk. Since it is only written to sequentially, it will never seek back to overwrite something.
 
 Every record in the log has an ID. The ID is the logical position at which the record was originally written to disk. This is useful as an identifier, as in a scenario where you are not deleting you know exactly where the record is stored.
 
