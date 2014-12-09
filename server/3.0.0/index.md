@@ -5,13 +5,13 @@ version: 3.0.0
 pinned: true
 ---
 
-The Event Store runs as a server, to which clients can connect either over HTTP or using one of the client APIs. Both the open source, and commercial versions, can be ran as either a single node, or as a highly available cluster of nodes.
+The Event Store runs as a server, to which clients can connect either over HTTP or using one of the client APIs. Both the open source, and commercial versions, can be run as either a single node, or a highly available cluster of nodes.
 
 The open source version of Event Store is distributed as a console application, available to download from [here](http://geteventstore.com/downloads/). There are separate distributions for Windows on .NET and Linux/OS X on Mono.
 
 ## Running the Open Source version
 
-A typical command line for starting the Event Store is:
+A typical command line for running the Event Store server is:
 
 On Windows and .NET:
 
