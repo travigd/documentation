@@ -1,8 +1,8 @@
 # Event Store Documentation
 
-> **This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are automatically built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
->
-> What follows is documentation for how to use the Event Store documentation. It’s really meta. If you’re planning to make updates or contributions then read on; otherwise head on over to the [website](http://docs.geteventstore.com).
+**This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are automatically built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
+
+What follows is documentation for how to use the Event Store documentation. It’s really meta. If you’re planning to make updates or contributions then read on; otherwise head on over to the [website](http://docs.geteventstore.com).
 
 ## Versioning
 
@@ -68,15 +68,6 @@ For example:
 /dotnet-api/3.0.0/writing-to-a-stream.md
 ```
 
-### URLs
-
-Published pages should be available at a URL with one of these formats:
-
-- `http://docs.geteventstore.com/index.html`
-- `http://docs.geteventstore.com/[SECTION]/index.html`
-- `http://docs.geteventstore.com/[SECTION]/[VERSION]/index.html`
-- `http://docs.geteventstore.com/[SECTION]/[VERSION]/[FILENAME]/index.html`
-
 For example:
 
 ```
@@ -105,5 +96,5 @@ For `index.md` pages you should also include `pinned: true`.
 The content of our documentation is written by many developers. These formatting guidelines should help us maintain a consistent use of language throughout the docs.
 
 - **Acronyms and abbreviations** should always be set in uppercase (e.g. API, HTTP, JVM)
-- **Brand names** should be capitalised correctly (e.g. Event Store, JavaScript, .NET)
+- **Brand names** should be capitalised correctly (e.g. cURL, Event Store, JavaScript, .NET)
 - **Example code** should not have a line length of more than 80 characters
