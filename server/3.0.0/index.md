@@ -11,31 +11,23 @@ The open source version of Event Store is distributed as a console application, 
 
 ## Running the Open Source version
 
-A typical command line for running the Event Store server is:
+<span class="note--warning">
+Note: Unless passed a database option, the Event Store will write to a new database created in the system's temporary files path each time it is started. For more information on Command Line Arguments look [here](./command-line-arguments).
+</span>
 
-On Windows and .NET:
+### On Windows and .NET
+
+A tpical command line for running the Event Store server on Windows is:
 
 ```
 c:\EventStore> EventStore.ClusterNode.Exe --db .\ESData
 ```
 
-On Linux/OS X:
-
-```
-$ ./run-node.sh --db ./ESData
-```
-
-<span class="note--warning">
-Note: Unless passed a database option, the Event Store will write to a new database created in the system's temporary files path each time it is started. For more information on Command Line Arguments look [here](./command-line-arguments).
-</span>
-
-## Platform Specifics
-
-### On Windows and .NET
+#### Setting up HTTP Permissions
 
 The Event Store has an HTTP interface - consequently the identity under which you want to run the Event Store must have permission to listen to incoming HTTP requests, as detailed [here](http://msdn.microsoft.com/en-us/library/ms733768.aspx).
 
-In order to configure an account with permission to listen for incoming HTTP requests, you can execute the following in PowerShell or the Command Prompt running as administrator (replace `DOMAIN\username` with the actual account details, and the port number if the default port is not being used.)
+In order to configure an account with permission to listen for incoming HTTP requests, you can execute the following in PowerShell, or the Command Prompt, running as administrator (replace `DOMAIN\username` with the actual account details, and the port number if the default port is not being used).
 
 ```
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
@@ -62,6 +54,12 @@ This should resolve the issue.
 
 ### On Linux/OS X
 
-The Event Store builds for both Linux and OS X have the Mono runtime bundled in, this means that you do not need Mono installed locally to run Event Store.
+A typical command line for running the Event Store server on Linux/OS X is:
+
+```
+$ ./run-node.sh --db ./ESData
+```
 
 Although you can run the Event Store binary directly, a run-node shell script is provided which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of the Event Store, this is necessary if you are planning to use projections.
+
+The Event Store builds for both Linux and OS X have the Mono runtime bundled in, this means that you do not need Mono installed locally to run Event Store.
