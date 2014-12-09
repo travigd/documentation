@@ -23,9 +23,9 @@ There are many factors that go into the choice of which of the protocols (TCP vs
 
 - **AtomPub is more scalable for large numbers of subscribers.** This is due to the ability to use intermediary caching with Atom feeds. Most URIs handed out by the Event Store point to immutable data and are therefore infinitely cachable. Therefore on a replay of a projection much of the data required is likely to be available on a local or intermediary cache. This can also lead to lower network traffic.
 
-   Atom will also tend to operate better in a large heterogenous environment where you have callers from many different platforms. This is especially true if you have to integrate with many teams/external vendors. Atom is an industry standard and well documented protocol that you can point them to where as the TCP protocol is a custom protocol they would need to understand. 
+  Atom will also tend to operate better in a large heterogenous environment where you have callers from many different platforms. This is especially true if you have to integrate with many teams/external vendors. Atom is an industry standard and well documented protocol that you can point them to where as the TCP protocol is a custom protocol they would need to understand. 
 
-   There is good existing tooling for Atom on most platforms, including feed readers (e.g. Fiddler). None of this tooling exists at this point for the analysing of traffic with the TCP protocol.
+  There is good existing tooling for Atom on most platforms, including feed readers (e.g. Fiddler). None of this tooling exists at this point for the analysing of traffic with the TCP protocol.
 
 <span class="note">
 In general our recommendation would be to use AtomPub as your primary protocol unless you have low subscriber SLAs or need higher throughput on reads and writes than Atom can offer. This is largely due to the open nature and ease of use of the Atom protocol. Very often in integration scenarios these are more important than raw performance.
