@@ -6,7 +6,9 @@ pinned: true
 
 This document describes how to get started with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.
 
-*NOTE: This setup is intended as an experimental setup or for a developer’s machine, it is not intended to describe a production setup. This document assumes that you also have [curl](http://curl.haxx.se/) installed on your machine.*
+<span class="note">
+This setup is intended as an experimental setup or for a developer’s machine, it is not intended to describe a production setup. This document assumes that you also have [curl](http://curl.haxx.se/) installed on your machine.
+</span>
 
 ## Installation
 
@@ -45,7 +47,9 @@ To begin let’s open Notepad. Copy and paste the following event definition int
 ]
 ```
 
-*NOTE: You can also post events as XML, same format but set the Content-Type to XML*
+<span class="note">
+You can also post events as XML, same format but set the Content-Type to XML
+</span>
 
 Now to write our event to a stream we would issue the following curl command.
 
@@ -53,7 +57,9 @@ Now to write our event to a stream we would issue the following curl command.
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
 ```
 
-*NOTE: from version 3.0 rc9 there has been a change to how events are posted. See the [post about this release here](https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ).*
+<span class="note">
+From version 3.0 rc9 there has been a change to how events are posted. See the [post about this release here](https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ).
+</span>
 
 So for the above to work, use the following which has a new Content-Type which allows the old format:
 
