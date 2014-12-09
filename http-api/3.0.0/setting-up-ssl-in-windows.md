@@ -18,22 +18,25 @@ Following line shows how to create the test X509 certificate which will be used 
 makecert.exe -sr LocalMachine -ss My -n CN=192.168.100.186 -sky exchange -sk -pe
 ```
  
-Note that this machine (with IP 192.168.100.186) will host the WCF service, which should support the HTTPS. Please also note that the test certificate created with the makecert tool is signed by virtual trust center ‘Root Agency’ (self signed for testing purposes only).
+<span class="note">
+This machine (with IP 192.168.100.186) will host the WCF service, which should support the HTTPS. Please also note that the test certificate created with the makecert tool is signed by virtual trust center ‘Root Agency’ (self signed for testing purposes only).
+</span>
 
 After this command is executed, the new certificate with the private key is created and stored in the LocalMachine Personal store. To see it, use the MMC-certificate snap-in.
 
 After this step the HttpListener could be configured. However in the test scenario there will be a client which will probably run at the same machine. Because of this execute following command to install the newly created server certificate in the user’s “Trusted People” store.
 
+```
 certmgr.exe -add -r LocalMachine -s My -c -n 192.168.100.186 -r CurrentUser -s
- 
+```
 
-This command reads the server’s certificate (created in the previous step with makecert.exe) with the friendly name CN=192.168.100.186 from the LocalMachine “Personal” store and make one copy in the CurrentUser “Trusted People” store.
+This command reads the server’s certificate (created in the previous step with makecert.exe) with the friendly name `CN=192.168.100.186` from the LocalMachine “Personal” store and make one copy in the CurrentUser “Trusted People” store.
 
 This establishes the client’s trust to the certificate.
 
 ## Configuring HttpListener
 
-First you have to do is to download the required tool HttpCfg.Exe, which is a part of Windows XP SP2 Support Tools (download here).
+First you have to do is to download the required tool HttpCfg.Exe, which is a part of Windows XP SP2 Support Tools.
 
 Here are some examples:
 
@@ -43,7 +46,7 @@ Configure HttpListener to provide SSL at all IP-addresses, but on the port 999.
 Httpcfg.exe set ssl -i 0.0.0.0:999 -h e81bada10ffddf6fce0628ab491eecf8d2a4d070 -Personal
 ```
 
-The value specified in the argument –h is the certificate's thumbprint (hash), which can be copied from any certificate viewer. I used MMC cetificates snap-in to browse for certificate. Under details tab, select Thumbprint and copy the binary-value. Finally, remove all blanks. 
+The value specified in the argument `–h` is the certificate's thumbprint (hash), which can be copied from any certificate viewer. I used MMC cetificates snap-in to browse for certificate. Under details tab, select Thumbprint and copy the binary-value. Finally, remove all blanks. 
 
 Following command is useful to show what certificates are already configured:
 

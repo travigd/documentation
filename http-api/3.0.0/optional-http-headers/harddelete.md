@@ -5,7 +5,7 @@ version: 3.0.0
 exclude_from_sidebar: true
 ---
 
-The ES-HardDelete header controls the way to delete a stream. By default the Event Store will soft delete a stream allowing that stream to later be reused. If you set the ES-HardDelete header the stream will be permanently deleted.
+The `ES-HardDelete` header controls the way to delete a stream. By default the Event Store will soft delete a stream allowing that stream to later be reused. If you set the `ES-HardDelete` header the stream will be permanently deleted.
 
 ```
 ouro@ouroboros$ curl -v -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete:true"

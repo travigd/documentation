@@ -26,7 +26,7 @@ sudo vi /etc/default/varnish
 
 ```
 
-Edit the are that looks like
+Edit the section that looks like
 
 ```bash
 DAEMON_OPTS="-a :80 \
@@ -49,4 +49,4 @@ backend default {
 }
 ```
 
-Now you would sudo service varnish restart to restart varnish and you should be up and running with a reverse proxy. If you want to check out the status of varnish you can check with varnishstat from the command line.
+Now you would sudo service varnish restart to restart varnish and you should be up and running with a reverse proxy. If you want to check out the status of varnish you can check with `varnishstat` from the command line.

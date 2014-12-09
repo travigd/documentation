@@ -5,11 +5,13 @@ version: 3.0.0
 exclude_from_sidebar: true
 ---
 
-*Note that this event is only available in version 3.0 or higher of the event store*
+<span class="note">
+This event is only available in version 3.0.0 or higher of the Event Store.
+</span>
 
-When writing to a stream and not using the application/vnd.eventstore.events+json/+xml media type it is necesary that you specify an event id with the event that you are posting. This is not required with the custom media type as it is also specified within the format itself (there is eventId on each entry in the format). EventId is used for idempotency within the event store.
+When writing to a stream and not using the `application/vnd.eventstore.events+json/+xml` media type it is necesary that you specify an event ID with the event that you are posting. This is not required with the custom media type as it is also specified within the format itself (there is eventId on each entry in the format). `EventId` is used for idempotency within the event store.
 
-You can include an event id on an event by specifying this header
+You can include an event ID on an event by specifying this header.
 
 ```bash
 ouro@ouroboros:$ curl -i -d @/home/ouro/myevent.json "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E"
@@ -29,7 +31,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-If you do not put an ES-EventId header on an append where the body is considered the actual event (eg: not using application/vnd.eventstore.events+json/+xml) the server will generate a unique identifier for you and redirect you to an idempotent uri where you can post your event. It is generally recommended if you can create a UUID that you should not use this facility but it is useful when you are in an environment that cannot create a UUID.
+If you do not put an `ES-EventId` header on an append where the body is considered the actual event (eg: not using `application/vnd.eventstore.events+json/+xml`) the server will generate a unique identifier for you and redirect you to an idempotent URI where you can post your event. It is generally recommended if you can create a UUID that you should not use this facility but it is useful when you are in an environment that cannot create a UUID.
 
 ```bash
 greg@orc:~/src/EventStore.wiki$ curl -i -d @/home/greg/myevent.json "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent"

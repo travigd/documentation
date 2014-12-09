@@ -116,7 +116,9 @@ Date: Sun, 16 Jun 2013 13:18:29 GMT
 }
 ```
 
-Note that reading metadata may require that you pass credentials if you have security enabled, as in the examples above. If you do not pass credentials and they are required you will receive a 401 Unauthorized response.
+<span class="note">
+Reading metadata may require that you pass credentials if you have security enabled, as in the examples above. If you do not pass credentials and they are required you will receive a 401 Unauthorized response.
+</span>
 
 ```
 ouro@ouroboros:> curl -i http://127.0.0.1:2113/streams/$users/metadata

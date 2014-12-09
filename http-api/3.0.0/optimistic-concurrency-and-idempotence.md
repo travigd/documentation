@@ -40,7 +40,9 @@ Keep-Alive: timeout=15,max=100
 
 Assuming you were posting to a new stream you would get the event written once (and the stream created). The second event will return as the first but not write again.
 
-*This allows the client rule of “if you get unknown condition, retry” to work.*
+<span class="note">
+This allows the client rule of “if you get unknown condition, retry” to work.
+</span>
 
 ```http
 ouro@ouroboros:~/src/retrospective$ curl -i "http://127.0.0.1:2113/streams/newstream444""

@@ -4,7 +4,7 @@ section: "HTTP API"
 version: 3.0.1
 ---
 
-There are many error conditions that can be returned from the writing or reading of a stream. All of these can be identified by their status codes and should be relatively easy to diagnose. This document lists some of the cases that can result in errors.
+There are many error conditions that can be returned from the writing or reading of a stream. All of these can be identified by their status codes and should be relatively easy to diagnose.
 
 ## Stream Never Created Get
 
@@ -21,8 +21,6 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 
 ```
-
-## Unknown Content Type On Read of Stream
 
 ## Write to Stream with Invalid Content for Content Type
 

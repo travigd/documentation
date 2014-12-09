@@ -7,7 +7,9 @@ exclude_from_sidebar: true
 
 The Event Store supports the use of a few custom HTTP headers for requests. 
 
-Note that the headers have previously been in the form "X-ES-ExpectedVersion" but have been changed to ES-ExpectedVersion in compliance with RFC-6648 http://tools.ietf.org/html/rfc6648
+<span class="note">
+That the headers have previously been in the form `X-ES-ExpectedVersion` but have been changed to `ES-ExpectedVersion` in compliance with RFC-6648 http://tools.ietf.org/html/rfc6648.
+</span>
 
 The headers that are currently supported are:
 

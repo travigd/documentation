@@ -5,11 +5,13 @@ version: 3.0.0
 exclude_from_sidebar: true
 ---
 
-*Note that this event is only available in version 3.0 or higher of the event store*
+<span class="note">
+This event is only available in version 3.0.0 or higher of the Event Store.
+</span>
 
-When writing to a stream and not using the application/vnd.eventstore.events+json/+xml media type it is necesary that you specify an event type with the event that you are posting. This is not required with the custom media type as it is also specified within the format itself.
+When writing to a stream and not using the `application/vnd.eventstore.events+json/+xml` media type it is necesary that you specify an event type with the event that you are posting. This is not required with the custom media type as it is also specified within the format itself.
 
-You can use the ES-EventType header as follows.
+You can use the `ES-EventType` header as follows.
 
 ```bash
 ouro@ouroboros$ curl -i -d @/home/ouro/myevent.json "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E"
@@ -29,7 +31,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-If you now view the event in the UI or through curl it will have the EventType of SomeEvent associated with it.
+If you now view the event in the UI or through cURL it will have the `EventType` of `SomeEvent` associated with it.
 
 ```bash
 ouro@ouroboros:$ curl http://127.0.0.1:2113/streams/newstream/1

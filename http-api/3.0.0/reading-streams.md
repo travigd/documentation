@@ -4,11 +4,15 @@ section: "HTTP API"
 version: 3.0.0
 ---
 
-Reading from streams with AtomPub can be a bit confusing if you have not done it before but we will go through in this document how reading works. Luckily for many environments the AtomPub protocol has already been implemented! *Being listed or not listed here by no means shows our official support for any of these.* The Event Store is compliant with the [Atom 1.0 Specification] (http://tools.ietf.org/html/rfc4287) as such many other systems have built in support for the Event Store.
+Reading from streams with AtomPub can be a bit confusing if you have not done it before but we will go through in this document how reading works. Luckily for many environments the AtomPub protocol has already been implemented!
+
+The Event Store is compliant with the [Atom 1.0 Specification] (http://tools.ietf.org/html/rfc4287) as such many other systems have built in support for the Event Store.
+
+<span class="note--warning">
+Being listed or not listed here by no means shows our official support for any of these. We haven’t actually tested or endorsed any of these libraries!
+</span>
 
 ## Existing Implementations
-
-Note we haven’t actually tested or endorsed any of these libraries!
 
 | Library     | Description                                                                                          |
 | ----------- | ---------------------------------------------------------------------------------------------------- |
@@ -22,7 +26,9 @@ Note we haven’t actually tested or endorsed any of these libraries!
 | node.js     | [https://github.com/danmactough/node-feedparser](https://github.com/danmactough/node-feedparser)     |
 | Objective C | [https://geekli.st/darvin/repos/MWFeedParser](https://geekli.st/darvin/repos/MWFeedParser)           |
 
-*Feel free to add more!*
+<span class="note">
+Feel free to add more!
+</span>
 
 ## A Simple Read
 
@@ -75,7 +81,7 @@ Keep-Alive: timeout=15,max=100
 </feed>
 ```
 
-There some important bits to notice here. The Feed here has 1 item in it. The newest items are always first going to the oldest items. For each entry there are a series of links. These links are links to the events themselves though the events can also be embedded using the ?embed parameter provided you are requesting JSON. To get an event follow the alternate link and set your Accept headers to the mime type you would like to get the event in.
+There some important bits to notice here. The Feed here has one item in it. The newest items are always first going to the oldest items. For each entry there are a series of links. These links are links to the events themselves though the events can also be embedded using the `?embed` parameter provided you are requesting JSON. To get an event follow the alternate link and set your Accept headers to the mime type you would like to get the event in.
 
 ```
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
@@ -101,7 +107,7 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-or for xml
+or for XML
 
 ```
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/xml"
@@ -145,9 +151,9 @@ In the example above the server had returned as part of its result:
    <link href="http://127.0.0.1:2113/streams/newstream/metadata" rel="metadata" />
 ```
 
-This is saying that there is not a next rel url (this means all the information is in this request). It is also saying that this url is the first link. When dealing with these urls there are two ways of reading the data in the stream. You can either go to the last link and then move forward following prev or you can go to the first link and follow the next links.  The last item will not have a next rel link.
+This is saying that there is not a next `rel` URL (this means all the information is in this request). It is also saying that this URL is the first link. When dealing with these urls there are two ways of reading the data in the stream. You can either go to the last link and then move forward following prev or you can go to the first link and follow the next links.  The last item will not have a next `rel` link.
 
-If you want to follow a live stream then you would keep following the prev links. When you reach the end (current portion) of a stream you will receive an empty document that does not have entries (or a prev rel link). You should then continue polling this uri (in the future a document will appear here). This can be seen by trying the previous link from the above feed.
+If you want to follow a live stream then you would keep following the prev links. When you reach the end (current portion) of a stream you will receive an empty document that does not have entries (or a prev `rel` link). You should then continue polling this URI (in the future a document will appear here). This can be seen by trying the previous link from the above feed.
 
 ```
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i http://127.0.0.1:2113/streams/newstream/1/forward/20
@@ -201,9 +207,9 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-When parsing an atom subscription the ids of events will always stay the same. This is important for figuring out when things are pointing to the same event.
+When parsing an atom subscription the IDs of events will always stay the same. This is important for figuring out when things are pointing to the same event.
 
-While the simple example above is easy to look at, let's try an example with more than a single page in it. If you want to do this yourself you can use the testclient that comes with event store and use the "VERIFY" command that will make some fake banking data. After running this command you should find many streams such as `http://127.0.0.1:2113/streams/account-28` in the system.
+While the simple example above is easy to look at, let’s try an example with more than a single page in it. If you want to do this yourself you can use the testclient that comes with event store and use the `VERIFY` command that will make some fake banking data. After running this command you should find many streams such as `http://127.0.0.1:2113/streams/account-28` in the system.
 
 Going to the link `http://127.0.0.1:2113/streams/account-28` will return us:
 
@@ -267,9 +273,9 @@ Keep-Alive: timeout=15,max=100
   "entries": <SNIP>
 ```
 
-Using the rel links in this response it is possible to walk through all of the events in the stream either by going to the “last” URL and walking prev or by walking next from the “first” link.
+Using the `rel` links in this response it is possible to walk through all of the events in the stream either by going to the “last” URL and walking prev or by walking next from the “first” link.
 
-If you go to the “last” rel link you will receive:
+If you go to the “last” `rel` link you will receive:
 
 ```
 curl -v http://127.0.0.1:2113/streams/account-28/range/19/20
@@ -333,7 +339,7 @@ It is also important to note that you should **never** bookmark links aside from
 
 ## Reading All Events
 
-There is a special paged feed for all events that is named $all. The same paged form of reading described above can be used to read all events for the entire node by pointing the stream at `/streams/$all`. As it is just a stream in the system, all other things can be done with it (e.g. headers/embed body/etc). You are not however allowed to post to this stream.
+There is a special paged feed for all events that is named `$all`. The same paged form of reading described above can be used to read all events for the entire node by pointing the stream at `/streams/$all`. As it is just a stream in the system, all other things can be done with it (e.g. headers/embed body/etc). You are not however allowed to post to this stream.
 
 ```
 ouro@ouroboros:~/src/retrospective/research/stupidmono$ curl -i http://127.0.0.:2113/streams/%24all
@@ -391,7 +397,7 @@ Keep-Alive: timeout=15,max=100
 
 ## Conditional Gets
 
-The head link also supports conditional gets through the use of ETAGS. The use of ETAGS is a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). The basic idea is that you can include the ETAG of your last request and issue a conditional get to the server. If nothing has changed it will not return the full feed. As an example consider we make the request:
+The head link also supports conditional gets through the use of ETAGS. The use of ETAGS is a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). The basic idea is that you can include the ETAG of your last request and issue a conditional `get` to the server. If nothing has changed it will not return the full feed. As an example consider we make the request:
 
 ```
 ouro@ouroboros:~/src/EventStore.wiki$  curl -v http://127.0.0.1:2113/streams/newstream
@@ -420,7 +426,7 @@ Keep-Alive: timeout=15,max=100
 //clipped
 ```
 
-The server has told us in the headers that the ETag for this content is ETag: "2;248368668". We can use this in our next request if we are polling the stream for changes. We will put it in the header If-None-Match. This tells the server to check if the response will be the one we already know. 
+The server has told us in the headers that the ETag for this content is `ETag: "2;248368668"`. We can use this in our next request if we are polling the stream for changes. We will put it in the header If-None-Match. This tells the server to check if the response will be the one we already know. 
 
 ```
 ouro@ouroboros:~/src/EventStore.wiki$  curl -v --header 'If-None-Match: "2;248368668"
@@ -447,13 +453,15 @@ Keep-Alive: timeout=15,max=100
 
 When we do the conditional GET we will be returned a 304 not modified. If however the tags have changed it will be returned as normal. This can optimize not sending large streams over the wire if there have not been changes to the stream.
 
-*Etags are created using the version of the stream and the media type you are reading the stream in. You can NOT take an etag from a stream in one media type and use it with another media type.*
+<span class="note">
+Etags are created using the version of the stream and the media type you are reading the stream in. You can NOT take an etag from a stream in one media type and use it with another media type.
+</span>
 
 ## Embedding Data into Stream
 
-Up until now the feeds that have come down have contained links that point back to the actual event data. This is normally a preferable mechanism for a few reasons. The first is that they can be in a different media type than the feed and can be negotiated separately than the feed itself (e.g. feed in JSON event in XML). They can also be cached separately from the feed and can be pointed to by many feeds (if you use a linkTo() in projections this is actually what happens in your atom feeds). You can however also tell the atom feeds to embed your events into the stream as opposed to providing links. This can help cut down on the number of requests in some situations but the messages will be larger. Embedding is only supported in JSON.
+Up until now the feeds that have come down have contained links that point back to the actual event data. This is normally a preferable mechanism for a few reasons. The first is that they can be in a different media type than the feed and can be negotiated separately than the feed itself (e.g. feed in JSON event in XML). They can also be cached separately from the feed and can be pointed to by many feeds (if you use a `linkTo()` in projections this is actually what happens in your atom feeds). You can however also tell the atom feeds to embed your events into the stream as opposed to providing links. This can help cut down on the number of requests in some situations but the messages will be larger. Embedding is only supported in JSON.
 
-Though these are mostly used by the StreamUI component in the webapi at present there are ways of embedding events and/or further metadata into your stream that are controlled by the embed= parameter.
+Though these are mostly used by the StreamUI component in the webapi at present there are ways of embedding events and/or further metadata into your stream that are controlled by the `embed=` parameter.
 
 ### Rich
 
@@ -543,7 +551,7 @@ Keep-Alive: timeout=15,max=100
 
 ### Body
 
-The body embed parameter will put the JSON/XML body of the events into the feed as well depending on the type of the feed. This can be seen in the following http request (note the field “data” that is added).
+The body embed parameter will put the JSON/XML body of the events into the feed as well depending on the type of the feed. This can be seen in the following HTTP request (note the field “data” that is added).
 
 ```
 ouro@ouroboros:~/src/retrospective/research/stupidmono$ curl -i http://127.0.0.1:2113/streams/aaa?embed=body
