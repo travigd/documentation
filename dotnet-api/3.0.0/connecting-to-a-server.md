@@ -30,7 +30,7 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
         </tr>
         <tr>
             <td><code>Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)</code></td>
-            <td>Connects to a single node with custom settings</td>
+            <td>Connects to a single node with custom settings (see <a href="#customising-connection-settings">Customising Connection Settings</a>)</td>
         </tr>
         <tr>
             <td><code>Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)</code></td>
@@ -39,7 +39,11 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
     </tbody>
 </table>
 
-## Connection Settings
+<span class="note">
+The connection returned by these methods is inactive. Use the `ConnectAsync()` method to establish a connection with the server.
+</span>
+
+## Customising Connection Settings
 
 There are a number of different options which can be specified when making a connection to the Event Store using the client API. These options are encapsulated into an object of type `ConnectionSettings` which is passed as a paramater to the `Create` methods listed above.
 
@@ -49,9 +53,9 @@ Instances of ConnectionSettings are created using a fluent builder class as foll
 ConnectionSettings settings = ConnectionSettings.Create();
 ```
 
-This will create a `ConnectionSettings` with the default options. These can be overridden with the builder methods described below.
+This will create a `ConnectionSettings` with the default options. These can be overridden by chaining the additional builder methods described below.
 
-### Logging Destinations
+### Logging
 
 The Client API can log information about what it is doing to a number of different destinations. By default, no logging is enabled.
 
@@ -75,12 +79,16 @@ The Client API can log information about what it is doing to a number of differe
             <td><code>UseCustomLogger()</code></td>
             <td>Output log messages to the specified instance of `ILogger` (You should implement this interface in order to log using another library such as NLog or log4net)</td>
         </tr>
+        <tr>
+            <td><code>EnableVerboseLogging()</code></td>
+            <td>Turns on verbose logging.<br>By default, information about connection, disconnection and errors are logged. However it can be useful to have more information about specific operations as they are occuring.</td>
+        </tr>
     </tbody>
 </table>
 
-### Log Verbosity
+### User Credentials
 
-By default, information about connection, disconnection and errors are logged. However it can be useful to have more information about specific operations as they are occuring. To enable verbose logging use the following method on `ConnectionSettingsBuilder`:
+Event Store supports [Access Control Lists](/server/latest/access-control-lists/) which restrict permissions for a given stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set the default credentials for all operations on the connection:
 
 <table>
     <thead>
@@ -91,37 +99,151 @@ By default, information about connection, disconnection and errors are logged. H
     </thead>
     <tbody>
         <tr>
-            <td><code>EnableVerboseLogging()</code></td>
-            <td>Turns on verbose logging</td>
+            <td><code>SetDefaultUserCredentials(UserCredentials credentials)</code></td>
+            <td>Sets the default `UserCredentials` to be used for this connection. If user credentials are not given for an operation, these credentials will be used</td>
         </tr>
     </tbody>
 </table>
 
-## Connection Security
+A `UserCredentials` object can be created as follows:
 
-The Client API and Event Store can communicate either over SSL or an unencrypted channel. **When credentials are being passed outside of development, it is important to use an SSL-encrypted connection and to validate the server certificate.**
+```CSharp
+UserCredentials credentials = new UserCredentials("username","password");
+```
 
-### Using an unencrypted connection
+### Security
 
-The following method on `ConnectionSettingsBuilder` sets the connection to be unencrypted:
+The Client API and Event Store can communicate either over SSL or an unencrypted channel (by default). 
 
-- `UseNormalConnection()` - uses an unencrypted connection *(default)*
+<span class="note--warning">
+In production systems SSL-encrypted connections should *always* be used if credentials are being sent from the client to the Event Store and `validateServer` should be set to `true`.
+</span>
 
-### Using an SSL-encrypted connection
+To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/setting-up-ssl-windows/)
 
-To configure the client-side of the SSL connection, use the following method on `ConnectionSettingsBuilder`:
+<table>
+    <thead>
+        <tr>
+            <th>Builder Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>UseSslConnection(string targetHost, bool validateServer)</code></td>
+            <td>Uses an SSL-encrypted connection where:
+                <dl>
+                    <dt><code>targetHost</code></dt>
+                    <dd>Is the name specified on the SSL certificate installed on the server.</dd>
+                    <dt><code>validateServer</code></dt>
+                    <dd>Controls whether or not the server certificate is validated upon connection</dd>
+                </dl>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-- `UseSslConnection(string targetHost, bool validateServer)` - uses an SSL-encrypted connection where:
-	- `targetHost` is the name specified on the SSL certificate installed on the server.
-	- `validateServer` controls whether or not the server certificate is validated upon connection.
+### Operation Node Preference
 
-*Note: in production systems, `validateServer` should be set to `true`, and SSL-encrypted connections should be used if credentials are being sent from the client to the Event Store. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](wiki/Setting-Up-SSL-In-Windows)*
+When connecting to an Event Store HA cluster, you can specify that operations can be performed on any node, or only on the node which is the master:
 
-## Operation Node Preference
+<table>
+    <thead>
+        <tr>
+            <th>Builder Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>PerformOnAnyNode()</code></td>
+            <td>Allow for writes to be forwarded and read requests served locally if node is not master</td>
+        </tr>
+        <tr>
+            <td><code>PerformOnMasterOnly()</code></td>
+            <td>Require all write and read requests to be served only by master (Default)</td>
+        </tr>
+    </tbody>
+</table>
 
-When connecting to an Event Store HA cluster, you can specify that operations can be performed on any node, or only on the node which is the master.
+### Handling Failures
 
-- `builder.PerformOnAnyNode()`
-- `builder.PerformOnMasterOnly()`
+There following methods on the `ConnectionSettingsBuilder` which allow you to modify the way in which the connection handles failures.
 
-*More to come…*
+#### Reconnections
+
+<table>
+    <thead>
+        <tr>
+            <th>Builder Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>WithConnectionTimeoutOf<br>(TimeSpan timeout)</code></td>
+            <td>Sets the timeout to connect to a server before aborting and attempting a reconnect (Default: 1 second)</td>
+        </tr>
+        <tr>
+            <td><code>LimitReconnectionsTo<br>(int limit)</code></td>
+            <td>Limits the number of reconnections this connection can try to make (Default: 10)</td>
+        </tr>
+        <tr>
+            <td><code>KeepReconnecting()</code></td>
+            <td>Allows infinite reconnection attempts</td>
+        </tr>
+        <tr>
+            <td><code>SetReconnectionDelayTo<br>(TimeSpan reconnectionDelay)</code></td>
+            <td>Sets the delay between reconnection attempts (Default: 100ms)</td>
+        </tr>
+        <tr>
+            <td><code>SetHeartbeatInterval<br>(TimeSpan interval)</code></td>
+            <td>Sets how often heartbeats should be expected on the connection (lower values detect broken sockets faster) (Default: 750ms)</td>
+        </tr>
+        <tr>
+            <td><code>SetHeartbeatTimeout<br>(TimeSpan timeout)</code></td>
+            <td>Sets how long to wait without heartbeats before determining a connection to be dead (must be longer than the heatrbeat interval) (Default: 1500ms)</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Operations
+
+<table>
+    <thead>
+        <tr>
+            <th>Builder Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>SetOperationTimeout<br>(TimeSpan timeout)</code></td>
+            <td>Sets the operation timeout duration (Default: 7 seconds)</td>
+        </tr>
+        <tr>
+            <td><code>SetTimeoutCheckPeriodTo<br>(TimeSpan timeoutCheckPeriod)</code></td>
+            <td>Sets how often timeouts should be checked for (Default: 1 second)</td>
+        </tr>
+        <tr>
+            <td><code>LimitAttemptsForOperationTo<br>(int limit)</code></td>
+            <td>Limits the number of operation attempts (Default: 11)</td>
+        </tr>
+        <tr>
+            <td><code>LimitRetriesForOperationTo<br>(int limit)</code></td>
+            <td>Limits the number of operation retries (Default: 10)</td>
+        </tr>
+        <tr>
+            <td><code>KeepRetrying()</code></td>
+            <td>Allows infinite operation retry attempts</td>
+        </tr>
+        <tr>
+            <td><code>LimitOperationsQueueTo<br>(int limit)</code></td>
+            <td>Sets the limit for number of outstanding operations (Default: 5000)</td>
+        </tr>
+        <tr>
+            <td><code>FailOnNoServerResponse()</code></td>
+            <td>Marks that no response from server should cause an error on the request</td>
+        </tr>
+    </tbody>
+</table>
