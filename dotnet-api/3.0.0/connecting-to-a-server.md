@@ -322,3 +322,42 @@ Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
         </tr>
     </tbody>
 </table>
+
+## Connection Events
+
+Once an instance of `EventStoreConnection` has been created, there are various events that your application can attach handlers to in order to be notified of changes to the status of the connection.
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>EventHandler&lt;ClientConnectionEventArgs&gt; Connected</code></td>
+            <td>Fired when an <code>IEventStoreConnection</code> connects to an Event Store server</td>
+        </tr>
+        <tr>
+            <td><code>EventHandler&lt;ClientConnectionEventArgs&gt; Disconnected</code></td>
+            <td>Fired when an <code>IEventStoreConnection</code> is disconnected from an Event Store server by some means other than by calling the <code>Close</code> method</td>
+        </tr>
+        <tr>
+            <td><code>EventHandler&lt;ClientReconnectingEventArgs&gt; Reconnecting</code></td>
+            <td>Fired when an <code>IEventStoreConnection</code> is attempting to reconnect to an Event Store server following a disconnection</td>
+        </tr>
+        <tr>
+            <td><code>EventHandler&lt;ClientClosedEventArgs&gt; Closed</code></td>
+            <td>Fired when an <code>IEventStoreConnection</code> is closed either using the <code>Close</code> method, or when reconnection limits are reached without a successful connection being established</td>
+        </tr>
+        <tr>
+            <td><code>EventHandler&lt;ClientErrorEventArgs&gt; ErrorOccurred</code></td>
+            <td>Fired when an error is thrown on an <code>IEventStoreConnection</code></td>
+        </tr>
+        <tr>
+            <td><code>EventHandler&lt;ClientAuthenticationFailedEventArgs&gt; AuthenticationFailed</code></td>
+            <td>Fired when a client fails to authenticate to an Event Store server</td>
+        </tr>
+    </tbody>
+</table>
