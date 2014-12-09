@@ -33,7 +33,7 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
             <td>Connects to a single node with custom settings (see <a href="#customising-connection-settings">Customising Connection Settings</a>)</td>
         </tr>
         <tr>
-            <td><code>Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)</code></td>
+            <td><code>Create(ConnectionSettings connectionSettings, ClusterSettings clusterSettings)</code></td>
             <td>Connects to an Event Store HA cluster with custom settings (see <a href="#cluster-settings">Cluster Settings</a>)</td>
         </tr>
     </tbody>
@@ -47,7 +47,7 @@ The connection returned by these methods is inactive. Use the `ConnectAsync()` m
 
 Settings used for modifying the behaviour of an `EventStoreConnection` are encapsulated into an object of type `ConnectionSettings` which is passed as a paramater to the `Create` methods listed above.
 
-Instances of ConnectionSettings are created using a fluent builder class as follows:
+Instances of `ConnectionSettings` are created using a fluent builder class as follows:
 
 ```CSharp
 ConnectionSettings settings = ConnectionSettings.Create();
@@ -77,7 +77,7 @@ The .NET API can log information to a number of different destinations. By defau
         </tr>
         <tr>
             <td><code>UseCustomLogger()</code></td>
-            <td>Output log messages to the specified instance of `ILogger` (You should implement this interface in order to log using another library such as NLog or log4net)</td>
+            <td>Output log messages to the specified instance of <code>ILogger</code> (You should implement this interface in order to log using another library such as NLog or log4net)</td>
         </tr>
         <tr>
             <td><code>EnableVerboseLogging()</code></td>
@@ -100,7 +100,7 @@ Event Store supports [Access Control Lists](/server/latest/access-control-lists/
     <tbody>
         <tr>
             <td><code>SetDefaultUserCredentials(UserCredentials credentials)</code></td>
-            <td>Sets the default `UserCredentials` to be used for this connection. If user credentials are not given for an operation, these credentials will be used</td>
+            <td>Sets the default <code>UserCredentials</code> to be used for this connection. If user credentials are not given for an operation, these credentials will be used</td>
         </tr>
     </tbody>
 </table>
@@ -115,7 +115,7 @@ UserCredentials credentials = new UserCredentials("username","password");
 
 The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default). 
 
-To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/setting-up-ssl-windows/)
+To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/setting-up-ssl-windows/).
 
 <table>
     <thead>
@@ -250,7 +250,7 @@ There following methods on the `ConnectionSettingsBuilder` allow you to modify t
 
 ## Cluster Settings
 
-When connecting to an Event Store HA cluster, you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily, this is used to tell the EventStoreConnection how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
+When connecting to an Event Store HA cluster, you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily, this is used to tell the `EventStoreConnection` how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
 
 ### Using DNS Discovery
 
