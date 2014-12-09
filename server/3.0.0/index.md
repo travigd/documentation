@@ -13,20 +13,20 @@ The open source version of Event Store is distributed as a console application, 
 
 A typical command line for starting the Event Store is:
 
-On Windows and .NET (from an account with permission to listen for HTTP traffic):
+On Windows and .NET:
 
 ```
 c:\EventStore> EventStore.ClusterNode.Exe --db .\ESData
 ```
 
-On Linux/OS X and Mono:
+On Linux/OS X:
 
 ```
-$ ./run-node.sh --db .\ESData
+$ ./run-node.sh --db ./ESData
 ```
 
 <span class="note--warning">
-Note: Unless passed a database path, the Event Store will write to new database created in the system temporary files path each time it is started.* For more information on Command Line Arguments look [here](./command-line-arguments).
+Note: Unless passed a database path, the Event Store will write to a new database created in the system's temporary files path each time it is started. For more information on Command Line Arguments look [here](./command-line-arguments).
 </span>
 
 ## Platform Specifics
