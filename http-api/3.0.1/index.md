@@ -76,7 +76,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Sat, 08 Sep 2012 11:14:52 GMT
 Content-Length: 1743
 Keep-Alive: timeout=15,max=100
+```
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Event stream 'anewstream'</title>
@@ -125,7 +127,6 @@ greg@ouroboros:~/src/EventStore.wiki$ curl -i -H "Accept:text/xml" "http://127.0
 ```
 
 ```http
-
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -138,8 +139,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Fri, 28 Jun 2013 16:29:42 GMT
 Content-Length: 1345
 Keep-Alive: timeout=15,max=100
+```
 
-
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
    <title>Event stream 'newstream'</title>
@@ -198,7 +200,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Fri, 28 Jun 2013 15:45:19 GMT
 Content-Length: 1750
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "title": "Event stream 'newstream'",
   "id": "http://127.0.0.1:2113/streams/newstream",
@@ -278,16 +282,16 @@ Going along with this when posting content it listens to what you said it is. If
 
 ```json
 {
-	"CorrelationId" : "0f7fac5b-d9cb-469f-a167-70867728950e",
-	"ExpectedVersion" : "-1",
-	"Events" : [
-			{
-				"EventId" : "0f9fad5b-d9cb-469f-a165-70867728951e",
-				"EventType" : "Type",
-				"Data" : { "Foo" : "Bar" },
-				"Metadata" : { "Something" : "AValue"}
-			}
-		   ]
+    "CorrelationId" : "0f7fac5b-d9cb-469f-a167-70867728950e",
+    "ExpectedVersion" : "-1",
+    "Events" : [
+            {
+                "EventId" : "0f9fad5b-d9cb-469f-a165-70867728951e",
+                "EventType" : "Type",
+                "Data" : { "Foo" : "Bar" },
+                "Metadata" : { "Something" : "AValue"}
+            }
+           ]
 }
 ```
 
@@ -346,7 +350,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 13 Sep 2012 10:55:13 GMT
 Content-Length: 312
 Keep-Alive: timeout=15,max=100
+```
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ReadEventCompletedText>
    <correlationId>680fccc2-3c6c-4ed0-ad8a-b952bd446873</correlationId>
@@ -377,7 +383,9 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 13 Sep 2012 10:57:26 GMT
 Content-Length: 208
 Keep-Alive: timeout=15,max=100
+```
 
+```json
 {
   "correlationId": "ed4bbdc6-c7ce-449e-bbda-0d903b1c82c3",
   "eventStreamId": "newstream",
@@ -423,7 +431,7 @@ It is possible to post multiple items into a stream using a single request. Even
          <EventId>fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4</EventId>
          <EventType>event-type</EventType>
          <Data>
-	       <MyEvent>
+           <MyEvent>
                     <Something>1</Something>
                </MyEvent>
          </Data>
@@ -432,7 +440,7 @@ It is possible to post multiple items into a stream using a single request. Even
          <EventId>0f9fad5b-d9cb-469f-a165-70867728951e</EventId>
          <EventType>event-type2</EventType>
          <Data>
-	       <MyEvent>
+           <MyEvent>
                     <SomethingElse>1</SomethingElse>
                </MyEvent>
          </Data>
