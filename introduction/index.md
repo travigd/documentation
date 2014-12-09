@@ -7,7 +7,7 @@ pinned: true
 This document describes how to get started with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.
 
 <span class="note--warning">
-This setup is intended as an experimental setup or for a developer’s machine. It is not intended to describe a production setup. This document assumes that you also have [curl](http://curl.haxx.se/) installed on your machine.
+This setup is intended as an experimental setup or for a developer’s machine. It is not intended to describe a production setup. This document assumes that you also have [cURL](http://curl.haxx.se/) installed on your machine.
 </span>
 
 ## Installation
@@ -51,7 +51,7 @@ To begin let’s open Notepad. Copy and paste the following event definition int
 You can also post events as XML, same format but set the Content-Type to XML
 </span>
 
-Now to write our event to a stream we would issue the following curl command.
+Now to write our event to a stream we would issue the following cURL command.
 
 ```
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
@@ -91,7 +91,7 @@ You can also setup Access Control Lists (see [server docs](/server/latest)) on y
 
 Reading from a stream is quite easy as all streams are exposed as [atom feeds](http://tools.ietf.org/html/rfc4287). Many environments have an existing method for reading atom feeds. 
 
-Let’s try to get the data out of our stream. Just like with our browser we will navigate to the “head” URI of the stream http://127.0.0.1:2113/streams/newstream. We can do this with curl.
+Let’s try to get the data out of our stream. Just like with our browser we will navigate to the “head” URI of the stream http://127.0.0.1:2113/streams/newstream. We can do this with cURL.
 
 ```
 curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream"
@@ -138,7 +138,7 @@ Keep-Alive: timeout=15,max=100
 </feed>
 ```
 
-This curl command told the system that we wanted the feed returned to us in `atom+xml` (*pro tip: you can also try `application/vnd.eventstore.atom+json` if you prefer json like we do!*). The feed that we pulled has a single item inside of it, the one we recently posted. We would then get the event by issuing a GET to the alternate URI.
+This cURL command told the system that we wanted the feed returned to us in `atom+xml` *(pro tip: you can also try `application/vnd.eventstore.atom+json` if you prefer json like we do!)*. The feed that we pulled has a single item inside of it, the one we recently posted. We would then get the event by issuing a GET to the alternate URI.
 
 ```
 curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
