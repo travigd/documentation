@@ -26,7 +26,7 @@ $ ./run-node.sh --db ./ESData
 ```
 
 <span class="note--warning">
-Note: Unless passed a database path, the Event Store will write to a new database created in the system's temporary files path each time it is started. For more information on Command Line Arguments look [here](./command-line-arguments).
+Note: Unless passed a database option, the Event Store will write to a new database created in the system's temporary files path each time it is started. For more information on Command Line Arguments look [here](./command-line-arguments).
 </span>
 
 ## Platform Specifics
