@@ -28,6 +28,6 @@ Consequently, it is only necessary to keep the file whose name has the highest `
 
 ## Other Options
 
-There are many other options available for backing up an Event Store database. For example it is possible to set up a durable subscription that would writes all of the events to another storage mechanism such as a key/value or column store. These methods would require a manual set up for restoring back to a cluster group.
+There are many other options available for backing up an Event Store database. For example it is possible to set up a durable subscription that would write all of the events to another storage mechanism such as a key/value or column store. These methods would require a manual set up for restoring back to a cluster group.
 
 This option can be expanded upon to use a second Event Store node/cluster as a back up. This is commonly known as a primary/secondary back up scheme. The primary cluster runs and asynchronously pushes data to a second cluster as described above. The second cluster/node is available in the case of disaster on the primary cluster. If you are using this strategy then it is recommended to only support manual failover from Primary to Secondary as automated strategies risk causing a [split brain](http://en.wikipedia.org/wiki/Split-brain_%28computing%29) problem.
