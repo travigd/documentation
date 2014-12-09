@@ -247,3 +247,78 @@ There following methods on the `ConnectionSettingsBuilder` which allow you to mo
         </tr>
     </tbody>
 </table>
+
+## Cluster Settings
+
+When connecting to a multi-node cluster, you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily, this is used to tell the EventStoreConnection how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
+
+### Connecting Using DNS
+
+DNS discovery uses a single DNS entry with several records listing all node IP addresses. The EventStoreConnection will then use a well known port to gossip with the nodes.
+
+Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
+
+<table>
+    <thead>
+        <tr>
+            <th>Builder Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>SetClusterDns(string clusterDns)</code></td>
+            <td>Sets the DNS name under which cluster nodes are listed</td>
+        </tr>
+        <tr>
+            <td><code>SetClusterGossipPort(int clusterGossipPort)</code></td>
+            <td>Sets the well-known port on which the cluster gossip is taking place</td>
+        </tr>
+        <tr>
+            <td><code>SetMaxDiscoverAttempts(int maxDiscoverAttempts)</code></td>
+            <td>Sets the maximum number of attempts for discovery (Default: )</td>
+        </tr>
+        <tr>
+            <td><code>SetGossipTimeout(TimeSpan timeout)</code></td>
+            <td>Sets the period after which gossip times out if none is received (Default: )</td>
+        </tr>
+    </tbody>
+</table>
+
+<span class="note">
+If you are using the commercial edition of Event Store HA, with Manager nodes in place, the gossip port should be the port number of the external HTTP port on which the managers are running.<br><br>
+If you are using the open source edition of Event Store HA, the gossip port should be the External HTTP port that the nodes are running on. If you cannot use a well-known port for this across all nodes, you can instead use gossip seed discovery and set the `IPEndPoint` of some seed nodes instead.
+</span>
+
+### Connecting Using Gossip Seeds
+
+The second supported method for node discovery uses a hardcoded set of `IPEndPoint`s.
+
+Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
+
+<table>
+    <thead>
+        <tr>
+            <th>Builder Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>SetGossipSeedEndPoints(params IPEndPoint[] gossipSeeds)</code></td>
+            <td>Sets gossip seed endpoints for the client</td>
+        </tr>
+        <tr>
+            <td><code>SetGossipSeedEndPoints(params GossipSeed[] gossipSeeds)</code></td>
+            <td>Sets gossip seed endpoints for the client with a specific `Host` header on the request</td>
+        </tr>
+        <tr>
+            <td><code>SetMaxDiscoverAttempts(int maxDiscoverAttempts)</code></td>
+            <td>Sets the maximum number of attempts for discovery (Default: )</td>
+        </tr>
+        <tr>
+            <td><code>SetGossipTimeout(TimeSpan timeout)</code></td>
+            <td>Sets the period after which gossip times out if none is received (Default: )</td>
+        </tr>
+    </tbody>
+</table>
