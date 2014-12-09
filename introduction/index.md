@@ -48,7 +48,7 @@ To begin let’s open Notepad. Copy and paste the following event definition int
 ```
 
 <span class="note">
-You can also post events as XML, same format but set the Content-Type to XML
+You can also post events as XML, same format but set the `Content-Type` to `XML`.
 </span>
 
 Now to write our event to a stream we would issue the following cURL command.
@@ -58,10 +58,10 @@ curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type
 ```
 
 <span class="note">
-From version 3.0 rc9 there has been a change to how events are posted. See the [post about this release here](https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ).
+From version 3.0.0 RC9 there has been a change to how events are posted. See the [post about this release here](https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ).
 </span>
 
-So for the above to work, use the following which has a new Content-Type which allows the old format:
+So for the above to work, use the following which has a new `Content-Type` which allows the old format:
 
 ```
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
@@ -83,7 +83,7 @@ Keep-Alive: timeout=15,max=100
 
 ```
 
-If you go to your UI after this command and to the “Streams” tab. You will see your stream has recently been created, if you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an html representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/streams/newstream](http://127.0.0.1:2113/streams/newstream)).
+If you go to your UI after this command and to the *Streams* tab. You will see your stream has recently been created, if you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an HTML representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/streams/newstream](http://127.0.0.1:2113/streams/newstream)).
 
 You can also setup Access Control Lists (see [server docs](/server/latest)) on your streams by changing the metadata of the stream.
 
@@ -91,7 +91,7 @@ You can also setup Access Control Lists (see [server docs](/server/latest)) on y
 
 Reading from a stream is quite easy as all streams are exposed as [atom feeds](http://tools.ietf.org/html/rfc4287). Many environments have an existing method for reading atom feeds. 
 
-Let’s try to get the data out of our stream. Just like with our browser we will navigate to the “head” URI of the stream http://127.0.0.1:2113/streams/newstream. We can do this with cURL.
+Let’s try to get the data out of our stream. Just like with our browser we will navigate to the *head* URI of the stream http://127.0.0.1:2113/streams/newstream. We can do this with cURL.
 
 ```
 curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream"
@@ -138,7 +138,7 @@ Keep-Alive: timeout=15,max=100
 </feed>
 ```
 
-This cURL command told the system that we wanted the feed returned to us in `atom+xml` *(pro tip: you can also try `application/vnd.eventstore.atom+json` if you prefer json like we do!)*. The feed that we pulled has a single item inside of it, the one we recently posted. We would then get the event by issuing a GET to the alternate URI.
+This cURL command told the system that we wanted the feed returned to us in `atom+xml` *(pro tip: you can also try `application/vnd.eventstore.atom+json` if you prefer JSON like we do!)*. The feed that we pulled has a single item inside of it, the one we recently posted. We would then get the event by issuing a `GET` to the alternate URI.
 
 ```
 curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
@@ -162,15 +162,15 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-This will return our event that we had originally posted. You can also get your event as XML (set Accept: text/xml). In order to read a single page feed we would just get the feed and then iterate through the event links executing gets. This may feel inefficient at first but remember the event  uris and most of the page uris are infinitely cachable. We can also get the events in the feed itself if prefered by using ?embed=body. There is further discussion on this [here](/http-api/latest/reading-streams).
+This will return our event that we had originally posted. You can also get your event as XML (set `Accept: text/xml`). In order to read a single page feed we would just get the feed and then iterate through the event links executing gets. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable. We can also get the events in the feed itself if prefered by using `?embed=body`. There is further discussion on this [here](/http-api/latest/reading-streams).
 
 Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the *last* link and then continue to read the *previous* page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using *first* then *next*.
 
 ## Subcribing to Stream to get Updates
 
-Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in atom. As new events arrive new *previous* links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an atleast once assurance with the following code you would simply save the last URI you had received.
+Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in Atom. As new events arrive new *previous* links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an *at least once* assurance with the following code you would simply save the last URI you had received.
 
-If you prefer JavaScript an example can be found in our own source base as we have the ability to run projections in the browser from atomfeeds. You can find the code for this [JavaScript Example](https://github.com/EventStore/EventStore/blob/22fd3562f97037afc256745fe011eabaef62db60/src/EventStore/EventStore.SingleNode.Web/singlenode-web/js/projections/es.projection.js). *To see this in action take a look at the browser chat example*
+If you prefer JavaScript an example can be found in our own source base as we have the ability to run projections in the browser from atomfeeds. You can find the code for this [JavaScript Example](https://github.com/EventStore/EventStore/blob/22fd3562f97037afc256745fe011eabaef62db60/src/EventStore/EventStore.SingleNode.Web/singlenode-web/js/projections/es.projection.js).
 
 ```csharp
 using System;
