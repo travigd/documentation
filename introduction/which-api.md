@@ -27,4 +27,6 @@ There are many factors that go into the choice of which of the protocols (TCP vs
 
    There is good existing tooling for Atom on most platforms, including feed readers (e.g. Fiddler). None of this tooling exists at this point for the analysing of traffic with the TCP protocol.
 
-**In general our recommendation would be to use AtomPub as your primary protocol unless you have low subscriber SLAs or need higher throughput on reads and writes than Atom can offer.** This is largely due to the open nature and ease of use of the Atom protocol. Very often in integration scenarios these are more important than raw performance.
+<span class="note">
+In general our recommendation would be to use AtomPub as your primary protocol unless you have low subscriber SLAs or need higher throughput on reads and writes than Atom can offer. This is largely due to the open nature and ease of use of the Atom protocol. Very often in integration scenarios these are more important than raw performance.
+</span>
