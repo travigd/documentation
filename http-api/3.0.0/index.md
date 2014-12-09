@@ -9,10 +9,12 @@ The Event Store provides a native interface of AtomPub over HTTP. This section
 of the documentation will document the options for reading and manipulating
 streams using the HTTP API.  
 
+<span class="note">
 Examples in this section make use of the command line tool
 [cURL](http://curl.haxx.se/) to construct HTTP requests. We use this tool
 regularly in development and likely you will find it quite useful as well when
 working with the HTTP API.
+</span>
 
 ## Rationale
 
@@ -25,7 +27,7 @@ streams of events in order to allow use cases to be implemented in a style best
 suited to them). It also opens up the possibility of using the Event Store as a
 queuing system.
 
-AtomPub is a RESTful protocol. Consequently, it can reuse many existing components, for example Reverse Proxies and client's native HTTP caching. Since events stored in the Event Store are entirely immutable, cache expiration can be infinite. We can also leverage content type negotiation - appropriately serialized events can be accessed as JSON or XML according to the request headers.
+AtomPub is a RESTful protocol. Consequently, it can reuse many existing components, for example Reverse Proxies and client’s native HTTP caching. Since events stored in the Event Store are entirely immutable, cache expiration can be infinite. We can also leverage content type negotiation. Appropriately serialized events can be accessed as JSON or XML according to the request headers.
 
 This all leads to an interesting scenario where, although at first glance HTTP would seem to be less efficient as a protocol than the native TCP api, it is in many cases actually more efficient after intermediary caching is brought into play. As an example, replaying a stream is a very common operation. This operation using HTTP will likely make only a single call to the Event Store (a head read) with the rest of the GETs being resolved from the local or intermediary cache.
 
@@ -33,13 +35,13 @@ This all leads to an interesting scenario where, although at first glance HTTP w
 
 Although there are a number of advantages to using the AtomPub API, there are also some disadvantages.
 
-If you discount intermediate caching, the protocol is more expensive than the TCP protocol. On a reasonably specified machine, the Event Store can service about 2 thousand requests per second as AtomPub over HTTP - an order of magnitude lower than can be serviced over TCP.
+If you discount intermediate caching the protocol is more expensive than the TCP protocol. On a reasonably specified machine, the Event Store can service about 2,000 requests per second as AtomPub over HTTP (an order of magnitude lower than can be serviced over TCP).
 
 There is also a latency increase when using AtomPub, as a component wishing to subscribe would poll for new events rather than having new events pushed to it as can be the case with the TCP API. The latency on a subscribe operation is generally measure in a few ms where as the latency for delivery to a poller will be measured in seconds.
 
 ## Compatibility with AtomPub
 
-The Event Store is fully compatible with the 1.0 version of the Atom Protocol. If problems are found the protocol specified behaviour will be followed in future releases. There are however extensions to the protocol that have been made such as headers for control and some custom rel links.
+The Event Store is fully compatible with the 1.0 version of the Atom Protocol. If problems are found the protocol specified behaviour will be followed in future releases. There are however extensions to the protocol that have been made such as headers for control and some custom `rel` links.
 
 ### Content Types
 
@@ -59,9 +61,11 @@ In addition to those, these content types are also accepted for GET requests:
 
 There will likely be additions in the future for protobufs and bson.
 
-As an example you can either use content-type or you can use a ?format=xml in the URL to decide the format type that you receive. This is due to some clients not dealing well with HTTP headers, it can also be useful with some caching systems as the URLs then are unique. This applies to all URLs used within the AtomPub system including /event/{id} links. The general prefered mechanism however is for you to set [Accept Headers] in your http request. All http based interactions with the Event Store support multiple formats. As of time of the writing the accepted content types for streams are application/atom+xml, application/vnd.eventstore.atom+json, application/xml, application/json, and text. This pattern is followed for atomsvc and atomcat as well. If you were to post with an accept of application/atom+xml then your repsonse will be application/atom+xml, if you did the same post with application/xml you will get back the atom feed in an xml format but without the atom+xml content type. as an example:
+As an example you can either use `content-type` or you can use a `?format=xml` in the URL to decide the format type that you receive. This is due to some clients not dealing well with HTTP headers, it can also be useful with some caching systems as the URLs then are unique. This applies to all URLs used within the AtomPub system including `/event/{id}` links. The general prefered mechanism however is for you to set [Accept Headers] in your http request. All HTTP-based interactions with the Event Store support multiple formats. As of time of the writing the accepted content types for streams are `application/atom+xml`, `application/vnd.eventstore.atom+json`, `application/xml`, `application/json`, and `text`. This pattern is followed for atomsvc and atomcat as well. If you were to post with an accept of `application/atom+xml` then your repsonse will be `application/atom+xml`, if you did the same post with `application/xml` you will get back the atom feed in an XML format but without the `atom+xml` content type. as an example:
 
-`ouro@ouroboros:~$ curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/anewstream"`
+```
+ouro@ouroboros:~$ curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/anewstream"
+```
 
 ```http
 HTTP/1.1 200 OK
@@ -116,7 +120,9 @@ Keep-Alive: timeout=15,max=100
 
 or
 
-`greg@ouroboros:~/src/EventStore.wiki$ curl -i -H "Accept:text/xml" "http://127.0.0.1:2113/streams/newstream"`
+```
+greg@ouroboros:~/src/EventStore.wiki$ curl -i -H "Accept:text/xml" "http://127.0.0.1:2113/streams/newstream"
+```
 
 ```http
 
@@ -172,9 +178,11 @@ Keep-Alive: timeout=15,max=100
 </feed>
 ```
 
-The same feed could also be acquired as application/vnd.eventstore.atom+json or application/json depending on accept headers given.
+The same feed could also be acquired as `application/vnd.eventstore.atom+json` or `application/json` depending on accept headers given.
 
-`ouro@ouroboros:~/src/EventStore.wiki$ curl -i "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -u admin:changeit`
+```
+ouro@ouroboros:~/src/EventStore.wiki$ curl -i "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -u admin:changeit
+```
 
 ```http
 
@@ -264,27 +272,28 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-Going along with this when posting content it listens to what you said it is. If for example you were to post new content with accept: json or ?format=json you must put your content in that format or else you will get an error. Consider the following:
+Going along with this when posting content it listens to what you said it is. If for example you were to post new content with `accept: json` or `?format=json` you must put your content in that format or else you will get an error. Consider the following:
 
-simple-event.txt:
+### simple-event.txt:
 
 ```json
 {
-	"CorrelationId" : "0f7fac5b-d9cb-469f-a167-70867728950e",
-	"ExpectedVersion" : "-1",
-	"Events" : [
-			{
-				"EventId" : "0f9fad5b-d9cb-469f-a165-70867728951e",
-				"EventType" : "Type",
-				"Data" : { "Foo" : "Bar" },
-				"Metadata" : { "Something" : "AValue"}
-			}
-		   ]
+    "CorrelationId" : "0f7fac5b-d9cb-469f-a167-70867728950e",
+    "ExpectedVersion" : "-1",
+    "Events" : [
+            {
+                "EventId" : "0f9fad5b-d9cb-469f-a165-70867728951e",
+                "EventType" : "Type",
+                "Data" : { "Foo" : "Bar" },
+                "Metadata" : { "Something" : "AValue"}
+            }
+           ]
 }
 ```
 
-`greg@ouroboros:~$ curl -i -d @simple-event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:text/xml"`
-
+```
+greg@ouroboros:~$ curl -i -d @simple-event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:text/xml"
+```
 
 ```http
 HTTP/1.1 400 Write request body cannot be deserialized
@@ -295,10 +304,11 @@ Content-Length: 0
 Connection: close
 ```
 
-
 I will get an error if I try to post this as XML. I can however post it as JSON.
 
-`ouro@ouroboros:~$ curl -i -d @/home/ouro/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"`
+```
+ouro@ouroboros:~$ curl -i -d @/home/ouro/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
+```
 
 ```http
 HTTP/1.1 201 Created
@@ -312,13 +322,21 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-When dealing with retreiving an event from a stream you can also ask for it in either xml or json (internally it will be converted for you). As we saw in the above example the event was pushed in json. It can be requested as XML or as json. *You should not in general be bookmarking these links (they come from the atomfeed where you can also select the media type that you want).*
+When dealing with retreiving an event from a stream you can also ask for it in either XML or JSON (internally it will be converted for you). As we saw in the above example the event was pushed in JSON. It can be requested as XML or as JSON.
 
-`ouro@ouroboros:~/src/EventStoreDocs$ curl -i http://127.0.0.1:2113/streams/newstream/event/1?format=xml`
+<span class="note">
+You should not in general be bookmarking these links. They come from the atomfeed where you can also select the media type that you want.
+</span>
+
+```
+ouro@ouroboros:~/src/EventStoreDocs$ curl -i http://127.0.0.1:2113/streams/newstream/event/1?format=xml
+```
 
 or
 
-`ouro@ouroboros:~/src/EventStoreDocs$ curl -i http://127.0.0.1:2113/streams/newstream/event/1 -H "Accept: text/xml"`
+```
+ouro@ouroboros:~/src/EventStoreDocs$ curl -i http://127.0.0.1:2113/streams/newstream/event/1 -H "Accept: text/xml"
+```
 
 ```http
 HTTP/1.1 200 OK
@@ -344,9 +362,11 @@ Keep-Alive: timeout=15,max=100
 </ReadEventCompletedText>
 ```
 
-and as json
+and as JSON
 
-`ouro@ouroboros:~/src/EventStoreDocs$ curl -i http://127.0.0.1:2113/streams/newstream/event/1 -H "Accept: application/json"`
+```
+ouro@ouroboros:~/src/EventStoreDocs$ curl -i http://127.0.0.1:2113/streams/newstream/event/1 -H "Accept: application/json"
+```
 
 ```http
 ouro@ouroboros:~/src/EventStoreDocs$ curl -i http://127.0.0.1:2113/streams/newstream/event/1?format=json
@@ -374,7 +394,7 @@ Keep-Alive: timeout=15,max=100
 
 ### Batching
 
-It is possible to post multiple items into a stream using a single request. Events posted in the same request are treated transactionally. The way to do this is to provide multiple entries for events/metadata. It is assumed that all events should be written in the order they are given.
+It is possible to post multiple items into a stream using a single request. Events posted in the same request are treated transactionally. The way to do this is to provide multiple entries for `events/metadata`. It is assumed that all events should be written in the order they are given.
 
 ```json
 [
@@ -403,7 +423,7 @@ It is possible to post multiple items into a stream using a single request. Even
          <EventId>fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4</EventId>
          <EventType>event-type</EventType>
          <Data>
-	       <MyEvent>
+           <MyEvent>
                     <Something>1</Something>
                </MyEvent>
          </Data>
@@ -412,7 +432,7 @@ It is possible to post multiple items into a stream using a single request. Even
          <EventId>0f9fad5b-d9cb-469f-a165-70867728951e</EventId>
          <EventType>event-type2</EventType>
          <Data>
-	       <MyEvent>
+           <MyEvent>
                     <SomethingElse>1</SomethingElse>
                </MyEvent>
          </Data>
@@ -421,7 +441,9 @@ It is possible to post multiple items into a stream using a single request. Even
 </Events>
 ```
 
-`ouro@ouroboros:~$ curl -i -d @/home/greg/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"`
+```
+ouro@ouroboros:~$ curl -i -d @/home/greg/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
+```
 
 ```http
 HTTP/1.1 201 Created
