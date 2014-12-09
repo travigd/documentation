@@ -6,8 +6,8 @@ pinned: true
 
 This document describes how to get started with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.
 
-<span class="note">
-This setup is intended as an experimental setup or for a developer’s machine, it is not intended to describe a production setup. This document assumes that you also have [curl](http://curl.haxx.se/) installed on your machine.
+<span class="note--warning">
+This setup is intended as an experimental setup or for a developer’s machine. It is not intended to describe a production setup. This document assumes that you also have [curl](http://curl.haxx.se/) installed on your machine.
 </span>
 
 ## Installation
