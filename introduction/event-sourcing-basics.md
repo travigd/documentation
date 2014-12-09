@@ -203,7 +203,9 @@ The solution is to use a Rolling Snapshot, to place a denormalization of the sta
 
 Figure 6 shows an Event Stream with a Rolling Snapshot placed within it. The process for rebuilding an Aggregate changes when using Rolling Snapshots. Instead of reading from the beginning of time forward, it is read backwards putting the events on to a stack until either there were no more events left or a snapshot was found. The snapshot would then if found be applied and the events would be popped off the stack and applied until the stack was empty.
 
-It is important to note that although this is an easy way to conceptualize how Rolling Snapshots work, that this is a less than ideal solution in a production system for various reasons - it is better to store them out of band with events.
+<span class="note">
+Although this is an easy way to conceptualize how Rolling Snapshots work, that this is a less than ideal solution in a production system for various reasons. It is better to store them out of band with events.
+</span>
 
 The snapshot itself is nothing more than a serialized form of the graph at that given point in time. By having the state of that graph at that point in time replaying all the events prior to that snapshot can be avoided. Snapshots can be taken asynchronously by a process monitoring the Event Store.
 
