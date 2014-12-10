@@ -17,7 +17,7 @@ Every stream in the event store has metadata associated with it. The Event Store
 * `$cacheControl` This controls the cache of the head of a stream. Most URIs in a stream are infinitely cacheable but the head by default will not cache. It may be preferable in some situations to set a small amount of caching on the head to allow intermediaries to handle polls (say 10 seconds). The argument is an integer representing the seconds to cache. This value must be >= 1.
 
 <span class="note">
-If you set both `$maxAge` and `$maxCount` then events will become eligable for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligable for scavenging after either 10 seconds, or 50,000 events, have passed. Deleted items will only actually be removed once the scavenge process is ran.
+If you set both `$maxAge` and `$maxCount` then events will become eligable for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligable for scavenging after either 10 seconds, or 50,000 events, have passed. Deleted items will only actually be removed once the scavenge process is run.
 </span>
 
 Security access control lists are also included in the `$acl` section of the stream metadata.
