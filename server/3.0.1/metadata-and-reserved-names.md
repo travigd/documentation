@@ -12,12 +12,13 @@ All internal data used by the Event Store will be prefixed with a `$` character 
 
 Every stream in the event store has metadata associated with it. The Event Store itself supports some values being set in the metadata and you can write your own additional data into stream metadata if you wish (such as how often to snapshot for your own code). All names starting with `$` are however a reserved space for internal settings. The currently supported internal settings are:
 
-* `$maxAge` maxAge will setup a sliding window based on dates. When data reaches a certain age it will disappear automatically from the stream and will be considered eligible for scavenging. This value is set as an integer representing the number of seconds. This value must be >=1.
-* `$maxCount` maxCount will setup a sliding window based on the number of items in the stream. When data reaches a certain length it will disappear automatically from the stream and will be considered eligible for scavenging. This value is set as an integer representing the count of items. This value must be >= 1.
-* `$cacheControl` cacheControl controls the cache of the head of a stream. Most uris in a stream are infinitely cacheable but the head by default will not cache. It may be preferable in some situations to set a small amount of caching on the head to allow intermediaries to handle polls (say 10 seconds). The argument is an integer representing the seconds to cache. This value must be >= 1.
+* `$maxAge` This will setup a sliding window based on dates. When data reaches a certain age it will disappear automatically from the stream and will be considered eligible for scavenging. This value is set as an integer representing the number of seconds. This value must be >=1.
+* `$maxCount` This will setup a sliding window based on the number of items in the stream. When data reaches a certain length it will disappear automatically from the stream and will be considered eligible for scavenging. This value is set as an integer representing the count of items. This value must be >= 1.
+* `$cacheControl` This controls the cache of the head of a stream. Most URIs in a stream are infinitely cacheable but the head by default will not cache. It may be preferable in some situations to set a small amount of caching on the head to allow intermediaries to handle polls (say 10 seconds). The argument is an integer representing the seconds to cache. This value must be >= 1.
 
 <span class="note">
 If you set both `$maxAge` and `$maxCount` then events will become eligable for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligable for scavenging after either 10 seconds, or 50,000 events, have passed.
+
 Deleted items will only actually be removed once the scavenge process is ran.
 </span>
 
@@ -29,14 +30,13 @@ Security access control lists are also included in the `$acl` section of the str
 * `$mw` The list of users with write permissions to stream metadata
 * `$mr` The list of users with read permissions to stream metadata
 
-More details on access control lists can be found [here](../access-control-lists)
+More details on access control lists can be found [here](../access-control-lists).
 
 ## Event Metadata
 
 Every event in the event store can also have metadata associated with it. The Event Store itself supports some values being set in the metadata and you can write your own additional data into event metadata if you wish (such as the source of the event). All names starting with `$` are however a reserved space for internal details. The currently supported internal details are:
 
-- `$correlationId` — the application level correlation ID associated with this message.
-
-- `$causationId` — the application level causation ID associated with this message.
+* `$correlationId` The application level correlation ID associated with this message.
+* `$causationId` The application level causation ID associated with this message.
 
 Projections will honor both the correlationId and causationId patterns for any events it produces internally (linkTo/emit/etc).
