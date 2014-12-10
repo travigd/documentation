@@ -4,7 +4,7 @@ section: "Server"
 version: 3.0.0
 ---
 
-All information about the ACL of a stream is kept in metadata. There are 5 fields that can be set. You can also put [your own information in metadata](../stream-metadata), these are reserved fields within the stream metadata remember that in general anything that starts with a $ is considered a reserved space and you should not be naming your own things this way or you may end up with a conflict in the future.
+All information about the ACL of a stream is kept in metadata. There are 5 fields that can be set. You can also put [your own information in metadata](../metadata-and-reserved-names), these are reserved fields within the stream metadata remember that in general anything that starts with a $ is considered a reserved space and you should not be naming your own things this way or you may end up with a conflict in the future.
 
 The ACL is set with json. As an example:
 
