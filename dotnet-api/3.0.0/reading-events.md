@@ -14,17 +14,30 @@ The client API can be used to read events from a stream starting from either end
 Task<EventReadResult> ReadEventAsync(string stream, int eventNumber, bool resolveLinkTos);
 ```
 
-### Reading a stream forwards
+### Reading a specific stream forwards
 
 ```csharp
 Task<StreamEventsSlice> ReadStreamEventsForwardAsync(string stream, int start, int count, bool resolveLinkTos)
 ```
 
-### Reading a stream backwards
+### Reading a specific stream backwards
 
 ```csharp
 Task<StreamEventsSlice> ReadStreamEventsBackwardAsync(string stream, int start, int count, bool resolveLinkTos)
 ```
+
+### Reading all events forwards
+
+```csharp
+Task<AllEventsSlice> ReadAllEventsForwardAsync(Position position, int maxCount, bool resolveLinkTos);
+```
+
+### Reading all events backwards
+
+```csharp
+Task<AllEventsSlice> ReadAllEventsBackwardAsync(Position position, int maxCount, bool resolveLinkTos);
+```
+
 <span class="note">
 These methods also have an additional optional prarmater which allows you to specify the `UserCredentials` to use for the request. If none are supplied, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="./connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
 </span>
@@ -293,3 +306,10 @@ The parameters are:
         </tr>
     </tbody>
 </table>
+
+## Reading all events
+
+In addition to the individual streams which you create, Event Store also allows you to read events accross all streams using 
+the `ReadAllEventsForwardAsync` and `ReadAllEventsBackwardsAsync` methods. These work in largely the same way as the regular read methods, but use instance of the global logfile `Position` to reference events rather than the simple integer stream position described previously.
+
+They also return an `AllEventsSlice` rather than a `StreamEventsSlice` which is the same except it uses global `Position`s rather than stream positions.
