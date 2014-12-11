@@ -72,6 +72,139 @@ The reading methods for individual streams each return a `StreamEventsSlice`, wh
     </tbody>
 </table>
 
+## ResolvedEvent
+
+When events are read from a stream (or received over a subscription) you will receive an instance of the `RecordedEvent` class packaged inside a `ResolvedEvent`.
+
+Event Store supports a special type of event called Link Events. These events can be thought of as pointers to an event in another stream. 
+
+In situations where the event you read is a link event, `ResolvedEvent` allows you to access both the link event itself, as well as the event it points to. 
+
+The members of this class are as follows:
+
+<table>
+    <thead>
+        <tr>
+            <th>Member</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>RecordedEvent Event</code></td>
+            <td>The event, or the resolved link event if this <code>ResolvedEvent</code> is a link event</td>
+        </tr>
+        <tr>
+            <td><code>RecordedEvent Link</code></td>
+            <td>The link event if this <code>ResolvedEvent</code> is a link event</td>
+        </tr>
+        <tr>
+            <td><code>RecordedEvent&nbsp;OriginalEvent</code></td>
+            <td>Returns the event that was read or which triggered the subscription. If this <code>ResolvedEvent</code> represents a link event, the link will be the <code>OriginalEvent</code>, otherwise it will be the event</td>
+        </tr>
+        <tr>
+            <td><code>bool IsResolved</code></td>
+            <td>Indicates whether this <code>ResolvedEvent</code> is a resolved link event</td>
+        </tr>
+        <tr>
+            <td><code>Position? OriginalPosition</code></td>
+            <td>The logical position of the <code>OriginalEvent</code></td>
+        </tr>
+        <tr>
+            <td><code>string OriginalStreamId</code></td>
+            <td>The stream name of the <code>OriginalEvent</code></td>
+        </tr>
+        <tr>
+            <td><code>int OriginalEventNumber</code></td>
+            <td>The event number in the stream of the <code>OriginalEvent</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<span class="note">
+To ensure that the Event Store server follows link events when reading, ensure the <code>ResolveLinkTos</code> paramater is set to true when calling read methods.
+</span>
+
+## RecordedEvent
+
+`RecordedEvent` contains all the data about a specific event. Instances of this class are immutable, and expose the following members:
+
+<table>
+    <thead>
+        <tr>
+            <th>Member</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>string EventStreamId</code></td>
+            <td>The Event Stream that this event belongs to</td>
+        </tr>
+        <tr>
+            <td><code>Guid EventId</code></td>
+            <td>The Unique Identifier representing this event</td>
+        </tr>
+        <tr>
+            <td><code>int EventNumber</code></td>
+            <td>The number of this event in the stream</td>
+        </tr>
+        <tr>
+            <td><code>string EventType</code></td>
+            <td>The type of event this is (supplied when writing)</td>
+        </tr>
+        <tr>
+            <td><code>byte[] Data</code></td>
+            <td>A byte array representing the data of this event</td>
+        </tr>
+        <tr>
+            <td><code>byte[] Metadata</code></td>
+            <td>A byte array representing the metadata associated with this event</td>
+        </tr>
+        <tr>
+            <td><code>bool IsJson</code></td>
+            <td>Indicates whether the content was internally marked as json</td>
+        </tr>
+        <tr>
+            <td><code>DateTime Created</code></td>
+            <td>A datetime representing when this event was created in the system</td>
+        </tr>
+        <tr>
+            <td><code>long CreatedEpoch</code></td>
+            <td>A long representing the milliseconds since the epoch when the was created in the system</td>
+        </tr>
+    </tbody>
+</table>
+
+## Reading a single event
+
+The `ReadSingleEventAsync` method reads a single event from a stream at a specified position. This is the simplest case of reading events, but is still useful for situations such as reading the last event in the stream to be used as a starting point for a subscription. This function accepts three paramaters:
+
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>string stream</code></td>
+            <td>The stream to read from</td>
+        </tr>
+        <tr>
+            <td><code>int eventNumber</code></td>
+            <td>The event number to read (use <code>StreamPosition.End</code> to read the last event in the stream)</td>
+        </tr>
+        <tr>
+            <td><code>bool&nbsp;resolveLinkTos</code></td>
+            <td>Determines whether or not any link events encountered in the stream will be resolved. See the discussion on <a href="#ResolvedEvent">Resolved Events</a> for more information on this</td>
+        </tr>
+    </tbody>
+</table>
+
+This method returns an instance of `EventReadResult` which indicates if the read was successful, and if so the `ResolvedEvent` that was read.
+
 ## Reading a stream forwards
 
 The `ReadStreamEventsForwardAsync` method reads the requested number of events in the order in which they were originally written to the stream from a nominated starting point in the stream. 
