@@ -4,9 +4,9 @@ section: "Server"
 version: 3.0.0
 ---
 
-All information about the ACL of a stream is kept in metadata. There are 5 fields that can be set. You can also put [your own information in metadata](../metadata-and-reserved-names), these are reserved fields within the stream metadata remember that in general anything that starts with a $ is considered a reserved space and you should not be naming your own things this way or you may end up with a conflict in the future.
+All information about the ACL of a stream is kept in metadata. There are five fields that can be set. You can also put [your own information in metadata](../metadata-and-reserved-names) (these are reserved fields within the stream metadata). Remember that in general anything that starts with a `$` is considered a reserved space and you should not be naming your own things this way or you may end up with a conflict in the future.
 
-The ACL is set with json. As an example:
+The ACL is set with JSON. As an example:
 
 ```json
 {
@@ -22,13 +22,13 @@ The ACL is set with json. As an example:
 
 These fields represent the following
 
-- $w  : The permission to write to this stream
-- $r  : The permission to read from this stream
-- $d  : The permission to delete this stream
-- $mw : The permission to write the metadata associated with this stream
-- $mr : The permission to read the metadata associated with this stream
+- `$w` The permission to write to this stream
+- `$r` The permission to read from this stream
+- `$d` The permission to delete this stream
+- `$mw` The permission to write the metadata associated with this stream
+- `$mr` The permission to read the metadata associated with this stream
 
-These fields can be updated with either a single string or an array strings representing users or groups ($admins, $all, or your own custom groups). It is not normally recommended to give people access to $mw as then they can change their privileges on any other permission.
+These fields can be updated with either a single string or an array strings representing users or groups (`$admins`, `$all`, or your own custom groups). It is not normally recommended to give people access to `$mw` as then they can change their privileges on any other permission.
 
 As an example if I had a stream that I wanted to be accessible only for Greg to write to but Greg and John could read from it I might set it up something like:
 
@@ -44,11 +44,13 @@ As an example if I had a stream that I wanted to be accessible only for Greg to 
 }
 ```
 
-*It is important to note that caching will be allowed on a stream if you have enabled it to be visible to $all. This is done as a performance optimization to avoid having to set cache=private on all data. As such if people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from $all to say only the user ouro. While clients should not be bookmarking urls in this way it is an important consideration.*
+<span class="note--warning">
+Caching will be allowed on a stream if you have enabled it to be visible to `$all`. This is done as a performance optimization to avoid having to set `cache=private` on all data. As such if people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from `$all` to say only the user `ouro`. While clients should not be bookmarking urls in this way it is an important consideration.
+</span>
 
 ## Default ACLs
 
-There is also a special ACL that is used as the default ACL. This can be found in the stream $settings. This stream controls the default ACLs for streams without ACLs and also controls who can for instance create streams in the system.
+There is also a special ACL that is used as the default ACL. This can be found in the stream `$settings`. This stream controls the default ACLs for streams without ACLs and also controls who can for instance create streams in the system.
 
 
 ```json
@@ -93,7 +95,7 @@ For example if I wanted to make it so that only `ouro` and `$admins` could creat
 }
 ```
 
-If a stream in your system does not have an ACL set the default will be used as its ACL as well. If you specify say $r in your stream’s ACL it will override the default. As an example if I were to have the above defaults but on a specific stream (foostream) I were to put the stream level ACL of:
+If a stream in your system does not have an ACL set the default will be used as its ACL as well. If you specify say `$r` in your stream’s ACL it will override the default. As an example if I were to have the above defaults but on a specific stream (foostream) I were to put the stream level ACL of:
 
 ```json
 {
@@ -150,7 +152,7 @@ Then I would setup the stream ACL of the stream with:
 }
 ```
 
-This will allow `ouro` to write to the stream but will not allow ouro to create streams in the system. 
+This will allow `ouro` to write to the stream but will not allow `ouro` to create streams in the system. 
 
 This mechanism can also be used for removing things from the default. As an example I could setup the default with three users but then override the default on the stream level to only allow one user (and `$admins` which is by default).
 
