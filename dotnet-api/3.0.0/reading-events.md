@@ -39,12 +39,12 @@ Task<AllEventsSlice> ReadAllEventsBackwardAsync(Position position, int maxCount,
 ```
 
 <span class="note">
-These methods also have an additional optional prarmater which allows you to specify the `UserCredentials` to use for the request. If none are supplied, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="./connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
+These methods also have an additional optional parameter which allows you to specify the `UserCredentials` to use for the request. If none are supplied, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="./connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
 </span>
 
 ## StreamEventsSlice
 
-The reading methods for individual streams each return a `StreamEventsSlice`, which are immutable. The available members on StreamEventsSlice are:
+The reading methods for individual streams each return a `StreamEventsSlice`, which is immutable. The available members on StreamEventsSlice are:
 
 <table>
     <thead>
@@ -135,7 +135,7 @@ The members of this class are as follows:
 </table>
 
 <span class="note">
-To ensure that the Event Store server follows link events when reading, ensure the <code>ResolveLinkTos</code> paramater is set to true when calling read methods.
+To ensure that the Event Store server follows link events when reading, ensure the <code>ResolveLinkTos</code> parameter is set to true when calling read methods.
 </span>
 
 ## RecordedEvent
@@ -191,7 +191,7 @@ To ensure that the Event Store server follows link events when reading, ensure t
 
 ## Reading a single event
 
-The `ReadSingleEventAsync` method reads a single event from a stream at a specified position. This is the simplest case of reading events, but is still useful for situations such as reading the last event in the stream to be used as a starting point for a subscription. This function accepts three paramaters:
+The `ReadSingleEventAsync` method reads a single event from a stream at a specified position. This is the simplest case of reading events, but is still useful for situations such as reading the last event in the stream to be used as a starting point for a subscription. This function accepts three parameters:
 
 <table>
     <thead>
