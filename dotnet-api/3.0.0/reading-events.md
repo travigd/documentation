@@ -313,3 +313,22 @@ In addition to the individual streams which you create, Event Store also allows 
 the `ReadAllEventsForwardAsync` and `ReadAllEventsBackwardsAsync` methods. These work in largely the same way as the regular read methods, but use instance of the global logfile `Position` to reference events rather than the simple integer stream position described previously.
 
 They also return an `AllEventsSlice` rather than a `StreamEventsSlice` which is the same except it uses global `Position`s rather than stream positions.
+
+### Example: Reading all events forward from start to end
+
+```csharp
+var allEvents = new List<ResolvedEvent>();
+
+AllEventsSlice currentSlice;
+var nextSliceStart = Position.Start;
+
+do
+{
+    currentSlice =
+        connection.ReadAllEventsForwardAsync(nextSliceStart, 200, false).Result;
+
+    nextSliceStart = currentSlice.NextPosition;
+
+    allEvents.AddRange(currentSlice.Events);
+} while (!currentSlice.IsEndOfStream);
+```
