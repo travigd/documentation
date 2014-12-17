@@ -64,8 +64,8 @@ The following parameters are supported by the Event Store:
 <table>
 <tr>
 	<th>Parameter</th>
-	<th>Environment *(all prefixed with EVENTSTORE_)*</th>
-	<th>Json</th>
+	<th>Environment <em>(all prefixed with EVENTSTORE_)</em></th>
+	<th>JSON</th>
 	<th>Description</th>
 	<th>Default</th>
 </tr>
