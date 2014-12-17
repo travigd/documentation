@@ -39,7 +39,7 @@ Task<AllEventsSlice> ReadAllEventsBackwardAsync(Position position, int maxCount,
 ```
 
 <span class="note">
-These methods also have an additional optional parameter which allows you to specify the `UserCredentials` to use for the request. If none are supplied, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="./connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
+These methods also have an additional optional parameter which allows you to specify the `UserCredentials` to use for the request. If none are supplied, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="../connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
 </span>
 
 ## StreamEventsSlice
