@@ -115,7 +115,7 @@ UserCredentials credentials = new UserCredentials("username","password");
 
 The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default). 
 
-To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/setting-up-ssl-windows/).
+To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/latest/setting-up-ssl-windows/).
 
 <table>
     <thead>
