@@ -63,16 +63,16 @@ You can also connect to the cluster using the native TCP interface. The client A
 In order to setup a connection as above in the command line you can provide gossip seeds to the connection. The client will use the gossip seeds to begin gossiping information about the cluster.
 
 ```csharp
-    EventStoreConnection.Create(
-	ConnectionSettings.Create().KeepReconnecting(),
-    ClusterSettings.Create()
-        .WithGossipTimeoutOf(TimeSpan.FromMilliseconds(500))
-        .WithGossipSeeds(new []
-                             {
-                                 new IPEndPoint(IPAddress.Parse("192.168.0.1"), 2113),
-                                 new IPEndPoint(IPAddress.Parse("192.168.0.2"), 2113),
-                                 new IPEndPoint(IPAddress.Parse("192.168.0.3"), 2113)
-                             }));
+EventStoreConnection.Create(
+ConnectionSettings.Create().KeepReconnecting(),
+ClusterSettings.Create()
+    .WithGossipTimeoutOf(TimeSpan.FromMilliseconds(500))
+    .WithGossipSeeds(new []
+                         {
+                             new IPEndPoint(IPAddress.Parse("192.168.0.1"), 2113),
+                             new IPEndPoint(IPAddress.Parse("192.168.0.2"), 2113),
+                             new IPEndPoint(IPAddress.Parse("192.168.0.3"), 2113)
+                         }));
 ```
 
 You can also as in the above example use DNS in order to avoid having to manually specify the seeds. Add the nodes to a DNS record and then specify that DNS entry to the connection to locate nodes.
