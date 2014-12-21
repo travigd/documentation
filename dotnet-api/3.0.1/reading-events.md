@@ -1,7 +1,7 @@
 ---
 title: "Reading Events"
 section: ".NET API"
-version: 3.0.0
+version: 3.0.1
 ---
 
 The client API can be used to read events from a stream starting from either end of the stream. There is a method for each direction. As well as one for reading a single event.
