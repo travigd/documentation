@@ -119,7 +119,7 @@ IntIp: 192.168.1.11
 ExtIp: 192.168.1.11
 IntTcpPort: 1112
 IntHttpPort: 2112
-ExtTcpPort: 1112
+ExtTcpPort: 1113
 ExtHttpPort: 2113
 DiscoverViaDns: false
 GossipSeed: ['192.168.1.11:30777']
