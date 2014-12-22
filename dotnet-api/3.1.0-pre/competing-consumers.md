@@ -298,7 +298,7 @@ var subscription = _conn.ConnectToPersistentSubscription("foo",
         </tr>
         <tr>
             <td><code>int bufferSize</code></td>
-            <td>The number of in-flight messages this subscription is allowed.</td>
+            <td>The number of in-flight messages this client is allowed.</td>
         </tr>
         <tr>
             <td><code>bool autoAck</code></td>

@@ -32,7 +32,7 @@ One major difference with client based subscriptions is that a subscription grou
 
 The next step is connecting a client to the subscription group. In the .NET client api there is a method ConnectToPersistentSubscription which takes the stream/group that you want to connect to. It also takes a parameter which is the maximum number of in flight messages. This parameter is key to understanding how the subscription group works.
 
-When a message is dispatched to a client of the subscription group it is considered "In Process" until it is Acknowledged by the client, Not Acknowledged by the client, or timed out. The in flight messages limit refers to how many messages can be "In Process" at a given point in time. Once you have reached this limit the server will not push another message to your client until a slot becomes available due to an "In Process" message being marked no longer in process. 
+When a message is dispatched to a client of the subscription group it is considered "In Process" until it is Acknowledged by the client, Not Acknowledged by the client, or timed out. The in flight messages limit refers to how many messages can be "In Process" at a given point in time by a client, each client sets their limit at their time of connection. Once you have reached this limit the server will not push another message to your client until a slot becomes available due to an "In Process" message being marked no longer in process. 
 
 As such if you had 5 messages in a subscription and two clients (A/B) that could each have 2 in flight messages the subscription would push messages 1,2 to client A and 3,4 to client B. Message 5 would not be able to be processed until one of the messages 1,2,3,4 were moved from "In Process". 
 
