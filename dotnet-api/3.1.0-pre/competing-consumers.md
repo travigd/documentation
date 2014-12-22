@@ -132,7 +132,7 @@ Both the Create and Update methods take a PersistentSubscriptionSettings object 
 
 ##Creating a Subscription Group
 
-The first step of dealing with a subscription group is that it must be created. Note you will get an error if you attempt to create a subscription group multiple times.
+The first step of dealing with a subscription group is that it must be created. Note you will get an error if you attempt to create a subscription group multiple times. You must have admin permissions to create a persistent subscription group.
 
 <span class="note">Normally the creating of the subscription group is not done in your general executable code. Instead it is normally done as a step during an install or as an admin task when setting things up. You should assume the subscription exists in your code.</span>
 
@@ -146,9 +146,37 @@ _result = _conn.CreatePersistentSubscriptionAsync(_stream,
 												  MyCredentials).Result;                            
 ```
 
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>string stream</code></td>
+            <td>The stream to the persistent subscription is on.</td>
+        </tr>
+        <tr>
+            <td><code>string groupName</code></td>
+            <td>The name of the subscription group to create.</td>
+        </tr>
+        <tr>
+            <td><code>PersistentSubscriptionSettings settings</code></td>
+            <td>The settings to use when creating this subscription</td>
+        </tr>
+        <tr>
+            <td><code>UserCredentials credentials</code></td>
+            <td>The user credentials to use for this operation</td>
+        </tr>        
+    </tbody>
+</table>
 
 
 ## Updating a Subscription Group
+
+You can also edit the settings of an existing subscription group while it is running, it is not needed to delete and recreate it to change settings. When you update the subscription group however it will reset itself internally dropping the connections and having them reconnect. You must have admin permissions to update a persistent subscription group.
 
 ```csharp
 PersistentSubscriptionSettings settings = PersistentSubscriptionSettings.Create()
@@ -160,8 +188,42 @@ _result = _conn.UpdatePersistentSubscriptionAsync(_stream,
 												  MyCredentials).Result;                            
 ```
 
+<span class="note">If you change settings such as start from beginning, this will not reset the groups checkpoint. If you want to change the current position in an update you must delete and recreate the subscription group.<span>
+
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>string stream</code></td>
+            <td>The stream to the persistent subscription is on.</td>
+        </tr>
+        <tr>
+            <td><code>string groupName</code></td>
+            <td>The name of the subscription group to update.</td>
+        </tr>
+        <tr>
+            <td><code>PersistentSubscriptionSettings settings</code></td>
+            <td>The settings to use when updating this subscription</td>
+        </tr>
+        <tr>
+            <td><code>UserCredentials credentials</code></td>
+            <td>The user credentials to use for this operation</td>
+        </tr>        
+    </tbody>
+</table>
 
 ## Deleting a Subscription Group
 
+At times you may wish to remove a subscription group. This can be done with the delete operation. Much like the creation of groups this is rarely done in your runtime code and normally done by an administrator who is say running a script.
+
+```csharp
+```
 
 ## Connecting to a Subscription Group
+
+Once you have created a subscription group N clients can connect to that subscription group.
