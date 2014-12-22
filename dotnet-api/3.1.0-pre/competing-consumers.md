@@ -222,8 +222,90 @@ _result = _conn.UpdatePersistentSubscriptionAsync(_stream,
 At times you may wish to remove a subscription group. This can be done with the delete operation. Much like the creation of groups this is rarely done in your runtime code and normally done by an administrator who is say running a script.
 
 ```csharp
+            var result = _conn.DeletePersistentSubscriptionAsync(stream, 
+                                                                 "groupname", 
+                                                                 DefaultData.AdminCredentials).Result;
+
 ```
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>string stream</code></td>
+            <td>The stream to the persistent subscription is on.</td>
+        </tr>
+        <tr>
+            <td><code>string groupName</code></td>
+            <td>The name of the subscription group to update.</td>
+        </tr>
+        <tr>
+            <td><code>UserCredentials credentials</code></td>
+            <td>The user credentials to use for this operation</td>
+        </tr>        
+    </tbody>
+</table>
+
 
 ## Connecting to a Subscription Group
 
-Once you have created a subscription group N clients can connect to that subscription group.
+Once you have created a subscription group N clients can connect to that subscription group. In general a subscription in your application should only have the connect in your code, you should assume that the subscription has been previously created either via the client api, the restful api, or manually in the UI.
+
+The most important parameter to pass when connecting is the buffer size. This represents how many outstanding messages the server should allow this client. If this number is too small your subscription will spend much of its time idle as it waits for an acknowledgement to come back from the client. If its too big you will be wasting resources and can possibly even start timing out messages depending on the speed of your processing.
+
+```csharp
+var subscription = _conn.ConnectToPersistentSubscription("foo",
+    									"nonexisting2",
+    									(sub, e) => Console.Write("appeared"),
+    									(sub, reason, ex) =>{});
+```
+
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>string stream</code></td>
+            <td>The stream to the persistent subscription is on.</td>
+        </tr>
+        <tr>
+            <td><code>string groupName</code></td>
+            <td>The name of the subscription group to connect to.</td>
+        </tr>
+        <tr>
+            <td><code>Action<EventStorePersistentSubscription, ResolvedEvent> eventAppeared</code></td>
+            <td>The action to call when an event arrives over the subscription.</td>
+        </tr>
+        <tr>
+            <td><code>Action<EventStorePersistentSubscription, SubscriptionDropReason, Exception> subscriptionDropped</code></td>
+            <td>The action to call if the subscription is dropped.</td>
+        </tr>
+        <tr>
+            <td><code>UserCredentials credentials</code></td>
+            <td>The user credentials to use for this operation</td>
+        </tr>
+        <tr>
+            <td><code>int bufferSize</code></td>
+            <td>The number of in-flight messages this subscription is allowed.</td>
+        </tr>
+        <tr>
+            <td><code>bool autoAck</code></td>
+            <td>Whether or not to automatically acknowledge messages after eventAppeared returns.</td>
+        </tr>                        
+    </tbody>
+</table>
+
+
+##Acknowledgements
+
+Clients must acknowledge (or not acknowledge) messages in the competing consumer model. If you enable auto-ack the subscription will automatically acknowledge messages once they are completed by your handler. If you throw an exception it will shutdown your subscription with a message and the uncaught exception.
+
+You can however choose to not auto-ack messages. This can be quite useful when you have multi-threaded processing of messages in your subscriber and need to pass control to something else. There are methods on the subscription object that you can call Acknowledge and NotAcknowledge both take a ResolvedEvent (the one you processed) both also have overloads for passing and IEnumerable<ResolvedEvent>.
