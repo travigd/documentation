@@ -127,6 +127,10 @@ Both the Create and Update methods take a PersistentSubscriptionSettings object 
             <td><code>WithLiveBufferSizeOf(int count)</code></td>
             <td>The size of the live buffer (in memory) before resorting to paging.</td>
         </tr>
+        <tr>
+            <td><code>WithExtraStatistics</code></td>
+            <td>Tells the backend to measure timings on the clients so statistics will contain histograms of them.</td>
+        </tr>        
     </tbody>
 </table>
 
