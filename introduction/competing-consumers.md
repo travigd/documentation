@@ -34,7 +34,7 @@ The next step is connecting a client to the subscription group. In the .NET clie
 
 When a message is dispatched to a client of the subscription group it is considered "In Process" until it is Acknowledged by the client, Not Acknowledged by the client, or timed out. The in flight messages limit refers to how many messages can be "In Process" at a given point in time by a client, each client sets their limit at their time of connection. Once you have reached this limit the server will not push another message to your client until a slot becomes available due to an "In Process" message being marked no longer in process. 
 
-As such if you had 5 messages in a subscription and two clients (A/B) that could each have 2 in flight messages the subscription would push messages 1,2 to client A and 3,4 to client B. Message 5 would not be able to be processed until one of the messages 1,2,3,4 were moved from "In Process". 
+As such if you had 7 messages in a subscription and two clients (A/B) (A is allowed 2, B 3) the subscription would push messages 1,2 to client A and 3,4,5 to client B. Message 6 would not be able to be processed until one of the messages 1,2,3,4,5 were moved from the "In Process" by an ack, nak, or timeout from clients A or B. 
 
 The most common mechanism for a slot becoming open would be that client A(or B) returns an Acknowledgement that they have processed say message 1. They can also return a Not Acknowledgement of a message with hints to the server as to what to do with the message (skip/retry/park/server decides). A timeout of the message (which is configurable) is another way this can happen.
 
