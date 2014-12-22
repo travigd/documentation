@@ -8,11 +8,32 @@ Writing supports an optimistic concurrency check on the version of the stream to
 
 In the .NET API, there are a number of constants which should be used to represent certain conditions:
 
-- `ExpectedVersion.Any` - this disables the optimistic concurrency check.
-
-- `ExpectedVersion.NoStream` - this specifies the expectation that target stream does not yet exist.
-
-- `ExpectedVersion.EmptyStream` - this specifies the expectation that the target stream has been explicitly created, but does not yet have any user events written in it.
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ExpectedVersion.Any</code></td>
+            <td>This disables the optimistic concurrency check.</td>
+        </tr>
+        <tr>
+            <td><code>ExpectedVersion.NoStream</code></td>
+            <td>this specifies the expectation that target stream does not yet exist.</code></td>
+        </tr>
+        <tr>
+            <td><code>ExpectedVersion.EmptyStream</code></td>
+            <td>this specifies the expectation that the target stream has been explicitly created, but does not yet have any user events written in it.</td>
+        </tr>
+        <tr>
+            <td><code>Any other integer value</code></td>
+            <td>The event number that you expect the stream to currently be at.</td>
+        </tr>
+    </tbody>
+</table>
 
 If the optimistic concurrency check fails during writing, a `WrongExpectedVersionException` will be thrown.
 
