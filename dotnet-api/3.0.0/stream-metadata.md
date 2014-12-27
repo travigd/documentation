@@ -126,7 +126,7 @@ This will return a RawStreamMetadataResult. The fields on this result are:
         </tr>
         <tr>
             <td><code>int MetastreamVersion</code></td>
-            <td>The version of the metastream format</td>
+            <td>The version of the metastream (see [Expected Version](optimistic-concurrency-and-idempotency.md))</td>
         </tr>
         <tr>
             <td><code>byte[] Metadata</code></td>
@@ -136,18 +136,84 @@ This will return a RawStreamMetadataResult. The fields on this result are:
 </table>
 
 <span class="note">
-Reading metadata may require that you pass credentials if you have security enabled, as in the examples above. If you do not pass credentials and they are required you will receive a 401 Unauthorized response.
+Reading metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though this can be changed via default acls. If you do not pass credentials and they are required you will receive an AccessedDeniedException.
 </span>
 
 
 ## Writing Metadata
 
-User-specified metadata can also be added here. Some examples of good uses of user-specified metadata:
+Writing metadata can also be done in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms also support an expectedVersion which works the same as on any stream and can be used to control concurrency see [Expected Version](optimistic-concurrency-and-idempotency.md) for further details.
+
+```csharp
+Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
+```
+
+The StreamMetadata being passed here has a builder that can be accessed via StreamMetadata.Create(). The options available on the builder are:
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>SetMaxCount(int count)</code></td>
+            <td>Sets the maximum count of events in the stream.</td>
+        </tr>
+        <tr>
+            <td><code>SetMaxAge(TimeSpan age)</code></td>
+            <td>Sets the maximum age of events in the stream.</td>
+        </tr>
+        <tr>
+            <td><code>SetTruncateBefore(int seq)</code></td>
+            <td>Sets the event number from which previous events can be scavenged.<</td>
+        </tr>
+        <tr>
+            <td><code>SetCacheControl(TimeSpan cacheControl)</code></td>
+            <td>The amount of time for which the stream head is cachable.</td>
+        </tr>
+        <tr>
+            <td><code>SetReadRoles(string[] roles)</code></td>
+            <td>Sets the roles that are allowed to read the underlying stream.</td>
+        </tr>
+        <tr>
+            <td><code>SetWriteRoles(string[] roles)</code></td>
+            <td>Sets the roles that are allowed to write to the underlying stream.</td>
+        </tr>
+        <tr>
+            <td><code>SetDeleteRoles(string[] roles)</code></td>
+            <td>Sets the roles that are allowed to delete the underlying stream.</td>
+        </tr>
+        <tr>
+            <td><code>SetMetadataReadRoles(string[] roles)</code></td>
+            <td>Sets the roles that are allowed to read the metadata stream.</td>
+        </tr>
+        <tr>
+            <td><code>SetMetadataWriteRoles(string[] roles)</code></td>
+            <td>Sets the roles that are allowed to write the metadata stream. Be careful with this privilege as it essentially gives all of the privileges for a stream as that use can assign themselves any other privilege.</td>
+        </tr>
+        <tr>
+            <td><code>SetCustomMetadata(string key, string value)</code></td>
+            <td>The SetCustomMetadata method and overloads allow the setting of arbitrary custom fields into the stream metadata.</td>
+        </tr>
+    </tbody>
+</table>
+
+User-specified metadata can also be added here via the SetCustomMetadata overloads. Some examples of good uses of user-specified metadata:
 
 - which adapter is responsible for populating a stream
 - which projection caused a stream to be created
 - a correlation ID of some business process
 - plenty more!
 
+```csharp
+Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
+```
 
-If the specified user does not have permissions to write to the stream metadata, an exception will be thrown.
+This method will just put the data that is in metadata as the stream metadata. metadata in this case can be anything in a vector of bytes however the server itself only understands JSON. Please see [Access Control Lists]({{ site.url }}/server/latest/access-control-lists) for more information on the format in JSON for access control lists.
+
+<span class="note">
+Writing metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though this can be changed via default acls. If you do not pass credentials and they are required you will receive an AccessedDeniedException.
+</span>
