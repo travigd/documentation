@@ -6,7 +6,7 @@ version: 0.0.0
 
 ## Internal
 
-- [Sklaida] (https://github.com/EventStore/Sklaida) Sklaida is a sample application that shows the Event Store being used in a scatter/gather scenario. It uses both the dotnet client API as well as the HTTP API as client data is served directly from the Event Store back to the client's browser over ATOM.
+- [Sklaida] (sklaida.md) Sklaida is a sample application that shows the Event Store being used in a scatter/gather scenario. It uses both the dotnet client API as well as the HTTP API as client data is served directly from the Event Store back to the client's browser over ATOM.
 
 ## External
 
