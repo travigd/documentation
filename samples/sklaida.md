@@ -6,7 +6,7 @@ version: 0.0.0
 
 ## Sklaida
 
-The sklaida sample is a full end to end application including a UI. It is an example of using the Event Store for a common system design known as a scatter/gather. Scatter/gather is a common system design especially for web applications.
+The sklaida sample is a full end to end application including a UI. It is an example of using the Event Store for a common system design known as a scatter/gather. Scatter/gather is a common system design especially for web applications. The source can be downloaded [here](http://github.com/eventstore/sklaida)
 
 The general idea of a scatter/gather can be seen in a price comparison application. A user will specify something that they want to compare prices on. The application has N adapters to endpoints that can each return a price. When a request is received that request is sent to all of the adapters and then the results are sent to the client as the results are received.
 
