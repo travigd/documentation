@@ -332,3 +332,6 @@ do
     allEvents.AddRange(currentSlice.Events);
 } while (!currentSlice.IsEndOfStream);
 ```
+
+<span class="note">You probably would not want to use the above code as it reads all events into memory instead you would most likely prefer to use the yield statement to lazily evaluate the events as you read them.</span>
+

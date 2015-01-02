@@ -262,14 +262,14 @@ StreamEventsSlice currentSlice;
 var nextSliceStart = StreamPosition.Start;
 do
 {
-    currentSlice = 
+	currentSlice = 
     _eventStoreConnection.ReadStreamEventsForward("myStream", nextSliceStart,
                                                   200, false)
                                                   .Result;
 
-    nextSliceStart = currentSlice.NextEventNumber;
+	nextSliceStart = currentSlice.NextEventNumber;
 
-    streamEvents.AddRange(currentSlice.Events);
+	streamEvents.AddRange(currentSlice.Events);
 } while (!currentSlice.IsEndOfStream);
 ```
 <span class="note">It is unlikely that client code would need to actually build a list in this manner. It is far more likely that events would be passed into a left fold in order to derive the state of some object as of a given event.</span>
@@ -332,3 +332,6 @@ do
     allEvents.AddRange(currentSlice.Events);
 } while (!currentSlice.IsEndOfStream);
 ```
+
+<span class="note">You probably would not want to use the above code as it reads all events into memory instead you would most likely prefer to use the yield statement to lazily evaluate the events as you read them.</span>
+
