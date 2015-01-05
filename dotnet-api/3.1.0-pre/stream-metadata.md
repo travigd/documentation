@@ -1,6 +1,6 @@
 ---
 title: "Stream Metadata"
-section: "HTTP API"
+section: ".NET API"
 version: 3.1.0-pre
 ---
 
