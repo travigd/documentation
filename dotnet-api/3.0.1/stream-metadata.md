@@ -1,6 +1,6 @@
 ---
 title: "Stream Metadata"
-section: "HTTP API"
+section: ".NET API"
 version: 3.0.1
 ---
 Every stream in the Event Store has metadata associated with it. Internally, the metadata includes such information as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API. 
