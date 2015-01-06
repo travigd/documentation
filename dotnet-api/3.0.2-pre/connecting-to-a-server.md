@@ -213,22 +213,22 @@ The following values can be set using the connection string.
 You can also use spacing instead of camel casing in your connection string if you prefer.
 </span>
 
-```code
+```
 var connectionString = "ConnectTo=tcp://admin:changeit@localhost:1113; HeartBeatTimeout=500"
 ```
 Sets the connection string to connect to localhost on the default port and sets the heartbeat timeout to 500ms
 
-```code
+```
 var connectionString = "Connect To = tcp://admin:changeit@localhost:1113; Gossip Timeout = 500"
 ```
 Using spaces
 
-```code
+```
 var connectionString = "ConnectTo=discover://admin:changeit@mycluster:3114; HeartBeatTimeout=500"
 ```
 Tells the connection to try gossiping to a manager found under the dns mycluster at port 3114 to connect to the cluster
 
-```code
+```
 var connectionString = "GossipSeeds="192.168.0.2:1111,192.168.0.3:1111; HeartBeatTimeout=500"
 ```
 Tells the connection to try gossiping to the gossip seeds 192.168.0.2 or 192.168.0.3 on port 1111 to discover information about the cluster.
