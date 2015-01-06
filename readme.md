@@ -48,7 +48,7 @@ The site will be generated into a folder named `_site` and can be accessed from 
 
 1. Duplicate the section’s latest version directory and rename it to reflect the latest version number. For example, copy `/server/3.0.0/` to `/server/3.0.1/`.
 
-   > Pre-release documentation should be denoted with `-pre` after the version number, like `/server/3.0.1-pre/`. This way the documentation will show up on the website, but won’t be the default version.
+   > Pre-release documentation should be denoted with `-pre` after the version number, like `/server/3.0.1-pre/`. This way the documentation will show up on the website, but won’t be the default version. In pages’ front matter use `version: "3.0.1 (pre-release)"`.
 2. In the new version’s directory update all `.md` files to include the new version number in the front matter (see [Front Matter](#front-matter) below).
 3. Make edits to files in the new version as appropriate. Pages can be created or deleted when necessary.
 4. Update the version table at the top of this README.
