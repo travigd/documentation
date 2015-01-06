@@ -85,7 +85,7 @@ The following parameters are supported by the Event Store:
 </tr>
 <tr>
 	<td><code>--log</code></td>
-	<td>LOGS</td>
+	<td>LOG</td>
 	<td>logsdir</td>
 	<td>Path on which to keep log files.</td>
 	<td>./logs</td>
