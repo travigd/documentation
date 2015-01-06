@@ -200,9 +200,29 @@ The following values can be set using the connection string.
             <td>GossipSeeds</td>
             <td>Comma separated list of ip:port</td>
             <td>A list of seeds to try to discover from</td>
-        </tr>        
+        </tr>
+        <tr>
+            <td>ConnectTo</td>
+            <td>A Uri in format described above to connect to</td>
+            <td>The Uri to connect to</td>
+        </tr>                       
     </tbody>
 </table>
+
+```code
+var connectionString = "ConnectTo=tcp://admin:changeit@localhost:1113; HeartBeatTimeout=500"
+```
+Sets the connection string to connect to localhost on the default port and sets the heartbeat timeout to 500ms
+
+```code
+var connectionString = "ConnectTo=discover://admin:changeit@mycluster:3114; HeartBeatTimeout=500"
+```
+Tells the connection to try gossiping to a manager found under the dns mycluster at port 3114 to connect to the cluster
+
+```code
+var connectionString = "GossipSeeds="192.168.0.2:1111,192.168.0.3:1111; HeartBeatTimeout=500"
+```
+Tells the connection to try gossiping to the gossip seeds 192.168.0.2 or 192.168.0.3 on port 1111 to discover information about the cluster.
 
 <span class="note">
 See fluent api below for defaults of values.
