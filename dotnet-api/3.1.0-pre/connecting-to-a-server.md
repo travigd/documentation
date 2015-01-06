@@ -37,7 +37,7 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
             <td>Connects to Event Store (see Uris below) with specified settings</td>
         </tr>
         <tr>
-            <td><code>Create(string connectionString, Uri uri)</code></td>
+            <td><code>Create(string connectionString)</code></td>
             <td>Connects to Event Store (see Uris below) with settings from connection string</td>
         </tr>        
         <tr>
