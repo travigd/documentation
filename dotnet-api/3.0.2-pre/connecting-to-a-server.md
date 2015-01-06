@@ -8,9 +8,13 @@ version: "3.0.2 (pre-release)"
 
 The `EventStoreConnection` class is responsible for maintaining a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe, and it is recommended that only one instance per application is created.
 
-All operations are handled fully asynchronously, returning either a `Task` or a `Task<T>`. If you need to execute synchronously, simply call `.Wait()` on the asynchronous version.
+All operations are handled fully asynchronously, returning either a `Task` or a `Task<T>`. If you need to execute synchronously, simply call `.Wait()` or 'Result' on the asynchronous version.
 
 To get maximum performance from the connection, it is recommended that it be used asynchronously.
+
+<span class="note">
+The Create methods have changed slightly moving to 3.0.2 as connection strings are now supported. The old mechanisms will still work but have been marked obsolete and will be removed in the future.
+</span>
 
 ## Creating a Connection
 
@@ -25,15 +29,27 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
     </thead>
     <tbody>
         <tr>
-            <td><code>Create(IPEndPoint tcpEndPoint)</code></td>
-            <td>Connects to a single node with default settings</td>
+            <td><code>Create(Uri uri)</code></td>
+            <td>Connects to Event Store (see Uris below) with default settings</td>
         </tr>
         <tr>
-            <td><code>Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)</code></td>
+            <td><code>Create(ConnectionSettings connectionSettings, Uri uri)</code></td>
+            <td>Connects to Event Store (see Uris below) with specified settings</td>
+        </tr>
+        <tr>
+            <td><code>Create(string connectionString)</code></td>
+            <td>Connects to Event Store (see Uris below) with settings from connection string</td>
+        </tr>        
+        <tr>
+            <td><code>(obsolete) Create(IPEndPoint tcpEndPoint)</code></td>
+            <td>Connects to a single node with default settings</td>
+        </tr>        
+        <tr>
+            <td><code>(obsolete) Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)</code></td>
             <td>Connects to a single node with custom settings (see <a href="#customising-connection-settings">Customising Connection Settings</a>)</td>
         </tr>
         <tr>
-            <td><code>Create(ConnectionSettings connectionSettings, ClusterSettings clusterSettings)</code></td>
+            <td><code>(obsolete) Create(ConnectionSettings connectionSettings, ClusterSettings clusterSettings)</code></td>
             <td>Connects to an Event Store HA cluster with custom settings (see <a href="#cluster-settings">Cluster Settings</a>)</td>
         </tr>
     </tbody>
@@ -43,7 +59,190 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
 The connection returned by these methods is inactive. Use the `ConnectAsync()` method to establish a connection with the server.
 </span>
 
+## Uris
+
+The new Create methods support passing of a Uri to the connection as opposed to passing IPEndPoints. This Uri should be in the format of:
+
+-Single Node
+    tcp://user:password@myserver:11234
+-Cluster
+    discover://user:password@myserver:1234
+
+Where the port number points to the tcp port of the event store instance (1113 by default) or points to the manager gossip port for discovery purposes.
+
+With the Uri based mechanism you can pass a domain name and the client will resolve it.
+
+<span class="note">
+The client currently does a blocking DNS call for single node. If you are worried about blocking DNS due to network issues etc you should resolve the DNS yourself and pass in an ip address.
+</span>
+
+
 ## Customising Connection Settings
+
+### Connection String
+
+Many of the overloads accept a connection string that can be used to control settings of the connection. A benefit to having these as a connection string as opposed to with the fluent api is that they can be changed easily between environments without recompiling (say single node in dev and a cluster in production).
+
+The connection string format should look familiar to those who have used connection strings in the past. It is made up of a series of key/value pairs Key = Value separated by semicolons.
+
+The following values can be set using the connection string.
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Format</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>VerboseLogging</td>
+            <td>True/false</td>
+            <td>Enables verbose logging</td>
+        </tr>
+        <tr>
+            <td>MaxQueueSize</td>
+            <td>Integer</td>
+            <td>Maximum number of outstanding operations</td>
+        </tr>
+        <tr>
+            <td>MaxConcurrentItems</td>
+            <td>Integer</td>
+            <td>Maximum number of concurrent async operations</td>
+        </tr>
+        <tr>
+            <td>MaxRetries</td>
+            <td>Integer</td>
+            <td>Maximum number of retry attempts</td>
+        </tr>
+        <tr>
+            <td>MaxReconnections</td>
+            <td>Integer</td>
+            <td>The maximum number of times to try reconnecting</td>
+        </tr>
+        <tr>
+            <td>RequireMaster</td>
+            <td>True/false</td>
+            <td>If set the server will only process if it is master</td>
+        </tr>
+        <tr>
+            <td>ReconnectionDelay</td>
+            <td>Integer (milliseconds)</td>
+            <td>The delay before attempting to reconnect</td>
+        </tr>
+        <tr>
+            <td>OperationTimeout</td>
+            <td>Integer (milliseconds)</td>
+            <td>The time before an operation is considered timed out</td>
+        </tr>
+        <tr>
+            <td>OperationTimeoutCheckPeriod</td>
+            <td>Integer (milliseconds)</td>
+            <td>The frequency in which timeouts are checked</td>
+        </tr>
+        <tr>
+            <td>DefaultUserCredentials</td>
+            <td>String in format username:password</td>
+            <td>The default credentials for the connection</td>
+        </tr>
+        <tr>
+            <td>UseSslConnection</td>
+            <td>True/false</td>
+            <td>whether to use SSL for this connection</td>
+        </tr>
+        <tr>
+            <td>TargetHost</td>
+            <td>String</td>
+            <td>The hostname expected on the certificate</td>
+        </tr>
+        <tr>
+            <td>ValidateServer</td>
+            <td>True/false</td>
+            <td>Whether or not to validate the remote server</td>
+        </tr>
+        <tr>
+            <td>FailOnNoServerResponse</td>
+            <td>True/False</td>
+            <td>Whether or not to fail on no server response</td>
+        </tr>
+        <tr>
+            <td>HeartbeatInterval</td>
+            <td>Integer (milliseconds)</td>
+            <td>The interval at which to send the server a heartbeat</td>
+        </tr>
+        <tr>
+            <td>HeartbeatTimeout</td>
+            <td>Integer (milliseconds)</td>
+            <td>The amount of time to receive a heartbeat response before timing out</td>
+        </tr>
+        <tr>
+            <td>ClusterDns</td>
+            <td>string</td>
+            <td>The dns name of the cluster for discovery</td>
+        </tr>
+        <tr>
+            <td>MaxDiscoverAttempts</td>
+            <td>Integer</td>
+            <td>The maximum number of attempts to try to discover the cluster</td>
+        </tr>
+        <tr>
+            <td>ExternalGossipPort</td>
+            <td>Integer</td>
+            <td>The port to try to gossip on</td>
+        </tr>
+        <tr>
+            <td>GossipTimeout</td>
+            <td>Integer (milliseconds)</td>
+            <td>The amount of time before timing out a gossip response</td>
+        </tr>
+        <tr>
+            <td>GossipSeeds</td>
+            <td>Comma separated list of ip:port</td>
+            <td>A list of seeds to try to discover from</td>
+        </tr>
+        <tr>
+            <td>ConnectTo</td>
+            <td>A Uri in format described above to connect to</td>
+            <td>The Uri to connect to</td>
+        </tr>                       
+    </tbody>
+</table>
+
+<span class="note">
+You can also use spacing instead of camel casing in your connection string if you prefer.
+</span>
+
+```code
+var connectionString = "ConnectTo=tcp://admin:changeit@localhost:1113; HeartBeatTimeout=500"
+```
+Sets the connection string to connect to localhost on the default port and sets the heartbeat timeout to 500ms
+
+```code
+var connectionString = "Connect To = tcp://admin:changeit@localhost:1113; Gossip Timeout = 500"
+```
+Using spaces
+
+```code
+var connectionString = "ConnectTo=discover://admin:changeit@mycluster:3114; HeartBeatTimeout=500"
+```
+Tells the connection to try gossiping to a manager found under the dns mycluster at port 3114 to connect to the cluster
+
+```code
+var connectionString = "GossipSeeds="192.168.0.2:1111,192.168.0.3:1111; HeartBeatTimeout=500"
+```
+Tells the connection to try gossiping to the gossip seeds 192.168.0.2 or 192.168.0.3 on port 1111 to discover information about the cluster.
+
+<span class="note">
+See fluent api below for defaults of values.
+</span>
+
+<span class="note">
+You can also use the ConnectionString class to return you a ConnectionSettings object
+</span>
+
+
+### Fluent Api
 
 Settings used for modifying the behaviour of an `EventStoreConnection` are encapsulated into an object of type `ConnectionSettings` which is passed as a paramater to the `Create` methods listed above.
 
