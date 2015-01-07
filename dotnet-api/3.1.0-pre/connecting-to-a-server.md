@@ -209,10 +209,19 @@ The following values can be set using the connection string.
     </tbody>
 </table>
 
+<span class="note">
+You can also use spacing instead of camel casing in your connection string if you prefer.
+</span>
+
 ```code
 var connectionString = "ConnectTo=tcp://admin:changeit@localhost:1113; HeartBeatTimeout=500"
 ```
 Sets the connection string to connect to localhost on the default port and sets the heartbeat timeout to 500ms
+
+```code
+var connectionString = "Connect To = tcp://admin:changeit@localhost:1113; Gossip Timeout = 500"
+```
+Using spaces
 
 ```code
 var connectionString = "ConnectTo=discover://admin:changeit@mycluster:3114; HeartBeatTimeout=500"
