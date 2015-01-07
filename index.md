@@ -9,7 +9,9 @@ layout: docs
 
 Read through the [Introduction](/introduction) section if you’re new to Event Store. If you know what you are looking for navigate to the section and version you need.
 
-URLs for documentation pages are version-specific. If you want to share a link that always points to the latest version of software you can replace the version number in the URL with “latest”. For example, `http://docs.g…e.com/http-api/3.0.0/security` would become `http://docs.g…e.com/http-api/latest/security`.
+### A note on URLs
+
+URLs for documentation pages are version-specific. If you want to share a link that always points to the latest (non pre-release) version you can replace the version number in the URL with “latest”. For example http://docs.geteventstore.com/http-api/3.0.0/security would become http://docs.geteventstore.com/http-api/latest/security.
 
 ## Projections
 
