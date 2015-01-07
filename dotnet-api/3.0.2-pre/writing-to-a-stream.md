@@ -92,7 +92,7 @@ The members on `EventData` are:
 
 ## Appending to a stream in a single write
 
-The `AppendToStreamAsync` method writes events atomically to the end of a stream, working in an async manner
+The `AppendToStreamAsync` method writes events atomically to the end of a stream, working in an async manner.
 
 The parameters are:
 
@@ -106,11 +106,11 @@ The parameters are:
     <tbody>
         <tr>
             <td><code>string stream</code></td>
-            <td>the name of the stream to which to append.</td>
+            <td>The name of the stream to which to append.</td>
         </tr>
         <tr>
             <td><code>int expectedVersion</code></td>
-            <td>the version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](../optimistic-concurrency-and-idempotence) for a broader discussion of this.</code></td>
+            <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](../optimistic-concurrency-and-idempotence) for a broader discussion of this.</code></td>
         </tr>
         <tr>
             <td><code>bool IsJson</code></td>

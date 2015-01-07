@@ -4,11 +4,11 @@ section: ".NET API"
 version: "3.0.2 (pre-release)"
 ---
 
-Every stream in the Event Store has metadata associated with it. Internally, the metadata includes such information as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API. 
+Every stream in the Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API.
 
 A common use case of information you may want to store in metadata is information associated with an event that is not part of the event. An example of this might be which user wrote the event? Which application server were they talking to? From what IP address did the request come from? This type of information is not part of the actual event but is metadata assocatiated with the event.
 
-Stream metadata is stored internally as JSON, and can be accessed over the HTTP APIs. 
+Stream metadata is stored internally as JSON, and can be accessed over the HTTP APIs.
 
 ## Methods
 
@@ -32,7 +32,7 @@ Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVe
 
 ## Reading Stream Metadata
 
-To read stream metadata over the dotnet client you can use methods found on the EventStoreConnection. The GetStreamMetadata methods have two mechanisms of being used. The first is to return you a fluent interface over the stream metadata the second (GetStreamMetadataRaw) is to return you the raw JSON of the stream metadata.
+To read stream metadata over the .NET API you can use methods found on the EventStoreConnection. The GetStreamMetadata methods have two mechanisms of being used. The first is to return you a fluent interface over the stream metadata, the second (GetStreamMetadataRaw) is to return you the raw JSON of the stream metadata.
 
 ```csharp
 Task<StreamMetadataResult> GetStreamMetadataAsync(string stream, UserCredentials userCredentials = null)
@@ -126,7 +126,7 @@ This will return a RawStreamMetadataResult. The fields on this result are:
         </tr>
         <tr>
             <td><code>int MetastreamVersion</code></td>
-            <td>The version of the metastream (see [Expected Version](optimistic-concurrency-and-idempotency.md))</td>
+            <td>The version of the metastream (see [Expected Version](../optimistic-concurrency-and-idempotence))</td>
         </tr>
         <tr>
             <td><code>byte[] Metadata</code></td>
@@ -142,7 +142,7 @@ Reading metadata may require that you pass credentials if you have security enab
 
 ## Writing Metadata
 
-Writing metadata can also be done in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms also support an expectedVersion which works the same as on any stream and can be used to control concurrency see [Expected Version](optimistic-concurrency-and-idempotency.md) for further details.
+Writing metadata can also be done in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms also support an expectedVersion which works the same as on any stream and can be used to control concurrency see [Expected Version](../optimistic-concurrency-and-idempotence) for further details.
 
 ```csharp
 Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)

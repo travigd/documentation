@@ -113,7 +113,7 @@ UserCredentials credentials = new UserCredentials("username","password");
 
 ### Security
 
-The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default). 
+The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default).
 
 To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/latest/setting-up-ssl-windows/).
 
@@ -168,7 +168,7 @@ When connecting to an Event Store HA cluster, you can specify that operations ca
 
 ### Handling Failures
 
-There following methods on the `ConnectionSettingsBuilder` allow you to modify the way in which the connection handles operation failures and connection issues.
+The following methods on the `ConnectionSettingsBuilder` allow you to modify the way in which the connection handles operation failures and connection issues.
 
 #### Reconnections
 
