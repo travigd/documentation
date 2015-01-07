@@ -3,31 +3,17 @@ title: "Documentation"
 layout: docs
 ---
 
-<p class="docs-lead">Event Store docs are hosted on GitHub. The repository is public, and <a href="https://github.com/eventstore/docs.geteventstore.com">it’s open to pull requests</a>. We’ve got a bunch of goodies ready to send out to people who make useful contributions.</p>
+<p class="docs-lead">Event Store docs are hosted on GitHub. The repository is public and <a href="https://github.com/eventstore/docs.geteventstore.com">it’s open to pull requests</a>. Contributions, corrections and feedback are all welcome.</p>
 
 ## Using These Docs
 
-If you’re new to Event Store and want to get started, read through the Introduction section. If you know what you are looking for use the navigation on the left (or top, in smaller browser windows) to find the section and version you are interested in.
+Read through the [Introduction](/introduction) section if you’re new to Event Store. If you know what you are looking for navigate to the section and version you need.
 
-### Sharing Links
-
-If you want to share a link to the documentation, you can either use the version-specific URL format or the “latest” URL format. For example:
-
-```
-http://docs.geteventstore.com/http-api/3.0.0/security
-```
-
-always points to the Security page for **version 3.0.0 of the HTTP API**.
-
-```
-http://docs.geteventstore.com/http-api/latest/security
-```
-
-always points to the Security page for the **latest version of the HTTP API**.
+URLs for documentation pages are version-specific. If you want to share a link that always points to the latest version of software you can replace the version number in the URL with “latest”. For example, `http://docs.g…e.com/http-api/3.0.0/security` would become `http://docs.g…e.com/http-api/latest/security`.
 
 ## Projections
 
-User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [command line arguments](/server/latest/command-line-arguments) page).
+User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter (or equivalent as per the [Command Line Arguments](/server/latest/command-line-arguments) page).
 
 Projections are still experimental and as such we have not yet documented them here. However, there are two series of blog posts about how they can be used, which are listed below under the Related Blog Posts section below.
 
@@ -69,10 +55,13 @@ The following blog posts talk about the Event Store and may be useful for featur
 - [Part 12 - (Aside) Database storage and backing up](http://codeofrob.com/entries/evented-github-adventure---database-storage-and-backing-up.html)
 - [Part 13 - Sentiment analysis of github commits](http://codeofrob.com/entries/evented-github-adventure---sentiment-analysis-of-github-commits.html)
 
-There is also a [video of Greg Young’s “In The Brain” session](http://skillsmatter.com/podcast/design-architecture/event-store-as-a-read-model) recorded at SkillsMatter in London about using projections for Complex Event Processing.
-
 ### Other Posts
 
 - [Ensuring Writes](http://geteventstore.com/blog/20130301/ensuring-writes-multi-node-replication/) - describes how writing works in our commercial highly available product.
 - [The Cost of Creating a Stream](http://geteventstore.com/blog/20130210/the-cost-of-creating-a-stream/)
 - [Various Hash Implementations (BSD Licensed!)](http://geteventstore.com/blog/20120921/a-useful-piece-of-code-1/)
+
+## Videos
+
+- [Ouro’s 2nd Birthday](http://geteventstore.com/blog/20141112/video-of-ouros-2nd-birthday) introducing Event Store 3.0.0
+- [Greg Young’s “In The Brain” session](http://skillsmatter.com/podcast/design-architecture/event-store-as-a-read-model) about using projections for Complex Event Processing.
