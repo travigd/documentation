@@ -125,7 +125,7 @@ This will return a RawStreamMetadataResult. The fields on this result are:
         </tr>
         <tr>
             <td><code>int MetastreamVersion</code></td>
-            <td>The version of the metastream (see [Expected Version](../optimistic-concurrency-and-idempotence))</td>
+            <td>The version of the metastream (see <a href="../optimistic-concurrency-and-idempotence">Expected Version</a>)</td>
         </tr>
         <tr>
             <td><code>byte[] Metadata</code></td>
