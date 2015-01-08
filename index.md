@@ -24,7 +24,7 @@ Projections are still experimental and as such we have not yet documented them h
 
 ## Related Blog Posts
 
-The following blog posts talk about the Event Store and may be useful for features that aren’t yet documented here. If you know of any others, please let us know!
+The following blog posts talk about the Event Store and may be useful for features that aren’t yet documented here. If you know of any others, please let us know! For more articles by Event Store visit our [blog](http://geteventstore.com/blog).
 
 ### Getting Started Series
 
