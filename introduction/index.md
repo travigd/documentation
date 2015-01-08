@@ -14,7 +14,7 @@ This setup is intended as an experimental setup or for a developer’s machine. 
 
 To start go to [http://geteventstore.com/downloads](http://geteventstore.com/downloads) and download the binaries into a folder. For this document it is assumed that you are in Windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup.
 
-Once you have the zip file unzipped, open up an administrator console. `cd` into the directory where you have installed the Event Store. On the command line enter:
+Once you have the zip file unzipped open up an administrator console. `cd` into the directory where you have installed the Event Store. On the command line enter:
 
 ```
 EventStore.ClusterNode.exe --db ./db --log ./logs
@@ -48,7 +48,7 @@ To begin let’s open Notepad. Copy and paste the following event definition int
 ```
 
 <span class="note">
-You can also post events as XML, same format but set the `Content-Type` to `XML`.
+You can also post events as XML in the same format but set the `Content-Type` to `XML`.
 </span>
 
 Now to write our event to a stream we would issue the following cURL command.
@@ -61,7 +61,7 @@ curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type
 From version 3.0.0 RC9 there has been a change to how events are posted. See the [post about this release here](https://groups.google.com/forum/#!searchin/event-store/rc9/event-store/hLFyG32Yui8/NHql6R4rw-QJ).
 </span>
 
-So for the above to work, use the following which has a new `Content-Type` which allows the old format:
+For the above to work use the following which has a new `Content-Type` which allows the old format:
 
 ```
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
@@ -83,7 +83,7 @@ Keep-Alive: timeout=15,max=100
 
 ```
 
-If you go to your UI after this command and to the *Streams* tab. You will see your stream has recently been created, if you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an HTML representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/streams/newstream](http://127.0.0.1:2113/streams/newstream)).
+If you go to your UI after this command and to the *Streams* tab. You will see your stream has recently been created. If you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an HTML representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/streams/newstream](http://127.0.0.1:2113/streams/newstream)).
 
 You can also setup Access Control Lists (see [server docs](/server/latest)) on your streams by changing the metadata of the stream.
 
@@ -138,7 +138,7 @@ Keep-Alive: timeout=15,max=100
 </feed>
 ```
 
-This cURL command told the system that we wanted the feed returned to us in `atom+xml` *(pro tip: you can also try `application/vnd.eventstore.atom+json` if you prefer JSON like we do!)*. The feed that we pulled has a single item inside of it, the one we recently posted. We would then get the event by issuing a `GET` to the alternate URI.
+This cURL command told the system that we wanted the feed returned to us in `atom+xml` *(pro tip: you can also try `application/vnd.eventstore.atom+json` if you prefer JSON like we do!)*. The feed that we pulled has a single item inside of it—the one we recently posted. We would then get the event by issuing a `GET` to the alternate URI.
 
 ```
 curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
