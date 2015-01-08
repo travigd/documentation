@@ -39,11 +39,11 @@ The static `Create` methods on `EventStoreConnection` are used to create a new c
         <tr>
             <td><code>Create(string connectionString)</code></td>
             <td>Connects to Event Store (see URIs below) with settings from connection string</td>
-        </tr>        
+        </tr>
         <tr>
             <td><code>(obsolete) Create(IPEndPoint tcpEndPoint)</code></td>
             <td>Connects to a single node with default settings</td>
-        </tr>        
+        </tr>
         <tr>
             <td><code>(obsolete) Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)</code></td>
             <td>Connects to a single node with custom settings (see <a href="#customising-connection-settings">Customising Connection Settings</a>)</td>
@@ -203,7 +203,7 @@ The following values can be set using the connection string.
             <td>ConnectTo</td>
             <td>A URI in format described above to connect to</td>
             <td>The URI to connect to</td>
-        </tr>                       
+        </tr>
     </tbody>
 </table>
 
@@ -314,7 +314,7 @@ UserCredentials credentials = new UserCredentials("username","password");
 
 ### Security
 
-The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default). 
+The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default).
 
 To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/latest/setting-up-ssl-windows/).
 
@@ -369,7 +369,7 @@ When connecting to an Event Store HA cluster you can specify that operations can
 
 ### Handling Failures
 
-There following methods on the `ConnectionSettingsBuilder` allow you to modify the way the connection handles operation failures and connection issues.
+The following methods on the `ConnectionSettingsBuilder` allow you to modify the way the connection handles operation failures and connection issues.
 
 #### Reconnections
 
