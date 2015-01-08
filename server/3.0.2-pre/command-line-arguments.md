@@ -8,7 +8,7 @@ The Event Store supports many configuration points. There are three distinct way
 
 To pass a configuration value over the command line you just add the configuration to the line executing the Event Store e.g. `EventStore.ClusterNode.exe --log ~/logs`
 
-While command line arguments tend to be very useful in development scenarios, they are often not the prefered way to handle configuration in a production system.
+While command line arguments tend to be very useful in development scenarios, they are often not the preferred way to handle configuration in a production system.
 
 All arguments can also be set as environment variables. This mechanism is often used in UNIX based systems.
 
