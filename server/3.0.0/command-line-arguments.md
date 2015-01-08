@@ -59,6 +59,10 @@ PREPARE TIMEOUT MS:       2000 (<DEFAULT>)
 COMMIT TIMEOUT MS:        2000 (<DEFAULT>)
 ```
 
+<span class="note">
+User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter.<br><br>Projections are still experimental and as such we have not yet documented them here. However, there are two series of blog posts about how they can be used, which are listed below under the Related Blog Posts section below.
+</span>
+
 The following parameters are supported by the Event Store:
 
 <table>
