@@ -8,7 +8,7 @@ The Event Store supports many configuration points. There are three distinct way
 
 To pass a configuration value over the command line you just add the configuration to the line executing the Event Store e.g. `EventStore.ClusterNode.exe --log ~/logs`
 
-While command line arguments tend to be very useful in development scenarios, they are often not the prefered way to handle configuration in a production system.
+While command line arguments tend to be very useful in development scenarios, they are often not the preferred way to handle configuration in a production system.
 
 All arguments can also be set as environment variables. This mechanism is often used in UNIX based systems.
 
@@ -58,6 +58,10 @@ CERTIFICATE PASSWORD:     <empty> (<DEFAULT>)
 PREPARE TIMEOUT MS:       2000 (<DEFAULT>)
 COMMIT TIMEOUT MS:        2000 (<DEFAULT>)
 ```
+
+<span class="note">
+User projections are not enabled by default, however the projections engine is used internally for account management. If you want to run user projections, it is necessary to start using the `--run-projections=all` command line parameter.<br><br>Projections are still experimental and as such we have not yet documented them here. However, there are two series of blog posts about how they can be used listed on the [docs homepage](/).
+</span>
 
 The following parameters are supported by the Event Store:
 
