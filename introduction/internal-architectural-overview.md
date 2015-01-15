@@ -9,7 +9,7 @@ The overall architecture style of the Event Store is [SEDA (Staged Event Driven 
 
 Messages first flow through a state machine that represents the state of the node. As an example in a distributed scenario you are not always allowed to write (slaves will forward not write themselves) or if you are still initializing you are not allowed to read. Each request is also handled by a state machine that manages the lifecycle of that request including time outs and acknowledgements throughout the cluster.
 
-Due to the way the architecture works the main monitoring points of the Event Store is the status of the queues. The status can be viewed in the health area of the admin interface or through the HTTP API. It is also written to a special $statistics-node:port stram on an interval. 
+Due to the way the architecture works the main monitoring points of the Event Store is the status of the queues. The status can be viewed in the health area of the admin interface or through the HTTP API. It is also written to a special $statistics-node:port stream on an interval. 
 
 The most common queue to be slow is the storage writer as it writes to storage in a durable fashion. It uses fsync/flushfile buffers to ensure that data is persisted to disk and will survive say a power outage on the machine. At the time of writing the storage writer is capable of writing more than 15,000 transactions to disk per second on the open source single node version. This is well beyond the needs of most systems.
 
@@ -53,7 +53,7 @@ As transactions are written to the Transaction File an in-memory index is append
 
 In experimenting with various data structures including redblack trees and B+ trees it turned out that the fine grained lock outperformed the others (a good example of how stupid code can often be faster than well thought out code).
 
-When there are enough items in the in memory index the in memory index the index will be flushed to disk (known as a PTable or Persistent Table). A PTable is just a sorted group of index entries (remember that they are only 16 bytes each). To search a binary search accross the ptables is used. The search function however has been memoized by storing midpoints in memory (in the future likely ptables will be stored in unmanaged memory as well however the performance on SSDs is very acceptable with only midpoint caching). Mid point caching reduces the number of seeks from log(n) by the depth to which midpoints are filled and often all are in memory.
+When there are enough items in the in memory index, the index will be flushed to disk (known as a PTable or Persistent Table). A PTable is just a sorted group of index entries (remember that they are only 16 bytes each). To search a binary search accross the PTables is used. The search function however has been memoized by storing midpoints in memory (in the future likely ptables will be stored in unmanaged memory as well however the performance on SSDs is very acceptable with only midpoint caching). Mid point caching reduces the number of seeks from log(n) by the depth to which midpoints are filled and often all are in memory.
 
 When a PTable is written a checksum is marked as to the last place in the transaction file the persistent tables cover to. If the system were to shut down in must rebuild a memtable from that point forward on start up. With default settings the max is 1m items which takes about 3 seconds on most machines tested. This value can be tweaked via the command line as well.
 
