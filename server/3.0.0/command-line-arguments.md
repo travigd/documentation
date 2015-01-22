@@ -65,376 +65,90 @@ User projections are not enabled by default, however the projections engine is u
 
 The following parameters are supported by the Event Store:
 
-<table>
-<tr>
-	<th>Parameter</th>
-	<th>Environment <em>(all prefixed with EVENTSTORE_)</em></th>
-	<th>JSON</th>
-	<th>Description</th>
-	<th>Default</th>
-</tr>
-<tr>
-	<td><code>--help</code>, <code>-?</code></td>
-	<td>na</td>
-	<td>na</td>
-	<td>Show command line parameter help.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--version</code></td>
-	<td>na</td>
-	<td>na</td>
-	<td>Show version.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--log</code></td>
-	<td>LOG</td>
-	<td>logsdir</td>
-	<td>Path on which to keep log files.</td>
-	<td>./logs</td>
-</tr>
-<tr>
-	<td><code>--cfg</code><br><code>--config=VALUE</code></td>
-	<td>CONFIGS</td>
-	<td>configs</td>
-	<td>Configuration files.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--force</code></td>
-	<td></td>
-	<td></td>
-	<td>Allow running in questionable environments (like boehm gc in mono)</td>
-	<td>false</td>
-</tr>
-<tr>
-	<td><code>-i</code>, <code>--ip=VALUE</code></td>
-	<td>IP</td>
-	<td>ip</td>
-	<td>The IP address to bind to.</td>
-	<td>127.0.0.1</td>
-</tr>
-<tr>
-	<td><code>-st</code><br><code>--sec-tcp-port=VALUE</code></td>
-	<td>SEC_TCP_PORT</td>
-	<td>secureTcpPort</td>
-	<td>The port to run the secure (SSL) TCP server on.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>-h</code><br><code>--http-port=VALUE</code></td>
-	<td>HTTP_PORT</td>
-	<td>httpPort</td>
-	<td>The port to run the HTTP server on.</td>
-	<td>2113</td>
-</tr>
-<tr>
-	<td><code>-t</code>, <code>--tcp-port=VALUE</code></td>
-	<td>TCP_PORT</td>
-	<td>tcpPort</td>
-	<td>The port to run the TCP server on.</td>
-	<td>1113</td>
-</tr>
-<tr>
-	<td><code>def</code><br><code>define=</code></td>
-	<td>DEFINES</td>
-	<td>defines</td>
-	<td>Run-time conditionals.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>-s</code><br><code>--stats-period-sec=VALUE</code></td>
-	<td>STATS_PERIOD_SEC</td>
-	<td>statsPeriodSec</td>
-	<td>The number of seconds between statistics gathers.</td>
-	<td>15</td>
-</tr>
-<tr>
-	<td><code>-c</code><br><code>--chunkcache</code><br><code>--cached-chunks=VALUE</code></td>
-	<td>CACHED_CHUNKS</td>
-	<td>cachedChunks</td>
-	<td>The number of chunks to cache in unmanaged memory.</td>
-	<td>0</td>
-</tr>
-<tr>
-	<td><code>-c</code><br><code>--chunk-cache-size</code>, <code>--cached-chunks=VALUE</code></td>
-	<td>CHUNKS_CACHE_SIZE</td>
-	<td>chunksCacheSize</td>
-	<td>The amount of unmanaged memory (in MB) to use for caching chunks.</td>
-	<td>0</td>
-</tr>
-<tr>
-	<td><code>-d</code><br><code>--db=VALUE</code></td>
-	<td>DB</TD>
-	<td>db</TD>
-	<td>The path the db should be loaded/saved to.</td>
-	<td>temporary db</td>
-</tr>
-<tr>
-	<td><code>--do-not-verify-db-hashes-on-startup</code>, <code>--skip-db-verify</code></td>
-	<td>SKIP_DB_VERIFY</td>
-	<td>skipDbVerify</td>
-	<td>Bypasses the checking of file hashes of database during startup (allows for faster startup).</td>
-	<td>false</td>
-</tr>
-<tr>
-	<td>
-              <code>--run-projections=NONE</code><br>
-              <code>--run-projections=SYSTEM</code><BR>
-              <code>--run-projections=ALL</code>
-        </td>
-	<td>RUN_PROJECTIONS</td>
-	<td>runProjections</td>
-	<td>Enables the running of JavaScript projections (experimental). Can be either none, system, or all</td>
-	<td>system</td>
-</tr>
-<tr>
-	<td><code>--projection-threads=VALUE</code></td>
-	<td>PROJECTION_THREADS</td>
-	<td>projectionThreads</td>
-	<td>The number of threads to use for projections.</td>
-	<td>3</td>
-</tr>
-<tr>
-	<td><code>--worker-threads=VALUE</code></td>
-	<td>WORKER_THREADS</td>
-	<td>workerThreads</td>
-	<td>The number of threads in pool for worker services.</td>
-	<td>5</td>
-</tr>
-<tr>
-	<td><code>--http-prefixes</code><br><code>--http-prefixes=VALUE</code></td>
-	<td>HTTP_PREFIXES</td>
-	<td>httpPrefixes</td>
-	<td>The prefixes that the http server should respond to. To specify multiple prefixes use the format <code>--http-prefixes="http://prefix1:port/,http://prefix2:port/"</code>. No spaces between the prefixes.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--pt</code><br><code>--prepare-timeout=VALUE</code></td>
-	<td>PREPARE_TIMEOUT_MS</td>
-	<td>prepareTimeoutMs</td>
-	<td>The timeout in milliseconds of a prepare.</td>
-	<td>2000</td>
-</tr>
-<tr>
-	<td><code>--ct</code><br><code>--commit-timeout=VALUE</code></td>
-	<td>COMMIT_TIMEOUT_MS</td>
-	<td>commitTimeoutMs</td>
-	<td>The timeout in milliseconds of a commit.</td>
-	<td>2000</td>
-</tr>
-<tr>
-	<td><code>certificate-store=VALUE</code></td>
-	<td>CERTIFICATE_STORE</td>
-	<td>certificateStore</td>
-	<td>The name of certificate store to use.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--certificate-name=VALUE</code></td>
-	<td>CERTIFICATE_NAME</td>
-	<td>certificateName</td>
-	<td>The name of the certificate to use</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--certificate-file=VALUE</code></td>
-	<td>CERTIFICATE_FILE</td>
-	<td>certificateFile</td>
-	<td>The file of the certificate to use</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--certificate-password=VALUE</code></td>
-	<td>CERTIFICATE_PASSWORD</td>
-	<td>certificatePassword</td>
-	<td>The password to certificate in file.</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--min-flush-delay=VALUE</code></td>
-	<td>MIN_FLUSH_DELAY</td>
-	<td>minFlushDelay</td>
-	<td>The minimum flush delay to be added when writing under heavy load. Not normally set</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td span="4">In high availability version only</td>
-</tr>
-<tr>
-	<td><code>--int-ip</code><br><code>--internal-ip=VALUE</code></td>
-	<td>INT_IP</td>
-	<td>internalIp</td>
-	<td>Internal IP Address. (eg for replication, ui, and internal communications)</td>
-	<td>127.0.0.1</td>
-</tr>
-<tr>
-	<td><code>--ext-ip</code><br><code>--internal-ip=VALUE</code></td>
-	<td>EXT_IP</td>
-	<td>externalIp</td>
-	<td>External IP Address. (eg for clients to talk to)</td>
-	<td>127.0.0.1</td>
-</tr>
-<tr>
-	<td><code>--int-http-port</code><br><code>--internal-http-port=VALUE</code></td>
-	<td>INT_HTTP_PORT</td>
-	<td>internalHttpPort</td>
-	<td>Internal Http Port. (eg for Gossip and UI)</td>
-	<td>2112</td>
-</tr>
-<tr>
-	<td><code>--ext-http-port</code><br><code>--external-http-port=VALUE</code></td>
-	<td>EXT_HTTP_PORT</td>
-	<td>externalHttpPort</td>
-	<td>External Http Port. (eg for clients over ATOM)</td>
-	<td>2113</td>
-</tr>
-<tr>
-	<td><code>--int-tcp-port</code><br><code>--internal-tcp-port=VALUE</code></td>
-	<td>INT_TCP_PORT</td>
-	<td>internalTcpPort</td>
-	<td>Internal Tcp Port (eg for replication)</td>
-	<td>1112</td>
-</tr>
-<tr>
-	<td><code>--int-sec-tcp-port</code><br><code>--internal-secure-tcp-port=VALUE</code></td>
-	<td>INT_SEC_TCP_PORT</td>
-	<td>internalSecureTcpPort</td>
-	<td>Internal Secure Tcp Port (eg for replication over SSL)</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--ext-tcp-port</code><br><code>--external-tcp-port=VALUE</code></td>
-	<td>EXT_TCP_PORT</td>
-	<td>externalTcpPort</td>
-	<td>External Tcp Port (eg for clients)</td>
-	<td>1113</td>
-</tr>
-<tr>
-	<td><code>--ext-sec-tcp-port</code><br><code>--external-secure-tcp-port=VALUE</code></td>
-	<td>EXT_SEC_TCP_PORT</td>
-	<td>externalSecureTcpPort</td>
-	<td>External Secure Tcp Port (eg for clients SSL)</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--cluster-dns=VALUE</code></td>
-	<td>CLUSTER_DNS</td>
-	<td>clusterDns</td>
-	<td>The DNS to use for cluster discovery</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--nodes-count</code><br><code>--cluster-size=VALUE</code></td>
-	<td>CLUSTER_SIZE</td>
-	<td>clusterSize</td>
-	<td>The overall size of the cluster (active nodes)</td>
-	<td>3</td>
-</tr>
-<tr>
-	<td><code>--prepare-count=VALUE</code></td>
-	<td>PREPARE_COUNT</td>
-	<td>prepareCount</td>
-	<td>The count of prepares before continuing (should be set to a quorum of nodes)</td>
-	<td>2</td>
-</tr>
-<tr>
-	<td><code>--commit-count=VALUE</code></td>
-	<td>COMMIT_COUNT</td>
-	<td>commitCount</td>
-	<td>The count of commits before continuing (should be set to a quorum of nodes)</td>
-	<td>2</td>
-</tr>
-<tr>
-	<td><code>--max-memtable-size=VALUE</code></td>
-	<td>MAX_MEMTABLE_SIZE</td>
-	<td>maxMemtableSize</td>
-	<td>The maximum size of a memory table before it should be moved to disk.</td>
-	<td>1000000</td>
-</tr>
-<tr>
-	<td><code>--f<code><br><code>--fake-dns=VALUE</code></td>
-	<td>FAKE_DNS</td>
-	<td>fakeDns</td>
-	<td>Used to do discovery without a dns setup for the cluster</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--fake-dns-ip=VALUE</code></td>
-	<td>FAKE_DNS_IP</td>
-	<td>fakeDnsIp</td>
-	<td>Used to do discovery without a dns setup for the cluster</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--manager-ip</code><br><code>--int-manager-ip</code><br><code>--internal-manager-ip=VALUE</code></td>
-	<td>INT_MANAGER_IP</td>
-	<td>internalManagerIp</td>
-	<td>The internal ip address of the node manager</td>
-	<td>127.0.0.1</td>
-</tr>
-<tr>
-	<td><code>--ext-manager-ip</code><br><code>--external-manager-ip=VALUE</code></td>
-	<td>EXT_MANAGER_IP</td>
-	<td>externalManagerIp</td>
-	<td>The external ip address of the node manager</td>
-	<td>127.0.0.1</td>
-</tr>
-<tr>
-	<td><code>--manager-port</code><br><code>--int-manager-http-port</code><br><code>--internal-manager-http-port=VALUE</code></td>
-	<td>INT_MANAGER_HTTP_PORT</td>
-	<td>internalManagerHttpPort</td>
-	<td>The internal http port of the node manager</td>
-	<td>30777</td>
-</tr>
-<tr>
-	<td><code>--admin-on-ext</code></td>
-	<td>ADMIN_ON_EXT</td>
-	<td>adminOnExt</td>
-	<td>Whether or not to run the admin ui on the external http endpoint</td>
-	<td>true</td>
-</tr>
-<tr>
-	<td><code>--gossip-on-ext</code></td>
-	<td>GOSSIP_ON_EXT</td>
-	<td>gossipOnExt</td>
-	<td>Whether or not to accept gossip requests on the external http endpoint</td>
-	<td>true</td>
-</tr>
-<tr>
-	<td><code>--stats-on-ext</code></td>
-	<td>STATS_ON_EXT</td>
-	<td>statsOnExt</td>
-	<td>Whether or not to accept statistics requests on the external http endpoint. This option is needed if you run the admin UI on external endpoint</td>
-	<td>true</td>
-</tr>
-<tr>
-	<td><code>--ext-manager-http-port</code><br><code>--external-manager-http-port=VALUE</code></td>
-	<td>EXT_MANAGER_HTTP_PORT</td>
-	<td>externalManagerHttpPort</td>
-	<td>The external http port of the node manager</td>
-	<td>30778</td>
-</tr>
-<tr>
-	<td><code>--use-internal-ssl</code></td>
-	<td>USE_INTERNAL_SSL</td>
-	<td>useInternalSsl</td>
-	<td>If true will attempt to use secure replication</td>
-	<td>false</td>
-</tr>
-<tr>
-	<td><code>--ssl-target-host=VALUE</code></td>
-	<td>SSL_TARGET_HOST</td>
-	<td>sslTargetHost</td>
-	<td>The target host of the server’s ssl certificate</td>
-	<td>na</td>
-</tr>
-<tr>
-	<td><code>--ssl-validate-server</code></td>
-	<td>SSL_VALIDATE_SERVER</td>
-	<td>sslValidateServer</td>
-	<td>Whether to validate that the server’s certificate is trusted</td>
-	<td>true</td>
-</tr>
-</table>
+###Application Options
+| Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
+| --------- | --------------------------------------------- | ---- | ----------- |
+|-Help <br/>|HELP|Help|Show help. (Default: False)|
+|-Version <br/>|VERSION|Version|Show version. (Default: False)|
+|-Log <br/>|LOG|Log|Path where to keep log files.|
+|-Config <br/>|CONFIG|Config|Configuration files.|
+|-Defines <br/>|DEFINES|Defines|Run-time conditionals. (Default: n/a)|
+|-WhatIf <br/>--what-if=VALUE|WHATIF|WhatIf|Print effective configuration to console and then exit. (Default: False)|
+|-Force <br/>|FORCE|Force|Force the Event Store to run in possibly harmful environments such as with Boehm GC. (Default: False)|
+|-StatsPeriodSec <br/>--stats-period-sec=VALUE|STATSPERIODSEC|StatsPeriodSec|The number of seconds between statistics gathers. (Default: 30)|
+|-WorkerThreads <br/>--worker-threads=VALUE|WORKERTHREADS|WorkerThreads|The number of threads to use for pool of worker services. (Default: 5)|
+
+###Authentication Options
+| Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
+| --------- | --------------------------------------------- | ---- | ----------- |
+|-AuthenticationType <br/>--authentication-type=VALUE|AUTHENTICATIONTYPE|AuthenticationType|The type of authentication to use. (Default: internal)|
+
+###Certificate Options
+| Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
+| --------- | --------------------------------------------- | ---- | ----------- |
+|-CertificateStoreLocation <br/>--certificate-store-location=VALUE|CERTIFICATESTORELOCATION|CertificateStoreLocation|The certificate store location name.|
+|-CertificateStoreName <br/>--certificate-store-name=VALUE|CERTIFICATESTORENAME|CertificateStoreName|The certificate store name.|
+|-CertificateSubjectName <br/>--certificate-subject-name=VALUE|CERTIFICATESUBJECTNAME|CertificateSubjectName|The certificate subject name.|
+|-CertificateThumbprint <br/>--certificate-thumbprint=VALUE|CERTIFICATETHUMBPRINT|CertificateThumbprint|The certificate fingerprint/thumbprint.|
+|-CertificateFile <br/>--certificate-file=VALUE|CERTIFICATEFILE|CertificateFile|The path to certificate file.|
+|-CertificatePassword <br/>--certificate-password=VALUE|CERTIFICATEPASSWORD|CertificatePassword|The password to certificate in file.|
+
+###Cluster Options
+| Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
+| --------- | --------------------------------------------- | ---- | ----------- |
+|-ClusterSize <br/>--cluster-size=VALUE|CLUSTERSIZE|ClusterSize|The number of nodes in the cluster. (Default: 1)|
+|-NodePriority <br/>--node-priority=VALUE|NODEPRIORITY|NodePriority|The node priority used during master election (Default: 0)|
+|-CommitCount <br/>--commit-count=VALUE|COMMITCOUNT|CommitCount|The number of nodes which must acknowledge commits before acknowledging to a client. (Default: -1)|
+|-PrepareCount <br/>--prepare-count=VALUE|PREPARECOUNT|PrepareCount|The number of nodes which must acknowledge prepares. (Default: -1)|
+|-DiscoverViaDns <br/>--discover-via-dns=VALUE|DISCOVERVIADNS|DiscoverViaDns|Whether to use DNS lookup to discover other cluster nodes. (Default: True)|
+|-ClusterDns <br/>--cluster-dns=VALUE|CLUSTERDNS|ClusterDns|DNS name from which other nodes can be discovered. (Default: fake.dns)|
+|-ClusterGossipPort <br/>--cluster-gossip-port=VALUE|CLUSTERGOSSIPPORT|ClusterGossipPort|The port on which cluster nodes' managers are running. (Default: 30777)|
+|-GossipSeed <br/>--gossip-seed=VALUE|GOSSIPSEED|GossipSeed|Endpoints for other cluster nodes from which to seed gossip (Default: n/a)|
+|-GossipIntervalMs <br/>--gossip-interval-ms=VALUE|GOSSIPINTERVALMS|GossipIntervalMs|The interval nodes should try to gossip with each other in ms. (Default: 1000)|
+|-GossipAllowedDifferenceMs <br/>--gossip-allowed-difference-ms=VALUE|GOSSIPALLOWEDDIFFERENCEMS|GossipAllowedDifferenceMs|The amount of drift between clocks on nodes allowed before gossip is rejected in ms. (Default: 60000)|
+|-GossipTimeoutMs <br/>--gossip-timeout-ms=VALUE|GOSSIPTIMEOUTMS|GossipTimeoutMs|The timeout on gossip to another node in ms. (Default: 500)|
+
+###Database Options
+| Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
+| --------- | --------------------------------------------- | ---- | ----------- |
+|-MinFlushDelayMs <br/>--min-flush-delay-ms=VALUE|MINFLUSHDELAYMS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2)|
+|-DisableScavengeMerging <br/>--disable-scavenge-merging=VALUE|DISABLESCAVENGEMERGING|DisableScavengeMerging|Disables the merging of chunks when scavenge is running (Default: False)|
+|-CachedChunks <br/>--cached-chunks=VALUE|CACHEDCHUNKS|CachedChunks|The number of chunks to cache in unmanaged memory. (Default: -1)|
+|-ChunksCacheSize <br/>--chunks-cache-size=VALUE|CHUNKSCACHESIZE|ChunksCacheSize|The amount of unmanaged memory to use for caching chunks. (Default: 536871424)|
+|-MaxMemTableSize <br/>--max-mem-table-size=VALUE|MAXMEMTABLESIZE|MaxMemTableSize|Adjusts the maximum size of a mem table. (Default: 1000000)|
+|-Db <br/>|DB|Db|The path the db should be loaded/saved to.|
+|-MemDb <br/>--mem-db=VALUE|MEMDB|MemDb|Keep everything in memory, no directories or files are created. (Default: False)|
+|-SkipDbVerify <br/>--skip-db-verify=VALUE|SKIPDBVERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False)|
+|-PrepareTimeoutMs <br/>--prepare-timeout-ms=VALUE|PREPARETIMEOUTMS|PrepareTimeoutMs|Prepare timeout (in milliseconds). (Default: 2000)|
+|-CommitTimeoutMs <br/>--commit-timeout-ms=VALUE|COMMITTIMEOUTMS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000)|
+|-UnsafeDisableFlushToDisk <br/>--unsafe-disable-flush-to-disk=VALUE|UNSAFEDISABLEFLUSHTODISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False)|
+
+###Interface Options
+| Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
+| --------- | --------------------------------------------- | ---- | ----------- |
+|-IntIp <br/>--int-ip=VALUE|INTIP|IntIp|Internal IP Address. (Default: 127.0.0.1)|
+|-ExtIp <br/>--ext-ip=VALUE|EXTIP|ExtIp|External IP Address. (Default: 127.0.0.1)|
+|-IntHttpPort <br/>--int-http-port=VALUE|INTHTTPPORT|IntHttpPort|Internal HTTP Port. (Default: 2112)|
+|-ExtHttpPort <br/>--ext-http-port=VALUE|EXTHTTPPORT|ExtHttpPort|External HTTP Port. (Default: 2113)|
+|-IntTcpPort <br/>--int-tcp-port=VALUE|INTTCPPORT|IntTcpPort|Internal TCP Port. (Default: 1112)|
+|-IntSecureTcpPort <br/>--int-secure-tcp-port=VALUE|INTSECURETCPPORT|IntSecureTcpPort|Internal Secure TCP Port. (Default: 0)|
+|-ExtTcpPort <br/>--ext-tcp-port=VALUE|EXTTCPPORT|ExtTcpPort|External TCP Port. (Default: 1113)|
+|-ExtSecureTcpPort <br/>--ext-secure-tcp-port=VALUE|EXTSECURETCPPORT|ExtSecureTcpPort|External Secure TCP Port. (Default: 0)|
+|-IntTcpHeartbeatTimeout <br/>--int-tcp-heartbeat-timeout=VALUE|INTTCPHEARTBEATTIMEOUT|IntTcpHeartbeatTimeout|Heartbeat timeout for internal TCP sockets (Default: 700)|
+|-ExtTcpHeartbeatTimeout <br/>--ext-tcp-heartbeat-timeout=VALUE|EXTTCPHEARTBEATTIMEOUT|ExtTcpHeartbeatTimeout|Heartbeat timeout for external TCP sockets (Default: 1000)|
+|-IntTcpHeartbeatInterval <br/>--int-tcp-heartbeat-interval=VALUE|INTTCPHEARTBEATINTERVAL|IntTcpHeartbeatInterval|Heartbeat interval for internal TCP sockets (Default: 700)|
+|-ExtTcpHeartbeatInterval <br/>--ext-tcp-heartbeat-interval=VALUE|EXTTCPHEARTBEATINTERVAL|ExtTcpHeartbeatInterval|Heartbeat interval for external TCP sockets (Default: 2000)|
+|-AdminOnExt <br/>--admin-on-ext=VALUE|ADMINONEXT|AdminOnExt|Whether or not to run the admin ui on the external http endpoint (Default: True)|
+|-StatsOnExt <br/>--stats-on-ext=VALUE|STATSONEXT|StatsOnExt|Whether or not to accept statistics requests on the external http endpoint, needed if you use admin ui (Default: True)|
+|-GossipOnExt <br/>--gossip-on-ext=VALUE|GOSSIPONEXT|GossipOnExt|Whether or not to accept gossip requests on the external http endpoint (Default: True)|
+|-HttpPrefixes <br/>--http-prefixes=VALUE|HTTPPREFIXES|HttpPrefixes|The prefixes that the http server should respond to. (Default: n/a)|
+|-EnableTrustedAuth <br/>--enable-trusted-auth=VALUE|ENABLETRUSTEDAUTH|EnableTrustedAuth|Enables trusted authentication by an intermediary in the Http (Default: False)|
+|-UseInternalSsl <br/>--use-internal-ssl=VALUE|USEINTERNALSSL|UseInternalSsl|Whether to use secure internal communication. (Default: False)|
+|-SslTargetHost <br/>--ssl-target-host=VALUE|SSLTARGETHOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a)|
+|-SslValidateServer <br/>--ssl-validate-server=VALUE|SSLVALIDATESERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True)|
+
+###Projections Options
+| Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
+| --------- | --------------------------------------------- | ---- | ----------- |
+|-RunProjections <br/>--run-projections=VALUE|RUNPROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System)|
+|-ProjectionThreads <br/>--projection-threads=VALUE|PROJECTIONTHREADS|ProjectionThreads|The number of threads to use for projections. (Default: 3)|
