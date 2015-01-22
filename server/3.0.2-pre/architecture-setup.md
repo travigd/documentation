@@ -1,7 +1,7 @@
 ---
 title: "Architecture Setup"
-section: "HTTP API"
-version: 3.0.0
+section: "Server"
+version: "3.0.2 (pre-release)"
 ---
 
 ## Choices

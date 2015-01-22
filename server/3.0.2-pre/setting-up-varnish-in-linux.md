@@ -1,6 +1,6 @@
 ---
 title: "Setting up Varnish in Linux"
-section: "HTTP API"
+section: "Server"
 version: "3.0.2 (pre-release)"
 ---
 

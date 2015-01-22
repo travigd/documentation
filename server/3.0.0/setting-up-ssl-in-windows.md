@@ -1,7 +1,7 @@
 ---
 title: "Setting up SSL in Windows"
-section: "HTTP API"
-version: "3.0.2 (pre-release)"
+section: "Server"
+version: 3.0.0
 ---
 
 Setting up SSL in windows is the same as setting up any httplistener in windows for SSL. Numerous examples of this can be found online. We have copy/pasted one that we tested to work out.
