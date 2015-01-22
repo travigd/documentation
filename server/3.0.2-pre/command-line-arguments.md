@@ -153,6 +153,11 @@ The following parameters are supported by the Event Store:
 |-SslValidateServer<br/>--ssl-validate-server=VALUE<br/>|SSL_VALIDATE_SERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True)|
 
 ###Projections Options
+
+<span class="note--warning">
+Projections are currently a *BETA* feature, you should avoid using them for critical production tasks.
+</span>
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-RunProjections<br/>--run-projections=VALUE<br/>|RUN_PROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System)|
