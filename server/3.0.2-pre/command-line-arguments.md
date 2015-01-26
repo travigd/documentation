@@ -65,101 +65,94 @@ User projections are not enabled by default, however the projections engine is u
 
 The following parameters are supported by the Event Store:
 
-###ClusterNodeOptions
-
 ###Application Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-Help<br/>--help=VALUE<br/>|HELP|Help|Show help. (Default: False)|
-|-Version<br/>--version=VALUE<br/>|VERSION|Version|Show version. (Default: False)|
-|-Log<br/>--log=VALUE<br/>|LOG|Log|Path where to keep log files.|
-|-Config<br/>--config=VALUE<br/>|CONFIG|Config|Configuration files.|
-|-Defines<br/>--defines=VALUE<br/>|DEFINES|Defines|Run-time conditionals. (Default: n/a)|
-|-WhatIf<br/>--what-if=VALUE<br/>|WHAT_IF|WhatIf|Print effective configuration to console and then exit. (Default: False)|
-|-MonoMinThreadpoolSize<br/>--mono-min-threadpool-size=VALUE<br/>|MONO_MIN_THREADPOOL_SIZE|MonoMinThreadpoolSize|Minimum number of worker threads when running under mono. Set to 0 to leave machine defaults. (Default: 10)|
-|-Force<br/>--force=VALUE<br/>|FORCE|Force|Force the Event Store to run in possibly harmful environments such as with Boehm GC. (Default: False)|
-|-StatsPeriodSec<br/>--stats-period-sec=VALUE<br/>|STATS_PERIOD_SEC|StatsPeriodSec|The number of seconds between statistics gathers. (Default: 30)|
-|-WorkerThreads<br/>--worker-threads=VALUE<br/>|WORKER_THREADS|WorkerThreads|The number of threads to use for pool of worker services. (Default: 5)|
+|-Help<br/>--help=VALUE<br/>|HELP|Help|Show help. (Default: False) |
+|-Version<br/>--version=VALUE<br/>|VERSION|Version|Show version. (Default: False) |
+|-Log<br/>--log=VALUE<br/>|LOG|Log|Path where to keep log files. |
+|-Config<br/>--config=VALUE<br/>|CONFIG|Config|Configuration files. |
+|-Defines<br/>--defines=VALUE<br/>|DEFINES|Defines|Run-time conditionals. (Default: n/a) |
+|-WhatIf<br/>--what-if=VALUE<br/>|WHAT_IF|WhatIf|Print effective configuration to console and then exit. (Default: False) |
+|-MonoMinThreadpoolSize<br/>--mono-min-threadpool-size=VALUE<br/>|MONO_MIN_THREADPOOL_SIZE|MonoMinThreadpoolSize|Minimum number of worker threads when running under mono. Set to 0 to leave machine defaults. (Default: 10) |
+|-Force<br/>--force=VALUE<br/>|FORCE|Force|Force the Event Store to run in possibly harmful environments such as with Boehm GC. (Default: False) |
+|-StatsPeriodSec<br/>--stats-period-sec=VALUE<br/>|STATS_PERIOD_SEC|StatsPeriodSec|The number of seconds between statistics gathers. (Default: 30) |
+|-WorkerThreads<br/>--worker-threads=VALUE<br/>|WORKER_THREADS|WorkerThreads|The number of threads to use for pool of worker services. (Default: 5) |
 
 ###Authentication Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-AuthenticationType<br/>--authentication-type=VALUE<br/>|AUTHENTICATION_TYPE|AuthenticationType|The type of authentication to use. (Default: internal)|
+|-AuthenticationType<br/>--authentication-type=VALUE<br/>|AUTHENTICATION_TYPE|AuthenticationType|The type of authentication to use. (Default: internal) |
 
 ###Certificate Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-CertificateStoreLocation<br/>--certificate-store-location=VALUE<br/>|CERTIFICATE_STORE_LOCATION|CertificateStoreLocation|The certificate store location name.|
-|-CertificateStoreName<br/>--certificate-store-name=VALUE<br/>|CERTIFICATE_STORE_NAME|CertificateStoreName|The certificate store name.|
-|-CertificateSubjectName<br/>--certificate-subject-name=VALUE<br/>|CERTIFICATE_SUBJECT_NAME|CertificateSubjectName|The certificate subject name.|
-|-CertificateThumbprint<br/>--certificate-thumbprint=VALUE<br/>|CERTIFICATE_THUMBPRINT|CertificateThumbprint|The certificate fingerprint/thumbprint.|
-|-CertificateFile<br/>--certificate-file=VALUE<br/>|CERTIFICATE_FILE|CertificateFile|The path to certificate file.|
-|-CertificatePassword<br/>--certificate-password=VALUE<br/>|CERTIFICATE_PASSWORD|CertificatePassword|The password to certificate in file.|
+|-CertificateStoreLocation<br/>--certificate-store-location=VALUE<br/>|CERTIFICATE_STORE_LOCATION|CertificateStoreLocation|The certificate store location name. |
+|-CertificateStoreName<br/>--certificate-store-name=VALUE<br/>|CERTIFICATE_STORE_NAME|CertificateStoreName|The certificate store name. |
+|-CertificateSubjectName<br/>--certificate-subject-name=VALUE<br/>|CERTIFICATE_SUBJECT_NAME|CertificateSubjectName|The certificate subject name. |
+|-CertificateThumbprint<br/>--certificate-thumbprint=VALUE<br/>|CERTIFICATE_THUMBPRINT|CertificateThumbprint|The certificate fingerprint/thumbprint. |
+|-CertificateFile<br/>--certificate-file=VALUE<br/>|CERTIFICATE_FILE|CertificateFile|The path to certificate file. |
+|-CertificatePassword<br/>--certificate-password=VALUE<br/>|CERTIFICATE_PASSWORD|CertificatePassword|The password to certificate in file. |
 
 ###Cluster Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-ClusterSize<br/>--cluster-size=VALUE<br/>|CLUSTER_SIZE|ClusterSize|The number of nodes in the cluster. (Default: 1)|
-|-NodePriority<br/>--node-priority=VALUE<br/>|NODE_PRIORITY|NodePriority|The node priority used during master election (Default: 0)|
-|-CommitCount<br/>--commit-count=VALUE<br/>|COMMIT_COUNT|CommitCount|The number of nodes which must acknowledge commits before acknowledging to a client. (Default: -1)|
-|-PrepareCount<br/>--prepare-count=VALUE<br/>|PREPARE_COUNT|PrepareCount|The number of nodes which must acknowledge prepares. (Default: -1)|
-|-DiscoverViaDns<br/>--discover-via-dns=VALUE<br/>|DISCOVER_VIA_DNS|DiscoverViaDns|Whether to use DNS lookup to discover other cluster nodes. (Default: True)|
-|-ClusterDns<br/>--cluster-dns=VALUE<br/>|CLUSTER_DNS|ClusterDns|DNS name from which other nodes can be discovered. (Default: fake.dns)|
-|-ClusterGossipPort<br/>--cluster-gossip-port=VALUE<br/>|CLUSTER_GOSSIP_PORT|ClusterGossipPort|The port on which cluster nodes' managers are running. (Default: 30777)|
-|-GossipSeed<br/>--gossip-seed=VALUE<br/>|GOSSIP_SEED|GossipSeed|Endpoints for other cluster nodes from which to seed gossip (Default: n/a)|
-|-GossipIntervalMs<br/>--gossip-interval-ms=VALUE<br/>|GOSSIP_INTERVAL_MS|GossipIntervalMs|The interval nodes should try to gossip with each other in ms. (Default: 1000)|
-|-GossipAllowedDifferenceMs<br/>--gossip-allowed-difference-ms=VALUE<br/>|GOSSIP_ALLOWED_DIFFERENCE_MS|GossipAllowedDifferenceMs|The amount of drift between clocks on nodes allowed before gossip is rejected in ms. (Default: 60000)|
-|-GossipTimeoutMs<br/>--gossip-timeout-ms=VALUE<br/>|GOSSIP_TIMEOUT_MS|GossipTimeoutMs|The timeout on gossip to another node in ms. (Default: 500)|
+|-ClusterSize<br/>--cluster-size=VALUE<br/>|CLUSTER_SIZE|ClusterSize|The number of nodes in the cluster. (Default: 1) |
+|-NodePriority<br/>--node-priority=VALUE<br/>|NODE_PRIORITY|NodePriority|The node priority used during master election (Default: 0) |
+|-CommitCount<br/>--commit-count=VALUE<br/>|COMMIT_COUNT|CommitCount|The number of nodes which must acknowledge commits before acknowledging to a client. (Default: -1) |
+|-PrepareCount<br/>--prepare-count=VALUE<br/>|PREPARE_COUNT|PrepareCount|The number of nodes which must acknowledge prepares. (Default: -1) |
+|-DiscoverViaDns<br/>--discover-via-dns=VALUE<br/>|DISCOVER_VIA_DNS|DiscoverViaDns|Whether to use DNS lookup to discover other cluster nodes. (Default: True) |
+|-ClusterDns<br/>--cluster-dns=VALUE<br/>|CLUSTER_DNS|ClusterDns|DNS name from which other nodes can be discovered. (Default: fake.dns) |
+|-ClusterGossipPort<br/>--cluster-gossip-port=VALUE<br/>|CLUSTER_GOSSIP_PORT|ClusterGossipPort|The port on which cluster nodes' managers are running. (Default: 30777) |
+|-GossipSeed<br/>--gossip-seed=VALUE<br/>|GOSSIP_SEED|GossipSeed|Endpoints for other cluster nodes from which to seed gossip (Default: n/a) |
+|-GossipIntervalMs<br/>--gossip-interval-ms=VALUE<br/>|GOSSIP_INTERVAL_MS|GossipIntervalMs|The interval nodes should try to gossip with each other in ms. (Default: 1000) |
+|-GossipAllowedDifferenceMs<br/>--gossip-allowed-difference-ms=VALUE<br/>|GOSSIP_ALLOWED_DIFFERENCE_MS|GossipAllowedDifferenceMs|The amount of drift between clocks on nodes allowed before gossip is rejected in ms. (Default: 60000) |
+|-GossipTimeoutMs<br/>--gossip-timeout-ms=VALUE<br/>|GOSSIP_TIMEOUT_MS|GossipTimeoutMs|The timeout on gossip to another node in ms. (Default: 500) |
 
 ###Database Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-MinFlushDelayMs<br/>--min-flush-delay-ms=VALUE<br/>|MIN_FLUSH_DELAY_MS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2)|
-|-DisableScavengeMerging<br/>--disable-scavenge-merging=VALUE<br/>|DISABLE_SCAVENGE_MERGING|DisableScavengeMerging|Disables the merging of chunks when scavenge is running (Default: False)|
-|-CachedChunks<br/>--cached-chunks=VALUE<br/>|CACHED_CHUNKS|CachedChunks|The number of chunks to cache in unmanaged memory. (Default: -1)|
-|-ChunksCacheSize<br/>--chunks-cache-size=VALUE<br/>|CHUNKS_CACHE_SIZE|ChunksCacheSize|The amount of unmanaged memory to use for caching chunks. (Default: 536871424)|
-|-MaxMemTableSize<br/>--max-mem-table-size=VALUE<br/>|MAX_MEM_TABLE_SIZE|MaxMemTableSize|Adjusts the maximum size of a mem table. (Default: 1000000)|
-|-Db<br/>--db=VALUE<br/>|DB|Db|The path the db should be loaded/saved to.|
-|-MemDb<br/>--mem-db=VALUE<br/>|MEM_DB|MemDb|Keep everything in memory, no directories or files are created. (Default: False)|
-|-SkipDbVerify<br/>--skip-db-verify=VALUE<br/>|SKIP_DB_VERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False)|
-|-PrepareTimeoutMs<br/>--prepare-timeout-ms=VALUE<br/>|PREPARE_TIMEOUT_MS|PrepareTimeoutMs|Prepare timeout (in milliseconds). (Default: 2000)|
-|-CommitTimeoutMs<br/>--commit-timeout-ms=VALUE<br/>|COMMIT_TIMEOUT_MS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000)|
-|-UnsafeDisableFlushToDisk<br/>--unsafe-disable-flush-to-disk=VALUE<br/>|UNSAFE_DISABLE_FLUSH_TO_DISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False)|
-|-WriteThrough<br/>--write-through=VALUE<br/>|WRITE_THROUGH|WriteThrough|Set write through on writes (experimental) (Default: False)|
-|-Unbuffered<br/>--unbuffered=VALUE<br/>|UNBUFFERED|Unbuffered|Use unbuffered/directio (experimental) (Default: False)|
+|-MinFlushDelayMs<br/>--min-flush-delay-ms=VALUE<br/>|MIN_FLUSH_DELAY_MS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2) |
+|-DisableScavengeMerging<br/>--disable-scavenge-merging=VALUE<br/>|DISABLE_SCAVENGE_MERGING|DisableScavengeMerging|Disables the merging of chunks when scavenge is running (Default: False) |
+|-CachedChunks<br/>--cached-chunks=VALUE<br/>|CACHED_CHUNKS|CachedChunks|The number of chunks to cache in unmanaged memory. (Default: -1) |
+|-ChunksCacheSize<br/>--chunks-cache-size=VALUE<br/>|CHUNKS_CACHE_SIZE|ChunksCacheSize|The amount of unmanaged memory to use for caching chunks. (Default: 536871424) |
+|-MaxMemTableSize<br/>--max-mem-table-size=VALUE<br/>|MAX_MEM_TABLE_SIZE|MaxMemTableSize|Adjusts the maximum size of a mem table. (Default: 1000000) |
+|-Db<br/>--db=VALUE<br/>|DB|Db|The path the db should be loaded/saved to. |
+|-MemDb<br/>--mem-db=VALUE<br/>|MEM_DB|MemDb|Keep everything in memory, no directories or files are created. (Default: False) |
+|-SkipDbVerify<br/>--skip-db-verify=VALUE<br/>|SKIP_DB_VERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False) |
+|-PrepareTimeoutMs<br/>--prepare-timeout-ms=VALUE<br/>|PREPARE_TIMEOUT_MS|PrepareTimeoutMs|Prepare timeout (in milliseconds). (Default: 2000) |
+|-CommitTimeoutMs<br/>--commit-timeout-ms=VALUE<br/>|COMMIT_TIMEOUT_MS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000) |
+|-UnsafeDisableFlushToDisk<br/>--unsafe-disable-flush-to-disk=VALUE<br/>|UNSAFE_DISABLE_FLUSH_TO_DISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False) |
+|-WriteThrough<br/>--write-through=VALUE<br/>|WRITE_THROUGH|WriteThrough|Set write through on writes (experimental) (Default: False) |
+|-Unbuffered<br/>--unbuffered=VALUE<br/>|UNBUFFERED|Unbuffered|Use unbuffered/directio (experimental) (Default: False) |
 
 ###Interface Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-IntIp<br/>--int-ip=VALUE<br/>|INT_IP|IntIp|Internal IP Address. (Default: 127.0.0.1)|
-|-ExtIp<br/>--ext-ip=VALUE<br/>|EXT_IP|ExtIp|External IP Address. (Default: 127.0.0.1)|
-|-IntHttpPort<br/>--int-http-port=VALUE<br/>|INT_HTTP_PORT|IntHttpPort|Internal HTTP Port. (Default: 2112)|
-|-ExtHttpPort<br/>--ext-http-port=VALUE<br/>|EXT_HTTP_PORT|ExtHttpPort|External HTTP Port. (Default: 2113)|
-|-IntTcpPort<br/>--int-tcp-port=VALUE<br/>|INT_TCP_PORT|IntTcpPort|Internal TCP Port. (Default: 1112)|
-|-IntSecureTcpPort<br/>--int-secure-tcp-port=VALUE<br/>|INT_SECURE_TCP_PORT|IntSecureTcpPort|Internal Secure TCP Port. (Default: 0)|
-|-ExtTcpPort<br/>--ext-tcp-port=VALUE<br/>|EXT_TCP_PORT|ExtTcpPort|External TCP Port. (Default: 1113)|
-|-ExtSecureTcpPort<br/>--ext-secure-tcp-port=VALUE<br/>|EXT_SECURE_TCP_PORT|ExtSecureTcpPort|External Secure TCP Port. (Default: 0)|
-|-IntTcpHeartbeatTimeout<br/>--int-tcp-heartbeat-timeout=VALUE<br/>|INT_TCP_HEARTBEAT_TIMEOUT|IntTcpHeartbeatTimeout|Heartbeat timeout for internal TCP sockets (Default: 700)|
-|-ExtTcpHeartbeatTimeout<br/>--ext-tcp-heartbeat-timeout=VALUE<br/>|EXT_TCP_HEARTBEAT_TIMEOUT|ExtTcpHeartbeatTimeout|Heartbeat timeout for external TCP sockets (Default: 1000)|
-|-IntTcpHeartbeatInterval<br/>--int-tcp-heartbeat-interval=VALUE<br/>|INT_TCP_HEARTBEAT_INTERVAL|IntTcpHeartbeatInterval|Heartbeat interval for internal TCP sockets (Default: 700)|
-|-ExtTcpHeartbeatInterval<br/>--ext-tcp-heartbeat-interval=VALUE<br/>|EXT_TCP_HEARTBEAT_INTERVAL|ExtTcpHeartbeatInterval|Heartbeat interval for external TCP sockets (Default: 2000)|
-|-AdminOnExt<br/>--admin-on-ext=VALUE<br/>|ADMIN_ON_EXT|AdminOnExt|Whether or not to run the admin ui on the external http endpoint (Default: True)|
-|-StatsOnExt<br/>--stats-on-ext=VALUE<br/>|STATS_ON_EXT|StatsOnExt|Whether or not to accept statistics requests on the external http endpoint, needed if you use admin ui (Default: True)|
-|-GossipOnExt<br/>--gossip-on-ext=VALUE<br/>|GOSSIP_ON_EXT|GossipOnExt|Whether or not to accept gossip requests on the external http endpoint (Default: True)|
-|-HttpPrefixes<br/>--http-prefixes=VALUE<br/>|HTTP_PREFIXES|HttpPrefixes|The prefixes that the http server should respond to. (Default: n/a)|
-|-EnableTrustedAuth<br/>--enable-trusted-auth=VALUE<br/>|ENABLE_TRUSTED_AUTH|EnableTrustedAuth|Enables trusted authentication by an intermediary in the Http (Default: False)|
-|-UseInternalSsl<br/>--use-internal-ssl=VALUE<br/>|USE_INTERNAL_SSL|UseInternalSsl|Whether to use secure internal communication. (Default: False)|
-|-SslTargetHost<br/>--ssl-target-host=VALUE<br/>|SSL_TARGET_HOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a)|
-|-SslValidateServer<br/>--ssl-validate-server=VALUE<br/>|SSL_VALIDATE_SERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True)|
+|-IntIp<br/>--int-ip=VALUE<br/>|INT_IP|IntIp|Internal IP Address. (Default: 127.0.0.1) |
+|-ExtIp<br/>--ext-ip=VALUE<br/>|EXT_IP|ExtIp|External IP Address. (Default: 127.0.0.1) |
+|-IntHttpPort<br/>--int-http-port=VALUE<br/>|INT_HTTP_PORT|IntHttpPort|Internal HTTP Port. (Default: 2112) |
+|-ExtHttpPort<br/>--ext-http-port=VALUE<br/>|EXT_HTTP_PORT|ExtHttpPort|External HTTP Port. (Default: 2113) |
+|-IntTcpPort<br/>--int-tcp-port=VALUE<br/>|INT_TCP_PORT|IntTcpPort|Internal TCP Port. (Default: 1112) |
+|-IntSecureTcpPort<br/>--int-secure-tcp-port=VALUE<br/>|INT_SECURE_TCP_PORT|IntSecureTcpPort|Internal Secure TCP Port. (Default: 0) |
+|-ExtTcpPort<br/>--ext-tcp-port=VALUE<br/>|EXT_TCP_PORT|ExtTcpPort|External TCP Port. (Default: 1113) |
+|-ExtSecureTcpPort<br/>--ext-secure-tcp-port=VALUE<br/>|EXT_SECURE_TCP_PORT|ExtSecureTcpPort|External Secure TCP Port. (Default: 0) |
+|-IntTcpHeartbeatTimeout<br/>--int-tcp-heartbeat-timeout=VALUE<br/>|INT_TCP_HEARTBEAT_TIMEOUT|IntTcpHeartbeatTimeout|Heartbeat timeout for internal TCP sockets (Default: 700) |
+|-ExtTcpHeartbeatTimeout<br/>--ext-tcp-heartbeat-timeout=VALUE<br/>|EXT_TCP_HEARTBEAT_TIMEOUT|ExtTcpHeartbeatTimeout|Heartbeat timeout for external TCP sockets (Default: 1000) |
+|-IntTcpHeartbeatInterval<br/>--int-tcp-heartbeat-interval=VALUE<br/>|INT_TCP_HEARTBEAT_INTERVAL|IntTcpHeartbeatInterval|Heartbeat interval for internal TCP sockets (Default: 700) |
+|-ExtTcpHeartbeatInterval<br/>--ext-tcp-heartbeat-interval=VALUE<br/>|EXT_TCP_HEARTBEAT_INTERVAL|ExtTcpHeartbeatInterval|Heartbeat interval for external TCP sockets (Default: 2000) |
+|-AdminOnExt<br/>--admin-on-ext=VALUE<br/>|ADMIN_ON_EXT|AdminOnExt|Whether or not to run the admin ui on the external http endpoint (Default: True) |
+|-StatsOnExt<br/>--stats-on-ext=VALUE<br/>|STATS_ON_EXT|StatsOnExt|Whether or not to accept statistics requests on the external http endpoint, needed if you use admin ui (Default: True) |
+|-GossipOnExt<br/>--gossip-on-ext=VALUE<br/>|GOSSIP_ON_EXT|GossipOnExt|Whether or not to accept gossip requests on the external http endpoint (Default: True) |
+|-HttpPrefixes<br/>--http-prefixes=VALUE<br/>|HTTP_PREFIXES|HttpPrefixes|The prefixes that the http server should respond to. (Default: n/a) |
+|-EnableTrustedAuth<br/>--enable-trusted-auth=VALUE<br/>|ENABLE_TRUSTED_AUTH|EnableTrustedAuth|Enables trusted authentication by an intermediary in the Http (Default: False) |
+|-UseInternalSsl<br/>--use-internal-ssl=VALUE<br/>|USE_INTERNAL_SSL|UseInternalSsl|Whether to use secure internal communication. (Default: False) |
+|-SslTargetHost<br/>--ssl-target-host=VALUE<br/>|SSL_TARGET_HOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a) |
+|-SslValidateServer<br/>--ssl-validate-server=VALUE<br/>|SSL_VALIDATE_SERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True) |
 
 ###Projections Options
-
-<span class="note--warning">
-Projections are currently a *BETA* feature, you should avoid using them for critical production tasks.
-</span>
-
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-RunProjections<br/>--run-projections=VALUE<br/>|RUN_PROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System)|
-|-ProjectionThreads<br/>--projection-threads=VALUE<br/>|PROJECTION_THREADS|ProjectionThreads|The number of threads to use for projections. (Default: 3)|
+|-RunProjections<br/>--run-projections=VALUE<br/>|RUN_PROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System) Possible Values: None,System,All|
+|-ProjectionThreads<br/>--projection-threads=VALUE<br/>|PROJECTION_THREADS|ProjectionThreads|The number of threads to use for projections. (Default: 3) |
 

@@ -155,5 +155,5 @@ Projections are currently a *BETA* feature, you should avoid using them for crit
 
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-RunProjections <br/>--run-projections=VALUE|RUNPROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System)|
+|-RunProjections <br/>--run-projections=VALUE|RUNPROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System) Possible Values: None,System,All|
 |-ProjectionThreads <br/>--projection-threads=VALUE|PROJECTIONTHREADS|ProjectionThreads|The number of threads to use for projections. (Default: 3)|
