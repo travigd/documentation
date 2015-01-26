@@ -11,9 +11,9 @@ The Event Store documentation is available for multiple versions of Event Store 
 | Section      | Versions                                   |
 | :----------- | :----------------------------------------- |
 | Introduction | Always shows latest                        |
-| Server       | 3.0.2 (pre-release), 3.0.1 (latest), 3.0.0 |
-| .NET API     | 3.0.2 (pre-release), 3.0.1 (latest), 3.0.0 |
-| HTTP API     | 3.0.2 (pre-release), 3.0.1 (latest), 3.0.0 |
+| Server       | 3.1.0 (pre-release), 3.0.1 (latest), 3.0.0 |
+| .NET API     | 3.1.0 (pre-release), 3.0.1 (latest), 3.0.0 |
+| HTTP API     | 3.1.0 (pre-release), 3.0.1 (latest), 3.0.0 |
 
 The Event Store server uses [semantic versioning](http://semver.org). APIs are versioned based on the major server version they support.
 
