@@ -83,7 +83,7 @@ The members on `EventData` are:
             <td>The serialized data representing the event to be stored.</td>
         </tr>
         <tr>
-            <td><code>byte[] `Metadata</code></td>
+            <td><code>byte[] Metadata</code></td>
             <td>The serialized data representing metadata about the event to be stored.</td>
         </tr>
     </tbody>
@@ -111,10 +111,6 @@ The parameters are:
         <tr>
             <td><code>int expectedVersion</code></td>
             <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](../optimistic-concurrency-and-idempotence) for a broader discussion of this.</code></td>
-        </tr>
-        <tr>
-            <td><code>bool IsJson</code></td>
-            <td>If the data and metadata fields are serialized as JSON, this should be set to true. Setting this to `true` will cause the projections framework to attempt to deserialize the data and metadata later.</td>
         </tr>
         <tr>
             <td><code>IEnumerable<EventData> events</code></td>
