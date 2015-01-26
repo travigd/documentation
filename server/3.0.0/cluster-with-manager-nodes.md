@@ -27,6 +27,7 @@ Manager nodes have a number of responsibilities:
 Each database or manager node can have a variety of configuration sources. Each source has a priority, and running configuration is determined by evaluating each source and then applying the option from the source with the highest priority.
 
 From lowest to highest priority, the sources of configuration are:
+
 - Default settings
 - Settings specified in a configuration file written using YAML
 - Settings specified in environment variables
