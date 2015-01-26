@@ -1,7 +1,7 @@
 ---
 title: "Setting up SSL in Linux"
 section: "Server"
-version: "3.0.2 (pre-release)"
+version: "3.1.0 (pre-release)"
 ---
 
 Setting up SSL in Linux is the same as setting up any mono httplistener in Linux for SSL. Numerous examples of this can be found online. We have copy/pasted one that we tested to work out. This methodology will likely work for other systems such as openbsd as well.

@@ -1,7 +1,7 @@
 ---
 title: "Access Control Lists"
 section: "Server"
-version: "3.0.2 (pre-release)"
+version: "3.1.0 (pre-release)"
 ---
 
 ## Stream ACLs

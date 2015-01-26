@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Cluster with Manager Nodes"
 section: "Server"
-version: "3.0.2 (pre-release)"
+version: "3.1.0 (pre-release)"
 ---
 
 Event Store allows several nodes to be run as a cluster, in order to achieve high availability of the database. There are two modes in which clustering can be run:
