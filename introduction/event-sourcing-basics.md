@@ -284,7 +284,6 @@ These functions are then chained over the event stream resulting at the end with
 
 ## Further Reading
 
-- [CQRS Video](http://dddcqrs.com)
 - [Event Sourcing](http://martinfowler.com/eaaDev/EventSourcing.html)
 - [Getting Started](../)
 
