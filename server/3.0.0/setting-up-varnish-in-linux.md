@@ -47,4 +47,4 @@ backend default {
 }
 ```
 
-Finally you would type `sudo service varnish restart` to restart varnish and you should be up and running with a reverse proxy. If you want to check out the status of varnish you can check with `varnishstat` from the command line.
+Finally you would `sudo service varnish restart` to restart varnish and you should be up and running with a reverse proxy. If you want to check out the status of varnish you can check with `varnishstat` from the command line.
