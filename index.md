@@ -3,7 +3,7 @@ title: "Documentation"
 layout: docs
 ---
 
-<p class="docs-lead">Event Store docs are hosted on GitHub. The <a href="https://github.com/eventstore/docs.geteventstore.com">repository</a> is public and it’s open to <a href="https://github.com/EventStore/docs.geteventstore.com/issues">issues</a> and <a href="https://github.com/EventStore/docs.geteventstore.com/pulls">pull requests</a>. Contributions, corrections and feedback are all welcome.</p>
+<p class="docs-lead">Event Store docs are hosted on <a href="https://github.com/eventstore/docs.geteventstore.com">GitHub</a>. The repository is public and it’s open to issues and pull requests. Contributions, corrections and feedback are all welcome.</p>
 
 ## Using These Docs
 
