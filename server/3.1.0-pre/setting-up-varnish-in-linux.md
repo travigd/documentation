@@ -4,9 +4,7 @@ section: "Server"
 version: "3.1.0 (pre-release)"
 ---
 
-This document provides a brief guide on how to install the Event Store with varnish reverse proxy in a linux environment. We will not be going into a lot of detail on how to properly configure varnish for your requirements much of that information can be found on [their website](https://www.varnish-cache.org/trac/wiki/Introduction).
-
-The Event Store makes heavy use of caching for many items if not being secured. A reverse proxy can dramatically speed up the Event Store. 
+This document provides a brief guide on how to install the Event Store with varnish reverse proxy in a linux environment. For more information on how to properly configure varnish for your requirements, check the [Varnish website](https://www.varnish-cache.org/trac/wiki/Introduction).
 
 A reverse proxy can also be used to limit access to the Event Store without breaking http caching (authenticate to the proxy not to the Event Store itself). Since the Event Store is running http only on the loopback adapter users must enter through the reverse proxy to reach the Event Store. [Ben Clark’s Gist](https://gist.github.com/benclark/2695148) contains a more configured varnish config that includes basic authentication as well as some other niceties such as putting headers on for hits/misses). 
 
@@ -49,4 +47,4 @@ backend default {
 }
 ```
 
-Now you would sudo service varnish restart to restart varnish and you should be up and running with a reverse proxy. If you want to check out the status of varnish you can check with `varnishstat` from the command line.
+Finally you would `sudo service varnish restart` to restart varnish and you should be up and running with a reverse proxy. If you want to check out the status of varnish you can check with `varnishstat` from the command line.
