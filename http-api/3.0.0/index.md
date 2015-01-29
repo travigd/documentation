@@ -43,6 +43,8 @@ There will likely be additions in the future for protobufs and bson.
 
 ## Examples
 
+Below are examples of [writing an event](../writing-to-a-stream) to a stream, as well as reading both a [stream](../reading-streams), and an event, for more details on these check out their individual pages.
+
 ### Writing an event to a stream.
 
 simple-event.txt:
