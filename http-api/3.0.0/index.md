@@ -8,10 +8,7 @@ pinned: true
 The Event Store provides a native interface of AtomPub over HTTP. AtomPub is a RESTful protocol that can reuse many existing components, for example Reverse Proxies and client’s native HTTP caching. Since events stored in the Event Store are entirely immutable, cache expiration can be infinite. We can also leverage content type negotiation. Appropriately serialized events can be accessed as JSON or XML according to the request headers.
 
 <span class="note">
-Examples in this section make use of the command line tool
-[cURL](http://curl.haxx.se/) to construct HTTP requests. We use this tool
-regularly in development and likely you will find it quite useful as well when
-working with the HTTP API.
+Examples in this section make use of the command line tool [cURL](http://curl.haxx.se/) to construct HTTP requests. We use this tool regularly in development and likely you will find it quite useful as well when working with the HTTP API.
 </span>
 
 ## Compatibility with AtomPub
@@ -43,7 +40,7 @@ There will likely be additions in the future for protobufs and bson.
 
 ## Examples
 
-Below are examples of [writing an event](../writing-to-a-stream) to a stream, as well as reading both a [stream](../reading-streams), and an event, for more details on these check out their individual pages.
+Below are examples of [writing](../writing-to-a-stream) an event to a stream, as well as [reading](../reading-streams) both a stream, and an event, for more details on these check out their individual pages. All of the below example use json however by setting the correct content types then the examples would apply to xml as well.
 
 ### Writing an event to a stream.
 
