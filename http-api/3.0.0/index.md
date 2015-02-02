@@ -38,7 +38,7 @@ The accepted content types for GET requests are currently:
 
 There will likely be additions in the future for protobufs and bson.
 
-## Examples
+## Examples (JSON)
 
 Below are examples of [writing](../writing-to-a-stream) an event to a stream, as well as [reading](../reading-streams) both a stream, and an event, for more details on these check out their individual pages. All of the below example use json however by setting the correct content types then the examples would apply to xml as well.
 
@@ -47,23 +47,18 @@ Below are examples of [writing](../writing-to-a-stream) an event to a stream, as
 simple-event.txt:
 ```json
 [
-    {
-        "EventId": "0f9fad5b-d9cb-469f-a165-70867728951e",
-        "EventType": "Type",    
-        "Data": {
-            "Foo": "Bar"
-        },
-        "Metadata": {
-            "Something": "AValue"
-        }
-    }
+  {
+    "eventId": "fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4",
+    "eventType": "event-type",
+    "data": { "a": "1" }
+  }
 ]
 ```
 
 Posting the above data to a stream, with the correct content type set, will result in the event being written to the stream, and a `201` response from the server, giving you the location of the event.
 
 ```
-curl -i -d @simple-event.txt -H "Content-Type:application/vnd.eventstore.events+json" "http://127.0.0.1:2113/streams/newstream2"
+curl -i -d @simple-event.txt -H "Content-Type:application/vnd.eventstore.events+json" "http://127.0.0.1:2113/streams/newstream"
 ```
 
 ```http
@@ -87,7 +82,6 @@ curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/
 ```
 
 ```http
-
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
@@ -160,7 +154,7 @@ Keep-Alive: timeout=15,max=100
 ### Reading an event from a stream
 
 ```
-curl -i -H "Accept:application/vnd.eventstre.atom+json" "http://127.0.0.1:2113/streams/newstream/0"
+curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream/0"
 ```
 
 ```http
@@ -207,4 +201,141 @@ Keep-Alive: timeout=15,max=100
     }
   ]
 }
+```
+
+## Examples (XML)
+
+Below are examples of [writing](../writing-to-a-stream) an event to a stream, as well as [reading](../reading-streams) both a stream, and an event, for more details on these check out their individual pages. All of the below example use json however by setting the correct content types then the examples would apply to xml as well.
+
+### Writing an event to a stream.
+
+simple-event.txt:
+```xml
+<Events>
+  <Event>
+    <EventId>fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4</EventId>
+    <EventType>event-type</EventType>
+    <Data>
+      <MyEvent>
+        <Something>1</Something>
+      </MyEvent>
+    </Data>
+  </Event>
+</Events>
+```
+
+Posting the above data to a stream, with the correct content type set, will result in the event being written to the stream, and a `201` response from the server, giving you the location of the event.
+
+```
+curl -i -d @simple-event.txt -H "Content-Type:application/vnd.eventstore.events+xml" "http://127.0.0.1:2113/streams/newstream2"
+```
+
+```http
+HTTP/1.1 201 Created
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+Location: http://127.0.0.1:2113/streams/newstream2/0
+Content-Type: text/plain; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Feb 2015 13:19:34 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+```
+
+### Reading a stream
+
+```
+curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream2"
+```
+
+```http
+HTTP/1.1 200 OK
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+Cache-Control: max-age=0, no-cache, must-revalidate
+Vary: Accept
+ETag: "0;-1296467268"
+Content-Type: application/atom+xml; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Feb 2015 13:20:45 GMT
+Content-Length: 927
+Keep-Alive: timeout=15,max=100
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Event stream 'newstream2'</title>
+  <id>http://127.0.0.1:2113/streams/newstream2</id>
+  <updated>2015-02-02T13:19:34.16844Z</updated>
+  <author>
+    <name>EventStore</name>
+  </author>
+  <link href="http://127.0.0.1:2113/streams/newstream2" rel="self"/>
+  <link href="http://127.0.0.1:2113/streams/newstream2/head/backward/20" rel="first"/>
+  <link href="http://127.0.0.1:2113/streams/newstream2/1/forward/20" rel="previous"/>
+  <link href="http://127.0.0.1:2113/streams/newstream2/metadata" rel="metadata"/>
+  <entry>
+    <title>0@newstream2</title>
+    <id>http://127.0.0.1:2113/streams/newstream2/0</id>
+    <updated>2015-02-02T13:19:34.16844Z</updated>
+    <author>
+      <name>EventStore</name>
+    </author>
+    <summary>event-type</summary>
+    <link href="http://127.0.0.1:2113/streams/newstream2/0" rel="edit"/>
+    <link href="http://127.0.0.1:2113/streams/newstream2/0" rel="alternate"/>
+  </entry>
+</feed>
+```
+
+### Reading an event from a stream
+
+```
+curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream2/0"
+```
+
+```http
+HTTP/1.1 200 OK
+Access-Control-Allow-Methods: GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+Cache-Control: max-age=31536000, public
+Vary: Accept
+Content-Type: application/atom+xml; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Feb 2015 13:24:02 GMT
+Content-Length: 740
+Keep-Alive: timeout=15,max=100
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom">
+  <atom:title>0@newstream2</atom:title>
+  <atom:id>http://127.0.0.1:2113/streams/newstream2/0</atom:id>
+  <atom:updated>2015-02-02T13:19:34.16844Z</atom:updated>
+  <atom:author>
+    <atom:name>EventStore</atom:name>
+  </atom:author>
+  <atom:summary>event-type</atom:summary>
+  <atom:link href="http://127.0.0.1:2113/streams/newstream2/0" rel="edit"/>
+  <atom:link href="http://127.0.0.1:2113/streams/newstream2/0" rel="alternate"/>
+  <atom:content type="application/xml">
+    <eventStreamId>newstream2</eventStreamId>
+    <eventNumber>0</eventNumber>
+    <eventType>event-type</eventType>
+    <data>
+      <MyEvent>
+        <Something>1</Something>
+      </MyEvent>
+    </data>
+    <metadata/>
+  </atom:content>
+</atom:entry>
 ```
