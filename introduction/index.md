@@ -12,7 +12,7 @@ This setup is intended as an experimental setup or for a developer’s machine. 
 
 ## Installation
 
-To start go to [http://geteventstore.com/downloads](http://geteventstore.com/downloads) and download the binaries into a folder. For this document it is assumed that you are in Windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup.
+To start go to [https://geteventstore.com/downloads](https://geteventstore.com/downloads) and download the binaries into a folder. For this document it is assumed that you are in Windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup.
 
 Once you have the zip file unzipped open up an administrator console. `cd` into the directory where you have installed the Event Store. On the command line enter:
 
