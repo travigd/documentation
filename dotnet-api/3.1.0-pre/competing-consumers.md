@@ -226,10 +226,9 @@ _result = _conn.UpdatePersistentSubscriptionAsync(_stream,
 At times you may wish to remove a subscription group. This can be done with the delete operation. Much like the creation of groups this is rarely done in your runtime code and normally done by an administrator who is say running a script.
 
 ```csharp
-            var result = _conn.DeletePersistentSubscriptionAsync(stream, 
-                                                                 "groupname", 
-                                                                 DefaultData.AdminCredentials).Result;
-
+var result = _conn.DeletePersistentSubscriptionAsync(stream, 
+                                                     "groupname", 
+                                                     DefaultData.AdminCredentials).Result;
 ```
 <table>
     <thead>
