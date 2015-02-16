@@ -6,27 +6,27 @@ version: "3.1.0 (pre-release)"
 
 This document walks through the .NET client API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see [the overview document](../../../introduction/competing-consumers).
 
-#Methods
+# Methods
 
-##Creating a Persistent Subscription
+## Creating a Persistent Subscription
 
 ```csharp
 Task<PersistentSubscriptionCreateResult> CreatePersistentSubscriptionAsync(string stream, string groupName, PersistentSubscriptionSettings settings, UserCredentials credentials);
 ```
 
-##Updating a Persistent Subscription
+## Updating a Persistent Subscription
 
 ```csharp
 Task<PersistentSubscriptionUpdateResult> UpdatePersistentSubscriptionAsync(string stream, string groupName, PersistentSubscriptionSettings settings, UserCredentials credentials);
 ```
 
-##Deleting a Persistent Subscription
+## Deleting a Persistent Subscription
 
 ```csharp
 Task<PersistentSubscriptionDeleteResult> DeletePersistentSubscriptionAsync(string stream, string groupName, UserCredentials userCredentials = null);
 ```
 
-##Connecting to a Persistent Subscription
+## Connecting to a Persistent Subscription
 
 ```csharp
         EventStorePersistentSubscription ConnectToPersistentSubscription(
@@ -39,7 +39,7 @@ Task<PersistentSubscriptionDeleteResult> DeletePersistentSubscriptionAsync(strin
             bool autoAck = true);
 ```
 
-##Persistent Subscription Settings
+## Persistent Subscription Settings
 
 Both the Create and Update methods take a PersistentSubscriptionSettings object as a parameter. This object is used to provide the settings for the persistent subscription. There is also a fluent builder for these options that can be located using the Create() method. The following table shows the options that can be set on a persistent subscription.
 
@@ -134,7 +134,7 @@ Both the Create and Update methods take a PersistentSubscriptionSettings object 
     </tbody>
 </table>
 
-##Creating a Subscription Group
+## Creating a Subscription Group
 
 The first step of dealing with a subscription group is that it must be created. Note you will get an error if you attempt to create a subscription group multiple times. You must have admin permissions to create a persistent subscription group.
 
@@ -307,7 +307,7 @@ var subscription = _conn.ConnectToPersistentSubscription("foo",
 </table>
 
 
-##Acknowledgements
+## Acknowledgements
 
 Clients must acknowledge (or not acknowledge) messages in the competing consumer model. If you enable auto-ack the subscription will automatically acknowledge messages once they are completed by your handler. If you throw an exception it will shutdown your subscription with a message and the uncaught exception.
 
