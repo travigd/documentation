@@ -41,7 +41,7 @@ Task<PersistentSubscriptionDeleteResult> DeletePersistentSubscriptionAsync(strin
 
 ## Persistent Subscription Settings
 
-Both the Create and Update methods take a PersistentSubscriptionSettings object as a parameter. This object is used to provide the settings for the persistent subscription. There is also a fluent builder for these options that can be located using the Create() method. The following table shows the options that can be set on a persistent subscription.
+Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` object as a parameter. This object is used to provide the settings for the persistent subscription. There is also a fluent builder for these options that can be located using the `Create()` method. The following table shows the options that can be set on a persistent subscription.
 
 <table>
     <thead>
@@ -61,11 +61,11 @@ Both the Create and Update methods take a PersistentSubscriptionSettings object 
         </tr>
         <tr>
             <td><code>PreferRoundRobin</code></td>
-            <td>If possible prefer to round robin between the connections with messages (if not possible will use next available)</td>
+            <td>If possible prefer to round robin between the connections with messages (if not possible will use next available).</td>
         </tr>
         <tr>
             <td><code>PreferDispatchToSingle</code></td>
-            <td>If possible prefer to dispatch to a single connection (if not possible will use next available)</td>
+            <td>If possible prefer to dispatch to a single connection (if not possible will use next available).</td>
         </tr>
         <tr>
             <td><code>StartFromBeginning</code></td>
@@ -93,11 +93,11 @@ Both the Create and Update methods take a PersistentSubscriptionSettings object 
         </tr>
        <tr>
             <td><code>MaximumCheckPointCountOf(int count)</code></td>
-            <td>The maximum number of messages not checkpointed before forcing a checkpoint</td>
+            <td>The maximum number of messages not checkpointed before forcing a checkpoint.</td>
         </tr>
         <tr>
             <td><code>WithMaxRetriesOf(int count)</code></td>
-            <td>Sets the number of times a message should be retried before being considered a bad message</td>
+            <td>Sets the number of times a message should be retried before being considered a bad message.</td>
         </tr>
         <tr>
             <td><code>WithLiveBufferSizeOf(int count)</code></td>
@@ -117,11 +117,11 @@ Both the Create and Update methods take a PersistentSubscriptionSettings object 
         </tr>
        <tr>
             <td><code>MaximumCheckPointCountOf(int count)</code></td>
-            <td>The maximum number of messages not checkpointed before forcing a checkpoint</td>
+            <td>The maximum number of messages not checkpointed before forcing a checkpoint.</td>
         </tr>
         <tr>
             <td><code>WithMaxRetriesOf(int count)</code></td>
-            <td>Sets the number of times a message should be retried before being considered a bad message</td>
+            <td>Sets the number of times a message should be retried before being considered a bad message.</td>
         </tr>
         <tr>
             <td><code>WithLiveBufferSizeOf(int count)</code></td>
@@ -168,11 +168,11 @@ _result = _conn.CreatePersistentSubscriptionAsync(_stream,
         </tr>
         <tr>
             <td><code>PersistentSubscriptionSettings settings</code></td>
-            <td>The settings to use when creating this subscription</td>
+            <td>The settings to use when creating this subscription.</td>
         </tr>
         <tr>
             <td><code>UserCredentials credentials</code></td>
-            <td>The user credentials to use for this operation</td>
+            <td>The user credentials to use for this operation.</td>
         </tr>        
     </tbody>
 </table>
@@ -212,11 +212,11 @@ _result = _conn.UpdatePersistentSubscriptionAsync(_stream,
         </tr>
         <tr>
             <td><code>PersistentSubscriptionSettings settings</code></td>
-            <td>The settings to use when updating this subscription</td>
+            <td>The settings to use when updating this subscription.</td>
         </tr>
         <tr>
             <td><code>UserCredentials credentials</code></td>
-            <td>The user credentials to use for this operation</td>
+            <td>The user credentials to use for this operation.</td>
         </tr>        
     </tbody>
 </table>
@@ -248,7 +248,7 @@ var result = _conn.DeletePersistentSubscriptionAsync(stream,
         </tr>
         <tr>
             <td><code>UserCredentials credentials</code></td>
-            <td>The user credentials to use for this operation</td>
+            <td>The user credentials to use for this operation.</td>
         </tr>        
     </tbody>
 </table>
@@ -256,7 +256,7 @@ var result = _conn.DeletePersistentSubscriptionAsync(stream,
 
 ## Connecting to a Subscription Group
 
-Once you have created a subscription group N clients can connect to that subscription group. In general a subscription in your application should only have the connect in your code, you should assume that the subscription has been previously created either via the client api, the restful api, or manually in the UI.
+Once you have created a subscription group N clients can connect to that subscription group. In general a subscription in your application should only have the connect in your code, you should assume that the subscription has been previously created either via the client API, the restful API, or manually in the UI.
 
 The most important parameter to pass when connecting is the buffer size. This represents how many outstanding messages the server should allow this client. If this number is too small your subscription will spend much of its time idle as it waits for an acknowledgement to come back from the client. If its too big you will be wasting resources and can possibly even start timing out messages depending on the speed of your processing.
 
@@ -293,7 +293,7 @@ var subscription = _conn.ConnectToPersistentSubscription("foo",
         </tr>
         <tr>
             <td><code>UserCredentials credentials</code></td>
-            <td>The user credentials to use for this operation</td>
+            <td>The user credentials to use for this operation.</td>
         </tr>
         <tr>
             <td><code>int bufferSize</code></td>
@@ -311,4 +311,4 @@ var subscription = _conn.ConnectToPersistentSubscription("foo",
 
 Clients must acknowledge (or not acknowledge) messages in the competing consumer model. If you enable auto-ack the subscription will automatically acknowledge messages once they are completed by your handler. If you throw an exception it will shutdown your subscription with a message and the uncaught exception.
 
-You can however choose to not auto-ack messages. This can be quite useful when you have multi-threaded processing of messages in your subscriber and need to pass control to something else. There are methods on the subscription object that you can call Acknowledge and NotAcknowledge both take a ResolvedEvent (the one you processed) both also have overloads for passing and IEnumerable<ResolvedEvent>.
+You can however choose to not auto-ack messages. This can be quite useful when you have multi-threaded processing of messages in your subscriber and need to pass control to something else. There are methods on the subscription object that you can call `Acknowledge` and `NotAcknowledge` both take a `ResolvedEvent` (the one you processed) both also have overloads for passing and `IEnumerable<ResolvedEvent>`.
