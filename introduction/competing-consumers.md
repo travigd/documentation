@@ -13,7 +13,7 @@ Competing Consumers is another subscription model that is available, it differs 
 
 Both a Subscription and a CatchupSubscription use a model where the client holds the state of the subscription much like with a blog client your client remembers the last post that you have read. The server does not hold any state particular to a given client.  Competing Consumers operate differently, with Competing Consumers the server remembers the state of the subscription. This allows for many different modes of operations compared to a subscription where the client holds the subscription state.
 
-## Susbcription Groups
+## Subscription Groups
 
 The first step in using Competing Consumers is to create a new subscription. This can be done either over the http api or through the client api (CreatePersistentSubscription) at this point. This will create the server side subscription group that you will be able to use in the future. There are lots of options that can be passed to a subscription group including things such as ReadBatchSizes, MaxRetryCounts, and how often to CheckPoint the subscription. The creation of the subscription is normally done as part of a deployment or an administrative task.
 
