@@ -142,6 +142,10 @@ Date: Sun, 16 Jun 2013 13:20:22 GMT
 
 To update the metadata for a stream, a `POST` should be made to the metadata resource. This will replace the current metadata with the information posted.
 
+<span class="note--warning">
+In 3.0.1 the ES-EventType header on the request must be set to either "$metadata", or not set, any other value will result in a Bad Request response.
+</span>
+
 ### metadata.txt
 
 ```json
