@@ -144,7 +144,70 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-You can then limit acls on particular streams which are merged with the default acls.
+If we try to access the $settings stream as an unauthorized user it will 401.
+
+```
+ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+
+```http
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+WWW-Authenticate: Basic realm="ES"
+Content-Type: text/plain; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Mar 2015 15:21:27 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+```
+
+If I wanted to give ouro access by default to system streams I would post
+
+```json
+{
+    "$userStreamAcl" : {
+        "$r"  : "$all",
+        "$w"  : "ouro",
+        "$d"  : "ouro",
+        "$mr" : "ouro",
+        "$mw" : "ouro"
+    },
+    "$systemStreamAcl" : {
+        "$r"  : ["$admins","ouro"],
+        "$w"  : "$admins",
+        "$d"  : "$admins",
+        "$mr" : "$admins",
+        "$mw" : "$admins"
+    }
+}
+```
+
+At which point ouro can read system streams by default
+
+```
+ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+
+```http
+HTTP/1.1 200 OK
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+Cache-Control: max-age=0, no-cache, must-revalidate
+Vary: Accept
+ETag: "1;-1296467268"
+Content-Type: application/atom+xml; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Mar 2015 15:25:17 GMT
+Content-Length: 1286
+Keep-Alive: timeout=15,max=100
+```
+
+You can also then limit acls on particular streams which are merged with the default acls.
 
 ```json
 {
