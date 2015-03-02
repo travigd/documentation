@@ -107,10 +107,10 @@ ouro@ouroboros: cat ~/settings.js
 {
     "$userStreamAcl" : {
         "$r"  : "$all",
-        "$w"  : "$all",
-        "$d"  : "$all",
-        "$mr" : "$all",
-        "$mw" : "$all"
+        "$w"  : "ouro",
+        "$d"  : "ouro",
+        "$mr" : "ouro",
+        "$mw" : "ouro"
     },
     "$systemStreamAcl" : {
         "$r"  : "$admins",
