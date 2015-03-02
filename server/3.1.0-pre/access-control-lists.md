@@ -75,6 +75,10 @@ The `$userStreamAcl` controls the default ACL for user streams, while the `$syst
 
 When a permission is set on a stream in your system, it will override the default, however it is not necessary to specify all permissions on a stream, it is only necessary to specify those which differ from the default.
 
+<span class="note--warning">
+All of these examples assume you have a user named "ouro" that has been created on your system. The examples also assume the password is "ouroboros"
+</span>
+
 ### Example
 
 ```json
