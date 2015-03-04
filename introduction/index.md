@@ -83,7 +83,7 @@ Keep-Alive: timeout=15,max=100
 
 ```
 
-If you go to your UI after this command and to the *Streams* tab. You will see your stream has recently been created. If you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an HTML representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/streams/newstream](http://127.0.0.1:2113/streams/newstream)).
+If you go to your UI after this command and to the *Streams* tab. You will see your stream has recently been created. If you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an HTML representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/web/index.html#/streams/newstream](http://127.0.0.1:2113/web/index.html#/streams/newstream)).
 
 You can also setup Access Control Lists (see [server docs](/server/latest)) on your streams by changing the metadata of the stream.
 
