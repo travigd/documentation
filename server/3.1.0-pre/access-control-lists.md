@@ -75,6 +75,10 @@ The `$userStreamAcl` controls the default ACL for user streams, while the `$syst
 
 When a permission is set on a stream in your system, it will override the default, however it is not necessary to specify all permissions on a stream, it is only necessary to specify those which differ from the default.
 
+<span class="note--warning">
+All of these examples assume you have a user named "ouro" that has been created on your system. The examples also assume the password is "ouroboros"
+</span>
+
 ### Example
 
 ```json
@@ -95,7 +99,119 @@ When a permission is set on a stream in your system, it will override the defaul
     }
 }
 ```
+
 This default ACL would give `ouro` and `$admins` create and write permissions on all streams, while everyone else can read from them.
+
+To do this you could use either the http api or a client api to write the above data to the stream (requires admin privileges by default for obvious reasons, be very careful allowing default access to system streams to non-admins as they would also have access to $settings unless you specifically overrode it)
+
+```
+ouro@ouroboros: cat ~/settings.js
+```
+```json
+{
+    "$userStreamAcl" : {
+        "$r"  : "$all",
+        "$w"  : "ouro",
+        "$d"  : "ouro",
+        "$mr" : "ouro",
+        "$mw" : "ouro"
+    },
+    "$systemStreamAcl" : {
+        "$r"  : "$admins",
+        "$w"  : "$admins",
+        "$d"  : "$admins",
+        "$mr" : "$admins",
+        "$mw" : "$admins"
+    }
+}
+```
+
+```
+ouro@ouroboros: curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
+```
+
+<span class="note--warning">
+You should not copy/paste the uuid in that command line but should generate a new one or not provide one (you will be redirected to a uri with one as described in writing events in the http api)
+</span>
+
+```http
+HTTP/1.1 201 Created
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+Location: http://127.0.0.1:2113/streams/%24settings/0
+Content-Type: text/plain; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Mar 2015 14:56:13 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+```
+
+If we try to access the $settings stream as an unauthorized user it will 401.
+
+```
+ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+
+```http
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+WWW-Authenticate: Basic realm="ES"
+Content-Type: text/plain; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Mar 2015 15:21:27 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+```
+
+If I wanted to give ouro access by default to system streams I would post
+
+```json
+{
+    "$userStreamAcl" : {
+        "$r"  : "$all",
+        "$w"  : "ouro",
+        "$d"  : "ouro",
+        "$mr" : "ouro",
+        "$mw" : "ouro"
+    },
+    "$systemStreamAcl" : {
+        "$r"  : ["$admins","ouro"],
+        "$w"  : "$admins",
+        "$d"  : "$admins",
+        "$mr" : "$admins",
+        "$mw" : "$admins"
+    }
+}
+```
+
+At which point ouro can read system streams by default
+
+```
+ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+
+```http
+HTTP/1.1 200 OK
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+Cache-Control: max-age=0, no-cache, must-revalidate
+Vary: Accept
+ETag: "1;-1296467268"
+Content-Type: application/atom+xml; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Mon, 02 Mar 2015 15:25:17 GMT
+Content-Length: 1286
+Keep-Alive: timeout=15,max=100
+```
+
+You can also then limit acls on particular streams which are merged with the default acls.
 
 ```json
 {
