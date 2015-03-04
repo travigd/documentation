@@ -30,7 +30,7 @@ These fields represent the following:
 
 These fields can be updated with either a single string or an array of strings representing users or groups (`$admins`, `$all`, or custom groups). It is also possible to put an empty array into one of these fields, this has the effect of remove all users from that permission. 
 
-<span class='note'>It is not normally recommended to give people access to `$mw` as then they can then change the ACL.</span>
+<span class="note">It is not normally recommended to give people access to `$mw` as then they can then change the ACL.</span>
 
 ### Example
 
@@ -70,13 +70,15 @@ There is a special ACL in the `$settings` that is used as the default ACL. This 
 }
 ```
 The `$userStreamAcl` controls the default ACL for user streams, while the `$systemStreamAcl` is used as the default for all system streams.
+
 <span class="note">`$w` in the `$userStreamAcl` also applies to the ability to create a stream.</span>
+
 <span class="note">Members of `$admins` always have access to everything, this permission cannot be removed.</span>
 
-When a permission is set on a stream in your system, it will override the default, however it is not necessary to specify all permissions on a stream, it is only necessary to specify those which differ from the default.
+When a permission is set on a stream in your system it will override the default, however it is not necessary to specify all permissions on a stream. It is only necessary to specify those which differ from the default.
 
 <span class="note--warning">
-All of these examples assume you have a user named "ouro" that has been created on your system. The examples also assume the password is "ouroboros"
+All of these examples assume you have a user named `ouro` that has been created on your system. The examples also assume the password is `ouroboros`.
 </span>
 
 ### Example
@@ -102,7 +104,7 @@ All of these examples assume you have a user named "ouro" that has been created 
 
 This default ACL would give `ouro` and `$admins` create and write permissions on all streams, while everyone else can read from them.
 
-To do this you could use either the http api or a client api to write the above data to the stream (requires admin privileges by default for obvious reasons, be very careful allowing default access to system streams to non-admins as they would also have access to $settings unless you specifically overrode it)
+To do this you could use either the HTTP API or a client API to write the above data to the stream (requires admin privileges by default for obvious reasons. Be very careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically overrode it).
 
 ```
 ouro@ouroboros: cat ~/settings.js
@@ -131,7 +133,7 @@ ouro@ouroboros: curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24setti
 ```
 
 <span class="note--warning">
-You should not copy/paste the uuid in that command line but should generate a new one or not provide one (you will be redirected to a uri with one as described in writing events in the http api)
+You should not copy/paste the UUID in that command line but should generate a new one or not provide one (you will be redirected to a URI with one as described in writing events in the HTTP API).
 </span>
 
 ```http
@@ -148,7 +150,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-If we try to access the $settings stream as an unauthorized user it will 401.
+If we try to access the `$settings` stream as an unauthorized user it will 401.
 
 ```
 ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
@@ -168,7 +170,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-If I wanted to give ouro access by default to system streams I would post
+If I wanted to give `ouro` access by default to system streams I would post:
 
 ```json
 {
@@ -189,7 +191,7 @@ If I wanted to give ouro access by default to system streams I would post
 }
 ```
 
-At which point ouro can read system streams by default
+At which point ouro can read system streams by default:
 
 ```
 ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
@@ -211,7 +213,7 @@ Content-Length: 1286
 Keep-Alive: timeout=15,max=100
 ```
 
-You can also then limit acls on particular streams which are merged with the default acls.
+You can also then limit ACLs on particular streams which are merged with the default ACLs.
 
 ```json
 {
@@ -220,7 +222,8 @@ You can also then limit acls on particular streams which are merged with the def
    }
 }
 ```
-If you added the above to a stream's ACL, then it would override the read permission on that stream to allow `greg` and `john` to read streams, but not `ouro`, resulting in the effective ACL below.
+
+If you added the above to a stream’s ACL, then it would override the read permission on that stream to allow `greg` and `john` to read streams, but not `ouro`, resulting in the effective ACL below.
 
 ```json
 {
