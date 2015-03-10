@@ -1,7 +1,7 @@
 ---
 title: "Stream Metadata"
 section: "HTTP API"
-version: 3.0.1
+version: 3.0.2
 ---
 
 Every stream in the Event Store has metadata associated with it. Internally, the metadata includes such information as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API. 
@@ -141,10 +141,6 @@ Date: Sun, 16 Jun 2013 13:20:22 GMT
 ## Writing Metadata
 
 To update the metadata for a stream, a `POST` should be made to the metadata resource. This will replace the current metadata with the information posted.
-
-<span class="note--warning">
-From 3.0.1 the ES-EventType header on the request must be set to either "$metadata", or not set, any other value will result in a Bad Request response.
-</span>
 
 ### metadata.txt
 
