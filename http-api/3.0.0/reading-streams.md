@@ -1,16 +1,12 @@
 ---
-title: "Reading Streams"
+title: "Reading Streams and Events"
 section: "HTTP API"
 version: 3.0.0
 ---
 
 Reading from streams with AtomPub can be a bit confusing if you have not done it before but we will go through in this document how reading works. Luckily for many environments the AtomPub protocol has already been implemented!
 
-The Event Store is compliant with the [Atom 1.0 Specification] (http://tools.ietf.org/html/rfc4287) as such many other systems have built in support for the Event Store.
-
-<span class="note--warning">
-Being listed or not listed here by no means shows our official support for any of these. We haven’t actually tested or endorsed any of these libraries!
-</span>
+The Event Store is compliant with the [Atom 1.0 Specification](http://tools.ietf.org/html/rfc4287) as such many other systems have built in support for the Event Store.
 
 ## Existing Implementations
 
@@ -26,58 +22,58 @@ Being listed or not listed here by no means shows our official support for any o
 | node.js     | [https://github.com/danmactough/node-feedparser](https://github.com/danmactough/node-feedparser)     |
 | Objective C | [https://geekli.st/darvin/repos/MWFeedParser](https://geekli.st/darvin/repos/MWFeedParser)           |
 
-<span class="note">
-Feel free to add more!
+<span class="note--warning">
+The above list of implementations are not officially supported by Event Store, if you know of any others then please let us know.
 </span>
 
-## A Simple Read
+## Reading a Stream
 
-The first thing to learn about an AtomFeed is to do a simple read. The stream will be exposed as a resource located at http(s)://yourdomain.com:port/streams/{stream}. If you do a simple GET to this resource you will get a standard AtomFeed document.
+Streams are exposed as a resource located at http(s)://yourdomain.com:port/streams/{stream}. If you do a simple GET to this resource you will get a standard AtomFeed document.
 
 ```
-ouro@ouroboros:~$ curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream"
+curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream2"
 ```
 
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
 Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
 Cache-Control: max-age=0, no-cache, must-revalidate
 Vary: Accept
-ETag: "0;-1296467268"
-Content-Type: application/atom+xml; charset: utf-8
+ETag: "0;248368668"
+Content-Type: application/vnd.eventstore.atom+json; charset=utf-8
 Server: Mono-HTTPAPI/1.0
-Date: Sat, 29 Jun 2013 18:02:21 GMT
-Content-Length: 998
+Date: Thu, 29 Jan 2015 14:10:42 GMT
+Content-Length: 1260
 Keep-Alive: timeout=15,max=100
 ```
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-   <title>Event stream 'newstream'</title>
-   <id>http://127.0.0.1:2113/streams/newstream</id>
-   <updated>2013-06-29T14:45:06.550308Z</updated>
-   <author>
+  <title>Event stream 'newstream2'</title>
+  <id>http://127.0.0.1:2113/streams/newstream2</id>
+  <updated>2015-02-02T13:19:34.16844Z</updated>
+  <author>
+    <name>EventStore</name>
+  </author>
+  <link href="http://127.0.0.1:2113/streams/newstream2" rel="self"/>
+  <link href="http://127.0.0.1:2113/streams/newstream2/head/backward/20" rel="first"/>
+  <link href="http://127.0.0.1:2113/streams/newstream2/1/forward/20" rel="previous"/>
+  <link href="http://127.0.0.1:2113/streams/newstream2/metadata" rel="metadata"/>
+  <entry>
+    <title>0@newstream2</title>
+    <id>http://127.0.0.1:2113/streams/newstream2/0</id>
+    <updated>2015-02-02T13:19:34.16844Z</updated>
+    <author>
       <name>EventStore</name>
-   </author>
-   <link href="http://127.0.0.1:2113/streams/newstream" rel="self" />
-   <link href="http://127.0.0.1:2113/streams/newstream/head/backward/20" rel="first" />
-   <link href="http://127.0.0.1:2113/streams/newstream/0/forward/20" rel="last" />
-   <link href="http://127.0.0.1:2113/streams/newstream/1/forward/20" rel="previous" />
-   <link href="http://127.0.0.1:2113/streams/newstream/metadata" rel="metadata" />
-   <entry>
-      <title>0@newstream</title>
-      <id>http://127.0.0.1:2113/streams/newstream/0</id>
-      <updated>2013-06-29T14:45:06.550308Z</updated>
-      <author>
-         <name>EventStore</name>
-      </author>
-      <summary>event-type</summary>
-      <link href="http://127.0.0.1:2113/streams/newstream/0" rel="edit" />
-      <link href="http://127.0.0.1:2113/streams/newstream/0" rel="alternate" />
-   </entry>
+    </author>
+    <summary>event-type</summary>
+    <link href="http://127.0.0.1:2113/streams/newstream2/0" rel="edit"/>
+    <link href="http://127.0.0.1:2113/streams/newstream2/0" rel="alternate"/>
+  </entry>
 </feed>
 ```
 
@@ -137,7 +133,7 @@ If I wanted to get the events for this feed I would go to each entry and follow 
 
 ## Feed Paging
 
-The next thing towards understanding how to read a stream is understanding the first/last/previous/next links that are given within a stream. These links conform to http://www.w3.org/TR/1999/REC-html401-19991224/types.html#type-links. The basic idea is that the server will give you links so that you can walk through a stream.
+The next thing towards understanding how to read a stream is understanding the first/last/previous/next links that are given within a stream. The basic idea is that the server will give you links so that you can walk through a stream.
 
 To read through the stream we will follow the pattern defined in RFC 5005 http://tools.ietf.org/html/rfc5005.
 
