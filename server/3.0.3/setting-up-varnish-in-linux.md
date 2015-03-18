@@ -1,7 +1,7 @@
 ---
 title: "Setting up Varnish in Linux"
 section: "Server"
-version: 3.0.2
+version: 3.0.3
 ---
 
 This document provides a brief guide on how to install the Event Store with varnish reverse proxy in a linux environment. For more information on how to properly configure varnish for your requirements, check the [Varnish website](https://www.varnish-cache.org/trac/wiki/Introduction).

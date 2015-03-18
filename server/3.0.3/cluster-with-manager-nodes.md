@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Cluster with Manager Nodes"
 section: "Server"
-version: 3.0.2
+version: 3.0.3
 ---
 
 Event Store allows several nodes to be run as a cluster, in order to achieve high availability of the database. There are two modes in which clustering can be run:
@@ -164,7 +164,7 @@ For the first node in the example cluster, the watchdog configuration file reads
 
 Having written configuration files for each node, the software and configuration can be deployed. Although it is possible to use relative paths when writing configuration files, it is preferable to use absolute paths to reduce the potential for confusion.
 
-In this case, the Event Store software is deployed on each node in `c:\EventStore-HA-v3.0.2\`, and the configuration files for that node are deployed into `C:\EventStore-Config\`. No installation process is necessary - the packaged distribution can simply be unzipped, assuming they have been unblocked following download.
+In this case, the Event Store software is deployed on each node in `c:\EventStore-HA-v3.0.3\`, and the configuration files for that node are deployed into `C:\EventStore-Config\`. No installation process is necessary - the packaged distribution can simply be unzipped, assuming they have been unblocked following download.
 
 ### (Windows-Specific) Adding HTTP ACL entries for HTTP servers
 
@@ -195,7 +195,7 @@ Manager nodes can be installed as a Windows service, in order that they can be s
 To install the manager node on machine 1, the following command is used:
 
 ```
-C:\EventStore-HA-v3.0.2\> EventStore.WindowsManager.exe install -InstanceName es-cluster1 -ManagerConfig C:\EventStore-Config\manager.yaml
+C:\EventStore-HA-v3.0.3\> EventStore.WindowsManager.exe install -InstanceName es-cluster1 -ManagerConfig C:\EventStore-Config\manager.yaml
 ```
 
 The service will then be visible in the services list, with a description of “Event Store Manager (es-cluster1)”.
@@ -205,7 +205,7 @@ The service will then be visible in the services list, with a description of “
 To uninstall the manager node service in future, the following command can be used (where the instance name matches the name used during installation).
 
 ```
-C:\EventStore-HA-v3.0.2\> EventStore.WindowsManager.exe uninstall -InstanceName es-cluster1 
+C:\EventStore-HA-v3.0.3\> EventStore.WindowsManager.exe uninstall -InstanceName es-cluster1 
 ```
 
 #### Manually starting and stopping the service

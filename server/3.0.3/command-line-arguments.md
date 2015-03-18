@@ -1,7 +1,7 @@
 ---
 title: "Command Line Arguments"
 section: "Server"
-version: 3.0.2
+version: 3.0.3
 ---
 
 The Event Store supports many configuration points. There are three distinct ways to set any parameter in the system. Items can be set via command line, environment variables, or put into YAML files. Each of these configuration options has its own trade offs.
@@ -28,7 +28,7 @@ The order of precedence between the multiple config sources is also important as
 ```text
 ES VERSION:               1.0.3 (dev/5488fa34228e283bad985966b700e1fc48a0780a, Tue, 2 Jul 2013 12:39:02 +0300)
 OS:                       Linux (Unix 3.2.0.27)
-RUNTIME:                  3.0.20 (master/1166156 Tue Apr 23 14:56:42 EEST 2013) (EventStore build) (64-bit)
+RUNTIME:                  3.0.30 (master/1166156 Tue Apr 23 14:56:42 EEST 2013) (EventStore build) (64-bit)
 GC:                       2 GENERATIONS
 LOGS:                     /home/greg/foo
 

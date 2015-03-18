@@ -1,7 +1,7 @@
 ---
 title: "Optional HTTP Headers: Expected Version"
 section: "HTTP API"
-version: 3.0.2
+version: 3.0.3
 exclude_from_sidebar: true
 ---
 

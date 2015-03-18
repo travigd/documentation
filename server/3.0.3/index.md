@@ -1,7 +1,7 @@
 ---
 title: "Running the Event Store"
 section: "Server"
-version: 3.0.2
+version: 3.0.3
 pinned: true
 ---
 

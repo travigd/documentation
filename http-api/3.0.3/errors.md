@@ -1,7 +1,7 @@
 ---
 title: "Errors"
 section: "HTTP API"
-version: 3.0.2
+version: 3.0.3
 ---
 
 There are many error conditions that can be returned from the writing or reading of a stream. All of these can be identified by their status codes and should be relatively easy to diagnose.

@@ -1,7 +1,7 @@
 ---
 title: "Creating a Stream"
 section: "HTTP API"
-version: 3.0.2
+version: 3.0.3
 ---
 
 <span class="note">
