@@ -12,7 +12,7 @@ Setting up a cluster of Event Store nodes requires extra parameters over a singl
 
 ## Internal vs External Communication
 
-All communications in the Event Store have been segregated to different networks. The internal network is for inter-node communication, such as replication, and the external network is used for communication with clients. These communications can be placed on segregated networks if required, tjos is often a good idea for both performance and security purposes.
+All communications in the Event Store have been segregated to different networks. The internal network is for inter-node communication, such as replication, and the external network is used for communication with clients. These communications can be placed on segregated networks if required, this is often a good idea for both performance and security purposes.
 
 This seggregation is achieved by setting two sets of network details, those prefixed with `int` relate to internal communication, and those prefeixed with `ext` relate to external communication.
 

@@ -12,7 +12,7 @@ Setting up a cluster of Event Store nodes requires extra parameters over a singl
 
 ## Internal vs External Communication
 
-All communications in the Event Store have been segregated to different networks. The internal network is for inter-node communication, such as replication, and the external network is used for communication with clients. These communications can be placed on segregated networks if required, tjos is often a good idea for both performance and security purposes.
+All communications in the Event Store have been segregated to different networks. The internal network is for inter-node communication, such as replication, and the external network is used for communication with clients. These communications can be placed on segregated networks if required, this is often a good idea for both performance and security purposes.
 
 This seggregation is achieved by setting two sets of network details, those prefixed with `int` relate to internal communication, and those prefeixed with `ext` relate to external communication.
 
@@ -22,7 +22,7 @@ To set up a cluster of nodes, you need to specify the size of the cluster at the
 
 ### Gossip Seeds
 
-A cluster can be set up by specifying at least one address for the internal http port of another node on the cluster, these are used as gossip seeds that are used when the node first comes up and needs to begin gossiping. Any node can be a seed, however by giving each node the other nodes in the cluster you ensure that there will always be another node to gossip with if a quorum can be built.
+A cluster can be set up by specifying at least one address for the internal http port of another node on the cluster, these are used as gossip seeds that are used when the node first comes up and needst to begin gossiping. Any node can be a seed, however by giving each node the other nodes in the cluster you ensure that there will always be another node to gossip with if a quorum can be built.
 
 Using gossip seeds as a discovery method involves using the parameter `--discover-via-dns=false` and specifying a comma separated list of gossip seeds with the `--gossip-seed` parameter.
 
