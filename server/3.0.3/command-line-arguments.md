@@ -111,41 +111,41 @@ The following parameters are supported by the Event Store:
 ###Database Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-MinFlushDelayMs <br/>--min-flush-delay-ms=VALUE|MINFLUSHDELAYMS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2)|
-|-DisableScavengeMerging <br/>--disable-scavenge-merging=VALUE|DISABLESCAVENGEMERGING|DisableScavengeMerging|Disables the merging of chunks when scavenge is running (Default: False)|
-|-CachedChunks <br/>--cached-chunks=VALUE|CACHEDCHUNKS|CachedChunks|The number of chunks to cache in unmanaged memory. (Default: -1)|
-|-ChunksCacheSize <br/>--chunks-cache-size=VALUE|CHUNKSCACHESIZE|ChunksCacheSize|The amount of unmanaged memory to use for caching chunks. (Default: 536871424)|
-|-MaxMemTableSize <br/>--max-mem-table-size=VALUE|MAXMEMTABLESIZE|MaxMemTableSize|Adjusts the maximum size of a mem table. (Default: 1000000)|
+|-MinFlushDelayMs <br/>--min-flush-delay-ms=VALUE|MIN_FLUSH_DELAY_MS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2)|
+|-DisableScavengeMerging <br/>--disable-scavenge-merging=VALUE|DISABLE_SCAVENGE_MERGING|DisableScavengeMerging|Disables the merging of chunks when scavenge is running (Default: False)|
+|-CachedChunks <br/>--cached-chunks=VALUE|CACHED_CHUNKS|CachedChunks|The number of chunks to cache in unmanaged memory. (Default: -1)|
+|-ChunksCacheSize <br/>--chunks-cache-size=VALUE|CHUNKS_CACHE_SIZE|ChunksCacheSize|The amount of unmanaged memory to use for caching chunks. (Default: 536871424)|
+|-MaxMemTableSize <br/>--max-mem-table-size=VALUE|MAX_MEM_TABLE_SIZE|MaxMemTableSize|Adjusts the maximum size of a mem table. (Default: 1000000)|
 |-Db <br/>|DB|Db|The path the db should be loaded/saved to.|
-|-MemDb <br/>--mem-db=VALUE|MEMDB|MemDb|Keep everything in memory, no directories or files are created. (Default: False)|
-|-SkipDbVerify <br/>--skip-db-verify=VALUE|SKIPDBVERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False)|
-|-PrepareTimeoutMs <br/>--prepare-timeout-ms=VALUE|PREPARETIMEOUTMS|PrepareTimeoutMs|Prepare timeout (in milliseconds). (Default: 2000)|
-|-CommitTimeoutMs <br/>--commit-timeout-ms=VALUE|COMMITTIMEOUTMS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000)|
+|-MemDb <br/>--mem-db=VALUE|MEM_DB|MemDb|Keep everything in memory, no directories or files are created. (Default: False)|
+|-SkipDbVerify <br/>--skip-db-verify=VALUE|SKIP_DB_VERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False)|
+|-PrepareTimeoutMs <br/>--prepare-timeout-ms=VALUE|PREPARE_TIMEOUT_MS|PrepareTimeoutMs|Prepare timeout (in milliseconds). (Default: 2000)|
+|-CommitTimeoutMs <br/>--commit-timeout-ms=VALUE|COMMIT_TIMEOUT_MS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000)|
 |-UnsafeDisableFlushToDisk <br/>--unsafe-disable-flush-to-disk=VALUE|UNSAFEDISABLEFLUSHTODISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False)|
 
 ###Interface Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-IntIp <br/>--int-ip=VALUE|INTIP|IntIp|Internal IP Address. (Default: 127.0.0.1)|
-|-ExtIp <br/>--ext-ip=VALUE|EXTIP|ExtIp|External IP Address. (Default: 127.0.0.1)|
-|-IntHttpPort <br/>--int-http-port=VALUE|INTHTTPPORT|IntHttpPort|Internal HTTP Port. (Default: 2112)|
-|-ExtHttpPort <br/>--ext-http-port=VALUE|EXTHTTPPORT|ExtHttpPort|External HTTP Port. (Default: 2113)|
-|-IntTcpPort <br/>--int-tcp-port=VALUE|INTTCPPORT|IntTcpPort|Internal TCP Port. (Default: 1112)|
-|-IntSecureTcpPort <br/>--int-secure-tcp-port=VALUE|INTSECURETCPPORT|IntSecureTcpPort|Internal Secure TCP Port. (Default: 0)|
-|-ExtTcpPort <br/>--ext-tcp-port=VALUE|EXTTCPPORT|ExtTcpPort|External TCP Port. (Default: 1113)|
-|-ExtSecureTcpPort <br/>--ext-secure-tcp-port=VALUE|EXTSECURETCPPORT|ExtSecureTcpPort|External Secure TCP Port. (Default: 0)|
-|-IntTcpHeartbeatTimeout <br/>--int-tcp-heartbeat-timeout=VALUE|INTTCPHEARTBEATTIMEOUT|IntTcpHeartbeatTimeout|Heartbeat timeout for internal TCP sockets (Default: 700)|
-|-ExtTcpHeartbeatTimeout <br/>--ext-tcp-heartbeat-timeout=VALUE|EXTTCPHEARTBEATTIMEOUT|ExtTcpHeartbeatTimeout|Heartbeat timeout for external TCP sockets (Default: 1000)|
-|-IntTcpHeartbeatInterval <br/>--int-tcp-heartbeat-interval=VALUE|INTTCPHEARTBEATINTERVAL|IntTcpHeartbeatInterval|Heartbeat interval for internal TCP sockets (Default: 700)|
-|-ExtTcpHeartbeatInterval <br/>--ext-tcp-heartbeat-interval=VALUE|EXTTCPHEARTBEATINTERVAL|ExtTcpHeartbeatInterval|Heartbeat interval for external TCP sockets (Default: 2000)|
-|-AdminOnExt <br/>--admin-on-ext=VALUE|ADMINONEXT|AdminOnExt|Whether or not to run the admin ui on the external http endpoint (Default: True)|
-|-StatsOnExt <br/>--stats-on-ext=VALUE|STATSONEXT|StatsOnExt|Whether or not to accept statistics requests on the external http endpoint, needed if you use admin ui (Default: True)|
-|-GossipOnExt <br/>--gossip-on-ext=VALUE|GOSSIPONEXT|GossipOnExt|Whether or not to accept gossip requests on the external http endpoint (Default: True)|
-|-HttpPrefixes <br/>--http-prefixes=VALUE|HTTPPREFIXES|HttpPrefixes|The prefixes that the http server should respond to. (Default: n/a)|
-|-EnableTrustedAuth <br/>--enable-trusted-auth=VALUE|ENABLETRUSTEDAUTH|EnableTrustedAuth|Enables trusted authentication by an intermediary in the Http (Default: False)|
-|-UseInternalSsl <br/>--use-internal-ssl=VALUE|USEINTERNALSSL|UseInternalSsl|Whether to use secure internal communication. (Default: False)|
-|-SslTargetHost <br/>--ssl-target-host=VALUE|SSLTARGETHOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a)|
-|-SslValidateServer <br/>--ssl-validate-server=VALUE|SSLVALIDATESERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True)|
+|-IntIp <br/>--int-ip=VALUE|INT_IP|IntIp|Internal IP Address. (Default: 127.0.0.1)|
+|-ExtIp <br/>--ext-ip=VALUE|EXT_IP|ExtIp|External IP Address. (Default: 127.0.0.1)|
+|-IntHttpPort <br/>--int-http-port=VALUE|INT_HTTP_PORT|IntHttpPort|Internal HTTP Port. (Default: 2112)|
+|-ExtHttpPort <br/>--ext-http-port=VALUE|EXT_HTTP_PORT|ExtHttpPort|External HTTP Port. (Default: 2113)|
+|-IntTcpPort <br/>--int-tcp-port=VALUE|INT_TCP_PORT|IntTcpPort|Internal TCP Port. (Default: 1112)|
+|-IntSecureTcpPort <br/>--int-secure-tcp-port=VALUE|INT_SECURE_TCP_PORT|IntSecureTcpPort|Internal Secure TCP Port. (Default: 0)|
+|-ExtTcpPort <br/>--ext-tcp-port=VALUE|EXT_TCP_PORT|ExtTcpPort|External TCP Port. (Default: 1113)|
+|-ExtSecureTcpPort <br/>--ext-secure-tcp-port=VALUE|EXT_SECURE_TCP_PORT|ExtSecureTcpPort|External Secure TCP Port. (Default: 0)|
+|-IntTcpHeartbeatTimeout <br/>--int-tcp-heartbeat-timeout=VALUE|INT_TCP_HEARTBEAT_TIMEOUT|IntTcpHeartbeatTimeout|Heartbeat timeout for internal TCP sockets (Default: 700)|
+|-ExtTcpHeartbeatTimeout <br/>--ext-tcp-heartbeat-timeout=VALUE|EXT_TCP_HEARTBEAT_TIMEOUT|ExtTcpHeartbeatTimeout|Heartbeat timeout for external TCP sockets (Default: 1000)|
+|-IntTcpHeartbeatInterval <br/>--int-tcp-heartbeat-interval=VALUE|INT_TCP_HEARTBEAT_INTERVAL|IntTcpHeartbeatInterval|Heartbeat interval for internal TCP sockets (Default: 700)|
+|-ExtTcpHeartbeatInterval <br/>--ext-tcp-heartbeat-interval=VALUE|EXT_TCP_HEARTBEAT_INTERVAL|ExtTcpHeartbeatInterval|Heartbeat interval for external TCP sockets (Default: 2000)|
+|-AdminOnExt <br/>--admin-on-ext=VALUE|ADMIN_ON_EXT|AdminOnExt|Whether or not to run the admin ui on the external http endpoint (Default: True)|
+|-StatsOnExt <br/>--stats-on-ext=VALUE|STATS_ON_EXT|StatsOnExt|Whether or not to accept statistics requests on the external http endpoint, needed if you use admin ui (Default: True)|
+|-GossipOnExt <br/>--gossip-on-ext=VALUE|GOSSIP_ON_EXT|GossipOnExt|Whether or not to accept gossip requests on the external http endpoint (Default: True)|
+|-HttpPrefixes <br/>--http-prefixes=VALUE|HTTP_PREFIXES|HttpPrefixes|The prefixes that the http server should respond to. (Default: n/a)|
+|-EnableTrustedAuth <br/>--enable-trusted-auth=VALUE|ENABLE_TRUSTED_AUTH|EnableTrustedAuth|Enables trusted authentication by an intermediary in the Http (Default: False)|
+|-UseInternalSsl <br/>--use-internal-ssl=VALUE|USE_INTERNAL_SSL|UseInternalSsl|Whether to use secure internal communication. (Default: False)|
+|-SslTargetHost <br/>--ssl-target-host=VALUE|SSL_TARGET_HOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a)|
+|-SslValidateServer <br/>--ssl-validate-server=VALUE|SSL_VALIDATE_SERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True)|
 
 ###Projections Options
 
@@ -155,5 +155,5 @@ Projections are currently a *BETA* feature, you should avoid using them for crit
 
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-RunProjections <br/>--run-projections=VALUE|RUNPROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System) Possible Values: None,System,All|
-|-ProjectionThreads <br/>--projection-threads=VALUE|PROJECTIONTHREADS|ProjectionThreads|The number of threads to use for projections. (Default: 3)|
+|-RunProjections <br/>--run-projections=VALUE|RUNP_ROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System) Possible Values: None,System,All|
+|-ProjectionThreads <br/>--projection-threads=VALUE|PROJECTION_THREADS|ProjectionThreads|The number of threads to use for projections. (Default: 3)|
