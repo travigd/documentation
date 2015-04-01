@@ -167,8 +167,10 @@ User-specified metadata can also be added here. Some examples of good uses of us
 This information is then posted to the stream.
 
 ```
-oruo@ouroboros:> curl -i -d @data.txt http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit -H "Content-Type: application/json"
+oruo@ouroboros:> curl -i -d @data.txt http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit -H "Content-Type: application/vnd.eventstore.events+json"
 ```
+
+You don't need to write with the vnd.eventstore.events+json media type you can write to it as a normal stream
 
 ```http
 HTTP/1.1 201 Created
@@ -186,7 +188,7 @@ Date: Sun, 16 Jun 2013 14:50:21 GMT
 If the specified user does not have permissions to write to the stream metadata, a 401 Unauthorized response will be given:
 
 ```
-ouro@ouroboros:> curl -i -d @data.txt http://127.0.0.1:2113/streams/$users/metadata --user invaliduser:invalidpass -H "Content-Type: application/json"
+ouro@ouroboros:> curl -i -d @data.txt http://127.0.0.1:2113/streams/$users/metadata --user invaliduser:invalidpass -H "Content-Type: application/vnd.eventstore.events+json"
 ```
 
 ```http
