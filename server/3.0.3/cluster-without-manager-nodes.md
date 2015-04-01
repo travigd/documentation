@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Cluster using only Database Nodes (OSS)"
 section: "Server"
-version: 3.0.0
+version: 3.0.3
 ---
 
 <span class="note">
