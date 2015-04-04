@@ -3,9 +3,9 @@ title: "Competing Consumers Introduction"
 section: "Introduction"
 ---
 
-Beginning with version 3.0.2 a new subscription model is available in Event Store. This model is known as competing consumers and is very similar to subscriptions models you may have dealt with in the past such as AMQP. This document serves as a high level overview of the functionality, what it can provide, and when you may want to use it.
+Beginning with version 3.1.0 a new subscription model is available in Event Store. This model is known as competing consumers and is very similar to subscriptions models you may have dealt with in the past such as AMQP. This document serves as a high level overview of the functionality, what it can provide, and when you may want to use it.
 
-<span class="note">Competing Consumers only exists in version 3.0.2 and above. Please see specific version documentation in order to gain more details on methods names etc.</span>
+<span class="note">Competing Consumers only exists in version 3.1.0 and above. Please see specific version documentation in order to gain more details on methods names etc.</span>
 
 ## What is Competing Consumers
 
