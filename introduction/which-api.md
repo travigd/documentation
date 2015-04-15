@@ -9,9 +9,33 @@ There are multiple interface over which you can communicate with the Event Store
 
 A low level protocol is offered in the form of an asynchronous TCP protocol that exchanges protobuf objects. At present this protocol only has adapters for .NET and Node.js, though more adapters are being written for other platforms including the JVM.
 
+### Supported Clients
+
+[.net Client](http://www.nuget.org/packages/EventStore.Client)
+[JVM Client](https://github.com/EventStore/EventStore.JVM)
+
+### Community Developed Clients
+
+[Node.js](https://www.npmjs.com/package/event-store-client)
+[Node.js](https://www.npmjs.com/package/ges-client)
+[Haskell](https://github.com/YoEight/eventstore)
+[Erlang](https://bitbucket.org/anakryiko/erles)
+
 ## HTTP
 
 The other interface is HTTP-based. In particular it is based upon the [AtomPub protocol](http://tools.ietf.org/html/rfc5023). As it operates over HTTP this will be seemingly less efficient, but it can be supported in nearly any environment.
+
+### Supported Clients
+
+[HTTP API](/http-api)
+
+### Community Developed Clients
+
+[Ruby](https://github.com/arkency/http_eventstore)
+
+<span class="note">
+Feel free to add more! Being listed as a community client does not imply official support.
+</span>
 
 ## Which to use?
 
