@@ -1,14 +1,14 @@
 ---
 title: "Stream Metadata"
 section: "HTTP API"
-version: "3.1.0 (pre-release)"
+version: "3.0.2"
 ---
 
-Every stream in the Event Store has metadata associated with it. Internally, the metadata includes such information as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API. 
+Every stream in the Event Store has metadata associated with it. Internally, the metadata includes such information as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API.
 
 A common use case of information you may want to store in metadata is information associated with an event that is not part of the event. An example of this might be which user wrote the event? Which application server were they talking to? From what IP address did the request come from? This type of information is not part of the actual event but is metadata assocatiated with the event.
 
-Stream metadata is stored internally as JSON, and can be accessed over the HTTP APIs. 
+Stream metadata is stored internally as JSON, and can be accessed over the HTTP APIs.
 
 ## Reading Stream Metadata
 
@@ -151,7 +151,7 @@ To update the metadata for a stream, a `POST` should be made to the metadata res
         "eventType": "$user-updated",
         "data": {
             "readRole": "$all",
-            "metaReadRole": "$all" 
+            "metaReadRole": "$all"
         }
     }
 ]
