@@ -63,3 +63,7 @@ $ ./run-node.sh --db ./ESData
 Although you can run the Event Store binary directly, a `run-node` shell script is provided which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of the Event Store, this is necessary if you are planning to use projections.
 
 The Event Store builds for both Linux and OS X have the Mono runtime bundled in, this means that you do not need Mono installed locally to run Event Store.
+
+### Shutting down an Event Store node
+
+Event Store has been designed to be safe by default - it is expected that it will but shut down using `kill -9`. However, it is also possible to initiate a shutdown via the web UI, by clicking on the "Shutdown Server" button located on the "Admin" page. This may be useful if you do not have console access to the node, or need to script initiating a shutdown.
