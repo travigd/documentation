@@ -110,10 +110,10 @@ The parameters are:
         </tr>
         <tr>
             <td><code>int expectedVersion</code></td>
-            <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](../optimistic-concurrency-and-idempotence) for a broader discussion of this.</code></td>
+            <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See <a href="../optimistic-concurrency-and-idempotence">here</a> for a broader discussion of this.</td>
         </tr>
         <tr>
-            <td><code>IEnumerable<EventData> events</code></td>
+            <td><code>IEnumerable&lt;EventData&gt; events</code></td>
             <td>The events to append. There is also an overload of each method which takes the events as a `params` array.</td>
         </tr>
     </tbody>
