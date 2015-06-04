@@ -1,7 +1,7 @@
 ---
 title: "Command Line Arguments"
 section: "Server"
-version: 3.0.3
+version: 3.0.5
 ---
 
 The Event Store supports many configuration points. There are three distinct ways to set any parameter in the system. Items can be set via command line, environment variables, or put into YAML files. Each of these configuration options has its own trade offs.

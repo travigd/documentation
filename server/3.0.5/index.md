@@ -1,9 +1,11 @@
 ---
 title: "Running the Event Store"
 section: "Server"
-version: 3.0.3
+version: 3.0.5
 pinned: true
 ---
+
+**Please note: the 3.0.4 release was withdrawn from distribution as the initially released binaries were built from an incorrect source tag on Windows. Consequently the version number was changed to 3.0.5 to avoid confusion.**
 
 The Event Store runs as a server, to which clients can connect either over HTTP or using one of the client APIs. Both the open source, and commercial versions, can be run as either a single node, or a highly available cluster of nodes.
 
