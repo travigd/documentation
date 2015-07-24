@@ -5,7 +5,7 @@ version: 3.0.2
 pinned: true
 ---
 
-The .NET Client API communicates with the Event Store using over TCP, using length-prefixed serialized protocol buffers. The API allows for reading and writing operations, as well as for subscriptions to individual event streams or all events written.
+The .NET Client API communicates with the Event Store over TCP, using length-prefixed serialized protocol buffers. The API allows for reading and writing operations, as well as for subscriptions to individual event streams or all events written.
 
 ## EventStoreConnection
 
