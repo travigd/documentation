@@ -5,7 +5,7 @@ version: 3.0.1
 pinned: true
 ---
 
-The .NET Client API communicates with the Event Store using over TCP, using length-prefixed serialized protocol buffers. The API allows for reading and writing operations, as well as for subscriptions to individual event streams or all events written.
+The .NET Client API communicates with the Event Store over TCP, using length-prefixed serialized protocol buffers. The API allows for reading and writing operations, as well as for subscriptions to individual event streams or all events written.
 
 ## EventStoreConnection
 
@@ -22,7 +22,7 @@ To get maximum performance from the connection, it is recommended that it be use
 The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](./connecting-to-a-server/), [Reading Events](./reading-events/) and [Writing to a Stream](./writing-to-a-stream/)
 
 ```CSharp
-var connection = 
+var connection =
     EventStoreConnection.Create(new IPEndPoint(IPAddress.Loopback, 1113));
 
 // Don't forget to tell the connection to connect!
@@ -35,7 +35,7 @@ var myEvent = new EventData(Guid.NewGuid(), "testEvent", false,
 connection.AppendToStreamAsync("test-stream",
                                ExpectedVersion.Any, myEvent).Wait();
 
-var streamEvents = 
+var streamEvents =
     connection.ReadStreamEventsForwardAsync("test-stream", 0, 1, false).Result;
 
 var returnedEvent = streamEvents.Events[0].Event;
