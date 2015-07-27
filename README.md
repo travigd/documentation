@@ -8,12 +8,12 @@ What follows is documentation for how to use the Event Store documentation. If y
 
 The Event Store documentation is available for many versions of Event Store and its APIs. By default the website shows documentation for the latest stable release of each component. Current sections and versions are:
 
-| Section      | Versions                                                 |
-| :----------- | :------------------------------------------------------- |
-| Introduction | Always shows latest                                      |
-| Server       | 3.1.0 (pre-release), 3.0.3 (latest), 3.0.2, 3.0.1, 3.0.0 |
-| .NET API     | 3.1.0 (pre-release), 3.0.2 (latest), 3.0.1, 3.0.0        |
-| HTTP API     | 3.1.0 (pre-release), 3.0.3 (latest), 3.0.2, 3.0.1, 3.0.0 |
+| Section      | Versions                                                        |
+| :----------- | :-------------------------------------------------------------- |
+| Introduction | Always shows latest                                             |
+| Server       | 3.1.0 (pre-release), 3.0.5 (latest), 3.0.3, 3.0.2, 3.0.1, 3.0.0 |
+| .NET API     | 3.1.0 (pre-release), 3.0.2 (latest), 3.0.1, 3.0.0               |
+| HTTP API     | 3.1.0 (pre-release), 3.0.3 (latest), 3.0.2, 3.0.1, 3.0.0        |
 
 The Event Store server uses [semantic versioning](http://semver.org). API versions are based on the major server version they support.
 
@@ -23,9 +23,9 @@ The Event Store server uses [semantic versioning](http://semver.org). API versio
 
 GitHub Pages renders this documentation using Jekyll. You can generate the site locally and test your changes. Follow the instructions [here](https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll) to get Ruby and Bundler installed.
 
-Once installed, navigate to the root of the repository and run 
+Once installed, navigate to the root of the repository and run
 
-`bundle install` 
+`bundle install`
 followed by
 `bundle exec jekyll serve`
 
