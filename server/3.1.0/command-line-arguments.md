@@ -130,8 +130,8 @@ The following parameters are supported by the Event Store:
 ###Interface Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
-|-IntIp<br/>--int-ip=VALUE<br/>|INT_IP|IntIp|Internal IP Address. (Default: 0.0.0.0) |
-|-ExtIp<br/>--ext-ip=VALUE<br/>|EXT_IP|ExtIp|External IP Address. (Default: 0.0.0.0) |
+|-IntIp<br/>--int-ip=VALUE<br/>|INT_IP|IntIp|Internal IP Address. (Default: 127.0.0.1) |
+|-ExtIp<br/>--ext-ip=VALUE<br/>|EXT_IP|ExtIp|External IP Address. (Default: 127.0.0.1) |
 |-IntHttpPort<br/>--int-http-port=VALUE<br/>|INT_HTTP_PORT|IntHttpPort|Internal HTTP Port. (Default: 2112) |
 |-ExtHttpPort<br/>--ext-http-port=VALUE<br/>|EXT_HTTP_PORT|ExtHttpPort|External HTTP Port. (Default: 2113) |
 |-IntTcpPort<br/>--int-tcp-port=VALUE<br/>|INT_TCP_PORT|IntTcpPort|Internal TCP Port. (Default: 1112) |
