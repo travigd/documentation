@@ -5,7 +5,9 @@ version: "3.1.0 (pre-release)"
 pinned: true
 ---
 
-The "Application Directory" herein referes to the directory "EventStore.ClusterNode.exe" or "eventstored" is located in.
+<span class="note--warning">
+The "ApplicationDirectory" herein referes to the directory "EventStore.ClusterNode.exe" or "eventstored" is located in.
+</span>
 
 ### Linux ###
 - **Content :** /usr/share/eventstore
@@ -13,9 +15,9 @@ The "Application Directory" herein referes to the directory "EventStore.ClusterN
 - **Data :** /var/lib/eventstore
 - **Logs :** /var/log/eventstore
 - **Test Client :** ApplicationDirectory/testclientlogs
-- **Web Content :** DefaultContentDirectory/clusternode-web (if ApplicationDirectory/clusternode-web doesn't exist)
-- **Projections :** DefaultContentDirectory/projections (if ApplicationDirectory/projections doesn't exist)
-- **Prelude :** DefaultContentDirectory/Prelude (if ApplicationDirectory/Prelude doesn't exist)
+- **Web Content :** {Content}/clusternode-web *(if ApplicationDirectory/clusternode-web doesn't exist)*
+- **Projections :** {Content}/projections *(if ApplicationDirectory/projections doesn't exist)*
+- **Prelude :** {Content}/Prelude *(if ApplicationDirectory/Prelude doesn't exist)*
 
 ### All other OSes (Includes Windows/OSX) ###
 - **Content :** ApplicationDirectory
@@ -23,6 +25,6 @@ The "Application Directory" herein referes to the directory "EventStore.ClusterN
 - **Data :** ApplicationDirectory/data
 - **Logs :** ApplicationDirectory/logs
 - **Test Client Log :** ApplicationDirectory/testclientlogs
-- **Web Content :** DefaultContentDirectory/clusternode-web (if ApplicationDirectory/clusternode-web doesn't exist)
-- **Projections :** DefaultContentDirectory/projections (if ApplicationDirectory/projections doesn't exist)
-- **Prelude :** DefaultContentDirectory/Prelude (if ApplicationDirectory/Prelude doesn't exist)
+- **Web Content :** {Content}/clusternode-web *(if ApplicationDirectory/clusternode-web doesn't exist)*
+- **Projections :** {Content}/projections *(if ApplicationDirectory/projections doesn't exist)*
+- **Prelude :** {Content}/Prelude *(if ApplicationDirectory/Prelude doesn't exist)*
