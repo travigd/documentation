@@ -5,9 +5,12 @@ version: "3.1.0"
 pinned: true
 ---
 
-If deploying on Ubuntu 14.04, or another Debian-derived version of Linux with the same version of `libc`, you can install Event Store via our package repository. When installing you can either install the latest version, or add a snapshot which pins a specific version. We recommend pinning a specific version in production.
+If deploying on Ubuntu 14.04, or another Debian-derived version of Linux with the same version of `libc`, you can install Event Store via our package repository. When installing you can either install the latest version, or add a snapshot repository which pins a specific version.
+
+We recommend pinning a specific version in production.
 
 To install, the following steps must be followed:
+
 - Add the Event Store GPG signing key using `apt-key`
 - Add the package repository to the list of system sources
 - Update the package cache
