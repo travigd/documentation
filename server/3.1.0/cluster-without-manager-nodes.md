@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Cluster using only Database Nodes (OSS)"
 section: "Server"
-version: "3.1.0 (pre-release)"
+version: "3.1.0"
 ---
 
 Effective September of 2013 all of the clustering code for Event Store has been open sourced (under the normal BSD-3 license as the rest of the code). This document will look at how you can setup a highly available cluster using just the open source components.
