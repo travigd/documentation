@@ -5,26 +5,28 @@ version: "3.1.0 (pre-release)"
 pinned: true
 ---
 
+The default directories used by Event Store vary by platform in order to best fit with the expectations of users in each case.
+
 <span class="note--warning">
-The "ApplicationDirectory" herein referes to the directory "EventStore.ClusterNode.exe" or "eventstored" is located in.
+Paths beginning with "." are relative to the directory in which "eventstored" or "EventStore.ClusterNode.exe" are located. Absolute paths are as written.
 </span>
 
 ### Linux ###
-- **Content :** /usr/share/eventstore
-- **Configuration :** /etc/eventstore/
-- **Data :** /var/lib/eventstore
-- **Logs :** /var/log/eventstore
-- **Test Client :** ApplicationDirectory/testclientlogs
-- **Web Content :** {Content}/clusternode-web *(if ApplicationDirectory/clusternode-web doesn't exist)*
-- **Projections :** {Content}/projections *(if ApplicationDirectory/projections doesn't exist)*
-- **Prelude :** {Content}/Prelude *(if ApplicationDirectory/Prelude doesn't exist)*
+- **Content:** `/usr/share/eventstore`
+- **Configuration:** `/etc/eventstore/`
+- **Data:** `/var/lib/eventstore`
+- **Application Logs:** `/var/log/eventstore`
+- **Test Client Logs:** `./testclientlog`
+- **Web Content:** `./clusternode-web` *then* `{Content}/clusternode-web`
+- **Projections:** `./projections` *then* `{Content}/projections`
+- **Prelude:** `./Prelude` *then* `{Content}/Prelude`
 
 ### All other OSes (Includes Windows/OSX) ###
-- **Content :** ApplicationDirectory
-- **Configuration :** ApplicationDirectory
-- **Data :** ApplicationDirectory/data
-- **Logs :** ApplicationDirectory/logs
-- **Test Client Log :** ApplicationDirectory/testclientlogs
-- **Web Content :** {Content}/clusternode-web *(if ApplicationDirectory/clusternode-web doesn't exist)*
-- **Projections :** {Content}/projections *(if ApplicationDirectory/projections doesn't exist)*
-- **Prelude :** {Content}/Prelude *(if ApplicationDirectory/Prelude doesn't exist)*
+- **Content:** `./`
+- **Configuration:** `./`
+- **Data:** `./data`
+- **Application Logs:** `./logs`
+- **Test Client Log:** `./testclientlogs`
+- **Web Content:** `./clusternode-web` *then* `{Content}/clusternode-web`
+- **Projections:** `./projections` *then* `{Content}/projections`
+- **Prelude:** `./Prelude` *then* `{Content}/Prelude`
