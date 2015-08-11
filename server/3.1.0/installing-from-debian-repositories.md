@@ -18,6 +18,10 @@ To install, the following steps must be followed:
 
 ## Installation Script
 
+<span class="note--warning">
+Please note that all packages we distribute are targeted at the amd64 architecture. Failing to include the `[arch=amd64]` clause in the repository specification will cause `apt-get` to fail during update.
+</span>
+
 The following script will perform these actions, installing the latest version each time:
 
 ```bash
