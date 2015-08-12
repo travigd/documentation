@@ -1,7 +1,7 @@
 ---
 title: "Optimistic Concurrency & Idempotence"
 section: "HTTP API"
-version: "3.1.0 (pre-release)"
+version: "3.1.0"
 ---
 
 ## Idempotency

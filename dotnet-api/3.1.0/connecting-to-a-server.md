@@ -1,7 +1,7 @@
 ---
 title: "Connecting to a Server"
 section: ".NET API"
-version: "3.1.0 (pre-release)"
+version: "3.1.0"
 ---
 
 ## EventStoreConnection

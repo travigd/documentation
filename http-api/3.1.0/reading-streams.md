@@ -1,7 +1,7 @@
 ---
 title: "Reading Streams and Events"
 section: "HTTP API"
-version: "3.1.0 (pre-release)"
+version: "3.1.0"
 ---
 
 Reading from streams with AtomPub can be a bit confusing if you have not done it before but we will go through in this document how reading works. Luckily for many environments the AtomPub protocol has already been implemented!

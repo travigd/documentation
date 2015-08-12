@@ -1,7 +1,7 @@
 ---
 title: "Optional HTTP Headers: Requires Master"
 section: "HTTP API"
-version: "3.1.0 (pre-release)"
+version: "3.1.0"
 exclude_from_sidebar: true
 ---
 

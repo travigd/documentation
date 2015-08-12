@@ -1,7 +1,7 @@
 ---
 title: "Security"
 section: "HTTP API"
-version: "3.1.0 (pre-release)"
+version: "3.1.0"
 ---
 
 The Event Store supports security over HTTP. This document is meant as an introduction to how the security is implemented.
