@@ -1,0 +1,32 @@
+---
+title: "Default Directories"
+section: "Server"
+version: "vnext"
+pinned: true
+---
+
+The default directories used by Event Store vary by platform in order to best fit with the expectations of users in each case.
+
+<span class="note--warning">
+Paths beginning with "." are relative to the directory in which "eventstored" or "EventStore.ClusterNode.exe" are located. Absolute paths are as written.
+</span>
+
+### Linux ###
+- **Content:** `/usr/share/eventstore`
+- **Configuration:** `/etc/eventstore/`
+- **Data:** `/var/lib/eventstore`
+- **Application Logs:** `/var/log/eventstore`
+- **Test Client Logs:** `./testclientlog`
+- **Web Content:** `./clusternode-web` *then* `{Content}/clusternode-web`
+- **Projections:** `./projections` *then* `{Content}/projections`
+- **Prelude:** `./Prelude` *then* `{Content}/Prelude`
+
+### All other OSes (Includes Windows/OSX) ###
+- **Content:** `./`
+- **Configuration:** `./`
+- **Data:** `./data`
+- **Application Logs:** `./logs`
+- **Test Client Log:** `./testclientlogs`
+- **Web Content:** `./clusternode-web` *then* `{Content}/clusternode-web`
+- **Projections:** `./projections` *then* `{Content}/projections`
+- **Prelude:** `./Prelude` *then* `{Content}/Prelude`

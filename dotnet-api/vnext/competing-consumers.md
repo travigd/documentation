@@ -1,7 +1,7 @@
 ---
 title: "Competing Consumers"
 section: ".NET API"
-version: "3.1.0"
+version: "vnext"
 ---
 
 This document walks through the .NET client API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see [the overview document](../../../introduction/competing-consumers).
