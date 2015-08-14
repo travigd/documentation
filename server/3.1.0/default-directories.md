@@ -12,11 +12,12 @@ Paths beginning with "." are relative to the directory in which "eventstored" or
 </span>
 
 ### Linux ###
+- **Application:** `/usr/bin` (when installed via Debian package)
 - **Content:** `/usr/share/eventstore`
 - **Configuration:** `/etc/eventstore/`
 - **Data:** `/var/lib/eventstore`
 - **Application Logs:** `/var/log/eventstore`
-- **Test Client Logs:** `./testclientlog`
+- **Test Client Logs:** `./testclientlog` (not included in Debian package)
 - **Web Content:** `./clusternode-web` *then* `{Content}/clusternode-web`
 - **Projections:** `./projections` *then* `{Content}/projections`
 - **Prelude:** `./Prelude` *then* `{Content}/Prelude`
