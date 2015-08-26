@@ -27,4 +27,4 @@ For example, `/dev/sda` to see whether caching is enabled on your drive. Be wary
 
 to your `/etc/hdparm.conf`.
 
-If you are running the clustered version you may wish to allow these unlikely events to happen. The drives will run faster with caching enabled and it is extraordinarily unlikely that would lose three machines at the same time with corruption (providing you don’t plug then all into the same power outlet!). If this were to happen you would just truncate your data and re-replicate from the other nodes. 
+If you are running the clustered version you may wish to allow these unlikely events to happen. The drives will run faster with caching enabled and it is extraordinarily unlikely that would lose three machines at the same time with corruption (providing you don’t plug them all into the same power outlet!). If this were to happen you would just truncate your data and re-replicate from the other nodes. 
