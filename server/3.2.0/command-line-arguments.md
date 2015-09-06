@@ -1,7 +1,7 @@
 ---
 title: "Command Line Arguments"
 section: "Server"
-version: "3.1.0"
+version: "3.2.0"
 ---
 
 The Event Store supports many configuration points. There are three distinct ways to set any parameter in the system. Items can be set via command line, environment variables, or put into YAML files. Each of these configuration options has its own trade offs.
@@ -79,6 +79,7 @@ The following parameters are supported by the Event Store:
 |-Force<br/>--force=VALUE<br/>|FORCE|Force|Force the Event Store to run in possibly harmful environments such as with Boehm GC. (Default: False) |
 |-StatsPeriodSec<br/>--stats-period-sec=VALUE<br/>|STATS_PERIOD_SEC|StatsPeriodSec|The number of seconds between statistics gathers. (Default: 30) |
 |-WorkerThreads<br/>--worker-threads=VALUE<br/>|WORKER_THREADS|WorkerThreads|The number of threads to use for pool of worker services. (Default: 5) |
+|-EnableHistograms<br/>--enable-histograms=VALUE<br/>|ENABLE_HISTOGRAMS|EnableHistograms|Enables the tracking of various histograms in the backend, typically only used for debugging etc. (Default: False) |
 
 ###Authentication Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
@@ -124,6 +125,7 @@ The following parameters are supported by the Event Store:
 |-PrepareTimeoutMs<br/>--prepare-timeout-ms=VALUE<br/>|PREPARE_TIMEOUT_MS|PrepareTimeoutMs|Prepare timeout (in milliseconds). (Default: 2000) |
 |-CommitTimeoutMs<br/>--commit-timeout-ms=VALUE<br/>|COMMIT_TIMEOUT_MS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000) |
 |-UnsafeDisableFlushToDisk<br/>--unsafe-disable-flush-to-disk=VALUE<br/>|UNSAFE_DISABLE_FLUSH_TO_DISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False) |
+|-IndexCacheDepth<br/>--index-cache-depth=VALUE<br/>|INDEX_CACHE_DEPTH|IndexCacheDepth|Sets the depth to cache for the mid point cache in index. (Default: 16) |
 
 ###Interface Options
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
@@ -139,6 +141,9 @@ The following parameters are supported by the Event Store:
 |-ExtIpAdvertiseAs<br/>--ext-ip-advertise-as=VALUE<br/>|EXT_IP_ADVERTISE_AS|ExtIpAdvertiseAs|Advertise External Tcp Address As. |
 |-ExtTcpPortAdvertiseAs<br/>--ext-tcp-port-advertise-as=VALUE<br/>|EXT_TCP_PORT_ADVERTISE_AS|ExtTcpPortAdvertiseAs|Advertise External Tcp Port As. (Default: 0) |
 |-ExtHttpPortAdvertiseAs<br/>--ext-http-port-advertise-as=VALUE<br/>|EXT_HTTP_PORT_ADVERTISE_AS|ExtHttpPortAdvertiseAs|Advertise External Http Port As. (Default: 0) |
+|-IntIpAdvertiseAs<br/>--int-ip-advertise-as=VALUE<br/>|INT_IP_ADVERTISE_AS|IntIpAdvertiseAs|Advertise Internal Tcp Address As. |
+|-IntTcpPortAdvertiseAs<br/>--int-tcp-port-advertise-as=VALUE<br/>|INT_TCP_PORT_ADVERTISE_AS|IntTcpPortAdvertiseAs|Advertise Internal Tcp Port As. (Default: 0) |
+|-IntHttpPortAdvertiseAs<br/>--int-http-port-advertise-as=VALUE<br/>|INT_HTTP_PORT_ADVERTISE_AS|IntHttpPortAdvertiseAs|Advertise Internal Http Port As. (Default: 0) |
 |-IntTcpHeartbeatTimeout<br/>--int-tcp-heartbeat-timeout=VALUE<br/>|INT_TCP_HEARTBEAT_TIMEOUT|IntTcpHeartbeatTimeout|Heartbeat timeout for internal TCP sockets (Default: 700) |
 |-ExtTcpHeartbeatTimeout<br/>--ext-tcp-heartbeat-timeout=VALUE<br/>|EXT_TCP_HEARTBEAT_TIMEOUT|ExtTcpHeartbeatTimeout|Heartbeat timeout for external TCP sockets (Default: 1000) |
 |-IntTcpHeartbeatInterval<br/>--int-tcp-heartbeat-interval=VALUE<br/>|INT_TCP_HEARTBEAT_INTERVAL|IntTcpHeartbeatInterval|Heartbeat interval for internal TCP sockets (Default: 700) |
