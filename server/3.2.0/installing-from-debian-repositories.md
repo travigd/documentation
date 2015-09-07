@@ -38,7 +38,7 @@ sudo apt-get install eventstore-oss
 To add a snapshot in order to pin the installed release to a specific version, modify the entry in `eventstore.list` to use the version number rather than a `main` component, for example:
 
 ```
-deb [arch=amd64] https://apt-oss.geteventstore.com/ubuntu/ trusty v3.1.0
+deb [arch=amd64] https://apt-oss.geteventstore.com/ubuntu/ trusty v3.2.0
 ```
 
 ## Configuration
