@@ -20,6 +20,7 @@ A low level protocol is offered in the form of an asynchronous TCP protocol that
 - [Node.js](https://www.npmjs.com/package/ges-client)
 - [Haskell](https://github.com/YoEight/eventstore)
 - [Erlang](https://bitbucket.org/anakryiko/erles)
+- [F#](https://github.com/haf/EventStore.Client.FSharp)
 
 ## HTTP
 
