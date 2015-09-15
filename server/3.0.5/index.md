@@ -49,7 +49,7 @@ Look for an entry on the port you’re trying to use (`2113` unless you’ve spe
 netsh http delete urlacl <the entry you just found>
 
 (e.g.):
-netsh http delete urlacl http://+:2113
+netsh http delete urlacl http://+:2113/
 ```
 
 This should resolve the issue.
