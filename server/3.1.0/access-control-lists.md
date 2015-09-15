@@ -133,7 +133,7 @@ ouro@ouroboros: curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24setti
 ```
 
 <span class="note--warning">
-You should not copy/paste the UUID in that command line but should generate a new one or not provide one (you will be redirected to a URI with one as described in writing events in the HTTP API).
+You should NOT copy/paste the UUID in the above command line and instead generate a new one. Alternatively you can omit the "ES-EventId" header entirely and use "-L" on the curl command-line to follow the redirection (to a URI with one as described in writing events in the HTTP API).
 </span>
 
 ```http
