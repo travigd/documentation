@@ -9,37 +9,9 @@ pinned: true
 These instructions apply only to users of the Open Source Event Store products. Commercial customers have access to a separate package repository which contains all of the commercial tools in packaged form.
 </span>
 
-If deploying on Ubuntu 14.04, or another Debian-derived version of Linux with the same version of `libc`, you can install Event Store via our package repository. When installing you can either install the latest version, or add a snapshot repository which pins a specific version.
+The Event Store packages are hosted on [PackageCloud](https://packagecloud.io/EventStore/EventStore-OSS) and the installation instructions for the supported distributions can be found [here](https://packagecloud.io/EventStore/EventStore-OSS/install).
 
 We recommend pinning a specific version in production.
-
-To install via the package repository, the steps which must be taken are as follows:
-
-- Add the Event Store GPG signing key using `apt-key`
-- Add the package repository to the list of system sources
-- Update the package cache
-- Install the package
-
-## Installation Script
-
-<span class="note--warning">
-Please note that all packages we distribute are targeted at the amd64 architecture. Failing to include the `[arch=amd64]` clause in the repository specification will cause `apt-get` to fail during update.
-</span>
-
-The following script will perform these actions, installing the latest version each time:
-
-```bash
-curl https://apt-oss.geteventstore.com/eventstore.key | sudo apt-key add -
-echo "deb [arch=amd64] https://apt-oss.geteventstore.com/ubuntu/ trusty main" | sudo tee /etc/apt/sources.list.d/eventstore.list
-sudo apt-get update
-sudo apt-get install eventstore-oss
-```
-
-To add a snapshot in order to pin the installed release to a specific version, modify the entry in `eventstore.list` to use the version number rather than a `main` component, for example:
-
-```
-deb [arch=amd64] https://apt-oss.geteventstore.com/ubuntu/ trusty v3.2.0
-```
 
 ## Configuration
 
