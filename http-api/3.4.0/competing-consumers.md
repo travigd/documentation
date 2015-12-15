@@ -112,7 +112,7 @@ Body
         </tr>
         <tr>
             <td><code>namedConsumerStrategy</code></td>
-            <td>RoundRobin/DispatchToSingle</td>
+            <td>RoundRobin/DispatchToSingle/Pinned</td>
         </tr>
     </tbody>
 </table>
@@ -447,7 +447,7 @@ Query Parameters
             <td><code>action</code></td>
             <td> 
               <ul>
-                <li>Park: Don't retry the message, park it until a request is sent to reply the parked messages</li>
+                <li>Park: Don't retry the message, park it until a request is sent to replay the parked messages</li>
                 <li>Retry: Retry the message</li>
                 <li>Skip: Discard the message</li>
                 <li>Stop: Stop the subscription </li>
