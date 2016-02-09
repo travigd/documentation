@@ -38,7 +38,7 @@ As such if you had 7 messages in a subscription and two clients (A/B) (A is allo
 
 The most common mechanism for a slot becoming open would be that client A(or B) returns an Acknowledgement that they have processed say message 1. They can also return a Not Acknowledgement of a message with hints to the server as to what to do with the message (skip/retry/park/server decides). A timeout of the message (which is configurable) is another way this can happen.
 
-<span class="note">The tuning of the maximum number of inflight messages and messgae timeouts are very important when looking at overall subscription performance.</span>
+<span class="note">The tuning of the maximum number of inflight messages and message timeouts are very important when looking at overall subscription performance.</span>
 
 ## Parked Messages
 
