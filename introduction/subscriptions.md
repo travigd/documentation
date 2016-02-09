@@ -18,7 +18,7 @@ For example, if a starting point of 50 is specified when a stream has 100 events
 
 ## Persistent Subscriptions
 
-<span class="note">Persistent subscriptions are currently in development, they are scheduled for inclusion in the upcoming version 3.1.0. To use them now, build the dev branch.</span>
+<span class="note">Persistent subscriptions only exists in version 3.2.0 and above.</span>
 
 This kind of subscriptions supports the "competing consumers" messaging pattern. The subscription state is stored server side in the Event Store and allows for at-least-once delivery guarantees across multiple consumers on the same stream.
 
