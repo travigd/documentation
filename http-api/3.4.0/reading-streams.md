@@ -110,7 +110,7 @@ The accepted content types for GET requests are currently:
 - `application/xml`
 - `application/atom+xml`
 - `application/json`
-- `application/vnd.eventstore.atom+json` 
+- `application/vnd.eventstore.atom+json`
 - `text/xml`
 - `text/html`
 
@@ -488,7 +488,7 @@ Keep-Alive: timeout=15,max=100
 <SNIP>
 ```
 
-The server has told us in the headers that the ETag for this content is `ETag: "180;248368668"`. We can use this in our next request if we are polling the stream for changes. We will put it in the header If-None-Match. This tells the server to check if the response will be the one we already know. 
+The server has told us in the headers that the ETag for this content is `ETag: "180;248368668"`. We can use this in our next request if we are polling the stream for changes. We will put it in the header If-None-Match. This tells the server to check if the response will be the one we already know.
 
 ```
 curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json" -H "If-None-Match:180;248368668"
@@ -736,4 +736,4 @@ Keep-Alive: timeout=15,max=100
    </entry>
 </feed>
 ```
-There are two other modes are just variants of body. There is PrettyBody which will try to reformat the JSON to make it “pretty to read” and there is TryHarder that will work even harder to try to parse and reformat JSON from an event to allow it to be returned in the feed. These do not however include further information, they are focused on what the feed looks like. 
+There are two other modes that are just variants of body. There is PrettyBody which will try to reformat the JSON to make it “pretty to read” and there is TryHarder that will work even harder to try to parse and reformat JSON from an event to allow it to be returned in the feed. These do not however include further information, they are focused on what the feed looks like. 
