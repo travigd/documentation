@@ -59,8 +59,8 @@ You can also connect to the cluster using the native TCP interface. The client A
 In order to setup a connection as above in the command line you can provide gossip seeds to the connection. The client will use the gossip seeds to begin gossiping information about the cluster.
 
 ```csharp
-    EventStoreConnection.Create(
-	ConnectionSettings.Create().KeepReconnecting(),
+EventStoreConnection.Create(
+    ConnectionSettings.Create().KeepReconnecting(),
     ClusterSettings.Create()
         .WithGossipTimeoutOf(TimeSpan.FromMilliseconds(500))
         .WithGossipSeeds(new []
