@@ -112,22 +112,6 @@ Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` o
             <td>The number of messages that should be buffered when in paging mode.</td>
         </tr>
         <tr>
-            <td><code>MinimumCheckPointCountOf(int count)</code></td>
-            <td>The minimum number of messages to write a checkpoint for.</td>
-        </tr>
-       <tr>
-            <td><code>MaximumCheckPointCountOf(int count)</code></td>
-            <td>The maximum number of messages not checkpointed before forcing a checkpoint.</td>
-        </tr>
-        <tr>
-            <td><code>WithMaxRetriesOf(int count)</code></td>
-            <td>Sets the number of times a message should be retried before being considered a bad message.</td>
-        </tr>
-        <tr>
-            <td><code>WithLiveBufferSizeOf(int count)</code></td>
-            <td>The size of the live buffer (in memory) before resorting to paging.</td>
-        </tr>
-        <tr>
             <td><code>WithExtraStatistics</code></td>
             <td>Tells the backend to measure timings on the clients so statistics will contain histograms of them.</td>
         </tr>        
