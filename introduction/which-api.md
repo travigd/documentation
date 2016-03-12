@@ -21,6 +21,7 @@ A low level protocol is offered in the form of an asynchronous TCP protocol that
 - [Haskell](https://github.com/YoEight/eventstore)
 - [Erlang](https://bitbucket.org/anakryiko/erles)
 - [F#](https://github.com/haf/EventStore.Client.FSharp)
+- [PHP](https://github.com/dbellettini/php-eventstore-client)
 
 ## HTTP
 
