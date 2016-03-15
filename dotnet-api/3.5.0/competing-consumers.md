@@ -296,3 +296,39 @@ var subscription = _conn.ConnectToPersistentSubscription("foo",
 Clients must acknowledge (or not acknowledge) messages in the competing consumer model. If you enable auto-ack the subscription will automatically acknowledge messages once they are completed by your handler. If you throw an exception it will shutdown your subscription with a message and the uncaught exception.
 
 You can however choose to not auto-ack messages. This can be quite useful when you have multi-threaded processing of messages in your subscriber and need to pass control to something else. There are methods on the subscription object that you can call `Acknowledge` and `NotAcknowledge` both take a `ResolvedEvent` (the one you processed) both also have overloads for passing and `IEnumerable<ResolvedEvent>`.
+
+
+## Consumer Strategies
+
+When creating a persistent subscription the settings allow for different consumer strategies via the WithNamedConsumerStrategy method. Built in strategies are defined in the enum `SystemConsumerStrategies`. 
+
+<span class="note">HTTP clients bypass the consumer strategy. This means any ordering or pinning will be ignored.<span>
+
+<table>
+    <thead>
+        <tr>
+            <th>Strategy Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>RoundRobin (default)</td>
+            <td>Distributes events to all clients evenly. If the client bufferSize is reached the client is ignored until events are acknowledged/not acknowledged.</td>
+		</tr> 
+		<tr>
+			<td>DispatchToSingle</td>
+            <td>Distributes events to a single client until the bufferSize is reached. After which the next client is selected in a round robin style and the process is repeated.</td>
+		</tr> 
+		<tr>
+			<td>Pinned</td>
+            <td>
+				For use with an indexing projection such as the system $by_category projection.
+				<p/>
+				Each event is inspected for it's source stream id. This id is hashed to one of 1024 buckets which are assigned to individual clients. When a client disconnects it's buckets are assigned to other clients. When a client connects it is assigned some of the existing buckets. This naively attempts to maintain a balanced work load.
+				<p/>
+				The main aim of this strategy is to decrease the likelihood of concurrency and ordering issues whilst maintaining load balancing. *This is not a guarantee* and the usual ordering and concurrency issues must be handled.
+			</td>
+        </tr>                   
+    </tbody>
+</table>
