@@ -18,10 +18,13 @@ A low level protocol is offered in the form of an asynchronous TCP protocol that
 
 - [Node.js](https://www.npmjs.com/package/event-store-client)
 - [Node.js](https://www.npmjs.com/package/ges-client)
+- [Node.js](https://github.com/nicdex/eventstore-node)
 - [Haskell](https://github.com/YoEight/eventstore)
 - [Erlang](https://bitbucket.org/anakryiko/erles)
 - [F#](https://github.com/haf/EventStore.Client.FSharp)
 - [PHP](https://github.com/dbellettini/php-eventstore-client)
+- [Elixir](https://github.com/exponentially/extreme)
+- [Python](https://github.com/madedotcom/atomicpuppy)
 
 ## HTTP
 
