@@ -112,7 +112,7 @@ Body
         </tr>
         <tr>
             <td><code>namedConsumerStrategy</code></td>
-            <td>RoundRobin/DispatchToSingle</td>
+            <td>RoundRobin/DispatchToSingle/Pinned</td>
         </tr>
     </tbody>
 </table>
@@ -321,6 +321,15 @@ Response
 ## Acknowledgements
 Clients must acknowledge (or not acknowledge) messages in the competing consumer model. If the client fails to respond in the given timeout period, the message will be retried.
 
+Note that you should be using the rel links in the feed for acknowledgements (not bookmark uris as they are subject to change in future versions. EG:
+
+```code
+        {
+          "uri": "http://localhost:2113/subscriptions/newstream/competing_consumers_group1/ack/c322e299-cb73-4b47-97c5-5054f920746f",
+          "relation": "ack"
+        },
+```
+
 ### Ack multiple messages  
 <table>
     <thead>
@@ -447,7 +456,7 @@ Query Parameters
             <td><code>action</code></td>
             <td> 
               <ul>
-                <li>Park: Don't retry the message, park it until a request is sent to reply the parked messages</li>
+                <li>Park: Don't retry the message, park it until a request is sent to replay the parked messages</li>
                 <li>Retry: Retry the message</li>
                 <li>Skip: Discard the message</li>
                 <li>Stop: Stop the subscription </li>
