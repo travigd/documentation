@@ -1,16 +1,16 @@
 ---
 title: "User Management"
 section: ".NET API"
-version: "3.1.0 (pre-release)"
+version: "3.1.0"
 ---
 
-The Event Store Client API includes some helper methods that use the HTTP API to allow for the management of users in the system. This document will describe the methods found in the UserManager class (in addition to the XML docs already on it). Note all methods in this class are async.
+The Event Store Client API includes some helper methods that use the HTTP API to allow for the management of users in the system. This document will describe the methods found in the UsersManager class (in addition to the XML docs already on it). Note all methods in this class are async.
 
 ## Methods
 
 ### Create a User
 
-Creates a user, the credentials for this operation must be a member of the $admins grouo
+Creates a user, the credentials for this operation must be a member of the $admins group
 
 ```csharp
         public Task CreateUserAsync(string login, string fullName, string[] groups, string password, UserCredentials userCredentials = null)
