@@ -323,7 +323,7 @@ Clients must acknowledge (or not acknowledge) messages in the competing consumer
 
 Note that you should be using the rel links in the feed for acknowledgements (not bookmark uris as they are subject to change in future versions. EG:
 
-```code
+```
         {
           "uri": "http://localhost:2113/subscriptions/newstream/competing_consumers_group1/ack/c322e299-cb73-4b47-97c5-5054f920746f",
           "relation": "ack"
