@@ -230,7 +230,7 @@ var connectionString = "ConnectTo=discover://admin:changeit@mycluster:3114; Hear
 Tells the connection to try gossiping to a manager found under the DNS mycluster at port 3114 to connect to the cluster.
 
 ```
-var connectionString = "GossipSeeds="192.168.0.2:1111,192.168.0.3:1111; HeartBeatTimeout=500"
+var connectionString = "GossipSeeds=192.168.0.2:1111,192.168.0.3:1111; HeartBeatTimeout=500"
 ```
 
 Tells the connection to try gossiping to the gossip seeds `192.168.0.2` or `192.168.0.3` on port 1111 to discover information about the cluster.
