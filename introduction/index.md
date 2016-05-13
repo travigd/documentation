@@ -166,7 +166,7 @@ This will return our event that we had originally posted. You can also get your 
 
 Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the *last* link and then continue to read the *previous* page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using *first* then *next*.
 
-## Subcribing to Stream to get Updates
+## Subscribing to Stream to get Updates
 
 Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in Atom. As new events arrive new *previous* links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an *at least once* assurance with the following code you would simply save the last URI you had received.
 
