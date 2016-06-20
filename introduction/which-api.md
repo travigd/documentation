@@ -25,6 +25,7 @@ A low level protocol is offered in the form of an asynchronous TCP protocol that
 - [PHP](https://github.com/dbellettini/php-eventstore-client)
 - [Elixir](https://github.com/exponentially/extreme)
 - [Python](https://github.com/madedotcom/atomicpuppy)
+- [Java8](https://github.com/msemys/esjc)
 
 ## HTTP
 
