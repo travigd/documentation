@@ -1,7 +1,7 @@
 ---
 title: "Projections Management"
 section: ".NET API"
-version: "3.1.0 (pre-release)"
+version: "3.2.0"
 ---
 
 **PROJECTIONS ARE STILL IN BETA THIS DOCUMENTATION IS SUBJECT TO CHANGE WITHOUT NOTICE
@@ -54,6 +54,7 @@ Creates a projection that will run until the end of the log and then continue ru
 
 Returns a list of all the projections in the system.
 //TODO make this return objects.
+
 ```csharp
         public Task<string> ListAllAsync(UserCredentials userCredentials = null)
 ```
@@ -61,7 +62,8 @@ Returns a list of all the projections in the system.
 ### List One-Time Projections
 
 Returns a list of all One-Time Projections in the system
-//TODO make this return objects
+//TODO make this return objects.
+
 ```csharp
         public Task<string> ListOneTimeAsync(UserCredentials userCredentials = null)
 ```
