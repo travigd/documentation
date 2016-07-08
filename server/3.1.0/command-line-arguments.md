@@ -65,7 +65,8 @@ User projections are not enabled by default, however the projections engine is u
 
 The following parameters are supported by the Event Store:
 
-###Application Options
+### Application Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-Help<br/>--help=VALUE<br/>|HELP|Help|Show help. (Default: False) |
@@ -80,12 +81,14 @@ The following parameters are supported by the Event Store:
 |-StatsPeriodSec<br/>--stats-period-sec=VALUE<br/>|STATS_PERIOD_SEC|StatsPeriodSec|The number of seconds between statistics gathers. (Default: 30) |
 |-WorkerThreads<br/>--worker-threads=VALUE<br/>|WORKER_THREADS|WorkerThreads|The number of threads to use for pool of worker services. (Default: 5) |
 
-###Authentication Options
+### Authentication Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-AuthenticationType<br/>--authentication-type=VALUE<br/>|AUTHENTICATION_TYPE|AuthenticationType|The type of authentication to use. (Default: internal) |
 
-###Certificate Options
+### Certificate Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-CertificateStoreLocation<br/>--certificate-store-location=VALUE<br/>|CERTIFICATE_STORE_LOCATION|CertificateStoreLocation|The certificate store location name. |
@@ -95,7 +98,8 @@ The following parameters are supported by the Event Store:
 |-CertificateFile<br/>--certificate-file=VALUE<br/>|CERTIFICATE_FILE|CertificateFile|The path to certificate file. |
 |-CertificatePassword<br/>--certificate-password=VALUE<br/>|CERTIFICATE_PASSWORD|CertificatePassword|The password to certificate in file. |
 
-###Cluster Options
+### Cluster Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-ClusterSize<br/>--cluster-size=VALUE<br/>|CLUSTER_SIZE|ClusterSize|The number of nodes in the cluster. (Default: 1) |
@@ -110,7 +114,8 @@ The following parameters are supported by the Event Store:
 |-GossipAllowedDifferenceMs<br/>--gossip-allowed-difference-ms=VALUE<br/>|GOSSIP_ALLOWED_DIFFERENCE_MS|GossipAllowedDifferenceMs|The amount of drift between clocks on nodes allowed before gossip is rejected in ms. (Default: 60000) |
 |-GossipTimeoutMs<br/>--gossip-timeout-ms=VALUE<br/>|GOSSIP_TIMEOUT_MS|GossipTimeoutMs|The timeout on gossip to another node in ms. (Default: 500) |
 
-###Database Options
+### Database Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-MinFlushDelayMs<br/>--min-flush-delay-ms=VALUE<br/>|MIN_FLUSH_DELAY_MS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2) |
@@ -125,7 +130,8 @@ The following parameters are supported by the Event Store:
 |-CommitTimeoutMs<br/>--commit-timeout-ms=VALUE<br/>|COMMIT_TIMEOUT_MS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000) |
 |-UnsafeDisableFlushToDisk<br/>--unsafe-disable-flush-to-disk=VALUE<br/>|UNSAFE_DISABLE_FLUSH_TO_DISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False) |
 
-###Interface Options
+### Interface Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-IntIp<br/>--int-ip=VALUE<br/>|INT_IP|IntIp|Internal IP Address. (Default: 127.0.0.1) |
@@ -154,7 +160,8 @@ The following parameters are supported by the Event Store:
 |-SslTargetHost<br/>--ssl-target-host=VALUE<br/>|SSL_TARGET_HOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a) |
 |-SslValidateServer<br/>--ssl-validate-server=VALUE<br/>|SSL_VALIDATE_SERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True) |
 
-###Projections Options
+### Projections Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-RunProjections<br/>--run-projections=VALUE<br/>|RUN_PROJECTIONS|RunProjections|Enables the running of JavaScript projections. (Default: System) Possible Values: None,System,All|

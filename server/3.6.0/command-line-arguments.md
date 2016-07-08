@@ -65,7 +65,8 @@ User projections are not enabled by default, however the projections engine is u
 
 The following parameters are supported by the Event Store:
 
-###Application Options
+### Application Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-Help<br/>--help=VALUE<br/>|HELP|Help|Show help. (Default: False) |
@@ -83,13 +84,15 @@ The following parameters are supported by the Event Store:
 |-EnableHistograms<br/>--enable-histograms=VALUE<br/>|ENABLE_HISTOGRAMS|EnableHistograms|Enables the tracking of various histograms in the backend, typically only used for debugging etc (Default: False) |
 |-LogHttpRequests<br/>--log-http-requests=VALUE<br/>|LOG_HTTP_REQUESTS|LogHttpRequests|Log Http Requests and Responses before processing them. (Default: False) |
 
-###Authentication Options
+### Authentication Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-AuthenticationType<br/>--authentication-type=VALUE<br/>|AUTHENTICATION_TYPE|AuthenticationType|The type of authentication to use. (Default: internal) |
 |-AuthenticationConfig<br/>--authentication-config=VALUE<br/>|AUTHENTICATION_CONFIG|AuthenticationConfig|Path to the configuration file for authentication configuration (if applicable). |
 
-###Certificate Options
+### Certificate Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-CertificateStoreLocation<br/>--certificate-store-location=VALUE<br/>|CERTIFICATE_STORE_LOCATION|CertificateStoreLocation|The certificate store location name. |
@@ -99,7 +102,8 @@ The following parameters are supported by the Event Store:
 |-CertificateFile<br/>--certificate-file=VALUE<br/>|CERTIFICATE_FILE|CertificateFile|The path to certificate file. |
 |-CertificatePassword<br/>--certificate-password=VALUE<br/>|CERTIFICATE_PASSWORD|CertificatePassword|The password to certificate in file. |
 
-###Cluster Options
+### Cluster Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-ClusterSize<br/>--cluster-size=VALUE<br/>|CLUSTER_SIZE|ClusterSize|The number of nodes in the cluster. (Default: 1) |
@@ -114,7 +118,8 @@ The following parameters are supported by the Event Store:
 |-GossipAllowedDifferenceMs<br/>--gossip-allowed-difference-ms=VALUE<br/>|GOSSIP_ALLOWED_DIFFERENCE_MS|GossipAllowedDifferenceMs|The amount of drift, in ms, between clocks on nodes allowed before gossip is rejected. (Default: 60000) |
 |-GossipTimeoutMs<br/>--gossip-timeout-ms=VALUE<br/>|GOSSIP_TIMEOUT_MS|GossipTimeoutMs|The timeout, in ms, on gossip to another node. (Default: 500) |
 
-###Database Options
+### Database Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-MinFlushDelayMs<br/>--min-flush-delay-ms=VALUE<br/>|MIN_FLUSH_DELAY_MS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2) |
@@ -134,7 +139,8 @@ The following parameters are supported by the Event Store:
 |-UnsafeIgnoreHardDelete<br/>--unsafe-ignore-hard-delete=VALUE<br/>|UNSAFE_IGNORE_HARD_DELETE|UnsafeIgnoreHardDelete|Disables Hard Deletes (UNSAFE: use to remove hard deletes) (Default: False) |
 |-IndexCacheDepth<br/>--index-cache-depth=VALUE<br/>|INDEX_CACHE_DEPTH|IndexCacheDepth|Sets the depth to cache for the mid point cache in index. (Default: 16) |
 
-###Interface Options
+### Interface Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-IntIp<br/>--int-ip=VALUE<br/>|INT_IP|IntIp|Internal IP Address. (Default: 127.0.0.1) |
@@ -168,7 +174,8 @@ The following parameters are supported by the Event Store:
 |-SslTargetHost<br/>--ssl-target-host=VALUE<br/>|SSL_TARGET_HOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a) |
 |-SslValidateServer<br/>--ssl-validate-server=VALUE<br/>|SSL_VALIDATE_SERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True) |
 
-###Projections Options
+### Projections Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-RunProjections<br/>--run-projections=VALUE<br/>|RUN_PROJECTIONS|RunProjections|Enables the running of projections. System runs built-in projections, All runs user projections. (Default: None) Possible Values:None,System,All|

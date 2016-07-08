@@ -65,7 +65,8 @@ User projections are not enabled by default, however the projections engine is u
 
 The following parameters are supported by the Event Store:
 
-###Application Options
+###  Application Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-Help <br/>|HELP|Help|Show help. (Default: False)|
@@ -78,12 +79,14 @@ The following parameters are supported by the Event Store:
 |-StatsPeriodSec <br/>--stats-period-sec=VALUE|STATSPERIODSEC|StatsPeriodSec|The number of seconds between statistics gathers. (Default: 30)|
 |-WorkerThreads <br/>--worker-threads=VALUE|WORKERTHREADS|WorkerThreads|The number of threads to use for pool of worker services. (Default: 5)|
 
-###Authentication Options
+### Authentication Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-AuthenticationType <br/>--authentication-type=VALUE|AUTHENTICATIONTYPE|AuthenticationType|The type of authentication to use. (Default: internal)|
 
-###Certificate Options
+### Certificate Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-CertificateStoreLocation <br/>--certificate-store-location=VALUE|CERTIFICATESTORELOCATION|CertificateStoreLocation|The certificate store location name.|
@@ -93,7 +96,8 @@ The following parameters are supported by the Event Store:
 |-CertificateFile <br/>--certificate-file=VALUE|CERTIFICATEFILE|CertificateFile|The path to certificate file.|
 |-CertificatePassword <br/>--certificate-password=VALUE|CERTIFICATEPASSWORD|CertificatePassword|The password to certificate in file.|
 
-###Cluster Options
+### Cluster Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-ClusterSize <br/>--cluster-size=VALUE|CLUSTERSIZE|ClusterSize|The number of nodes in the cluster. (Default: 1)|
@@ -108,7 +112,8 @@ The following parameters are supported by the Event Store:
 |-GossipAllowedDifferenceMs <br/>--gossip-allowed-difference-ms=VALUE|GOSSIPALLOWEDDIFFERENCEMS|GossipAllowedDifferenceMs|The amount of drift between clocks on nodes allowed before gossip is rejected in ms. (Default: 60000)|
 |-GossipTimeoutMs <br/>--gossip-timeout-ms=VALUE|GOSSIPTIMEOUTMS|GossipTimeoutMs|The timeout on gossip to another node in ms. (Default: 500)|
 
-###Database Options
+### Database Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-MinFlushDelayMs <br/>--min-flush-delay-ms=VALUE|MINFLUSHDELAYMS|MinFlushDelayMs|The minimum flush delay in milliseconds. (Default: 2)|
@@ -123,7 +128,8 @@ The following parameters are supported by the Event Store:
 |-CommitTimeoutMs <br/>--commit-timeout-ms=VALUE|COMMITTIMEOUTMS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000)|
 |-UnsafeDisableFlushToDisk <br/>--unsafe-disable-flush-to-disk=VALUE|UNSAFEDISABLEFLUSHTODISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False)|
 
-###Interface Options
+### Interface Options
+
 | Parameter | Environment *(all prefixed with EVENTSTORE_)* | Yaml | Description |
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-IntIp <br/>--int-ip=VALUE|INTIP|IntIp|Internal IP Address. (Default: 127.0.0.1)|
@@ -147,7 +153,8 @@ The following parameters are supported by the Event Store:
 |-SslTargetHost <br/>--ssl-target-host=VALUE|SSLTARGETHOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a)|
 |-SslValidateServer <br/>--ssl-validate-server=VALUE|SSLVALIDATESERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True)|
 
-###Projections Options
+### Projections Options
+
 
 <span class="note--warning">
 Projections are currently a *BETA* feature, you should avoid using them for critical production tasks.

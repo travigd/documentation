@@ -11,7 +11,7 @@ Event Store allows several nodes to be run as a cluster, in order to achieve hig
 
 This document covers setting up Event Store with manager nodes and database nodes.
 
-##Manager Nodes
+## Manager Nodes
 
 Each physical (or virtual) machine in an Event Store cluster typically runs one manager node and one database node. It is also possible to have multiple database nodes per physical machine, running under one manager node.
 
@@ -22,7 +22,7 @@ Manager nodes have a number of responsibilities:
 - They provide a known endpoint for clients to connect to to discover cluster information.
 - When running on Windows, manager nodes run as Windows services.
 
-##Configuring Nodes
+## Configuring Nodes
 
 Each database or manager node can have a variety of configuration sources. Each source has a priority, and running configuration is determined by evaluating each source and then applying the option from the source with the highest priority.
 
@@ -35,7 +35,7 @@ From lowest to highest priority, the sources of configuration are:
 
 The effective configuration of a node can be determined by passing the `-WhatIf` flag to the process.
 
-##Typical Deployment Topologies
+## Typical Deployment Topologies
 
 Event Store clusters follow a "shared nothing" philiosophy. This means that no shared disks are required in order for clustering to work. Instead, several database nodes store your data in order to ensure that it is not lost in the case of a drive failure or a node crashing.
 
@@ -43,13 +43,13 @@ A quorum-based replication model is used, in which a majority of nodes in the cl
 
 A typical deployment topology consists of three physical machines, each running one manager node and one database node, as shown in figure 1. Each of the physical machines may have two network interfaces - one for communicating with other cluster members, and one for serving clients. Although it may be preferable in some situations to run over two separate networks, it is also possible to use different TCP ports on one interface.
 
-##Cluster gossip
+## Cluster gossip
 
 Event Store uses a quorum-based replication model. When working normally, a cluster will have one database node which is known as a *master*, and the remaining nodes will be *slaves*. The master node is responsible for co-ordinating writes during the period it is master. Database nodes use a concensus algorithm to determine which database node should be master and which should be slaves. The decision as to which node should be master is based on a number of factors (some of which are configurable).
 
 In order for database nodes to have this information available to them, the nodes gossip with other nodes in the cluster. Gossip runs over the internal and optionally the external HTTP interfaces of database nodes, and over both internal and external interfaces of manager nodes.
 
-##Discovering cluster members
+## Discovering cluster members
 
 Manager and database nodes need to know about one another in order to gossip. To bootstrap this process, gossip seeds, or the addresses where some other nodes may be found, must be provided to each node. When running with manager nodes, the following approach is normally used:
 
@@ -160,7 +160,7 @@ For the first node in the example cluster, the watchdog configuration file reads
 # --config c:\EventStore-Config\database.yaml
 ```
 
-### Deploying the Event Store software and configuration
+### Deploying the Event Store software and configuration
 
 Having written configuration files for each node, the software and configuration can be deployed. Although it is possible to use relative paths when writing configuration files, it is preferable to use absolute paths to reduce the potential for confusion.
 

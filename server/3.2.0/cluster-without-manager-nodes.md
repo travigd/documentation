@@ -8,7 +8,7 @@ Effective September of 2013 all of the clustering code for Event Store has been 
 
 When setting up a cluster you will generally want an odd number of nodes. This is due to the fact that the Event Store uses a quorum based algorithm to handle high availability. 
 
-##Running on Same Machine
+## Running on Same Machine
 
 To start with we will set up three nodes running on a single machine run each command in its own console window, remember that you either need admin privileges or have setup ACLs with IIS if running in windows (no configuration should be needed in Unix-like operating systems). Replace "127.0.0.1" with whatever IP address you want to run on. Note that this must be an interface actually present on the machine.
 

@@ -44,6 +44,7 @@ The other method of specifying the configuration is to pass them in when perform
 ```
 
 ### Usage
+
 #### Basic Usage
 
 ```

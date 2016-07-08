@@ -106,6 +106,7 @@ There some important bits to notice here. The Feed here has one item in it. The 
 
 <span class="note">
 The accepted content types for GET requests are currently:
+</span>
 
 - `application/xml`
 - `application/atom+xml`
@@ -113,8 +114,6 @@ The accepted content types for GET requests are currently:
 - `application/vnd.eventstore.atom+json`
 - `text/xml`
 - `text/html`
-
-</span>
 
 ```
 curl -i http://127.0.0.1:2113/streams/newstream2/0 -H "Accept: application/json"
@@ -188,11 +187,12 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
+
 ## Feed Paging
 
 The next thing towards understanding how to read a stream is understanding the first/last/previous/next links that are given within a stream. The basic idea is that the server will give you links so that you can walk through a stream.
 
-To read through the stream we will follow the pattern defined in RFC 5005 http://tools.ietf.org/html/rfc5005.
+To read through the stream we will follow the pattern defined in <a href="http://tools.ietf.org/html/rfc5005">RFC 5005</a>.
 
 In the example above the server had returned as part of its result:
 
