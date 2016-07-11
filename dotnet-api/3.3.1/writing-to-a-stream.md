@@ -8,9 +8,9 @@ TThe client API can be used to write one or more events to a stream atomically. 
 
 An optimistic concurrency check can be made during the write by specifying the version at which the stream is expected to be currently. Identical write operations are idempotent if the optimistic concurrency check is not disabled. More information on optimistic concurrency and idempotence can be found [here](../optimistic-concurrency-and-idempotence).
 
-##Methods
+## Methods
 
-###Appending to a stream in a single write
+### Appending to a stream in a single write
 
 ```csharp
 Task AppendToStreamAsync(string stream, int expectedVersion, IEnumerable<EventData> events)

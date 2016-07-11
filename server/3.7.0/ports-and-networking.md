@@ -24,7 +24,7 @@ The internal tcp and http are configured similarly to the external. All internal
 
 When setting up a cluster the nodes must be able to reach each other over both the internal http channel and the internal tcp channel. You should ensure that these ports are open on firewalls etc both on the machines and between the machines.
 
-##Heartbeat Timeouts
+## Heartbeat Timeouts
 
 Event Store uses heartbeats over all tcp connections to attempt to discover dead clients/nodes. Setting heartbeat timeouts can be tricky, set them too short and you will get false positives, set them too long and discovery of dead clients/nodes becomes slower.
 
@@ -34,7 +34,7 @@ Varying environments want drastically different values for these settings. While
 
 *If in question error on the side of higher numbers, it will only add a small period of time to discover a dead client/node and is likely better than the alternative which is false positives.*
 
-##Advertise As
+## Advertise As
 
 There are times when due to NAT or other reasons a node may not be bound to the address it is actually reachable from other nodes as. As an example the machine could have an ip address of 192.168.1.13 but the node is visible to other nodes as 10.114.12.112.
 

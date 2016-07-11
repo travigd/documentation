@@ -123,7 +123,9 @@ The following options are available when building an Embedded Node
         </tr>
 </tbody>
 </table>
+
 ### Certificate options
+
 <table>
     <thead>
         <tr>
@@ -152,6 +154,7 @@ The following options are available when building an Embedded Node
 </table>
 
 ### Cluster options
+
 <table>
     <thead>
         <tr>
@@ -212,6 +215,7 @@ The following options are available when building an Embedded Node
 </table>
 
 ### Database options
+
 <table>
     <thead>
         <tr>
@@ -288,6 +292,7 @@ The following options are available when building an Embedded Node
 </table>
 
 ### Interface options
+
 <table>
     <thead>
         <tr>
@@ -412,6 +417,7 @@ The following options are available when building an Embedded Node
 </table>
 
 ### Projections options
+
 <table>
     <thead>
         <tr>

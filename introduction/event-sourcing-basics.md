@@ -226,10 +226,13 @@ The cost is that a developer really needs to be intimately familiar with both th
 > To succeed using objects and relational databases together you need to understand both paradigms, and their differences, and then make intelligent tradeoffs based on that knowledge. <cite>Ambler</cite>
  
 Some of these subtle differences can be found in Wikipedia under the "Object-Relational Impedance Mismatch" page but to include some of the major differences:
+
 >
 > 1.  **Declarative vs. imperative interfaces** Relational thinking tends to use data as interfaces, not behaviour as interfaces. It thus has a declarative tilt in design philosophy in contrast to OO’s behavioural tilt. (Some relational proponents propose using triggers, stored procedures, etc. to provide complex behaviour, but this is not a common viewpoint.) <cite>Object-Relational Impedance Mismatch</cite>
+
 >
 > 2.  **Structure vs. behaviour** - OO primarily focuses on ensuring that the structure of the program is reasonable (maintainable, understandable, extensible, reusable, safe), whereas relational systems focus on what kind of behaviour the resulting run-time system has (efficiency, adaptability, fault-tolerance, liveness, logical integrity, etc.). Object-oriented methods generally assume that the primary user of the object-oriented code and its interfaces are the application developers. In relational systems, the end-user’s view of the behaviour of the system is sometimes considered to be more important. However, relational queries and "views" are common techniques to re-represent information in application- or task-specific configurations. Further, relational does not prohibit local or application-specific structures or tables from being created, although many common development tools do not directly provide such a feature, assuming objects will be used instead. This makes it difficult to know whether the stated non-developer perspective of relational is inherent to relational, or merely a product of current practice and tool implementation assumptions. <cite>Object-Relational Impedance Mismatch</cite>
+
 >
 > 3.  **Set vs. graph relationships** The relationship between different items (objects or records) tend to be handled differently between the paradigms. Relational relationships are usually based on idioms taken from set theory, while object relationships lean toward idioms adopted from graph theory (including trees). While each can represent the same information as the other, the approaches they provide to access and manage information differ. <cite>Object-Relational Impedance Mismatch</cite>
 

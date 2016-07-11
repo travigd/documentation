@@ -45,6 +45,7 @@ Below are examples of [writing](../writing-to-a-stream) an event to a stream, as
 ### Writing an event to a stream.
 
 simple-event.txt:
+
 ```json
 [
   {
@@ -210,6 +211,7 @@ Below are examples of [writing](../writing-to-a-stream) an event to a stream, as
 ### Writing an event to a stream.
 
 simple-event.txt:
+
 ```xml
 <Events>
   <Event>
