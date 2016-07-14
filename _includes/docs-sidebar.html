@@ -14,35 +14,45 @@
 
         <li>
             <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__heading {{ sectionClass }}">{{ section }}</span>
-            {% assign pages = site.pages | where:"section",section | where:"exclude_from_sidebar", false %}
-
-            {% assign versions = pages | group_by: "version" | sort: "name" %}
             <ul>
-            {% for version in versions reversed %}
-            {% if page.section == section and page.version == version.name %}
-                {% assign versionClass = "expanded" %}
-            {% else %} 
-                {% assign versionClass = "collapsed" %}
+            {% if page.section == "CLI" %}
+                {% assign viewing_version = site.latest_versions.server %}
+                {% assign viewing_cli_version = page.version %}
+            {% else %}
+                {% if page.version %}
+                    {% assign viewing_version = page.version %}
+                {% else %}
+                    {% assign viewing_version = site.latest_versions.server %}
+                {% endif %}
+                {% assign viewing_cli_version = site.latest_versions.cli %}
             {% endif %}
-            {% if section == "Introduction" %}
-                {% assign versionClass = "expanded" %}
-            {% endif %}
-                <li>
-                    {% if version.name != "" %}
-                    <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__version {{ versionClass }}">{{ version.name }}</span>
-                    {% endif %}
-                    <ul>
-                    {% assign pinnedItems = version.items | where:"pinned", true | sort: "title" %}
-                    {% assign normalItems = version.items | where:"pinned", false | sort: "title" %}
 
-                    {% for item in pinnedItems %}
-                        <li><a href="{{ item.url }}">{{ item.title }}</a>
-                    {% endfor %}
-                    {% for item in normalItems %}
-                        <li><a href="{{ item.url }}">{{ item.title }}</a>
-                    {% endfor %}
-                    </ul>
-                </li>
+            {% assign pages = site.pages | where:"section",section | where:"exclude_from_sidebar", false %}
+            
+            {% assign pinnedItems = pages| where:"pinned", true | sort: "title" %}
+            {% assign normalItems = pages | where:"pinned", false | sort: "title"  %}
+
+            {% for item in pinnedItems %}
+                {% if item.version == viewing_version %}
+                    <li>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% elsif item.section == "CLI" and item.version == viewing_cli_version %}
+                    <li>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% for item in normalItems %}
+                {% if item.version == viewing_version %}
+                    <li>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% elsif item.section == "CLI" and item.version == viewing_cli_version %}
+                    <li>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% endif %}
             {% endfor %}
             </ul>
         </li>        
