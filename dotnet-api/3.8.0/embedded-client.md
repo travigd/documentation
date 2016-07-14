@@ -47,8 +47,12 @@ var nodeBuilder = EmbeddedVNodeBuilder.AsClusterMember(3)
                           new IPEndPoint(IPAddress.Loopback, 3112)
                       });
 var node = nodeBuilder.Build();
-node.StartAndWaitUntilReady();
+node.Start();
 ```
+
+<span class="note--warning">
+When running an embedded cluster, the task returned by `StartAndWaitUntilReady()` will only complete on the master node.
+</span>
 
 ## Connecting to an embedded node
 
