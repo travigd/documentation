@@ -16,15 +16,21 @@
             <span onclick="$(this).toggleClass('expanded collapsed');" class="docs-sidebar__heading {{ sectionClass }}">{{ section }}</span>
             <ul>
             {% if page.section == "CLI" %}
-                {% assign viewing_version = site.latest_versions.server %}
+                {% assign viewing_server_version = site.latest_versions.server %}
+                {% assign viewing_dotnet_version = site.latest_versions.dotnet-api %}
                 {% assign viewing_cli_version = page.version %}
+            {% elsif page.section == ".NET API" %}
+                {% assign viewing_server_version = site.latest_versions.server %}
+                {% assign viewing_dotnet_version = page.version %}
+                {% assign viewing_cli_version = site.latest_versions.cli %}
             {% else %}
                 {% if page.version %}
-                    {% assign viewing_version = page.version %}
+                    {% assign viewing_server_version = page.version %}
                 {% else %}
-                    {% assign viewing_version = site.latest_versions.server %}
+                    {% assign viewing_server_version = site.latest_versions.server %}
                 {% endif %}
                 {% assign viewing_cli_version = site.latest_versions.cli %}
+                {% assign viewing_dotnet_version = site.latest_versions.dotnet-api %}
             {% endif %}
 
             {% assign pages = site.pages | where:"section",section | where:"exclude_from_sidebar", false %}
@@ -33,22 +39,30 @@
             {% assign normalItems = pages | where:"pinned", false | sort: "title"  %}
 
             {% for item in pinnedItems %}
-                {% if item.version == viewing_version %}
+                {% if item.section == "CLI" and item.version == viewing_cli_version %}
                     <li>
                         <a href="{{ item.url }}">{{ item.title }}</a>
                     </li>
-                {% elsif item.section == "CLI" and item.version == viewing_cli_version %}
+                {% elsif item.section == ".NET API" and item.version == viewing_dotnet_version %}
+                    <li>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% elsif item.section != ".NET API" and item.section != "CLI" and item.version == viewing_server_version %}
                     <li>
                         <a href="{{ item.url }}">{{ item.title }}</a>
                     </li>
                 {% endif %}
             {% endfor %}
             {% for item in normalItems %}
-                {% if item.version == viewing_version %}
+                {% if item.section == "CLI" and item.version == viewing_cli_version %}
                     <li>
                         <a href="{{ item.url }}">{{ item.title }}</a>
                     </li>
-                {% elsif item.section == "CLI" and item.version == viewing_cli_version %}
+                {% elsif item.section == ".NET API" and item.version == viewing_dotnet_version %}
+                    <li>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% elsif item.section != ".NET API" and item.section != "CLI" and item.version == viewing_server_version %}
                     <li>
                         <a href="{{ item.url }}">{{ item.title }}</a>
                     </li>
