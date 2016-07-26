@@ -58,6 +58,13 @@
                     {% endfor %}
                 </select>
             </label>
+            {% elsif page.section == ".NET API" %}
+            <label>.NET API Version : <select onchange="location=this.options[this.selectedIndex].value">
+                    {% for version in site.all_dotnet_versions %}
+                    <option value="/dotnet-api/{{version}}" {%if version == page.version %}selected="true" {% endif %}>{{ version }}</option>
+                    {% endfor %}
+                </select>
+            </label>
             {% else %}
             <label>Version : <select onchange="location=this.options[this.selectedIndex].value">
                     {% for version in site.all_versions %}
