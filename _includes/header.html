@@ -51,14 +51,7 @@
     <div class="page-title">
         <div class="inner-container">
             <h1>Documentation</h1>
-            {% if page.section == "CLI" %}
-            <label>CLI Version : <select onchange="location=this.options[this.selectedIndex].value">
-                    {% for version in site.all_cli_versions %}
-                    <option value="/cli/{{version}}" {%if version == page.version %}selected="true" {% endif %}>{{ version }}</option>
-                    {% endfor %}
-                </select>
-            </label>
-            {% elsif page.section == ".NET API" %}
+            {% if page.section == ".NET API" %}
             <label>.NET API Version : <select onchange="location=this.options[this.selectedIndex].value">
                     {% for version in site.all_dotnet_versions %}
                     <option value="/dotnet-api/{{version}}" {%if version == page.version %}selected="true" {% endif %}>{{ version }}</option>

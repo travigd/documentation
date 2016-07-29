@@ -1,4 +1,0 @@
----
-layout: redirect
-version: latest
----
