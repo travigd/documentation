@@ -8,12 +8,13 @@ take a while)
 If you have a large db / remote storage / etc and cannot take the time
 you can also do this operation offline on another node:
 
-# Take back up.
-# Put on fast local disks
-# Let it rebuild
-# Restore the index back to a node (index folder)
-# Let it catch up from master.
-# Repeat 4/5 for other nodes.
+### Take back up.
+### Restore to fast local disks
+### Delete index folder from back up 
+### Run event store with cluster size 3 to prevent other writes. It will rebuild index.
+### Restore the index back to a node (index folder)
+### Let it catch up from master.
+### Repeat restore for other nodes.
 
 For others the index will eventually be 64 bit due to the merging
 process that occurs over time.
