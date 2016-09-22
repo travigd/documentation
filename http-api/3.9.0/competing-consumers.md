@@ -259,7 +259,7 @@ See the [Reading Streams](../reading-streams) for information regarding the diff
 
 Response  
 
-```
+``` json
 {
   "title": "All Events Persistent Subscription",
   "id": "http://localhost:2113/subscriptions/newstream/competing_consumers_group1",
@@ -324,10 +324,10 @@ Clients must acknowledge (or not acknowledge) messages in the competing consumer
 Note that you should be using the rel links in the feed for acknowledgements (not bookmark uris as they are subject to change in future versions. EG:
 
 ```
-        {
-          "uri": "http://localhost:2113/subscriptions/newstream/competing_consumers_group1/ack/c322e299-cb73-4b47-97c5-5054f920746f",
-          "relation": "ack"
-        },
+{
+  "uri": "http://localhost:2113/subscriptions/newstream/competing_consumers_group1/ack/c322e299-cb73-4b47-97c5-5054f920746f",
+  "relation": "ack"
+},
 ```
 
 ### Ack multiple messages  
@@ -525,7 +525,7 @@ Query Parameters
 </table>
 Response  
 
-```
+``` json
 [
   {
     "links": [
@@ -587,7 +587,7 @@ Response
 </table>
 Response  
 
-```
+``` json
 [
   {
     "links": [

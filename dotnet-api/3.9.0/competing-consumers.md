@@ -29,14 +29,14 @@ Task<PersistentSubscriptionDeleteResult> DeletePersistentSubscriptionAsync(strin
 ## Connecting to a Persistent Subscription
 
 ```csharp
-        EventStorePersistentSubscription ConnectToPersistentSubscription(
-            string groupName, 
-            string stream, 
-            Action<EventStorePersistentSubscription, ResolvedEvent> eventAppeared,
-            Action<EventStorePersistentSubscription, SubscriptionDropReason, Exception> subscriptionDropped = null,
-            UserCredentials userCredentials = null,
-            int bufferSize = 10,
-            bool autoAck = true);
+EventStorePersistentSubscription ConnectToPersistentSubscription(
+    string groupName, 
+    string stream, 
+    Action<EventStorePersistentSubscription, ResolvedEvent> eventAppeared,
+    Action<EventStorePersistentSubscription, SubscriptionDropReason, Exception> subscriptionDropped = null,
+    UserCredentials userCredentials = null,
+    int bufferSize = 10,
+    bool autoAck = true);
 ```
 
 ## Persistent Subscription Settings
@@ -246,9 +246,9 @@ The most important parameter to pass when connecting is the buffer size. This re
 
 ```csharp
 var subscription = _conn.ConnectToPersistentSubscription("foo",
-    									"nonexisting2",
-    									(sub, e) => Console.Write("appeared"),
-    									(sub, reason, ex) =>{});
+                                                         "nonexisting2",
+                                                         (sub, e) => Console.Write("appeared"),
+                                                         (sub, reason, ex) =>{});
 ```
 
 <table>

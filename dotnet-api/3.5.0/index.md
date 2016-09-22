@@ -21,7 +21,7 @@ To get maximum performance from the connection, it is recommended that it be use
 
 The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](./connecting-to-a-server/), [Reading Events](./reading-events/) and [Writing to a Stream](./writing-to-a-stream/)
 
-```CSharp
+``` csharp
 var connection =
     EventStoreConnection.Create(new IPEndPoint(IPAddress.Loopback, 1113));
 

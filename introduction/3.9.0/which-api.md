@@ -27,7 +27,7 @@ A low level protocol is offered in the form of an asynchronous TCP protocol that
 - [Elixir](https://github.com/exponentially/extreme)
 - [Python](https://github.com/madedotcom/atomicpuppy)
 - [Java8](https://github.com/msemys/esjc)
-- [Maven plugin] (https://github.com/fuinorg/event-store-maven-plugin)
+- [Maven plugin](https://github.com/fuinorg/event-store-maven-plugin)
 
 ## HTTP
 

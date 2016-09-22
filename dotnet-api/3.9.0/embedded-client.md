@@ -62,10 +62,10 @@ Calling `EmbeddedEventStoreConnection.Create(ClusterVNode)` will return an `IEve
 ```csharp
 using(var embeddedConn = EmbeddedEventStoreConnection.Create(node))
 {
-	embeddedConn.ConnectAsync().Wait();
+    embeddedConn.ConnectAsync().Wait();
     embeddedConn.AppendToStreamAsync("testStream", ExpectedVersion.Any, 
-    					new EventData(Guid.NewGuid(), "eventType", true, 
-    					Encoding.UTF8.GetBytes("{\"Foo\":\"Bar\"}"), null)).Wait();
+                    new EventData(Guid.NewGuid(), "eventType", true, 
+                    Encoding.UTF8.GetBytes("{\"Foo\":\"Bar\"}"), null)).Wait();
 }
 ```
 
