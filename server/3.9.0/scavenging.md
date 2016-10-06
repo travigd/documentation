@@ -22,7 +22,7 @@ A scavenge can be started by issuing an empty `POST` to the HTTP API with the cr
 curl -i -d {} -X POST http://localhost:2113/admin/scavenge -u "admin:changeit"
 ```
 
-Scavenges can also be started from the `Admin` page in the Admin UI, or from the [CLI tool](/escli/{{page.version}}/).
+Scavenges can also be started from the `Admin` page in the Admin UI.
 
 <span class="note--warning">
 Each node in a cluster has its own independant database. As such, when you run a scavenge, you will need to issue a scavenge request to each node.
