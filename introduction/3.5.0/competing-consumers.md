@@ -20,12 +20,16 @@ The first step in using Competing Consumers is to create a new subscription. Thi
 
 Subscription groups can be created to map to any stream. As an example you could create a consumer group foo on the stream bar.
 
+```
 /subscriptions/bar/foo
+```
 
 You can also create multiple subscription groups on a single stream.
 
+```
 /subscriptions/bar/foo
 /subscriptions/bar/baz
+```
 
 One major difference with client based subscriptions is that a subscription group can then have N clients connect to it. The subscription group as a whole represents the subscription. If you connect three clients to a subscription group only one of the clients will normally receive the message not all three as it would work with three CatchUpSusbcriptions.
 
@@ -53,6 +57,7 @@ As the subscription is being processed, occasionally it will write in a persiste
 
 How the server checkpoints is controlled by configuration settings on the subscription group. You can control how often checkpoints are written via three main config points CheckpointInterval, MinToCheckpoint, and MaxToCheckpoint. The interval say 3 seconds will write a checkpoint on the interval providing the number of messages to checkpoint is greater than MinToCheckpoint. When MaxToCheckpoint is reached a checkpoint will always be written. Say you had interval at one second, MinToCheckpoint at 5 and MaxToCheckpoint at 10 (these numbers are normally much bigger for busy subscriptions)
 
+```
 interval hit: messages = 3 //no checkpoint written
 on ack: messages = 4 //no checkpoint written
 interval hit: messages = 4 //no checkpoint written
@@ -60,6 +65,7 @@ on ack: messages = 5 //no checkpoint written
 on interval hit: messages = 5 //checkpoint written
 or 
 on ack messages=10 //checkpoint written
+```
 
 Understanding how checkpointing works and paying careful attention to the behaviour of your stream can help reduce server workload and help prevent receiving too many repeated messages in the case of a server failover. On a stream doing very few messages the above settings are fine. On a stream doing a few hundred or thousand messages per second you obviously would want these values to be significantly higher. A general rule of thumb is maximum should be 1-5 seconds of message throughput.
 

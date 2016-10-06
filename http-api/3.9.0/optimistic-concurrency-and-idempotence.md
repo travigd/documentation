@@ -44,7 +44,7 @@ Assuming you were posting to a new stream you would get the event written once (
 This allows the client rule of “if you get unknown condition, retry” to work.
 </span>
 
-```http
+``` http
 ouro@ouroboros:~/src/retrospective$ curl -i "http://127.0.0.1:2113/streams/newstream444""
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
@@ -63,11 +63,11 @@ Keep-Alive: timeout=15,max=100
 		"name": "EventStore"
 	},
 	"links": [
- 		{
+		{
 			"uri": "http://127.0.0.1:2113/streams/newstream444",
 			"relation": "self"
 		},
- 		{
+		{
 			"uri": "http://127.0.0.1:2113/streams/newstream444",
 			"relation": "first"
 		}

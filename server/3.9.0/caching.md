@@ -1,5 +1,5 @@
 ---
-title: "caching"
+title: "Caching"
 section: "Server"
 version: 3.9.0
 ---

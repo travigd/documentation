@@ -40,6 +40,8 @@ There are times when due to NAT or other reasons a node may not be bound to the 
 
 There is an option for the node advertise-as which allows you to tell the node that even though it is bound to a given address it should not gossip that address as its address. Instead it will use the address that you tell it to use. In the example above you would configure
 
+```
 --ext-ip 192.168.1.13 --advertise-as 10.114.12.112
+```
 
 or use the equivalent configuration via environment variables or config file.
