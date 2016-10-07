@@ -71,7 +71,7 @@ The following parameters are supported by the Event Store:
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-Help<br/>--help=VALUE<br/>|HELP|Help|Show help. (Default: False) |
 |-Version<br/>--version=VALUE<br/>|VERSION|Version|Show version. (Default: False) |
-|-Log<br/>--log=VALUE<br/>|LOG|Log|Path where to keep log files. (Default: /Users/hayleyc/Documents/Code/eventstore/EventStore/etc/EventStore.Documentation/bin/Debug/logs) |
+|-Log<br/>--log=VALUE<br/>|LOG|Log|Path where to keep log files. (Default: [See default directories](../default-directories)) |
 |-Config<br/>--config=VALUE<br/>|CONFIG|Config|Configuration files. |
 |-Defines<br/>--defines=VALUE<br/>|DEFINES|Defines|Run-time conditionals. (Default: n/a) |
 |-WhatIf<br/>--what-if=VALUE<br/>|WHAT_IF|WhatIf|Print effective configuration to console and then exit. (Default: False) |
@@ -128,7 +128,7 @@ The following parameters are supported by the Event Store:
 |-CachedChunks<br/>--cached-chunks=VALUE<br/>|CACHED_CHUNKS|CachedChunks|The number of chunks to cache in unmanaged memory. (Default: -1) |
 |-ChunksCacheSize<br/>--chunks-cache-size=VALUE<br/>|CHUNKS_CACHE_SIZE|ChunksCacheSize|The amount of unmanaged memory to use for caching chunks. (Default: 536871424) |
 |-MaxMemTableSize<br/>--max-mem-table-size=VALUE<br/>|MAX_MEM_TABLE_SIZE|MaxMemTableSize|Adjusts the maximum size of a mem table. (Default: 1000000) |
-|-Db<br/>--db=VALUE<br/>|DB|Db|The path the db should be loaded/saved to. (Default: /Users/hayleyc/Documents/Code/eventstore/EventStore/etc/EventStore.Documentation/bin/Debug/data) |
+|-Db<br/>--db=VALUE<br/>|DB|Db|The path the db should be loaded/saved to. (Default: [See default directories](../default-directories)) |
 |-Index<br/>--index=VALUE<br/>|INDEX|Index|The path the index should be loaded/saved to. |
 |-MemDb<br/>--mem-db=VALUE<br/>|MEM_DB|MemDb|Keep everything in memory, no directories or files are created. (Default: False) |
 |-SkipDbVerify<br/>--skip-db-verify=VALUE<br/>|SKIP_DB_VERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False) |

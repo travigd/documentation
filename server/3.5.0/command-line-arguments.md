@@ -128,7 +128,7 @@ The following parameters are supported by the Event Store:
 |-CachedChunks<br/>--cached-chunks=VALUE<br/>|CACHED_CHUNKS|CachedChunks|The number of chunks to cache in unmanaged memory. (Default: -1) |
 |-ChunksCacheSize<br/>--chunks-cache-size=VALUE<br/>|CHUNKS_CACHE_SIZE|ChunksCacheSize|The amount of unmanaged memory to use for caching chunks. (Default: 536871424) |
 |-MaxMemTableSize<br/>--max-mem-table-size=VALUE<br/>|MAX_MEM_TABLE_SIZE|MaxMemTableSize|Adjusts the maximum size of a mem table. (Default: 1000000) |
-|-Db<br/>--db=VALUE<br/>|DB|Db|The path the db should be loaded/saved to. (Default: /Users/hayleyc/Documents/Code/eventstore/eventStore/tools/documentation-generation/data) |
+|-Db<br/>--db=VALUE<br/>|DB|Db|The path the db should be loaded/saved to. (Default: [See default directories](../default-directories)) |
 |-Index<br/>--index=VALUE<br/>|INDEX|Index|The path the index should be loaded/saved to. |
 |-MemDb<br/>--mem-db=VALUE<br/>|MEM_DB|MemDb|Keep everything in memory, no directories or files are created. (Default: False) |
 |-SkipDbVerify<br/>--skip-db-verify=VALUE<br/>|SKIP_DB_VERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False) |
