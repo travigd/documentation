@@ -5,7 +5,7 @@ version: "3.7.0"
 ---
 
 
-#### Example queries
+### Example queries
 
 ```JavaScript
 fromStream('user-100').
@@ -37,7 +37,7 @@ fromCategory('user')
 ------------
 
 
-##### fromStream 
+### fromStream
 Returns one stream to query from
 ```JavaScript
 fromStream('streamName')
@@ -45,7 +45,7 @@ fromStream('streamName')
 
 -----
 
-##### fromStreams
+### fromStream
 Returns a list of streams
 ```JavaScript  
 fromStreams(['stream1', 'stream2'])
@@ -53,18 +53,18 @@ fromStreams(['stream1', 'stream2'])
 
 -----
 
-##### fromCategory
+### fromCategory
 Returns a list of streams in a category
 
-A category is the first part of the stream name before any dashes.
+By default the category is determined by splitting the stream id by a dash. The category is the first string.
 
 For Example:
 
 Stream Name  | Category
 ------------- | -------------
 user-54  | user
-user-v1-54  | v1
-users | users
+user-v1-54  | user
+users | *No category as there is no separator*
 
 ```JavaScript  
 fromCategory('user')
