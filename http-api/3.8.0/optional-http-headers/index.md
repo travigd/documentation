@@ -14,7 +14,7 @@ That the headers have previously been in the form `X-ES-ExpectedVersion` but hav
 The headers that are currently supported are:
 
 - [ES-ExpectedVersion](HTTP-Expected-Version-Header) The expected version of the stream (allows optimistic concurrency)
-- [ES-ResolveLinkTo](HTTP-Resolve-LinkTo-Header) Whether or not to resolve linkTos in stream
+- [ES-ResolveLinkTos](HTTP-Resolve-LinkTo-Header) Whether or not to resolve linkTos in stream
 - [ES-RequiresMaster](HTTP-Requires-Master-Header) Whether this operation needs to be run on the master node
 - [ES-TrustedAuth](HTTP-Trusted-Intermediary-Header) Allows a trusted intermediary to handle authentication
 - [ES-LongPoll](Http-LongPoll-Header) Instructs the server to do a long poll operation on a stream read

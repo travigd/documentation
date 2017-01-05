@@ -139,7 +139,7 @@ You should NOT copy/paste the UUID in the above command line and instead generat
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos, ES-ExpectedVersion
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location, ES-Position
 Location: http://127.0.0.1:2113/streams/%24settings/0
@@ -159,7 +159,7 @@ ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ourobo
 ```http
 HTTP/1.1 401 Unauthorized
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos, ES-ExpectedVersion
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location, ES-Position
 WWW-Authenticate: Basic realm="ES"
@@ -200,7 +200,7 @@ ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ourobo
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos, ES-ExpectedVersion
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location, ES-Position
 Cache-Control: max-age=0, no-cache, must-revalidate
