@@ -13,7 +13,7 @@ The headers that are currently supported are:
 | Header                                   | Description                                                                                        |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | [ES-ExpectedVersion](./expected-version) | The expected version of the stream (allows optimistic concurrency)                                 |
-| [ES-ResolveLinkTos](./resolve-linkto)     | Whether or not to resolve linkTos in stream                                                        |
+| [ES-ResolveLinkTo](./resolve-linkto)     | Whether or not to resolve linkTos in stream                                                        |
 | [ES-RequiresMaster](./requires-master)   | Whether this operation needs to be run on the master node                                          |
 | [ES-TrustedAuth](./trusted-intermediary) | Allows a trusted intermediary to handle authentication                                             |
 | [ES-LongPoll](./longpoll)                | Instructs the server to do a long poll operation on a stream read                                  |

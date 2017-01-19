@@ -1,12 +1,20 @@
 # Event Store Documentation
 
-**This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are built with [Jekyll](http://jekyllrb.com) automatically using the [kramdown](https://kramdown.gettalong.org) complier.
+**This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
 
 What follows is documentation for how to use the Event Store documentation. If you’re planning to make updates or contributions then read on. Otherwise, head on over to the [website](http://docs.geteventstore.com).
 
 ## Versioning
 
-The Event Store documentation is available for many versions of Event Store and its APIs. By default the website shows documentation for the latest stable release of each component.
+The Event Store documentation is available for many versions of Event Store and its APIs. By default the website shows documentation for the latest stable release of each component. Current sections and versions are:
+
+| Section      | Versions                                                        |
+| :----------- | :-------------------------------------------------------------- |
+| Introduction | Always shows latest                                             |
+| Server       | 4.0.0 (latest), 3.3.0, 3.2.0, 3.1.0, 3.0.5, 3.0.3, 3.0.2, 3.0.1, 3.0.0 |
+| .NET API     | 4.0.0 (latest), 3.2.0, 3.1.0, 3.0.2, 3.0.1, 3.0.0                      |
+| HTTP API     | 4.0.0 (latest), 3.2.0, 3.1.0, 3.0.3, 3.0.2, 3.0.1, 3.0.0               |
+| Projections  | 4.0.0 (latest) |
 
 The Event Store server uses [semantic versioning](http://semver.org). API versions are based on the major server version they support.
 
