@@ -31,7 +31,7 @@ curl -i http://localhost:2113/streams/newstream -H "accept:application/vnd.event
 ```
 HTTP/1.1 200 Description Document
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos, ES-ExpectedVersion
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location, ES-Position
 Content-Type: application/vnd.eventstore.streamdesc+json; charset=utf-8
