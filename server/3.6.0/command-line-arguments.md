@@ -75,7 +75,7 @@ The following parameters are supported by the Event Store:
 |-Config<br/>--config=VALUE<br/>|CONFIG|Config|Configuration files. |
 |-Defines<br/>--defines=VALUE<br/>|DEFINES|Defines|Run-time conditionals. (Default: n/a) |
 |-WhatIf<br/>--what-if=VALUE<br/>|WHAT_IF|WhatIf|Print effective configuration to console and then exit. (Default: False) |
-|-StartStandardProjections<br/>--start-standard-projections=VALUE<br/>|START_STANDARD_PROJECTIONS|StartStandardProjections|Enable development mode. This disables caching on events over HTTP. (Default: False) |
+|-StartStandardProjections<br/>--start-standard-projections=VALUE<br/>|START_STANDARD_PROJECTIONS|StartStandardProjections|Start the built in system projections. |
 |-DisableHTTPCaching<br/>--disable-http-caching=VALUE<br/>|DISABLE_HTTP_CACHING|DisableHTTPCaching|Disable HTTP caching. (Default: False) |
 |-MonoMinThreadpoolSize<br/>--mono-min-threadpool-size=VALUE<br/>|MONO_MIN_THREADPOOL_SIZE|MonoMinThreadpoolSize|Minimum number of worker threads when running under mono. Set to 0 to leave machine defaults. (Default: 10) |
 |-Force<br/>--force=VALUE<br/>|FORCE|Force|Force the Event Store to run in possibly harmful environments such as with Boehm GC. (Default: False) |
