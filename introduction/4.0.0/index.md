@@ -255,7 +255,7 @@ XmlReader.Create(response.GetResponseStream()))
             var request =
 WebRequest.Create("http://127.0.0.1:2113/streams/yourstream");
             request.Method = "POST";
-            request.ContentType = "application/json";
+            request.ContentType = "application/vnd.eventstore.events+json";
             request.ContentLength = message.Length;
             using(var sw= new StreamWriter(request.GetRequestStream()))
             {
