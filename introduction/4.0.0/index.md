@@ -159,7 +159,7 @@ Sometimes however your feed may span more than one atom page. In this case you w
 
 ## Subscribing to Stream to get Updates
 
-Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in Atom. As new events arrive new *previous* links will be created. You can continue following them. The example below includes both paging and subscribing over time. If you wanted to provide an *at least once* assurance with the following code you would simply save the last URI you had received.
+Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in Atom. As new events arrive new *previous* links will be created. You can continue following them. The example below is written in C# and includes both paging and subscribing over time. If you wanted to provide an *at least once* assurance with the following code you would simply save the last URI you had received.
 
 If you prefer JavaScript an example can be found in our own source base as we have the ability to run projections in the browser from atomfeeds. You can find the code for this [JavaScript Example](https://github.com/EventStore/EventStore/blob/22fd3562f97037afc256745fe011eabaef62db60/src/EventStore/EventStore.SingleNode.Web/singlenode-web/js/projections/es.projection.js).
 
@@ -169,7 +169,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.ServiceModel.Syndication;
+using System.ServiceModel.Syndication; // reference "System.ServiceModel"
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
