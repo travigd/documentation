@@ -171,7 +171,6 @@ using System.Linq;
 using System.Net;
 using System.ServiceModel.Syndication; // reference "System.ServiceModel"
 using System.Threading;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace AtomPoller
@@ -252,9 +251,7 @@ XmlReader.Create(response.GetResponseStream()))
 
         private static void PostMessage()
         {
-            var message = "[{'eventType':'MyFirstEvent', 'eventId' :
-'" +Guid.NewGuid() +"', 'data' : {'name':'hello world!', 'number' : "
-+ new Random().Next() + "}}]";
+            var message = "[{'eventType':'MyFirstEvent', 'eventId':'" + Guid.NewGuid() + "', 'data':{'name':'hello world!', 'number':" + new Random().Next() + "}}]";
             var request =
 WebRequest.Create("http://127.0.0.1:2113/streams/yourstream");
             request.Method = "POST";
