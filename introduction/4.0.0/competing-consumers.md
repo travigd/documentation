@@ -33,7 +33,7 @@ You can also create multiple subscription groups on a single stream.
 
 One major difference with client based subscriptions is that a subscription group can then have N clients connect to it. The subscription group as a whole represents the subscription. If you connect three clients to a subscription group only one of the clients will normally receive the message not all three as it would work with three CatchUpSusbcriptions.
 
-<span class="note">It will be discussed later in this document but in the case of retries, connection failures, or server failures more than one subscriber in a subscriber group can see a given message this model is known as At-Least-Once messaging clients must be able to handle receiving a message more than one time.</span>
+<span class="note">It will be discussed later in this document but in the case of retries, connection failures, or server failures, more than one subscriber in a subscriber group can see a given message. Therefore this model is known as At-Least-Once messaging. Clients must be able to handle receiving a message more than one time.</span>
 
 The next step is connecting a client to the subscription group. In the .NET client api there is a method ConnectToPersistentSubscription which takes the stream/group that you want to connect to. It also takes a parameter which is the maximum number of in flight messages. This parameter is key to understanding how the subscription group works.
 
