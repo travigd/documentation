@@ -36,7 +36,7 @@ Every stream in the event store has metadata associated with it. The Event Store
 </table>
 
 <span class="note">
-If you set both `$maxAge` and `$maxCount` then events will become eligable for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligable for scavenging after either 10 seconds, or 50,000 events, have passed. Deleted items will only actually be removed once the scavenge process is run.
+If you set both `$maxAge` and `$maxCount` then events will become eligible for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligible for scavenging after either 10 seconds, or 50,000 events, have passed. Deleted items will only actually be removed once the scavenge process is run.
 </span>
 
 Security access control lists are also included in the `$acl` section of the stream metadata.
