@@ -75,7 +75,7 @@ The following parameters are supported by the Event Store:
 |-Config<br/>--config=VALUE<br/>|CONFIG|Config|Configuration files. |
 |-Defines<br/>--defines=VALUE<br/>|DEFINES|Defines|Run-time conditionals. (Default: n/a) |
 |-WhatIf<br/>--what-if=VALUE<br/>|WHAT_IF|WhatIf|Print effective configuration to console and then exit. (Default: False) |
-|-StartStandardProjections<br/>--start-standard-projections=VALUE<br/>|START_STANDARD_PROJECTIONS|StartStandardProjections|Start the built in system projections. |
+|-StartStandardProjections<br/>--start-standard-projections=VALUE<br/>|START_STANDARD_PROJECTIONS|StartStandardProjections|Start the built in system projections. (Default: False) |
 |-DisableHTTPCaching<br/>--disable-http-caching=VALUE<br/>|DISABLE_HTTP_CACHING|DisableHTTPCaching|Disable HTTP caching. (Default: False) |
 |-MonoMinThreadpoolSize<br/>--mono-min-threadpool-size=VALUE<br/>|MONO_MIN_THREADPOOL_SIZE|MonoMinThreadpoolSize|Minimum number of worker threads when running under mono. Set to 0 to leave machine defaults. (Default: 10) |
 |-Force<br/>--force=VALUE<br/>|FORCE|Force|Force the Event Store to run in possibly harmful environments such as with Boehm GC. (Default: False) |
@@ -134,12 +134,15 @@ The following parameters are supported by the Event Store:
 |-Index<br/>--index=VALUE<br/>|INDEX|Index|The path the index should be loaded/saved to. |
 |-MemDb<br/>--mem-db=VALUE<br/>|MEM_DB|MemDb|Keep everything in memory, no directories or files are created. (Default: False) |
 |-SkipDbVerify<br/>--skip-db-verify=VALUE<br/>|SKIP_DB_VERIFY|SkipDbVerify|Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False) |
+|-WriteThrough<br/>--write-through=VALUE<br/>|WRITE_THROUGH|WriteThrough|Enables Write Through when writing to the file system, this bypasses filesystem caches. (Default: False) |
+|-Unbuffered<br/>--unbuffered=VALUE<br/>|UNBUFFERED|Unbuffered|Enables Unbuffered/DirectIO when writing to the file system, this bypasses filesystem caches. (Default: False) |
 |-PrepareTimeoutMs<br/>--prepare-timeout-ms=VALUE<br/>|PREPARE_TIMEOUT_MS|PrepareTimeoutMs|Prepare timeout (in milliseconds). (Default: 2000) |
 |-CommitTimeoutMs<br/>--commit-timeout-ms=VALUE<br/>|COMMIT_TIMEOUT_MS|CommitTimeoutMs|Commit timeout (in milliseconds). (Default: 2000) |
 |-UnsafeDisableFlushToDisk<br/>--unsafe-disable-flush-to-disk=VALUE<br/>|UNSAFE_DISABLE_FLUSH_TO_DISK|UnsafeDisableFlushToDisk|Disable flushing to disk.  (UNSAFE: on power off) (Default: False) |
 |-BetterOrdering<br/>--better-ordering=VALUE<br/>|BETTER_ORDERING|BetterOrdering|Enable Queue affinity on reads during write process to try to get better ordering. (Default: False) |
 |-UnsafeIgnoreHardDelete<br/>--unsafe-ignore-hard-delete=VALUE<br/>|UNSAFE_IGNORE_HARD_DELETE|UnsafeIgnoreHardDelete|Disables Hard Deletes (UNSAFE: use to remove hard deletes) (Default: False) |
 |-IndexCacheDepth<br/>--index-cache-depth=VALUE<br/>|INDEX_CACHE_DEPTH|IndexCacheDepth|Sets the depth to cache for the mid point cache in index. (Default: 16) |
+|-AlwaysKeepScavenged<br/>--always-keep-scavenged=VALUE<br/>|ALWAYS_KEEP_SCAVENGED|AlwaysKeepScavenged|Always keeps the newer chunks from a scavenge operation. (Default: False) |
 
 ### Interface Options
 
@@ -165,6 +168,7 @@ The following parameters are supported by the Event Store:
 |-ExtTcpHeartbeatTimeout<br/>--ext-tcp-heartbeat-timeout=VALUE<br/>|EXT_TCP_HEARTBEAT_TIMEOUT|ExtTcpHeartbeatTimeout|Heartbeat timeout for external TCP sockets (Default: 1000) |
 |-IntTcpHeartbeatInterval<br/>--int-tcp-heartbeat-interval=VALUE<br/>|INT_TCP_HEARTBEAT_INTERVAL|IntTcpHeartbeatInterval|Heartbeat interval for internal TCP sockets (Default: 700) |
 |-ExtTcpHeartbeatInterval<br/>--ext-tcp-heartbeat-interval=VALUE<br/>|EXT_TCP_HEARTBEAT_INTERVAL|ExtTcpHeartbeatInterval|Heartbeat interval for external TCP sockets (Default: 2000) |
+|-GossipOnSingleNode<br/>--gossip-on-single-node=VALUE<br/>|GOSSIP_ON_SINGLE_NODE|GossipOnSingleNode|When enabled tells a single node to run gossip as if it is a cluster (Default: False) |
 |-AdminOnExt<br/>--admin-on-ext=VALUE<br/>|ADMIN_ON_EXT|AdminOnExt|Whether or not to run the admin ui on the external HTTP endpoint (Default: True) |
 |-StatsOnExt<br/>--stats-on-ext=VALUE<br/>|STATS_ON_EXT|StatsOnExt|Whether or not to accept statistics requests on the external HTTP endpoint, needed if you use admin ui (Default: True) |
 |-GossipOnExt<br/>--gossip-on-ext=VALUE<br/>|GOSSIP_ON_EXT|GossipOnExt|Whether or not to accept gossip requests on the external HTTP endpoint (Default: True) |
@@ -173,6 +177,7 @@ The following parameters are supported by the Event Store:
 |-EnableTrustedAuth<br/>--enable-trusted-auth=VALUE<br/>|ENABLE_TRUSTED_AUTH|EnableTrustedAuth|Enables trusted authentication by an intermediary in the HTTP (Default: False) |
 |-AddInterfacePrefixes<br/>--add-interface-prefixes=VALUE<br/>|ADD_INTERFACE_PREFIXES|AddInterfacePrefixes|Add interface prefixes (Default: True) |
 |-UseInternalSsl<br/>--use-internal-ssl=VALUE<br/>|USE_INTERNAL_SSL|UseInternalSsl|Whether to use secure internal communication. (Default: False) |
+|-DisableInsecureTCP<br/>--disable-insecure-tcp=VALUE<br/>|DISABLE_INSECURE_TCP|DisableInsecureTCP|Whether to disable insecure TCP communication (Default: False) |
 |-SslTargetHost<br/>--ssl-target-host=VALUE<br/>|SSL_TARGET_HOST|SslTargetHost|Target host of server's SSL certificate. (Default: n/a) |
 |-SslValidateServer<br/>--ssl-validate-server=VALUE<br/>|SSL_VALIDATE_SERVER|SslValidateServer|Whether to validate that server's certificate is trusted. (Default: True) |
 
@@ -182,3 +187,4 @@ The following parameters are supported by the Event Store:
 | --------- | --------------------------------------------- | ---- | ----------- |
 |-RunProjections<br/>--run-projections=VALUE<br/>|RUN_PROJECTIONS|RunProjections|Enables the running of projections. System runs built-in projections, All runs user projections. (Default: None) Possible Values:None,System,All|
 |-ProjectionThreads<br/>--projection-threads=VALUE<br/>|PROJECTION_THREADS|ProjectionThreads|The number of threads to use for projections. (Default: 3) |
+
