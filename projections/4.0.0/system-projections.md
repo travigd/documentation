@@ -13,9 +13,7 @@ Event Store ships with 4 built in projections.
 - Streams ($streams)
 
 <span class="note">
-When you start Event Store from a fresh database, these projections are present but disabled and querying their statuses you will see that they are `Stopped`. 
-
-You can enable a projection by issuing an HTTP request to `http://{event-store-ip}:{ext-http-port}/projection/{projection-name}/command/enable`. The status of the projection will switch from `Stopped` to `Running`.
+When you start Event Store from a fresh database, these projections are present but disabled and querying their statuses you will see that they are `Stopped`. You can enable a projection by issuing an HTTP request to `http://{event-store-ip}:{ext-http-port}/projection/{projection-name}/command/enable`. The status of the projection will switch from `Stopped` to `Running`.
 </span>
 
 ## By Category
