@@ -22,7 +22,7 @@ Paths beginning with "." are relative to the directory in which "eventstored" or
 - **Projections:** `./projections` *then* `{Content}/projections`
 - **Prelude:** `./Prelude` *then* `{Content}/Prelude`
 
-### All other OSes (Includes Windows/OSX) ###
+### All other OSes (Includes Windows/macOS) ###
 - **Content:** `./`
 - **Configuration:** `./`
 - **Data:** `./data`
