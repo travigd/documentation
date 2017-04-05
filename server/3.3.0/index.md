@@ -7,7 +7,7 @@ pinned: true
 
 The Event Store runs as a server, to which clients can connect either over HTTP or using one of the client APIs. Both the open source, and commercial versions, can be run as either a single node, or a highly available cluster of nodes.
 
-The [open source version of Event Store](https://geteventstore.com/downloads) is distributed as a console application. There are separate distributions for Windows on .NET and Linux/OS X on Mono.
+The [open source version of Event Store](https://geteventstore.com/downloads) is distributed as a console application. There are separate distributions for Windows on .NET and Linux/macOS on Mono.
 
 ## Running the Open Source version
 
@@ -52,9 +52,9 @@ netsh http delete urlacl http://+:2113
 
 This should resolve the issue.
 
-### On Linux/OS X
+### On Linux/macOS
 
-A typical command line for running the Event Store server on Linux/OS X is:
+A typical command line for running the Event Store server on Linux/macOS is:
 
 ```
 $ ./run-node.sh --db ./ESData
@@ -62,7 +62,7 @@ $ ./run-node.sh --db ./ESData
 
 Although you can run the Event Store binary directly, a `run-node` shell script is provided which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of the Event Store, this is necessary if you are planning to use projections.
 
-The Event Store builds for both Linux and OS X have the Mono runtime bundled in, this means that you do not need Mono installed locally to run Event Store.
+The Event Store builds for both Linux and macOS have the Mono runtime bundled in, this means that you do not need Mono installed locally to run Event Store.
 
 ### Shutting down an Event Store node
 
