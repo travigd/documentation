@@ -23,11 +23,11 @@ Task<RawStreamMetadataResult> GetStreamMetadataAsRawBytesAsync(string stream, Us
 
 ### Writing Stream Metadata
 ```csharp
-Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
+Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
 ```
 
 ```csharp
-Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
+Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
 ```
 
 ## Reading Stream Metadata
@@ -145,7 +145,7 @@ Reading metadata may require that you pass credentials if you have security enab
 Writing metadata can also be done in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms also support an expectedVersion which works the same as on any stream and can be used to control concurrency see [Expected Version](../optimistic-concurrency-and-idempotence) for further details.
 
 ```csharp
-Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
+Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
 ```
 
 The StreamMetadata being passed here has a builder that can be accessed via StreamMetadata.Create(). The options available on the builder are:
@@ -209,7 +209,7 @@ User-specified metadata can also be added here via the SetCustomMetadata overloa
 - plenty more!
 
 ```csharp
-Task<WriteResult> SetStreamMetadataAsync(string stream, int expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
+Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
 ```
 
 This method will just put the data that is in metadata as the stream metadata. metadata in this case can be anything in a vector of bytes however the server itself only understands JSON. Please see [Access Control Lists]({{ site.url }}/server/latest/access-control-lists) for more information on the format in JSON for access control lists.
