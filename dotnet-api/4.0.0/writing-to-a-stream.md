@@ -13,11 +13,11 @@ An optimistic concurrency check can be made during the write by specifying the v
 ### Appending to a stream in a single write
 
 ```csharp
-Task AppendToStreamAsync(string stream, int expectedVersion, IEnumerable<EventData> events)
+Task<WriteResult> AppendToStreamAsync(string stream, long expectedVersion, IEnumerable<EventData> events)
 ```
 
 ```csharp
-Task AppendToStreamAsync(string stream, int expectedVersion, params EventData[] events)
+Task<WriteResult> AppendToStreamAsync(string stream, long expectedVersion, params EventData[] events)
 ```
 
 ### Using a transaction to append to a stream across multiple writes
@@ -25,7 +25,7 @@ Task AppendToStreamAsync(string stream, int expectedVersion, params EventData[] 
 #### On `EventStoreConnection`:
 
 ```csharp
-Task<EventStoreTransaction> StartTransactionAsync(string stream, int expectedVersion)
+Task<EventStoreTransaction> StartTransactionAsync(string stream, long expectedVersion)
 ```
 
 ```csharp
@@ -109,7 +109,7 @@ The parameters are:
             <td>The name of the stream to which to append.</td>
         </tr>
         <tr>
-            <td><code>int expectedVersion</code></td>
+            <td><code>long expectedVersion</code></td>
             <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See <a href="../optimistic-concurrency-and-idempotence">here</a> for a broader discussion of this.</td>
         </tr>
         <tr>

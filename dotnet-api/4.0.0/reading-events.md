@@ -11,19 +11,19 @@ The client API can be used to read events from a stream starting from either end
 ### Reading a single event
 
 ```csharp
-Task<EventReadResult> ReadEventAsync(string stream, int eventNumber, bool resolveLinkTos);
+Task<EventReadResult> ReadEventAsync(string stream, long eventNumber, bool resolveLinkTos);
 ```
 
 ### Reading a specific stream forwards
 
 ```csharp
-Task<StreamEventsSlice> ReadStreamEventsForwardAsync(string stream, int start, int count, bool resolveLinkTos)
+Task<StreamEventsSlice> ReadStreamEventsForwardAsync(string stream, long start, int count, bool resolveLinkTos)
 ```
 
 ### Reading a specific stream backwards
 
 ```csharp
-Task<StreamEventsSlice> ReadStreamEventsBackwardAsync(string stream, int start, int count, bool resolveLinkTos)
+Task<StreamEventsSlice> ReadStreamEventsBackwardAsync(string stream, long start, int count, bool resolveLinkTos)
 ```
 
 ### Reading all events forwards
@@ -63,15 +63,15 @@ The reading methods for individual streams each return a `StreamEventsSlice`, wh
             <td>Either <code>ReadDirection.Forward</code> or <code>ReadDirection.Backward</code> depending on which method was used to read</td>
         </tr>
         <tr>
-            <td><code>int FromEventNumber</code></td>
+            <td><code>long FromEventNumber</code></td>
             <td>The sequence number of the first event in the stream</td>
         </tr>
         <tr>
-            <td><code>int LastEventNumber</code></td>
+            <td><code>long LastEventNumber</code></td>
             <td>The sequence number of the last event in the stream</td>
         </tr>
         <tr>
-            <td><code>int NextEventNumber</code></td>
+            <td><code>long NextEventNumber</code></td>
             <td>The sequence number from which the next read should be performed to continue reading the stream</td>
         </tr>
         <tr>
@@ -128,7 +128,7 @@ The members of this class are as follows:
             <td>The stream name of the <code>OriginalEvent</code></td>
         </tr>
         <tr>
-            <td><code>int OriginalEventNumber</code></td>
+            <td><code>long OriginalEventNumber</code></td>
             <td>The event number in the stream of the <code>OriginalEvent</code></td>
         </tr>
     </tbody>
@@ -159,7 +159,7 @@ To ensure that the Event Store server follows link events when reading, ensure t
             <td>The Unique Identifier representing this event</td>
         </tr>
         <tr>
-            <td><code>int EventNumber</code></td>
+            <td><code>long EventNumber</code></td>
             <td>The number of this event in the stream</td>
         </tr>
         <tr>
@@ -206,7 +206,7 @@ The `ReadSingleEventAsync` method reads a single event from a stream at a specif
             <td>The stream to read from</td>
         </tr>
         <tr>
-            <td><code>int eventNumber</code></td>
+            <td><code>long eventNumber</code></td>
             <td>The event number to read (use <code>StreamPosition.End</code> to read the last event in the stream)</td>
         </tr>
         <tr>
@@ -237,7 +237,7 @@ The parameters are:
             <td>The name of the stream to read</td>
         </tr>
         <tr>
-            <td><code>int start</code></td>
+            <td><code>long start</code></td>
             <td>The earliest event to read (inclusive). For the special case of the start of the stream, the constant <code>StreamPosition.Start</code> should be used</td>
         </tr>
         <tr>
@@ -293,7 +293,7 @@ The parameters are:
             <td>The name of the stream to read</td>
         </tr>
         <tr>
-            <td><code>int start</code></td>
+            <td><code>long start</code></td>
             <td>The latest event to read (inclusive). For the end of the stream use the constant <code>StreamPosition.End</code></td>
         </tr>
         <tr>
