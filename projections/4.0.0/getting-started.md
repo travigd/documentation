@@ -200,7 +200,7 @@ We can create the projection by making a call to the API and provide it with the
 You can find more information about how to interact with projections in the [API section](../api).
 
 ```bash
-curl -i -d@xbox-one-s-counter.json http://localhost:2113/projections/continuous?name=xbox-one-s-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
+curl -i --data-binary "@xbox-one-s-counter.json" http://localhost:2113/projections/continuous?name=xbox-one-s-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
 ```
 
 You should have received a 201 Created response from Event Store, which means that the projection was created successfully. We can confirm that the projection is running by issuing a status request.
@@ -238,7 +238,7 @@ The above gives us the correct result, but this requires us to have to poll for 
 
 We could configure the projection to output the state to a stream by calling the `outputState()` method on the projection which by default will produce a `$projections-{projection-name}-result` stream.
 
-For example:
+Filename: `xbox-one-s-counter-outputState.json`
 
 ```json
 fromAll()
@@ -259,7 +259,7 @@ fromAll()
 To update the projection, we can issue the following request.
 
 ```bash
-curl -i -X PUT -d@xbox-one-s-counter-outputState.json http://localhost:2113/projection/xbox-one-s-counter/query?emit=yes -u admin:changeit
+curl -i -X PUT --data-binary "@xbox-one-s-counter-outputState.json" http://localhost:2113/projection/xbox-one-s-counter/query?emit=yes -u admin:changeit
 ```
 
 We can now read the events in the result stream by issuing a read request.
@@ -310,7 +310,7 @@ With the projection enabled and an explanation behind us, we can continue with d
 
 We will make use of the built in system projection `$by_category` that will enable the use of the `fromCategory` API method.
 
-For example:
+Filename: `shopping-cart-counter.json`
 
 ```json
 fromCategory('shoppingCart')
@@ -330,7 +330,7 @@ fromCategory('shoppingCart')
 Once again, we can create the projection by issing an HTTP request
 
 ```bash
-curl -i -d@shopping-cart-counter.json http://localhost:2113/projections/continuous?name=shopping-cart-item-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
+curl -i --data-binary "@shopping-cart-counter.json" http://localhost:2113/projections/continuous?name=shopping-cart-item-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
 ```
 
 ## Querying for the state of the projection by partition
