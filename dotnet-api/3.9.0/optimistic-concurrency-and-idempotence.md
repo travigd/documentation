@@ -22,7 +22,7 @@ In the .NET API, there are a number of constants which should be used to represe
         </tr>
         <tr>
             <td><code>ExpectedVersion.NoStream</code></td>
-            <td>This specifies the expectation that target stream does not yet exist.</code></td>
+            <td>This specifies the expectation that target stream does not yet exist.</td>
         </tr>
         <tr>
             <td><code>ExpectedVersion.EmptyStream</code></td>
