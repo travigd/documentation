@@ -4,8 +4,6 @@ section: ".NET API"
 version: "4.0.0"
 ---
 
-**PROJECTIONS ARE STILL IN BETA THIS DOCUMENTATION IS SUBJECT TO CHANGE WITHOUT NOTICE
-
 The Event Store Client API includes some helper methods that use the HTTP API to allow for the management of projections in the system. This document will describe the methods found in the ProjectionsManager class (in addition to the XML docs already on it). Note all methods in this class are async.
 
 ## Methods
@@ -80,4 +78,36 @@ Deletes a named projection. You must have access to a projection in order to del
 
 ```csharp
 public Task DeleteAsync(string name, UserCredentials userCredentials = null)
+```
+
+### Get State
+
+Retrieves the state of the projection
+
+```csharp
+public Task<string> GetState(IPEndPoint endPoint, string name, UserCredentials userCredentials = null)
+```
+
+### Get Partition State
+
+Retrieves the state of the projection via the given partition
+
+```csharp
+public Task<string> GetPartitionStateAsync(IPEndPoint endPoint, string name, string partition, UserCredentials userCredentials = null)
+```
+
+### Get Result
+
+Retrieves the result of the projection
+
+```csharp
+public Task<string> GetResult(IPEndPoint endPoint, string name, UserCredentials userCredentials = null)
+```
+
+### Get Partition Result
+
+Retrieves the result of the projection via the given partition
+
+```csharp
+public Task<string> GetPartitionResultAsync(IPEndPoint endPoint, string name, string partition, UserCredentials userCredentials = null)
 ```
