@@ -151,17 +151,14 @@ fromStream('account-1') //selector
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>partitionBy</li>
 	            	<li>when</li>
-	            	<li>foreachStream</li>
-	            	<li>outputState</li>
             	</ul>
             </td>
         </tr>
 	</tbody>
 </table>
 
-# Filters/Transormations
+# Filters/Transformations
 
 <table>
     <thead>
