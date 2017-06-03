@@ -28,7 +28,7 @@ fromStream('account-1') //selector
 		s.count += 1;
 	}
 })
-.transformBy(function(state, evnt){ //transformation
+.transformBy(function(state){ //transformation
 	state.count = 10;
 })
 .outputState() //transformation
@@ -216,7 +216,7 @@ fromStream('account-1') //selector
             </td>
         </tr>
         <tr>
-            <td><code>transformBy(function(state, event))</code></td>
+            <td><code>transformBy(function(state))</code></td>
             <td>Provides the ability to transform the state of a projection by the provided handler.</td>
             <td>
             	<b>Provides</b>
