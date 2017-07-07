@@ -165,7 +165,7 @@ Date: Thu, 13 Mar 2014 20:49:34 GMT
 So far we have been looking at soft deletes. You can also execute hard deletes of a stream. To issue a permanent delete of a stream the `ES-HardDelete` header is used.
 
 <span class="note--warning">
-A hard delete is permanent and the stream is not removed during a scavenge. If you hard delete a stream, the stream can never be recreated.
+A hard delete is permanent and the tombstone is not removed during a scavenge. If you hard delete a stream, the stream can never be recreated.
 </span>
 
 ```
