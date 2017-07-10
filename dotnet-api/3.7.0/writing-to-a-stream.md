@@ -4,7 +4,7 @@ section: ".NET API"
 version: "3.7.0"
 ---
 
-TThe client API can be used to write one or more events to a stream atomically. This can be done either by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
+The client API can be used to write one or more events to a stream atomically. This can be done either by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
 
 An optimistic concurrency check can be made during the write by specifying the version at which the stream is expected to be currently. Identical write operations are idempotent if the optimistic concurrency check is not disabled. More information on optimistic concurrency and idempotence can be found [here](../optimistic-concurrency-and-idempotence).
 
