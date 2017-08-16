@@ -19,7 +19,7 @@ options({ //option
 
 fromStream('account-1') //selector
 .when({ //filter
-	$init:function(state, evnt){
+	$init:function(){
 		return {
 			count: 0
 		}

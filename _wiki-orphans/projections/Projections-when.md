@@ -15,7 +15,7 @@ append foo MyType1 {'foo' : 'data4'}
 
 q fromStream('foo').
      when({
-        $init   : function(s,e) { return { mt1 : 0, mt3 : 0}},
+        $init   : function() { return { mt1 : 0, mt3 : 0}},
         MyType1 : function(s,e) { return { mt1 : s.mt1 + 1, mt3 : s.mt3}},
         MyType3 : function(s,e) { return { mt1 : s.mt1, mt3 : s.mt3 + 1}}
      })
@@ -39,7 +39,7 @@ es:> append foo MyType1 {'foo' : 'data4'}
 Succeeded.
 es:> q fromStream('foo').
      when({
-        $init   : function(s,e) { return { mt1 : 0, mt3 : 0}},
+        $init   : function() { return { mt1 : 0, mt3 : 0}},
         MyType1 : function(s,e) { return { mt1 : s.mt1 + 1, mt3 : s.mt3}},
         MyType3 : function(s,e) { return { mt1 : s.mt1, mt3 : s.mt3 + 1}}
      })
@@ -57,7 +57,7 @@ This query has three pattern matches inside of it.
 
 ```js
      when({
-        $init   : function(s,e) { return { mt1 : 0, mt3 : 0}},
+        $init   : function() { return { mt1 : 0, mt3 : 0}},
         MyType1 : function(s,e) { return { mt1 : s.mt1 + 1, mt3 : s.mt3}},
         MyType3 : function(s,e) { return { mt1 : s.mt1, mt3 : s.mt3 + 1}}
      })
