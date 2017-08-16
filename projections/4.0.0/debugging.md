@@ -41,7 +41,7 @@ Contents:
 ```json
 fromStream('$stats-127.0.0.1:2113')
 .when({
-    $init: function(s,e){
+    $init: function(){
         return {
             count: 0
         }

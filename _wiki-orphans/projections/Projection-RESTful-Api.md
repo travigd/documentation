@@ -8,7 +8,7 @@ To create a query in the system you just post the javascript of the query to the
 ouro@ouroboros:>cat projection.txt
 fromAll().
     when({
-       $init : function(s,e) {return {count : 0}},
+       $init : function() {return {count : 0}},
        $any  : function(s,e) {return {count : s.count +1}}
     })
 ```

@@ -182,7 +182,7 @@ Contents:
 ```json
 fromAll()
 .when({
-    $init: function(s,e){
+    $init: function(){
         return {
             count: 0
         }
@@ -243,7 +243,7 @@ Filename: `xbox-one-s-counter-outputState.json`
 ```json
 fromAll()
 .when({
-    $init: function(s,e){
+    $init: function(){
         return {
             count: 0
         }
@@ -316,7 +316,7 @@ Filename: `shopping-cart-counter.json`
 fromCategory('shoppingCart')
 .foreachStream()
 .when({
-    $init: function(s,e){
+    $init: function(){
         return {
             count: 0
         }
@@ -327,7 +327,7 @@ fromCategory('shoppingCart')
 })
 ```
 
-Once again, we can create the projection by issing an HTTP request
+Once again, we can create the projection by issuing an HTTP request
 
 ```bash
 curl -i --data-binary "@shopping-cart-counter.json" http://localhost:2113/projections/continuous?name=shopping-cart-item-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
