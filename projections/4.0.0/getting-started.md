@@ -179,7 +179,7 @@ Filename: `xbox-one-s-counter.json`
 
 Contents:
 
-```json
+```javascript
 fromAll()
 .when({
     $init: function(){
@@ -240,7 +240,7 @@ We could configure the projection to output the state to a stream by calling the
 
 Filename: `xbox-one-s-counter-outputState.json`
 
-```json
+```javascript
 fromAll()
 .when({
     $init: function(){
@@ -312,7 +312,7 @@ We will make use of the built in system projection `$by_category` that will enab
 
 Filename: `shopping-cart-counter.json`
 
-```json
+```javascript
 fromCategory('shoppingCart')
 .foreachStream()
 .when({
