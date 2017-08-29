@@ -9,7 +9,7 @@ User defined projections are written in javascript (ECMASCRIPT 6).
 
 Example projection:
 
-```
+```javascript
 options({ //option
 	resultStreamName: "my_demo_projection_result",
 	$includeLinks: false,

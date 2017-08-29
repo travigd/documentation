@@ -15,7 +15,7 @@ Something that proves to be quite useful is printing out the structure of the ev
 
 For example:
 
-```bash
+```javascript
 fromStream('$stats-127.0.0.1:2113')
 .when({
     $any: function(s,e){
@@ -38,7 +38,7 @@ Filename: `stats-counter.json`
 
 Contents:
 
-```json
+```javascript
 fromStream('$stats-127.0.0.1:2113')
 .when({
     $init: function(){
