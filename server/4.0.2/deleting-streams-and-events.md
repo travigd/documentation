@@ -6,7 +6,7 @@ version: "4.0.2"
 
 Whether an event is deleted or not is defined by metadata in Event Store. Stream metadata such as Truncate Before, Max Age and Max Count is used to filter out events that have been considered deleted. When reading a stream, the index will check the stream's metadata to determine whether any of its events have been deleted.
 
-The `$all` stream bypasses the index, meaning that it does not check the metadata to determine whether events exist or not. As such, events that have been deleted will still be readable until a scavenge has removed them. Note that there are a number of requirements for a scavenge to successfully remove events, for more information about this, please see the section on [Scavenging](../scavenging/).
+`$all` bypasses the index, meaning that it does not check the metadata to determine whether events exist or not. As such, events that have been deleted will still be readable until a scavenge has removed them. Note that there are a number of requirements for a scavenge to successfully remove events, for more information about this, please see the section on [Scavenging](../scavenging/).
 
 <span class="note--warning">
 The last event in a stream is always kept as a record of the last event number in the stream.
@@ -60,6 +60,6 @@ A hard delete of a stream is permanent. The stream cannot be written to or recre
 
 If you are intending on using projections and deleting streams, there are some things to take into consideration:
 
-Due to the nature of the $all stream, projections using `fromAll` will read any deleted events that have not been scavenged away. They will also receive any tombstone events from hard deletes.
+Due to the nature of $all, projections using `fromAll` will read any deleted events that have not been scavenged away. They will also receive any tombstone events from hard deletes.
 
 Projections that read from a specific stream will also receive that stream's metadata events. These can be filtered out by ignoring events with an event type `$metadata`.
