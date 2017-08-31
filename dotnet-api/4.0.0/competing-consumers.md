@@ -29,9 +29,9 @@ Task<PersistentSubscriptionDeleteResult> DeletePersistentSubscriptionAsync(strin
 ## Connecting to a Persistent Subscription
 
 ```csharp
-EventStorePersistentSubscription ConnectToPersistentSubscription(
-    string groupName, 
-    string stream, 
+EventStorePersistentSubscriptionBase ConnectToPersistentSubscription(
+    string stream,
+    string groupName,
     Action<EventStorePersistentSubscription, ResolvedEvent> eventAppeared,
     Action<EventStorePersistentSubscription, SubscriptionDropReason, Exception> subscriptionDropped = null,
     UserCredentials userCredentials = null,
