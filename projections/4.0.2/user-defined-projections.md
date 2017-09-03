@@ -228,6 +228,19 @@ fromStream('account-1') //selector
             	</ul>
             </td>
         </tr>
+        <tr>
+            <td><code>filterBy(function(state))</code></td>
+            <td>Causes projection results to be `null` for any `state` that returns a falsey value from the given predicate.</td>
+            <td>
+            	<b>Provides</b>
+            	<ul>
+	            	<li>transformBy</li>
+	            	<li>filterBy</li>
+	            	<li>outputState</li>
+	            	<li>outputTo</li>
+            	</ul>
+            </td>
+        </tr>
 	</tbody>
 </table>
 
