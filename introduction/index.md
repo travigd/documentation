@@ -5,35 +5,81 @@ pinned: true
 version: "4.0.2"
 ---
 
-This document describes how to get started with the Event Store providing you are interested in using Atom as your primary interface. We will cover installation of the Event Store and taking you through the basic operation such as writing to a stream, reading from a stream, and subscribing to a stream.
+This guide will show you how to get started with Event Store using the Atom publishing protocol as the primary interface. It covers installation and basic operations such as writing to a stream, reading from a stream, and subscribing to a stream.
 
 <span class="note--warning">
-This setup is intended as an experimental setup or for a developer’s machine. It is not intended to describe a production setup. This document assumes that you also have [cURL](http://curl.haxx.se/) installed on your machine.
+The described is for development and evaluation of Event Store. It does not describe a production setup.
 </span>
 
-## Installation
+## Install and Run
 
-To start go to [https://geteventstore.com/downloads](https://geteventstore.com/downloads) and download the binaries into a folder. For this document it is assumed that you are in Windows. If you are in linux or in another environment the Event Store likely works there but you will have to follow further instructions for setup.
+<div class="codetabs" markdown="1">
+<div data-lang="windows" markdown="1">
+The prerequisites for Installing on Windows are:
 
-Once you have the zip file unzipped open up an administrator console. `cd` into the directory where you have installed the Event Store. On the command line enter:
+-   NET Framework 4.0+
+-   Windows platform SDK with compilers (v7.1) or Visual C++ installed (Only required for a full build)
 
+Event Store has Chocolatey packages available that you can install with the following command:
+
+```powershell
+choco install eventstore-oss
 ```
+
+You can also [download](https://geteventstore.com/downloads) a binary, unzip the archive and run from the folder location.
+
+Then with an administrator console run the following command:
+
+```powershell
 EventStore.ClusterNode.exe --db ./db --log ./logs
 ```
 
-This will start the EventStore and will put the database in the path `./db` and the logs in `./logs`. You can view further command line arguments in the [server docs](/server) (there are many!). It is important to note that it is being run in an admin context because it will start a HTTP server through http.sys. If you were to be running in a more permanent situation you would probably want to provide for an ACL in windows such as:
+This will start Event Store with the database stored at the path _./db_ and the logs in _./logs_. You can view further command line arguments in the [server docs](/server/latest).
 
-```
+Event Store is running in an admin context because it will start a HTTP server through `http.sys`. For permanent or production instances you will need to provide an ACL such as:
+
+```powershell
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 ```
 
-The Event Store should be now up and running on your machine. You can browse to [http://127.0.0.1:2113/](http://127.0.0.1:2113/) to see the admin console. The console will ask for a username and password. By default it is `admin:changeit`.
+</div>
+<div data-lang="linux" markdown="1">
+The prerequisites for Installing on Linux are:
+
+-   Mono 4.6.2
+
+Event Store has pre-built [packages available for Debian-based distributions](https://packagecloud.io/EventStore/EventStore-OSS), [manual instructions for distributions that use RPM](https://packagecloud.io/EventStore/EventStore-OSS/install#bash-rpm), or you can [build from source](https://github.com/EventStore/EventStore#linux).
+
+If you installed from a pre-built package, start Event Store with:
+
+```bash
+sudo service eventstore start
+```
+
+Or, in all other cases you can run the Event Store binary or use our run-node shell script which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of Event Store, which is necessary if you are planning to use projections.
+
+```bash
+$ ./run-node.sh --db ./ESData
+```
+
+</div>
+<div data-lang="docker" markdown="1">
+Event Store has [a Docker image](https://hub.docker.com/r/eventstore/eventstore/) available for any platform that supports Docker:
+
+```bash
+docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
+```
+
+</div>
+</div>
+
+Event Store should now be running at <http://127.0.0.1:2113/> to see the admin console. The console will ask for a username and password. The defaults are `admin:changeit`.
 
 ## Writing Events to an Event Stream
 
-The first operation we will look at is how to write to a stream. The Event Store operates on a concept of Event Streams. These are partition points in the system. If you are Event Sourcing a domain model a stream would equate to an aggregate. The Event Store can easily handle hundreds of millions of streams. Don’t be afraid to make many of them.
+Event Store operates on a concept of Event Streams, and the first operation we will look at is how to write to a stream. These are partition points in the system <!-- What does this mean? -->. If you are Event Sourcing a domain model a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, create as many as you need.
 
-To begin let’s open Notepad. Copy and paste the following event definition into Notepad and save it as `event.txt`.
+To begin, open a text editor, copy and paste the following event definition, and save it as _event.txt_.
 
 ```json
 [
@@ -48,15 +94,15 @@ To begin let’s open Notepad. Copy and paste the following event definition int
 ]
 ```
 
-<span class="note">
-You can also post events as XML in the same format but set the `Content-Type` to `XML`.
-</span>
+To write the event to a stream, issue the following cURL command.
 
-Now to write our event to a stream we would issue the following cURL command.
-
-```
+```shell
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
 ```
+
+<span class="note">
+You can also post events as XML, by changing the `Content-Type` header to `XML`.
+</span>
 
 This gives the following result:
 
@@ -71,22 +117,21 @@ Server: Mono-HTTPAPI/1.0
 Date: Fri, 28 Jun 2013 12:17:59 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
-
 ```
 
-If you go to your UI after this command and to the *Streams* tab. You will see your stream has recently been created. If you post to a stream that doesn’t exist the Event Store will create it. You can then click on it to get an HTML representation of your stream (or you can navigate directly to [http://127.0.0.1:2113/web/index.html#/streams/newstream](http://127.0.0.1:2113/web/index.html#/streams/newstream)).
+Open the UI after this command to the _Stream Browser_ tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.
 
-You can also setup Access Control Lists (see [server docs](/server/latest)) on your streams by changing the metadata of the stream.
+You can also setup [Access Control Lists](/server/latest/access-control-lists/) on your streams by changing the metadata of the stream.
 
 ## Reading From a Stream
 
-Reading from a stream is quite easy as all streams are exposed as [atom feeds](http://tools.ietf.org/html/rfc4287). Many environments have an existing method for reading atom feeds. 
+Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc4287), and you can read data from the stream by navigating to the _head_ URI of the stream <http://127.0.0.1:2113/streams/newstream> with cURL.
 
-Let’s try to get the data out of our stream. Just like with our browser we will navigate to the *head* URI of the stream http://127.0.0.1:2113/streams/newstream. We can do this with cURL.
-
-```
+```shell
 curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream"
 ```
+
+Which gives the following result:
 
 ```http
 HTTP/1.1 200 OK
@@ -129,11 +174,21 @@ Keep-Alive: timeout=15,max=100
 </feed>
 ```
 
-This cURL command told the system that we wanted the feed returned to us in `atom+xml` *(pro tip: you can also try `application/vnd.eventstore.atom+json` if you prefer JSON like we do!)*. The feed that we pulled has a single item inside of it—the one we recently posted. We would then get the event by issuing a `GET` to the alternate URI.
+<span class="note">
+This example uses cURL, but you can read Atom feeds with a wide variety of applications and languages.
+</span>
 
-```
+<span class="note">
+This command asked Event Store to return the feed in `atom+xml` format, you can also use `application/vnd.eventstore.atom+json` if you prefer JSON.
+</span>
+
+The feed has a single item inside of it, the one you just posted. You can then get the event by issuing a `GET` to the `alternate` URI value.
+
+```shell
 curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
 ```
+
+Which gives the following response:
 
 ```http
 HTTP/1.1 200 OK
@@ -153,16 +208,26 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-This will return our event that we had originally posted. You can also get your event as XML (set `Accept: text/xml`). In order to read a single page feed we would just get the feed and then iterate through the event links executing gets. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable. We can also get the events in the feed itself if prefered by using `?embed=body`. There is further discussion on this [here](/http-api/latest/reading-streams).
+<span class="note">
+You can also use `Accept: text/xml` if you prefer XML.
+</span>
 
-Sometimes however your feed may span more than one atom page. In this case you will have to page through the feed. This is done by following the relation links in the feed. To read a feed from the beginning to the end you would go to the *last* link and then continue to read the *previous* page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using *first* then *next*.
+To read a single page feed, you request the feed and then iterate through the event links by executing `GET` requests. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable.
 
-## Subscribing to Stream to get Updates
+You can also `GET` the events in the feed <!-- Need to understand this better--> itself if by using `?embed=body` in the request. You can find further information on this [here](/http-api/latest/reading-streams).
 
-Another common operation people want to be able to do is to listen to a stream for when changes are occuring. Luckily this works the same way as paging through a feed in Atom. As new events arrive new *previous* links will be created. You can continue following them. The example below is written in C# and includes both paging and subscribing over time. If you wanted to provide an *at least once* assurance with the following code you would simply save the last URI you had received.
+Sometimes your feed may span more than one atom page, and you will need to paginate through the feed. You do this by following the relation links in the feed. To read a feed from the beginning to the end you would go to the _last_ link and then continue to read the _previous_ page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using _first_ then _next_.
 
-If you prefer JavaScript an example can be found in our own source base as we have the ability to run projections in the browser from atomfeeds. You can find the code for this [JavaScript Example](https://github.com/EventStore/EventStore/blob/22fd3562f97037afc256745fe011eabaef62db60/src/EventStore/EventStore.SingleNode.Web/singlenode-web/js/projections/es.projection.js).
+<!-- Needs an example -->
 
+## Subscribing to Stream to Receive Updates
+
+**Another common operation people want to be able to do is to listen to a stream for when changes are occuring.**
+
+This works the same way as paging through an Atom feed. As new events arrive, new _previous_ links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an _at least once_ <!-- What is this? --> assurance with the following code, save the last URI you received.
+
+<div class="codetabs" markdown="1">
+<div data-lang="csharp" markdown="1">
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -291,6 +356,342 @@ namespace AtomPoller
             }
         }
     }
-}
-```
 
+}
+
+    </div>
+    <div data-lang="javascript" markdown="1">
+    ```javascript
+    if (!window.es) { window.es = {}; };
+    es.projection = function (settings) {
+
+        var projectionBody = settings.body;
+        var onStateUpdate = settings.onStateUpdate || function () { };
+        var showError = settings.showError || function () { };
+        var hideError = settings.hideError || function () { };
+
+        var currentTimeout = null;
+        var currentAjaxes = null;
+        var category = null;
+
+        return {
+            start: startProjection,
+            stop: stopProjection
+        };
+
+        function startProjection() {
+
+            stopProjection();
+            var processor = $initialize_hosted_projections();
+            projectionBody();
+            processor.initialize();
+
+            var sources = JSON.parse(processor.get_sources());
+            if (sources.all_streams
+                || (sources.categories != null && sources.categories.length > 1)
+                || (sources.streams != null && sources.streams.length > 1)) {
+                throw "Unsupported projection source to run in the web browser";
+            }
+
+            if (sources.categories != null && sources.categories.length == 1) {
+                category = sources.categories[0];
+                startPolling("$ce-" + category, process_event);
+            } else {
+                category = null;
+                startPolling(sources.streams[0], process_event);
+            }
+
+            function process_event(event) {
+                var parsedEvent = event;
+
+                processor.process_event(parsedEvent.data,
+                                parsedEvent.eventStreamId,
+                                parsedEvent.eventType,
+                                category,
+                                parsedEvent.eventNumber,
+                                parsedEvent.metadata);
+                var stateStr = processor.get_state();
+                var stateObj = JSON.parse(stateStr);
+
+                onStateUpdate(stateObj, stateStr);
+            }
+        };
+
+        function stopProjection() {
+            if (currentTimeout !== null)
+                clearTimeout(currentTimeout);
+            if (currentAjaxes !== null) {
+                for (var i = 0, l = currentAjaxes.length; i < l; i++) {
+                    currentAjaxes[i].abort();
+                }
+            }
+
+            currentAjaxes = null;
+            currentTimeout = null;
+        };
+
+        function startPolling(streamId, callback) {
+
+            var firstPageUrl = '/streams/' + encodeURIComponent(streamId);
+            var lastProcessedPageUrl = null;
+            var lastProcessedEntry = null;
+
+            // not used yet - when something fails we just retry
+            var defaultFail = function(a, b, c) { alert('Failed!'); };
+
+            readAll(null, null);
+
+            function readAll(fromPageUrl, fromEntry) {
+
+                lastProcessedPageUrl = fromPageUrl;
+                lastProcessedEntry = fromEntry;
+
+                readFirstPage({
+                    pageRead: pageRead,
+                    noEntries: noEntries,
+                    fail: defaultFail
+                });
+
+                function pageRead(firstPageUrl, lastEntry) {
+
+                    // check for end of stream
+                    if (lastProcessedEntry !== null && Entry.isNewerOrSame(lastProcessedEntry, lastEntry)) {
+                        delayedReadAll(lastProcessedPageUrl, lastProcessedEntry);
+                        return;
+                    }
+
+                    readRange({
+                        page: fromPageUrl || firstPageUrl,
+                        from: fromEntry || null,
+                        to: lastEntry,
+                        processEvent: callback,
+                        endOfStream: delayedReadAll,
+                        success: function (lastReadPageUrl, lastReadEntry) { readAll(lastReadPageUrl, lastReadEntry); },
+                        fail: defaultFail
+                    });
+                }
+
+                function noEntries() {
+                    delayedReadAll(lastProcessedPageUrl, lastProcessedEntry);
+                }
+
+                function delayedReadAll(page, entry) {
+                    setTimeout(function () { readAll(page, entry); }, 1000);
+                }
+            }
+
+            function readFirstPage(sets) {
+
+                var pageRead = sets.pageRead;
+                var noEntries = sets.noEntries;
+                var fail = sets.fail;
+
+                $.ajax(firstPageUrl, {
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    success: function (page) {
+                        if (page.entries.length === 0) {
+                            noEntries();
+                        }
+                        var lastEntry = page.entries[0];
+                        var lastPage = $.grep(page.links, function (link) { return link.relation === 'last'; })[0].uri;
+                        pageRead(lastPage, lastEntry);
+                    },
+                    error: function (jqXhr, status, error) {
+                        setTimeout(function () { readFirstPage(sets); }, 1000);
+                        //fail.apply(window, arguments);
+                    }
+                });
+            }
+
+            function readRange(sets) {
+
+                var page = sets.page;
+                var from = sets.from;
+                var to = sets.to;
+                var processEvent = sets.processEvent;
+                var success = sets.success;
+                var fail = sets.fail;
+
+                readByPages(page);
+
+                function readByPages(fromPage) {
+                    readPage({
+                        url: fromPage,
+                        lowerBound: from,
+                        upperBound: to,
+                        processEvent: processEvent,
+                        onPageRead: function (nextPage) {
+                            readByPages(nextPage);
+                        },
+                        onUpperBound: function (lastReadPageUrl, lastReadEntry) {
+                            success(lastReadPageUrl, lastReadEntry);
+                        },
+                        fail: fail
+                    });
+                }
+            }
+
+            function readPage(sets) {
+
+                var pageUrl = sets.url;
+                var fromEntry = sets.lowerBound;
+                var toEntry = sets.upperBound;
+                var processEvent = sets.processEvent;
+                var onPageRead = sets.onPageRead;
+                var onUpperBound = sets.onUpperBound;
+                var fail = sets.fail;
+
+                $.ajax(pageUrl, {
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    success: function (page) {
+                        var nextPage = $.grep(page.links, function (link) { return link.relation === 'previous'; })[0].uri;
+                        var entries = $.grep(page.entries, function (entry) {
+                            // if we've read more entries then we were asked to - it's ok - just set lastEntry correctly
+                            return fromEntry === null || Entry.isNewer(entry, fromEntry);
+                        });
+                        var onEntriesRead = null;
+
+                        if (Entry.isOnPage(pageUrl, toEntry)) {
+
+                            // setting LastEntry as null is ok - readAll will just continue reading from beginning of page. And as deleted events won't appear again - no duplicates will be processed
+
+                            if (entries.length === 0) {
+                                onUpperBound(pageUrl, toEntry);
+                                return;
+                            }
+
+                            var lastEntry = Entry.max(entries);
+                            onEntriesRead = function () { onUpperBound(pageUrl, lastEntry); };
+                        } else {
+                            onEntriesRead = function () { onPageRead(nextPage); };
+                        }
+
+                        if (entries.length === 0) {
+                            onPageRead(nextPage); // probably was deleted by maxAge/maxCount
+                            return;
+                        }
+
+                        getEvents(entries, processEvent, onEntriesRead);
+                    },
+                    error: function () {
+                        setTimeout(function () { readPage(sets); }, 1000);
+                    }
+                });
+
+
+
+                function getEvents(entries, processEvent, onFinish) {
+
+                    var eventsUrls = $.map(entries, function (entry) {
+                        var jsonLink = $.grep(entry.links, function (link) { return link.type === 'application/json'; })[0].uri;
+                        return jsonLink;
+                    });
+
+                    var eventsUrlsCount = eventsUrls.length;
+                    var processedEventUrlsCount = 0;
+                    var receivedEvents = [];
+
+                    currentAjaxes = [];
+
+                    for (var i = 0; i < eventsUrlsCount; i++) {
+                        var url = eventsUrls[i];
+                        var ajax = $.ajax(url, {
+                            headers: {
+                                "Accept": "application/json"
+                            },
+                            dataType: 'json',
+                            success: successFeed,
+                            error: errorFeed
+                        });
+                        currentAjaxes.push(ajax);
+                    }
+
+                    function successFeed(data) {
+                        receivedEvents.push(data);
+                        processBatchItem();
+                    }
+
+                    function errorFeed(jqXHR, status, error) {
+                        if (jqXHR.responseCode === 404) {
+                            // do nothing. entry may have been erased by maxAge/maxCount
+                            processBatchItem();
+                        } else {
+                            // throw 'TODO: consider what to do if server is down or busy'
+                        }
+                    }
+
+                    function processBatchItem() {
+                        processedEventUrlsCount++;
+
+                        if (processedEventUrlsCount === eventsUrlsCount) {
+                            currentAjaxes = []; // no easy way to remove ajaxes from array when they arrive, so just remove all when batch done
+
+                            var successfullReads = receivedEvents.length;
+                            // can't do much about unsuccessfull reads :\
+
+                            processReceivedEvents(receivedEvents);
+                            receivedEvents = null;
+
+                            onFinish();
+                        }
+                    }
+
+                    function processReceivedEvents(events) {
+                        events.sort(function (a, b) {
+                            return a.eventNumber - b.eventNumber;
+                        });
+
+                        for (var j = 0, l = events.length; j < l; j++) {
+                            processEvent(events[j]);
+                        }
+                    }
+                }
+            }
+
+            var Entry = {};
+            Entry.isNewer = function (entry1, entry2) {
+                return Entry.compare(entry1, entry2) > 0;
+            };
+            Entry.isNewerOrSame = function (entry1, entry2) {
+                return Entry.compare(entry1, entry2) >= 0;
+            };
+            Entry.isOlderOrSame = function (entry1, entry2) {
+                return Entry.compare(entry1, entry2) <= 0;
+            };
+            Entry.compare = function (entry1, entry2) {
+                return Entry.getId(entry1) - Entry.getId(entry2);
+            };
+            Entry.getId = function (entry) {
+                var strId = entry.id.substring(entry.id.lastIndexOf("/") + 1, entry.id.length);
+                return parseInt(strId);
+            };
+            Entry.isOnPage = function (pageUrl, entry) {
+                var entryId = Entry.getId(entry);
+
+                // example: http://127.0.0.1:2114/streams/$stats-127.0.0.1:2114/range/39/20
+                var urlParts = pageUrl.split('/');
+                var start = parseInt(urlParts[urlParts.length - 2]); // before last
+                var backwardCount = parseInt(urlParts[urlParts.length - 1]); // last
+
+                return entryId > start - backwardCount && entryId <= start;
+            };
+            Entry.max = function (array) {
+                if (array.length === 0)
+                    throw 'Cannot get max element in empty array';
+                var res = array[0];
+                for (var i = 1, l = array.length; i < l; i++) {
+                    if (Entry.compare(array[i], res) > 0) {
+                        res = array[i];
+                    }
+                }
+                return res;
+            };
+        }
+    };
+
+</div>
+</div>
