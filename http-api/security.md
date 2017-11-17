@@ -4,22 +4,25 @@ section: "HTTP API"
 version: "4.0.2"
 ---
 
-The Event Store supports security over HTTP. This document is meant as an introduction to how the security is implemented.
+Event Store supports security over HTTP. This guide is an introduction to how security is implemented <!-- Where can you read more? -->.
 
 ## Authentication
 
-The Event Store supports authentication over basic authentication to internal users. These users can be created either through a RESTful API or through the admin console. Once users are configured standard basic authentication can be used on requests.
+Event Store supports authentication over basic authentication to internal users. You create these users with the RESTful API or the admin console. Once you have configured users, you can use standard basic authentication on requests.
 
 <span class="note">
-The trusted intermediary header can also be used to provide for externalized authentication, you can read more about it [here](../optional-http-headers/trusted-intermediary) this can allow you to easily integrate almost any authentication system with the Event Store.
+You can also use the trusted intermediary header to provide for externalized authentication that can allow you to integrate almost any authentication system with Event Store. Read more about it [the trusted intermediary header here](/http-api/optional-http-headers/trusted-intermediary).
 </span>
 
-As an example if I were to use the default admin user `admin:changeit` I would include this in my request.
+As an example if you were to use the default admin user `admin:changeit`, you would include this in you request:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i 'http://127.0.0.1:2113/streams/$all' -u admin:changeit
 ```
-ouro@ouroboros:~/src/EventStore.wiki$ curl -i 'http://127.0.0.1:2113/streams/$all' -u admin:changeit
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, GET, OPTIONS
@@ -34,13 +37,18 @@ Date: Thu, 04 Jul 2013 00:13:59 GMT
 Content-Length: 12212
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
 
-If I were to use the wrong user or no user where one was required I would end up with a 401 Unauthorized.
+If you were to use the wrong user or no user where one is required, you would receive a `401 Unauthorized` response.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i 'http://127.0.0.1:2113/streams/$all' -u admin:password
 ```
-greg@ouroboros:~/src/EventStore.wiki$ curl -i 'http://127.0.0.1:2113/streams/$all' -u admin:password
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 401 Unauthorized
 Access-Control-Allow-Methods: POST, DELETE, GET, GET, OPTIONS
@@ -53,20 +61,22 @@ Date: Thu, 04 Jul 2013 00:20:34 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
 
-As the username and password are being passed as part of the request it is not recommended that you run the Event Store over http if you are using authentication. Instead you should enable SSL in order to encrypt the user information. Instructions can be found in this wiki for how to accomplish this in [Windows](../setting-up-ssl-in-windows) and [Linux](../setting-up-ssl-in-linux). If you are running the clustered version you can also setup SSL for the replication protocol.
+As you pass the username and password as part of the request it is not recommended that you run Event Store over HTTP, you should enable SSL to encrypt the user information. You can find instructions on how to accomplish this in [Windows](/http-api/setting-up-ssl-in-windows) and [Linux](/http-api/setting-up-ssl-in-linux). If you are running the clustered version you can also setup SSL for the replication protocol <!-- Does this need further explanation? -->.
 
 ## Access Control Lists
 
-Along with authentication the Event Store also supports per stream configuration of Access Control Lists (ACL). In order to configure the ACL of a stream you should go to its head and look for the metadata relationship link to obtain the metadata for the stream.
+Along with authentication, Event Store supports per stream configuration of Access Control Lists (ACL). To configure the ACL of a stream you should go to its head and look for the metadata relationship link to obtain the metadata for the stream.
 
 ```json
-    {
-      "uri": "http://127.0.0.1:2113/streams/%24all/metadata",
-      "relation": "metadata"
-    }
+{
+  "uri": "http://127.0.0.1:2113/streams/%24all/metadata",
+  "relation": "metadata"
+}
 ```
 
-To set access control lists over http you can post to the metadata stream just like setting any other metadata. You can also set Access Control Lists for a stream in the web UI. When on a stream.
+To set access control lists over HTTP you can post to the metadata stream as with setting any other metadata. You can also set Access Control Lists for a stream in the web UI.
 
-For more information on the structure of how Access Control Lists work please see [Access Control Lists]({{ site.url }}/server/latest/access-control-lists).
+For more information on the structure of how Access Control Lists work please read [Access Control Lists](/server/latest/access-control-lists).

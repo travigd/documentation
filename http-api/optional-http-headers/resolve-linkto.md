@@ -5,12 +5,18 @@ version: "4.0.2"
 exclude_from_sidebar: true
 ---
 
-When using projections you can have links placed into another stream. By default the Event Store will always resolve linkTos for you returning the event that the link points to. You can use the ES-ResolveLinkTos: false HTTP header to tell the Event Store to return you the actual link and to not resolve it.
+When using projections you can have links placed into another stream. By default Event Store will always resolve `linkTo`s for you returning the event that the link points to. You can use the `ES-ResolveLinkTos: false` HTTP header to tell Event Store to return you the actual link and to not resolve it.
 
-The differences in behaviour can be seen in the following cURL commands.
+You can see the differences in behavior in the following cURL commands.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -u admin:changeit http://127.0.0.:2113/streams/testing2/7 -H "ES-ResolveLinkTos: true"
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
-ouro@ouroboros:~/src/EventStore.wiki$ curl -i -u admin:changeit http://127.0.0.:2113/streams/testing2/7 -H "ES-ResolveLinkTos: true"
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -43,13 +49,22 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
+</div>
+</div>
 
 <span class="note">
-The content links are pointing back to the original `$projections-$all` stream (the linked events are being resolved back to where they point). With the header set the links (or embedded content) will instead point back to the actual linkTo events.
+The content links are pointing to the original `$projections-$all` stream (the linked events are being resolved back to where they point). With the header set the links (or embedded content) will instead point back to the actual `linkTo` events.
 </span>
 
+<!-- Describe -->
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -u admin:changeit http://127.0.0.:2113/streams/testing2/7 -H "ES-ResolveLinkTos: false"
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
-ouro@ouroboros:~/src/EventStore.wiki$ curl -i -u admin:changeit http://127.0.0.:2113/streams/testing2/7 -H "ES-ResolveLinkTos: false"
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -94,3 +109,5 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
+</div>
+</div>

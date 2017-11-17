@@ -5,15 +5,21 @@ version: "4.0.2"
 ---
 
 ## Idempotency
-	
-All operations on the HTTP interface are idempotent (unless the expected version is ignored). It is the responsibility of the client to retry operations under failure conditions, ensuring that that the event IDs of the events being posted are the same as the first attempt.
 
-Provided the client maintains this the Event Store will treat all operations as idempotent.
-	
-As an example if you were to try:
+All operations on the HTTP interface are idempotent (unless the expected version is ignored). It is the responsibility of the client to retry operations under failure conditions, ensuring that the event IDs of the events posted are the same as the first attempt.
 
+Provided the client maintains this Event Store will treat all operations as idempotent.
+
+For example:
+
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream"
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
-ouro@ouroboros$ curl -i -d @/home/greg/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream444"
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST, GET, PUT, DELETE
@@ -24,9 +30,19 @@ Date: Thu, 06 Sep 2012 19:49:37 GMT
 Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
 
+<!-- What's this? -->
+
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream444"
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
-ouro@ouroboros:$ curl -i -d @/home/greg/Downloads/simpleevent.txt "http://127.0.0.1:2113/streams/newstream444"
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST, GET, PUT, DELETE
@@ -37,15 +53,25 @@ Date: Thu, 06 Sep 2012 19:49:37 GMT
 Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
 
 Assuming you were posting to a new stream you would get the event written once (and the stream created). The second event will return as the first but not write again.
 
 <span class="note">
-This allows the client rule of “if you get unknown condition, retry” to work.
+This allows the client rule of “if you get an unknown condition, retry” to work.
 </span>
 
-``` http
-ouro@ouroboros:~/src/retrospective$ curl -i "http://127.0.0.1:2113/streams/newstream444""
+For example:
+
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i "http://127.0.0.1:2113/streams/newstream444"
+```
+</div>
+<div data-lang="response" markdown="1">
+```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST, GET, PUT, DELETE
@@ -134,3 +160,5 @@ Keep-Alive: timeout=15,max=100
 	]
 }
 ```
+</div>
+</div>

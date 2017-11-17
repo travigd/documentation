@@ -4,36 +4,37 @@ section: "HTTP API"
 version: "4.0.2"
 ---
 
-Reading from streams with AtomPub can be a bit confusing if you have not done it before but we will go through in this document how reading works. Luckily for many environments the AtomPub protocol has already been implemented!
-
-The Event Store is compliant with the [Atom 1.0 Specification](http://tools.ietf.org/html/rfc4287) as such many other systems have built in support for the Event Store.
+Reading from streams with AtomPub can be confusing the first time, but fortunately Event Store is compliant with the [Atom 1.0 Specification](http://tools.ietf.org/html/rfc4287) and so many environments have already implemented the AtomPub protocol, and that simplifies the process.
 
 ## Existing Implementations
 
-| Library     | Description                                                                                                                                                      |
-| ----------- | ----------------------------------------------------------------------------------------------------                                                              |
-| NET (BCL)   | `System.ServiceModel.SyndicationServices`                                                                                                                        |
-| JVM         | [http://java-source.net/open-source/rss-rdf-tools](http://java-source.net/open-source/rss-rdf-tools)                                                              |
-| PHP         | [http://simplepie.org/](http://simplepie.org/) or [https://github.com/fguillot/picoFeed](https://github.com/fguillot/picoFeed) |
-| Ruby        | [http://simple-rss.rubyforge.org](http://simple-rss.rubyforge.org)                                                                                                |
-| Clojure     | [https://github.com/scsibug/feedparser-clj](https://github.com/scsibug/feedparser-clj)                                                                            |
-| Go          | [https://github.com/jteeuwen/go-pkg-rss](https://github.com/jteeuwen/go-pkg-rss)                                                                                  |
-| Python      | [http://code.google.com/p/feedparser/](http://code.google.com/p/feedparser/)                                                                                      |
-| node.js     | [https://github.com/danmactough/node-feedparser](https://github.com/danmactough/node-feedparser)                                                                  |
-| Objective C | [https://geekli.st/darvin/repos/MWFeedParser](https://geekli.st/darvin/repos/MWFeedParser)                                                                        |
+| Library     | Description                                                       |
+| ----------- | ----------------------------------------------------------------- |
+| NET (BCL)   | `System.ServiceModel.SyndicationServices`                         |
+| JVM         | <http://java-source.net/open-source/rss-rdf-tools>                |
+| PHP         | <http://simplepie.org/> or <https://github.com/fguillot/picoFeed> |
+| Ruby        | <http://simple-rss.rubyforge.org>                                 |
+| Clojure     | <https://github.com/scsibug/feedparser-clj>                       |
+| Go          | <https://github.com/jteeuwen/go-pkg-rss>                          |
+| Python      | <http://code.google.com/p/feedparser/>                            |
+| node.js     | <https://github.com/danmactough/node-feedparser>                  |
+| Objective-C | <https://geekli.st/darvin/repos/MWFeedParser>                     |
 
 <span class="note--warning">
-The above list of implementations are not officially supported by Event Store, if you know of any others then please let us know.
+The above list are not officially supported by Event Store, if you know of any others [then please let us know](https://geteventstore.com/contact/).
 </span>
 
 ## Reading a Stream
 
-Streams are exposed as a resource located at http(s)://yourdomain.com:port/streams/{stream}. If you do a simple GET to this resource you will get a standard AtomFeed document.
+Event Store exposes streams as a resource located at _http(s)://{yourdomain.com}:{port}/streams/{stream}_. If you issue a simple `GET` request to this resource you will receive a standard AtomFeed document as a response.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream"
 ```
-curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream2"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -50,181 +51,214 @@ Content-Length: 1272
 Keep-Alive: timeout=15,max=100
 
 {
-  "title": "Event stream 'newstream2'",
-  "id": "http://127.0.0.1:2113/streams/newstream2",
-  "updated": "2015-03-13T12:13:42.492473Z",
-  "streamId": "newstream2",
+  "title": "Event stream 'newstream'",
+  "id": "http://127.0.0.1:2113/streams/newstream",
+  "updated": "2017-11-09T13:10:16.111657Z",
+  "streamId": "newstream",
   "author": {
     "name": "EventStore"
   },
   "headOfStream": true,
-  "selfUrl": "http://127.0.0.1:2113/streams/newstream2",
-  "eTag": "0;248368668",
+  "selfUrl": "http://127.0.0.1:2113/streams/newstream",
+  "eTag": "1;-2060438500",
   "links": [
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2",
+      "uri": "http://127.0.0.1:2113/streams/newstream",
       "relation": "self"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/head/backward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
       "relation": "first"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/1/forward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/2/forward/20",
       "relation": "previous"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/metadata",
+      "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
       "relation": "metadata"
     }
   ],
   "entries": [
     {
-      "title": "0@newstream2",
-      "id": "http://127.0.0.1:2113/streams/newstream2/0",
-      "updated": "2015-03-13T12:13:42.492473Z",
+      "title": "1@newstream",
+      "id": "http://127.0.0.1:2113/streams/newstream/1",
+      "updated": "2017-11-09T13:10:16.111657Z",
+      "author": {
+        "name": "EventStore"
+      },
+      "summary": "SomeEvent",
+      "links": [
+        {
+          "uri": "http://127.0.0.1:2113/streams/newstream/1",
+          "relation": "edit"
+        },
+        {
+          "uri": "http://127.0.0.1:2113/streams/newstream/1",
+          "relation": "alternate"
+        }
+      ]
+    },
+    {
+      "title": "0@newstream",
+      "id": "http://127.0.0.1:2113/streams/newstream/0",
+      "updated": "2017-11-09T12:04:15.494635Z",
       "author": {
         "name": "EventStore"
       },
       "summary": "event-type",
       "links": [
         {
-          "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
           "relation": "edit"
         },
         {
-          "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
           "relation": "alternate"
         }
       ]
     }
   ]
-}
+}%
 ```
+</div>
+</div>
 
-There some important bits to notice here. The Feed here has one item in it. The newest items are always first going to the oldest items. For each entry there are a series of links. These links are links to the events themselves though the events can also be embedded using the `?embed` parameter provided you are requesting JSON. To get an event follow the alternate link and set your Accept headers to the mime type you would like to get the event in.
+There some important aspects to notice here. The feed has one item in it, if there are more than one, then items are sorted from newest to oldest.
 
-<span class="note">
-The accepted content types for GET requests are currently:
-</span>
+For each entry, there are a series of links to the actual events, embedding data into a stream [is covered later](#embedding-data-into-stream). To get an event, follow the `alternate` link and set your `Accept` headers to the mime type you would like the event in.
 
-- `application/xml`
-- `application/atom+xml`
-- `application/json`
-- `application/vnd.eventstore.atom+json`
-- `text/xml`
-- `text/html`
+The accepted content types for GET requests are:
 
+-   `application/xml`
+-   `application/atom+xml`
+-   `application/json`
+-   `application/vnd.eventstore.atom+json`
+-   `text/xml`
+-   `text/html`
+
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/json"
 ```
-curl -i http://127.0.0.1:2113/streams/newstream2/0 -H "Accept: application/json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-Forwarded-Prefix, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos
 Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
+Access-Control-Expose-Headers: Location, ES-Position, ES-CurrentVersion
 Cache-Control: max-age=31536000, public
 Vary: Accept
 Content-Type: application/json; charset=utf-8
 Server: Mono-HTTPAPI/1.0
-Date: Fri, 13 Mar 2015 12:17:48 GMT
-Content-Length: 14
+Date: Thu, 09 Nov 2017 13:31:02 GMT
+Content-Length: 29
 Keep-Alive: timeout=15,max=100
 
 {
-  "a": "1"
+  "something": "has data"
 }
 ```
+</div>
+</div>
 
-Alternatively, the atom version of the event will contain additional details about the event.
+The atom version of the event contains extra details about the event.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/vnd.eventstore.atom+json"
 ```
-curl -i http://127.0.0.1:2113/streams/newstream2/0 -H "Accept: application/vnd.eventstore.atom+json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-Forwarded-Prefix, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos
 Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
+Access-Control-Expose-Headers: Location, ES-Position, ES-CurrentVersion
 Cache-Control: max-age=31536000, public
 Vary: Accept
 Content-Type: application/vnd.eventstore.atom+json; charset=utf-8
 Server: Mono-HTTPAPI/1.0
-Date: Fri, 13 Mar 2015 13:54:43 GMT
-Content-Length: 577
+Date: Thu, 09 Nov 2017 13:35:43 GMT
+Content-Length: 640
 Keep-Alive: timeout=15,max=100
 
 {
-  "title": "0@newstream2",
-  "id": "http://127.0.0.1:2113/streams/newstream2/0",
-  "updated": "2015-03-13T12:13:42.492473Z",
+  "title": "1@newstream",
+  "id": "http://127.0.0.1:2113/streams/newstream/1",
+  "updated": "2017-11-09T13:10:16.111657Z",
   "author": {
     "name": "EventStore"
   },
-  "summary": "event-type",
+  "summary": "SomeEvent",
   "content": {
-    "eventStreamId": "newstream2",
-    "eventNumber": 0,
-    "eventType": "event-type",
+    "eventStreamId": "newstream",
+    "eventNumber": 1,
+    "eventType": "SomeEvent",
+    "eventId": "c322e299-cb73-4b47-97c5-5054f920746e",
     "data": {
-      "a": "1"
+      "something": "has data"
     },
     "metadata": ""
   },
   "links": [
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+      "uri": "http://127.0.0.1:2113/streams/newstream/1",
       "relation": "edit"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+      "uri": "http://127.0.0.1:2113/streams/newstream/1",
       "relation": "alternate"
     }
   ]
 }
 ```
+</div>
+</div>
 
 ## Feed Paging
 
-The next thing towards understanding how to read a stream is understanding the first/last/previous/next links that are given within a stream. The basic idea is that the server will give you links so that you can walk through a stream.
+The next step in understanding how to read a stream is the `first`/`last`/`previous`/`next` links within a stream. Event Store supplies these links so you can read through a stream, and they follow the pattern defined in [RFC 5005](http://tools.ietf.org/html/rfc5005).
 
-To read through the stream we will follow the pattern defined in <a href="http://tools.ietf.org/html/rfc5005">RFC 5005</a>.
-
-In the example above the server had returned as part of its result:
+In the example above the server returned the following `links` as part of its result:
 
 ```json
-  "links": [
-    {
-      "uri": "http://127.0.0.1:2113/streams/newstream2",
-      "relation": "self"
-    },
-    {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/head/backward/20",
-      "relation": "first"
-    },
-    {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/1/forward/20",
-      "relation": "previous"
-    },
-    {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/metadata",
-      "relation": "metadata"
-    }
-  ]
+"links": [
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream",
+    "relation": "self"
+  },
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
+    "relation": "first"
+  },
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream/1/forward/20",
+    "relation": "previous"
+  },
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
+    "relation": "metadata"
+  }
+]
 ```
 
-This is saying that there is not a next URL (this means all the information is in this request). It is also saying that this URL is the first link. When dealing with these urls there are two ways of reading the data in the stream. You can either go to the last link and then move forward following previous or you can go to the first link and follow the next links, the final item will not have a next link.
+This shows that there is not a `next` URL (all the information is in this request), and that the URL requested is the first link. When dealing with these urls there are two ways of reading the data in the stream. You can either go to the `last` link and then move backward following `previous` or you can go to the `first` link and follow the `next` links, the final item will not have a next link.
 
-If you want to follow a live stream then you would keep following the previous links. When you reach the end (current portion) of a stream you will receive an empty document that does not have entries (or a previous link). You should then continue polling this URI (in the future a document will appear here). This can be seen by trying the previous link from the above feed.
+If you want to follow a live stream then you would keep following the `previous` links. When you reach the end of a stream you will receive an empty document with no entries or `previous` link. You then continue polling this URI (in the future a document will appear here). You can see this by trying the `previous` link from the above feed.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/newstream/1/forward/20 -H "Accept:application/vnd.eventstore.atom+json"
 ```
-curl -i http://127.0.0.1:2113/streams/newstream2/1/forward/20 -H "Accept:application/vnd.eventstore.atom+json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
@@ -241,50 +275,59 @@ Content-Length: 795
 Keep-Alive: timeout=15,max=100
 
 {
-  "title": "Event stream 'newstream2'",
-  "id": "http://127.0.0.1:2113/streams/newstream2",
+  "title": "Event stream 'newstream'",
+  "id": "http://127.0.0.1:2113/streams/newstream",
   "updated": "0001-01-01T00:00:00Z",
-  "streamId": "newstream2",
+  "streamId": "newstream",
   "author": {
     "name": "EventStore"
   },
   "headOfStream": false,
   "links": [
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2",
+      "uri": "http://127.0.0.1:2113/streams/newstream",
       "relation": "self"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/head/backward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
       "relation": "first"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/0/forward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/0/forward/20",
       "relation": "last"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/0/backward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/0/backward/20",
       "relation": "next"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/metadata",
+      "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
       "relation": "metadata"
     }
   ],
   "entries": []
 }
 ```
+</div>
+</div>
 
-When parsing an atom subscription the IDs of events will always stay the same. This is important for figuring out when things are pointing to the same event.
+When parsing an atom subscription the IDs of events will always stay the same. This is important for figuring out if you are referring to the same event.
 
-While the simple example above is easy to look at, let’s try an example with more than a single page in it. If you want to do this yourself you can use the testclient that comes with event store and use the `VERIFY` command that will make some fake banking data. After running this command you should find many streams such as `http://127.0.0.1:2113/streams/account-28` in the system.
+<!-- ?? -->
 
-Going to the link `http://127.0.0.1:2113/streams/account-28` will return us:
+Let’s now try an example with more than a single page. You can use the testclient that comes with event store and use the `VERIFY` command to create fake banking data. After running this command you should find many streams such as `http://127.0.0.1:2113/streams/account-28` in the system.
 
-```
+<!-- ?? -->
+
+Opening the link _<http://127.0.0.1:2113/streams/account-28>_ will return:
+
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
 curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json"
 ```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -339,15 +382,20 @@ Keep-Alive: timeout=15,max=100
   ],
   "entries": <SNIP>
 ```
+</div>
+</div>
 
-Using the links in this response it is possible to walk through all of the events in the stream either by going to the “last” URL and walking "previous" or by walking "next" from the “first” link.
+Using the links in this response you can traverse through all the events in the stream by going to the `last` URL and walking "previous" or by walking "next" from the “first” link.
 
 If you go to the “last” link you will receive:
 
-```
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
 curl -i http://127.0.0.1:2113/streams/account-28/0/forward/20 -H "Accept:application/vnd.eventstore.atom+json"
 ```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
@@ -391,6 +439,8 @@ Keep-Alive: timeout=15,max=100
   ],
   "entries": <SNIP>
 ```
+</div>
+</div>
 
 You would then follow its “previous” link until you got back to the head of the document. This is the general way of reading back a stream. Once at the end you can continue reading events as they happen by polling the previous link and you will get events in near real time as they happen.
 
@@ -400,16 +450,19 @@ It is also important to note that you should **never** bookmark links aside from
 
 ## Reading All Events
 
-There is a special paged feed for all events that is named `$all`. The same paged form of reading described above can be used to read all events for the entire node by pointing the stream at `/streams/$all`. As it is just a stream in the system, all other things can be done with it (e.g. headers/embed body/etc). You are not however allowed to post to this stream.
+There is a special paged feed for all events that named `$all`. You can use the same paged form of reading described above to read all events for the entire node by pointing the stream at _/streams/$all_. As it's a stream like any other, you can perform all other operations with it except posting to it.
 
 <span class="note">
-To access the `$all` stream, you must provide user details, more information can be found on the [Security](../security) page.
+To access the `$all` stream, you must provide user details, find more information on the [security](../security) page.
 </span>
 
-```
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
 curl -i http://127.0.0.1:2113/streams/%24all -H "Accept:application/vnd.eventstore.atom+json" -u admin:changeit
 ```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, GET, OPTIONS
@@ -461,15 +514,20 @@ Keep-Alive: timeout=15,max=100
   ],
   "entries": <SNIP>
 ```
+</div>
+</div>
 
 ## Conditional Gets
 
-The head link also supports conditional gets through the use of ETAGS. The use of ETAGS is a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). The basic idea is that you can include the ETAG of your last request and issue a conditional `get` to the server. If nothing has changed it will not return the full feed. As an example consider we make the request:
+The head link supports conditional `GET`s with the use of [ETAGS](http://en.wikipedia.org/wiki/HTTP_ETag), a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). You can include the ETAG of your last request and issue a conditional `GET` to the server. If nothing has changed it will not return the full feed. For example:
 
-```
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
 curl -i http://127.0.01:2113/streams/account-28l -H "Accept:application/vnd.eventstore.atom+json"
 ```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -487,13 +545,18 @@ Keep-Alive: timeout=15,max=100
 
 <SNIP>
 ```
+</div>
+</div>
 
-The server has told us in the headers that the ETag for this content is `ETag: "180;248368668"`. We can use this in our next request if we are polling the stream for changes. We will put it in the header If-None-Match. This tells the server to check if the response will be the one we already know.
+The server responded in the headers that the ETag for this content is `ETag: "180;248368668"`. You can use this in your next request when polling the stream for changes by putting it in the header `If-None-Match`. This tells the server to check if the response will be the one you already know.
 
-```
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
 curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json" -H "If-None-Match:180;248368668"
 ```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 304 Not Modified
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -506,8 +569,12 @@ Date: Fri, 13 Mar 2015 16:27:53 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
+</div>
+</div>
 
-When we do the conditional GET we will be returned a 304 not modified. If however the tags have changed it will be returned as normal. This can optimize not sending large streams over the wire if there have not been changes to the stream.
+When you use the conditional `GET` the server will return a '304 not modified' response. If the tags have changed, the server will return as normal <!-- What is normal? -->. You can use this method to optimize your application by not sending large streams if there are not changes.
 
 <span class="note">
 Etags are created using the version of the stream and the media type you are reading the stream in. You can NOT take an etag from a stream in one media type and use it with another media type.
@@ -515,18 +582,25 @@ Etags are created using the version of the stream and the media type you are rea
 
 ## Embedding Data into Stream
 
-Up until now the feeds that have come down have contained links that point back to the actual event data. This is normally a preferable mechanism for a few reasons. The first is that they can be in a different media type than the feed and can be negotiated separately than the feed itself (e.g. feed in JSON event in XML). They can also be cached separately from the feed and can be pointed to by many feeds (if you use a `linkTo()` in projections this is actually what happens in your atom feeds). You can however also tell the atom feeds to embed your events into the stream as opposed to providing links. This can help cut down on the number of requests in some situations but the messages will be larger. Embedding is only supported in JSON.
+So far in this document the feeds returned have contained links that refer to the actual event data. This is normally a preferable mechanism for a few reasons.
 
-Though these are mostly used by the StreamUI component in the webapi at present there are ways of embedding events and/or further metadata into your stream that are controlled by the `embed=` parameter.
+They can be in a different media type than the feed and can you can negotaite them separately from the feed itself (e.g. the feed in JSON, the event in XML). <!-- Who/what caches? --> They can be cached separately from the feed and can be pointed to by many feeds (if you use a `linkTo()` in projections <!-- Need to explain what a projection is first --> this is actually what happens in your atom feeds).
+
+If you are using JSON, you can embed the events into the atom feeds events. This can help cut down on the number of requests in some situations but the messages will be larger.
+
+Though these are mostly used by the StreamUI component in the Web API there are ways of embedding events and/or further metadata into your stream controlled by the `embed=` parameter.
 
 ### Rich
 
-The Rich embed mode will return more properties about the event (eventtype, streamid, position, etc) as can be seen in the following request.
+The `rich` embed mode will return more properties about the event (`eventtype`, `streamid`, `position`, etc) as you can see in the following request.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream?embed=rich"
 ```
-curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream2?embed=rich"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -543,31 +617,31 @@ Content-Length: 1570
 Keep-Alive: timeout=15,max=100
 
 {
-  "title": "Event stream 'newstream2'",
-  "id": "http://127.0.0.1:2113/streams/newstream2",
+  "title": "Event stream 'newstream'",
+  "id": "http://127.0.0.1:2113/streams/newstream",
   "updated": "2015-03-13T12:13:42.492473Z",
-  "streamId": "newstream2",
+  "streamId": "newstream",
   "author": {
     "name": "EventStore"
   },
   "headOfStream": true,
-  "selfUrl": "http://127.0.0.1:2113/streams/newstream2",
+  "selfUrl": "http://127.0.0.1:2113/streams/newstream",
   "eTag": "0;248368668",
   "links": [
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2",
+      "uri": "http://127.0.0.1:2113/streams/newstream",
       "relation": "self"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/head/backward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
       "relation": "first"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/1/forward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/1/forward/20",
       "relation": "previous"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/metadata",
+      "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
       "relation": "metadata"
     }
   ],
@@ -576,14 +650,14 @@ Keep-Alive: timeout=15,max=100
       "eventId": "fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4",
       "eventType": "event-type",
       "eventNumber": 0,
-      "streamId": "newstream2",
+      "streamId": "newstream",
       "isJson": true,
       "isMetaData": false,
       "isLinkMetaData": false,
       "positionEventNumber": 0,
-      "positionStreamId": "newstream2",
-      "title": "0@newstream2",
-      "id": "http://127.0.0.1:2113/streams/newstream2/0",
+      "positionStreamId": "newstream",
+      "title": "0@newstream",
+      "id": "http://127.0.0.1:2113/streams/newstream/0",
       "updated": "2015-03-13T12:13:42.492473Z",
       "author": {
         "name": "EventStore"
@@ -591,11 +665,11 @@ Keep-Alive: timeout=15,max=100
       "summary": "event-type",
       "links": [
         {
-          "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
           "relation": "edit"
         },
         {
-          "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
           "relation": "alternate"
         }
       ]
@@ -603,15 +677,20 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
+</div>
+</div>
 
 ### Body
 
-The body embed parameter will put the JSON/XML body of the events into the feed as well depending on the type of the feed. This can be seen in the following HTTP request (note the field “data” that is added).
+The `body` embed mode will return the JSON/XML body of the events into the feed as well, depending on the type of the feed. You can see this in the request below:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream?embed=body"
 ```
-curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream2?embed=body"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -628,31 +707,31 @@ Content-Length: 1608
 Keep-Alive: timeout=15,max=100
 
 {
-  "title": "Event stream 'newstream2'",
-  "id": "http://127.0.0.1:2113/streams/newstream2",
+  "title": "Event stream 'newstream'",
+  "id": "http://127.0.0.1:2113/streams/newstream",
   "updated": "2015-03-13T12:13:42.492473Z",
-  "streamId": "newstream2",
+  "streamId": "newstream",
   "author": {
     "name": "EventStore"
   },
   "headOfStream": true,
-  "selfUrl": "http://127.0.0.1:2113/streams/newstream2",
+  "selfUrl": "http://127.0.0.1:2113/streams/newstream",
   "eTag": "0;248368668",
   "links": [
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2",
+      "uri": "http://127.0.0.1:2113/streams/newstream",
       "relation": "self"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/head/backward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
       "relation": "first"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/1/forward/20",
+      "uri": "http://127.0.0.1:2113/streams/newstream/1/forward/20",
       "relation": "previous"
     },
     {
-      "uri": "http://127.0.0.1:2113/streams/newstream2/metadata",
+      "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
       "relation": "metadata"
     }
   ],
@@ -662,14 +741,14 @@ Keep-Alive: timeout=15,max=100
       "eventType": "event-type",
       "eventNumber": 0,
       "data": "{\n  \"a\": \"1\"\n}",
-      "streamId": "newstream2",
+      "streamId": "newstream",
       "isJson": true,
       "isMetaData": false,
       "isLinkMetaData": false,
       "positionEventNumber": 0,
-      "positionStreamId": "newstream2",
-      "title": "0@newstream2",
-      "id": "http://127.0.0.1:2113/streams/newstream2/0",
+      "positionStreamId": "newstream",
+      "title": "0@newstream",
+      "id": "http://127.0.0.1:2113/streams/newstream/0",
       "updated": "2015-03-13T12:13:42.492473Z",
       "author": {
         "name": "EventStore"
@@ -677,11 +756,11 @@ Keep-Alive: timeout=15,max=100
       "summary": "event-type",
       "links": [
         {
-          "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
           "relation": "edit"
         },
         {
-          "uri": "http://127.0.0.1:2113/streams/newstream2/0",
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
           "relation": "alternate"
         }
       ]
@@ -689,13 +768,18 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
+</div>
+</div>
 
-If you try this in XML then no additional data is embedded, as embedding is only supported with json.
+If you use XML format then no additional data is embedded, as embedding is only supported with json.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream?embed=body"
 ```
-curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream2?embed=body"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -736,4 +820,7 @@ Keep-Alive: timeout=15,max=100
    </entry>
 </feed>
 ```
-There are two other modes that are just variants of body. There is PrettyBody which will try to reformat the JSON to make it “pretty to read” and there is TryHarder that will work even harder to try to parse and reformat JSON from an event to allow it to be returned in the feed. These do not however include further information, they are focused on what the feed looks like. 
+</div>
+</div>
+
+There are two other modes that are variants of `body`. `PrettyBody` <!-- Is it really camel-cased? --> which will try to reformat the JSON to make it "pretty to read", and `TryHarder` that will work harder to try to parse and reformat JSON from an event to return it in the feed. These do not include further information, they are focused on how the feed looks.

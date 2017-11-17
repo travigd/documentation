@@ -96,16 +96,13 @@ To begin, open a text editor, copy and paste the following event definition, and
 
 To write the event to a stream, issue the following cURL command.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
 ```shell
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
 ```
-
-<span class="note">
-You can also post events as XML, by changing the `Content-Type` header to `XML`.
-</span>
-
-This gives the following result:
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -118,6 +115,13 @@ Date: Fri, 28 Jun 2013 12:17:59 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
+
+
+<span class="note">
+You can also post events as XML, by changing the `Content-Type` header to `XML`.
+</span>
 
 Open the UI after this command to the _Stream Browser_ tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.
 
@@ -127,12 +131,13 @@ You can also setup [Access Control Lists](/server/latest/access-control-lists/) 
 
 Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc4287), and you can read data from the stream by navigating to the _head_ URI of the stream <http://127.0.0.1:2113/streams/newstream> with cURL.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
 ```shell
 curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream"
 ```
-
-Which gives the following result:
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -173,6 +178,9 @@ Keep-Alive: timeout=15,max=100
    </entry>
 </feed>
 ```
+</div>
+</div>
+
 
 <span class="note">
 This example uses cURL, but you can read Atom feeds with a wide variety of applications and languages.
@@ -184,12 +192,13 @@ This command asked Event Store to return the feed in `atom+xml` format, you can 
 
 The feed has a single item inside of it, the one you just posted. You can then get the event by issuing a `GET` to the `alternate` URI value.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
 ```shell
 curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
 ```
-
-Which gives the following response:
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
@@ -207,6 +216,9 @@ Keep-Alive: timeout=15,max=100
   "a": "1"
 }
 ```
+</div>
+</div>
+
 
 <span class="note">
 You can also use `Accept: text/xml` if you prefer XML.
@@ -222,12 +234,13 @@ Sometimes your feed may span more than one atom page, and you will need to pagin
 
 ## Subscribing to Stream to Receive Updates
 
-**Another common operation people want to be able to do is to listen to a stream for when changes are occuring.**
+**Another common operation people want to be able to do is to listen to a stream for when changes are occurring.**
 
 This works the same way as paging through an Atom feed. As new events arrive, new _previous_ links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an _at least once_ <!-- What is this? --> assurance with the following code, save the last URI you received.
 
 <div class="codetabs" markdown="1">
-<div data-lang="csharp" markdown="1">
+<div data-lang="C#" markdown="1">
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -358,10 +371,11 @@ namespace AtomPoller
     }
 
 }
+```
+</div>
 
-    </div>
-    <div data-lang="javascript" markdown="1">
-    ```javascript
+<div data-lang="javascript" markdown="1">
+```javascript
     if (!window.es) { window.es = {}; };
     es.projection = function (settings) {
 
@@ -692,6 +706,6 @@ namespace AtomPoller
             };
         }
     };
-
+```
 </div>
 </div>

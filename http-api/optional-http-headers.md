@@ -4,11 +4,11 @@ section: "HTTP API"
 version: "4.0.2"
 ---
 
-The Event Store supports the use of a few custom HTTP headers for requests. 
+Event Store supports the use of custom HTTP headers for requests.
 
-Note that the headers have previously been in the form `X-ES-ExpectedVersion` but have been changed to `ES-ExpectedVersion` in compliance with [RFC-6648](http://tools.ietf.org/html/rfc6648).
+The headers were previously in the form `X-ES-ExpectedVersion` but have been changed to `ES-ExpectedVersion` in compliance with [RFC-6648](http://tools.ietf.org/html/rfc6648).
 
-The headers that are currently supported are:
+The headers supported are:
 
 | Header                                   | Description                                                                                        |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------- |

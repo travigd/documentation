@@ -5,16 +5,26 @@ version: "4.0.2"
 exclude_from_sidebar: true
 ---
 
-When writing to a stream it is often wanted to use an `Expected Version`. This allows for optimistic concurrency with a stream, IE: my write can only succeed if I have seen everyone else's writes. This is used most commonly for a domain object projection. ExpectedVersion can be set as `ES-ExpectedVersion: #`.
+When writing to a stream you often want to use `Expected Version` to allow for optimistic concurrency with a stream.
 
-By default the `ES-ExpectedVersion` is `-2` (just append). You can set an actual version number as well or `-1` to say that the stream should not exist when processing (eg you expect to be creating it), or `-4` to say that the stream should exist with any number of events in it.
+i.e. my write can succeed if I have seen everyone else's writes.
+
+You most commonly use this for a domain object projection, You can set `ExpectedVersion` as `ES-ExpectedVersion: #`.
+
+By default the `ES-ExpectedVersion` is `-2` (append). You can set an actual version number as well or `-1` to say that the stream should not exist when processing (e.g. you expect to be creating it), or `-4` to say that the stream should exist with any number of events in it.
 
 If the `ExpectedVersion` does not match the version of the stream, Event Store will return an HTTP 400 `Wrong expected EventNumber` response. This response contains the current version of the stream in an `ES-CurrentVersion` header.
 
 In the following cURL command `ExpectedVersion` is not set (and it will append or create/append to the stream).
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
-ouro@ouroboros:~/src/EventStore.wiki$ curl -i -d @/home/greg/test.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -26,11 +36,19 @@ Date: Thu, 27 Jun 2013 14:26:14 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
 
-the stream `newstream` would now have one event in it. If appending with an expected version of 3 this will not work.
+The stream 'newstream' now has one event. If appending with an expected version of '3' this will not work.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-ExpectedVersion: 3"
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
-ouro@ouroboros:~/src/EventStore.wiki$ curl -i -d @/home/ouro/test.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-ExpectedVersion: 3"
 HTTP/1.1 400 Wrong expected EventNumber
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -42,11 +60,19 @@ Date: Thu, 27 Jun 2013 14:27:24 GMT
 Content-Length: 0
 Connection: close
 ```
+</div>
+</div>
 
-We can see from the `ES-CurrentVersion` header above that the stream is at version zero. So appending with an expected version of zero will work. The expected version is always the version of the last event you know of in the stream.
+You can see from the `ES-CurrentVersion` header above that the stream is at version zero. Appending with an expected version of zero will work. The expected version is always the version of the last event you know of in the stream.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-ExpectedVersion: 0"
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
-ouro@ouroboros:~/src/EventStore.wiki$ curl -i -d @/home/ouro/test.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-ExpectedVersion: 0"
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -58,3 +84,5 @@ Date: Thu, 27 Jun 2013 14:47:10 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>

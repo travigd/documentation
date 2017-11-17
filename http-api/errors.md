@@ -4,6 +4,8 @@ section: "HTTP API"
 version: "4.0.2"
 ---
 
+<!-- Is this really all errors? -->
+
 There are many error conditions that can be returned from the writing or reading of a stream. All of these can be identified by their status codes and should be relatively easy to diagnose.
 
 ## Stream Never Created Get
@@ -19,7 +21,6 @@ Server: Mono-HTTPAPI/1.0
 Date: Tue, 02 Apr 2013 14:41:29 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
-
 ```
 
 ## Write to Stream with Invalid Content for Content Type
@@ -50,7 +51,7 @@ HTTP/1.1 400 Write request body invalid
 Access-Control-Allow-Methods: DELETE, GET, POST, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
 Access-Control-Allow-Origin: *
-Content-Type: 
+Content-Type:
 Server: Mono-HTTPAPI/1.0
 Date: Tue, 02 Apr 2013 14:48:27 GMT
 Content-Length: 0
@@ -62,11 +63,11 @@ Connection: close
 ```http
 ouro@ouroboros:~/src/EventStore.wiki$ curl -i "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -u admin:foo
 HTTP/1.1 401 Unauthorized
-Access-Control-Allow-Methods: 
+Access-Control-Allow-Methods:
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
 Access-Control-Allow-Origin: *
 WWW-Authenticate: Basic realm="ES"
-Content-Type: 
+Content-Type:
 Server: Mono-HTTPAPI/1.0
 Date: Fri, 28 Jun 2013 12:45:30 GMT
 Content-Length: 0

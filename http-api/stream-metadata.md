@@ -4,26 +4,35 @@ section: "HTTP API"
 version: "4.0.2"
 ---
 
-Every stream in the Event Store has metadata associated with it. Internally, the metadata includes such information as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API. 
+Every stream in Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also add information into stream metadata for use with projections or the client API.
 
-A common use case of information you may want to store in metadata is information associated with an event that is not part of the event. An example of this might be which user wrote the event? Which application server were they talking to? From what IP address did the request come from? This type of information is not part of the actual event but is metadata assocatiated with the event.
+A common use case for information you may want to store in metadata is information associated with an event that is not part of the event.
 
-Stream metadata is stored internally as JSON, and can be accessed over the HTTP APIs. 
+Examples of this might be:
+
+-   Which user wrote the event.
+-   Which application server were they talking to.
+-   What IP address did the request come from?
+
+Stream metadata is stored internally as JSON, and you can access it over the HTTP APIs.
 
 ## Reading Stream Metadata
 
-To read the metadata, a `GET` request is issued to the attached metadata resource, which is currently of the form:
+To read the metadata, issue a `GET` request to the attached metadata resource, which is of the form:
 
-```
+```http
 http://{eventstore}/streams/{stream-name}/metadata
 ```
 
-However, you should not access metadata by constructing this URL yourself, as the right to change the resource address is reserved. Instead, you should follow the link for from the stream itself, which will enable your client to tolerate future changes to the addressing structure without breaking.
+You should not access metadata by constructing this URL yourself, as the right to change the resource address is reserved. Instead, you should follow the link for from the stream itself, which will enable your client to tolerate future changes to the addressing structure without breaking.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/$users --user admin:changeit
 ```
-ouro@ouroboros:>curl -i http://127.0.0.1:2113/streams/$users --user admin:changeit
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Cache-Control: max-age=0, no-cache, must-revalidate
@@ -39,7 +48,7 @@ Date: Sun, 16 Jun 2013 15:08:49 GMT
 
 {
   "title": "Event stream '$users'",
-  "id": "http://127.0.0.1:2113/streams/%24users",
+  "id": "<http://127.0.0.1:2113/streams/%24users">,
   "updated": "2013-06-16T15:08:47.5245306Z",
   "author": {
     "name": "EventStore"
@@ -67,14 +76,19 @@ Date: Sun, 16 Jun 2013 15:08:49 GMT
     }
   ],
 ...
-```
 
-Once you have the URI of the metadata stream, a `GET` request will retrieve the metadata:
+    </div>
+    </div>
 
-```
-ouro@ouroboros:> curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
-```
+    Once you have the URI of the metadata stream, a `GET` request will retrieve the metadata:
 
+    <div class="codetabs" markdown="1">
+    <div data-lang="request" markdown="1">
+    ```bash
+    curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
+
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Cache-Control: max-age=31536000, public
@@ -89,7 +103,7 @@ Date: Sun, 16 Jun 2013 13:18:29 GMT
 
 {
   "title": "0@$$$users",
-  "id": "http://127.0.0.1:2113/streams/%24%24%24users/0",
+  "id": "<http://127.0.0.1:2113/streams/%24%24%24users/0">,
   "updated": "2013-06-16T12:25:13.8428624Z",
   "author": {
     "name": "EventStore"
@@ -116,16 +130,19 @@ Date: Sun, 16 Jun 2013 13:18:29 GMT
     }
   ]
 }
-```
 
-<span class="note">
-Reading metadata may require that you pass credentials if you have security enabled, as in the examples above. If you do not pass credentials and they are required you will receive a 401 Unauthorized response.
-</span>
+    </div>
+    </div>
 
-```
-ouro@ouroboros:> curl -i http://127.0.0.1:2113/streams/$users/metadata
-```
+    Reading metadata may require that you pass credentials if you have security enabled, as in the examples above. If you do not pass credentials and they are required you will receive a '401 Unauthorized' response.
 
+    <div class="codetabs" markdown="1">
+    <div data-lang="request" markdown="1">
+    ```bash
+    curl -i http://127.0.0.1:2113/streams/$users/metadata
+
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 401 Unauthorized
 Content-Length: 0
@@ -137,12 +154,14 @@ Access-Control-Allow-Origin: *
 WWW-Authenticate: Basic realm="ES"
 Date: Sun, 16 Jun 2013 13:20:22 GMT
 ```
+</div>
+</div>
 
 ## Writing Metadata
 
-To update the metadata for a stream, a `POST` should be made to the metadata resource. This will replace the current metadata with the information posted.
+To update the metadata for a stream, issue a `POST` request to the metadata resource. This will replace the current metadata with the information posted.
 
-### metadata.txt
+Inside a file named _metadata.txt_:
 
 ```json
 [
@@ -151,27 +170,27 @@ To update the metadata for a stream, a `POST` should be made to the metadata res
         "eventType": "$user-updated",
         "data": {
             "readRole": "$all",
-            "metaReadRole": "$all" 
+            "metaReadRole": "$all"
         }
     }
 ]
 ```
 
-User-specified metadata can also be added here. Some examples of good uses of user-specified metadata:
+You can also add user-specified metadata here. Some examples of good uses of user-specified metadata:
 
-- which adapter is responsible for populating a stream
-- which projection caused a stream to be created
-- a correlation ID of some business process
-- plenty more!
+-   which adapter is responsible for populating a stream.
+-   which projection caused a stream to be created.
+-   a correlation ID of some business process.
 
-This information is then posted to the stream.
+This information is then posted to the stream:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @metadata.txt http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit -H "Content-Type: application/vnd.eventstore.events+json"
 ```
-oruo@ouroboros:> curl -i -d @data.txt http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit -H "Content-Type: application/vnd.eventstore.events+json"
-```
-
-You don't need to write with the vnd.eventstore.events+json media type you can write to it as a normal stream
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -182,15 +201,19 @@ Access-Control-Allow-Methods: GET, POST, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
 Access-Control-Allow-Origin: *
 Date: Sun, 16 Jun 2013 14:50:21 GMT
-
 ```
+</div>
+</div>
 
-If the specified user does not have permissions to write to the stream metadata, a 401 Unauthorized response will be given:
+If the specified user does not have permissions to write to the stream metadata, you will receive a '401 Unauthorized' response:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @metadata.txt http://127.0.0.1:2113/streams/$users/metadata --user invaliduser:invalidpass -H "Content-Type: application/vnd.eventstore.events+json"
 ```
-ouro@ouroboros:> curl -i -d @data.txt http://127.0.0.1:2113/streams/$users/metadata --user invaliduser:invalidpass -H "Content-Type: application/vnd.eventstore.events+json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 401 Unauthorized
 Content-Length: 0
@@ -201,3 +224,5 @@ Access-Control-Allow-Origin: *
 WWW-Authenticate: Basic realm="ES"
 Date: Sun, 16 Jun 2013 14:51:37 GMT
 ```
+</div>
+</div>

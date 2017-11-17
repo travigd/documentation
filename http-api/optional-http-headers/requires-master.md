@@ -5,16 +5,19 @@ version: "4.0.2"
 exclude_from_sidebar: true
 ---
 
-When running in a clustered environmenty there are times when you only want an operation to happen on the current leader node. A client could get information in an eventually consistent fashion by gossiping with the servers (the TCP client included with the multi-node version does this).
+When running in a clustered environment there are times when you only want an operation to happen on the current leader node. A client could get information in an eventually consistent fashion by communicating with the servers (the TCP client included with the multi-node version does this).
 
-Over HTTP the RequiresMaster header tells the node that it is not allowed to serve in the case of a read or forward the request in the case of a write. If the node is the master everything will work as normal, if it is not it will respond with a 307 temporary redirect to the master.
+Over HTTP the `RequiresMaster` header tells the node that it is not allowed to serve in the case of a read or forward the request in the case of a write. If the node is the master everything will work as normal, if it is not it will respond with a 307 temporary redirect to the master.
 
-Run on the master:
+Run the below on the master:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i "http://127.0.0.1:32004/streams/stream" -H "ES-RequireMaster: True"
 ```
-ouro@ouroboros:~curl -i "http://127.0.0.1:32004/streams/stream" -H "ES-RequireMaster: True"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Cache-Control: max-age=0, no-cache, must-revalidate
@@ -27,9 +30,7 @@ Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
 Access-Control-Allow-Origin: *
 Date: Thu, 27 Jun 2013 14:48:37 GMT
-```
 
-```json
 {
   "title": "Event stream 'stream'",
   "id": "http://127.0.0.1:32004/streams/stream",
@@ -83,13 +84,18 @@ Date: Thu, 27 Jun 2013 14:48:37 GMT
   ]
 }
 ```
+</div>
+</div>
 
-Run on any other node
+Run the following on any other node:
 
-```
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
 curl -i "http://127.0.0.1:31004/streams/stream" -H "ES-RequireMaster: True"
 ```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 307 Temporary Redirect
 Content-Length: 0
@@ -100,5 +106,6 @@ Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
 Access-Control-Allow-Origin: *
 Date: Thu, 27 Jun 2013 14:48:28 GMT
-
 ```
+</div>
+</div>

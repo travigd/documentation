@@ -4,20 +4,23 @@ section: "HTTP API"
 version: "4.0.2"
 ---
 
-To delete a stream over the Atom interface is quite simple. Simply DELETE the resource. This process can be seen in the following cURL commands and should be available from any environment.
+To delete a stream over the Atom interface, issue a `DELETE` request to the resource.
 
 <span class="note">
-The documentation here applies to versions after 2.0.1. Prior to 2.0.1 only hard deletes were available and the system uses that behaviour.
+The documentation here applies to versions after 2.0.1. Prior to 2.0.1 only hard deletes were available and the system uses that behavior.
 </span>
 
 ## Example
 
-We can create a stream.
+Create a stream with the following request:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.txt http://127.0.0.1:2113/streams/foo -H "Content-Type: application/json"
 ```
-ouro@ouroboros:~$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo -H "Content-Type: application/json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -30,13 +33,17 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:39:12 GMT
 ```
+</div>
+</div>
+Then delete the stream with a `DELETE` request to the stream resource:
 
-Then delete the stream with a `HTTP DELETE` to the stream resource.
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -v -X DELETE http://127.0.0.1:2113/streams/foo
 ```
-ouro@ouroboros$ curl -v -X DELETE http://127.0.0.1:2113/streams/foo
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 204 Stream deleted
 Content-Length: 0
@@ -47,15 +54,19 @@ Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Autho
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:40:05 GMT
-
 ```
+</div>
+</div>
 
-By default when you delete a stream it will be soft deleted. This means that you can recreate it later if you want to. This is done by setting the `$tb` metadata section as the client API does. If you try to GET a soft deleted stream you will receive a 404.
+By default when you delete a stream it is soft deleted. This means you can recreate it later if you want to by setting the `$tb` metadata section as the client API does <!-- Link? -->. If you try to `GET` a soft deleted stream you will receive a 404 response:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/foo
 ```
-ouro@ouroboros$ curl -i http://127.0.0.1:2113/streams/foo
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 404 Not Found
 Content-Length: 0
@@ -67,14 +78,18 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:47:18 GMT
 ```
+</div>
+</div>
 
-If desired, recreate the stream by appending new events to it (just like creating a new stream).
+If desired, you can recreate the stream by appending new events to it (like creating a new stream):
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.txt http://127.0.0.1:2113/streams/foo -H "Content-Type:application/json"
 ```
-ouro@ouroboroscurl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo -H "Conte
-nt-Type:application/json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -87,13 +102,18 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:49:30 GMT
 ```
+</div>
+</div>
 
-Now if you get a from a stream that has been soft deleted then recreated you will notice that the version numbers do not start at zero but at where you previously soft deleted the stream from
+If you `GET` a stream that has been soft deleted and then recreated you will notice that the version numbers do not start at zero but at where you soft deleted the stream from:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/foo
 ```
-ouro@bouroboros$ curl -i http://127.0.0.1:2113/streams/foo
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Cache-Control: max-age=0, no-cache, must-revalidate
@@ -107,19 +127,17 @@ Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Autho
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:49:34 GMT
-```
 
-```javascript
 {
   "title": "Event stream 'foo'",
-  "id": "http://127.0.0.1:2113/streams/foo",
+  "id": "<http://127.0.0.1:2113/streams/foo">,
   "updated": "2014-03-13T20:49:30.3821623Z",
   "streamId": "foo",
   "author": {
     "name": "EventStore"
   },
   "headOfStream": true,
-  "selfUrl": "http://127.0.0.1:2113/streams/foo",
+  "selfUrl": "<http://127.0.0.1:2113/streams/foo">,
   "links": [
     {
       "uri": "http://127.0.0.1:2113/streams/foo",
@@ -138,10 +156,10 @@ Date: Thu, 13 Mar 2014 20:49:34 GMT
       "relation": "metadata"
     }
   ],
-  "entries": [
+  "entries": \[
     {
       "title": "1@foo",
-      "id": "http://127.0.0.1:2113/streams/foo/1",
+      "id": "<http://127.0.0.1:2113/streams/foo/1">,
       "updated": "2014-03-13T20:49:30.3821623Z",
       "author": {
         "name": "EventStore"
@@ -160,18 +178,25 @@ Date: Thu, 13 Mar 2014 20:49:34 GMT
     }
   ]
 }
-```
 
-So far we have been looking at soft deletes. You can also execute hard deletes of a stream. To issue a permanent delete of a stream the `ES-HardDelete` header is used.
+    </div>
+    </div>
 
-<span class="note--warning">
-A hard delete is permanent and the stream is not removed during a scavenge. If you hard delete a stream, the stream can never be recreated.
-</span>
+    So far we have looked at soft deletes. You can also execute hard deletes on a stream. To issue a permanent delete use the `ES-HardDelete` header.
 
-```
-ouro@ouroboros$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
-```
+    <span class="note--warning">
+    A hard delete is permanent and the stream is not removed during a scavenge. If you hard delete a stream, the stream can never be recreated.
+    </span>
 
+    Create a stream with the following request:
+
+    <div class="codetabs" markdown="1">
+    <div data-lang="request" markdown="1">
+    ```bash
+    curl -i -d @event.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
+
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -184,13 +209,18 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:54:24 GMT
 ```
+</div>
+</div>
 
-Then the delete as before but with the permanent delete header
+Then issue the `DELETE` as before but with the permanent delete header:
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -v -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete:true"
 ```
-ouro@ouroboros$ curl -v -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete:true"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 204 Stream deleted
 Content-Length: 0
@@ -202,13 +232,18 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:56:55 GMT
 ```
+</div>
+</div>
 
-This stream is now permanently deleted unlike before where you received a 404 the response will now be a 410 GONE.
+This stream is now permanently deleted, and unlike before where you received a '404' response, the response will now be a '410 GONE'.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/foo2
 ```
-ouro@ouroboros$ curl -i http://127.0.0.1:2113/streams/foo2
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 410 Deleted
 Content-Length: 0
@@ -220,13 +255,18 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:57:01 GMT
 ```
+</div>
+</div>
 
-If you try to recreate the stream as in the above example you will also receive a 410 GONE.
+If you try to recreate the stream as in the above example you will also receive a '410 GONE' response.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -d @event.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
 ```
-ouro@ouroboros$ curl -i -d @chatmsg.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 410 Stream deleted
 Content-Length: 0
@@ -238,13 +278,18 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 21:00:00 GMT
 ```
+</div>
+</div>
 
-The same applies if you try to delete an already deleted stream. You will receive a 410 GONE.
+The same applies if you try to delete an already deleted stream. You will receive a '410 GONE' response.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete: true"
 ```
-ouro@ouroboros$ curl -i -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete: true"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 410 Stream deleted
 Content-Length: 0
@@ -256,3 +301,5 @@ Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 21:19:33 GMT
 ```
+</div>
+</div>

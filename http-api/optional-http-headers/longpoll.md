@@ -5,22 +5,25 @@ version: "4.0.2"
 exclude_from_sidebar: true
 ---
 
-The ES-LongPoll header is used to instruct the server that when on the head link of a stream and no data is available the server should wait some period of time to see if data becomes available.
+You use the `ES-LongPoll` header to instruct the server that when on the head link of a stream and no data is available the server should wait a period of time to see if data becomes available.
 
 <span class="note--warning">
-The long poll header is supported from version 2.1 and higher. Lower versions will ignore the header.
+Version 2.1 and higher support the `ES-LongPoll` header. Lower versions will ignore the header.
 </span>
 
-This can be used to provide lower latency for Atom clients as opposed to client initiated polling. Instead of the client polling every say 5 seconds to get data from the feed the client would send up a request with `ES-LongPoll: 15`. This instructs the backend to wait for up to 15 seconds before returning with no result. The latency is therefore lowered from the poll interval to about 10ms from the time an event is written until the time the http connection is notified.
+You can use this to provide lower latency for Atom clients instead of client initiated polling. Instead of the client polling every say 5 seconds to get data from the feed the client would send up a request with `ES-LongPoll: 15`. This instructs the backend to wait for up to 15 seconds before returning with no result. The latency is therefore lowered from the poll interval to about 10ms from the time an event is written until the time the HTTP connection is notified.
 
-The use of the `ES-LongPoll` header can be seen in the following cURL command.
+You can see the use of the `ES-LongPoll` header in the following cURL command.
 
 First go to the head of the stream (in this case we are using the default chat of the chat sample).
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/chat-GeneralChat -H "Accept: application/json"
 ```
-ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat -H "Accept: application/json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -35,9 +38,7 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 08 May 2014 10:12:27 GMT
 Content-Length: 1348
 Keep-Alive: timeout=15,max=100
-```
 
-```json
 {
   "title": "Event stream 'chat-GeneralChat'",
   "id": "http://127.0.0.1:2113/streams/chat-GeneralChat",
@@ -90,13 +91,18 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
+</div>
+</div>
 
-Then grab the previous `rel` link `http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20` and try it. Note it brings back an empty feed.
+Then grab the previous `rel` link `http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20` and try it. It returns an empty feed.
 
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json"
 ```
-ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json"
-```
-
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
@@ -111,9 +117,7 @@ Server: Mono-HTTPAPI/1.0
 Date: Thu, 08 May 2014 10:13:58 GMT
 Content-Length: 843
 Keep-Alive: timeout=15,max=100
-```
 
-```javascript
 {
   "title": "Event stream 'chat-GeneralChat'",
   "id": "http://127.0.0.1:2113/streams/chat-GeneralChat",
@@ -148,11 +152,13 @@ Keep-Alive: timeout=15,max=100
   "entries": []
 }
 ```
+</div>
+</div>
 
 The entries section is empty (there is no further data that can be provided). Now try that URI with a long poll header.
 
-```
-ouro@ouroboros:~/src/EventStore$ curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json" -H "ES-LongPoll: 10"
+```bash
+curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json" -H "ES-LongPoll: 10"
 ```
 
-If you do not insert any events into the stream while this is running it will take 10 seconds for the http request to finish. If you append an event to the stream while its running (by say putting a chat in the chat room) you will see the result for that request when the event is appended.
+If you do not insert any events into the stream while this is running it will take 10 seconds for the HTTP request to finish. If you append an event to the stream while its running you will see the result for that request when the event is appended.
