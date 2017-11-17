@@ -16,16 +16,15 @@
  */
 
 /* Note: This file is originally from the Apache Spark project. */
-
+<!-- TODO: Streamline -->
 /* Custom JavaScript code in the MarkDown docs */
 
 // Enable language-specific code tabs
-
-  function codeTabs() {
+function codeTabs() {
   var counter = 0;
   var langImages = {
-    "csharp": "img/scala-sm.png",
-    "javascript": "img/python-sm.png",
+    "scala": "img/scala-sm.png",
+    "python": "img/python-sm.png",
     "java": "img/java-sm.png"
   };
   $("div.codetabs").each(function() {
@@ -47,7 +46,7 @@
       var id = "tab_" + lang + "_" + counter;
       $(this).attr("id", id);
       if (image != null && langImages[lang]) {
-        var buttonLabel = "<img src='" + langImages[lang] + "' alt='" + capitalizedLang + "' />";
+        var buttonLabel = "<img src='" +langImages[lang] + "' alt='" + capitalizedLang + "' />";
       } else if (notabs == null) {
         var buttonLabel = "<b>" + capitalizedLang + "</b>";
       } else {
@@ -62,43 +61,44 @@
     tabBar.children("li").first().addClass("active");
     counter++;
   });
-  $("ul.nav-tabs a").click(function(e) {
+  $("ul.nav-tabs a").click(function (e) {
     // Toggling a tab should switch all tabs corresponding to the same language
     // while retaining the scroll position
     e.preventDefault();
     var scrollOffset = $(this).offset().top - $(document).scrollTop();
-    $("." + $(this).attr('class')).tab('show');
+    $(".nav-tabs " + "a[href="+ $(this).attr('href') + "]").tab('show');
     $(document).scrollTop($(this).offset().top - scrollOffset);
   });
 }
-// function makeCollapsable(elt, accordionClass, accordionBodyId, title) {
-//   $(elt).addClass("accordion-inner");
-//   $(elt).wrap('<div class="accordion ' + accordionClass + '"></div>')
-//   $(elt).wrap('<div class="accordion-group"></div>')
-//   $(elt).wrap('<div id="' + accordionBodyId + '" class="accordion-body collapse"></div>')
-//   $(elt).parent().before(
-//     '<div class="accordion-heading">' +
-//       '<a class="accordion-toggle" data-toggle="collapse" href="#' + accordionBodyId + '">' +
-//              title +
-//       '</a>' +
-//     '</div>'
-//   );
-// }
-//
-// // Enable "view solution" sections (for exercises)
-// function viewSolution() {
-//   var counter = 0
-//   $("div.solution").each(function() {
-//     var id = "solution_" + counter
-//     makeCollapsable(this, "", id,
-//       '<i class="icon-ok-sign" style="text-decoration: none; color: #0088cc">' +
-//       '</i>' + "View Solution");
-//     counter++;
-//   });
-// }
-//
-// // A script to fix internal hash links because we have an overlapping top bar.
-// // Based on https://github.com/twitter/bootstrap/issues/193#issuecomment-2281510
+
+function makeCollapsable(elt, accordionClass, accordionBodyId, title) {
+  $(elt).addClass("accordion-inner");
+  $(elt).wrap('<div class="accordion ' + accordionClass + '"></div>')
+  $(elt).wrap('<div class="accordion-group"></div>')
+  $(elt).wrap('<div id="' + accordionBodyId + '" class="accordion-body collapse"></div>')
+  $(elt).parent().before(
+    '<div class="accordion-heading">' +
+      '<a class="accordion-toggle" data-toggle="collapse" href="#' + accordionBodyId + '">' +
+             title +
+      '</a>' +
+    '</div>'
+  );
+}
+
+// Enable "view solution" sections (for exercises)
+function viewSolution() {
+  var counter = 0
+  $("div.solution").each(function() {
+    var id = "solution_" + counter
+    makeCollapsable(this, "", id,
+      '<i class="icon-ok-sign" style="text-decoration: none; color: #0088cc">' +
+      '</i>' + "View Solution");
+    counter++;
+  });
+}
+
+// A script to fix internal hash links because we have an overlapping top bar.
+// Based on https://github.com/twitter/bootstrap/issues/193#issuecomment-2281510
 function maybeScrollToHash() {
   if (window.location.hash && $(window.location.hash).length) {
     var newTop = $(window.location.hash).offset().top - 57;
@@ -108,7 +108,7 @@ function maybeScrollToHash() {
 
 $(function() {
   codeTabs();
-  // viewSolution();
+  viewSolution();
 
   // Display anchor links when hovering over headers. For documentation of the
   // configuration options, see the AnchorJS documentation.
