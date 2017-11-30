@@ -4,9 +4,11 @@ section: ".NET API"
 version: "4.0.2"
 ---
 
-The client API can be used to read events from a stream starting from either end of the stream. There is a method for each direction. As well as one for reading a single event.
+You can use the client API to read events from a stream starting from either end of the stream. There is a method for each direction and one for reading a single event.
 
 ## Methods
+
+<!-- TODO: Explanations? -->
 
 ### Reading a single event
 
@@ -39,12 +41,12 @@ Task<AllEventsSlice> ReadAllEventsBackwardAsync(Position position, int maxCount,
 ```
 
 <span class="note">
-These methods also have an additional optional parameter which allows you to specify the `UserCredentials` to use for the request. If none are supplied, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="../connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
+These methods also have an optional parameter which allows you to specify the `UserCredentials` to use for the request. If you don't supply any, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="../connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
 </span>
 
 ## StreamEventsSlice
 
-The reading methods for individual streams each return a `StreamEventsSlice`, which is immutable. The available members on StreamEventsSlice are:
+The reading methods for individual streams each return a `StreamEventsSlice`, which is immutable. The available members on `StreamEventsSlice` are:
 
 <table>
     <thead>
@@ -89,9 +91,9 @@ The reading methods for individual streams each return a `StreamEventsSlice`, wh
 
 When events are read from a stream (or received over a subscription) you will receive an instance of the `RecordedEvent` class packaged inside a `ResolvedEvent`.
 
-Event Store supports a special type of event called Link Events. These events can be thought of as pointers to an event in another stream. 
+Event Store supports a special type of event called 'Link Events'. You can think of these events as pointers to an event in another stream.
 
-In situations where the event you read is a link event, `ResolvedEvent` allows you to access both the link event itself, as well as the event it points to. 
+In situations where the event you read is a link event, `ResolvedEvent` allows you to access both the link event itself, as well as the event it points to.
 
 The members of this class are as follows:
 
@@ -135,7 +137,7 @@ The members of this class are as follows:
 </table>
 
 <span class="note">
-To ensure that the Event Store server follows link events when reading, ensure the <code>ResolveLinkTos</code> parameter is set to true when calling read methods.
+To ensure that the Event Store server follows link events when reading, ensure you set the <code>ResolveLinkTos</code> parameter to `true` when calling read methods.
 </span>
 
 ## RecordedEvent
@@ -152,7 +154,7 @@ To ensure that the Event Store server follows link events when reading, ensure t
     <tbody>
         <tr>
             <td><code>string EventStreamId</code></td>
-            <td>The Event Stream that this event belongs to</td>
+            <td>The Event Stream this event belongs to</td>
         </tr>
         <tr>
             <td><code>Guid EventId</code></td>
@@ -191,7 +193,7 @@ To ensure that the Event Store server follows link events when reading, ensure t
 
 ## Reading a single event
 
-The `ReadSingleEventAsync` method reads a single event from a stream at a specified position. This is the simplest case of reading events, but is still useful for situations such as reading the last event in the stream to be used as a starting point for a subscription. This function accepts three parameters:
+The `ReadSingleEventAsync` method reads a single event from a stream at a specified position. This is the simplest case of reading events, but is still useful for situations such as reading the last event in the stream used as a starting point for a subscription. This function accepts three parameters:
 
 <table>
     <thead>
@@ -211,7 +213,7 @@ The `ReadSingleEventAsync` method reads a single event from a stream at a specif
         </tr>
         <tr>
             <td><code>bool&nbsp;resolveLinkTos</code></td>
-            <td>Determines whether or not any link events encountered in the stream will be resolved. See the discussion on <a href="#ResolvedEvent">Resolved Events</a> for more information on this</td>
+            <td>Determines whether any link events encountered in the stream will be resolved. See the discussion on <a href="#ResolvedEvent">Resolved Events</a> for more information on this</td>
         </tr>
     </tbody>
 </table>
@@ -220,7 +222,7 @@ This method returns an instance of `EventReadResult` which indicates if the read
 
 ## Reading a stream forwards
 
-The `ReadStreamEventsForwardAsync` method reads the requested number of events in the order in which they were originally written to the stream from a nominated starting point in the stream. 
+The `ReadStreamEventsForwardAsync` method reads the requested number of events in the order in which they were originally written to the stream from a nominated starting point in the stream.
 
 The parameters are:
 
@@ -238,7 +240,7 @@ The parameters are:
         </tr>
         <tr>
             <td><code>long start</code></td>
-            <td>The earliest event to read (inclusive). For the special case of the start of the stream, the constant <code>StreamPosition.Start</code> should be used</td>
+            <td>The earliest event to read (inclusive). For the special case of the start of the stream, you should use the constant <code>StreamPosition.Start</code>.</td>
         </tr>
         <tr>
             <td><code>int count</code></td>
@@ -246,14 +248,14 @@ The parameters are:
         </tr>
         <tr>
             <td><code>bool&nbsp;resolveLinkTos</code></td>
-            <td>Determines whether or not any link events encountered in the stream will be resolved. See the discussion on <a href="#ResolvedEvent">Resolved Events</a> for more information on this</td>
+            <td>Determines whether any link events encountered in the stream will be resolved. See the discussion on <a href="#ResolvedEvent">Resolved Events</a> for more information on this</td>
         </tr>
     </tbody>
 </table>
 
 ### Example: Reading an entire stream forwards from start to end
 
-This example uses the `ReadStreamEventsForwardAsync` method in a loop to page through all events in a stream, reading 200 events at a time in order to build a list of all the events in the stream.
+This example uses the `ReadStreamEventsForwardAsync` method in a loop to page through all events in a stream, reading 200 events at a time to build a list of all the events in the stream.
 
 ```csharp
 var streamEvents = new List<ResolvedEvent>();
@@ -262,7 +264,7 @@ StreamEventsSlice currentSlice;
 var nextSliceStart = StreamPosition.Start;
 do
 {
-    currentSlice = 
+    currentSlice =
     _eventStoreConnection.ReadStreamEventsForward("myStream", nextSliceStart,
                                                   200, false)
                                                   .Result;
@@ -272,7 +274,8 @@ do
     streamEvents.AddRange(currentSlice.Events);
 } while (!currentSlice.IsEndOfStream);
 ```
-<span class="note">It is unlikely that client code would need to actually build a list in this manner. It is far more likely that events would be passed into a left fold in order to derive the state of some object as of a given event.</span>
+
+<span class="note">It is unlikely that client code would need to build a list in this manner. It is far more likely that events would be passed into a left fold to derive the state of some object as of a given event.</span>
 
 ## Reading a stream backwards
 
@@ -302,15 +305,14 @@ The parameters are:
         </tr>
         <tr>
             <td><code>bool&nbsp;resolveLinkTos</code></td>
-            <td>Determines whether or not any link events encountered in the stream will be resolved. See the discussion on <a href="#ResolvedEvent">Resolved Events</a> for more information on this</td>
+            <td>Determines whether any link events encountered in the stream will be resolved. See the discussion on <a href="#ResolvedEvent">Resolved Events</a> for more information on this</td>
         </tr>
     </tbody>
 </table>
-
+across
 ## Reading all events
 
-In addition to the individual streams which you create, Event Store also allows you to read events accross all streams using 
-the `ReadAllEventsForwardAsync` and `ReadAllEventsBackwardsAsync` methods. These work in largely the same way as the regular read methods, but use instance of the global logfile `Position` to reference events rather than the simple integer stream position described previously.
+Event Store allows you to read events across all streams using the `ReadAllEventsForwardAsync` and `ReadAllEventsBackwardsAsync` methods. These work in the same way as the regular read methods, but use instance of the global logfile `Position` to reference events rather than the simple integer stream position described previously.
 
 They also return an `AllEventsSlice` rather than a `StreamEventsSlice` which is the same except it uses global `Position`s rather than stream positions.
 

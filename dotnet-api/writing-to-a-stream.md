@@ -4,13 +4,15 @@ section: ".NET API"
 version: "4.0.2"
 ---
 
-The client API can be used to write one or more events to a stream atomically. This can be done either by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
+You can use the client API to write one or more events to a stream atomically. You do this by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
 
-An optimistic concurrency check can be made during the write by specifying the version at which the stream is expected to be currently. Identical write operations are idempotent if the optimistic concurrency check is not disabled. More information on optimistic concurrency and idempotence can be found [here](../optimistic-concurrency-and-idempotence).
+You can make an optimistic concurrency check during the write by specifying the version at which the stream is expected to be. Identical write operations are idempotent if the optimistic concurrency check is not disabled. You can find more information on optimistic concurrency and idempotence [here](../optimistic-concurrency-and-idempotence).
 
 ## Methods
 
 ### Appending to a stream in a single write
+
+<!-- TODO: Explanations -->
 
 ```csharp
 Task<WriteResult> AppendToStreamAsync(string stream, long expectedVersion, IEnumerable<EventData> events)
@@ -22,7 +24,9 @@ Task<WriteResult> AppendToStreamAsync(string stream, long expectedVersion, param
 
 ### Using a transaction to append to a stream across multiple writes
 
-#### On `EventStoreConnection`:
+#### On `EventStoreConnection`
+
+<!-- TODO: Explanations -->
 
 ```csharp
 Task<EventStoreTransaction> StartTransactionAsync(string stream, long expectedVersion)
@@ -32,7 +36,9 @@ Task<EventStoreTransaction> StartTransactionAsync(string stream, long expectedVe
 EventStoreTransaction ContinueTransaction(long transactionId)
 ```
 
-#### On `EventStoreTransaction`:
+#### On `EventStoreTransaction`
+
+<!-- TODO: Explanations -->
 
 ```csharp
 Task WriteAsync(IEnumerable<EventData> events)
@@ -54,7 +60,7 @@ void Rollback()
 
 The writing methods all use a type named `EventData` to represent an event to be stored. Instances of `EventData` are immutable.
 
-The Event Store does not have any built-in serialization, so the body and metadata for each event are represented in `EventData` as a `byte[]`.
+Event Store does not have any built-in serialisation, so the body and metadata for each event are represented in `EventData` as a `byte[]`.
 
 The members on `EventData` are:
 
@@ -89,10 +95,9 @@ The members on `EventData` are:
     </tbody>
 </table>
 
-
 ## Appending to a stream in a single write
 
-The `AppendToStreamAsync` method writes events atomically to the end of a stream, working in an async manner.
+The `AppendToStreamAsync` method writes events atomically to the end of a stream, working in an asynchronous manner.
 
 The parameters are:
 

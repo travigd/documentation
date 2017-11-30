@@ -6,11 +6,11 @@ version: "4.0.2"
 
 ## EventStoreConnection
 
-The `EventStoreConnection` class is responsible for maintaining a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe and it is recommended that only one instance per application is created.
+The `EventStoreConnection` class maintains a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe and we recommend that your only create one instance per application.
 
-All operations are handled fully asynchronously and return either a `Task` or a `Task<T>`. If you need to execute synchronously simply call `.Wait()`, or `Result` on the asynchronous version.
+All operations are fully asynchronous and return either a `Task` or a `Task<T>`. If you need to execute synchronously, call `.Wait()`, or `Result` on the asynchronous version.
 
-To get maximum performance from the connection it is recommended that it be used asynchronously.
+To get maximum performance from the connection we recommend that you use it asynchronously.
 
 <span class="note">
 The `Create` methods have changed slightly moving to 3.0.2 as connection strings are now supported. The old mechanisms will still work but have been marked obsolete and will be removed in the future.
@@ -18,7 +18,7 @@ The `Create` methods have changed slightly moving to 3.0.2 as connection strings
 
 ## Creating a Connection
 
-The static `Create` methods on `EventStoreConnection` are used to create a new connection. All overloads allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events](#connection-events)).
+The `EventStoreConnection` classes uses the static `Create` methods to create a new connection. All overloads <!-- TODO: What's an overload? --> allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events](#connection-events)).
 
 <table>
     <thead>
@@ -61,29 +61,28 @@ The connection returned by these methods is inactive. Use the `ConnectAsync()` m
 
 ## URIs
 
-The new Create methods support passing of a URI to the connection as opposed to passing IPEndPoints. This URI should be in the format of:
+The create methods support passing of a URI to the connection as opposed to passing `IPEndPoints`. This URI should be in the format of:
 
-- Single Node `tcp://user:password@myserver:11234`
-- Cluster `discover://user:password@myserver:1234`
+-   **Single Node**: `tcp://user:password@myserver:11234`
+-   **Cluster**: `discover://user:password@myserver:1234`
 
 Where the port number points to the TCP port of the Event Store instance (1113 by default) or points to the manager gossip port for discovery purposes.
 
 With the URI based mechanism you can pass a domain name and the client will resolve it.
 
 <span class="note">
-The client currently does a blocking DNS call for single node. If you are worried about blocking DNS due to network issues etc you should resolve the DNS yourself and pass in an IP address.
+The client performs a blocking DNS call for single node. If you are worried about blocking DNS due to network issues etc., you should resolve the DNS yourself and pass in an IP address.
 </span>
-
 
 ## Customising Connection Settings
 
 ### Connection String
 
-Many of the overloads accept a connection string that can be used to control settings of the connection. A benefit to having these as a connection string as opposed to with the fluent API is that they can be changed easily between environments without recompiling (say single node in `dev` and a cluster in `production`).
+Many of the overloads accept a connection string that you can use to control settings of the connection. A benefit to having these as a connection string instead of using the fluent API is that you can change them between environments without recompiling (say single node in `dev` and a cluster in `production`).
 
-The connection string format should look familiar to those who have used connection strings in the past. It is made up of a series of key/value pairs Key = Value separated by semicolons.
+The connection string format should look familiar to those who have used connection strings in the past. It consists of a series of key/value pairs Key = Value separated by semicolons.
 
-The following values can be set using the connection string.
+You can set the following values using the connection string.
 
 <table>
     <thead>
@@ -132,12 +131,12 @@ The following values can be set using the connection string.
         <tr>
             <td>OperationTimeout</td>
             <td>Integer (milliseconds)</td>
-            <td>The time before an operation is considered timed out</td>
+            <td>The time before considering an operation timed out</td>
         </tr>
         <tr>
             <td>OperationTimeoutCheckPeriod</td>
             <td>Integer (milliseconds)</td>
-            <td>The frequency in which timeouts are checked</td>
+            <td>The frequency in which to check timeouts</td>
         </tr>
         <tr>
             <td>DefaultUserCredentials</td>
@@ -157,12 +156,12 @@ The following values can be set using the connection string.
         <tr>
             <td>ValidateServer</td>
             <td>True/false</td>
-            <td>Whether or not to validate the remote server</td>
+            <td>Whether to validate the remote server</td>
         </tr>
         <tr>
             <td>FailOnNoServerResponse</td>
             <td>True/False</td>
-            <td>Whether or not to fail on no server response</td>
+            <td>Whether to fail on no server response</td>
         </tr>
         <tr>
             <td>HeartbeatInterval</td>
@@ -177,7 +176,7 @@ The following values can be set using the connection string.
         <tr>
             <td>ClusterDns</td>
             <td>string</td>
-            <td>The dns name of the cluster for discovery</td>
+            <td>The DNS name of the cluster for discovery</td>
         </tr>
         <tr>
             <td>MaxDiscoverAttempts</td>
@@ -211,44 +210,43 @@ The following values can be set using the connection string.
 You can also use spacing instead of camel casing in your connection string if you prefer.
 </span>
 
-```
+```csharp
 var connectionString = "ConnectTo=tcp://admin:changeit@localhost:1113; HeartBeatTimeout=500"
 ```
 
 Sets the connection string to connect to localhost on the default port and sets the heartbeat timeout to 500ms.
 
-```
+```csharp
 var connectionString = "Connect To = tcp://admin:changeit@localhost:1113; Gossip Timeout = 500"
 ```
 
-Using spaces
+Using spaces:
 
-```
+```csharp
 var connectionString = "ConnectTo=discover://admin:changeit@mycluster:3114; HeartBeatTimeout=500"
 ```
 
-Tells the connection to try gossiping to a manager found under the DNS mycluster at port 3114 to connect to the cluster.
+Tells the connection to try gossiping to a manager found under the DNS 'mycluster' at port 3114 to connect to the cluster.
 
-```
+```csharp
 var connectionString = "GossipSeeds=192.168.0.2:1111,192.168.0.3:1111; HeartBeatTimeout=500"
 ```
 
 Tells the connection to try gossiping to the gossip seeds `192.168.0.2` or `192.168.0.3` on port 1111 to discover information about the cluster.
 
 <span class="note">
-See fluent API below for defaults of values.
+See the fluent API below for defaults of values.
 </span>
 
 <span class="note">
-You can also use the ConnectionString class to return you a `ConnectionSettings` object.
+You can also use the `ConnectionString` class to return a `ConnectionSettings` object.
 </span>
-
 
 ### Fluent API
 
-Settings used for modifying the behaviour of an `EventStoreConnection` are encapsulated into an object of type `ConnectionSettings` which is passed as a paramater to the `Create` methods listed above.
+Settings used for modifying the behaviour of an `EventStoreConnection` are encapsulated into an object of type `ConnectionSettings` which is passed as a parameter to the `Create` methods listed above.
 
-Instances of `ConnectionSettings` are created using a fluent builder class as follows:
+Instances of `ConnectionSettings` are created using a fluent builder class:
 
 ```CSharp
 ConnectionSettings settings = ConnectionSettings.Create();
@@ -258,7 +256,7 @@ This will create an instance of `ConnectionSettings` with the default options. T
 
 ### Logging
 
-The .NET API can log information to a number of different destinations. By default no logging is enabled.
+The .NET API can log information to different destinations. By default logging is not enabled.
 
 <table>
     <thead>
@@ -301,12 +299,12 @@ Event Store supports [Access Control Lists](/server/latest/access-control-lists/
     <tbody>
         <tr>
             <td><code>SetDefaultUserCredentials(UserCredentials credentials)</code></td>
-            <td>Sets the default <code>UserCredentials</code> to be used for this connection. If user credentials are not given for an operation these credentials will be used.</td>
+            <td>Sets the default <code>UserCredentials</code> to use for this connection. If no credentials are given, the opertation will use these.</td>
         </tr>
     </tbody>
 </table>
 
-A `UserCredentials` object can be created as follows:
+You create a `UserCredentials` object as follows:
 
 ```CSharp
 UserCredentials credentials = new UserCredentials("username","password");
@@ -333,7 +331,7 @@ To configure the client-side of the SSL connection, use the builder method below
                     <dt><code>targetHost</code></dt>
                     <dd>Is the name specified on the SSL certificate installed on the server.</dd>
                     <dt><code>validateServer</code></dt>
-                    <dd>Controls whether or not the server certificate is validated upon connection.</dd>
+                    <dd>Controls whether the connection validates the server certificate.</dd>
                 </dl>
             </td>
         </tr>
@@ -341,12 +339,12 @@ To configure the client-side of the SSL connection, use the builder method below
 </table>
 
 <span class="note--warning">
-In production systems where credentials are being sent from the client to the Event Store, SSL-encryption should *always* be used and `validateServer` should be set to `true`.
+In production systems where credentials are sent from the client to Event Store, you should always use SSL-encryption and you should set `validateServer` to `true`.
 </span>
 
 ### Node Preference
 
-When connecting to an Event Store HA cluster you can specify that operations can be performed on any node, or only on the node that is the master.
+When connecting to an Event Store HA cluster you can specify that operations are performed on any node, or only on the node that is the master.
 
 <table>
     <thead>
@@ -358,7 +356,7 @@ When connecting to an Event Store HA cluster you can specify that operations can
     <tbody>
         <tr>
             <td><code>PerformOnMasterOnly()</code></td>
-            <td>Require all write and read requests to be served only by the master (Default).</td>
+            <td>Require the master to serve all write and read requests (Default).</td>
         </tr>
         <tr>
             <td><code>PerformOnAnyNode()</code></td>
@@ -369,7 +367,7 @@ When connecting to an Event Store HA cluster you can specify that operations can
 
 ### Handling Failures
 
-The following methods on the `ConnectionSettingsBuilder` allow you to modify the way the connection handles operation failures and connection issues.
+The following methods on the `ConnectionSettingsBuilder` allow you to change the way the connection handles operation failures and connection issues.
 
 #### Reconnections
 
@@ -399,7 +397,7 @@ The following methods on the `ConnectionSettingsBuilder` allow you to modify the
         </tr>
         <tr>
             <td><code>SetHeartbeatInterval<br>(TimeSpan interval)</code></td>
-            <td>Sets how often heartbeats should be expected on the connection (lower values detect broken sockets faster) (Default: 750ms).</td>
+            <td>Sets how often the connection should expect heartbeats (lower values detect broken sockets faster) (Default: 750ms).</td>
         </tr>
         <tr>
             <td><code>SetHeartbeatTimeout<br>(TimeSpan timeout)</code></td>
@@ -424,7 +422,7 @@ The following methods on the `ConnectionSettingsBuilder` allow you to modify the
         </tr>
         <tr>
             <td><code>SetTimeoutCheckPeriodTo<br>(TimeSpan timeoutCheckPeriod)</code></td>
-            <td>Sets how often timeouts should be checked for (Default: 1 second).</td>
+            <td>Sets how often to check for timeouts (Default: 1 second).</td>
         </tr>
         <tr>
             <td><code>LimitAttemptsForOperationTo<br>(int limit)</code></td>
@@ -451,11 +449,11 @@ The following methods on the `ConnectionSettingsBuilder` allow you to modify the
 
 ## Cluster Settings
 
-When connecting to an Event Store HA cluster you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily this is used to tell the `EventStoreConnection` how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
+When connecting to an Event Store HA cluster you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily yu use this to tell the `EventStoreConnection` how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
 
 ### Using DNS Discovery
 
-DNS discovery uses a single DNS entry with several records listing all node IP addresses. The EventStoreConnection will then use a well known port to gossip with the nodes.
+DNS discovery uses a single DNS entry with several records listing all node IP addresses. The `EventStoreConnection` will then use a well known port to gossip with the nodes.
 
 Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
 
@@ -469,7 +467,7 @@ Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
     <tbody>
         <tr>
             <td><code>SetClusterDns(string clusterDns)</code></td>
-            <td>Sets the DNS name under which cluster nodes are listed.</td>
+            <td>Sets the DNS name under which to list cluster nodes.</td>
         </tr>
         <tr>
             <td><code>SetClusterGossipPort(int clusterGossipPort)</code></td>
@@ -526,7 +524,7 @@ Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
 
 ## Connection Events
 
-`EventStoreConnection` exposes a number of events that your application can use in order to be notifed of changes to the status of the connection.
+`EventStoreConnection` exposes events that your application can use to be notifed of changes to the status of the connection.
 
 <table>
     <thead>
@@ -542,7 +540,7 @@ Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
         </tr>
         <tr>
             <td><code>EventHandler&lt;ClientConnectionEventArgs&gt; Disconnected</code></td>
-            <td>Fired when an <code>IEventStoreConnection</code> is disconnected from an Event Store server by some means other than by calling the <code>Close</code> method.</td>
+            <td>Fired when an <code>IEventStoreConnection</code> disconnects from an Event Store server by some means other than by calling the <code>Close</code> method.</td>
         </tr>
         <tr>
             <td><code>EventHandler&lt;ClientReconnectingEventArgs&gt; Reconnecting</code></td>

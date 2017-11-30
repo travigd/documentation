@@ -4,15 +4,22 @@ section: ".NET API"
 version: "4.0.2"
 ---
 
-Every stream in the Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API.
+Every stream in Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API.
 
-A common use case of information you may want to store in metadata is information associated with an event that is not part of the event. An example of this might be which user wrote the event? Which application server were they talking to? From what IP address did the request come from? This type of information is not part of the actual event but is metadata assocatiated with the event.
+A common use of this information is to store associated details about an event that is not part of the event. Examples of these are:
 
-Stream metadata is stored internally as JSON, and can be accessed over the HTTP APIs.
+-   "which user wrote the event?"
+-   "Which application server were they talking to?"
+-   "From what IP address did the request come from?"
+
+This type of information is not part of the actual event but is metadata associated with the event. Stream metadata is stored internally as JSON, and you can access it over the HTTP APIs.
 
 ## Methods
 
+<!-- TODO: Explanations? -->
+
 ### Reading Stream Metadata
+
 ```csharp
 Task<StreamMetadataResult> GetStreamMetadataAsync(string stream, UserCredentials userCredentials = null)
 ```
@@ -22,6 +29,7 @@ Task<RawStreamMetadataResult> GetStreamMetadataAsRawBytesAsync(string stream, Us
 ```
 
 ### Writing Stream Metadata
+
 ```csharp
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
 ```
@@ -32,13 +40,13 @@ Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamV
 
 ## Reading Stream Metadata
 
-To read stream metadata over the .NET API you can use methods found on the EventStoreConnection. The GetStreamMetadata methods have two mechanisms of being used. The first is to return you a fluent interface over the stream metadata, the second (GetStreamMetadataRaw) is to return you the raw JSON of the stream metadata.
+To read stream metadata over the .NET API you can use methods found on the `EventStoreConnection`. You can use the `GetStreamMetadata` methods in two ways. The first is to return a fluent interface over the stream metadata, and the second is to return you the raw JSON of the stream metadata.
 
 ```csharp
 Task<StreamMetadataResult> GetStreamMetadataAsync(string stream, UserCredentials userCredentials = null)
 ```
 
-This will return a StreamMetadataResult. The fields on this result are:
+This will return a `StreamMetadataResult`. The fields on this result are:
 
 <table>
     <thead>
@@ -67,7 +75,7 @@ This will return a StreamMetadataResult. The fields on this result are:
     </tbody>
 </table>
 
-You can then access the StreamMetadata via the StreamMetadata object. It contains typed fields for well known stream metadata entries.
+You can then access the `StreamMetadata` via the `StreamMetadata` object. It contains typed fields for well known stream metadata entries.
 
 <table>
     <thead>
@@ -87,11 +95,11 @@ You can then access the StreamMetadata via the StreamMetadata object. It contain
         </tr>
         <tr>
             <td><code>int? TruncateBefore</code></td>
-            <td>When set says that items prior to event E can be truncated and will be removed.</td>
+            <td>When set says that items prior to event 'E' can be truncated and will be removed.</td>
         </tr>
         <tr>
             <td><code>TimeSpan? CacheControl</code></td>
-            <td>The head of a feed in the atom api is not cacheable. This allows you to specify a period of time you want it to be cacheable. Normally low numbers are best here (say 30-60 seconds) and introducing values here will introduce latency over the atom protocol if caching is occuring.</td>
+            <td>The head of a feed in the atom api is not cacheable. This allows you to specify a period of time you want it to be cacheable. Low numbers are best here (say 30-60 seconds) and introducing values here will introduce latency over the atom protocol if caching is occuring.</td>
         </tr>
         <tr>
             <td><code>StreamAcl Acl</code></td>
@@ -100,13 +108,13 @@ You can then access the StreamMetadata via the StreamMetadata object. It contain
     </tbody>
 </table>
 
-If instead you want to work with raw JSON you can use the Raw methods for stream metadata.
+If instead you want to work with raw JSON you can use the raw methods for stream metadata.
 
 ```csharp
 Task<RawStreamMetadataResult> GetStreamMetadataAsRawBytesAsync(string stream, UserCredentials userCredentials = null)
 ```
-This will return a RawStreamMetadataResult. The fields on this result are:
 
+This will return a `RawStreamMetadataResult`. The fields on this result are:
 
 <table>
     <thead>
@@ -136,19 +144,18 @@ This will return a RawStreamMetadataResult. The fields on this result are:
 </table>
 
 <span class="note">
-Reading metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though this can be changed via default acls. If you do not pass credentials and they are required you will receive an AccessedDeniedException.
+If you have security enables, reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
 </span>
-
 
 ## Writing Metadata
 
-Writing metadata can also be done in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms also support an expectedVersion which works the same as on any stream and can be used to control concurrency see [Expected Version](../optimistic-concurrency-and-idempotence) for further details.
+You can write metadata in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms support an `expectedVersion` which works the same as on any stream and you can use to control concurrency, read [Expected Version](./optimistic-concurrency-and-idempotence) for further details.
 
 ```csharp
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
 ```
 
-The StreamMetadata being passed here has a builder that can be accessed via StreamMetadata.Create(). The options available on the builder are:
+The `StreamMetadata` passed here has a builder that you can access via the `StreamMetadata.Create()` method. The options available on the builder are:
 
 <table>
     <thead>
@@ -192,7 +199,7 @@ The StreamMetadata being passed here has a builder that can be accessed via Stre
         </tr>
         <tr>
             <td><code>SetMetadataWriteRoles(string[] roles)</code></td>
-            <td>Sets the roles that are allowed to write the metadata stream. Be careful with this privilege as it essentially gives all of the privileges for a stream as that use can assign themselves any other privilege.</td>
+            <td>Sets the roles that are allowed to write the metadata stream. Be careful with this privilege as it gives all of the privileges for a stream as that use can assign themselves any other privilege.</td>
         </tr>
         <tr>
             <td><code>SetCustomMetadata(string key, string value)</code></td>
@@ -201,19 +208,18 @@ The StreamMetadata being passed here has a builder that can be accessed via Stre
     </tbody>
 </table>
 
-User-specified metadata can also be added here via the SetCustomMetadata overloads. Some examples of good uses of user-specified metadata:
+You can add user-specified metadata via the `SetCustomMetadata` overloads. Some examples of good uses of user-specified metadata are:
 
-- which adapter is responsible for populating a stream
-- which projection caused a stream to be created
-- a correlation ID of some business process
-- plenty more!
+-   which adapter is responsible for populating a stream.
+-   which projection caused a stream to be created.
+-   a correlation ID of some business process.
 
 ```csharp
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
 ```
 
-This method will just put the data that is in metadata as the stream metadata. metadata in this case can be anything in a vector of bytes however the server itself only understands JSON. Please see [Access Control Lists]({{ site.url }}/server/latest/access-control-lists) for more information on the format in JSON for access control lists.
+This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes however the server only understands JSON. Read [Access Control Lists](/server/latest/access-control-lists) for more information on the format in JSON for access control lists.
 
 <span class="note">
-Writing metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though this can be changed via default acls. If you do not pass credentials and they are required you will receive an AccessedDeniedException.
+Writing metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
 </span>

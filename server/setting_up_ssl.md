@@ -4,26 +4,30 @@ section: "Server"
 version: "4.0.2"
 ---
 
-The steps to set up SSL on windows are as follows:
+The steps to set up SSL on Windows are as follows.
 
 First, create a certificate using powershell, and copy the thumbprint from the output
 
-```
+```powershell
 New-SelfSignedCertificate -DnsName geteventstore.com, localhost -CertStoreLocation cert:\CurrentUser\My
 ```
 
-To trust the new certificate, the certificate has to be imported into the Trusted Root Certification Authorities:
+To trust the new certificate, the certificate you have to import the certificat into the Trusted Root Certification Authorities:
 
- 1. Press `WindowsKey + R`, and enter `certmgr.msc`  
- 2. Navigate to Certificates - Current User -> Personal -> Certificates  
- 3. Locate the certificate `geteventstore.com`  
- 4. Right click on the certificate and click on All Tasks -> Export. Follow the prompts  
- 5. Navigate to Certificates - Current User -> Trusted Root Certification Authorities -> Certificates  
- 6. Right click on the Certificates folder menu item and click All Tasks -> Import. Follow the prompts  
+<!-- TODO: Images maybe? -->
 
-Start Event Store with the following configuration :
+1.  Press _WindowsKey + R_, and enter 'certmgr.msc'.  
+2.  Navigate to _Certificates -> Current User -> Personal -> Certificates_.  
+3.  Locate the certificate 'geteventstore.com'.
+4.  _Right click_ on the certificate and click on _All Tasks -> Export_. Follow the prompts.
+5.  Navigate to _Certificates -> Current User -> Trusted Root Certification Authorities -> Certificates_.  
+6.  _Right click_ on the Certificates folder menu item and click _All Tasks -> Import_. Follow the prompts.
 
-```
+Start Event Store with the following configuration:
+
+<!-- TODO: Again, what does this mean? -->
+
+```powershell
 CertificateStoreLocation: CurrentUser
 CertificateStoreName: My
 CertificateThumbPrint: {Insert Thumb Print from Step 1}

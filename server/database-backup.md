@@ -4,25 +4,25 @@ section: "Server"
 version: "4.0.2"
 ---
 
-Backing up an Event Store database is straightforward, however it is relient on having the steps below carried out in the correct order. 
+Backing up an Event Store database is straightforward, however it is reliant on carrying out the steps below in the correct order.
 
 ## Backing up a database
 
-1. Copy all `*.chk` files to the backup location.
+1. Copy all _*.chk_ files to the backup location.
 2. Copy the remaining files and directories to the backup location.
 
 ## Restoring a database
 
-1. Create a copy of `chaser.chk` and call it `truncate.chk`.
+1. Create a copy of _chaser.chk_ and call it _truncate.chk_.
 2. Copy all files to the desired location.
 
 <span class="note">
-Many people do not rely on hot backups in a highly available cluster but instead increase their node counts to retain further copies of data.
+Many people do not rely on hot backups in a highly available cluster but instead increase their node counts to keep further copies of data.
 </span>
 
 ## Differential backup
 
-Most data is stored in *chunk files*, named `chunkX.Y`, where X is the chunk number, and Y is the version of that chunk file. As the Event Store scavenges, it creates new versions of scavenged chunks which are interchangeable with older versions (but for the removed data). 
+Most data is stored in *chunk files*, named `chunkX.Y`, where X is the chunk number, and Y is the version of that chunk file. As Event Store scavenges, it creates new versions of scavenged chunks which are interchangeable with older versions (but for the removed data).
 
 Consequently, it is only necessary to keep the file whose name has the highest `Y` for each `X`, as well as the checkpoint files and the index directory (to avoid expensive index rebuilding).
 

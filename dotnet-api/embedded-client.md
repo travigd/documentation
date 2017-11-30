@@ -6,20 +6,20 @@ version: "4.0.2"
 
 ## EmbeddedVNodeBuilder
 
-The `EmbeddedVNodeBuilder` class is responsible for setting up and building an Event Store node. You can configure your node through a number of methods provided by `EmbeddedVNodeBuilder`. 
+The `EmbeddedVNodeBuilder` class sets up and builds an Event Store node. You can configure your node through methods provided by the `EmbeddedVNodeBuilder` class.
 
 <span class="note">
-The builder that is used for the `EmbeddedVNodeBuilder` is the same as the one we use internally to create the `ClusterNode`, so check `EventStore.ClusterNode.Program.cs` for more examples of how to use it.
+The builder used for the `EmbeddedVNodeBuilder` is the same as the Event Store uses internally to create the `ClusterNode`, so check `EventStore.ClusterNode.Program.cs` for more examples of how to use it.
 </span>
 
 ## Building a node
 
-You have two options when you start creating a node: `EmbeddedVNodeBuilder.AsSingleNode()` or `EmbeddedVNodeBuilder.AsClusterMember(clusterSize)`, which will create a single node or a cluster node respectively. After creating the builder, you can configure the node through the methods provided by the `EmbeddedVNodeBuilder`. These will be listed further down.
+You have two options when you start creating a node, `EmbeddedVNodeBuilder.AsSingleNode()` or `EmbeddedVNodeBuilder.AsClusterMember(clusterSize)`, which will create a single node or a cluster node respectively. After creating the builder, you can configure the node through the methods provided by the `EmbeddedVNodeBuilder`. These are listed below <!-- TODO: Link -->.
 
 Once you have configured the node, build it with `EmbeddedVNodeBuilder.Build()` which will return the configured `ClusterVNode`.
 
 Start the node with `ClusterVNode.StartAndWaitUntilReady()` or `ClusterVNode.Start()`.
-`ClusterVNode.StartAndWaitUntilReady()` returns a task that will complete once the node has started up and all subsystems have finished loading.
+`ClusterVNode.StartAndWaitUntilReady()` returns a task that will complete once the node has started and all subsystems have finished loading.
 
 For example, to build a single node with default options :
 
@@ -31,7 +31,7 @@ var node = nodeBuilder.Build();
 node.StartAndWaitUntilReady().Wait();
 ```
 
-To build a node to be part of a cluster with custom endpoints and gossip seeds :
+To build a node to be part of a cluster with custom endpoints and gossip seeds:
 
 ```csharp
 var nodeBuilder = EmbeddedVNodeBuilder.AsClusterMember(3)
@@ -56,24 +56,23 @@ When running an embedded cluster, the task returned by `StartAndWaitUntilReady()
 
 ## Connecting to an embedded node
 
-You can connect to an embedded Event Store node with the `EmbeddedEventStoreConnection` class.
-Calling `EmbeddedEventStoreConnection.Create(ClusterVNode)` will return an `IEventStoreConnection` configured to connect to your embedded node. From there you can use the connection as you normally would in the .NET Client.
+You can connect to an embedded Event Store node with the `EmbeddedEventStoreConnection` class. Calling `EmbeddedEventStoreConnection.Create(ClusterVNode)` will return an `IEventStoreConnection` configured to connect to your embedded node. From there you can use the connection as you normally would in the .NET Client.
 
 ```csharp
 using(var embeddedConn = EmbeddedEventStoreConnection.Create(node))
 {
     embeddedConn.ConnectAsync().Wait();
-    embeddedConn.AppendToStreamAsync("testStream", ExpectedVersion.Any, 
-                    new EventData(Guid.NewGuid(), "eventType", true, 
+    embeddedConn.AppendToStreamAsync("testStream", ExpectedVersion.Any,
+                    new EventData(Guid.NewGuid(), "eventType", true,
                     Encoding.UTF8.GetBytes("{\"Foo\":\"Bar\"}"), null)).Wait();
 }
 ```
 
 ## Logging with an embedded node
 
-In order to enable logging for an embedded node, you need to initialise the LogManager and ensure that you configure the logger with a `log.config` file in your configuration directory.
+To enable logging for an embedded node, you need to initialise the `LogManager` and ensure that you configure the logger with a `log.config` file in your configuration directory.
 
-To initialise the LogManager, call this before building the nodes :
+To initialise the `LogManager`, call this before building the nodes :
 
 ```csharp
 LogManager.Init(logComponentName, logDirectory, logConfigurationDirectory);
@@ -81,7 +80,7 @@ LogManager.Init(logComponentName, logDirectory, logConfigurationDirectory);
 
 ## EmbeddedVNodeBuilder options
 
-The following options are available when building an Embedded Node
+The following options are available when building an Embedded Node.
 
 ### Application Options
 
@@ -115,11 +114,11 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>EnableLoggingOfHttpRequests()</code></td>
-            <td>Enable logging of Http Requests and Responses before they are processed</td>
+            <td>Enable logging of HTTP requests and responses before they are processed</td>
         </tr>
         <tr>
             <td><code>EnableHistograms()</code></td>
-            <td>Enable the tracking of various histograms in the backend, typically only used for debugging</td>
+            <td>Enable the tracking of histograms, typically used for debugging</td>
         </tr>
         <tr>
             <td><code>EnableTrustedAuth()</code></td>
@@ -140,7 +139,7 @@ The following options are available when building an Embedded Node
     <tbody>
         <tr>
             <td><code>WithServerCertificateFromFile(string path, string password)</code></td>
-            <td>Sets the Server SSL Certificate to be loaded from a file</td>
+            <td>Sets the Server SSL Certificate loaded from a file</td>
         </tr>
         <tr>
             <td><code>WithServerCertificate(X509Certificate2 sslCertificate)</code></td>
@@ -148,11 +147,11 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>WithServerCertificateFromStore(StoreLocation storeLocation, StoreName storeName, string certificateSubjectName, string certificateThumbprint)</code></td>
-            <td>Sets the Server SSL Certificate to be loaded from a certificate store</td>
+            <td>Sets the Server SSL Certificate loaded from a certificate store</td>
         </tr>
         <tr>
             <td><code>WithServerCertificateFromStore(StoreName storeName, string certificateSubjectName, string certificateThumbprint)</code></td>
-            <td>Sets the Server SSL Certificate to be loaded from a certificate store</td>
+            <td>Sets the Server SSL Certificate loaded from a certificate store</td>
         </tr>
     </tbody>
 </table>
@@ -169,7 +168,7 @@ The following options are available when building an Embedded Node
     <tbody>
         <tr>
             <td><code>WithClusterGossipPort(int port)</code></td>
-            <td>Sets the internal gossip port (used when using cluster dns, this should point to a known port gossip will be running on)</td>
+            <td>Sets the internal gossip port (used when using cluster DNS, this should point to a known port gossip will be running on)</td>
         </tr>
         <tr>
             <td><code>WithGossipSeeds(params IPEndPoint[] endpoints)</code></td>
@@ -177,11 +176,11 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>WithClusterDnsName(string name)</code></td>
-            <td>Sets the dns name used for the discovery of other cluster nodes</td>
+            <td>Sets the DNS name used for the discovery of other cluster nodes</td>
         </tr>
         <tr>
             <td><code>DisableDnsDiscovery()</code></td>
-            <td>Disable dns discovery for the cluster</td>
+            <td>Disable DNS discovery for the cluster</td>
         </tr>
         <tr>
             <td><code>WithGossipInterval(TimeSpan gossipInterval)</code></td>
@@ -205,11 +204,11 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>WithPrepareCount(int prepareCount)</code></td>
-            <td>Sets the number of nodes which must acknowledge prepares. </td>
+            <td>Sets the number of nodes which must acknowledge prepares.</td>
         </tr>
         <tr>
             <td><code>WithCommitCount(int commitCount)</code></td>
-            <td>Sets the number of nodes which must acknowledge commits before acknowledging to a client.  </td>
+            <td>Sets the number of nodes which must acknowledge commits before acknowledging to a client.</td>
         </tr>
         <tr>
             <td><code>WithNodePriority(int nodePriority)</code></td>
@@ -230,7 +229,7 @@ The following options are available when building an Embedded Node
     <tbody>
         <tr>
             <td><code>RunInMemory()</code></td>
-            <td>Sets the builder to run in memory only</td>
+            <td>Sets the builder to run in memory</td>
         </tr>
         <tr>
             <td><code>RunOnDisk(string path)</code></td>
@@ -238,7 +237,7 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>MaximumMemoryTableSizeOf(int size)</code></td>
-            <td>Sets the maximum size a memtable is allowed to reach (in count) before being moved to be a ptable</td>
+            <td>Sets the maximum size a memtable is allowed to reach (in count) before moved to be a ptable</td>
         </tr>
         <tr>
             <td><code>DoNotVerifyDbHashes()</code></td>
@@ -262,7 +261,7 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>WithIndexPath(string indexPath)</code></td>
-            <td>Sets the path the index should be loaded/saved to</td>
+            <td>Sets the path the index should be loaded or saved to</td>
         </tr>
         <tr>
             <td><code>WithIndexCacheDepth(int indexCacheDepth)</code></td>
@@ -278,15 +277,15 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>WithBetterOrdering()</code></td>
-            <td>Enable Queue affinity on reads during write process to try to get better ordering.</td>
+            <td>Enable queue affinity on reads during write process to try to get better ordering.</td>
         </tr>
         <tr>
             <td><code>WithTfChunkSize(int chunkSize)</code></td>
-            <td>Sets the transaction file chunk size. Default is <see cref="TFConsts.ChunkSize"/></td>
+            <td>Sets the transaction file chunk size. Default is <see cref="TFConsts.ChunkSize"/><!-- TODO: What's this? --></td>
         </tr>
         <tr>
             <td><code>WithTfChunksCacheSize(long chunksCacheSize)</code></td>
-            <td>Sets the transaction file chunk cache size. Default is <see cref="TFConsts.ChunksCacheSize"/></td>
+            <td>Sets the transaction file chunk cache size. Default is <see cref="TFConsts.ChunksCacheSize"/><!-- TODO: What's this? --></td>
         </tr>
         <tr>
             <td><code>WithTfCachedChunks(int cachedChunks)</code></td>
@@ -311,59 +310,59 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>AdvertiseInternalIPAs(IPAddress intIpAdvertiseAs)</code></td>
-            <td>Sets up the Internal IP that would be advertised</td>
+            <td>Sets up the Internal IP to advertise</td>
         </tr>
         <tr>
             <td><code>AdvertiseExternalIPAs(IPAddress extIpAdvertiseAs)</code></td>
-            <td>Sets up the External IP that would be advertised</td>
+            <td>Sets up the External IP to advertise</td>
         </tr>
         <tr>
             <td><code>AdvertiseInternalHttpPortAs(int intHttpPortAdvertiseAs)</code></td>
-            <td>Sets up the Internal Http Port that would be advertised</td>
+            <td>Sets up the Internal HTTP port to advertise</td>
         </tr>
         <tr>
             <td><code>AdvertiseExternalHttpPortAs(int extHttpPortAdvertiseAs)</code></td>
-            <td>Sets up the External Http Port that would be advertised</td>
+            <td>Sets up the External HTTP port to advertise</td>
         </tr>
         <tr>
             <td><code>AdvertiseInternalSecureTCPPortAs(int intSecureTcpPortAdvertiseAs)</code></td>
-            <td>Sets up the Internal Secure TCP Port that would be advertised</td>
+            <td>Sets up the Internal Secure TCP port to advertise</td>
         </tr>
         <tr>
             <td><code>AdvertiseExternalSecureTCPPortAs(int extSecureTcpPortAdvertiseAs)</code></td>
-            <td>Sets up the External Secure TCP Port that would be advertised</td>
+            <td>Sets up the External Secure TCP port to advertise</td>
         </tr>
         <tr>
             <td><code>AdvertiseInternalTCPPortAs(int intTcpPortAdvertiseAs)</code></td>
-            <td>Sets up the Internal TCP Port that would be advertised</td>
+            <td>Sets up the Internal TCP port to advertise</td>
         </tr>
         <tr>
             <td><code>AdvertiseExternalTCPPortAs(int extTcpPortAdvertiseAs)</code></td>
-            <td>Sets up the External TCP Port that would be advertised</td>
+            <td>Sets up the External TCP port to advertise</td>
         </tr>
         <tr>
             <td><code>WithInternalHttpOn(IPEndPoint endpoint)</code></td>
-            <td>Sets the internal http endpoint to the specified value</td>
+            <td>Sets the internal HTTP endpoint to the specified value</td>
         </tr>
         <tr>
             <td><code>WithExternalHttpOn(IPEndPoint endpoint)</code></td>
-            <td>Sets the external http endpoint to the specified value</td>
+            <td>Sets the external HTTP endpoint to the specified value</td>
         </tr>
         <tr>        
             <td><code>WithInternalTcpOn(IPEndPoint endpoint)</code></td>
-            <td>Sets the internal tcp endpoint to the specified value</td>
+            <td>Sets the internal TCP endpoint to the specified value</td>
         </tr>
         <tr>
             <td><code>WithInternalSecureTcpOn(IPEndPoint endpoint)</code></td>
-            <td>Sets the internal secure tcp endpoint to the specified value</td>
+            <td>Sets the internal secure TCP endpoint to the specified value</td>
         </tr>
         <tr>
             <td><code>WithExternalTcpOn(IPEndPoint endpoint)</code></td>
-            <td>Sets the external tcp endpoint to the specified value</td>
+            <td>Sets the external TCP endpoint to the specified value</td>
         </tr>
         <tr>
             <td><code>WithExternalSecureTcpOn(IPEndPoint endpoint)</code></td>
-            <td>Sets the external secure tcp endpoint to the specified value</td>
+            <td>Sets the external secure TCP endpoint to the specified value</td>
         </tr>
         <tr>
             <td><code>EnableSsl()</code></td>
@@ -391,15 +390,15 @@ The following options are available when building an Embedded Node
         </tr>
         <tr>
             <td><code>AddInternalHttpPrefix(string prefix)</code></td>
-            <td>Adds a http prefix for the internal http endpoint</td>
+            <td>Adds a HTTP prefix for the internal HTTP endpoint</td>
         </tr>
         <tr>
             <td><code>AddExternalHttpPrefix(string prefix)</code></td>
-            <td>Adds a http prefix for the external http endpoint</td>
+            <td>Adds a HTTP prefix for the external HTTP endpoint</td>
         </tr>
         <tr>
             <td><code>DontAddInterfacePrefixes()</code></td>
-            <td>Don't add the interface prefixes (e.g. If the External IP is set to the Loopback address, we'll add http://localhost:2113/ as a prefix) </td>
+            <td>Don't add the interface prefixes (e.g. If the External IP is set to the Loopback address, add http://localhost:2113/ as a prefix) </td>
         </tr>
         <tr>
             <td><code>WithInternalHeartbeatInterval(TimeSpan heartbeatInterval)</code></td>
@@ -445,10 +444,9 @@ The following options are available when building an Embedded Node
     </tbody>
 </table>
 
-
 ## EmbeddedEventStoreConnection
 
-The following methods are available on `EmbeddedEventStoreConnection` for connecting to an embedded node
+The following methods are available on `EmbeddedEventStoreConnection` for connecting to an embedded node.
 
 <table>
     <thead>

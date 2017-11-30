@@ -1,12 +1,12 @@
 ---
-title: "Access Control Lists"
-section: "Server"
-version: "4.0.2"
+title: Access Control Lists
+section: Server
+version: 4.0.2
 ---
 
 ## Stream ACLs
 
-The ACL of a stream is kept in the streams [metadata](../metadata-and-reserved-names) as JSON with the below definition.
+Event Store keeps the ACL of a stream in the streams [metadata](../metadata-and-reserved-names) as JSON with the below definition.
 
 ```json
 {
@@ -22,17 +22,20 @@ The ACL of a stream is kept in the streams [metadata](../metadata-and-reserved-n
 
 These fields represent the following:
 
-- `$w` The permission to write to this stream
-- `$r` The permission to read from this stream
-- `$d` The permission to delete this stream
-- `$mw` The permission to write the metadata associated with this stream
-- `$mr` The permission to read the metadata associated with this stream
+-   `$w` The permission to write to this stream.
+-   `$r` The permission to read from this stream.
+-   `$d` The permission to delete this stream.
+-   `$mw` The permission to write the metadata associated with this stream.
+-   `$mr` The permission to read the metadata associated with this stream.
 
-These fields can be updated with either a single string or an array of strings representing users or groups (`$admins`, `$all`, or custom groups). It is also possible to put an empty array into one of these fields, this has the effect of remove all users from that permission. 
+You can update these fields with either a single string or an array of strings representing users or groups (`$admins`, `$all`, or custom groups). It is possible to put an empty array into one of these fields, this has the effect of removing all users from that permission.
 
-<span class="note">It is not normally recommended to give people access to `$mw` as then they can then change the ACL.</span>
+<span class="note">It is not recommended to give people access to <code>$mw</code> as then they can then change the ACL.</span>
 
 ### Example
+
+The ACL below would give `greg` read and write permission on the stream, while `john` would have read permission on the stream. Only users in the `$admins` group would be able to delete the stream, or read and write the metadata.
+
 
 ```json
 {
@@ -45,7 +48,7 @@ These fields can be updated with either a single string or an array of strings r
    }
 }
 ```
-This ACL would give `greg` read and write permission on the stream, while `john` would only have read permission on the stream. Only users in the `$admins` group would be able to delete the stream, or read and write the metadata.
+
 
 ## Default ACL
 
@@ -69,16 +72,17 @@ There is a special ACL in the `$settings` that is used as the default ACL. This 
     }
 }
 ```
+
 The `$userStreamAcl` controls the default ACL for user streams, while the `$systemStreamAcl` is used as the default for all system streams.
 
-<span class="note">`$w` in the `$userStreamAcl` also applies to the ability to create a stream.</span>
+<span class="note"><code>$w</code> in the <code>$userStreamAcl</code> also applies to the ability to create a stream.</span>
 
-<span class="note">Members of `$admins` always have access to everything, this permission cannot be removed.</span>
+<span class="note">Members of <code>$admins</code> always have access to everything, this permission cannot be removed.</span>
 
 When a permission is set on a stream in your system it will override the default, however it is not necessary to specify all permissions on a stream. It is only necessary to specify those which differ from the default.
 
 <span class="note--warning">
-All of these examples assume you have a user named `ouro` that has been created on your system. The examples also assume the password is `ouroboros`.
+All of these examples assume you have a user named <code>ouro</code> that has been created on your system. The examples also assume the password is <code>ouroboros</code>.
 </span>
 
 ### Example
@@ -106,9 +110,8 @@ This default ACL would give `ouro` and `$admins` create and write permissions on
 
 To do this you could use either the HTTP API or a client API to write the above data to the stream (requires admin privileges by default for obvious reasons. Be very careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically overrode it).
 
-```
-ouro@ouroboros: cat ~/settings.js
-```
+    ouro@ouroboros: cat ~/settings.js
+
 ```json
 {
     "$userStreamAcl" : {
@@ -128,9 +131,7 @@ ouro@ouroboros: cat ~/settings.js
 }
 ```
 
-```
-ouro@ouroboros: curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
-```
+    ouro@ouroboros: curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
 
 <span class="note--warning">
 You should not copy/paste the UUID in that command line but should generate a new one or not provide one (you will be redirected to a URI with one as described in writing events in the HTTP API).
@@ -152,9 +153,7 @@ Keep-Alive: timeout=15,max=100
 
 If we try to access the `$settings` stream as an unauthorized user it will 401.
 
-```
-ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
-```
+    ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
 
 ```http
 HTTP/1.1 401 Unauthorized
@@ -193,9 +192,7 @@ If I wanted to give `ouro` access by default to system streams I would post:
 
 At which point ouro can read system streams by default:
 
-```
-ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
-```
+    ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
 
 ```http
 HTTP/1.1 200 OK
@@ -223,7 +220,7 @@ You can also then limit ACLs on particular streams which are merged with the def
 }
 ```
 
-If you added the above to a stream’s ACL, then it would override the read permission on that stream to allow `greg` and `john` to read streams, but not `ouro`, resulting in the effective ACL below.
+If you added the above to a stream's ACL, then it would override the read permission on that stream to allow `greg` and `john` to read streams, but not `ouro`, resulting in the effective ACL below.
 
 ```json
 {
@@ -235,8 +232,8 @@ If you added the above to a stream’s ACL, then it would override the read perm
       "$mw" : "ouro"
    }
 }
-
 ```
+
 <span class="note--warning">
-Caching will be allowed on a stream if you have enabled it to be visible to `$all`. This is done as a performance optimization to avoid having to set `cache=private` on all data. If people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from `$all`. While clients should not be bookmarking URIs in this way it is an important consideration.
+Caching will be allowed on a stream if you have enabled it to be visible to <code>$all</code>. This is done as a performance optimization to avoid having to set <code>cache=private</code> on all data. If people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from <code>$all</code>. While clients should not be bookmarking URIs in this way it is an important consideration.
 </span>

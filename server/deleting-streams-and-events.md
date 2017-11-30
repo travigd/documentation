@@ -4,7 +4,7 @@ section: "Server"
 version: "4.0.2"
 ---
 
-Whether an event is deleted or not is defined by metadata in Event Store. Stream metadata such as Truncate Before, Max Age and Max Count is used to filter out events that have been considered deleted. When reading a stream, the index will check the stream's metadata to determine whether any of its events have been deleted.
+Meta data in Event Store defines whether an event is deleted or not. Stream metadata such as "Truncate Before", "Max Age" and "Max Count" is used to filter out events considered deleted. When reading a stream, the index will check the stream's metadata to determine whether any of its events have been deleted.
 
 `$all` bypasses the index, meaning that it does not check the metadata to determine whether events exist or not. As such, events that have been deleted will still be readable until a scavenge has removed them. Note that there are a number of requirements for a scavenge to successfully remove events, for more information about this, please see the section on [Scavenging](../scavenging/).
 
@@ -17,7 +17,7 @@ The last event in a stream is always kept as a record of the last event number i
 **Truncate before** (`$tb`) considers any event with an event number equal to or lower than its value to be deleted.
 For example, if you had the following events in a stream :
 
-```
+```text
 0@test-stream
 1@test-stream
 2@test-stream
