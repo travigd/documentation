@@ -5,11 +5,13 @@ version: "4.0.2"
 pinned: true
 ---
 
-User defined projections are written in javascript (ECMASCRIPT 6).
+User defined projections are written in JavaScript (ECMASCRIPT 6).
 
 Example projection:
 
-```
+<!-- TODO: Which does what? -->
+
+```JavaScript
 options({ //option
 	resultStreamName: "my_demo_projection_result",
 	$includeLinks: false,
@@ -249,14 +251,14 @@ fromStream('account-1') //selector
 Each handler is provided with the current state of the projection as well as the event that triggered the handler.
 The event provided through the handler contains the following properties.
 
-- isJson:true/false
-- data:{}
-- body:{}
-- bodyRaw: string
-- sequenceNumber: integer
-- metadataRaw: {}
-- linkMetadataRaw: string
-- partition: string
+-   isJson:true/false
+-   data:{}
+-   body:{}
+-   bodyRaw: string
+-   sequenceNumber: integer
+-   metadataRaw: {}
+-   linkMetadataRaw: string
+-   partition: string
 
 <table>
     <thead>

@@ -5,6 +5,8 @@ version: "4.0.2"
 pinned: true
 ---
 
+<!-- TODO: What is an ad-hoc projection? Is in mentioned anywhere? -->
+
 <table>
     <thead>
         <tr>
@@ -63,7 +65,7 @@ pinned: true
            <td><code>/projections/transient?name={name}&type={type}&enabled={enabled}</code></td>
            <td>
                 Create an ad-hoc projection.<br/>
-                This type of projection is run until completion and automatically deleted afterwards.
+                This type of projection runs until completion and automatically deleted afterwards.
            </td>
            <td>
                POST
@@ -77,7 +79,7 @@ pinned: true
                       name: Name of the projection
                   </li>
                   <li>
-                      type: JS or Native. (js/native. At this time, only js is supported)
+                      type: JS or Native. (JavaScript or native. At this time, Event Store only supports JavaScript)
                   </li>
                   <li>
                       enabled: Enable the projection (true/false)
@@ -89,7 +91,7 @@ pinned: true
            <td><code>/projections/onetime?name={name}&type={type}&enabled={enabled}&checkpoints={checkpoints}&emit={emit}&trackemittedstreams={trackemittedstreams}</code></td>
            <td>
                 Create a one-time projection.<br/>
-                This type of projection is run until completion and then stops.
+                This type of projection runs until completion and then stops.
            </td>
            <td>
                POST
@@ -103,7 +105,7 @@ pinned: true
                       name: Name of the projection
                   </li>
                   <li>
-                      type: JS or Native. (js/native. At this time, only js is supported)
+                  type: JS or Native. (JavaScript or native. At this time, Event Store only supports JavaScript)
                   </li>
                   <li>
                       enabled: Enable the projection (true/false)
@@ -124,7 +126,7 @@ pinned: true
            <td><code>/projections/continuous?name={name}&type={type}&enabled={enabled}&emit={emit}&trackemittedstreams={trackemittedstreams}</code></td>
            <td>
                 Create a continuous projection.<br/>
-                This type of projection will, if enabled will contiously run unless disabled or an unrecoverable error has been encountered.
+                This type of projection will, if enabled will continuously run unless disabled or an unrecoverable error is encountered.
            </td>
            <td>
                POST
@@ -138,7 +140,7 @@ pinned: true
                       name: Name of the projection
                   </li>
                   <li>
-                      type: JS or Native. (js/native. At this time, only js is supported)
+                  type: JS or Native. (JavaScript or native. At this time, Event Store only supports JavaScript)
                   </li>
                   <li>
                       enabled: Enable the projection (true/false)
@@ -191,7 +193,7 @@ pinned: true
                       name: Name of the projection
                   </li>
                   <li>
-                      type: JS or Native. (js/native. At this time, only js is supported)
+                  type: JS or Native. (JavaScript or native. At this time, Event Store only supports JavaScript)
                   </li>
                   <li>
                       emit: Allow the projection to write to streams (true/false)
@@ -392,6 +394,3 @@ pinned: true
         </tr>
     </tbody>
 </table>
-
-
-
