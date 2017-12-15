@@ -5,7 +5,7 @@ version: "4.0.2"
 ---
 
 The Event Store Client API includes helper methods that use the HTTP API to allow for the management of users. This document will describe the methods found in the `UsersManager` class. All methods in this class are asynchronous.
-
+<!-- TODO: Moved, to check -->
 ## Methods
 
 ### Create a User

@@ -56,7 +56,7 @@ Keep-Alive: timeout=15,max=100
 The content links are pointing to the original `$projections-$all` stream (the linked events are being resolved back to where they point). With the header set the links (or embedded content) will instead point back to the actual `linkTo` events.
 </span>
 
-<!-- Describe -->
+<!-- TODO: Describe. Before and after -->
 <div class="codetabs" markdown="1">
 <div data-lang="request" markdown="1">
 ```bash

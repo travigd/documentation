@@ -6,11 +6,7 @@ version: "4.0.2"
 
 You should look at reliability from a holistic perspective. Even though Event Store treats data transactionally with full durability assurances this will not help you if the hardware on your machine does not support it.
 
-Many consumer grade disks (and SSDs especially) lie about durability to appear faster. This is fine until you have a power outage and lose information. By default on a client installation Windows enables disk caching. <!-- Why is this relevant? -->
-
-<!-- Is this really relevant? -->
-
-The best indicator that a SSD can make data durable is the existence of a capacitor on the board that allows the SSD time after losing power to complete its writes (The Intel 320/710s for example. The 520 is an example of one to avoid). The same is true for RAID controllers that have a write-back cache and a battery. If you use a RAID controller with a battery back up, remember to check that the battery has power
+Many consumer grade disks (and SSDs especially) lie about durability to appear faster. This is fine until you have a power outage and lose information. By default on a client installation Windows enables disk caching. <!-- TODO: Why is this relevant? RAM out of control, I think was also mentioned elsewhere? -->
 
 These issues do not just affect Event Store. Other vendors and projects have created tests to check whether you may be losing data. We recommend running one of [these such tests](http://highperfpostgres.com/disk-plug-pull-testing) against your production environment.
 

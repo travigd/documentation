@@ -6,7 +6,7 @@ version: 4.0.2
 
 As of version 3.9.0 all future indexes will use 64-bit hashes instead of 32-bit hashes. The system will automatically transition from 32-bit to 64-bit by writing all new indexes as 64-bit indexes during the merge process.
 
-If you prefer to use only 64-bit indexes immediately you can force this. For a small database, delete the _index_ <!-- TODO:Which is where?--> folder and let it rebuild (this might take a while)
+If you prefer to use only 64-bit indexes immediately you can force this. For a small database, delete the _index_ <!-- TODO: Which is where?--> folder and let it rebuild (this might take a while)
 
 If you have a large database, remote storage, etc and cannot lose downtime, you can do this operation offline on another node with the following steps:
 
@@ -18,4 +18,4 @@ If you have a large database, remote storage, etc and cannot lose downtime, you 
 6.  Let Event Store catch up from master.
 7.  Repeat the restore for other nodes.
 
-For others <!-- TODO: Other what? --> the index will eventually be 64 bit due to the merging process that occurs over time.
+For other indices, you index will eventually become 64 bit due to the merging process that occurs over time.

@@ -30,14 +30,16 @@ You can set all arguments can also as environment variables. This mechanism is o
 
 The last way you can set arguments is to put them into one or more configuration files. To tell Event Store to use a configuration file you pass the files on the command line with `--config=filename`. The basic format of the YAML configuration file is as follows:
 
-<!-- TODO: Are the dashes needed? Isn't that for front matter? -->
-
 ```yaml
 ---
 Log: "/home/Ouro/logs"
 IntHttpPort: 2111
 ---
 ```
+
+<span class="note">
+You need to use the three dashes and spacing in your YAML file.
+</span>
 
 Files can be better for large installations as you can centrally distribute and manage them, or generate them by a configuration management system such as Puppet.
 

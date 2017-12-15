@@ -43,7 +43,7 @@ The other interface is HTTP-based, more specifically based upon the [AtomPub pro
 -   [Go](https://github.com/jetbasrawi/go.geteventstore)
 
 <span class="note">
-<!-- How? -->
+<!-- TODO: How? -->
 Feel free to add more! Being listed as a community client does not imply official support.
 </span>
 

@@ -20,12 +20,16 @@ Before interacting with a subscription group, you need to create one. You will r
 
 ### Query Parameters
 
+<!-- TODO: To move -->
+
 | Parameter           | Description                                   |
 | ------------------- | --------------------------------------------- |
 | `stream`            | The stream the persistent subscription is on. |
 | `subscription_name` | The name of the subscription group.           |
 
 Body
+
+<!-- TODO: Moved, check -->
 
 | Parameter                     | Description                                                                                        |
 | ----------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -35,7 +39,7 @@ Body
 | `checkPointAfterMilliseconds` | The amount of time the system should try to checkpoint after.                                      |
 | `liveBufferSize`              | The size of the live buffer (in memory) before resorting to paging.                                |
 | `readBatchSize`               | The size of the read batch when in paging mode.                                                    |
-| `bufferSize`                  | The number of messages that should be buffered when in paging mode.                                |
+| `bufferSize`    | The number of messages that should be buffered when in paging mode.                                |
 | `maxCheckPointCount`          | The maximum number of messages not checkpointed before forcing a checkpoint.                       |
 | `maxRetryCount`               | Sets the number of times a message should be retried before considered a bad message.              |
 | `maxSubscriberCount`          | Sets the maximum number of allowed subscribers.                                                    |
@@ -84,6 +88,8 @@ By default, reading a stream via a persistent subscription will return a single 
 | `/subscriptions/{stream}/{subscription_name} /subscriptions/{stream}/{subscription_name}?embed={embed} /subscriptions/{stream}/{subscription}/{count}?embed={embed}` | `application/vnd.eventstore.competingatom+xml application/vnd.eventstore.competingatom+json` | GET    |
 
 ### Query Parameters
+
+<!-- TODO: To move -->
 
 | Parameter           | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
@@ -184,7 +190,7 @@ For example:
 | `subscription_name` | The name of the subscription group.              |
 | `messageid`         | The id of the message that needs to be acked     |
 
-<!-- Has this been explained? -->
+<!-- TODO: Has this been explained? -->
 
 ### Nack multiple messages
 

@@ -17,7 +17,7 @@ Unless passed a database option, Event Store will write to a new database create
 
 ### On Windows and .NET
 
-<!-- Duplication, turn other into partial and reuse -->
+<!-- TODO: Duplication, turn other into partial and reuse -->
 
 A typical command line for running Event Store server on Windows is:
 
@@ -35,7 +35,7 @@ To configure an account with permission to listen for incoming HTTP requests, yo
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 ```
 
-<!-- Is this still true and can it be handled better? -->
+<!-- TODO: Is this still true and can it be handled better? -->
 
 #### If you receive 503 errors from the web UI
 

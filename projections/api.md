@@ -5,8 +5,6 @@ version: "4.0.2"
 pinned: true
 ---
 
-<!-- TODO: What is an ad-hoc projection? Is in mentioned anywhere? -->
-
 <table>
     <thead>
         <tr>

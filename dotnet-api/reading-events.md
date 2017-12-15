@@ -9,9 +9,9 @@ You can use the client API to read events from a stream starting from either end
 ## Methods
 
 <!-- TODO: Explanations? -->
+<!-- TODO: Moved, check -->
 
 ### Reading a single event
-
 ```csharp
 Task<EventReadResult> ReadEventAsync(string stream, long eventNumber, bool resolveLinkTos);
 ```
@@ -47,7 +47,7 @@ These methods also have an optional parameter which allows you to specify the `U
 ## StreamEventsSlice
 
 The reading methods for individual streams each return a `StreamEventsSlice`, which is immutable. The available members on `StreamEventsSlice` are:
-
+<!-- TODO: Moved, check -->
 <table>
     <thead>
         <tr>
@@ -96,7 +96,7 @@ Event Store supports a special type of event called 'Link Events'. You can think
 In situations where the event you read is a link event, `ResolvedEvent` allows you to access both the link event itself, as well as the event it points to.
 
 The members of this class are as follows:
-
+<!-- TODO: Moved, check -->
 <table>
     <thead>
         <tr>
@@ -143,7 +143,7 @@ To ensure that the Event Store server follows link events when reading, ensure y
 ## RecordedEvent
 
 `RecordedEvent` contains all the data about a specific event. Instances of this class are immutable, and expose the following members:
-
+<!-- TODO: Moved, to check -->
 <table>
     <thead>
         <tr>
@@ -193,7 +193,7 @@ To ensure that the Event Store server follows link events when reading, ensure y
 
 ## Reading a single event
 
-The `ReadSingleEventAsync` method reads a single event from a stream at a specified position. This is the simplest case of reading events, but is still useful for situations such as reading the last event in the stream used as a starting point for a subscription. This function accepts three parameters:
+The `ReadEventAsync` method reads a single event from a stream at a specified position. This is the simplest case of reading events, but is still useful for situations such as reading the last event in the stream used as a starting point for a subscription. This function accepts three parameters:
 
 <table>
     <thead>
@@ -221,7 +221,7 @@ The `ReadSingleEventAsync` method reads a single event from a stream at a specif
 This method returns an instance of `EventReadResult` which indicates if the read was successful, and if so the `ResolvedEvent` that was read.
 
 ## Reading a stream forwards
-
+<!-- TODO: Moved, check -->
 The `ReadStreamEventsForwardAsync` method reads the requested number of events in the order in which they were originally written to the stream from a nominated starting point in the stream.
 
 The parameters are:
@@ -278,7 +278,7 @@ do
 <span class="note">It is unlikely that client code would need to build a list in this manner. It is far more likely that events would be passed into a left fold to derive the state of some object as of a given event.</span>
 
 ## Reading a stream backwards
-
+<!-- TODO: Moved, check -->
 The `ReadStreamEventsBackwardAsync` method reads the requested number of events in the reverse order from that in which they were originally written to the stream from a specified starting point.
 
 The parameters are:

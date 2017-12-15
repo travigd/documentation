@@ -5,7 +5,7 @@ version: "4.0.2"
 pinned: true
 ---
 
-Event Store provides a native interface of AtomPub over HTTP. AtomPub is a RESTful protocol that can reuse many existing components, for example reverse proxies and a client’s native HTTP caching. Since events stored in Event Store are entirely immutable, cache expiration can be infinite. We can also leverage content type negotiation. Appropriately serialized events can be accessed as JSON or XML according to the request headers.
+Event Store provides a native interface of AtomPub over HTTP. AtomPub is a RESTful protocol that can reuse many existing components, for example reverse proxies and a client’s native HTTP caching. Since events stored in Event Store are entirely immutable, cache expiration can be infinite. Event Store leverages content type negotiation and you can access appropriately serialised events can as JSON or XML according to the request headers.
 
 <span class="note">
 Examples in this section make use of the command line tool [cURL](http://curl.haxx.se/) to construct HTTP requests. We use this tool regularly in development and you will find it useful when working with the HTTP API.
@@ -13,11 +13,11 @@ Examples in this section make use of the command line tool [cURL](http://curl.ha
 
 ## Compatibility with AtomPub
 
-Event Store is fully compatible with the 1.0 version of the Atom Protocol. <!-- I don't understand this --> If problems are found the protocol specified behaviour will be followed in future releases. There are extensions to the protocol, such as headers for control and custom `rel` links.
+Event Store is fully compatible with the 1.0 version of the Atom Protocol. Event Store adds extensions to the protocol, such as headers for control and custom `rel` links.
 
 ### Content Types
 
-The preferred way of determining which content type responses will be served is to set the `Accept` header on the request. As some clients do not deal well with HTTP headers when caching, appending a format parameter to the URL is also supported, e.g. `?format=xml`.
+The preferred way of determining which content type responses Event Store serves is to set the `Accept` header on the request. As some clients do not deal well with HTTP headers when caching, appending a format parameter to the URL is also supported, e.g. `?format=xml`.
 
 The accepted content types for POST requests are:
 
@@ -38,7 +38,7 @@ The accepted content types for GET requests are:
 
 There will be additions in the future for protobufs and bson.
 
-## Examples (JSON)
+## Examples
 
 Below are examples of [writing](/http-api/writing-to-a-stream) an event to a stream, as well as [reading](../reading-streams) both a stream, and an event, for more details on these read out their individual pages. All the below example use JSON, but by setting the correct content types then the examples would apply to XML as well.
 
@@ -56,7 +56,7 @@ Inside a file named _simple-event.txt_:
 ]
 ```
 
-Issuing a `POST` request with the above data to a stream, with the correct content type set, will result in the event being written to the stream, and a `201` response from the server, giving you the location of the event.
+Issuing a `POST` request with the above data to a stream, with the correct content type set, will result in writing the event to the stream, and a `201` response from the server, giving you the location of the event.
 
 <div class="codetabs" markdown="1">
 <div data-lang="request" markdown="1">
@@ -162,7 +162,6 @@ Keep-Alive: timeout=15,max=100
 
 ### Reading an event from a stream
 
-<!-- Description -->
 <div class="codetabs" markdown="1">
 <div data-lang="request" markdown="1">
 ```bash
@@ -212,155 +211,6 @@ Keep-Alive: timeout=15,max=100
     }
   ]
 }
-```
-</div>
-</div>
-
-## Examples (XML)
-
-Below are examples of [writing](/http-api/writing-to-a-stream) an event to a stream, as well as [reading](/http-api/reading-streams) both a stream, and an event, for more details on these read their individual pages. All the below example use XML, but by setting the correct content types then the examples would apply to JSON as well.
-
-### Writing an event to a stream.
-
-In a file named _simple-event.txt_:
-
-```xml
-<Events>
-  <Event>
-    <EventId>fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4</EventId>
-    <EventType>event-type</EventType>
-    <Data>
-      <MyEvent>
-        <Something>1</Something>
-      </MyEvent>
-    </Data>
-  </Event>
-</Events>
-```
-
-Posting the above data to a stream, with the correct content type set, will result in the event being written to the stream, and a `201` response from the server, giving you the location of the event.
-
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
-```bash
-curl -i -d @simple-event.txt -H "Content-Type:application/vnd.eventstore.events+xml" "http://127.0.0.1:2113/streams/newstream2"
-```
-</div>
-<div data-lang="response" markdown="1">
-```http
-HTTP/1.1 201 Created
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
-Location: http://127.0.0.1:2113/streams/newstream2/0
-Content-Type: text/plain; charset=utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Mon, 02 Feb 2015 13:19:34 GMT
-Content-Length: 0
-Keep-Alive: timeout=15,max=100
-```
-</div>
-</div>
-
-### Reading a stream
-
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
-```bash
-curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream2"
-```
-</div>
-<div data-lang="response" markdown="1">
-```http
-HTTP/1.1 200 OK
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
-Cache-Control: max-age=0, no-cache, must-revalidate
-Vary: Accept
-ETag: "0;-1296467268"
-Content-Type: application/atom+xml; charset=utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Mon, 02 Feb 2015 13:20:45 GMT
-Content-Length: 927
-Keep-Alive: timeout=15,max=100
-
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Event stream 'newstream2'</title>
-  <id>http://127.0.0.1:2113/streams/newstream2</id>
-  <updated>2015-02-02T13:19:34.16844Z</updated>
-  <author>
-    <name>EventStore</name>
-  </author>
-  <link href="http://127.0.0.1:2113/streams/newstream2" rel="self"/>
-  <link href="http://127.0.0.1:2113/streams/newstream2/head/backward/20" rel="first"/>
-  <link href="http://127.0.0.1:2113/streams/newstream2/1/forward/20" rel="previous"/>
-  <link href="http://127.0.0.1:2113/streams/newstream2/metadata" rel="metadata"/>
-  <entry>
-    <title>0@newstream2</title>
-    <id>http://127.0.0.1:2113/streams/newstream2/0</id>
-    <updated>2015-02-02T13:19:34.16844Z</updated>
-    <author>
-      <name>EventStore</name>
-    </author>
-    <summary>event-type</summary>
-    <link href="http://127.0.0.1:2113/streams/newstream2/0" rel="edit"/>
-    <link href="http://127.0.0.1:2113/streams/newstream2/0" rel="alternate"/>
-  </entry>
-</feed>
-```
-</div>
-</div>
-
-### Reading an event from a stream
-
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
-```bash
-curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream2/0"
-```
-</div>
-<div data-lang="response" markdown="1">
-```http
-HTTP/1.1 200 OK
-Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
-Cache-Control: max-age=31536000, public
-Vary: Accept
-Content-Type: application/atom+xml; charset=utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Mon, 02 Feb 2015 13:24:02 GMT
-Content-Length: 740
-Keep-Alive: timeout=15,max=100
-
-<?xml version="1.0" encoding="utf-8"?>
-<atom:entry xmlns:atom="http://www.w3.org/2005/Atom">
-  <atom:title>0@newstream2</atom:title>
-  <atom:id>http://127.0.0.1:2113/streams/newstream2/0</atom:id>
-  <atom:updated>2015-02-02T13:19:34.16844Z</atom:updated>
-  <atom:author>
-    <atom:name>EventStore</atom:name>
-  </atom:author>
-  <atom:summary>event-type</atom:summary>
-  <atom:link href="http://127.0.0.1:2113/streams/newstream2/0" rel="edit"/>
-  <atom:link href="http://127.0.0.1:2113/streams/newstream2/0" rel="alternate"/>
-  <atom:content type="application/xml">
-    <eventStreamId>newstream2</eventStreamId>
-    <eventNumber>0</eventNumber>
-    <eventType>event-type</eventType>
-    <data>
-      <MyEvent>
-        <Something>1</Something>
-      </MyEvent>
-    </data>
-    <metadata/>
-  </atom:content>
-</atom:entry>
 ```
 </div>
 </div>

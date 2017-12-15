@@ -4,7 +4,7 @@ section: "Server"
 version: "4.0.2"
 ---
 
-Effective September of 2013 <!-- TODO: A version might be better --> all the clustering code for Event Store has been open sourced (under the normal BSD-3 license as the rest of the code). This document will look at how you can setup a highly available cluster using the open source components.
+Effective September of 2013 <!-- TODO: A version might be better, remove date reference or reference completely --> all the clustering code for Event Store has been open sourced (under the normal BSD-3 license as the rest of the code). This document will look at how you can setup a highly available cluster using the open source components.
 
 <!-- TODO: I think there's a much better way of saying all this -->
 
@@ -52,11 +52,9 @@ All communications in Event Store are optionally segregated to different network
 
 To setup an internal network all the command line parameters provided above have `int-` options. All communications channels also support the enabling of SSL for the connections.
 
-<!-- TODO: How? Is this the same as below? -->
-
 ## HTTP Clients
 
-If you want to use the HTTP API, then you would add a load balancer in front of the three nodes. It does not matter which node receives a request as the requests the node will forward the request internally. With this setup, you can lose any one machine with an easy setup. <!-- TODO: What does this mean? -->
+If you want to use the HTTP API, then you would add a load balancer in front of the three nodes. It does not matter which node receives a request as the requests the node will forward the request internally. With this setup, you can lose any one machine with an easy setup. <!-- TODO: What does this mean? Better wording -->
 
 ## Native TCP Clients
 

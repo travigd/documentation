@@ -18,7 +18,7 @@ The `Create` methods have changed slightly moving to 3.0.2 as connection strings
 
 ## Creating a Connection
 
-The `EventStoreConnection` classes uses the static `Create` methods to create a new connection. All overloads <!-- TODO: What's an overload? --> allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events](#connection-events)).
+The `EventStoreConnection` classes uses the static `Create` methods to create a new connection. All overloads <!-- TODO: What's an overload? Methods with similar signatures, but different parameters. --> allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events](#connection-events)).
 
 <table>
     <thead>
@@ -83,6 +83,7 @@ Many of the overloads accept a connection string that you can use to control set
 The connection string format should look familiar to those who have used connection strings in the past. It consists of a series of key/value pairs Key = Value separated by semicolons.
 
 You can set the following values using the connection string.
+<!-- TODO: Moved, to check and what about ConnectTo? -->
 
 <table>
     <thead>
@@ -258,6 +259,7 @@ This will create an instance of `ConnectionSettings` with the default options. T
 
 The .NET API can log information to different destinations. By default logging is not enabled.
 
+<!-- TODO: Moved, to check. Actually missing options. -->
 <table>
     <thead>
         <tr>
@@ -288,6 +290,8 @@ The .NET API can log information to different destinations. By default logging i
 ### User Credentials
 
 Event Store supports [Access Control Lists](/server/latest/access-control-lists/) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set some default credentials for all operations on the connection.
+
+<!-- TODO: Moved, to check. -->
 
 <table>
     <thead>
@@ -346,6 +350,8 @@ In production systems where credentials are sent from the client to Event Store,
 
 When connecting to an Event Store HA cluster you can specify that operations are performed on any node, or only on the node that is the master.
 
+<!-- TODO: Moved, to check. -->
+
 <table>
     <thead>
         <tr>
@@ -370,6 +376,8 @@ When connecting to an Event Store HA cluster you can specify that operations are
 The following methods on the `ConnectionSettingsBuilder` allow you to change the way the connection handles operation failures and connection issues.
 
 #### Reconnections
+
+<!-- TODO: Moved, to check. -->
 
 <table>
     <thead>
@@ -457,6 +465,8 @@ DNS discovery uses a single DNS entry with several records listing all node IP a
 
 Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
 
+<!-- TODO: Moved, to check. -->
+
 <table>
     <thead>
         <tr>
@@ -495,6 +505,8 @@ The second supported method for node discovery uses a hardcoded set of `IPEndPoi
 
 Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
 
+<!-- TODO: Moved, to check. -->
+
 <table>
     <thead>
         <tr>
@@ -525,6 +537,8 @@ Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
 ## Connection Events
 
 `EventStoreConnection` exposes events that your application can use to be notifed of changes to the status of the connection.
+
+<!-- TODO: Not moved. -->
 
 <table>
     <thead>

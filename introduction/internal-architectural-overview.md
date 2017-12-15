@@ -3,10 +3,10 @@ title: "Internal Architectural Overview"
 section: "Introduction"
 version: "4.0.2"
 ---
+<!-- TODO: Not live why? -->
+<!-- TODO:  Overview image or intro? -->
 
-<!-- Overview image or intro? -->
-
-<!-- Remove as much passive as possible -->
+<!-- TODO:  Remove as much passive as possible -->
 
 ## Messaging
 
@@ -16,13 +16,13 @@ Messages first flow through a state machine that represents the state of the nod
 
 Because of this architecture, the main monitoring points of Event Store is the status of the queues. You can view the status can in the health area of the admin interface or through the HTTP API. It is also written to a special `$statistics-node:port` stream on an interval.
 
-<!-- IMAGE(s)-->
+<!-- TODO:  IMAGE(s)-->
 
 The most common queue to be slow is the storage writer as it writes to storage in a durable fashion. It uses fsync/flushfile buffers to ensure that data is persisted to disk and will survive, say a power outage on the machine. At the time of writing the storage writer is capable of writing more than 15,000 transactions to disk per second on the open source single node version. This is well beyond the needs of most systems.
 
 ## Transaction File
 
-Event Store provides durable storage including handling cases where the power may be turned off to a machine. It does this through the use of a commit log. The commit log is a conceptual constantly appending file (though it is not implemented this way <!-- This is confusing, link to more details? -->). Every write to Event Store appends to this file.
+Event Store provides durable storage including handling cases where the power may be turned off to a machine. It does this through the use of a commit log. The commit log is a conceptual constantly appending file (though it is not implemented this way <!-- TODO:  This is confusing, link to more details? -->). Every write to Event Store appends to this file.
 
 The commit log is built not as one large file but as a series of small files implemented with an abstraction called a 'TFChunk'. For all files it writes, Event Store always writes sequentially, with the exception of checkpoints, although there is a non-performing sequential version of checkpoints too.
 
@@ -58,14 +58,14 @@ This identifier of a record is useful as you can avoid additional lookups when w
 
 As transactions are written to the transaction file, where an in-memory index is appended. A query hits the in memory index. The in-memory index is implemented as a hash of sorted lists with a fine grained lock on the stream.
 
-<!-- Is this necessary -->
+<!-- TODO:  Is this necessary -->
 
 In experimenting with various data structures including redblack trees and B+ trees it turned out that the fine grained lock outperformed the others (a good example of how stupid code can often be faster than well thought out code).
 
-<!-- To here -->
+<!-- TODO:  To here -->
 
 When there are enough items in the in memory index, the index is flushed to disk (known as a 'PTable' or 'Persistent Table'). A PTable is a sorted group of index entries (remember that they are only 16 bytes each). A binary search across the PTables is used to search. The search function has been memoized by storing midpoints in memory (in the future ptables will likely be stored in unmanaged memory as well, but the performance on SSDs is acceptable with only midpoint caching). Mid point caching reduces the number of seeks from log(n) by the depth to which midpoints are filled and often all are in memory.
 
 When a PTable is written, a checksum is marked as to the last place in the transaction file the persistent tables cover to. If the system were to shut down, it must rebuild a memtable from that point forward on start up. With default settings the max is 1million items which takes about 3 seconds on most machines tested. You can change this value via the command line.
 
-PTables get merged into larger PTables over time. During this operation they are scavenged for items to be removed. The merging of N PTables to 1 larger PTable is a linear operation as they are all sorted. Oncve written to disk, PTables are immutable and have <!-- What now? --> like tf chunks MD5 checksums. Unlike a failure in a TFChunk checksum, if a problem is found within the index it is simply rebuilt.
+PTables get merged into larger PTables over time. During this operation they are scavenged for items to be removed. The merging of N PTables to 1 larger PTable is a linear operation as they are all sorted. Oncve written to disk, PTables are immutable and have <!-- TODO:  What now? --> like tf chunks MD5 checksums. Unlike a failure in a TFChunk checksum, if a problem is found within the index it is simply rebuilt.

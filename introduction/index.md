@@ -77,7 +77,7 @@ Event Store should now be running at <http://127.0.0.1:2113/> to see the admin c
 
 ## Writing Events to an Event Stream
 
-Event Store operates on a concept of Event Streams, and the first operation we will look at is how to write to a stream. These are partition points in the system <!-- What does this mean? -->. If you are Event Sourcing a domain model a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, create as many as you need.
+Event Store operates on a concept of Event Streams, and the first operation we will look at is how to write to a stream. If you are Event Sourcing a domain model a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, create as many as you need.
 
 To begin, open a text editor, copy and paste the following event definition, and save it as _event.txt_.
 
@@ -134,49 +134,76 @@ Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc42
 <div class="codetabs" markdown="1">
 <div data-lang="request" markdown="1">
 ```shell
-curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream"
+curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream"
 ```
 </div>
 <div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-Forwarded-Prefix, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos
 Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position, ES-CurrentVersion
 Cache-Control: max-age=0, no-cache, must-revalidate
 Vary: Accept
-ETag: "0;-1296467268"
-Content-Type: application/atom+xml; charset: utf-8
+ETag: "0;-2060438500"
+Content-Type: application/vnd.eventstore.atom+json; charset=utf-8
 Server: Mono-HTTPAPI/1.0
-Date: Sat, 29 Jun 2013 18:02:21 GMT
-Content-Length: 998
+Date: Fri, 15 Dec 2017 12:23:23 GMT
+Content-Length: 1262
 Keep-Alive: timeout=15,max=100
 
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-   <title>Event stream 'newstream'</title>
-   <id>http://127.0.0.1:2113/streams/newstream</id>
-   <updated>2013-06-29T14:45:06.550308Z</updated>
-   <author>
-      <name>EventStore</name>
-   </author>
-   <link href="http://127.0.0.1:2113/streams/newstream" rel="self" />
-   <link href="http://127.0.0.1:2113/streams/newstream/head/backward/20" rel="first" />
-   <link href="http://127.0.0.1:2113/streams/newstream/0/forward/20" rel="last" />
-   <link href="http://127.0.0.1:2113/streams/newstream/1/forward/20" rel="previous" />
-   <link href="http://127.0.0.1:2113/streams/newstream/metadata" rel="metadata" />
-   <entry>
-      <title>0@newstream</title>
-      <id>http://127.0.0.1:2113/streams/newstream/0</id>
-      <updated>2013-06-29T14:45:06.550308Z</updated>
-      <author>
-         <name>EventStore</name>
-      </author>
-      <summary>event-type</summary>
-      <link href="http://127.0.0.1:2113/streams/newstream/0" rel="edit" />
-      <link href="http://127.0.0.1:2113/streams/newstream/0" rel="alternate" />
-   </entry>
-</feed>
+{
+  "title": "Event stream 'newstream'",
+  "id": "http://127.0.0.1:2113/streams/newstream",
+  "updated": "2017-12-15T12:19:32.021776Z",
+  "streamId": "newstream",
+  "author": {
+    "name": "EventStore"
+  },
+  "headOfStream": true,
+  "selfUrl": "http://127.0.0.1:2113/streams/newstream",
+  "eTag": "0;-2060438500",
+  "links": [
+    {
+      "uri": "http://127.0.0.1:2113/streams/newstream",
+      "relation": "self"
+    },
+    {
+      "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
+      "relation": "first"
+    },
+    {
+      "uri": "http://127.0.0.1:2113/streams/newstream/1/forward/20",
+      "relation": "previous"
+    },
+    {
+      "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
+      "relation": "metadata"
+    }
+  ],
+  "entries": [
+    {
+      "title": "0@newstream",
+      "id": "http://127.0.0.1:2113/streams/newstream/0",
+      "updated": "2017-12-15T12:19:32.021776Z",
+      "author": {
+        "name": "EventStore"
+      },
+      "summary": "event-type",
+      "links": [
+        {
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
+          "relation": "edit"
+        },
+        {
+          "uri": "http://127.0.0.1:2113/streams/newstream/0",
+          "relation": "alternate"
+        }
+      ]
+    }
+  ]
+}
 ```
 </div>
 </div>
@@ -187,7 +214,7 @@ This example uses cURL, but you can read Atom feeds with a wide variety of appli
 </span>
 
 <span class="note">
-This command asked Event Store to return the feed in `atom+xml` format, you can also use `application/vnd.eventstore.atom+json` if you prefer JSON.
+This command asked Event Store to return the feed in JSON format, you can also use `Accept:application/atom+xml` if you prefer XML.
 </span>
 
 The feed has a single item inside of it, the one you just posted. You can then get the event by issuing a `GET` to the `alternate` URI value.
@@ -226,21 +253,21 @@ You can also use `Accept: text/xml` if you prefer XML.
 
 To read a single page feed, you request the feed and then iterate through the event links by executing `GET` requests. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable.
 
-You can also `GET` the events in the feed <!-- Need to understand this better--> itself if by using `?embed=body` in the request. You can find further information on this [here](/http-api/latest/reading-streams).
+You can also `GET` the events in the feed itself if by using `?embed=body` in the request. You can find further information on this [here](/http-api/latest/reading-streams).
 
 Sometimes your feed may span more than one atom page, and you will need to paginate through the feed. You do this by following the relation links in the feed. To read a feed from the beginning to the end you would go to the _last_ link and then continue to read the _previous_ page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using _first_ then _next_.
 
-<!-- Needs an example -->
+<!-- TODO: Add an example -->
 
 ## Subscribing to Stream to Receive Updates
 
 **Another common operation people want to be able to do is to listen to a stream for when changes are occurring.**
 
-This works the same way as paging through an Atom feed. As new events arrive, new _previous_ links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an _at least once_ <!-- What is this? --> assurance with the following code, save the last URI you received.
+This works the same way as paging through an Atom feed. As new events arrive, new _previous_ links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an _at least once_ assurance with the following code, save the last URI you received.
 
+<!-- TODO: Test the below and how do you set them up? -->
 <div class="codetabs" markdown="1">
 <div data-lang="C#" markdown="1">
-
 ```csharp
 using System;
 using System.Collections.Generic;

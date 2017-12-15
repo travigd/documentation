@@ -279,8 +279,6 @@ The response should resemble the following.
 
 You can configure the name of the state stream via the projection options:
 
-<!-- TODO: What code is this? -->
-
 ```json
 options({
   resultStreamName: "xboxes"

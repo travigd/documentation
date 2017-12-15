@@ -17,7 +17,7 @@ This type of information is not part of the actual event but is metadata associa
 ## Methods
 
 <!-- TODO: Explanations? -->
-
+<!-- TODO: Moved, check -->
 ### Reading Stream Metadata
 
 ```csharp

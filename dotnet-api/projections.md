@@ -4,6 +4,7 @@ section: ".NET API"
 version: "4.0.2"
 ---
 
+<!-- TODO: Moved, check -->
 The Event Store Client API includes helper methods that use the HTTP API to allow you to manage projections. This document will describe the methods found in the `ProjectionsManager` class. All methods in this class are asynchronous.
 
 ## Methods

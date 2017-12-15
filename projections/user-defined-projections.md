@@ -9,7 +9,7 @@ User defined projections are written in JavaScript (ECMASCRIPT 6).
 
 Example projection:
 
-<!-- TODO: Which does what? -->
+<!-- TODO: Which does what? Counts number myeventtype in account-1 stream, and the transformBy does something… Map state to something else, setting it to 10 -->
 
 ```JavaScript
 options({ //option

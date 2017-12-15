@@ -49,7 +49,7 @@ EventStorePersistentSubscription ConnectToPersistentSubscription(
 
 ## Persistent Subscription Settings
 
-Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` object as a parameter. The methods use this obje to provide the settings for the persistent subscription. There is also a fluent builder for these options that can be located using the `Create()` method <!-- TODO: What does located mean? -->. The following table shows the options you can set on a persistent subscription.
+Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` object as a parameter. The methods use this obje to provide the settings for the persistent subscription. There is also a fluent builder for these options that can be located using the `Create()` method <!-- TODO: What does located mean? Chained methods after the create() -->. The following table shows the options you can set on a persistent subscription.
 
 <table>
     <thead>

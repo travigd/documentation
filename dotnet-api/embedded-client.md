@@ -5,7 +5,7 @@ version: "4.0.2"
 ---
 
 ## EmbeddedVNodeBuilder
-
+<!-- TODO: MOved in part, to check -->
 The `EmbeddedVNodeBuilder` class sets up and builds an Event Store node. You can configure your node through methods provided by the `EmbeddedVNodeBuilder` class.
 
 <span class="note">
@@ -281,11 +281,11 @@ The following options are available when building an Embedded Node.
         </tr>
         <tr>
             <td><code>WithTfChunkSize(int chunkSize)</code></td>
-            <td>Sets the transaction file chunk size. Default is <see cref="TFConsts.ChunkSize"/><!-- TODO: What's this? --></td>
+            <td>Sets the transaction file chunk size. Default is <see cref="TFConsts.ChunkSize"/></td>
         </tr>
         <tr>
             <td><code>WithTfChunksCacheSize(long chunksCacheSize)</code></td>
-            <td>Sets the transaction file chunk cache size. Default is <see cref="TFConsts.ChunksCacheSize"/><!-- TODO: What's this? --></td>
+            <td>Sets the transaction file chunk cache size. Default is <see cref="TFConsts.ChunksCacheSize"/></td>
         </tr>
         <tr>
             <td><code>WithTfCachedChunks(int cachedChunks)</code></td>

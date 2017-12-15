@@ -19,7 +19,7 @@ Production systems often rely on storing their current state to process transact
 
 An event is something that happened in the past, and so you should represent events as verbs in the past tense such as `CustomerRelocated`, `CargoShipped`, or `InventoryLossageRecorded`. If you are taking a [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design) approach, it's imperative that events are verbs in the past tense, as they are part of the Ubiquitous Language.
 
-Consider the differences with Ubiquitous Language when relocating a customer. An event makes the concept explicit where previously the changes would occur within an aggregate or between multiple aggregates and were left as an implicit concept that needed to be explored and defined. <!-- By who? -->
+Consider the differences with ubiquitous language when relocating a customer. An event makes the concept explicit where previously the changes would occur within an aggregate or between multiple aggregates and were left as an implicit concept that you needed to explore and define.
 
 In most applications, a developer discovers that a side effect occurred with a tool such as Hibernate or Entity Framework. If there is a change to the side effects of a use case, it is an implicit concept. The introduction of the event makes the concept explicit and part of the Ubiquitous Language. Relocating a customer does not change something, relocating a customer produces a `CustomerRelocatedEvent` event which is explicitly defined within the language.
 

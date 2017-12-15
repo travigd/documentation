@@ -58,7 +58,7 @@ Date: Thu, 13 Mar 2014 20:40:05 GMT
 </div>
 </div>
 
-By default when you delete a stream it is soft deleted. This means you can recreate it later if you want to by setting the `$tb` metadata section as the client API does <!-- Link? -->. If you try to `GET` a soft deleted stream you will receive a 404 response:
+By default when you delete a stream it is soft deleted. This means you can recreate it later if you want to by setting the `$tb` metadata section as the client API does <!-- TODO: Link? -->. If you try to `GET` a soft deleted stream you will receive a 404 response:
 
 <div class="codetabs" markdown="1">
 <div data-lang="request" markdown="1">
