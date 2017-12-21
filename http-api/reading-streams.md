@@ -119,29 +119,29 @@ Keep-Alive: timeout=15,max=100
       ]
     }
   ]
-}%
+}
+```
+</div>
+</div>
 
-    </div>
-    </div>
+There some important aspects to notice here. The feed has one item in it, if there are more than one, then items are sorted from newest to oldest.
 
-    There some important aspects to notice here. The feed has one item in it, if there are more than one, then items are sorted from newest to oldest.
+For each entry, there are a series of links to the actual events, embedding data into a stream [is covered later](#embedding-data-into-stream). To get an event, follow the `alternate` link and set your `Accept` headers to the mime type you would like the event in.
 
-    For each entry, there are a series of links to the actual events, embedding data into a stream [is covered later](#embedding-data-into-stream). To get an event, follow the `alternate` link and set your `Accept` headers to the mime type you would like the event in.
+The accepted content types for GET requests are:
 
-    The accepted content types for GET requests are:
+-   `application/xml`
+-   `application/atom+xml`
+-   `application/json`
+-   `application/vnd.eventstore.atom+json`
+-   `text/xml`
+-   `text/html`
 
-    -   `application/xml`
-    -   `application/atom+xml`
-    -   `application/json`
-    -   `application/vnd.eventstore.atom+json`
-    -   `text/xml`
-    -   `text/html`
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/json"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/json"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -159,19 +159,19 @@ Content-Length: 29
 Keep-Alive: timeout=15,max=100
 
 {
-  "something": "has data"
+"something": "has data"
 }
+```
+</div>
+</div>
 
-    </div>
-    </div>
+The atom version of the event contains extra details about the event.
 
-    The atom version of the event contains extra details about the event.
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/vnd.eventstore.atom+json"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/vnd.eventstore.atom+json"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -189,12 +189,12 @@ Content-Length: 640
 Keep-Alive: timeout=15,max=100
 
 {
-  "title": "1@newstream",
-  "id": "<http://127.0.0.1:2113/streams/newstream/1">,
-  "updated": "2017-11-09T13:10:16.111657Z",
-  "author": {
-    "name": "EventStore"
-  },
+"title": "1@newstream",
+"id": "<http://127.0.0.1:2113/streams/newstream/1">,
+"updated": "2017-11-09T13:10:16.111657Z",
+"author": {
+"name": "EventStore"
+},
   "summary": "SomeEvent",
   "content": {
     "eventStreamId": "newstream",
@@ -217,35 +217,36 @@ Keep-Alive: timeout=15,max=100
     }
   ]
 }
+```
+</div>
+</div>
 
-    </div>
-    </div>
+## Feed Paging
 
-    ## Feed Paging
+The next step in understanding how to read a stream is the `first`/`last`/`previous`/`next` links within a stream. Event Store supplies these links so you can read through a stream, and they follow the pattern defined in [RFC 5005](http://tools.ietf.org/html/rfc5005).
 
-    The next step in understanding how to read a stream is the `first`/`last`/`previous`/`next` links within a stream. Event Store supplies these links so you can read through a stream, and they follow the pattern defined in [RFC 5005](http://tools.ietf.org/html/rfc5005).
+In the example above the server returned the following `links` as part of its result:
 
-    In the example above the server returned the following `links` as part of its result:
-
-    ```json
-    "links": [
-      {
-        "uri": "http://127.0.0.1:2113/streams/newstream",
-        "relation": "self"
-      },
-      {
-        "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
-        "relation": "first"
-      },
-      {
-        "uri": "http://127.0.0.1:2113/streams/newstream/1/forward/20",
-        "relation": "previous"
-      },
-      {
-        "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
-        "relation": "metadata"
-      }
-    ]
+```json
+"links": [
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream",
+    "relation": "self"
+  },
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream/head/backward/20",
+    "relation": "first"
+  },
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream/1/forward/20",
+    "relation": "previous"
+  },
+  {
+    "uri": "http://127.0.0.1:2113/streams/newstream/metadata",
+    "relation": "metadata"
+  }
+]
+```
 
 This shows that there is not a `next` URL (all the information is in this request), and that the URL requested is the first link. When dealing with these URL there are two ways of reading the data in the stream. You can either go to the `last` link and then move backward following `previous` or you can go to the `first` link and follow the `next` links, the final item will not have a next link.
 
@@ -306,23 +307,23 @@ Keep-Alive: timeout=15,max=100
   ],
   "entries": \[]
 }
+```
+</div>
+</div>
 
-    </div>
-    </div>
+When parsing an atom subscription the IDs of events will always stay the same. This is important for figuring out if you are referring to the same event.
 
-    When parsing an atom subscription the IDs of events will always stay the same. This is important for figuring out if you are referring to the same event.
+<!-- TODO: Make this example more generic and covering different installations -->
 
-    <!-- TODO: Make this example more generic and covering different installations -->
+Let’s now try an example with more than a single page. You can use the testclient that comes with Event Store and use the `VERIFY` command to create fake banking data. After running this command you should find many streams such as `http://127.0.0.1:2113/streams/account-28` in the system.
 
-    Let’s now try an example with more than a single page. You can use the testclient that comes with Event Store and use the `VERIFY` command to create fake banking data. After running this command you should find many streams such as `http://127.0.0.1:2113/streams/account-28` in the system.
+Opening the link _<http://127.0.0.1:2113/streams/account-28>_ will return:
 
-    Opening the link _<http://127.0.0.1:2113/streams/account-28>_ will return:
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```powershell
-    curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```powershell
+curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -378,19 +379,19 @@ Keep-Alive: timeout=15,max=100
     }
   ],
   "entries": <SNIP>
+```
+</div>
+</div>
 
-    </div>
-    </div>
+Using the links in this response you can traverse through all the events in the stream by going to the `last` URL and walking "previous" or by walking "next" from the “first” link.
 
-    Using the links in this response you can traverse through all the events in the stream by going to the `last` URL and walking "previous" or by walking "next" from the “first” link.
+If you go to the “last” link you will receive:
 
-    If you go to the “last” link you will receive:
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```powershell
-    curl -i http://127.0.0.1:2113/streams/account-28/0/forward/20 -H "Accept:application/vnd.eventstore.atom+json"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```powershell
+curl -i http://127.0.0.1:2113/streams/account-28/0/forward/20 -H "Accept:application/vnd.eventstore.atom+json"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -434,34 +435,35 @@ Keep-Alive: timeout=15,max=100
       "relation": "metadata"
     }
   ],
-  "entries": <SNIP>
+  "entries":
+  <SNIP>
+```
+</div>
+</div>
 
-    </div>
-    </div>
+You then follow its "previous" link until you got back to the head of the document. This is the general way of reading back a stream. Once at the end you can continue reading events as they happen by polling the previous link and you will get events in near real time as they happen.
 
-    You then follow its "previous" link until you got back to the head of the document. This is the general way of reading back a stream. Once at the end you can continue reading events as they happen by polling the previous link and you will get events in near real time as they happen.
+<span class="note">
+All links except the head link are fully cachable as seen in the HTTP header `Cache-Control: max-age=31536000, public`. This is important when discussing intermediaries and performance as you commonly replay a stream from storage.
+</span>
 
-    <span class="note">
-    All links except the head link are fully cachable as seen in the HTTP header `Cache-Control: max-age=31536000, public`. This is important when discussing intermediaries and performance as you commonly replay a stream from storage.
-    </span>
+<span class="note">
+You should **never** bookmark links aside from the head of the stream resource. You should always follow links. We may in the future change how internal links work. If you bookmark link other than the head you will break in these scenarios.
+</span>
 
-    <span class="note">
-    You should **never** bookmark links aside from the head of the stream resource. You should always follow links. We may in the future change how internal links work. If you bookmark link other than the head you will break in these scenarios.
-    </span>
+## Reading All Events
 
-    ## Reading All Events
+There is a special paged feed for all events that named `$all`. You can use the same paged form of reading described above to read all events for the entire node by pointing the stream at _/streams/$all_. As it's a stream like any other, you can perform all other operations with it except posting to it.
 
-    There is a special paged feed for all events that named `$all`. You can use the same paged form of reading described above to read all events for the entire node by pointing the stream at _/streams/$all_. As it's a stream like any other, you can perform all other operations with it except posting to it.
+<span class="note">
+To access the `$all` stream, you must provide user details, find more information on the [security](../security) page.
+</span>
 
-    <span class="note">
-    To access the `$all` stream, you must provide user details, find more information on the [security](../security) page.
-    </span>
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i http://127.0.0.1:2113/streams/%24all -H "Accept:application/vnd.eventstore.atom+json" -u admin:changeit
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/%24all -H "Accept:application/vnd.eventstore.atom+json" -u admin:changeit
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -514,19 +516,19 @@ Keep-Alive: timeout=15,max=100
     }
   ],
   "entries": <SNIP>
+```
+</div>
+</div>
 
-    </div>
-    </div>
+## Conditional Gets
 
-    ## Conditional Gets
+The head link supports conditional `GET`s with the use of [ETAGS](http://en.wikipedia.org/wiki/HTTP_ETag), a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). You can include the ETAG of your last request and issue a conditional `GET` to the server. If nothing has changed it will not return the full feed. For example:
 
-    The head link supports conditional `GET`s with the use of [ETAGS](http://en.wikipedia.org/wiki/HTTP_ETag), a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). You can include the ETAG of your last request and issue a conditional `GET` to the server. If nothing has changed it will not return the full feed. For example:
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i http://127.0.01:2113/streams/account-28l -H "Accept:application/vnd.eventstore.atom+json"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.01:2113/streams/account-28l -H "Accept:application/vnd.eventstore.atom+json"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -545,17 +547,17 @@ Content-Length: 11095
 Keep-Alive: timeout=15,max=100
 
 …
+```
+</div>
+</div>
 
-    </div>
-    </div>
+The server responded in the headers that the ETag for this content is `ETag: "180;248368668"`. You can use this in your next request when polling the stream for changes by putting it in the header `If-None-Match`. This tells the server to check if the response will be the one you already know.
 
-    The server responded in the headers that the ETag for this content is `ETag: "180;248368668"`. You can use this in your next request when polling the stream for changes by putting it in the header `If-None-Match`. This tells the server to check if the response will be the one you already know.
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json" -H "If-None-Match:180;248368668"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json" -H "If-None-Match:180;248368668"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -675,19 +677,19 @@ Keep-Alive: timeout=15,max=100
     }
   ]
 }
+```
+</div>
+</div>
 
-    </div>
-    </div>
+### Body
 
-    ### Body
+The `body` embed mode will return the JSON/XML body of the events into the feed as well, depending on the type of the feed. You can see this in the request below:
 
-    The `body` embed mode will return the JSON/XML body of the events into the feed as well, depending on the type of the feed. You can see this in the request below:
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream?embed=body"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream?embed=body"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
@@ -766,17 +768,17 @@ Keep-Alive: timeout=15,max=100
     }
   ]
 }
+```
+</div>
+</div>
 
-    </div>
-    </div>
+If you use XML format then no additional data is embedded, as embedding is only supported with JSON.
 
-    If you use XML format then no additional data is embedded, as embedding is only supported with JSON.
-
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream?embed=body"
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream?embed=body"
+```
 </div>
 <div data-lang="response" markdown="1">
 ```http
