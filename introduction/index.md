@@ -62,6 +62,10 @@ Or, in all other cases you can run the Event Store binary or use our run-node sh
 $ ./run-node.sh --db ./ESData
 ```
 
+<span class="note">
+We recommend that when using Linux you set the 'open file limit' to a high number. The precise value depends on your usecase, but at miniumum, between `30,000` and `60,000`.
+</span>
+
 </div>
 <div data-lang="docker" markdown="1">
 Event Store has [a Docker image](https://hub.docker.com/r/eventstore/eventstore/) available for any platform that supports Docker:
