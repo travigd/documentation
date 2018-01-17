@@ -11,7 +11,7 @@ Event Store is a database that supports the concept of Event Sourcing, which is 
 
 <span class="note">
 If you are familiar with functional programming you may wish to jump to the [Event Store viewed as a functional database section](#event-store-as-a-functional-database).
-</span
+</span>
 
 Production systems often rely on storing their current state to process transactions, but this has not always been the case. Before the general acceptance of relational database management systems (RDBMS) as the center of system architectures many did not store the current state. This was especially true in high performance, mission critical, and highly secure systems. If you look at the inner workings of an RDBMS you will find that most do not themselves work by managing current state.
 
