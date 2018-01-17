@@ -1,10 +1,10 @@
 ---
 title: "HTTP Architecture Setup"
 section: "Server"
-version: "4.0.0"
+version: "4.0.2"
 ---
 
-<!-- TODO: Is the title descrptive? -->
+<!-- TODO: Is the title descriptive? -->
 
 ## Authentication Options
 
@@ -30,10 +30,11 @@ Even if you use a reverse proxy as above, you can support external authenticatio
 
 ## Security with SSL
 
-### Windows
-
+<div class="codetabs" markdown="1">
+<div data-lang="windows" markdown="1">
 Setting up SSL in Windows is the same as setting up any `httplistener` in Windows for SSL. You can find many examples of this can online, and we recommend [this guide from Damir Dobric](http://developers.de/blogs/damir_dobric/archive/2006/08/01/897.aspx)
-
-### Linux
-
+</div>
+<div data-lang="linux" markdown="1">
 Setting up SSL in Linux is the same as setting up any mono `httplistener` in Linux for SSL. You can find many examples of this can online, and we recommend [this guide from Joshua Perina](http://joshua.perina.com/geo/post/using-ssl-https-with-mono-httplistener). This method will likely work for other systems such as OpenBSD as well.
+</div>
+</div>

@@ -1,5 +1,5 @@
 ---
-title: "Running the Event Store"
+title: "Running Event Store"
 section: "Server"
 version: "4.0.2"
 pinned: true
@@ -22,7 +22,7 @@ Unless passed a database option, Event Store will write to a new database create
 A typical command line for running Event Store server on Windows is:
 
 ```posh
-c:\EventStore> EventStore.ClusterNode.Exe --db .\ESData
+EventStore.ClusterNode.Exe --db .\ESData
 ```
 
 #### Setting up HTTP Permissions
@@ -64,7 +64,7 @@ This should resolve the issue.
 A typical command line for running Event Store server on Linux/macOS is:
 
 ```bash
-$ ./run-node.sh --db ./ESData
+./run-node.sh --db ./ESData
 ```
 
 Although you can run Event Store binary directly, a `run-node` we provide a shell script which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of Event Store. This is necessary if you are planning to use projections.

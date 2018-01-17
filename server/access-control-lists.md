@@ -110,7 +110,9 @@ This default ACL would give `ouro` and `$admins` create and write permissions on
 
 To do this you could use either the HTTP API or a client API to write the above data to the stream (requires admin privileges by default for obvious reasons. Be very careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically overrode it).
 
-    ouro@ouroboros: cat ~/settings.js
+```bash
+cat ~/settings.js
+```
 
 ```json
 {
@@ -131,7 +133,9 @@ To do this you could use either the HTTP API or a client API to write the above 
 }
 ```
 
-    ouro@ouroboros: curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
+```bash
+curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
+```
 
 <span class="note--warning">
 You should not copy/paste the UUID in that command line but should generate a new one or not provide one (you will be redirected to a URI with one as described in writing events in the HTTP API).
@@ -153,8 +157,13 @@ Keep-Alive: timeout=15,max=100
 
 If we try to access the `$settings` stream as an unauthorized user it will 401.
 
-    ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 401 Unauthorized
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -168,6 +177,8 @@ Date: Mon, 02 Mar 2015 15:21:27 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
 
 If I wanted to give `ouro` access by default to system streams I would post:
 
@@ -190,10 +201,15 @@ If I wanted to give `ouro` access by default to system streams I would post:
 }
 ```
 
-At which point ouro can read system streams by default:
+At which point `ouro` can read system streams by default:
 
-    ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
-
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+</div>
+<div data-lang="response" markdown="1">
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -209,6 +225,8 @@ Date: Mon, 02 Mar 2015 15:25:17 GMT
 Content-Length: 1286
 Keep-Alive: timeout=15,max=100
 ```
+</div>
+</div>
 
 You can also then limit ACLs on particular streams which are merged with the default ACLs.
 
