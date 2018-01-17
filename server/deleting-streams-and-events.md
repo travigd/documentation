@@ -10,7 +10,7 @@ Meta data in Event Store defines whether an event is deleted or not. Stream meta
 
 <span class="note--warning">
 The last event in a stream is always kept as a record of the last event number in the stream.
-</span>
+
 
 ### Soft delete and Truncate before
 
@@ -54,7 +54,7 @@ The events in the deleted stream are liable to be removed in a scavenge, but the
 
 <span class="note--warning">
 A hard delete of a stream is permanent. The stream cannot be written to or recreated. As such, you should generally prefer to soft delete streams unless you have a specific need to permanently delete the stream.
-</span>
+
 
 ## Deleted events and projections
 

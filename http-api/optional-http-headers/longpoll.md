@@ -9,7 +9,7 @@ You use the `ES-LongPoll` header to instruct the server that when on the head li
 
 <span class="note--warning">
 Version 2.1 and higher support the `ES-LongPoll` header. Lower versions will ignore the header.
-</span>
+
 
 You can use this to provide lower latency for Atom clients instead of client initiated polling. Instead of the client polling every say 5 seconds to get data from the feed the client would send up a request with `ES-LongPoll: 15`. This instructs the backend to wait for up to 15 seconds before returning with no result. The latency is therefore lowered from the poll interval to about 10ms from the time an event is written until the time the HTTP connection is notified.
 

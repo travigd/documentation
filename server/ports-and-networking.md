@@ -32,7 +32,7 @@ Each heartbeat has two points of configuration. The first is the 'interval', thi
 
 Varying environments want drastically different values for these settings. While low numbers work well on a LAN they tend to not work well in the cloud. The defaults are likely fine on a LAN, in the cloud consider a setting of interval 5000ms and timeout 1000ms which should be fine for most installations.
 
-<span class="note--warning">If in question err on the side of higher numbers, it will add a small period of time to discover a dead client or node and is better than the alternative, which is false positives.</span>
+<span class="note--warning">If in question err on the side of higher numbers, it will add a small period of time to discover a dead client or node and is better than the alternative, which is false positives.
 
 ## Advertise As
 

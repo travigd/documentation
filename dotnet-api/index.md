@@ -13,9 +13,10 @@ The `EventStoreConnection` class maintains a full-duplex connection between the 
 
 All operations are handled fully asynchronously, returning either a `Task` or a `Task<T>`. If you need to execute synchronously, call `.Wait()` on the asynchronous version.
 
-<span class="note">
+> [!NOTE]
+> 
 To get maximum performance from the connection, we recommend you use itasynchronously.
-</span>
+
 
 ## Quick Start
 

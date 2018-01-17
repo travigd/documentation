@@ -37,9 +37,10 @@ The supported internal settings are:
     </tbody>
 </table>
 
-<span class="note">
+> [!NOTE]
+>
 If you set both `$maxAge` and `$maxCount` then events will become eligible for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligible for scavenging after either 10 seconds, or 50,000 events, have passed. Deleted items will only actually be removed once the scavenge process is run.
-</span>
+
 
 Security access control lists are also included in the `$acl` section of the stream metadata.
 

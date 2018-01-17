@@ -12,9 +12,10 @@ Event Store ships with 4 built in projections.
 -   Stream by Category (`$stream_by_category`)
 -   Streams (`$streams`)
 
-<span class="note">
+> [!NOTE]
+>
 When you start Event Store from a fresh database, these projections are present but disabled and querying their statuses you will see that they are `Stopped`. You can enable a projection by issuing an HTTP request to _http://{event-store-ip}:{ext-http-port}/projection/{projection-name}/command/enable_. The status of the projection will switch from `Stopped` to `Running`.
-</span>
+
 
 ## By Category
 
@@ -39,9 +40,10 @@ If the body of the projection is first and `-`, for a stream id of `account-1`, 
 
 If the body of the projection is last and `-`, for a stream id of `shopping-cart-1`, the resulting stream name from the projection will be `$ce-shopping-cart`.
 
-<span class="note">
+> [!NOTE]
+>
 This particular projection enables the use of the `byCategory` selector for user defined projections which we will discuss in the `User defined projections` section.
-</span>
+
 
 ## By Event Type
 

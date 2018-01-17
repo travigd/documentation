@@ -7,9 +7,10 @@ pinned: true
 
 Event Store provides a native interface of AtomPub over HTTP. AtomPub is a RESTful protocol that can reuse many existing components, for example reverse proxies and a client’s native HTTP caching. Since events stored in Event Store are entirely immutable, cache expiration can be infinite. Event Store leverages content type negotiation and you can access appropriately serialised events can as JSON or XML according to the request headers.
 
-<span class="note">
+> [!NOTE]
+>
 Examples in this section make use of the command line tool [cURL](http://curl.haxx.se/) to construct HTTP requests. We use this tool regularly in development and you will find it useful when working with the HTTP API.
-</span>
+
 
 ## Compatibility with AtomPub
 

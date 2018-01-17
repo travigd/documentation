@@ -9,7 +9,7 @@ The default directories used by Event Store vary by platform to best fit with th
 
 <span class="note--warning">
 Paths beginning with "." are relative to the directory in which _eventstored_ or _EventStore.ClusterNode.exe_ are located. Absolute paths are as written.
-</span>
+
 
 ### Linux
 

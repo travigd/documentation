@@ -7,7 +7,7 @@ pinned: true
 
 <span class="note--warning">
 These instructions apply only to users of the Open Source Event Store. Commercial customers have access to a separate package repository which contains all the commercial tools in packaged form.
-</span>
+
 
 The Event Store hosts packages on [PackageCloud](https://packagecloud.io/EventStore/EventStore-OSS) and the you can find installation instructions for the supported distributions [here](https://packagecloud.io/EventStore/EventStore-OSS/install).
 

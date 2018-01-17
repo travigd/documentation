@@ -14,7 +14,7 @@ When setting up a cluster, you will generally want an odd number of nodes ads Ev
 
 To start, you will set up three nodes running on a single machine. Run each of the commands below in its own console window, remember that you either need admin privileges or have setup ACLs with IIS if running under Windows (Unix-like operating systems need no configuration). Replace "127.0.0.1" with whatever IP address you want to run on.
 
-<span class="note--warning">This must be an interface present on the machine.</span>
+<span class="note--warning">This must be an interface present on the machine.
 
 ```powershell
 start EventStore.ClusterNode.exe --mem-db --log .\logs\log1 --int-ip 127.0.0.1 --ext-ip 127.0.0.1 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=1113 --ext-http-port=1114 --cluster-size=3 --discover-via-dns=false --gossip-seed=127.0.0.1:2113,127.0.0.1:3113
@@ -44,7 +44,7 @@ EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log2 --int-ip 192.168.0
 EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log3 --int-ip 192.168.0.3 --ext-ip 192.168.0.3 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=2113 --ext-http-port=2114 --cluster-size=3 --cluster-dns mydomain.com --cluster-gossip-port=2113
 ```
 
-<span class="note--warning">This method is also good for HTTP clients as you can avoid using a load balancer and fall back to round robin DNS for many deployments.</span>
+<span class="note--warning">This method is also good for HTTP clients as you can avoid using a load balancer and fall back to round robin DNS for many deployments.
 
 ## Internal vs. External
 

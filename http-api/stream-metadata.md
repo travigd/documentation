@@ -26,13 +26,14 @@ http://{eventstore}/streams/{stream-name}/metadata
 
 You should not access metadata by constructing this URL yourself, as the right to change the resource address is reserved. Instead, you should follow the link for from the stream itself, which will enable your client to tolerate future changes to the addressing structure without breaking.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i http://127.0.0.1:2113/streams/$users --user admin:changeit
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 200 OK
 Cache-Control: max-age=0, no-cache, must-revalidate
@@ -87,8 +88,9 @@ Date: Sun, 16 Jun 2013 15:08:49 GMT
     ```bash
     curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
 
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 200 OK
 Cache-Control: max-age=31536000, public
@@ -141,8 +143,9 @@ Date: Sun, 16 Jun 2013 13:18:29 GMT
     ```bash
     curl -i http://127.0.0.1:2113/streams/$users/metadata
 
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 401 Unauthorized
 Content-Length: 0
@@ -154,8 +157,9 @@ Access-Control-Allow-Origin: *
 WWW-Authenticate: Basic realm="ES"
 Date: Sun, 16 Jun 2013 13:20:22 GMT
 ```
-</div>
-</div>
+
+***
+
 
 ## Writing Metadata
 
@@ -184,13 +188,14 @@ You can also add user-specified metadata here. Some examples of good uses of use
 
 This information is then posted to the stream:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i -d @metadata.txt http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit -H "Content-Type: application/vnd.eventstore.events+json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 201 Created
 Content-Length: 0
@@ -202,18 +207,20 @@ Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
 Access-Control-Allow-Origin: *
 Date: Sun, 16 Jun 2013 14:50:21 GMT
 ```
-</div>
-</div>
+
+***
+
 
 If the specified user does not have permissions to write to the stream metadata, you will receive a '401 Unauthorized' response:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i -d @metadata.txt http://127.0.0.1:2113/streams/$users/metadata --user invaliduser:invalidpass -H "Content-Type: application/vnd.eventstore.events+json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 401 Unauthorized
 Content-Length: 0
@@ -224,5 +231,5 @@ Access-Control-Allow-Origin: *
 WWW-Authenticate: Basic realm="ES"
 Date: Sun, 16 Jun 2013 14:51:37 GMT
 ```
-</div>
-</div>
+
+***

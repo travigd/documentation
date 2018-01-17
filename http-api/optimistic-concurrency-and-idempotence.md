@@ -12,13 +12,14 @@ Provided the client maintains this Event Store will treat all operations as idem
 
 For example:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
@@ -30,18 +31,20 @@ Date: Thu, 06 Sep 2012 19:49:37 GMT
 Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+***
+
 
 <!-- TODO: What's this? -->
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream444"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Origin: *
@@ -53,24 +56,27 @@ Date: Thu, 06 Sep 2012 19:49:37 GMT
 Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+***
+
 
 Assuming you were posting to a new stream you would get the event written once (and the stream created). The second event will return as the first but not write again.
 
-<span class="note">
+> [!NOTE]
+>
 This allows the client rule of “if you get an unknown condition, retry” to work.
-</span>
+
 
 For example:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i "http://127.0.0.1:2113/streams/newstream444"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
@@ -160,5 +166,5 @@ Keep-Alive: timeout=15,max=100
 	]
 }
 ```
-</div>
-</div>
+
+***

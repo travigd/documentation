@@ -95,7 +95,7 @@ To configure the cluster correctly, there are a number of steps to follow:
 
 ### DNS entry
 
-It depends on which DNS server is in use, but the eventual lookup should read:
+HIt depends on which DNS server is in use, but the eventual lookup should read:
 
 ```bash
 nslookup cluster1.eventstore.local

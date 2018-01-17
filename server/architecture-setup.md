@@ -1,10 +1,10 @@
 ---
 title: "HTTP Architecture Setup"
 section: "Server"
-version: "4.0.2"
+version: "4.0.0"
 ---
 
-<!-- TODO: Is the title descriptive? -->
+<!-- TODO: Is the title descrptive? -->
 
 ## Authentication Options
 
@@ -22,7 +22,8 @@ Event Store supports internal authentication, you can expose Event Store directl
 
 As Event Store is handling all security requests it will have all information about users. Event Store uses this information to check the Access Control Lists of streams and allows for fine-grained control of security. This will cause more internal requests served by Event Store and thus will be less performant.
 
-<span class="note">Per-stream access control lists require setting caching to private to ensure data is not cached in a shared cache, read [this article](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.1) for more information</span>
+> [!NOTE]
+> Per-stream access control lists require setting caching to private to ensure data is not cached in a shared cache, read [this article](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.1) for more information
 
 ### Hybrid Option
 
@@ -30,11 +31,10 @@ Even if you use a reverse proxy as above, you can support external authenticatio
 
 ## Security with SSL
 
-<div class="codetabs" markdown="1">
-<div data-lang="windows" markdown="1">
+### Windows
+
 Setting up SSL in Windows is the same as setting up any `httplistener` in Windows for SSL. You can find many examples of this can online, and we recommend [this guide from Damir Dobric](http://developers.de/blogs/damir_dobric/archive/2006/08/01/897.aspx)
-</div>
-<div data-lang="linux" markdown="1">
+
+### Linux
+
 Setting up SSL in Linux is the same as setting up any mono `httplistener` in Linux for SSL. You can find many examples of this can online, and we recommend [this guide from Joshua Perina](http://joshua.perina.com/geo/post/using-ssl-https-with-mono-httplistener). This method will likely work for other systems such as OpenBSD as well.
-</div>
-</div>

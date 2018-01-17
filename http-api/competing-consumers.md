@@ -6,99 +6,18 @@ version: 4.0.2
 
 This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see the [overview document]({{site.baseurl}}/introduction/competing-consumers).
 
-<span class="note">
+> [!NOTE]
+>
 The Administration UI includes a <em>Competing Consumers</em> section where a user is able to create, update, delete and view subscriptions and their statuses.
-</span>
+
 
 ## Creating a Persistent Subscription
-
-Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](/server/access-control-lists).
-
-| URI                                           | Supported Content Types | Method |
-| --------------------------------------------- | ----------------------- | ------ |
-| `/subscriptions/{stream}/{subscription_name}` | `application/json`      | PUT    |
-
-### Query Parameters
-
-<!-- TODO: To move -->
-
-| Parameter           | Description                                   |
-| ------------------- | --------------------------------------------- |
-| `stream`            | The stream the persistent subscription is on. |
-| `subscription_name` | The name of the subscription group.           |
-
-Body
-
-<!-- TODO: Moved, check -->
-
-| Parameter                     | Description                                                                                        |
-| ----------------------------- | -------------------------------------------------------------------------------------------------- |
-| `resolveLinktos`              | Tells the subscription to resolve link events.                                                     |
-| `startFrom`                   | Start the subscription from the position-of the event in the stream.                               |
-| `extraStatistics`             | Tells the backend to measure timings on the clients so statistics will contain histograms of them. |
-| `checkPointAfterMilliseconds` | The amount of time the system should try to checkpoint after.                                      |
-| `liveBufferSize`              | The size of the live buffer (in memory) before resorting to paging.                                |
-| `readBatchSize`               | The size of the read batch when in paging mode.                                                    |
-| `bufferSize`    | The number of messages that should be buffered when in paging mode.                                |
-| `maxCheckPointCount`          | The maximum number of messages not checkpointed before forcing a checkpoint.                       |
-| `maxRetryCount`               | Sets the number of times a message should be retried before considered a bad message.              |
-| `maxSubscriberCount`          | Sets the maximum number of allowed subscribers.                                                    |
-| `messageTimeoutMilliseconds`  | Sets the timeout for a client before the message will be retried.                                  |
-| `minCheckPointCount`          | The minimum number of messages to write a checkpoint for.                                          |
-| `namedConsumerStrategy`       | RoundRobin/DispatchToSingle/Pinned                                                                 |
-
+                                                        |
 ## Updating a Persistent Subscription
-
-You can edit the settings of an existing subscription while it is running. This will drop the current subscribers and will reset the subscription internally. This requires admin permissions.
-
-| URI                                           | Supported Content Types | Method |
-| --------------------------------------------- | ----------------------- | ------ |
-| `/subscriptions/{stream}/{subscription_name}` | `application/json`      | POST   |
-
-Query Parameters
-
-| Parameter           | Description                                      |
-| ------------------- | ------------------------------------------------ |
-| `stream`            | The stream to the persistent subscription is on. |
-| `subscription_name` | The name of the subscription group.              |
-
-Body
-
-_Same parameters as "Creating a Persistent Subscription"_
 
 ## Deleting a Persistent Subscription
 
-| URI                                           | Supported Content Types | Method |
-| --------------------------------------------- | ----------------------- | ------ |
-| `/subscriptions/{stream}/{subscription_name}` | `application/json`      | DELETE |
-
-### Query Parameters
-
-| Parameter           | Description                                      |
-| ------------------- | ------------------------------------------------ |
-| `stream`            | The stream to the persistent subscription is on. |
-| `subscription_name` | The name of the subscription group.              |
-
 ## Reading a stream via a Persistent Subscription
-
-By default, reading a stream via a persistent subscription will return a single event per request and will not embed the event properties as part of the response.
-
-| URI                                                                                                                                                                  | Supported Content Types                                                                      | Method |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------ |
-| `/subscriptions/{stream}/{subscription_name} /subscriptions/{stream}/{subscription_name}?embed={embed} /subscriptions/{stream}/{subscription}/{count}?embed={embed}` | `application/vnd.eventstore.competingatom+xml application/vnd.eventstore.competingatom+json` | GET    |
-
-### Query Parameters
-
-<!-- TODO: To move -->
-
-| Parameter           | Description                                                  |
-| ------------------- | ------------------------------------------------------------ |
-| `stream`            | The stream the persistent subscription is on.                |
-| `subscription_name` | The name of the subscription group.                          |
-| `count`             | How many events to return for the request.                   |
-| `embed`             | `None`, `Content`, `Rich`, `Body`, `PrettyBody`, `TryHarder` |
-
-Read [Reading Streams]({{site.baseurl}}/http-api/reading-streams) for information on the different embed levels.
 
 ### Response
 

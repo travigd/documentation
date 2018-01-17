@@ -9,12 +9,12 @@ This guide will show you how to get started with Event Store using the Atom publ
 
 <span class="note--warning">
 The described is for development and evaluation of Event Store. It does not describe a production setup.
-</span>
+
 
 ## Install and Run
 
-<div class="codetabs" markdown="1">
-<div data-lang="windows" markdown="1">
+### [Windows](#tab/tabid-1)
+
 The prerequisites for Installing on Windows are:
 
 -   NET Framework 4.0+
@@ -42,8 +42,8 @@ Event Store is running in an admin context because it will start a HTTP server t
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 ```
 
-</div>
-<div data-lang="linux" markdown="1">
+### [Linux](#tab/tabid-2)
+
 The prerequisites for Installing on Linux are:
 
 -   Mono 4.6.2
@@ -59,23 +59,23 @@ sudo service eventstore start
 Or, in all other cases you can run the Event Store binary or use our run-node shell script which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of Event Store, which is necessary if you are planning to use projections.
 
 ```bash
-$ ./run-node.sh --db ./ESData
+./run-node.sh --db ./ESData
 ```
 
-<span class="note">
-We recommend that when using Linux you set the 'open file limit' to a high number. The precise value depends on your usecase, but at miniumum, between `30,000` and `60,000`.
-</span>
+> [!NOTE]
+> We recommend that when using Linux you set the 'open file limit' to a high number. The precise value depends on your usecase, but at miniumum, between `30,000` and `60,000`.
 
-</div>
-<div data-lang="docker" markdown="1">
+
+### [Docker](#tab/tabid-3)
+
 Event Store has [a Docker image](https://hub.docker.com/r/eventstore/eventstore/) available for any platform that supports Docker:
 
 ```bash
 docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
 ```
 
-</div>
-</div>
+***
+
 
 Event Store should now be running at <http://127.0.0.1:2113/> to see the admin console. The console will ask for a username and password. The defaults are `admin:changeit`.
 
@@ -100,13 +100,14 @@ To begin, open a text editor, copy and paste the following event definition, and
 
 To write the event to a stream, issue the following cURL command.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```shell
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -119,13 +120,12 @@ Date: Fri, 28 Jun 2013 12:17:59 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
 
+***
 
-<span class="note">
-You can also post events as XML, by changing the `Content-Type` header to `XML`.
-</span>
+> [!NOTE]
+> You can also post events as XML, by changing the `Content-Type` header to `XML`.
+
 
 Open the UI after this command to the _Stream Browser_ tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.
 
@@ -135,13 +135,14 @@ You can also setup [Access Control Lists](/server/latest/access-control-lists/) 
 
 Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc4287), and you can read data from the stream by navigating to the _head_ URI of the stream <http://127.0.0.1:2113/streams/newstream> with cURL.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```shell
 curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -209,27 +210,28 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
-</div>
-</div>
+
+***
+
+> [!NOTE]
+> This example uses cURL, but you can read Atom feeds with a wide variety of applications and languages.
 
 
-<span class="note">
-This example uses cURL, but you can read Atom feeds with a wide variety of applications and languages.
-</span>
-
-<span class="note">
+> [!NOTE]
+>
 This command asked Event Store to return the feed in JSON format, you can also use `Accept:application/atom+xml` if you prefer XML.
-</span>
+
 
 The feed has a single item inside of it, the one you just posted. You can then get the event by issuing a `GET` to the `alternate` URI value.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```shell
 curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
@@ -247,13 +249,12 @@ Keep-Alive: timeout=15,max=100
   "a": "1"
 }
 ```
-</div>
-</div>
 
+***
 
-<span class="note">
-You can also use `Accept: text/xml` if you prefer XML.
-</span>
+> [!NOTE]
+> You can also use `Accept: text/xml` if you prefer XML.
+
 
 To read a single page feed, you request the feed and then iterate through the event links by executing `GET` requests. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable.
 
@@ -270,8 +271,9 @@ Sometimes your feed may span more than one atom page, and you will need to pagin
 This works the same way as paging through an Atom feed. As new events arrive, new _previous_ links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an _at least once_ assurance with the following code, save the last URI you received.
 
 <!-- TODO: Test the below and how do you set them up? -->
-<div class="codetabs" markdown="1">
-<div data-lang="C#" markdown="1">
+
+### [C#](#tab/tabid-1)
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -403,9 +405,9 @@ namespace AtomPoller
 
 }
 ```
-</div>
 
-<div data-lang="javascript" markdown="1">
+### [JavaScript](#tab/tabid-2)
+
 ```javascript
     if (!window.es) { window.es = {}; };
     es.projection = function (settings) {
@@ -738,5 +740,5 @@ namespace AtomPoller
         }
     };
 ```
-</div>
-</div>
+
+***

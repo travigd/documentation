@@ -1,0 +1,76 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/**.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**",
+            "_docs/**"
+          ]
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": "swagger.json",
+        "dest":"api"
+      },
+      {
+        "files": [
+          "dotnet-api/**.md",
+          "event-sourcing-basics/**.md",
+          "http-api/**.md",
+          "introduction/**.md",
+          "projections/**.md",
+          "server/**.md",
+          "toc.md"
+        ],
+        "dest":"docs"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "exclude": [
+          "obj/**",
+          "_docs/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_docs/**"
+        ]
+      }
+    ],
+    "dest": "_docs",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+
+      "template": [
+          "../es-docs-template"
+      ],
+
+    "postProcessors": [],
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false,
+    "disableBreadcrumbs": true
+  }
+}

@@ -41,10 +41,11 @@ $projections-{projection_name}-emittedstreams
 
 This setting is disabled by default.
 
-<span class="note">
+> [!NOTE]
+>
 Between Event Store versions 3.8.0 and 4.0.2, this option was enabled by default when a projection was created through the UI.
 If you have any projections created during this time frame, it might be worth checking whether this option is enabled.
-</span>
+
 
 ### Max Allowed Writes In Flight
 
@@ -103,6 +104,6 @@ The default is 5000.
 
 These options are accesible through the admin UI from the `Config` tab when editing a projection.
 
-<span class="note">
+> [!NOTE]
+>
 The config of a projection can only be changed when the projection has been stopped.
-</span>

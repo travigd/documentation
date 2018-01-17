@@ -10,10 +10,6 @@ Many consumer grade disks (and SSDs especially) lie about durability to appear f
 
 These issues do not just affect Event Store. Other vendors and projects have created tests to check whether you may be losing data. We recommend running one of [these such tests](http://highperfpostgres.com/disk-plug-pull-testing) against your production environment.
 
-<span class="note--warning">
-It's also important to keep a close eye on the amount of remaining disk space, if you run out of space, Event Store will crash.
-</span>
-
 You can look at the state of your drives on Linux by using the following command:
 
 ```bash

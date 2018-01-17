@@ -6,7 +6,7 @@ version: 3.0.0
 
 <span class="note--warning">
 Currently applies to Event Store 2.0.0.
-</span>
+
 
 To get started you need an RPM package of Event Store. You can make an [Event Store RPM](https://github.com/haf/fpm-recipes/tree/master/eventstore) on CentOS.
 

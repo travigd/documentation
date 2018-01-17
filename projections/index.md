@@ -9,9 +9,10 @@ pinned: true
 
 Projections is a subsystem in Event Store that provides you with the ability to write new or link existing events to streams in a reactive manner.
 
-<span class="note">
+> [!NOTE]
+>
 Projections require the event body to be in JSON.
-</span>
+
 
 # When to use projections?
 

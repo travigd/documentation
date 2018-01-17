@@ -10,11 +10,11 @@ Beginning with version **3.2.0** a new subscription model is available in Event 
 
 Competing Consumers differs in usage and functionality from the `Subscribe` operation or from a `CatchUpSubscription`. <!-- We han't mentioned this yet, is this subscribe? --> For example `SubscribeToStream` will read the events from this point forward that happen in a stream. A `CatchUpSubscription` will read all the events in a stream to your client from a given point.
 
-Both a `Subscription` and a `CatchupSubscription` use a model where the client holds the state of the subscription, much like a blog client remembers the last post you read. The server does not hold any state particular to a given client. With Competing Consumers the server remembers the state of the subscription, allowing for different modes of operations compared to a subscription where the client holds the subscription state.
+Both a `Subscription` and a `CatchupSubscription` use a model where the client holds the state of the subscription, much like a blog client remembers the last post you read. The server does not hold any state particular to a given client. With Competing Consumers the server remembers the state of the subscription, allowing for different modes of operations compared to a subscription where the client holds the subscription state. <!-- TODO: Is this repetetive? -->
 
 ## Subscription Groups
 
-The first step in using Competing Consumers is to create a new subscription. You can do this with the HTTP API or with the client API `CreatePersistentSubscription`. This creates the server-side subscription group that you use in the future. There are lots of options you can pass to a subscription group including `ReadBatchSizes`, `MaxRetryCounts`, and how often to `CheckPoint` the subscription <!-- TODO: Should the others also have brief explanations -->.
+The first step in using Competing Consumers is to create a new subscription. You can do this with the HTTP API or with the client API `CreatePersistentSubscription`. This creates the server-side subscription group that you use in the future. There are lots of options you can pass to a subscription group including `ReadBatchSizes`, `MaxRetryCounts`, and how often to `CheckPoint` the subscription <!-- Should the others also have brief explanations -->.
 
 You create a subscription as part of a deployment or an administrative task. You can create subscription groups to map to any stream.
 
@@ -37,7 +37,8 @@ One major difference with client-based subscriptions is that a subscription grou
 
 <!-- TODO: Is this necessary? -->
 
-<span class="note">It will be discussed later in this document but in the case of retries, connection failures, or server failures, more than one subscriber in a subscriber group can see a given message. Therefore this model is known as At-Least-Once messaging. Clients must be able to handle receiving a message more than one time.</span>
+> [!NOTE]
+> It will be discussed later in this document but in the case of retries, connection failures, or server failures, more than one subscriber in a subscriber group can see a given message. Therefore this model is known as At-Least-Once messaging. Clients must be able to handle receiving a message more than one time.
 
 
 The next step is to connect a client to the subscription group. In the .NET client api there is a `ConnectToPersistentSubscription` method  which takes the stream or group that you want to connect to. It also takes a parameter which is the maximum number of in flight messages. This parameter is key to understanding how the subscription group works.
@@ -48,7 +49,8 @@ If you had 7 messages in a subscription and two clients (A/B) (A is allowed 2, a
 
 The most common mechanism for a slot becoming open would be that client A(or B) returns an acknowledgement that they have processed, say message 1. They can also return a not acknowledgement of a message with hints to the server as to what to do with the message (skip/retry/park/server decides). A timeout of the message (which is configurable) is another way this can happen.
 
-<span class="note">Tuning of the maximum number of inflight messages and message timeouts are important when looking at overall subscription performance.</span>
+> [!NOTE]
+> Tuning of the maximum number of inflight messages and message timeouts are important when looking at overall subscription performance.
 
 ## Parked Messages
 
@@ -76,7 +78,8 @@ on ack messages=10 //checkpoint written
 
 Understanding how checkpointing works and paying careful attention to the behavior of your stream can help reduce server workload and help prevent receiving too many repeated messages in the case of a server failover. On a stream receiving <!-- correct? --> few messages the above settings are fine. On a stream receiving a few hundred or thousand messages per second these values need to be significantly higher. A general rule of thumb is the maximum should be 1-5 seconds of message throughput.
 
-<span class="note">The checkpoints themselves are stored in streams and are often recycled quickly. For this reason it is generally recommended that you occasionally run a scavenge process on your servers if using competing consumers.</span>
+> [!NOTE]
+> The checkpoints themselves are stored in streams and are often recycled quickly. For this reason it is generally recommended that you occasionally run a scavenge process on your servers if using competing consumers.
 
 ## When to Use Competing Consumers
 
@@ -129,7 +132,7 @@ As mentioned throughout this guide, there are many pros and cons when comparing 
     </tbody>
 </table>
 
-Competing consumers will allow you to connect one or many clients to a given subscription group. This can allow for things like load balancing the work across them or making the clients themselves highly available easily. If you lose a client the workload will just be spread over the other connected clients. With a `CatchupSubscription` it is difficult to make a highly available subscriber (it duplicates everything <!-- TODO: Is this correct -->) load balancing is also difficult, as with a `CatchUpSubscription` each client will receive every message.
+Competing consumers will allow you to connect one or many clients to a given subscription group. This can allow for things like load balancing the work across them or making the clients themselves highly available easily. If you lose a client the workload will just be spread over the other connected clients. With a `CatchupSubscription` it is difficult to make a highly available subscriber (it duplicates everything <!-- Is this correct -->) load balancing is also difficult, as with a `CatchUpSubscription` each client will receive every message.
 
 For something like a projection of an event stream into a read model, a client will generally prefer to use a `CatchUpSubscription` as opposed to a competing consumer group. This is because when performing this process, receiving the events in order is important. Any time that ordering becomes a primary concern, a `CatchUpSubscription` is probably the best bet.
 
@@ -137,7 +140,7 @@ Another tradeoff to consider is that since a server-based subscription stores th
 
 ## Monitoring
 
-You can monitor all subscriber state within Event Store. You can do this through the UI (_subscriptions_ tab) or via the restful API (_<http://localhost/subscriptions>_). You can monitor all competing consumer subscriptions here, and there are dashboards to see what is going on.
+You can monitor all subscriber state within Event Store. You can do this through the UI (_subscriptions_ tab) or via the restful API (_<http://yourserver/subscriptions>_). You can monitor all competing consumer subscriptions here, and there are dashboards to see what is going on.
 
 Generally it is most important to monitor the relationship between the `lastProcessedMessage`, the `lastKnownMessage`, and the throughput of the subscription. This tells you the last processed message was 'x', the last known message is 'y' and your current throughput is 't'. `X - Y / t` gives you a rough estimate of how far behind the subscription group is from live.
 

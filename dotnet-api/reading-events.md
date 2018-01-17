@@ -40,9 +40,10 @@ Task<AllEventsSlice> ReadAllEventsForwardAsync(Position position, int maxCount, 
 Task<AllEventsSlice> ReadAllEventsBackwardAsync(Position position, int maxCount, bool resolveLinkTos);
 ```
 
-<span class="note">
+> [!NOTE]
+> 
 These methods also have an optional parameter which allows you to specify the `UserCredentials` to use for the request. If you don't supply any, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="../connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
-</span>
+
 
 ## StreamEventsSlice
 
@@ -136,9 +137,10 @@ The members of this class are as follows:
     </tbody>
 </table>
 
-<span class="note">
+> [!NOTE]
+> 
 To ensure that the Event Store server follows link events when reading, ensure you set the <code>ResolveLinkTos</code> parameter to `true` when calling read methods.
-</span>
+
 
 ## RecordedEvent
 
@@ -275,7 +277,8 @@ do
 } while (!currentSlice.IsEndOfStream);
 ```
 
-<span class="note">It is unlikely that client code would need to build a list in this manner. It is far more likely that events would be passed into a left fold to derive the state of some object as of a given event.</span>
+> [!NOTE]
+> It is unlikely that client code would need to build a list in this manner. It is far more likely that events would be passed into a left fold to derive the state of some object as of a given event.
 
 ## Reading a stream backwards
 <!-- TODO: Moved, check -->

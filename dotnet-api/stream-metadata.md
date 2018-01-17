@@ -143,9 +143,10 @@ This will return a `RawStreamMetadataResult`. The fields on this result are:
     </tbody>
 </table>
 
-<span class="note">
+> [!NOTE]
+> 
 If you have security enables, reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
-</span>
+
 
 ## Writing Metadata
 
@@ -220,6 +221,7 @@ Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamV
 
 This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes however the server only understands JSON. Read [Access Control Lists](/server/latest/access-control-lists) for more information on the format in JSON for access control lists.
 
-<span class="note">
+> [!NOTE]
+> 
 Writing metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
-</span>
+

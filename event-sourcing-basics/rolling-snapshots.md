@@ -16,9 +16,10 @@ The solution is to use a rolling snapshot to place a denormalization of the stat
 
 The figure above shows an event stream with a rolling snapshot placed within it. The process for rebuilding an aggregate changes when using rolling snapshots. Instead of reading forward from the beginning of time it is read backwards, putting the events on to a stack until  there are no more events left or a snapshot is found. The snapshot is then applied and the events would popped off the stack and applied until the stack was empty.
 
-<span class="note">
+> [!NOTE]
+> 
 Although this is an easy way to conceptualize how rolling snapshots work, this is a less than ideal solution in a production system for various reasons. It is better to store them out of band with events. <!-- TODO: Why? Revisit -->
-</span>
+
 
 The snapshot itself is nothing more than a serialized form of the graph at that given point. By having the state of that graph at that point replaying all the events prior to that snapshot can be avoided. Snapshots can be taken asynchronously by a process monitoring the Event Store.
 

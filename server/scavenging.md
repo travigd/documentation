@@ -10,9 +10,10 @@ When you delete events or streams in Event Store, they aren't removed immediatel
 
 A scavenge reclaims disk space by rewriting your database chunks, minus the events to delete, and then deleting the old chunks. Once a scavenge has run, you cannot recover any deleted events.
 
-<span class="note">
+> [!NOTE]
+>
 Scavenges only affect completed chunks, so deleted events in the current chunk will still be there after you run a scavenge.
-</span>
+
 
 ## Starting a scavenge
 
@@ -28,7 +29,7 @@ You can also start scavenges from the _Admin_ page in the Admin UI.
 
 <span class="note--warning">
 Each node in a cluster has its own independent database. As such, when you run a scavenge, you will need to issue a scavenge request to each node.
-</span>
+
 
 ## How often should you run a scavenge
 

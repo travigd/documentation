@@ -16,9 +16,10 @@ Backing up an Event Store database is straightforward, however it is reliant on 
 1. Create a copy of _chaser.chk_ and call it _truncate.chk_.
 2. Copy all files to the desired location.
 
-<span class="note">
+> [!NOTE]
+>
 Many people do not rely on hot backups in a highly available cluster but instead increase their node counts to keep further copies of data.
-</span>
+
 
 ## Differential backup
 

@@ -37,9 +37,10 @@ IntHttpPort: 2111
 ---
 ```
 
-<span class="note">
+> [!NOTE]
+>
 You need to use the three dashes and spacing in your YAML file.
-</span>
+
 
 Files can be better for large installations as you can centrally distribute and manage them, or generate them by a configuration management system such as Puppet.
 
@@ -79,9 +80,10 @@ PREPARE TIMEOUT MS:       2000 (<DEFAULT>)
 COMMIT TIMEOUT MS:        2000 (<DEFAULT>)
 ```
 
-<span class="note">
+> [!NOTE]
+>
 User projections are not enabled by default, but the projections engine is used internally for account management. If you want to run user projections, you have to start Event Store using the `--run-projections=all` command line parameter.
-</span>
+
 
 Event Store supports the following parameters:
 

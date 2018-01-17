@@ -130,7 +130,8 @@ Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` o
 
 The first step of dealing with a subscription group is to create one. You will receive an error if you attempt to create a subscription group multiple times. You must have admin permissions to create a persistent subscription group.
 
-<span class="note">Normally you wouldn't create the subscription group in your general executable code. Instead you normally create it as a step during an install or as an admin task when setting up. You should assume the subscription exists in your code.</span>
+> [!NOTE]
+> Normally you wouldn't create the subscription group in your general executable code. Instead you normally create it as a step during an install or as an admin task when setting up. You should assume the subscription exists in your code.
 
 ```csharp
 PersistentSubscriptionSettings settings = PersistentSubscriptionSettings.Create()
@@ -183,7 +184,8 @@ _result = _conn.UpdatePersistentSubscriptionAsync(_stream,
 												  MyCredentials).Result;                            
 ```
 
-<span class="note">If you change settings such as start from beginning <!-- TODO: What settings? -->, this will not reset the groups checkpoint. If you want to change the current position in an update you must delete and recreate the subscription group.<span>
+> [!NOTE]
+> If you change settings such as start from beginning <!-- TODO: What settings? -->, this will not reset the groups checkpoint. If you want to change the current position in an update you must delete and recreate the subscription group.<span>
 
 <table>
     <thead>
@@ -308,7 +310,8 @@ You can choose to not auto-ack messages. This can be useful when you have multi-
 When creating a persistent subscription the settings allow for different consumer strategies via the `WithNamedConsumerStrategy
 ` method. Built in strategies are defined in the enum `SystemConsumerStrategies`.
 
-<span class="note">HTTP clients bypass the consumer strategy. This means any ordering or pinning will be ignored.<span>
+> [!NOTE]
+> HTTP clients bypass the consumer strategy. This means any ordering or pinning will be ignored.<span>
 
 <table>
     <thead>
