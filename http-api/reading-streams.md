@@ -456,7 +456,7 @@ You should **never** bookmark links aside from the head of the stream resource. 
 There is a special paged feed for all events that named `$all`. You can use the same paged form of reading described above to read all events for the entire node by pointing the stream at _/streams/$all_. As it's a stream like any other, you can perform all other operations with it except posting to it.
 
 <span class="note">
-To access the `$all` stream, you must provide user details, find more information on the [security](../security) page.
+To access the `$all` stream, you must provide user details, find more information on the [security]({{site.baseurl}}/http-api/security) page.
 </span>
 
 <div class="codetabs" markdown="1">
@@ -585,7 +585,7 @@ Etags are created using the version of the stream and the media type you are rea
 
 So far in this guide, the feeds returned have contained links that refer to the actual event data. This is normally a preferable mechanism for a few reasons.
 
-They can be in a different media type than the feed and can you can negotiate them separately from the feed itself (e.g. the feed in JSON, the event in XML). You can cache the event data separately from the feed and you can point it to different feeds (if you use a `linkTo()` in [projections](/projections) this is what happens in your atom feeds).
+They can be in a different media type than the feed and can you can negotiate them separately from the feed itself (e.g. the feed in JSON, the event in XML). You can cache the event data separately from the feed and you can point it to different feeds (if you use a `linkTo()` in [projections]({{site.baseurl}}/projections) this is what happens in your atom feeds).
 
 If you are using JSON, you can embed the events into the atom feeds events. This can help cut down on the number of requests in some situations but the messages will be larger.
 
