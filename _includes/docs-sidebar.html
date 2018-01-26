@@ -1,5 +1,5 @@
 <ul class="docs-sidebar__list">
-    <li><a href="/">Documentation Home</a></li>
+    <li><a href="{{site.baseurl}}/">Documentation Home</a></li>
 
     {% for section in site.top_level_sections %}
         {% if page.section == section %}
@@ -28,33 +28,33 @@
             {% endif %}
 
             {% assign pages = site.pages | where:"section",section | where:"exclude_from_sidebar", false %}
-            
+
             {% assign pinnedItems = pages| where:"pinned", true | sort: "title" %}
             {% assign normalItems = pages | where:"pinned", false | sort: "title"  %}
 
             {% for item in pinnedItems %}
                 {% if item.section == ".NET API" and item.version == viewing_dotnet_version %}
                     <li>
-                        <a href="{{ item.url }}">{{ item.title }}</a>
+                        <a href="{{site.baseurl}}{{ item.url }}">{{ item.title }}</a>
                     </li>
                 {% elsif item.section != ".NET API" and item.version == viewing_server_version %}
                     <li>
-                        <a href="{{ item.url }}">{{ item.title }}</a>
+                        <a href="{{site.baseurl}}{{ item.url }}">{{ item.title }}</a>
                     </li>
                 {% endif %}
             {% endfor %}
             {% for item in normalItems %}
                 {% if item.section == ".NET API" and item.version == viewing_dotnet_version %}
                     <li>
-                        <a href="{{ item.url }}">{{ item.title }}</a>
+                        <a href="{{site.baseurl}}{{ item.url }}">{{ item.title }}</a>
                     </li>
                 {% elsif item.section != ".NET API" and item.version == viewing_server_version %}
                     <li>
-                        <a href="{{ item.url }}">{{ item.title }}</a>
+                        <a href="{{site.baseurl}}{{ item.url }}">{{ item.title }}</a>
                     </li>
                 {% endif %}
             {% endfor %}
             </ul>
-        </li>        
+        </li>
     {% endfor %}
 </ul>

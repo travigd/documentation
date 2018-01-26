@@ -8,7 +8,7 @@ When most people consider storage for an object they tend to think about it in a
 
 Consider the creation of a small "Order" object for a web-based sale system. Most developers would envision something similar to the image below. An "Order" has "n Line Items" and "Shipping Information".
 
-![A simplified structural model of an order][1]
+<!-- ![A simplified structural model of an order][1] -->
 
 This is not the only way to view this data. Earlier we discussed the concept of a transaction. Developers deal with the concept of transactions regularly, you can view them as representing the change between a point and the next subsequent point, and they are often referred to as “deltas”.
 
@@ -68,7 +68,7 @@ These types of benefits are not only limited to naturally transaction based doma
 
 Returning to the order example from earlier, you could represent the same order in the form of a transactional model as below:
 
-![Transactional view of an order][2]
+<!-- ![Transactional view of an order][2] -->
 
 You can apply this to any type of object. By replaying through the events, you can return the object to the last known state. It is mathematically equivalent to storing the end of the equation or the equation that represents it. There is a structural representation of the object but it exists only by replaying previous transactions to return the structure to its last known state. Data is not persisted in a structure but as a series of transactions.
 
@@ -82,7 +82,7 @@ What if logic has changed so that this item could no longer be added given the c
 
 A common question that arises is how to delete information. It is not possible, as previously, to jump into the time machine and say that an event never happened (e.g. delete a previous event). As such, it is necessary to model a delete explicitly as a new transaction as shown below. Further discussion on the business value of handling deletes in this mechanism can be found in "[Business Value of the Event Log](#business-value-of-the-event-log)".
 
-![Transactional view of an order with delete][3]
+<!-- ![Transactional view of an order with delete][3] -->
 
 In the event stream above, the two pairs of socks were added then later removed. The end state is equivalent to not having added the two pairs of socks. However, the data was not deleted, new data was added to bring the object to the state as if the first event had not happened, this process is known as a "Reversal Transaction".
 

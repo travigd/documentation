@@ -12,7 +12,7 @@ The Administration UI includes a <em>Competing Consumers</em> section where a us
 
 ## Creating a Persistent Subscription
 
-Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](/server/access-control-lists).
+Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions]({{site.baseurl}}/server/access-control-lists).
 
 | URI                                           | Supported Content Types | Method |
 | --------------------------------------------- | ----------------------- | ------ |

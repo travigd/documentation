@@ -77,15 +77,15 @@ Date: Sun, 16 Jun 2013 15:08:49 GMT
   ],
 ...
 
-    </div>
-    </div>
+</div>
+</div>
 
-    Once you have the URI of the metadata stream, a `GET` request will retrieve the metadata:
+Once you have the URI of the metadata stream, a `GET` request will retrieve the metadata:
 
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
+<div class="codetabs" markdown="1">
+<div data-lang="request" markdown="1">
+```bash
+curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
 
 </div>
 <div data-lang="response" markdown="1">

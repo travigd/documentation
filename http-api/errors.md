@@ -26,7 +26,7 @@ Keep-Alive: timeout=15,max=100
 ## Write to Stream with Invalid Content for Content Type
 
 ```http
-oruo@ouroboros:~/src/EventStore.wiki$ cat ~/simpleevent.txt
+cat ~/simpleevent.txt
 [
   {
     "eventId": "fbf4b1a1-b4a3-4dfe-a01f-ec52c34e16e4",
@@ -46,7 +46,7 @@ oruo@ouroboros:~/src/EventStore.wiki$ cat ~/simpleevent.txt
   }
 ]
 
-ouro@ouroboros:~$  curl -i -d @/home/ouro/simpleevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:text/xml"
+curl -i -d @simpleevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:text/xml"
 HTTP/1.1 400 Write request body invalid
 Access-Control-Allow-Methods: DELETE, GET, POST, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
@@ -61,7 +61,7 @@ Connection: close
 ## Security Denied
 
 ```http
-ouro@ouroboros:~/src/EventStore.wiki$ curl -i "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -u admin:foo
+curl -i "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -u admin:foo
 HTTP/1.1 401 Unauthorized
 Access-Control-Allow-Methods:
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER

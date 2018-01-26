@@ -289,7 +289,7 @@ The .NET API can log information to different destinations. By default logging i
 
 ### User Credentials
 
-Event Store supports [Access Control Lists](/server/latest/access-control-lists/) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set some default credentials for all operations on the connection.
+Event Store supports [Access Control Lists](server/access-control-lists/) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set some default credentials for all operations on the connection.
 
 <!-- TODO: Moved, to check. -->
 
@@ -318,7 +318,7 @@ UserCredentials credentials = new UserCredentials("username","password");
 
 The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default).
 
-To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](/http-api/latest/setting-up-ssl-windows/).
+To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](http-api/setting-up-ssl-windows/).
 
 <table>
     <thead>

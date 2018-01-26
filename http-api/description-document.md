@@ -6,7 +6,7 @@ version: "4.0.2"
 
 ## What is it?
 
-With the addition of [Competing Consumers](../../../introduction/competing-consumers) which is essentially another way of reading streams, the need arose to expose these different methods to consumers.
+With the addition of [Competing Consumers]({{site.baseurl}}/introduction/competing-consumers) which is essentially another way of reading streams, the need arose to expose these different methods to consumers.
 
 The introduction of the description document has some benefits
 
@@ -17,18 +17,18 @@ The introduction of the description document has some benefits
 
 There are 3 ways in which the description document will be returned.
 
-- Attempting to read a stream with an unsupported media type. 
+- Attempting to read a stream with an unsupported media type.
 - Attempting to read a stream with no accept header.
 - Requesting the description document explicitly.
 
 The client is able to request the description document by passing `application/vnd.eventstore.streamdesc+json` in the `accept` header
 e.g.
 
-```
+```bash
 curl -i http://localhost:2113/streams/newstream -H "accept:application/vnd.eventstore.streamdesc+json"
 ```
 
-```
+```bash
 HTTP/1.1 200 Description Document
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion

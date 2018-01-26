@@ -8,11 +8,11 @@ version: "4.0.2"
 
 ## Authentication Options
 
-There are two main options for authentication with Event Store. You secure Event Store itself, or you can use per-stream [Access Control Lists](access-control-lists) to give more fine-grained control on which users can access which data. You can also take a hybrid approach that mixes the two.
+There are two main options for authentication with Event Store. You secure Event Store itself, or you can use per-stream [Access Control Lists]({{site.baseurl}}/server/access-control-lists) to give more fine-grained control on which users can access which data. You can also take a hybrid approach that mixes the two.
 
 ### Secure Event Store
 
-To secure Event Store, you bind the server to the localhost (127.0.0.1) interface and then install a reverse proxy such as [nginx](http://nginx.org) or [Varnish](https://www.varnish-cache.org) on the public IP. You can find an example of setting up Event Store with Varnish [here](setting-up-varnish-in-linux).
+To secure Event Store, you bind the server to the localhost (127.0.0.1) interface and then install a reverse proxy such as [nginx](http://nginx.org) or [Varnish](https://www.varnish-cache.org) on the public IP. You can find an example of setting up Event Store with Varnish [here]({{site.baseurl}}/server/setting-up-varnish-in-linux).
 
 The reverse proxy will be your public interface. Internally it will handle the authentication and route requests to Event Store. Event Store is only accessible through the localhost adapter and is not exposed publicly. The locally running reverse proxy will be allowed to cache responses, and because of this, reverse proxies will be more performant than calling Event Store directly.
 
@@ -26,7 +26,7 @@ As Event Store is handling all security requests it will have all information ab
 
 ### Hybrid Option
 
-Even if you use a reverse proxy as above, you can support external authentication from Event Store itself. You do this by enabling the trusted intermediary option in your configuration. This allows the intermediary to write a header with the user information that Event Store will use. You can find how to do this in the [HTTP headers section](/http-api/Optional-Http-Headers).
+Even if you use a reverse proxy as above, you can support external authentication from Event Store itself. You do this by enabling the trusted intermediary option in your configuration. This allows the intermediary to write a header with the user information that Event Store will use. You can find how to do this in the [HTTP headers section]({{site.baseurl}}/http-api/Optional-Http-Headers).
 
 ## Security with SSL
 

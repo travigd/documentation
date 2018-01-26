@@ -40,7 +40,7 @@ There will be additions in the future for protobufs and bson.
 
 ## Examples
 
-Below are examples of [writing](/http-api/writing-to-a-stream) an event to a stream, as well as [reading](../reading-streams) both a stream, and an event, for more details on these read out their individual pages. All the below example use JSON, but by setting the correct content types then the examples would apply to XML as well.
+Below are examples of [writing]({{site.baseurl}}/http-api/writing-to-a-stream) an event to a stream, as well as [reading]({{site.baseurl}}/http-api/reading-streams) both a stream, and an event, for more details on these read out their individual pages. All the below example use JSON, but by setting the correct content types then the examples would apply to XML as well.
 
 ### Writing an event to a stream.
 
