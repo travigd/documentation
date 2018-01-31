@@ -6,7 +6,7 @@ version: 4.0.2
 
 ## Stream ACLs
 
-Event Store keeps the ACL of a stream in the streams [metadata](../metadata-and-reserved-names) as JSON with the below definition.
+Event Store keeps the ACL of a stream in the streams [metadata]({{site.baseurl}}/server/metadata-and-reserved-names) as JSON with the below definition.
 
 ```json
 {
@@ -111,7 +111,7 @@ All of these examples assume you have a user named <code>ouro</code> that has be
 
 This default ACL would give `ouro` and `$admins` create and write permissions on all streams, while everyone else can read from them.
 
-To do this you could use either the HTTP API or a client API to write the above data to the stream (requires admin privileges by default for obvious reasons. Be very careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically overrode it).
+To do this you could use either the HTTP API or a client API to write the above data to the stream (requires admin privileges by default for obvious reasons. Be careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically overrode it).
 
     ouro@ouroboros: cat ~/settings.js
 

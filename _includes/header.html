@@ -9,10 +9,10 @@
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <title>{{ page.title }} &mdash; Event Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main12.css">
-    <link rel="stylesheet" href="/css/print.css" media="print">
-    <link rel="stylesheet" href="/css/codetabs.css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/main12.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/print.css" media="print">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/codetabs.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
     <style media="print">
         pre {
             white-space: pre-wrap;
@@ -52,25 +52,8 @@
     </header>
     <div class="page-title">
         <div class="inner-container">
-            <h1>Documentation</h1>
-            {% if page.section == ".NET API" %}
-            <label>.NET API Version : <select onchange="location=this.options[this.selectedIndex].value">
-                    {% for version in site.all_dotnet_versions %}
-                    <option value="/dotnet-api/{{version}}" {%if version == page.version %}selected="true" {% endif %}>{{ version }}</option>
-                    {% endfor %}
-                </select>
-            </label>
-            {% else %}
-            <label>Version : <select onchange="location=this.options[this.selectedIndex].value">
-                    {% for version in site.all_versions %}
-                    <option value="/introduction/{{version}}" {%if version == page.version %}selected="true" {% endif %}>{{ version }}</option>
-                    {% endfor %}
-                </select>
-            </label>
-            {% endif %}
-
-            <div style="float:right;">
-                <form action="/search" method="get">
+            <div>
+                <form action="{{site.baseurl}}/search/" method="get">
                   <input type="text" id="header-search-box" name="query" placeholder="Search">
                   <input type="submit" value="Go">
                 </form>

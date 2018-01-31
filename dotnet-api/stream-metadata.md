@@ -219,7 +219,7 @@ You can add user-specified metadata via the `SetCustomMetadata` overloads. Some 
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
 ```
 
-This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes however the server only understands JSON. Read [Access Control Lists](/server/latest/access-control-lists) for more information on the format in JSON for access control lists.
+This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes however the server only understands JSON. Read [Access Control Lists](server/access-control-lists) for more information on the format in JSON for access control lists.
 
 > [!NOTE]
 > 

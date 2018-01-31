@@ -616,7 +616,7 @@ Etags are created using the version of the stream and the media type you are rea
 
 So far in this guide, the feeds returned have contained links that refer to the actual event data. This is normally a preferable mechanism for a few reasons.
 
-They can be in a different media type than the feed and can you can negotiate them separately from the feed itself (e.g. the feed in JSON, the event in XML). You can cache the event data separately from the feed and you can point it to different feeds (if you use a `linkTo()` in [projections](/projections) this is what happens in your atom feeds).
+They can be in a different media type than the feed and can you can negotiate them separately from the feed itself (e.g. the feed in JSON, the event in XML). You can cache the event data separately from the feed and you can point it to different feeds (if you use a `linkTo()` in [projections]({{site.baseurl}}/projections) this is what happens in your atom feeds).
 
 If you are using JSON, you can embed the events into the atom feeds events. This can help cut down on the number of requests in some situations but the messages will be larger.
 

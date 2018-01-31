@@ -7,7 +7,7 @@ layout: docs
 
 ## Using These Docs
 
-Read through the [Introduction](/introduction) section if you’re new to Event Store. If you know what you are looking for navigate to the section and version you need.
+Read through the [Introduction](introduction) section if you’re new to Event Store. If you know what you are looking for navigate to the section and version you need.
 
 ### Sharing Links
 

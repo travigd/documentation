@@ -75,7 +75,7 @@ Security access control lists are also included in the `$acl` section of the str
     </tbody>
 </table>
 
-You can find more details on access control lists can [here](../access-control-lists).
+You can find more details on access control lists can [here]({{site.baseurl}}/access-control-lists).
 
 ## Event Metadata
 

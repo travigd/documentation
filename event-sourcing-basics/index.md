@@ -10,7 +10,7 @@ version: "4.0.2"
 Event Store is a database that supports the concept of Event Sourcing, which is an old idea that has recently become popular again
 
 > [!NOTE]
-> 
+>
 If you are familiar with functional programming you may wish to jump to the [Event Store viewed as a functional database section](#event-store-as-a-functional-database).
 </span
 
@@ -71,7 +71,7 @@ These are the problems that led to the separation of the concepts of Commands an
 
 -   [DDD CQRS Video](https://www.youtube.com/watch?v=whCk1Q87_ZI)
 -   [Event Sourcing](http://martinfowler.com/eaaDev/EventSourcing.html)
--   [Getting Started](../)
+-   [Getting Started]({{site.baseurl}}/introduction)
 
 [1]: ../img/structural-model.png "A simplified structural model of an order"
 

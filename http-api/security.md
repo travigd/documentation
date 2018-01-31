@@ -4,7 +4,7 @@ section: "HTTP API"
 version: "4.0.2"
 ---
 
-Event Store supports security over HTTP. This guide is an introduction to how security is implemented <!-- Where can you read more? -->.
+Event Store supports security over HTTP. This guide is an introduction to how security is implemented <!-- TODO: Where can you read more? -->.
 
 ## Authentication
 
@@ -12,7 +12,7 @@ Event Store supports authentication over basic authentication to internal users.
 
 > [!NOTE]
 >
-You can also use the trusted intermediary header to provide for externalized authentication that can allow you to integrate almost any authentication system with Event Store. Read more about it [the trusted intermediary header here](/http-api/optional-http-headers/trusted-intermediary).
+You can also use the trusted intermediary header to provide for externalized authentication that can allow you to integrate almost any authentication system with Event Store. Read more about it [the trusted intermediary header here]({{site.baseurl}}/http-api/optional-http-headers/trusted-intermediary).
 
 
 As an example if you were to use the default admin user `admin:changeit`, you would include this in you request:
@@ -69,7 +69,7 @@ Keep-Alive: timeout=15,max=100
 ***
 
 
-As you pass the username and password as part of the request it is not recommended that you run Event Store over HTTP, you should enable SSL to encrypt the user information. You can find instructions on how to accomplish this in [Windows](/http-api/setting-up-ssl-in-windows) and [Linux](/http-api/setting-up-ssl-in-linux). If you are running the clustered version you can also setup SSL for the replication protocol <!-- Does this need further explanation? -->.
+As you pass the username and password as part of the request it is not recommended that you run Event Store over HTTP, you should enable SSL to encrypt the user information. You can find instructions on how to accomplish this in [Windows]({{site.baseurl}}/http-api/setting-up-ssl-in-windows) and [Linux]({{site.baseurl}}/http-api/setting-up-ssl-in-linux). If you are running the clustered version you can also setup SSL for the replication protocol <!-- TODO: Does this need further explanation? -->.
 
 ## Access Control Lists
 
@@ -84,4 +84,4 @@ Along with authentication, Event Store supports per stream configuration of Acce
 
 To set access control lists over HTTP you can post to the metadata stream as with setting any other metadata. You can also set Access Control Lists for a stream in the web UI.
 
-For more information on the structure of how Access Control Lists work please read [Access Control Lists](/server/latest/access-control-lists).
+For more information on the structure of how Access Control Lists work please read [Access Control Lists]({{site.baseurl}}/server/access-control-lists).

@@ -14,13 +14,13 @@ The `EventStoreConnection` class maintains a full-duplex connection between the 
 All operations are handled fully asynchronously, returning either a `Task` or a `Task<T>`. If you need to execute synchronously, call `.Wait()` on the asynchronous version.
 
 > [!NOTE]
-> 
-To get maximum performance from the connection, we recommend you use itasynchronously.
+>
+To get maximum performance from the connection, we recommend you use it asynchronously.
 
 
 ## Quick Start
 
-The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](./connecting-to-a-server/), [Reading Events](./reading-events/) and [Writing to a Stream](./writing-to-a-stream/)
+The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server]({{site.baseurl}}/dotnet-api/connecting-to-a-server/), [Reading Events]({{site.baseurl}}/dotnet-api/reading-events/) and [Writing to a Stream]({{site.baseurl}}/dotnet-api/writing-to-a-stream/)
 
 ```csharp
 var connection =

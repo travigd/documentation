@@ -35,7 +35,7 @@ The other interface is HTTP-based, more specifically based upon the [AtomPub pro
 
 ### Supported Clients
 
--   [HTTP API](/http-api)
+-   [HTTP API]({{site.baseurl}}/http-api)
 
 ### Community Developed Clients
 

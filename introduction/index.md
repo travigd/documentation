@@ -34,7 +34,7 @@ Then with an administrator console run the following command:
 EventStore.ClusterNode.exe --db ./db --log ./logs
 ```
 
-This will start Event Store with the database stored at the path _./db_ and the logs in _./logs_. You can view further command line arguments in the [server docs](/server/latest).
+This will start Event Store with the database stored at the path _./db_ and the logs in _./logs_. You can view further command line arguments in the [server docs]({{site.baseurl}}/server).
 
 Event Store is running in an admin context because it will start a HTTP server through `http.sys`. For permanent or production instances you will need to provide an ACL such as:
 
@@ -129,7 +129,7 @@ Keep-Alive: timeout=15,max=100
 
 Open the UI after this command to the _Stream Browser_ tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.
 
-You can also setup [Access Control Lists](/server/latest/access-control-lists/) on your streams by changing the metadata of the stream.
+You can also setup [Access Control Lists]({{site.baseurl}}/server/access-control-lists) on your streams by changing the metadata of the stream.
 
 ## Reading From a Stream
 
@@ -258,7 +258,7 @@ Keep-Alive: timeout=15,max=100
 
 To read a single page feed, you request the feed and then iterate through the event links by executing `GET` requests. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable.
 
-You can also `GET` the events in the feed itself if by using `?embed=body` in the request. You can find further information on this [here](/http-api/latest/reading-streams).
+You can also `GET` the events in the feed itself if by using `?embed=body` in the request. You can find further information on this [here]({{site.baseurl}}/http-api/reading-streams).
 
 Sometimes your feed may span more than one atom page, and you will need to paginate through the feed. You do this by following the relation links in the feed. To read a feed from the beginning to the end you would go to the _last_ link and then continue to read the _previous_ page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using _first_ then _next_.
 
