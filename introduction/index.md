@@ -1,15 +1,14 @@
 ---
-title: "Getting Started"
 section: "Introduction"
 pinned: true
 version: "4.0.2"
 ---
 
+# Getting Started
 This guide will show you how to get started with Event Store using the Atom publishing protocol as the primary interface. It covers installation and basic operations such as writing to a stream, reading from a stream, and subscribing to a stream.
 
-<span class="note--warning">
-The described is for development and evaluation of Event Store. It does not describe a production setup.
-
+> [!WARNING]
+> The described is for development and evaluation of Event Store. It does not describe a production setup.
 
 ## Install and Run
 
@@ -25,7 +24,6 @@ Event Store has Chocolatey packages available that you can install with the foll
 ```powershell
 choco install eventstore-oss
 ```
-
 You can also [download](https://geteventstore.com/downloads) a binary, unzip the archive and run from the folder location.
 
 Then with an administrator console run the following command:
@@ -65,7 +63,6 @@ Or, in all other cases you can run the Event Store binary or use our run-node sh
 > [!NOTE]
 > We recommend that when using Linux you set the 'open file limit' to a high number. The precise value depends on your usecase, but at miniumum, between `30,000` and `60,000`.
 
-
 ### [Docker](#tab/tabid-3)
 
 Event Store has [a Docker image](https://hub.docker.com/r/eventstore/eventstore/) available for any platform that supports Docker:
@@ -75,7 +72,6 @@ docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/event
 ```
 
 ***
-
 
 Event Store should now be running at <http://127.0.0.1:2113/> to see the admin console. The console will ask for a username and password. The defaults are `admin:changeit`.
 
@@ -125,7 +121,6 @@ Keep-Alive: timeout=15,max=100
 
 > [!NOTE]
 > You can also post events as XML, by changing the `Content-Type` header to `XML`.
-
 
 Open the UI after this command to the _Stream Browser_ tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.
 
@@ -216,11 +211,8 @@ Keep-Alive: timeout=15,max=100
 > [!NOTE]
 > This example uses cURL, but you can read Atom feeds with a wide variety of applications and languages.
 
-
 > [!NOTE]
->
-This command asked Event Store to return the feed in JSON format, you can also use `Accept:application/atom+xml` if you prefer XML.
-
+> This command asked Event Store to return the feed in JSON format, you can also use `Accept:application/atom+xml` if you prefer XML.
 
 The feed has a single item inside of it, the one you just posted. You can then get the event by issuing a `GET` to the `alternate` URI value.
 
@@ -255,7 +247,6 @@ Keep-Alive: timeout=15,max=100
 > [!NOTE]
 > You can also use `Accept: text/xml` if you prefer XML.
 
-
 To read a single page feed, you request the feed and then iterate through the event links by executing `GET` requests. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable.
 
 You can also `GET` the events in the feed itself if by using `?embed=body` in the request. You can find further information on this [here]({{site.baseurl}}/http-api/reading-streams).
@@ -266,9 +257,7 @@ Sometimes your feed may span more than one atom page, and you will need to pagin
 
 ## Subscribing to Stream to Receive Updates
 
-**Another common operation people want to be able to do is to listen to a stream for when changes are occurring.**
-
-This works the same way as paging through an Atom feed. As new events arrive, new _previous_ links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an _at least once_ assurance with the following code, save the last URI you received.
+Another common operation is to listen to a stream for changes. This works the same way as paging through an Atom feed. As new events arrive, new _previous_ links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an _at least once_ assurance with the following code, save the last URI you received.
 
 <!-- TODO: Test the below and how do you set them up? -->
 

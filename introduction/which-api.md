@@ -1,8 +1,9 @@
 ---
-title: "Which API to Use?"
 section: "Introduction"
 version: "4.0.2"
 ---
+
+# Which API to Use?
 
 There are multiple interfaces over which you can communicate with Event Store. This document describes them briefly and with the aim of helping you choose which one suits your use case.
 
@@ -42,11 +43,9 @@ The other interface is HTTP-based, more specifically based upon the [AtomPub pro
 -   [Ruby](https://github.com/arkency/http_eventstore)
 -   [Go](https://github.com/jetbasrawi/go.geteventstore)
 
-> [!NOTE]
->
 <!-- TODO: How? -->
-Feel free to add more! Being listed as a community client does not imply official support.
 
+Feel free to add more! Being listed as a community client does not imply official support.
 
 ## Which to use?
 
@@ -67,5 +66,4 @@ Atom tend to operate better in a large heterogenous environment where you have c
 Most platforms have good existing tooling for Atom including feed readers (e.g. Fiddler). None of this tooling exists for analyzing traffic with the TCP protocol.
 
 > [!NOTE]
->
-Our recommendation would be to use AtomPub as your primary protocol unless you have low subscriber SLAs or need higher throughput on reads and writes than Atom can offer. This is due to the open nature and ease of use of the Atom protocol. Often in integration scenarios these are more important than raw performance.
+> Our recommendation would be to use AtomPub as your primary protocol unless you have low subscriber SLAs or need higher throughput on reads and writes than Atom can offer. This is due to the open nature and ease of use of the Atom protocol. Often in integration scenarios these are more important than raw performance.

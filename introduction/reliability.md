@@ -1,8 +1,9 @@
 ---
-title: "Reliability"
 section: "Introduction"
 version: "4.0.2"
 ---
+
+# Reliability
 
 You should look at reliability from a holistic perspective. Even though Event Store treats data transactionally with full durability assurances this will not help you if the hardware on your machine does not support it.
 

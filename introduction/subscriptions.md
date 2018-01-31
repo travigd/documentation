@@ -1,8 +1,9 @@
 ---
-title: "Types of Subscriptions"
 section: "Introduction"
 version: "4.0.2"
 ---
+
+# Types of Subscriptions
 
 When using the Event Store client APIs, clients can subscribe to a stream and be notified when new events are written to that stream. There are three types of subscription are available, all of which can be useful in different situations.
 

@@ -1,9 +1,10 @@
 ---
-title: "Config"
 section: "Projections"
 version: "4.0.2"
 pinned: true
 ---
+
+# Config
 
 With the release of Event Store 4.0.2, we have included a new set of options for fine-tuning projections.
 By changing these settings, you can lessen the amount of pressure projections put on an Event Store node or improve projection performance. You can change these settings should on a case-by-case basis, and only in cases where you see improvements.
@@ -35,17 +36,15 @@ This means that write amplification is a possibility, as a separate event will b
 As such, this option is not recommended for projections that emit a lot of events, and it should only be enabled in cases where it is necessary.
 The stream that tracks emitted stream ids is named as follows :
 
-```
+```text
 $projections-{projection_name}-emittedstreams
 ```
 
 This setting is disabled by default.
 
 > [!NOTE]
->
-Between Event Store versions 3.8.0 and 4.0.2, this option was enabled by default when a projection was created through the UI.
-If you have any projections created during this time frame, it might be worth checking whether this option is enabled.
-
+> Between Event Store versions 3.8.0 and 4.0.2, this option was enabled by default when a projection was created through the UI.
+> If you have any projections created during this time frame, it might be worth checking whether this option is enabled.
 
 ### Max Allowed Writes In Flight
 
@@ -55,7 +54,8 @@ Because a projection can write to multiple different streams, it is possible for
 By default, projections will try to perform writes as quickly as they come through. This can add a lot of pressure to a node, especially for projections that emit to many different streams.
 If you see your projections causing frequent commit timeouts or slow reads, you can try lowering this value to see if there is any improvement.
 
-Do note that lower values may cause the projection to slow down as the number of writes are throttled, but the trade off for this is cleaner logs and fewer commit timeouts.
+> [!NOTE]
+> Lower values may cause the projection to slow down as the number of writes are throttled, but the trade off for this is cleaner logs and fewer commit timeouts.
 
 By default, this is unbounded, allowing a projection to write as fast as it can.
 
@@ -105,5 +105,4 @@ The default is 5000.
 These options are accesible through the admin UI from the `Config` tab when editing a projection.
 
 > [!NOTE]
->
-The config of a projection can only be changed when the projection has been stopped.
+> The config of a projection can only be changed when the projection has been stopped.

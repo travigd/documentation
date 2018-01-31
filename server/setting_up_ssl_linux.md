@@ -1,8 +1,9 @@
 ---
-title: "Setting up SSL on Ubuntu 16.04"
 section: "Server"
 version: "4.0.2"
 ---
+
+# Setting up SSL on Ubuntu 16.04
 
 The steps to set up SSL on Ubuntu 16.04 are as follows:
 

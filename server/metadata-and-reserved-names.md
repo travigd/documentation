@@ -1,8 +1,9 @@
 ---
-title: "Metadata and Reserved Names"
 section: "Server"
 version: "4.0.2"
 ---
+
+# Metadata and Reserved Names
 
 ## Stream Metadata
 
@@ -38,9 +39,7 @@ The supported internal settings are:
 </table>
 
 > [!NOTE]
->
-If you set both `$maxAge` and `$maxCount` then events will become eligible for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligible for scavenging after either 10 seconds, or 50,000 events, have passed. Deleted items will only actually be removed once the scavenge process is run.
-
+> If you set both `$maxAge` and `$maxCount` then events will become eligible for scavanging when either criteria is met. For example, if you set `$maxAge` to 10 and `$maxCount` to 50,000, events will be marked as eligible for scavenging after either 10 seconds, or 50,000 events, have passed. Deleted items will only actually be removed once the scavenge process is run.
 
 Security access control lists are also included in the `$acl` section of the stream metadata.
 
@@ -86,4 +85,4 @@ Every event in Event Store can have metadata associated with it. Event Store sup
 -   `$correlationId` The application level correlation ID associated with this message.
 -   `$causationId` The application level causation ID associated with this message.
 
-Projections will honor both the correlationId and causationId patterns for any events it produces internally (linkTo/emit/etc).
+Projections will honor both the `correlationId` and `causationId` patterns for any events it produces internally (linkTo/emit/etc).

@@ -1,9 +1,8 @@
 ---
-title: "Command Line Arguments"
 section: "Server"
 version: "4.0.2"
 ---
-
+# Command Line Arguments
 Event Store supports many configuration options. There are three distinct ways to set any parameter, all with their own advantages and disadvantages.
 
 -   Via command line
@@ -38,9 +37,7 @@ IntHttpPort: 2111
 ```
 
 > [!NOTE]
->
-You need to use the three dashes and spacing in your YAML file.
-
+> You need to use the three dashes and spacing in your YAML file.
 
 Files can be better for large installations as you can centrally distribute and manage them, or generate them by a configuration management system such as Puppet.
 
@@ -81,9 +78,7 @@ COMMIT TIMEOUT MS:        2000 (<DEFAULT>)
 ```
 
 > [!NOTE]
->
-User projections are not enabled by default, but the projections engine is used internally for account management. If you want to run user projections, you have to start Event Store using the `--run-projections=all` command line parameter.
-
+> User projections are not enabled by default, but the projections engine is used internally for account management. If you want to run user projections, you have to start Event Store using the `--run-projections=all` command line parameter.
 
 Event Store supports the following parameters:
 

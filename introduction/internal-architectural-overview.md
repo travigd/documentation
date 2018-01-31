@@ -1,5 +1,4 @@
 ---
-title: "Internal Architectural Overview"
 section: "Introduction"
 version: "4.0.2"
 ---
@@ -7,7 +6,7 @@ version: "4.0.2"
 <!-- TODO:  Overview image or intro? -->
 
 <!-- TODO:  Remove as much passive as possible -->
-
+# Internal Architectural Overview
 ## Messaging
 
 The overall architecture style of Event Store is [SEDA (Staged Event Driven Architecture)](http://www.eecs.harvard.edu/~mdw/proj/seda/). Messages flow forward through queues internally (including the Transaction File which is also a queue). There are communication endpoints that flow forward through series of queues to be processed. All operations are purely asynchronous. The core processing is handled on a single thread reading requests off of a single concurrent queue.
@@ -61,8 +60,6 @@ As transactions are written to the transaction file, where an in-memory index is
 <!-- TODO:  Is this necessary -->
 
 In experimenting with various data structures including redblack trees and B+ trees it turned out that the fine grained lock outperformed the others (a good example of how stupid code can often be faster than well thought out code).
-
-<!-- TODO:  To here -->
 
 When there are enough items in the in memory index, the index is flushed to disk (known as a 'PTable' or 'Persistent Table'). A PTable is a sorted group of index entries (remember that they are only 16 bytes each). A binary search across the PTables is used to search. The search function has been memoized by storing midpoints in memory (in the future ptables will likely be stored in unmanaged memory as well, but the performance on SSDs is acceptable with only midpoint caching). Mid point caching reduces the number of seeks from log(n) by the depth to which midpoints are filled and often all are in memory.
 

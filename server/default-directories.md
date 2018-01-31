@@ -1,15 +1,15 @@
 ---
-title: "Default Directories"
 section: "Server"
 version: "4.0.2"
 pinned: true
 ---
 
+# Default Directories
+
 The default directories used by Event Store vary by platform to best fit with the expectations of users in each case.
 
-<span class="note--warning">
-Paths beginning with "." are relative to the directory in which _eventstored_ or _EventStore.ClusterNode.exe_ are located. Absolute paths are as written.
-
+> [!WARNING]
+> Paths beginning with "." are relative to the directory in which _eventstored_ or _EventStore.ClusterNode.exe_ are located. Absolute paths are as written.
 
 ### Linux
 

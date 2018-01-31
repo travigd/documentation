@@ -1,20 +1,19 @@
 ---
-title: "Competing Consumers Introduction"
 section: "Introduction"
 version: "4.0.2"
 ---
-
+# Competing Consumers Introduction
 Beginning with version **3.2.0** a new subscription model is available in Event Store. This model is known as "competing consumers" and is similar to subscriptions models you may have used in the past such as AMQP. This document serves as a high level overview of the functionality, what it can provide, and when you may want to use it.
 
 ## What is Competing Consumers
 
-Competing Consumers differs in usage and functionality from the `Subscribe` operation or from a `CatchUpSubscription`. <!-- We han't mentioned this yet, is this subscribe? --> For example `SubscribeToStream` will read the events from this point forward that happen in a stream. A `CatchUpSubscription` will read all the events in a stream to your client from a given point.
+Competing Consumers differs in usage and functionality from the `Subscribe` operation or from a `CatchUpSubscription`. <!-- TODO: We han't mentioned this yet, is this subscribe? --> For example `SubscribeToStream` will read the events from this point forward that happen in a stream. A `CatchUpSubscription` will read all the events in a stream to your client from a given point.
 
 Both a `Subscription` and a `CatchupSubscription` use a model where the client holds the state of the subscription, much like a blog client remembers the last post you read. The server does not hold any state particular to a given client. With Competing Consumers the server remembers the state of the subscription, allowing for different modes of operations compared to a subscription where the client holds the subscription state. <!-- TODO: Is this repetetive? -->
 
 ## Subscription Groups
 
-The first step in using Competing Consumers is to create a new subscription. You can do this with the HTTP API or with the client API `CreatePersistentSubscription`. This creates the server-side subscription group that you use in the future. There are lots of options you can pass to a subscription group including `ReadBatchSizes`, `MaxRetryCounts`, and how often to `CheckPoint` the subscription <!-- Should the others also have brief explanations -->.
+The first step in using Competing Consumers is to create a new subscription. You can do this with the HTTP API or with the client API `CreatePersistentSubscription`. This creates the server-side subscription group that you use in the future. There are lots of options you can pass to a subscription group including `ReadBatchSizes`, `MaxRetryCounts`, and how often to `CheckPoint` the subscription <!-- TODO: Should the others also have brief explanations -->.
 
 You create a subscription as part of a deployment or an administrative task. You can create subscription groups to map to any stream.
 
@@ -39,7 +38,6 @@ One major difference with client-based subscriptions is that a subscription grou
 
 > [!NOTE]
 > It will be discussed later in this document but in the case of retries, connection failures, or server failures, more than one subscriber in a subscriber group can see a given message. Therefore this model is known as At-Least-Once messaging. Clients must be able to handle receiving a message more than one time.
-
 
 The next step is to connect a client to the subscription group. In the .NET client api there is a `ConnectToPersistentSubscription` method  which takes the stream or group that you want to connect to. It also takes a parameter which is the maximum number of in flight messages. This parameter is key to understanding how the subscription group works.
 
@@ -144,5 +142,4 @@ You can monitor all subscriber state within Event Store. You can do this through
 
 Generally it is most important to monitor the relationship between the `lastProcessedMessage`, the `lastKnownMessage`, and the throughput of the subscription. This tells you the last processed message was 'x', the last known message is 'y' and your current throughput is 't'. `X - Y / t` gives you a rough estimate of how far behind the subscription group is from live.
 
-You can also measure your clients, timing each message passed to a client. Using the `extrastatistics` configuration option, the subscription will track a histogram of the timings of the client(s). From this histogram you can get statistics such as average
-, standard deviation, quintiles, and %s (90,95,99,99.9,etc) about how your client is behaving in terms of timings.
+You can also measure your clients, timing each message passed to a client. Using the `extrastatistics` configuration option, the subscription will track a histogram of the timings of the client(s). From this histogram you can get statistics such as average, standard deviation, quintiles, and %s (90,95,99,99.9,etc) about how your client is behaving in terms of timings.

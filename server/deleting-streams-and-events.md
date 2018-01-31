@@ -1,16 +1,16 @@
 ---
-title: "Deleting streams and events"
 section: "Server"
 version: "4.0.2"
 ---
+
+# Deleting streams and events
 
 Meta data in Event Store defines whether an event is deleted or not. Stream metadata such as "Truncate Before", "Max Age" and "Max Count" is used to filter out events considered deleted. When reading a stream, the index will check the stream's metadata to determine whether any of its events have been deleted.
 
 `$all` bypasses the index, meaning that it does not check the metadata to determine whether events exist or not. As such, events that have been deleted will still be readable until a scavenge has removed them. Note that there are a number of requirements for a scavenge to successfully remove events, for more information about this, please see the section on [Scavenging]({{site.baseurl}}/scavenging/).
 
-<span class="note--warning">
-The last event in a stream is always kept as a record of the last event number in the stream.
-
+> [!WARNING]
+> The last event in a stream is always kept as a record of the last event number in the stream.
 
 ### Soft delete and Truncate before
 
@@ -26,7 +26,7 @@ For example, if you had the following events in a stream :
 
 If you set the truncate before value to 2, a read of the stream would result in only the last event being read :
 
-```
+```text
 3@test-stream
 ```
 
@@ -52,9 +52,8 @@ When a hard deleted stream is read, the read will return a `StreamDeleted` or `4
 
 The events in the deleted stream are liable to be removed in a scavenge, but the tombstone event will remain.
 
-<span class="note--warning">
-A hard delete of a stream is permanent. The stream cannot be written to or recreated. As such, you should generally prefer to soft delete streams unless you have a specific need to permanently delete the stream.
-
+> [!WARNING]
+> A hard delete of a stream is permanent. The stream cannot be written to or recreated. As such, you should generally prefer to soft delete streams unless you have a specific need to permanently delete the stream.
 
 ## Deleted events and projections
 

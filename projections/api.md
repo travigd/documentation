@@ -1,9 +1,10 @@
 ---
-title: "API"
 section: "Projections"
 version: "4.0.2"
 pinned: true
 ---
+
+# API
 
 <table>
     <thead>

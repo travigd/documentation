@@ -1,8 +1,9 @@
 ---
-title: "Ports and networking"
 section: "Server"
 version: "4.0.2"
 ---
+
+# Ports and networking
 
 ## Single Node
 
@@ -32,11 +33,12 @@ Each heartbeat has two points of configuration. The first is the 'interval', thi
 
 Varying environments want drastically different values for these settings. While low numbers work well on a LAN they tend to not work well in the cloud. The defaults are likely fine on a LAN, in the cloud consider a setting of interval 5000ms and timeout 1000ms which should be fine for most installations.
 
-<span class="note--warning">If in question err on the side of higher numbers, it will add a small period of time to discover a dead client or node and is better than the alternative, which is false positives.
+> [!TIP]
+> If in question err on the side of higher numbers, it will add a small period of time to discover a dead client or node and is better than the alternative, which is false positives.
 
 ## Advertise As
 
-There are times when due to NAT <!-- TODO: Which is? What I think it is --> or other reasons a node may not be bound to the address it is reachable from other nodes as. As an example the machine has an IP address of 192.168.1.13 but the node is visible to other nodes as 10.114.12.112.
+There are times when due to NAT or other reasons a node may not be bound to the address it is reachable from other nodes as. As an example the machine has an IP address of 192.168.1.13 but the node is visible to other nodes as 10.114.12.112.
 
 The option `advertise-as` allows you to tell the node that even though it is bound to a given address it should not gossip that address as its address. Instead it will use the address that you tell it to use. In the example above you would configure
 

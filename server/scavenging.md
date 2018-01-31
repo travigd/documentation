@@ -1,19 +1,16 @@
 ---
-title: "Scavenging"
 section: "Server"
 version: "4.0.2"
 ---
 
-<!-- TODO: More constructive title? -->
+# Scavenging events
 
 When you delete events or streams in Event Store, they aren't removed immediately. To permenantly delete these events you will need to run a 'scavenge' on your database.
 
 A scavenge reclaims disk space by rewriting your database chunks, minus the events to delete, and then deleting the old chunks. Once a scavenge has run, you cannot recover any deleted events.
 
 > [!NOTE]
->
-Scavenges only affect completed chunks, so deleted events in the current chunk will still be there after you run a scavenge.
-
+> Scavenges only affect completed chunks, so deleted events in the current chunk will still be there after you run a scavenge.
 
 ## Starting a scavenge
 
@@ -27,9 +24,8 @@ curl -i -d {} -X POST http://localhost:2113/admin/scavenge -u "admin:changeit"
 
 You can also start scavenges from the _Admin_ page in the Admin UI.
 
-<span class="note--warning">
-Each node in a cluster has its own independent database. As such, when you run a scavenge, you will need to issue a scavenge request to each node.
-
+> [!TIP]
+> Each node in a cluster has its own independent database. As such, when you run a scavenge, you will need to issue a scavenge request to each node.
 
 ## How often should you run a scavenge
 

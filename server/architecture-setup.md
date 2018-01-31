@@ -1,9 +1,8 @@
 ---
-title: "HTTP Architecture Setup"
 section: "Server"
 version: "4.0.0"
 ---
-
+# HTTP Architecture Setup
 <!-- TODO: Is the title descrptive? -->
 
 ## Authentication Options

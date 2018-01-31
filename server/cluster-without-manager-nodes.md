@@ -1,8 +1,9 @@
 ---
-title: "Setting up a Cluster using only Database Nodes (OSS)"
 section: "Server"
 version: "4.0.2"
 ---
+
+# Setting up a Cluster using only Database Nodes (OSS)
 
 Effective September of 2013 <!-- TODO: A version might be better, remove date reference or reference completely --> all the clustering code for Event Store has been open sourced (under the normal BSD-3 license as the rest of the code). This document will look at how you can setup a highly available cluster using the open source components.
 
@@ -14,7 +15,8 @@ When setting up a cluster, you will generally want an odd number of nodes ads Ev
 
 To start, you will set up three nodes running on a single machine. Run each of the commands below in its own console window, remember that you either need admin privileges or have setup ACLs with IIS if running under Windows (Unix-like operating systems need no configuration). Replace "127.0.0.1" with whatever IP address you want to run on.
 
-<span class="note--warning">This must be an interface present on the machine.
+> [!WARNING]
+> This must be an interface present on the machine.
 
 ```powershell
 start EventStore.ClusterNode.exe --mem-db --log .\logs\log1 --int-ip 127.0.0.1 --ext-ip 127.0.0.1 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=1113 --ext-http-port=1114 --cluster-size=3 --discover-via-dns=false --gossip-seed=127.0.0.1:2113,127.0.0.1:3113
@@ -44,7 +46,8 @@ EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log2 --int-ip 192.168.0
 EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log3 --int-ip 192.168.0.3 --ext-ip 192.168.0.3 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=2113 --ext-http-port=2114 --cluster-size=3 --cluster-dns mydomain.com --cluster-gossip-port=2113
 ```
 
-<span class="note--warning">This method is also good for HTTP clients as you can avoid using a load balancer and fall back to round robin DNS for many deployments.
+> [!WARNING]
+> This method is also good for HTTP clients as you can avoid using a load balancer and fall back to round robin DNS for many deployments.
 
 ## Internal vs. External
 
@@ -85,6 +88,7 @@ EventStoreConnection.Create(ConnectionSettings.Create()
 .SetGossipPort(2113)
 ```
 
-_For those using the closed source version `GossipPort` is an alias for `ManagerPort` as the closed source version includes a node manager on each physical node. This allows for controlling many virtual nodes on a machine with easy configuration. The manager also acts as a supervisor for the nodes_
+> [!TIP]
+> For those using the closed source version `GossipPort` is an alias for `ManagerPort` as the closed source version includes a node manager on each physical node. This allows for controlling many virtual nodes on a machine with easy configuration. The manager also acts as a supervisor for the nodes.
 
 As mentioned the connection will automatically reconnect during node failures. You can control this behaviour with options on the `ConnectionSettings` such as limiting retry attempts or frequency. The connection and durable subscription will even manage a subscription during node failures, you will not even receive duplicated messages over your durable subscription.

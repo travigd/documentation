@@ -1,8 +1,9 @@
 ---
-title: Access Control Lists
 section: Server
 version: 4.0.2
 ---
+
+# Access Control Lists
 
 ## Stream ACLs
 
@@ -37,7 +38,6 @@ You can update these fields with either a single string or an array of strings r
 
 The ACL below would give `greg` read and write permission on the stream, while `john` would have read permission on the stream. Only users in the `$admins` group would be able to delete the stream, or read and write the metadata.
 
-
 ```json
 {
    "$acl" : {
@@ -49,7 +49,6 @@ The ACL below would give `greg` read and write permission on the stream, while `
    }
 }
 ```
-
 
 ## Default ACL
 
@@ -78,15 +77,12 @@ The `$userStreamAcl` controls the default ACL for user streams, while the `$syst
 
 > [!NOTE]
 > <code>$w</code> in the <code>$userStreamAcl</code> also applies to the ability to create a stream.
-
-> [!NOTE]
 > Members of <code>$admins</code> always have access to everything, this permission cannot be removed.
 
 When a permission is set on a stream in your system it will override the default, however it is not necessary to specify all permissions on a stream. It is only necessary to specify those which differ from the default.
 
-<span class="note--warning">
-All of these examples assume you have a user named <code>ouro</code> that has been created on your system. The examples also assume the password is <code>ouroboros</code>.
-
+> [!WARNING]
+> All these examples assume you have a user named <code>ouro</code> that has been created on your system. The examples also assume the password is <code>ouroboros</code>.
 
 ### Example
 
@@ -113,8 +109,6 @@ This default ACL would give `ouro` and `$admins` create and write permissions on
 
 To do this you could use either the HTTP API or a client API to write the above data to the stream (requires admin privileges by default for obvious reasons. Be careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically overrode it).
 
-    ouro@ouroboros: cat ~/settings.js
-
 ```json
 {
     "$userStreamAcl" : {
@@ -134,11 +128,16 @@ To do this you could use either the HTTP API or a client API to write the above 
 }
 ```
 
-    ouro@ouroboros: curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
+### [Request](#tab/tabid-1)
 
-<span class="note--warning">
-You should not copy/paste the UUID in that command line but should generate a new one or not provide one (you will be redirected to a URI with one as described in writing events in the HTTP API).
+```bash
+curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
+```
 
+> [!WARNING]
+> You should not copy/paste the UUID in the command line above but generate a new one or not provide one (you will be redirected to a URI with one as described in writing events in the HTTP API).
+
+### [Response](#tab/tabid-2)
 
 ```http
 HTTP/1.1 201 Created
@@ -154,9 +153,17 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-If we try to access the `$settings` stream as an unauthorized user it will 401.
+***
 
-    ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+If you try to access the `$settings` stream as an unauthorized user it will 401.
+
+### [Request](#tab/tabid-3)
+
+```bash
+curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+
+### [Response](#tab/tabid-4)
 
 ```http
 HTTP/1.1 401 Unauthorized
@@ -172,7 +179,9 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-If I wanted to give `ouro` access by default to system streams I would post:
+***
+
+If you wanted to give `ouro` access by default to system streams I would post:
 
 ```json
 {
@@ -195,7 +204,13 @@ If I wanted to give `ouro` access by default to system streams I would post:
 
 At which point ouro can read system streams by default:
 
-    ouro@ouroboros: curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+### [Request](#tab/tabid-5)
+
+```bash
+curl -i http://127.0.0.1:2113/streams/%24settings -u ouro:ouroboros
+```
+
+### [Response](#tab/tabid-6)
 
 ```http
 HTTP/1.1 200 OK
@@ -212,6 +227,8 @@ Date: Mon, 02 Mar 2015 15:25:17 GMT
 Content-Length: 1286
 Keep-Alive: timeout=15,max=100
 ```
+
+***
 
 You can also then limit ACLs on particular streams which are merged with the default ACLs.
 
@@ -237,5 +254,5 @@ If you added the above to a stream's ACL, then it would override the read permis
 }
 ```
 
-<span class="note--warning">
-Caching will be allowed on a stream if you have enabled it to be visible to <code>$all</code>. This is done as a performance optimization to avoid having to set <code>cache=private</code> on all data. If people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from <code>$all</code>. While clients should not be bookmarking URIs in this way it is an important consideration.
+> [!WARNING]
+> Caching will be allowed on a stream if you have enabled it to be visible to <code>$all</code>. This is done as a performance optimization to avoid having to set <code>cache=private</code> on all data. If people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from <code>$all</code>. While clients should not be bookmarking URIs in this way it is an important consideration.

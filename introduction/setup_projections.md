@@ -1,8 +1,9 @@
 ---
-title: "Setting up Projections"
 section: "Introduction"
 version: "4.0.2"
 ---
+
+# Setting up Projections
 
 You enable projections with the command line argument `--run-projections=all`. For example:
 

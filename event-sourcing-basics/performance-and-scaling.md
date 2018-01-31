@@ -1,8 +1,9 @@
 ---
-title: "Performance and Scalability"
 section: "Event Sourcing Basics"
 version: "4.0.2"
 ---
+
+# Performance and Scalability
 
 There are also architectural benefits to not deleting data. The storage system becomes an append-only architecture. Append-only architectures typically distribute and scale more easily than updating architectures because there are fewer locks to deal with.
 

@@ -1,8 +1,9 @@
 ---
-title: "Setting up SSL on Windows"
 section: "Server"
 version: "4.0.2"
 ---
+
+# Setting up SSL on Windows
 
 The steps to set up SSL on Windows are as follows.
 
