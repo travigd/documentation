@@ -3,33 +3,31 @@ title: "Documentation"
 layout: docs
 ---
 
-<p class="docs-lead">Event Store docs are hosted on <a href="https://github.com/eventstore/docs.geteventstore.com">GitHub</a>. The repository is public and it’s open to issues and pull requests. Contributions, corrections and feedback are all welcome.</p>
-
 ## Using These Docs
 
 Read through the [Introduction](introduction) section if you’re new to Event Store. If you know what you are looking for navigate to the section and version you need.
 
 ## Related Blog Posts
 
-The following blog posts talk about the Event Store and may be useful for features that aren’t yet documented here. If you know of any others, please let us know! For more articles by Event Store visit our [blog](https://geteventstore.com/blog).
+The following blog posts talk about the Event Store and may be useful for features that aren’t yet documented here. If you know of any others, please let us know! For more articles by Event Store visit our [blog](https://eventstore.org/blog).
 
 ### Getting Started Series
 
-- [Part 1: Introduction](https://geteventstore.com/blog/20130220/getting-started-part-1-introduction/)
-- [Part 2: Implementing the CommonDomain repository interface](https://geteventstore.com/blog/20130220/getting-started-part-2-implementing-the-commondomain-repository-interface/)
-- [Part 3: Subscriptions](https://geteventstore.com/blog/20130306/getting-started-part-3-subscriptions/)
+- [Part 1: Introduction](https://eventstore.org/blog/20130220/getting-started-part-1-introduction/)
+- [Part 2: Implementing the CommonDomain repository interface](https://eventstore.org/blog/20130220/getting-started-part-2-implementing-the-commondomain-repository-interface/)
+- [Part 3: Subscriptions](https://eventstore.org/blog/20130306/getting-started-part-3-subscriptions/)
 
 ### Projections Series
 
-- [Part 1: Projections Theory](https://geteventstore.com/blog/20130212/projections-1-theory/)
-- [Part 2: A Simple SEP Projection](https://geteventstore.com/blog/20130213/projections-2-a-simple-sep-projection/)
-- [Part 3: Using State](https://geteventstore.com/blog/20130215/projections-3-using-state/)
-- [Intermission: A Case Study](https://geteventstore.com/blog/20130217/projections-intermission/)
-- [Part 4: Event Matching](https://geteventstore.com/blog/20130218/projections-4-event-matching/)
-- [Part 5: Indexing](https://geteventstore.com/blog/20130218/projections-5-indexing/)
-- [Part 6: An Indexing Use Case](https://geteventstore.com/blog/20130227/projections-6-an-indexing-use-case/)
-- [Part 7: Multiple Streams](https://geteventstore.com/blog/20130309/projections-7-multiple-streams/)
-- [Part 8: Internal Indexing](https://geteventstore.com/blog/20130309/projections-8-internal-indexing/)
+- [Part 1: Projections Theory](https://eventstore.org/blog/20130212/projections-1-theory/)
+- [Part 2: A Simple SEP Projection](https://eventstore.org/blog/20130213/projections-2-a-simple-sep-projection/)
+- [Part 3: Using State](https://eventstore.org/blog/20130215/projections-3-using-state/)
+- [Intermission: A Case Study](https://eventstore.org/blog/20130217/projections-intermission/)
+- [Part 4: Event Matching](https://eventstore.org/blog/20130218/projections-4-event-matching/)
+- [Part 5: Indexing](https://eventstore.org/blog/20130218/projections-5-indexing/)
+- [Part 6: An Indexing Use Case](https://eventstore.org/blog/20130227/projections-6-an-indexing-use-case/)
+- [Part 7: Multiple Streams](https://eventstore.org/blog/20130309/projections-7-multiple-streams/)
+- [Part 8: Internal Indexing](https://eventstore.org/blog/20130309/projections-8-internal-indexing/)
 
 ### Rob Ashton’s Projections Series
 
@@ -49,11 +47,11 @@ The following blog posts talk about the Event Store and may be useful for featur
 
 ### Other Posts
 
-- [Ensuring Writes](https://geteventstore.com/blog/20130301/ensuring-writes-multi-node-replication/) - describes how writing works in our commercial highly available product.
-- [The Cost of Creating a Stream](https://geteventstore.com/blog/20130210/the-cost-of-creating-a-stream/)
-- [Various Hash Implementations (BSD Licensed!)](https://geteventstore.com/blog/20120921/a-useful-piece-of-code-1/)
+- [Ensuring Writes](https://eventstore.org/blog/20130301/ensuring-writes-multi-node-replication/) - describes how writing works in our commercial highly available product.
+- [The Cost of Creating a Stream](https://eventstore.org/blog/20130210/the-cost-of-creating-a-stream/)
+- [Various Hash Implementations (BSD Licensed!)](https://eventstore.org/blog/20120921/a-useful-piece-of-code-1/)
 
 ## Videos
 
-- [Ouro’s 2nd Birthday](https://geteventstore.com/blog/20141112/video-of-ouros-2nd-birthday) introducing Event Store 3.0.0.
+- [Ouro’s 2nd Birthday](https://eventstore.org/blog/20141112/video-of-ouros-2nd-birthday) introducing Event Store 3.0.0.
 - [Greg Young’s “In The Brain” session](http://skillsmatter.com/podcast/design-architecture/event-store-as-a-read-model) about using projections for Complex Event Processing.

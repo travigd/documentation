@@ -39,7 +39,7 @@ sudo mkdir -p /datadrive/eventStore/logs
 sudo chown -R eventStore:eventStore /datadrive
 ```
 ## Install Nginx ##
-Nginx will be used as a reverse proxy server to proxy traffics between client and event store. 
+Nginx will be used as a reverse proxy server to proxy traffics between client and event store.
 
 1. Install Nginx:
    ```bash
@@ -97,7 +97,7 @@ sudo apt-get install gcc
    ```bash
    su - eventStore
    cd /datadrive
-   wget http://download.geteventstore.com/binaries/EventStore-OSS-Linux-v3.0.0.tar.gz
+   wget https://eventstore.org/downloads/EventStore-OSS-Linux-v3.0.0.tar.gz
    tar -xzvf EventStore-OSS-Linux-v3.0.0.tar.gz
    rm EventStore-OSS-Linux-v3.0.0.tar.gz
    cd EventStore-OSS-Linux-v3.0.0

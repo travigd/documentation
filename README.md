@@ -1,8 +1,8 @@
 # Event Store Documentation
 
-**This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
+**This documentation is available at [https://eventstore.org/docs](https://eventstore.org/docs).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
 
-What follows is documentation for how to use the Event Store documentation. If you’re planning to make updates or contributions then read on. Otherwise, head on over to the [website](http://docs.geteventstore.com).
+What follows is documentation for how to use the Event Store documentation. If you’re planning to make updates or contributions then read on. Otherwise, head on over to the [website](https://eventstore.org/docs).
 
 ## Versioning
 
@@ -72,7 +72,7 @@ For example:
 For example:
 
 ```
-http://docs.geteventstore.com/dotnet-api/3.0.0/writing-to-a-stream/index.html
+https://eventstore.org/docs/dotnet-api/3.0.0/writing-to-a-stream/index.html
 ```
 
 ### Front Matter

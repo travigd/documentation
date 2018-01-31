@@ -21,7 +21,7 @@ Reading from streams with AtomPub can be confusing the first time, but Event Sto
 | Objective-C | <https://geekli.st/darvin/repos/MWFeedParser>                     |
 
 <span class="note--warning">
-The above list are not officially supported by Event Store, if you know of any others [then please let us know](https://geteventstore.com/contact/).
+The above list are not officially supported by Event Store, if you know of any others [then please let us know](https://eventstore.org/contact/).
 </span>
 
 ## Reading a Stream
