@@ -477,7 +477,7 @@ There is a special paged feed for all events that named `$all`. You can use the 
 
 > [!NOTE]
 >
-To access the `$all` stream, you must provide user details, find more information on the [security](../security) page.
+To access the `$all` stream, you must provide user details, find more information on the [security]({{site.baseurl}}/http-api/security) page.
 
 
 
