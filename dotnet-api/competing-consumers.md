@@ -4,7 +4,7 @@ section: ".NET API"
 version: "4.0.2"
 ---
 
-This document walks through the .NET client API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types read [the overview document]({{site.baseurl}}/introduction/competing-consumers).
+This document walks through the .NET client API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types read [the overview document](~/introduction/competing-consumers.md).
 
 # Methods
 
@@ -49,7 +49,7 @@ EventStorePersistentSubscription ConnectToPersistentSubscription(
 
 ## Persistent Subscription Settings
 
-Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` object as a parameter. The methods use this obje to provide the settings for the persistent subscription. There is also a fluent builder for these options that can be located using the `Create()` method <!-- TODO: What does located mean? Chained methods after the create() -->. The following table shows the options you can set on a persistent subscription.
+Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` object as a parameter. The methods use this obje to provide the settings for the persistent subscription. There is also a fluent builder for these options that you can locate using the `Create()` method. The following table shows the options you can set on a persistent subscription.
 
 <table>
     <thead>

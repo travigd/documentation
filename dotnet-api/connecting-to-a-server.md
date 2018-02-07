@@ -1,25 +1,24 @@
 ---
-title: "Connecting to a Server"
 section: ".NET API"
 version: "4.0.2"
 ---
 
+# Connecting to a Server
+
 ## EventStoreConnection
 
-The `EventStoreConnection` class maintains a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe and we recommend that your only create one instance per application.
+The `EventStoreConnection` class maintains a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe and we recommend that you create one instance per application.
 
 All operations are fully asynchronous and return either a `Task` or a `Task<T>`. If you need to execute synchronously, call `.Wait()`, or `Result` on the asynchronous version.
 
 To get maximum performance from the connection we recommend that you use it asynchronously.
 
 > [!NOTE]
-> 
-The `Create` methods have changed slightly moving to 3.0.2 as connection strings are now supported. The old mechanisms will still work but have been marked obsolete and will be removed in the future.
-
+> The `Create` methods have changed slightly moving to 3.0.2 as connection strings are now supported. The old mechanisms will still work but have been marked obsolete and will be removed in the future.
 
 ## Creating a Connection
 
-The `EventStoreConnection` classes uses the static `Create` methods to create a new connection. All overloads <!-- TODO: What's an overload? Methods with similar signatures, but different parameters. --> allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events](#connection-events)).
+The `EventStoreConnection` classes uses the static `Create` methods to create a new connection. All method overloads allow you to optionally specify a name for the connection, which is returned when the connection raises events (see [Connection Events](#connection-events)).
 
 <table>
     <thead>
@@ -57,9 +56,7 @@ The `EventStoreConnection` classes uses the static `Create` methods to create a 
 </table>
 
 > [!NOTE]
-> 
-The connection returned by these methods is inactive. Use the `ConnectAsync()` method to establish a connection with the server.
-
+> The connection returned by these methods is inactive. Use the `ConnectAsync()` method to establish a connection with the server.
 
 ## URIs
 
@@ -73,9 +70,7 @@ Where the port number points to the TCP port of the Event Store instance (1113 b
 With the URI based mechanism you can pass a domain name and the client will resolve it.
 
 > [!NOTE]
-> 
-The client performs a blocking DNS call for single node. If you are worried about blocking DNS due to network issues etc., you should resolve the DNS yourself and pass in an IP address.
-
+> The client performs a blocking DNS call for single node. If you are worried about blocking DNS due to network issues etc., you should resolve the DNS yourself and pass in an IP address.
 
 ## Customising Connection Settings
 
@@ -86,6 +81,7 @@ Many of the overloads accept a connection string that you can use to control set
 The connection string format should look familiar to those who have used connection strings in the past. It consists of a series of key/value pairs Key = Value separated by semicolons.
 
 You can set the following values using the connection string.
+
 <!-- TODO: Moved, to check and what about ConnectTo? -->
 
 <table>
@@ -211,9 +207,7 @@ You can set the following values using the connection string.
 </table>
 
 > [!NOTE]
-> 
-You can also use spacing instead of camel casing in your connection string if you prefer.
-
+> You can also use spacing instead of camel casing in your connection string if you prefer.
 
 ```csharp
 var connectionString = "ConnectTo=tcp://admin:changeit@localhost:1113; HeartBeatTimeout=500"
@@ -240,14 +234,10 @@ var connectionString = "GossipSeeds=192.168.0.2:1111,192.168.0.3:1111; HeartBeat
 Tells the connection to try gossiping to the gossip seeds `192.168.0.2` or `192.168.0.3` on port 1111 to discover information about the cluster.
 
 > [!NOTE]
-> 
-See the fluent API below for defaults of values.
-
-
+> See the fluent API below for defaults of values.
+>
 > [!NOTE]
-> 
-You can also use the `ConnectionString` class to return a `ConnectionSettings` object.
-
+> You can also use the `ConnectionString` class to return a `ConnectionSettings` object.
 
 ### Fluent API
 
@@ -266,6 +256,7 @@ This will create an instance of `ConnectionSettings` with the default options. T
 The .NET API can log information to different destinations. By default logging is not enabled.
 
 <!-- TODO: Moved, to check. Actually missing options. -->
+
 <table>
     <thead>
         <tr>
@@ -295,7 +286,7 @@ The .NET API can log information to different destinations. By default logging i
 
 ### User Credentials
 
-Event Store supports [Access Control Lists](server/access-control-lists/) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set some default credentials for all operations on the connection.
+Event Store supports [Access Control Lists](~/server/access-control-lists.md) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to simply set some default credentials for all operations on the connection.
 
 <!-- TODO: Moved, to check. -->
 
@@ -324,7 +315,7 @@ UserCredentials credentials = new UserCredentials("username","password");
 
 The .NET API and Event Store can communicate either over SSL or an unencrypted channel (by default).
 
-To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](http-api/setting-up-ssl-windows/).
+To configure the client-side of the SSL connection, use the builder method below. For more information on setting up the server end of the Event Store for SSL, see [SSL Setup](~/server/setting_up_ssl.md).
 
 <table>
     <thead>
@@ -348,9 +339,8 @@ To configure the client-side of the SSL connection, use the builder method below
     </tbody>
 </table>
 
-<span class="note--warning">
-In production systems where credentials are sent from the client to Event Store, you should always use SSL-encryption and you should set `validateServer` to `true`.
-
+> [!WARNING]
+> In production systems where credentials are sent from the client to Event Store, you should always use SSL-encryption and you should set `validateServer` to `true`.
 
 ### Node Preference
 
@@ -501,10 +491,7 @@ Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
 </table>
 
 > [!NOTE]
-> 
-If you are using the commercial edition of Event Store HA with Manager nodes in place, the gossip port should be the port number of the external HTTP port on which the managers are running.<br><br>
-If you are using the open source edition of Event Store HA the gossip port should be the External HTTP port that the nodes are running on. If you cannot use a well-known port for this across all nodes you can instead use gossip seed discovery and set the `IPEndPoint` of some seed nodes instead.
-
+> If you are using the commercial edition of Event Store HA with Manager nodes in place, the gossip port should be the port number of the external HTTP port on which the managers are running. If you are using the open source edition of Event Store HA the gossip port should be the External HTTP port that the nodes are running on. If you cannot use a well-known port for this across all nodes you can instead use gossip seed discovery and set the `IPEndPoint` of some seed nodes instead.
 
 ### Connecting Using Gossip Seeds
 

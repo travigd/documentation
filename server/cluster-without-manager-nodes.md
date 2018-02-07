@@ -5,11 +5,9 @@ version: "4.0.2"
 
 # Setting up a Cluster using only Database Nodes (OSS)
 
-Effective September of 2013 <!-- TODO: A version might be better, remove date reference or reference completely --> all the clustering code for Event Store has been open sourced (under the normal BSD-3 license as the rest of the code). This document will look at how you can setup a highly available cluster using the open source components.
+The clustering code for Event Store is open source under the BSD-3 license as the rest of the code. This guide will look at how you can setup a highly available cluster using the open source components.
 
-<!-- TODO: I think there's a much better way of saying all this -->
-
-When setting up a cluster, you will generally want an odd number of nodes ads Event Store uses a quorum based algorithm to handle high availability.
+When setting up a cluster, you generally want an odd number of nodes as Event Store uses a quorum based algorithm to handle high availability.
 
 ## Running on the Same Machine
 

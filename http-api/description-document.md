@@ -1,32 +1,35 @@
 ---
-title: "Description Document"
 section: "HTTP API"
 version: "4.0.2"
 ---
-
+# Description Document
 ## What is it?
 
-With the addition of [Competing Consumers]({{site.baseurl}}/introduction/competing-consumers) which is essentially another way of reading streams, the need arose to expose these different methods to consumers.
+With the addition of [Competing Consumers](~/introduction/competing-consumers.md) which is essentially another way of reading streams, the need arose to expose these different methods to consumers.
 
 The introduction of the description document has some benefits
 
-- Clients can rely on the keys (streams, streamSubscription) in the description document to remain unchanged across versions of Event Store and can be relied on as a lookup for the particular method of reading a stream.
-- Allows the restructuring of URIs underneath without breaking clients. e.g. `/streams/newstream` -> `/streams/newstream/atom`
+-   Clients can rely on the keys (streams, streamSubscription) in the description document to remain unchanged across versions of Event Store and can be relied on as a lookup for the particular method of reading a stream.
+-   Allows the restructuring of URIs underneath without breaking clients. e.g. `/streams/newstream` -> `/streams/newstream/atom`
 
 ## How do I get the description document?
 
 There are 3 ways in which the description document will be returned.
 
-- Attempting to read a stream with an unsupported media type.
-- Attempting to read a stream with no accept header.
-- Requesting the description document explicitly.
+-   Attempting to read a stream with an unsupported media type.
+-   Attempting to read a stream with no accept header.
+-   Requesting the description document explicitly.
 
 The client is able to request the description document by passing `application/vnd.eventstore.streamdesc+json` in the `accept` header
 e.g.
 
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i http://localhost:2113/streams/newstream -H "accept:application/vnd.eventstore.streamdesc+json"
 ```
+
+### [Response](#tab/tabid-2)
 
 ```bash
 HTTP/1.1 200 Description Document
@@ -74,8 +77,10 @@ Keep-Alive: timeout=15,max=100
       }
     ]
   }
-}%
+}
 ```
+
+* * *
 
 In the example above, the client has requested the description document for the stream called `newstream` which has a set of links which describes the supported methods and content types for reading.
 

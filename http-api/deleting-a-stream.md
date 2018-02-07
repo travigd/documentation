@@ -2,66 +2,13 @@
 title: "Deleting a Stream"
 section: "HTTP API"
 version: "4.0.2"
+uid: eventstore.org/Event Store HTTP API/4.0.2/deleteStream
 ---
 
 To delete a stream over the Atom interface, issue a `DELETE` request to the resource.
 
 > [!NOTE]
->
-The documentation here applies to versions after 2.0.1. Prior to 2.0.1 only hard deletes were available and the system uses that behavior.
-
-
-## Example
-
-Create a stream with the following request:
-
-### [Request](#tab/tabid-1)
-
-```bash
-curl -i -d @event.txt http://127.0.0.1:2113/streams/foo -H "Content-Type: application/json"
-```
-
-### [Response](#tab/tabid-2)
-
-```http
-HTTP/1.1 201 Created
-Content-Length: 0
-Content-Type: text/plain; charset=utf-8
-Location: http://127.0.0.1:2113/streams/foo/0
-Server: Microsoft-HTTPAPI/2.0
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location
-Date: Thu, 13 Mar 2014 20:39:12 GMT
-```
-
-***
-
-Then delete the stream with a `DELETE` request to the stream resource:
-
-### [Request](#tab/tabid-1)
-
-```bash
-curl -v -X DELETE http://127.0.0.1:2113/streams/foo
-```
-
-### [Response](#tab/tabid-2)
-
-```http
-HTTP/1.1 204 Stream deleted
-Content-Length: 0
-Content-Type: text/plain; charset=utf-8
-Server: Microsoft-HTTPAPI/2.0
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location
-Date: Thu, 13 Mar 2014 20:40:05 GMT
-```
-
-***
-
+> The documentation here applies to versions after 2.0.1. Prior to 2.0.1 only hard deletes were available and the system uses that behavior.
 
 By default when you delete a stream it is soft deleted. This means you can recreate it later if you want to by setting the `$tb` metadata section as the client API does <!-- TODO: Link? -->. If you try to `GET` a soft deleted stream you will receive a 404 response:
 
@@ -85,8 +32,7 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:47:18 GMT
 ```
 
-***
-
+* * *
 
 If desired, you can recreate the stream by appending new events to it (like creating a new stream):
 
@@ -111,18 +57,17 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:49:30 GMT
 ```
 
-***
-
+* * *
 
 If you `GET` a stream that has been soft deleted and then recreated you will notice that the version numbers do not start at zero but at where you soft deleted the stream from:
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-3)
 
 ```bash
 curl -i http://127.0.0.1:2113/streams/foo
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-4)
 
 ```http
 HTTP/1.1 200 OK
@@ -188,25 +133,24 @@ Date: Thu, 13 Mar 2014 20:49:34 GMT
     }
   ]
 }
+```
 
-    </div>
-    </div>
+* * *
 
-    So far we have looked at soft deletes. You can also execute hard deletes on a stream. To issue a permanent delete use the `ES-HardDelete` header.
+So far we have looked at soft deletes. You can also execute hard deletes on a stream. To issue a permanent delete use the `ES-HardDelete` header.
 
-    <span class="note--warning">
-    A hard delete is permanent and the stream is not removed during a scavenge. If you hard delete a stream, the stream can never be recreated.
-    
+> [!WARNING]
+> A hard delete is permanent and the stream is not removed during a scavenge. If you hard delete a stream, the stream can never be recreated.
 
-    Create a stream with the following request:
+Create a stream with the following request:
 
-    <div class="codetabs" markdown="1">
-    <div data-lang="request" markdown="1">
-    ```bash
-    curl -i -d @event.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
+### [Request](#tab/tabid-5)
 
+```bash
+curl -i -d @event.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
+```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-6)
 
 ```http
 HTTP/1.1 201 Created
@@ -221,18 +165,17 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:54:24 GMT
 ```
 
-***
-
+* * *
 
 Then issue the `DELETE` as before but with the permanent delete header:
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-7)
 
 ```bash
 curl -v -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete:true"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-8)
 
 ```http
 HTTP/1.1 204 Stream deleted
@@ -246,18 +189,17 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:56:55 GMT
 ```
 
-***
-
+* * *
 
 This stream is now permanently deleted, and unlike before where you received a '404' response, the response will now be a '410 GONE'.
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-9)
 
 ```bash
 curl -i http://127.0.0.1:2113/streams/foo2
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-10)
 
 ```http
 HTTP/1.1 410 Deleted
@@ -271,18 +213,17 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 20:57:01 GMT
 ```
 
-***
-
+* * *
 
 If you try to recreate the stream as in the above example you will also receive a '410 GONE' response.
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-11)
 
 ```bash
 curl -i -d @event.txt http://127.0.0.1:2113/streams/foo2 -H "Content-Type:application/json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-12)
 
 ```http
 HTTP/1.1 410 Stream deleted
@@ -296,18 +237,17 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 21:00:00 GMT
 ```
 
-***
-
+* * *
 
 The same applies if you try to delete an already deleted stream. You will receive a '410 GONE' response.
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-13)
 
 ```bash
 curl -i -X DELETE http://127.0.0.1:2113/streams/foo2 -H "ES-HardDelete: true"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-14)
 
 ```http
 HTTP/1.1 410 Stream deleted
@@ -321,4 +261,4 @@ Access-Control-Expose-Headers: Location
 Date: Thu, 13 Mar 2014 21:19:33 GMT
 ```
 
-***
+* * *

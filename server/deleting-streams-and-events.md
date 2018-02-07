@@ -7,7 +7,7 @@ version: "4.0.2"
 
 Meta data in Event Store defines whether an event is deleted or not. Stream metadata such as "Truncate Before", "Max Age" and "Max Count" is used to filter out events considered deleted. When reading a stream, the index will check the stream's metadata to determine whether any of its events have been deleted.
 
-`$all` bypasses the index, meaning that it does not check the metadata to determine whether events exist or not. As such, events that have been deleted will still be readable until a scavenge has removed them. Note that there are a number of requirements for a scavenge to successfully remove events, for more information about this, please see the section on [Scavenging]({{site.baseurl}}/scavenging/).
+`$all` bypasses the index, meaning that it does not check the metadata to determine whether events exist or not. As such, events that have been deleted will still be readable until a scavenge has removed them. There are a number of requirements for a scavenge to successfully remove events, for more information about this, please see the section on [Scavenging](scavenging.md).
 
 > [!WARNING]
 > The last event in a stream is always kept as a record of the last event number in the stream.
@@ -33,8 +33,7 @@ If you set the truncate before value to 2, a read of the stream would result in 
 **Soft delete** makes use of Truncate before. When a stream is deleted, its Truncate before is set to the streams current last event number. When a soft deleted stream is read, the read will return a `StreamNotFound` or `404` result.
 After deleting the stream, you are able to write to it again, continuing from where it left off.
 
-For example, if you soft deleted the above example stream, the truncate before would be set to 3 (the stream's current event number.)
-If you were to write to the stream again, the next event would be written with event number 4. Only events from event number 4 onwards would be visible when reading this stream.
+For example, if you soft deleted the above example stream, the truncate before would be set to 3 (the stream's current event number). If you were to write to the stream again, the next event would be written with event number 4. Only events from event number 4 onwards would be visible when reading this stream.
 
 ### Max count and Max age
 

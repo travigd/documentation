@@ -1,18 +1,16 @@
 ---
-title: Competing Consumers
 section: HTTP API
 version: 4.0.2
 ---
-
-This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see the [overview document]({{site.baseurl}}/introduction/competing-consumers).
+# Competing Consumers
+This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see the [overview document](~/introduction/competing-consumers.md).
 
 > [!NOTE]
->
-The Administration UI includes a <em>Competing Consumers</em> section where a user is able to create, update, delete and view subscriptions and their statuses.
+> The Administration UI includes a <em>Competing Consumers</em> section where a user is able to create, update, delete and view subscriptions and their statuses.
 
 ## Creating a Persistent Subscription
 
-Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions]({{site.baseurl}}/server/access-control-lists).
+Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](~/server/access-control-lists.md).
 
 | URI                                           | Supported Content Types | Method |
 | --------------------------------------------- | ----------------------- | ------ |
@@ -145,7 +143,6 @@ For example:
 | `subscription_name` | The name of the subscription group.              |
 | `messageid`         | The id of the message that needs to be acked     |
 
-<!-- TODO: Has this been explained? -->
 
 ### Nack multiple messages
 

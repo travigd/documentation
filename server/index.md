@@ -11,7 +11,7 @@ The [open source version of Event Store](https://geteventstore.com/downloads) is
 ## Running the Open Source version
 
 > [!WARNING]
-> Unless passed a database option, Event Store will write to a new database created in the system’s temporary files path each time it is started. For more information on Command Line Arguments read [this guide]({{site.baseurl}}/command-line-arguments).
+> Unless passed a database option, Event Store will write to a new database created in the system’s temporary files path each time it is started. For more information on Command Line Arguments read [this guide](command-line-arguments.md).
 
 ### On Windows and .NET
 

@@ -1,9 +1,8 @@
 ---
-title: "Stream Metadata"
 section: ".NET API"
 version: "4.0.2"
 ---
-
+# Stream Metadata
 Every stream in Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API.
 
 A common use of this information is to store associated details about an event that is not part of the event. Examples of these are:
@@ -134,7 +133,7 @@ This will return a `RawStreamMetadataResult`. The fields on this result are:
         </tr>
         <tr>
             <td><code>int MetastreamVersion</code></td>
-            <td>The version of the metastream (see <a href="../optimistic-concurrency-and-idempotence">Expected Version</a>)</td>
+            <td>The version of the metastream (see <a href="optimistic-concurrency-and-idempotence.md">Expected Version</a>)</td>
         </tr>
         <tr>
             <td><code>byte[] Metadata</code></td>
@@ -144,13 +143,12 @@ This will return a `RawStreamMetadataResult`. The fields on this result are:
 </table>
 
 > [!NOTE]
-> 
-If you have security enables, reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
+> If you have security enables, reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
 
 
 ## Writing Metadata
 
-You can write metadata in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms support an `expectedVersion` which works the same as on any stream and you can use to control concurrency, read [Expected Version](./optimistic-concurrency-and-idempotence) for further details.
+You can write metadata in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms support an `expectedVersion` which works the same as on any stream and you can use to control concurrency, read [Expected Version](optimistic-concurrency-and-idempotence.md) for further details.
 
 ```csharp
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
@@ -219,9 +217,8 @@ You can add user-specified metadata via the `SetCustomMetadata` overloads. Some 
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
 ```
 
-This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes however the server only understands JSON. Read [Access Control Lists](server/access-control-lists) for more information on the format in JSON for access control lists.
+This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes however the server only understands JSON. Read [Access Control Lists](~/server/access-control-lists.md) for more information on the format in JSON for access control lists.
 
 > [!NOTE]
-> 
-Writing metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
+> Writing metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
 

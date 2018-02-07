@@ -94,27 +94,27 @@
 
 ## [Overview](/docs/http-api)
 
-## [Competing Consumers](/docs/http-api/competing-consumers.html)
+## [Security](http-api/security.md)
 
-## [Creating a Stream](/docs/http-api/creating-a-stream.html)
+## [Creating a Stream](http-api/creating-a-stream.md)
 
-## [Deleting a Stream](/docs/http-api/deleting-a-stream.html)
+## [Writing to a Stream](http-api/writing-to-a-stream.md)
 
-## [Description Document](/docs/http-api/description-document.html)
+## [Reading Streams and Events](http-api/reading-streams.md)
 
-## [Errors](/docs/http-api/errors.html)
+## [Deleting a Stream](http-api/deleting-a-stream.md)
 
-## [Optimistic Concurrency & Idempotence](/docs/http-api/optimistic-concurrency-and-idempotence.html)
+## [Competing Consumers](http-api/competing-consumers.md)
 
-## [Optional HTTP Headers](/docs/http-api/optional-http-headers.html)
+## [Description Document](http-api/description-document.md)
 
-## [Reading Streams and Events](/docs/http-api/reading-streams.html)
+## [Optimistic Concurrency & Idempotence](http-api/optimistic-concurrency-and-idempotence.md)
 
-## [Security](/docs/http-api/security.html)
+## [Stream Metadata](http-api/stream-metadata.md)
 
-## [Stream Metadata](/docs/http-api/stream-metadata.html)
+## [Optional HTTP Headers](http-api/optional-http-headers.md)
 
-## [Writing to a Stream](/docs/http-api/writing-to-a-stream.html)
+## [Errors](http-api/errors.md)
 
 # Projections
 

@@ -5,13 +5,11 @@ version: "4.0.2"
 ---
 
 ## EmbeddedVNodeBuilder
-<!-- TODO: MOved in part, to check -->
+
 The `EmbeddedVNodeBuilder` class sets up and builds an Event Store node. You can configure your node through methods provided by the `EmbeddedVNodeBuilder` class.
 
 > [!NOTE]
-> 
-The builder used for the `EmbeddedVNodeBuilder` is the same as the Event Store uses internally to create the `ClusterNode`, so check `EventStore.ClusterNode.Program.cs` for more examples of how to use it.
-
+> The builder used for the `EmbeddedVNodeBuilder` is the same as the Event Store uses internally to create the `ClusterNode`, so check `EventStore.ClusterNode.Program.cs` for more examples of how to use it.
 
 ## Building a node
 
@@ -51,9 +49,8 @@ var node = nodeBuilder.Build();
 node.Start();
 ```
 
-<span class="note--warning">
-When running an embedded cluster, the task returned by `StartAndWaitUntilReady()` will only complete on the master node.
-
+> [!WARNING]
+> When running an embedded cluster, the task returned by `StartAndWaitUntilReady()` will only complete on the master node.
 
 ## Connecting to an embedded node
 

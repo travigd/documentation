@@ -32,18 +32,17 @@ Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 <!-- TODO: What's this? -->
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-3)
 
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream444"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-4)
 
 ```http
 HTTP/1.1 201 Created
@@ -57,25 +56,22 @@ Content-Length: 107
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 Assuming you were posting to a new stream you would get the event written once (and the stream created). The second event will return as the first but not write again.
 
 > [!NOTE]
->
-This allows the client rule of “if you get an unknown condition, retry” to work.
-
+> This allows the client rule of “if you get an unknown condition, retry” to work.
 
 For example:
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-5)
 
 ```bash
 curl -i "http://127.0.0.1:2113/streams/newstream444"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-6)
 
 ```http
 HTTP/1.1 200 OK
@@ -167,4 +163,4 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-***
+* * *

@@ -1,8 +1,7 @@
 ---
-section: "Introduction"
 version: "4.0.2"
 ---
-
+# Introduction
 # Which API to Use?
 
 There are multiple interfaces over which you can communicate with Event Store. This document describes them briefly and with the aim of helping you choose which one suits your use case.
@@ -36,7 +35,7 @@ The other interface is HTTP-based, more specifically based upon the [AtomPub pro
 
 ### Supported Clients
 
--   [HTTP API]({{site.baseurl}}/http-api)
+-   [HTTP API](~/http-api/index.md)
 
 ### Community Developed Clients
 

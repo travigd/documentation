@@ -32,7 +32,7 @@ Then with an administrator console run the following command:
 EventStore.ClusterNode.exe --db ./db --log ./logs
 ```
 
-This will start Event Store with the database stored at the path _./db_ and the logs in _./logs_. You can view further command line arguments in the [server docs]({{site.baseurl}}/server).
+This will start Event Store with the database stored at the path _./db_ and the logs in _./logs_. You can view further command line arguments in the [server docs](~/server/index.md).
 
 Event Store is running in an admin context because it will start a HTTP server through `http.sys`. For permanent or production instances you will need to provide an ACL such as:
 
@@ -96,13 +96,13 @@ To begin, open a text editor, copy and paste the following event definition, and
 
 To write the event to a stream, issue the following cURL command.
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-4)
 
 ```shell
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-5)
 
 ```http
 HTTP/1.1 201 Created
@@ -124,19 +124,19 @@ Keep-Alive: timeout=15,max=100
 
 Open the UI after this command to the _Stream Browser_ tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.
 
-You can also setup [Access Control Lists]({{site.baseurl}}/server/access-control-lists) on your streams by changing the metadata of the stream.
+You can also setup [Access Control Lists](~/server/access-control-lists.md) on your streams by changing the metadata of the stream.
 
 ## Reading From a Stream
 
 Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc4287), and you can read data from the stream by navigating to the _head_ URI of the stream <http://127.0.0.1:2113/streams/newstream> with cURL.
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-6)
 
 ```shell
 curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-7)
 
 ```http
 HTTP/1.1 200 OK
@@ -216,13 +216,13 @@ Keep-Alive: timeout=15,max=100
 
 The feed has a single item inside of it, the one you just posted. You can then get the event by issuing a `GET` to the `alternate` URI value.
 
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-8)
 
 ```shell
 curl -i http://127.0.0.1:2113/streams/newstream/0 -H "Accept: application/json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-9)
 
 ```http
 HTTP/1.1 200 OK
@@ -249,7 +249,7 @@ Keep-Alive: timeout=15,max=100
 
 To read a single page feed, you request the feed and then iterate through the event links by executing `GET` requests. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable.
 
-You can also `GET` the events in the feed itself if by using `?embed=body` in the request. You can find further information on this [here]({{site.baseurl}}/http-api/reading-streams).
+You can also `GET` the events in the feed itself if by using `?embed=body` in the request. You can find further information on this [here](~/http-api/reading-streams.md).
 
 Sometimes your feed may span more than one atom page, and you will need to paginate through the feed. You do this by following the relation links in the feed. To read a feed from the beginning to the end you would go to the _last_ link and then continue to read the _previous_ page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using _first_ then _next_.
 
@@ -261,7 +261,7 @@ Another common operation is to listen to a stream for changes. This works the sa
 
 <!-- TODO: Test the below and how do you set them up? -->
 
-### [C#](#tab/tabid-1)
+### [C#](#tab/tabid-10)
 
 ```csharp
 using System;
@@ -395,7 +395,7 @@ namespace AtomPoller
 }
 ```
 
-### [JavaScript](#tab/tabid-2)
+### [JavaScript](#tab/tabid-11)
 
 ```javascript
     if (!window.es) { window.es = {}; };

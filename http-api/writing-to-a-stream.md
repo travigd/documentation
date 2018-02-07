@@ -2,6 +2,7 @@
 title: Writing to a Stream
 section: HTTP API
 version: 4.0.2
+uid: eventstore.org/Event Store HTTP API/4.0.2/createStream
 ---
 
 You write to a stream over HTTP using a `POST` request to the resource of the stream. If the stream does not exist then the stream will be implicitly created.
@@ -9,20 +10,22 @@ You write to a stream over HTTP using a `POST` request to the resource of the st
 ## Single Event
 
 > [!NOTE]
->
-Writing a single event has changed from Event Store 2.X.X to Event Store 3.X.X.
-In Event Store 3.X.X a post of <code>application/json</code> assumes the post data to be the actual event.
-When you need to write multiple events, use <code>application/vnd.eventstore.events+json</code> instead.
+> Writing a single event has changed from Event Store 2.X.X to Event Store 3.X.X.
+> In Event Store 3.X.X a post of `application/json` assumes the post data to be the actual event.
+> When you need to write multiple events, use `application/vnd.eventstore.events+json` instead.
 
-
-You can write an event to a stream using any client that supports HTTP. To write an event `POST` it to the head URI of the stream:
+Issuing a `POST` request with the data below to a stream, with the correct content type set, will result in writing the event to the stream, and a `201` response from the server, giving you the location of the event.
 
 In a file named _myevent.txt_
 
 ```json
-{
-  "something" : "has data"
-}
+[
+  {
+    "eventId": "fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4",
+    "eventType": "event-type",
+    "data": { "a": "1" }
+  }
+]
 ```
 
 `POST` the following request:
@@ -30,7 +33,7 @@ In a file named _myevent.txt_
 ### [Request](#tab/tabid-1)
 
 ```bash
-curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E"
+curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent"
 ```
 
 ### [Response](#tab/tabid-2)
@@ -38,19 +41,18 @@ curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Ty
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Location, ES-Position
-Location: http://127.0.0.1:2113/streams/newstream/1
+Location: http://127.0.0.1:2113/streams/newstream2/0
 Content-Type: text/plain; charset=utf-8
 Server: Mono-HTTPAPI/1.0
-Date: Mon, 21 Apr 2014 20:59:22 GMT
+Date: Thu, 29 Jan 2015 14:28:05 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 The event will be available in the stream. Some clients may not be able to generate a GUID (or may not want to generate a GUID) for the ID. You need this ID for idempotence purposes but the server can generate it for you. If we were to leave off the `ES-EventId` header you would see different behavior:
 
@@ -76,8 +78,7 @@ Content-Length: 28
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 In this case Event Store has responded with a `301 redirect`. The location points to another URI that you can post the event to. This new URI will be idempotent for posting to even without an event ID.
 
@@ -103,8 +104,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 It is generally recommended to include an event ID if possible as it will result in fewer round trips between the client and the server.
 
@@ -131,8 +131,7 @@ Content-Length: 0
 Connection: close
 ```
 
-***
-
+* * *
 
 ## Event Store Events Media Type
 
@@ -188,8 +187,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 ### Appending Events
 
@@ -218,8 +216,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 ### Data only events
 
@@ -247,8 +244,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 ## Expected Version
 
@@ -256,8 +252,7 @@ The expected version header is a number representing the version of the stream y
 
 > [!NOTE]
 >
-See the idempotency section below, if you post the same event twice it will be idempotent and will not give a version error.
-
+> See the idempotency section below, if you post the same event twice it will be idempotent and will not give a version error.
 
 ### [Request](#tab/tabid-1)
 
@@ -279,8 +274,7 @@ Content-Length: 0
 Connection: close
 ```
 
-***
-
+* * *
 
 There are some special values you can put into the expected version header.
 
@@ -342,12 +336,11 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 This is important behaviour as this is how you implement error handling. If you receive a timeout, broken connection, no answer, etc from your HTTP `POST` then it's your responsibility is to retry the post. You must also keep the same `uuid` that you assigned to the event in the first `POST`.
 
-If you are using the expected version parameter with your message, then Event Store is 100% idempotent. If you use `Any` as your expected version value, Event Store will do its best to keep events idempotent but cannot assure that everything is fully idempotent and you will end up in 'at-least-once' messaging. [Read this guide](http-api/optimistic-concurrency-and-idempotence) for more details on idempotency.
+If you are using the expected version parameter with your message, then Event Store is 100% idempotent. If you use `Any` as your expected version value, Event Store will do its best to keep events idempotent but cannot assure that everything is fully idempotent and you will end up in 'at-least-once' messaging. [Read this guide](~/http-api/optimistic-concurrency-and-idempotence.md) for more details on idempotency.
 
 This idempotency also applies to the URIs generated by the server if you post a body as an event without the `ES-EventId` header associated with the request:
 
@@ -373,8 +366,7 @@ Content-Length: 28
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 You can then post multiple times to the generated redirect URI and Event Store will make the requests will idempotent for you:
 
@@ -400,8 +392,7 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 If you retry the post:
 
@@ -427,4 +418,4 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
+* * *

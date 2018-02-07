@@ -174,7 +174,7 @@ curl -i -d @"shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json" "http://127
 
 ## Writing your first projection
 
-Finally you can get to writing the projection itself, you can find the user defined projection's API [here](../user-defined-projections).
+Finally you can get to writing the projection itself, you can find the user defined projection's API [here](user-defined-projections.md).
 
 Start with a simple projection that will count the number of XBox One Ss that customers added to their shopping carts.
 
@@ -206,7 +206,7 @@ fromAll()
 
 You can create the projection by calling to the API and providing it with the definition of the projection. Here you make a decision on how to run the projection. You are declaring that you want the projection to start from the beginning and keep running into the future.
 
-You can find more information about how to interact with projections in the [API section](../api).
+You can find more information about how to interact with projections in the [API section](api.md).
 
 ```bash
 curl -i --data-binary "@xbox-one-s-counter.json" http://localhost:2113/projections/continuous?name=xbox-one-s-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit

@@ -69,7 +69,7 @@ These are the problems that led to the separation of the concepts of Commands an
 
 -   [DDD CQRS Video](https://www.youtube.com/watch?v=whCk1Q87_ZI)
 -   [Event Sourcing](http://martinfowler.com/eaaDev/EventSourcing.html)
--   [Getting Started]({{site.baseurl}}/introduction)
+-   [Getting Started](~/introduction/index.md)
 
 [1]: ../img/structural-model.png "A simplified structural model of an order"
 

@@ -1,10 +1,8 @@
 ---
-title: "Optimistic Concurrency & Idempotence"
 section: ".NET API"
 version: "4.0.2"
 ---
-<!-- TODO: Re-review -->
-
+# Optimistic Concurrency & Idempotence
 
 Writing supports an optimistic concurrency check on the version of the stream to which events are written. The method of specifying what the expected version is depends whether you are making writes using the HTTP or .NET API.
 

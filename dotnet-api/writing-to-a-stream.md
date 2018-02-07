@@ -1,12 +1,11 @@
 ---
-title: "Writing to a Stream"
 section: ".NET API"
 version: "4.0.2"
 ---
-
+# Writing to a Stream
 You can use the client API to write one or more events to a stream atomically. You do this by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
 
-You can make an optimistic concurrency check during the write by specifying the version at which the stream is expected to be. Identical write operations are idempotent if the optimistic concurrency check is not disabled. You can find more information on optimistic concurrency and idempotence [here]({{site.baseurl}}/dotnet-api/optimistic-concurrency-and-idempotence).
+You can make an optimistic concurrency check during the write by specifying the version at which the stream is expected to be. Identical write operations are idempotent if the optimistic concurrency check is not disabled. You can find more information on optimistic concurrency and idempotence [here](optimistic-concurrency-and-idempotence.md).
 
 ## Methods
 
@@ -115,7 +114,7 @@ The parameters are:
         </tr>
         <tr>
             <td><code>long expectedVersion</code></td>
-            <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See <a href="../optimistic-concurrency-and-idempotence">here</a> for a broader discussion of this.</td>
+            <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See <a href="optimistic-concurrency-and-idempotence.md">here</a> for a broader discussion of this.</td>
         </tr>
         <tr>
             <td><code>IEnumerable&lt;EventData&gt; events</code></td>

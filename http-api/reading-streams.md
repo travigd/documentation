@@ -2,32 +2,12 @@
 title: "Reading Streams and Events"
 section: "HTTP API"
 version: "4.0.2"
+uid: eventstore.org/Event Store HTTP API/4.0.2/readStream
 ---
 
-Reading from streams with AtomPub can be confusing the first time, but Event Store is compliant with the [Atom 1.0 Specification](http://tools.ietf.org/html/rfc4287) and so many environments have already implemented the AtomPub protocol, and that simplifies the process.
-
-## Existing Implementations
-
-| Library     | Description                                                       |
-| ----------- | ----------------------------------------------------------------- |
-| NET (BCL)   | `System.ServiceModel.SyndicationServices`                         |
-| JVM         | <http://java-source.net/open-source/rss-rdf-tools>                |
-| PHP         | <http://simplepie.org/> or <https://github.com/fguillot/picoFeed> |
-| Ruby        | <http://simple-rss.rubyforge.org>                                 |
-| Clojure     | <https://github.com/scsibug/feedparser-clj>                       |
-| Go          | <https://github.com/jteeuwen/go-pkg-rss>                          |
-| Python      | <http://code.google.com/p/feedparser/>                            |
-| node.js     | <https://github.com/danmactough/node-feedparser>                  |
-| Objective-C | <https://geekli.st/darvin/repos/MWFeedParser>                     |
-
-<span class="note--warning">
-The above list are not officially supported by Event Store, if you know of any others [then please let us know](https://geteventstore.com/contact/).
-
-
-## Reading a Stream
+## Reading a stream
 
 Event Store exposes streams as a resource located at _http(s)://{yourdomain.com}:{port}/streams/{stream}_. If you issue a simple `GET` request to this resource you will receive a standard AtomFeed document as a response.
-
 
 ### [Request](#tab/tabid-1)
 
@@ -81,7 +61,7 @@ Keep-Alive: timeout=15,max=100
       "relation": "metadata"
     }
   ],
-  "entries": \[
+  "entries": [
     {
       "title": "1@newstream",
       "id": "<http://127.0.0.1:2113/streams/newstream/1">,
@@ -124,8 +104,9 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-***
+* * *
 
+## Reading an event from a stream
 
 There some important aspects to notice here. The feed has one item in it, if there are more than one, then items are sorted from newest to oldest.
 
@@ -140,47 +121,69 @@ The accepted content types for GET requests are:
 -   `text/xml`
 -   `text/html`
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-3)
 
 ```bash
 curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-4)
 
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-Forwarded-Prefix, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
 Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position, ES-CurrentVersion
+Access-Control-Expose-Headers: Location, ES-Position
 Cache-Control: max-age=31536000, public
 Vary: Accept
-Content-Type: application/json; charset=utf-8
+Content-Type: application/vnd.eventstore.atom+json; charset=utf-8
 Server: Mono-HTTPAPI/1.0
-Date: Thu, 09 Nov 2017 13:31:02 GMT
-Content-Length: 29
+Date: Thu, 29 Jan 2015 15:45:45 GMT
+Content-Length: 572
 Keep-Alive: timeout=15,max=100
 
 {
-"something": "has data"
+  "title": "1@newstream",
+  "id": "http://127.0.0.1:2113/streams/newstream/1",
+  "updated": "2017-11-09T13:10:16.111657Z",
+  "author": {
+    "name": "EventStore"
+  },
+  "summary": "event-type",
+  "content": {
+    "eventStreamId": "newstream",
+    "eventNumber": 0,
+    "eventType": "event-type",
+    "data": {
+      "a": "1"
+    },
+    "metadata": ""
+  },
+  "links": [
+    {
+      "uri": "http://127.0.0.1:2113/streams/newstream/0",
+      "relation": "edit"
+    },
+    {
+      "uri": "http://127.0.0.1:2113/streams/newstream/0",
+      "relation": "alternate"
+    }
+  ]
 }
 ```
 
-***
-
+* * *
 
 The atom version of the event contains extra details about the event.
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-5)
 
 ```bash
 curl -i http://127.0.0.1:2113/streams/newstream/1 -H "Accept: application/vnd.eventstore.atom+json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-6)
 
 ```http
 HTTP/1.1 200 OK
@@ -227,8 +230,7 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-***
-
+* * *
 
 ## Feed Paging
 
@@ -261,14 +263,13 @@ This shows that there is not a `next` URL (all the information is in this reques
 
 If you want to follow a live stream then you would keep following the `previous` links. When you reach the end of a stream you will receive an empty document with no entries or `previous` link. You then continue polling this URI (in the future a document will appear here). You can see this by trying the `previous` link from the above feed.
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-7)
 
 ```bash
 curl -i http://127.0.0.1:2113/streams/newstream/1/forward/20 -H "Accept:application/vnd.eventstore.atom+json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-8)
 
 ```http
 HTTP/1.1 200 OK
@@ -320,8 +321,7 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-***
-
+* * *
 
 When parsing an atom subscription the IDs of events will always stay the same. This is important for figuring out if you are referring to the same event.
 
@@ -331,14 +331,13 @@ Let’s now try an example with more than a single page. You can use the testcli
 
 Opening the link _<http://127.0.0.1:2113/streams/account-28>_ will return:
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-9)
 
 ```powershell
 curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-10)
 
 ```http
 HTTP/1.1 200 OK
@@ -395,21 +394,19 @@ Keep-Alive: timeout=15,max=100
   "entries": <SNIP>
 ```
 
-***
-
+* * *
 
 Using the links in this response you can traverse through all the events in the stream by going to the `last` URL and walking "previous" or by walking "next" from the “first” link.
 
 If you go to the “last” link you will receive:
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-11)
 
 ```powershell
 curl -i http://127.0.0.1:2113/streams/account-28/0/forward/20 -H "Accept:application/vnd.eventstore.atom+json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-12)
 
 ```http
 HTTP/1.1 200 OK
@@ -456,38 +453,30 @@ Keep-Alive: timeout=15,max=100
   <SNIP>
 ```
 
-***
-
+* * *
 
 You then follow its "previous" link until you got back to the head of the document. This is the general way of reading back a stream. Once at the end you can continue reading events as they happen by polling the previous link and you will get events in near real time as they happen.
 
 > [!NOTE]
->
-All links except the head link are fully cachable as seen in the HTTP header `Cache-Control: max-age=31536000, public`. This is important when discussing intermediaries and performance as you commonly replay a stream from storage.
-
+> All links except the head link are fully cachable as seen in the HTTP header `Cache-Control: max-age=31536000, public`. This is important when discussing intermediaries and performance as you commonly replay a stream from storage.
 
 > [!NOTE]
->
-You should **never** bookmark links aside from the head of the stream resource. You should always follow links. We may in the future change how internal links work. If you bookmark link other than the head you will break in these scenarios.
-
+> You should **never** bookmark links aside from the head of the stream resource. You should always follow links. We may in the future change how internal links work. If you bookmark link other than the head you will break in these scenarios.
 
 ## Reading All Events
 
 There is a special paged feed for all events that named `$all`. You can use the same paged form of reading described above to read all events for the entire node by pointing the stream at _/streams/$all_. As it's a stream like any other, you can perform all other operations with it except posting to it.
 
 > [!NOTE]
->
-To access the `$all` stream, you must provide user details, find more information on the [security]({{site.baseurl}}/http-api/security) page.
+> To access the `$all` stream, you must provide user details, find more information on the [security](~/http-api/security.md) page.
 
-
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-13)
 
 ```bash
 curl -i http://127.0.0.1:2113/streams/%24all -H "Accept:application/vnd.eventstore.atom+json" -u admin:changeit
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-14)
 
 ```http
 HTTP/1.1 200 OK
@@ -541,21 +530,19 @@ Keep-Alive: timeout=15,max=100
   "entries": <SNIP>
 ```
 
-***
-
+* * *
 
 ## Conditional Gets
 
 The head link supports conditional `GET`s with the use of [ETAGS](http://en.wikipedia.org/wiki/HTTP_ETag), a well known HTTP construct described [here](http://en.wikipedia.org/wiki/HTTP_ETag). You can include the ETAG of your last request and issue a conditional `GET` to the server. If nothing has changed it will not return the full feed. For example:
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-15)
 
 ```bash
 curl -i http://127.0.01:2113/streams/account-28l -H "Accept:application/vnd.eventstore.atom+json"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-16)
 
 ```http
 HTTP/1.1 200 OK
@@ -575,19 +562,17 @@ Keep-Alive: timeout=15,max=100
 …
 ```
 
-***
-
+* * *
 
 The server responded in the headers that the ETag for this content is `ETag: "180;248368668"`. You can use this in your next request when polling the stream for changes by putting it in the header `If-None-Match`. This tells the server to check if the response will be the one you already know.
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-17)
 
 ```bash
 curl -i http://127.0.0.1:2113/streams/account-28 -H "Accept:application/vnd.eventstore.atom+json" -H "If-None-Match:180;248368668"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-18)
 
 ```http
 HTTP/1.1 304 Not Modified
@@ -602,21 +587,18 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
-
+* * *
 
 When you use the conditional `GET` the server will return a '304 not modified' response. If the tags have changed, the server will return a '200 OK' response. You can use this method to optimize your application by not sending large streams if there are not changes.
 
 > [!NOTE]
->
-Etags are created using the version of the stream and the media type you are reading the stream in. You can NOT take an etag from a stream in one media type and use it with another media type.
-
+> Etags are created using the version of the stream and the media type you are reading the stream in. You can NOT take an etag from a stream in one media type and use it with another media type.
 
 ## Embedding Data into Stream
 
 So far in this guide, the feeds returned have contained links that refer to the actual event data. This is normally a preferable mechanism for a few reasons.
 
-They can be in a different media type than the feed and can you can negotiate them separately from the feed itself (e.g. the feed in JSON, the event in XML). You can cache the event data separately from the feed and you can point it to different feeds (if you use a `linkTo()` in [projections]({{site.baseurl}}/projections) this is what happens in your atom feeds).
+They can be in a different media type than the feed and can you can negotiate them separately from the feed itself (e.g. the feed in JSON, the event in XML). You can cache the event data separately from the feed and you can point it to different feeds (if you use a `linkTo()` in [projections](~/projections/index.md) this is what happens in your atom feeds).
 
 If you are using JSON, you can embed the events into the atom feeds events. This can help cut down on the number of requests in some situations but the messages will be larger.
 
@@ -626,14 +608,13 @@ Though these are mostly used by the StreamUI component in the Web API there are 
 
 The `rich` embed mode will return more properties about the event (`eventtype`, `streamid`, `position`, etc) as you can see in the following request.
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-19)
 
 ```bash
 curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream?embed=rich"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-20)
 
 ```http
 HTTP/1.1 200 OK
@@ -712,21 +693,19 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-***
-
+* * *
 
 ### Body
 
 The `body` embed mode will return the JSON/XML body of the events into the feed as well, depending on the type of the feed. You can see this in the request below:
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-21)
 
 ```bash
 curl -i -H "Accept:application/vnd.eventstore.atom+json" "http://127.0.0.1:2113/streams/newstream?embed=body"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-22)
 
 ```http
 HTTP/1.1 200 OK
@@ -806,19 +785,17 @@ Keep-Alive: timeout=15,max=100
 }
 ```
 
-***
-
+* * *
 
 If you use XML format then no additional data is embedded, as embedding is only supported with JSON.
 
-
-### [Request](#tab/tabid-1)
+### [Request](#tab/tabid-23)
 
 ```bash
 curl -i -H "Accept:application/atom+xml" "http://127.0.0.1:2113/streams/newstream?embed=body"
 ```
 
-### [Response](#tab/tabid-2)
+### [Response](#tab/tabid-24)
 
 ```http
 HTTP/1.1 200 OK
@@ -861,7 +838,6 @@ Keep-Alive: timeout=15,max=100
 </feed>
 ```
 
-***
-
+* * *
 
 There are two other modes that are variants of `body`. `PrettyBody` which will try to reformat the JSON to make it "pretty to read", and `TryHarder` that will work harder to try to parse and reformat JSON from an event to return it in the feed. These do not include further information, they are focused on how the feed looks.

@@ -7,7 +7,7 @@ version: 4.0.2
 
 ## Stream ACLs
 
-Event Store keeps the ACL of a stream in the streams [metadata]({{site.baseurl}}/server/metadata-and-reserved-names) as JSON with the below definition.
+Event Store keeps the ACL of a stream in the streams [metadata](~/server/metadata-and-reserved-names.md) as JSON with the below definition.
 
 ```json
 {
@@ -32,7 +32,7 @@ These fields represent the following:
 You can update these fields with either a single string or an array of strings representing users or groups (`$admins`, `$all`, or custom groups). It is possible to put an empty array into one of these fields, this has the effect of removing all users from that permission.
 
 > [!NOTE]
-> It is not recommended to give people access to <code>$mw</code> as then they can then change the ACL.
+> It is not recommended to give people access to `$mw` as then they can then change the ACL.
 
 ### Example
 
@@ -76,13 +76,13 @@ There is a special ACL in the `$settings` that is used as the default ACL. This 
 The `$userStreamAcl` controls the default ACL for user streams, while the `$systemStreamAcl` is used as the default for all system streams.
 
 > [!NOTE]
-> <code>$w</code> in the <code>$userStreamAcl</code> also applies to the ability to create a stream.
-> Members of <code>$admins</code> always have access to everything, this permission cannot be removed.
+> `$w` in the `$userStreamAcl` also applies to the ability to create a stream.
+> Members of `$admins` always have access to everything, this permission cannot be removed.
 
 When a permission is set on a stream in your system it will override the default, however it is not necessary to specify all permissions on a stream. It is only necessary to specify those which differ from the default.
 
 > [!WARNING]
-> All these examples assume you have a user named <code>ouro</code> that has been created on your system. The examples also assume the password is <code>ouroboros</code>.
+> All these examples assume you have a user named `ouro` that has been created on your system. The examples also assume the password is `ouroboros`.
 
 ### Example
 
@@ -131,7 +131,7 @@ To do this you could use either the HTTP API or a client API to write the above 
 ### [Request](#tab/tabid-1)
 
 ```bash
-curl -i -d@~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
+curl -i -d@ ~/settings.js "http://127.0.0.1:2113/streams/%24settings" -H "Content-Type:application/json" -H "ES-EventType: settings" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E" -u "admin:changeit"
 ```
 
 > [!WARNING]
@@ -255,4 +255,4 @@ If you added the above to a stream's ACL, then it would override the read permis
 ```
 
 > [!WARNING]
-> Caching will be allowed on a stream if you have enabled it to be visible to <code>$all</code>. This is done as a performance optimization to avoid having to set <code>cache=private</code> on all data. If people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from <code>$all</code>. While clients should not be bookmarking URIs in this way it is an important consideration.
+> Caching will be allowed on a stream if you have enabled it to be visible to `$all`. This is done as a performance optimization to avoid having to set `cache=private` on all data. If people are bookmarking your URIs and they have been cached by an intermediary then they may still be accessible after you change the permissions from `$all`. While clients should not be bookmarking URIs in this way it is an important consideration.

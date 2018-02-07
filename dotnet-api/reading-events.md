@@ -1,17 +1,20 @@
 ---
-title: "Reading Events"
 section: ".NET API"
 version: "4.0.2"
 ---
+
+# Reading Events
 
 You can use the client API to read events from a stream starting from either end of the stream. There is a method for each direction and one for reading a single event.
 
 ## Methods
 
 <!-- TODO: Explanations? -->
+
 <!-- TODO: Moved, check -->
 
 ### Reading a single event
+
 ```csharp
 Task<EventReadResult> ReadEventAsync(string stream, long eventNumber, bool resolveLinkTos);
 ```
@@ -41,14 +44,14 @@ Task<AllEventsSlice> ReadAllEventsBackwardAsync(Position position, int maxCount,
 ```
 
 > [!NOTE]
-> 
-These methods also have an optional parameter which allows you to specify the `UserCredentials` to use for the request. If you don't supply any, the default credentials for the <code>EventStoreConnection</code> will be used (See <a href="../connecting-to-a-server/#user-credentials">Connecting to a Server - User Credentials</a>).
-
+> These methods also have an optional parameter which allows you to specify the `UserCredentials` to use for the request. If you don't supply any, the default credentials for the `EventStoreConnection` will be used ([See Connecting to a Server - User Credentials](connecting-to-a-server.md#user-credentials)).
 
 ## StreamEventsSlice
 
 The reading methods for individual streams each return a `StreamEventsSlice`, which is immutable. The available members on `StreamEventsSlice` are:
+
 <!-- TODO: Moved, check -->
+
 <table>
     <thead>
         <tr>
@@ -97,7 +100,9 @@ Event Store supports a special type of event called 'Link Events'. You can think
 In situations where the event you read is a link event, `ResolvedEvent` allows you to access both the link event itself, as well as the event it points to.
 
 The members of this class are as follows:
+
 <!-- TODO: Moved, check -->
+
 <table>
     <thead>
         <tr>
@@ -138,14 +143,14 @@ The members of this class are as follows:
 </table>
 
 > [!NOTE]
-> 
-To ensure that the Event Store server follows link events when reading, ensure you set the <code>ResolveLinkTos</code> parameter to `true` when calling read methods.
-
+> To ensure that the Event Store server follows link events when reading, ensure you set the <code>ResolveLinkTos</code> parameter to `true` when calling read methods.
 
 ## RecordedEvent
 
 `RecordedEvent` contains all the data about a specific event. Instances of this class are immutable, and expose the following members:
+
 <!-- TODO: Moved, to check -->
+
 <table>
     <thead>
         <tr>
@@ -223,7 +228,9 @@ The `ReadEventAsync` method reads a single event from a stream at a specified po
 This method returns an instance of `EventReadResult` which indicates if the read was successful, and if so the `ResolvedEvent` that was read.
 
 ## Reading a stream forwards
+
 <!-- TODO: Moved, check -->
+
 The `ReadStreamEventsForwardAsync` method reads the requested number of events in the order in which they were originally written to the stream from a nominated starting point in the stream.
 
 The parameters are:
@@ -281,7 +288,9 @@ do
 > It is unlikely that client code would need to build a list in this manner. It is far more likely that events would be passed into a left fold to derive the state of some object as of a given event.
 
 ## Reading a stream backwards
+
 <!-- TODO: Moved, check -->
+
 The `ReadStreamEventsBackwardAsync` method reads the requested number of events in the reverse order from that in which they were originally written to the stream from a specified starting point.
 
 The parameters are:

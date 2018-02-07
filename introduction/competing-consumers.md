@@ -74,7 +74,7 @@ or
 on ack messages=10 //checkpoint written
 ```
 
-Understanding how checkpointing works and paying careful attention to the behavior of your stream can help reduce server workload and help prevent receiving too many repeated messages in the case of a server failover. On a stream receiving <!-- correct? --> few messages the above settings are fine. On a stream receiving a few hundred or thousand messages per second these values need to be significantly higher. A general rule of thumb is the maximum should be 1-5 seconds of message throughput.
+Understanding how checkpointing works and paying careful attention to the behavior of your stream can help reduce server workload and help prevent receiving too many repeated messages in the case of a server failover. On a stream receiving few messages the above settings are fine. On a stream receiving a few hundred or thousand messages per second these values need to be significantly higher. A general rule of thumb is the maximum should be 1-5 seconds of message throughput.
 
 > [!NOTE]
 > The checkpoints themselves are stored in streams and are often recycled quickly. For this reason it is generally recommended that you occasionally run a scavenge process on your servers if using competing consumers.
@@ -130,7 +130,7 @@ As mentioned throughout this guide, there are many pros and cons when comparing 
     </tbody>
 </table>
 
-Competing consumers will allow you to connect one or many clients to a given subscription group. This can allow for things like load balancing the work across them or making the clients themselves highly available easily. If you lose a client the workload will just be spread over the other connected clients. With a `CatchupSubscription` it is difficult to make a highly available subscriber (it duplicates everything <!-- Is this correct -->) load balancing is also difficult, as with a `CatchUpSubscription` each client will receive every message.
+Competing consumers will allow you to connect one or many clients to a given subscription group. This can allow for things like load balancing the work across them or making the clients themselves highly available easily. If you lose a client the workload will just be spread over the other connected clients. With a `CatchupSubscription` it is difficult to make a highly available subscriber (it duplicates everything) load balancing is also difficult, as with a `CatchUpSubscription` each client will receive every message.
 
 For something like a projection of an event stream into a read model, a client will generally prefer to use a `CatchUpSubscription` as opposed to a competing consumer group. This is because when performing this process, receiving the events in order is important. Any time that ordering becomes a primary concern, a `CatchUpSubscription` is probably the best bet.
 
