@@ -6,8 +6,7 @@ pinned: true
 
 # Config
 
-With the release of Event Store 4.0.2, we have included a new set of options for fine-tuning projections.
-By changing these settings, you can lessen the amount of pressure projections put on an Event Store node or improve projection performance. You can change these settings should on a case-by-case basis, and only in cases where you see improvements.
+Event Store version 4.0.2, included a new set of options for fine-tuning projections. By changing these settings, you can lessen the amount of pressure projections put on an Event Store node or improve projection performance. You can change these settings on a case-by-case basis, and monitor potential improvements.
 
 ## Emit options
 
@@ -17,24 +16,23 @@ In busy systems, projections can put a lot of extra pressure on the master node.
 
 ### Emit Enabled
 
-This setting determines whether a projection can emit events and is required for any projection that calls `emit()` or `linkTo()`. If this option is not set and a projection attempts to emit events, you will see an error message like the following:
+This setting determines whether a projection can emit events and any projection that calls `emit()` or `linkTo()` requires it. If this option is not set and a projection attempts to emit events, you will see an error message like the following:
 
 ```bash
 'emit' is not allowed by the projection/configuration/mode
 ```
 
-This setting is disabled by default, and is usually set when the projection is created if you need the projection to emit events.
+This setting is disabled by default, and is usually set when you create the projection and if you need the projection to emit events.
 
 ### Track Emitted Streams
 
-This setting enables tracking of a projection's emitted streams. It will only have an affect if `EmitEnabled` is on.
+This setting enables tracking of a projection's emitted streams. It will only have an affect if the projection has `EmitEnabled` enabled.
 
-Tracking emitted streams enables you to delete a projection and all the streams that it has created. This should only be used if you intend on deleting a projection and creating new ones that project to the same stream.
+Tracking emitted streams enables you to delete a projection and all the streams that it has created. You should only use it if you intend to delete a projection and create new ones that project to the same stream.
 
-When this is enabled, an event will be written recording the stream name of each event that is emitted by the projection.
-This means that write amplification is a possibility, as a separate event will be written for each event that the projection emits.
-As such, this option is not recommended for projections that emit a lot of events, and it should only be enabled in cases where it is necessary.
-The stream that tracks emitted stream ids is named as follows :
+When enabled, an event written records the stream name of each event emitted by the projection. This means that write amplification is a possibility, as each event that the projection emits writes a separate event. As such, this option is not recommended for projections that emit a lot of events, and you should enable it should only in cases where necessary.
+
+The stream that tracks emitted stream IDs is named as follows :
 
 ```text
 $projections-{projection_name}-emittedstreams
@@ -43,16 +41,13 @@ $projections-{projection_name}-emittedstreams
 This setting is disabled by default.
 
 > [!NOTE]
-> Between Event Store versions 3.8.0 and 4.0.2, this option was enabled by default when a projection was created through the UI.
-> If you have any projections created during this time frame, it might be worth checking whether this option is enabled.
+> Between Event Store versions 3.8.0 and 4.0.2, this option was enabled by default when a projection was created through the UI. If you have any projections created during this time frame, it's worth checking whether this option is enabled.
 
 ### Max Allowed Writes In Flight
 
-This sets the maximum number of writes to allow for a projection.
-Because a projection can write to multiple different streams, it is possible for the projection to send off multiple writes at the same time. This option sets the number of concurrent writes that a projection can perform.
+This sets the maximum number of writes to allow for a projection. Because a projection can write to multiple different streams, it is possible for the projection to send off multiple writes at the same time. This option sets the number of concurrent writes that a projection can perform.
 
-By default, projections will try to perform writes as quickly as they come through. This can add a lot of pressure to a node, especially for projections that emit to many different streams.
-If you see your projections causing frequent commit timeouts or slow reads, you can try lowering this value to see if there is any improvement.
+By default, projections will try to perform writes as quickly as they come through. This can add a lot of pressure to a node, especially for projections that emit to many different streams. If you see your projections causing frequent commit timeouts or slow reads, you can try lowering this value to see if there is any improvement.
 
 > [!NOTE]
 > Lower values may cause the projection to slow down as the number of writes are throttled, but the trade off for this is cleaner logs and fewer commit timeouts.

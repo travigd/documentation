@@ -605,8 +605,8 @@
         "tags": [
           "Subscriptions"
         ],
-        "summary": "Reads a stream via a persistent subscription",
-        "description": "By default, reading a stream via a persistent subscription will return a single event per request and will not embed the event properties as part of the response. Read [Reading Streams]({{site.baseurl}}/http-api/reading-streams) for information on the different embed levels.",
+        "summary": "Read a stream",
+        "description": "Read a specified stream by a persistent subscription.",
         "operationId": "readSubscription",
         "produces": [
           "application/vnd.eventstore.competingatom+json",
@@ -1123,8 +1123,8 @@
         "tags": [
           "Users"
         ],
-        "summary": "Get logged in user",
-        "description": "Returns the user currently logged in to x.",
+        "summary": "Get user",
+        "description": "Returns the user currently authenticated with the API, or the user specified.",
         "operationId": "getUser",
         "produces": [
           "application/json",
@@ -1134,7 +1134,7 @@
           {
             "name": "login",
             "in": "path",
-            "description": "The current user",
+            "description": "The user passed to the API call.",
             "required": true,
             "type": "string"
           }
@@ -1209,37 +1209,6 @@
         "responses": {
           "204": {
             "description": "User deleted"
-          }
-        }
-      }
-    },
-    "/users/{current}": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Get specified user",
-        "description": "Returns the specified user.",
-        "operationId": "GetCurrentUser",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "name": "current",
-            "in": "path",
-            "description": "The requred user's name",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not found"
           }
         }
       }
@@ -1386,28 +1355,6 @@
         }
       }
     },
-    "/projections": {
-      "get": {
-        "tags": [
-          "Projections"
-        ],
-        "summary": "Get all projections",
-        "description": "Returns all projections defined in Event Store.",
-        "operationId": "OnProjections",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not found"
-          }
-        }
-      }
-    },
     "/projections/any": {
       "get": {
         "tags": [
@@ -1457,8 +1404,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "Get all one-time projections",
-        "description": "Returns all one-time projections defined in Event Store.",
+        "summary": "Get all queries",
+        "description": "Returns all queries defined in Event Store.",
         "operationId": "OnProjectionsGetOneTime",
         "produces": [
           "application/json",
@@ -1550,7 +1497,7 @@
           "Projections"
         ],
         "summary": "Get all continious projections",
-        "description": "Returns all continious projections defined in Event Store.",
+        "description": "Returns all continually running projections defined in Event Store.",
         "operationId": "OnProjectionsGetContinuous",
         "produces": [
           "application/json",
@@ -1583,19 +1530,6 @@
             "description": "Name of the projection",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "type",
-            "in": "query",
-            "description": "The projection type",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "Transient",
-              "OneTime",
-              "Continuous",
-              "AllNonTransient"
-            ]
           },
           {
             "name": "enabled",
@@ -1734,8 +1668,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "Get all a projection based on query data",
-        "description": "Returns all projections defined in Event Store based on a range of query criteria.",
+        "summary": "Get projection definition",
+        "description": "Returns definition of the specified projection.",
         "operationId": "OnProjectionQueryGet",
         "produces": [
           "application/json",
@@ -1753,7 +1687,8 @@
             "name": "config",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "boolean",
+            "description": "Wether to return the projection definition config."
           }
         ],
         "responses": {
@@ -1769,8 +1704,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "Update projection",
-        "description": "Update projection details",
+        "summary": "Update projection definition",
+        "description": "Update the specified projection definition.",
         "operationId": "OnProjectionQueryPut",
         "produces": [
           "application/json",
@@ -1820,8 +1755,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "TBD",
-        "description": "TBD",
+        "summary": "Get the projection state",
+        "description": "Return the current state of the specified projection.",
         "operationId": "OnProjectionStateGet",
         "produces": [
           "application/json",
@@ -1839,7 +1774,8 @@
             "name": "partition",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "description": "The partition name in state"
           }
         ],
         "responses": {
@@ -1876,7 +1812,8 @@
             "name": "partition",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "description": "The partition name in state"
           }
         ],
         "responses": {
@@ -1895,7 +1832,7 @@
           "Projections"
         ],
         "summary": "Get projection statistics",
-        "description": "Returns the statistics for a projection.",
+        "description": "Returns the statistics for a projection, such as how many events, the status etc.",
         "operationId": "OnProjectionStatisticsGet",
         "produces": [
           "application/json",
@@ -1925,8 +1862,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "TBD",
-        "description": "TBD",
+        "summary": "Disable projection",
+        "description": "Disable the specified projection.",
         "operationId": "OnProjectionCommandDisable",
         "produces": [
           "application/json",
@@ -1963,8 +1900,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "TBD",
-        "description": "TBD",
+        "summary": "Enable projection",
+        "description": "Enable the specified projection.",
         "operationId": "OnProjectionCommandEnable",
         "produces": [
           "application/json",
@@ -2001,8 +1938,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "TBD",
-        "description": "TBD",
+        "summary": "Reset projection",
+        "description": "Reset the specified projection.",
         "operationId": "OnProjectionCommandReset",
         "produces": [
           "application/json",
@@ -2039,8 +1976,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "TBD",
-        "description": "TBD",
+        "summary": "Abort projection",
+        "description": "Abort the specified projection.",
         "operationId": "OnProjectionCommandAbort",
         "produces": [
           "application/json",
@@ -2078,7 +2015,7 @@
           "Projections"
         ],
         "summary": "Get the config of a projection",
-        "description": "Returns the configuration of a projection.",
+        "description": "Returns the performance configuration of the specified projection.",
         "operationId": "OnProjectionConfigGet",
         "produces": [
           "application/json",
@@ -2107,7 +2044,7 @@
           "Projections"
         ],
         "summary": "Update the config of a projection",
-        "description": "Update the configuration of a projection.",
+        "description": "Update the performance configuration of the specified projection.",
         "operationId": "OnProjectionConfigPut",
         "produces": [
           "application/json",
@@ -2217,7 +2154,7 @@
         ],
         "summary": "Get all stats",
         "description": "Returns all stats enabled for Event Store.",
-        "operationId": "OnGetFreshStats1",
+        "operationId": "OnGetFreshStats",
         "produces": [
           "application/json",
           "application/xml"
@@ -2238,7 +2175,7 @@
           "Stats"
         ],
         "summary": "Get replication stats",
-        "description": "Returns all replication stats for Event Store.",
+        "description": "Returns all replication stats for Event Store between the master and slave nodes.",
         "operationId": "OnGetReplicationStats",
         "produces": [
           "application/json",
@@ -2259,8 +2196,8 @@
         "tags": [
           "Stats"
         ],
-        "summary": "Get TCP stats",
-        "description": "Returns all TCP stats for Event Store.",
+        "summary": "Get TCP connection stats",
+        "description": "Returns all TCP connection stats for Event Store.",
         "operationId": "OnGetTcpConnectionStats",
         "produces": [
           "application/json",
@@ -2281,9 +2218,9 @@
         "tags": [
           "Stats"
         ],
-        "summary": "Get TCP stats",
-        "description": "Returns all TCP stats for Event Store.",
-        "operationId": "OnGetFreshStats2",
+        "summary": "Get stats sub path",
+        "description": "Returns the sub path of the Event Store statistics available.",
+        "operationId": "OnGetFreshStatsPath",
         "produces": [
           "application/json",
           "application/xml"
@@ -2318,15 +2255,18 @@
         },
         "FullName": {
           "type": "string",
-          "description": "The full name of the new user."
+          "description": "The full name for the new user."
         },
         "Groups": {
-          "type": "string",
-          "description": "The groups the new user should become a member of."
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The groups the new user is a member of."
         },
         "Password": {
           "type": "string",
-          "description": "The password of the new user."
+          "description": "The password for the new user."
         }
       },
       "example": {
@@ -2347,7 +2287,10 @@
           "description": "The full name of the new user."
         },
         "Groups": {
-          "type": "string",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
           "description": "The groups the new user should become a member of."
         }
       },
@@ -2602,5 +2545,42 @@
         "metaReadRole": "metaReadRole"
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Streams",
+      "description": "Endpoints for Stream operations",
+      "externalDocs": {
+        "url": "http://docs.my-api.com/pet-operations.htm"
+      }
+    },
+    {
+      "name": "Subscriptions",
+      "description": "Endpoints for Subscription operations",
+      "externalDocs": {
+        "url": "http://docs.my-api.com/pet-operations.htm"
+      }
+    },
+    {
+      "name": "Users",
+      "description": "Endpoints for User operations",
+      "externalDocs": {
+        "url": "http://docs.my-api.com/pet-operations.htm"
+      }
+    },
+    {
+      "name": "Projections",
+      "description": "Endpoints for Projection operations",
+      "externalDocs": {
+        "url": "http://docs.my-api.com/pet-operations.htm"
+      }
+    },
+    {
+      "name": "Stats",
+      "description": "Endpoints for Statistics operations",
+      "externalDocs": {
+        "url": "http://docs.my-api.com/pet-operations.htm"
+      }
+    }
+  ]
 }

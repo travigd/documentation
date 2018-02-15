@@ -1,9 +1,10 @@
 ---
-title: "Reading Streams and Events"
 section: "HTTP API"
 version: "4.0.2"
 uid: eventstore.org/Event Store HTTP API/4.0.2/readStream
 ---
+
+# Reading Streams and Events
 
 ## Reading a stream
 
@@ -459,7 +460,7 @@ You then follow its "previous" link until you got back to the head of the docume
 
 > [!NOTE]
 > All links except the head link are fully cachable as seen in the HTTP header `Cache-Control: max-age=31536000, public`. This is important when discussing intermediaries and performance as you commonly replay a stream from storage.
-
+>
 > [!NOTE]
 > You should **never** bookmark links aside from the head of the stream resource. You should always follow links. We may in the future change how internal links work. If you bookmark link other than the head you will break in these scenarios.
 
