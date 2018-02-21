@@ -1,9 +1,5 @@
----
-section: "Server"
-version: "4.0.2"
-pinned: true
----
 # Running Event Store
+
 Event Store runs as a server, that clients can connect either over HTTP or using one of the client APIs. You can run both the open source and commercial versions, as either a single node, or a highly available cluster of nodes.
 
 The [open source version of Event Store](https://geteventstore.com/downloads) is distributed as a console application. There are separate distributions for Windows on .NET and Linux/macOS on Mono.

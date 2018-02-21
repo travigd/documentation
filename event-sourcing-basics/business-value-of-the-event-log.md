@@ -1,8 +1,5 @@
----
-section: "Event Sourcing Basics"
-version: "4.0.2"
----
 # Business Value of the Event Log
+
 > [!NOTE]
 > The value of an event log is directly correlated with use cases that you would want to use Domain Driven Design in the first place. You should use Domain Driven Design in cases where the business derives competitive advantage. Domain Driven Design itself is difficult and expensive to apply, but a company will receive high ROI on the effort if the domain is complex and if they derive competitive advantage from it. Using an Event Log similarly will have high ROI when dealing with an area of competitive advantage but may have negative ROI in other places.
 

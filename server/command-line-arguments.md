@@ -1,7 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
----
 # Command Line Arguments
 Event Store supports many configuration options. There are three distinct ways to set any parameter, all with their own advantages and disadvantages.
 

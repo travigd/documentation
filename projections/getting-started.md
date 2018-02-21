@@ -1,9 +1,3 @@
----
-section: "Projections"
-version: "4.0.2"
-pinned: true
----
-
 # Getting Started
 
 You can create projections in one of 2 ways. You can supply them to Event Store directly via the HTTP API, or you can use the administration UI which provides a section for authoring projections.

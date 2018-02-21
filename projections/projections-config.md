@@ -1,9 +1,3 @@
----
-section: "Projections"
-version: "4.0.2"
-pinned: true
----
-
 # Config
 
 Event Store version 4.0.2, included a new set of options for fine-tuning projections. By changing these settings, you can lessen the amount of pressure projections put on an Event Store node or improve projection performance. You can change these settings on a case-by-case basis, and monitor potential improvements.

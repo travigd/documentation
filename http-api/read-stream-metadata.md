@@ -1,9 +1,7 @@
 ---
-title: "Stream Metadata"
-section: "HTTP API"
-version: "4.0.2"
 uid: eventstore.org/Event Store HTTP API/4.0.2/readStreamMetadata
 ---
+# Stream Metadata
 
 <!--  TODO: Break up to write / read? And maybe transclude-->
 

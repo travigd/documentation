@@ -1,8 +1,4 @@
----
-title: "Errors"
-section: "HTTP API"
-version: "4.0.2"
----
+# Errors
 
 <!-- TODO: Is this really all errors? -->
 <!-- TODO: Replace by swagger? -->

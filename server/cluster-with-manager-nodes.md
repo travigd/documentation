@@ -1,8 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
----
-
 # Setting up a Cluster with Manager Nodes
 
 High availability Event Store allows you to run more than one node as a cluster. There are two modes available for clustering:

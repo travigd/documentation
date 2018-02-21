@@ -1,8 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
----
-
 # Setting up a Cluster using only Database Nodes (OSS)
 
 The clustering code for Event Store is open source under the BSD-3 license as the rest of the code. This guide will look at how you can setup a highly available cluster using the open source components.

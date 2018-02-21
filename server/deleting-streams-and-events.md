@@ -1,8 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
----
-
 # Deleting streams and events
 
 Meta data in Event Store defines whether an event is deleted or not. Stream metadata such as "Truncate Before", "Max Age" and "Max Count" is used to filter out events considered deleted. When reading a stream, the index will check the stream's metadata to determine whether any of its events have been deleted.

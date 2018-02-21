@@ -1,12 +1,8 @@
----
-section: "Introduction"
-version: "4.0.2"
----
+# Internal Architectural Overview
 <!-- TODO: Not live why? -->
 <!-- TODO:  Overview image or intro? -->
 
 <!-- TODO:  Remove as much passive as possible -->
-# Internal Architectural Overview
 ## Messaging
 
 The overall architecture style of Event Store is [SEDA (Staged Event Driven Architecture)](http://www.eecs.harvard.edu/~mdw/proj/seda/). Messages flow forward through queues internally (including the Transaction File which is also a queue). There are communication endpoints that flow forward through series of queues to be processed. All operations are purely asynchronous. The core processing is handled on a single thread reading requests off of a single concurrent queue.

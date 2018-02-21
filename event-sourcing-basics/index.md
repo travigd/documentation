@@ -1,11 +1,6 @@
----
-title: "Event Sourcing Basics"
-section: "Event Sourcing Basics"
-pinned: true
-version: "4.0.2"
----
+# Event Sourcing Basics
 
-# What is an Event Store?
+## What is an Event Store?
 
 Event Store is a database that supports the concept of Event Sourcing, which is an old idea that has recently become popular again
 

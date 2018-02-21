@@ -1,9 +1,3 @@
----
-section: "Projections"
-version: "4.0.0"
-pinned: true
----
-
 # Overview
 
 ## What are projections?

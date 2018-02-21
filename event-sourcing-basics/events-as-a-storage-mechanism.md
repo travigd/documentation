@@ -1,8 +1,3 @@
----
-section: "Event Sourcing Basics"
-version: "4.0.2"
----
-
 # Events as a storage mechanism
 
 When most people consider storage for an object they tend to think about it in a structural sense. That is when considering how to store the sale discussed above they think of it as a "Sale" that has "Line Items" and perhaps "Shipping Information" associated with it. This is not the only way to conceptualize the problem and other solutions offer different and often interesting architectural properties.

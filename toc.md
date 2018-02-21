@@ -116,6 +116,8 @@
 
 ## [Errors](http-api/errors.md)
 
+## [HTTP API Spec](http-api/swagger.json)
+
 # Projections
 
 ## [API](/docs/projections/api.html)

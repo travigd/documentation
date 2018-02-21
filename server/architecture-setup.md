@@ -1,7 +1,3 @@
----
-section: "Server"
-version: "4.0.0"
----
 # HTTP Architecture Setup
 <!-- TODO: Is the title descrptive? -->
 

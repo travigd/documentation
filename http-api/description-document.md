@@ -1,7 +1,3 @@
----
-section: "HTTP API"
-version: "4.0.2"
----
 # Description Document
 ## What is it?
 

@@ -21,7 +21,7 @@
   "build": {
     "content": [
       {
-        "files": "swagger.json",
+        "files": "http-api/swagger.json",
         "dest":"docs/http-api"
       },
       {
@@ -30,12 +30,11 @@
           "event-sourcing-basics/**.md",
           "http-api/**.md",
           "introduction/**.md",
-          "introduction/**/toc.md",
           "projections/**.md",
           "server/**.md",
-          "toc.yml",
           "*.md"
         ],
+        "exclude": [],
         "dest":"docs"
       }
     ],
@@ -51,17 +50,7 @@
         ]
       }
     ],
-    "overwrite": [
-      {
-        "files": [
-          "docs/http-api/creating-a-stream.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "docs/**"
-        ]
-      }
-    ],
+    "overwrite": [],
     "dest": "docs",
     "exclude": [
       ".git/**"
@@ -71,8 +60,8 @@
 
       "template": [
           "../es-docs-template",
-          "../dfx-plugins/rest.tagpage.2.31.0/content"
-          // "../dfx-plugins/rest.operationpage.2.31.0/content"
+          "../dfx-plugins/rest.tagpage.2.31.0/content",
+          "../dfx-plugins/rest.operationpage.2.31.0/content"
       ],
 
     "postProcessors": [],
@@ -83,6 +72,3 @@
     "disableBreadcrumbs": false
   }
 }
-
-
-

@@ -1,8 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
----
-
 # Ports and networking
 
 ## Single Node

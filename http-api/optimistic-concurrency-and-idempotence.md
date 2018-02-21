@@ -1,8 +1,4 @@
----
-title: "Optimistic Concurrency & Idempotence"
-section: "HTTP API"
-version: "4.0.2"
----
+# Optimistic Concurrency & Idempotence
 
 ## Idempotency
 

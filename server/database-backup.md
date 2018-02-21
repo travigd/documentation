@@ -1,8 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
----
-
 # Database Backup
 
 Backing up an Event Store database is straightforward, however it is reliant on carrying out the steps below in the correct order.

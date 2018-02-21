@@ -1,8 +1,4 @@
----
-title: "Stream Metadata"
-section: "HTTP API"
-version: "4.0.2"
----
+# Stream Metadata
 
 [!include[Read Stream Metadata](read-stream-metadata.md)]
 

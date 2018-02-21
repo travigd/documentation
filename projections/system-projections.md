@@ -1,8 +1,3 @@
----
-section: "Projections"
-version: "4.0.2"
-pinned: true
----
 # System Projections
 
 Event Store ships with 4 built in projections.

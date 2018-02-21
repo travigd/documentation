@@ -1,9 +1,3 @@
----
-section: "Introduction"
-pinned: true
-version: "4.0.2"
----
-
 # Getting Started
 This guide will show you how to get started with Event Store using the Atom publishing protocol as the primary interface. It covers installation and basic operations such as writing to a stream, reading from a stream, and subscribing to a stream.
 

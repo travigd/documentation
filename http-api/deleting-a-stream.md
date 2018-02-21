@@ -1,9 +1,7 @@
 ---
-title: "Deleting a Stream"
-section: "HTTP API"
-version: "4.0.2"
 uid: eventstore.org/Event Store HTTP API/4.0.2/deleteStream
 ---
+# Deleting a Stream
 
 To delete a stream over the Atom interface, issue a `DELETE` request to the resource.
 

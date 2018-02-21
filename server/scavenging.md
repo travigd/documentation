@@ -1,8 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
----
-
 # Scavenging events
 
 When you delete events or streams in Event Store, they aren't removed immediately. To permenantly delete these events you will need to run a 'scavenge' on your database.

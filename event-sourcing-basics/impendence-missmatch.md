@@ -1,8 +1,5 @@
----
-section: "Event Sourcing Basics"
-version: "4.0.2"
----
 # Impedance Mismatch
+
 Using events as a storage mechanism offers different properties when compared to a typical relational model, as the impedance mismatch that exists between a typical relational model and the object oriented domain model is analyzed. Scott Ambler describes the problem in an essay on agiledata.org as:
 
 > Why does this impedance mismatch exist? The object-oriented paradigm is based on proven software engineering principles. The relational paradigm, however, is based on proven mathematical principles. Because the underlying paradigms are different the two technologies do not work together seamlessly. The impedance mismatch becomes apparent when you look at the preferred approach to access: With the object paradigm you traverse objects via their relationships whereas with the relational paradigm you join the data rows of tables. This fundamental difference results in a non-ideal combination of object and relational technologies, although when have you ever used two different things together without a few hitches? <cite>Ambler</cite>

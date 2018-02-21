@@ -1,9 +1,3 @@
----
-section: "Projections"
-version: "4.0.2"
-pinned: true
----
-
 # User Defined Projections
 
 User defined projections are written in JavaScript (ECMASCRIPT 6).

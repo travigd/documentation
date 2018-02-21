@@ -1,9 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
-pinned: true
----
-
 # Installing on Ubuntu via the Debian Repository
 
 > [!WARNING]

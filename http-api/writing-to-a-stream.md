@@ -1,9 +1,7 @@
 ---
-title: Writing to a Stream
-section: HTTP API
-version: 4.0.2
 uid: eventstore.org/Event Store HTTP API/4.0.2/createStream
 ---
+# Writing to a Stream
 
 You write to a stream over HTTP using a `POST` request to the resource of the stream. If the stream does not exist then the stream will be implicitly created.
 

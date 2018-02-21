@@ -1,9 +1,7 @@
 ---
-title: "Creating a Stream"
-section: "HTTP API"
-version: "4.0.2"
 uid: eventstore.org/Event Store HTTP API/4.0.2/createStream
 ---
+# Creating a Stream
 
 <!--  TODO: So document the API endpoint? -->
 

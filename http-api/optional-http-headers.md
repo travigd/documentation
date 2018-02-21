@@ -1,7 +1,3 @@
----
-section: "HTTP API"
-version: "4.0.2"
----
 # Optional HTTP Headers
 <!-- TODO: Can Swagger replace this? And sub files -->
 

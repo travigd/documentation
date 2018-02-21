@@ -1,9 +1,18 @@
----
-section: Server
-version: 4.0.2
----
+# Users and Access Control Lists
 
-# Access Control Lists
+## Default Users
+
+Event Store provides two default users, `$ops` and `$admin`.
+
+`$admin` has full access to everything in Event Store. It can read and write to protected streams, which is any stream that starts with $, such as `$projections-master`. Protected streams are usually system streams, for example `$projections-master` manages some of the projections' states. The `$admin` user can also run operational commands, such as scavenges and shutdowns on Event Store.
+
+`$ops` has the ability to run operational commands like the `$admin` user, but cannot read protected streams.
+
+## New Users
+
+New users created in Event Store are standard users. They can't read protected streams or perform operations. If you add a user into the `$ops` or `$admins` group, they will have the same level of access as those users.
+
+By default, any user can read any non-protected stream unless their is an ACL preventing that.
 
 ## Stream ACLs
 

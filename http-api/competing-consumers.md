@@ -1,8 +1,5 @@
----
-section: HTTP API
-version: 4.0.2
----
 # Competing Consumers
+
 This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see the [overview document](~/introduction/competing-consumers.md).
 
 > [!NOTE]

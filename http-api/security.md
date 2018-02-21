@@ -1,8 +1,3 @@
----
-section: "HTTP API"
-version: "4.0.2"
----
-
 # Security
 
 Event Store supports security over HTTP. This guide is an introduction to how security is implemented.

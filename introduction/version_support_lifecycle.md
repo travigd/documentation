@@ -1,8 +1,3 @@
----
-section: "Introduction"
-version: "4.0.2"
----
-
 # Version Support Lifecycle
 
 Our current policy is to support the most recent major version (currently 3.X), and previous major versions for a minimum of 1 year after each has been superseded.

@@ -1,8 +1,3 @@
----
-section: "Introduction"
-version: "4.0.2"
----
-
 # Event Store as a functional database
 
 Much of what we have discussed can be looked at through a functional programming perspective as well. For developers in functional languages such as Scala or Haskell this should feel natural to you, for C# developers it should feel familiar, and for Java developers I hear that Scala is a nice language. All kidding aside…

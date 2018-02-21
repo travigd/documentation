@@ -1,9 +1,3 @@
----
-section: "Server"
-version: "4.0.2"
-pinned: true
----
-
 # Default Directories
 
 The default directories used by Event Store vary by platform to best fit with the expectations of users in each case.

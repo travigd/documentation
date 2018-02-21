@@ -1,6 +1,3 @@
----
-version: "4.0.2"
----
 # Introduction
 # Which API to Use?
 

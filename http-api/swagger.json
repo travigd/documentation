@@ -94,8 +94,8 @@
           "201": {
             "description": "New stream created"
           },
-          "400": {
-            "description": "Bad request"
+          "307": {
+            "description": "Temporary Redirect"
           }
         }
       },
@@ -104,7 +104,7 @@
         "tags": [
           "Streams"
         ],
-        "description": "",
+        "description": "Delete specified stream",
         "operationId": "deleteStream",
         "produces": [
           "application/xml",
@@ -687,7 +687,7 @@
         ],
         "responses": {
           "200": {
-            "description": "TBD"
+            "description": "Subscription updated"
           }
         }
       },
@@ -729,7 +729,7 @@
         ],
         "responses": {
           "200": {
-            "description": "TBD"
+            "description": "Subscription created"
           }
         }
       },
@@ -1446,10 +1446,7 @@
             "required": true,
             "type": "string",
             "enum": [
-              "Transient",
-              "OneTime",
-              "Continuous",
-              "AllNonTransient"
+              "JS"
             ]
           },
           {
@@ -1476,8 +1473,8 @@
           {
             "name": "trackemittedstreams",
             "in": "query",
-            "description": "Is tracking emitted streams enabled",
-            "required": true,
+            "description": "Should your projection create a separate stream and write any streams it emits to that stream.",
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -1553,10 +1550,20 @@
             "type": "boolean"
           },
           {
+            "name": "type",
+            "in": "query",
+            "description": "The projection type",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JS"
+            ]
+          },
+          {
             "name": "trackemittedstreams",
             "in": "query",
-            "description": "Is tracking emitted streams enabled",
-            "required": true,
+            "description": "Should your projection create a separate stream and write any streams it emits to that stream.",
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -1639,10 +1646,7 @@
             "required": true,
             "type": "string",
             "enum": [
-              "Transient",
-              "OneTime",
-              "Continuous",
-              "AllNonTransient"
+              "JS"
             ]
           },
           {
@@ -1726,10 +1730,7 @@
             "required": true,
             "type": "string",
             "enum": [
-              "Transient",
-              "OneTime",
-              "Continuous",
-              "AllNonTransient"
+              "JS"
             ]
           },
           {
@@ -1793,8 +1794,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "TBD",
-        "description": "TBD",
+        "summary": "Get result",
+        "description": "Get the final result of a projection.",
         "operationId": "OnProjectionResultGet",
         "produces": [
           "application/json",
@@ -2229,7 +2230,7 @@
           {
             "name": "statPath",
             "in": "path",
-            "description": "TBD",
+            "description": "The stats sub path",
             "required": true,
             "type": "string"
           }
