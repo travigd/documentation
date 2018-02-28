@@ -11,6 +11,12 @@ Backing up an Event Store database is straightforward, however it is reliant on 
 1. Copy all _*.chk_ files to the backup location.
 2. Copy the remaining files and directories to the backup location.
 
+Example:
+```
+rsync -a /data/eventstore/db/*.chk /backup/eventstore/db/
+rsync -a /data/eventstore/db/index /backup/eventstore/db/
+rsync -a /data/eventstore/db/*.0* /backup/eventstore/db/
+```
 ## Restoring a database
 
 1. Create a copy of _chaser.chk_ and call it _truncate.chk_.
