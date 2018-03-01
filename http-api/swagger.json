@@ -900,7 +900,7 @@
             "name": "ids",
             "in": "query",
             "description": "The ids of the messages that need to be acked separated by commas",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -1003,7 +1003,7 @@
             "name": "ids",
             "in": "query",
             "description": "The ids of the messages that need to be nacked separated by commas",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
@@ -1383,7 +1383,7 @@
           "Projections"
         ],
         "summary": "Get all non-transient projections",
-        "description": "Returns all non-transient projections defined in Event Store.",
+        "description": "Returns all known projections except ad-hoc projections.",
         "operationId": "OnProjectionsGetAllNonTransient",
         "produces": [
           "application/json",
@@ -1436,14 +1436,14 @@
             "name": "name",
             "in": "query",
             "description": "Name of the projection",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
             "name": "type",
             "in": "query",
             "description": "The projection type",
-            "required": true,
+            "required": false,
             "type": "string",
             "enum": [
               "JS"
@@ -1453,21 +1453,21 @@
             "name": "enabled",
             "in": "query",
             "description": "Is the projection enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
             "name": "checkpoints",
             "in": "query",
             "description": "Are checkpoints enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
             "name": "emit",
             "in": "query",
             "description": "Is emit enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
@@ -1525,35 +1525,35 @@
             "name": "name",
             "in": "query",
             "description": "Name of the projection",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
             "name": "enabled",
             "in": "query",
             "description": "Is the projection enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
             "name": "checkpoints",
             "in": "query",
             "description": "Are checkpoints enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
             "name": "emit",
             "in": "query",
             "description": "Is emit enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
             "name": "type",
             "in": "query",
             "description": "The projection type",
-            "required": true,
+            "required": false,
             "type": "string",
             "enum": [
               "JS"
@@ -1582,8 +1582,8 @@
         "tags": [
           "Projections"
         ],
-        "summary": "TBD",
-        "description": "TBD",
+        "summary": "Read events from projection based on a query definition",
+        "description": "Read events from projection based on a query definition, i.e. fromAll, fromStream, fromStreams",
         "operationId": "OnProjectionsReadEvents",
         "produces": [
           "application/json",
@@ -1636,14 +1636,14 @@
             "name": "name",
             "in": "query",
             "description": "Name of the projection",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
             "name": "type",
             "in": "query",
             "description": "The projection type",
-            "required": true,
+            "required": false,
             "type": "string",
             "enum": [
               "JS"
@@ -1653,7 +1653,7 @@
             "name": "enabled",
             "in": "query",
             "description": "Is the projection enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -1727,7 +1727,7 @@
             "name": "type",
             "in": "query",
             "description": "The projection type",
-            "required": true,
+            "required": false,
             "type": "string",
             "enum": [
               "JS"
@@ -1737,7 +1737,7 @@
             "name": "emit",
             "in": "query",
             "description": "Is emit enabled",
-            "required": true,
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -1794,7 +1794,7 @@
         "tags": [
           "Projections"
         ],
-        "summary": "Get result",
+        "summary": "Get result of projection",
         "description": "Get the final result of a projection.",
         "operationId": "OnProjectionResultGet",
         "produces": [
@@ -1881,8 +1881,8 @@
           {
             "name": "enableRunAs",
             "in": "query",
-            "description": "Is enableRunAs enabled",
-            "required": true,
+            "description": "Run as the user issuing the command.",
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -1919,8 +1919,8 @@
           {
             "name": "enableRunAs",
             "in": "query",
-            "description": "Is enableRunAs enabled",
-            "required": true,
+            "description": "Run as the user issuing the command.",
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -1957,8 +1957,8 @@
           {
             "name": "enableRunAs",
             "in": "query",
-            "description": "Is enableRunAs enabled",
-            "required": true,
+            "description": "Run as the user issuing the command.",
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -1995,8 +1995,8 @@
           {
             "name": "enableRunAs",
             "in": "query",
-            "description": "Is enableRunAs enabled",
-            "required": true,
+            "description": "Run as the user issuing the command.",
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -2123,21 +2123,21 @@
             "name": "deleteStateStream",
             "in": "query",
             "description": "TBD",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
             "name": "deleteCheckpointStream",
             "in": "query",
             "description": "TBD",
-            "required": true,
+            "required": false,
             "type": "boolean"
           },
           {
             "name": "deleteEmittedStreams",
             "in": "query",
             "description": "TBD",
-            "required": true,
+            "required": false,
             "type": "boolean"
           }
         ],
@@ -2550,38 +2550,23 @@
   "tags": [
     {
       "name": "Streams",
-      "description": "Endpoints for Stream operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Stream operations"
     },
     {
       "name": "Subscriptions",
-      "description": "Endpoints for Subscription operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Subscription operations"
     },
     {
       "name": "Users",
-      "description": "Endpoints for User operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for User operations"
     },
     {
       "name": "Projections",
-      "description": "Endpoints for Projection operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Projection operations"
     },
     {
       "name": "Stats",
-      "description": "Endpoints for Statistics operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Statistics operations"
     }
   ]
 }

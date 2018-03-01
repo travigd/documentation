@@ -1,98 +1,98 @@
 # Introduction
 
-## [Getting Started](/docs/introduction)
+## [Getting Started](introduction/index.md)
 
-## [Competing Consumers Introduction](/docs/introduction/competing-consumers.html)
+## [Competing Consumers Introduction](introduction/competing-consumers.md)
 
-## [Internal Architectural Overview](/docs/introduction/internal-architectural-overview.html)
+## [Internal Architectural Overview](introduction/internal-architectural-overview.md)
 
-## [Reliability](/docs/introduction/reliability.html)
+## [Reliability](introduction/reliability.md)
 
-## [Setting up Projections](/docs/introduction/setup_projections.html)
+## [Setting up Projections](introduction/setup_projections.md)
 
-## [Types of Subscriptions](/docs/introduction/subscriptions.html)
+## [Types of Subscriptions](introduction/subscriptions.md)
 
-## [Version Support Lifecycle](/docs/introduction/version_support_lifecycle.html)
+## [Version Support Lifecycle](introduction/version_support_lifecycle.md)
 
-## [Which API to Use?](/docs/introduction/which-api.html)
+## [Which API to Use?](introduction/which-api.md)
 
 # Event Sourcing Basics
 
-## [Event Sourcing Basics](/docs/event-sourcing-basics/index.html)
+## [Event Sourcing Basics](event-sourcing-basics/index.md)
 
-## [Business Value of the Event Log](/docs/event-sourcing-basics/business-value-of-the-event-log.html)
+## [Business Value of the Event Log](event-sourcing-basics/business-value-of-the-event-log.md)
 
-## [Events as a functional database](/docs/event-sourcing-basics/event-store-as-a-functional-database.html)
+## [Events as a functional database](event-sourcing-basics/event-store-as-a-functional-database.md)
 
-## [Events as a storage mechanism](/docs/event-sourcing-basics/events-as-a-storage-mechanism.html)
+## [Events as a storage mechanism](event-sourcing-basics/events-as-a-storage-mechanism.md)
 
-## [Impedance Mismatch](/docs/event-sourcing-basics/impendence-missmatch.html)
+## [Impedance Mismatch](event-sourcing-basics/impendence-missmatch.md)
 
-## [Performance and Scalability](/docs/event-sourcing-basics/performance-and-scaling.html)
+## [Performance and Scalability](event-sourcing-basics/performance-and-scaling.md)
 
-## [Rolling Snapshots](/docs/event-sourcing-basics/rolling-snapshots.html)
+## [Rolling Snapshots](event-sourcing-basics/rolling-snapshots.md)
 
 # Server
 
-## [Default Directories](/docs/server/default-directories.html)
+## [Default Directories](server/default-directories.md)
 
-## [Installing on Ubuntu via the Debian Repository](/docs/server/installing-from-debian-repositories.html)
+## [Installing on Ubuntu via the Debian Repository](server/installing-from-debian-repositories.md)
 
-## [Running the Event Store](/docs/server)
+## [Running the Event Store](server)
 
-## [Access Control Lists](/docs/server/access-control-lists.html)
+## [Access Control Lists](server/users-and-access-control-lists.md)
 
-## [Caching](/docs/server/caching.html)
+## [Caching](server/caching.md)
 
-## [Command Line Arguments](/docs/server/command-line-arguments.html)
+## [Command Line Arguments](server/command-line-arguments.md)
 
-## [Database Backup](/docs/server/database-backup.html)
+## [Database Backup](server/database-backup.md)
 
-## [Deleting streams and events](/docs/server/deleting-streams-and-events.html)
+## [Deleting streams and events](server/deleting-streams-and-events.md)
 
-## [Metadata and Reserved Names](/docs/server/metadata-and-reserved-names.html)
+## [Metadata and Reserved Names](server/metadata-and-reserved-names.md)
 
-## [Ports and networking](/docs/server/ports-and-networking.html)
+## [Ports and networking](server/ports-and-networking.md)
 
-## [Rebuilding Indexes](/docs/server/64-bit-index.html)
+## [Rebuilding Indexes](server/64-bit-index.md)
 
-## [Scavenging](/docs/server/scavenging.html)
+## [Scavenging](server/scavenging.md)
 
-## [Setting up SSL on Ubuntu 16.04](/docs/server/setting_up_ssl_linux.html)
+## [Setting up SSL on Ubuntu 16.04](server/setting_up_ssl_linux.md)
 
-## [Setting up SSL on Windows](/docs/server/setting_up_ssl.html)
+## [Setting up SSL on Windows](server/setting_up_ssl.md)
 
-## [Setting up Varnish in Linux](/docs/server/setting-up-varnish-in-linux.html)
+## [Setting up Varnish in Linux](server/setting-up-varnish-in-linux.md)
 
-## [Setting up a Cluster using only Database Nodes (OSS)](/docs/server/cluster-without-manager-nodes.html)
+## [Setting up a Cluster using only Database Nodes (OSS)](server/cluster-without-manager-nodes.md)
 
-## [Setting up a Cluster with Manager Nodes](/docs/server/cluster-with-manager-nodes.html)
+## [Setting up a Cluster with Manager Nodes](server/cluster-with-manager-nodes.md)
 
 # .NET API
 
-## [Overview](/docs/dotnet-api)
+## [Overview](dotnet-api/index.md)
 
-## [Competing Consumers](/docs/dotnet-api/competing-consumers.html)
+## [Competing Consumers](dotnet-api/competing-consumers.md)
 
-## [Connecting to a Server](/docs/dotnet-api/connecting-to-a-server.html)
+## [Connecting to a Server](dotnet-api/connecting-to-a-server.md)
 
-## [Embedded Client](/docs/dotnet-api/embedded-client.html)
+## [Embedded Client](dotnet-api/embedded-client.md)
 
-## [Optimistic Concurrency & Idempotence](/docs/dotnet-api/optimistic-concurrency-and-idempotence.html)
+## [Optimistic Concurrency & Idempotence](dotnet-api/optimistic-concurrency-and-idempotence.md)
 
-## [Projections Management](/docs/dotnet-api/projections.html)
+## [Projections Management](dotnet-api/projections.md)
 
-## [Reading Events](/docs/dotnet-api/reading-events.html)
+## [Reading Events](dotnet-api/reading-events.md)
 
-## [Stream Metadata](/docs/dotnet-api/stream-metadata.html)
+## [Stream Metadata](dotnet-api/stream-metadata.md)
 
-## [User Management](/docs/dotnet-api/users.html)
+## [User Management](dotnet-api/users.md)
 
-## [Writing to a Stream](/docs/dotnet-api/writing-to-a-stream.html)
+## [Writing to a Stream](dotnet-api/writing-to-a-stream.md)
 
 # HTTP API
 
-## [Overview](/docs/http-api)
+## [Overview](http-api/index.md)
 
 ## [Security](http-api/security.md)
 
@@ -120,14 +120,14 @@
 
 # Projections
 
-## [API](/docs/projections/api.html)
+## [API](projections/api.md)
 
-## [Config](/docs/projections/projections-config.html)
+## [Config](projections/projections-config.md)
 
-## [Debugging](/docs/projections/debugging.html)
+## [Debugging](projections/debugging.md)
 
-## [Getting Started](/docs/projections/getting-started.html)
+## [Getting Started](projections/getting-started.md)
 
-## [System Projections](/docs/projections/system-projections.html)
+## [System Projections](projections/system-projections.md)
 
-## [User Defined Projections](/docs/projections/user-defined-projections.html)
+## [User Defined Projections](projections/user-defined-projections.md)

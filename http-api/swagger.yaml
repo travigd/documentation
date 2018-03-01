@@ -1006,7 +1006,7 @@ paths:
       tags:
         - Projections
       summary: Get all non-transient projections
-      description: Returns all non-transient projections defined in Event Store.
+      description: Returns all known projections except ad-hoc projections.
       operationId: OnProjectionsGetAllNonTransient
       produces:
         - application/json
@@ -1144,8 +1144,8 @@ paths:
     post:
       tags:
         - Projections
-      summary: TBD
-      description: TBD
+      summary: Read events from projection based on a query definition
+      description: Read events from projection based on a query definition, i.e. fromAll, fromStream, fromStreams
       operationId: OnProjectionsReadEvents
       produces:
         - application/json
@@ -1290,7 +1290,7 @@ paths:
     get:
       tags:
         - Projections
-      summary: Get result
+      summary: Get result of projection
       description: Get the final result of a projection.
       operationId: OnProjectionResultGet
       produces:
@@ -1353,7 +1353,7 @@ paths:
           type: string
         - name: enableRunAs
           in: query
-          description: Is enableRunAs enabled
+          description: Run as the user issuing the command.
           required: false
           type: boolean
       responses:
@@ -1379,7 +1379,7 @@ paths:
           type: string
         - name: enableRunAs
           in: query
-          description: Is enableRunAs enabled
+          description: Run as the user issuing the command.
           required: false
           type: boolean
       responses:
@@ -1405,7 +1405,7 @@ paths:
           type: string
         - name: enableRunAs
           in: query
-          description: Is enableRunAs enabled
+          description: Run as the user issuing the command.
           required: false
           type: boolean
       responses:
@@ -1431,7 +1431,7 @@ paths:
           type: string
         - name: enableRunAs
           in: query
-          description: Is enableRunAs enabled
+          description: Run as the user issuing the command.
           required: false
           type: boolean
       responses:
