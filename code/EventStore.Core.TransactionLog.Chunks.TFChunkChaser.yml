@@ -1,0 +1,1056 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  id: TFChunkChaser
+  parent: EventStore.Core.TransactionLog.Chunks
+  children:
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+  langs:
+  - csharp
+  - vb
+  name: TFChunkChaser
+  nameWithType: TFChunkChaser
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TFChunkChaser
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 6
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: 'public class TFChunkChaser : object, ITransactionFileChaser, IDisposable'
+    content.vb: >-
+      Public Class TFChunkChaser
+
+          Inherits Object
+
+          Implements ITransactionFileChaser, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.TransactionLog.ITransactionFileChaser
+  - IDisposable
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.TransactionLog.Chunks.TFChunkChaser.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint
+  commentId: P:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint
+  id: Checkpoint
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: Checkpoint
+  nameWithType: TFChunkChaser.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Checkpoint
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public ICheckpoint Checkpoint { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    content.vb: Public ReadOnly Property Checkpoint As ICheckpoint
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint*
+  implements:
+  - EventStore.Core.TransactionLog.ITransactionFileChaser.Checkpoint
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  id: '#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)'
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: TFChunkChaser(TFChunkDb, ICheckpoint, ICheckpoint)
+  nameWithType: TFChunkChaser.TFChunkChaser(TFChunkDb, ICheckpoint, ICheckpoint)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TFChunkChaser(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public TFChunkChaser(TFChunkDb db, ICheckpoint writerCheckpoint, ICheckpoint chaserCheckpoint)
+    parameters:
+    - id: db
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+    - id: writerCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    - id: chaserCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    content.vb: Public Sub New(db As TFChunkDb, writerCheckpoint As ICheckpoint, chaserCheckpoint As ICheckpoint)
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open
+  id: Open
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: Open()
+  nameWithType: TFChunkChaser.Open()
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Open
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public void Open()
+    content.vb: Public Sub Open
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open*
+  implements:
+  - EventStore.Core.TransactionLog.ITransactionFileChaser.Open
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+  id: TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: TryReadNext(out LogRecord)
+  nameWithType: TFChunkChaser.TryReadNext(out LogRecord)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext(out EventStore.Core.TransactionLog.LogRecords.LogRecord)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TryReadNext
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public bool TryReadNext(out LogRecord record)
+    parameters:
+    - id: record
+      type: EventStore.Core.TransactionLog.LogRecords.LogRecord
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryReadNext(ByRef record As LogRecord) As Boolean
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext*
+  implements:
+  - EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+  nameWithType.vb: TFChunkChaser.TryReadNext(ByRef LogRecord)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext(ByRef EventStore.Core.TransactionLog.LogRecords.LogRecord)
+  name.vb: TryReadNext(ByRef LogRecord)
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext
+  id: TryReadNext
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: TryReadNext()
+  nameWithType: TFChunkChaser.TryReadNext()
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TryReadNext
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public SeqReadResult TryReadNext()
+    return:
+      type: EventStore.Core.TransactionLog.SeqReadResult
+    content.vb: Public Function TryReadNext As SeqReadResult
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext*
+  implements:
+  - EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose
+  id: Dispose
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TFChunkChaser.Dispose()
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 45
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close
+  id: Close
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  nameWithType: TFChunkChaser.Close()
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Close
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 50
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public void Close()
+    content.vb: Public Sub Close
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close*
+  implements:
+  - EventStore.Core.TransactionLog.ITransactionFileChaser.Close
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush
+  id: Flush
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
+  langs:
+  - csharp
+  - vb
+  name: Flush()
+  nameWithType: TFChunkChaser.Flush()
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Flush
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkChaser.cs
+    startLine: 55
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public void Flush()
+    content.vb: Public Sub Flush
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush*
+  implements:
+  - EventStore.Core.TransactionLog.ITransactionFileChaser.Flush
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.TransactionLog.Chunks
+  commentId: N:EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Chunks
+  nameWithType: EventStore.Core.TransactionLog.Chunks
+  fullName: EventStore.Core.TransactionLog.Chunks
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.TransactionLog.ITransactionFileChaser
+  commentId: T:EventStore.Core.TransactionLog.ITransactionFileChaser
+  parent: EventStore.Core.TransactionLog
+  isExternal: false
+  name: ITransactionFileChaser
+  nameWithType: ITransactionFileChaser
+  fullName: EventStore.Core.TransactionLog.ITransactionFileChaser
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TFChunkChaser>()
+  nameWithType: ProtobufExtensions.Serialize<TFChunkChaser>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.Chunks.TFChunkChaser>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TFChunkChaser)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.Chunks.TFChunkChaser)()
+  name.vb: Serialize(Of TFChunkChaser)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TFChunkChaser>
+    nameWithType: ProtobufExtensions.Serialize<TFChunkChaser>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.Chunks.TFChunkChaser>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TFChunkChaser)
+    nameWithType: ProtobufExtensions.Serialize(Of TFChunkChaser)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.Chunks.TFChunkChaser)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TFChunkChaser>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TFChunkChaser>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.Chunks.TFChunkChaser>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TFChunkChaser)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.Chunks.TFChunkChaser)()
+  name.vb: SerializeToArray(Of TFChunkChaser)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TFChunkChaser>
+    nameWithType: ProtobufExtensions.SerializeToArray<TFChunkChaser>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.Chunks.TFChunkChaser>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TFChunkChaser)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TFChunkChaser)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.Chunks.TFChunkChaser)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog
+  commentId: N:EventStore.Core.TransactionLog
+  isExternal: false
+  name: EventStore.Core.TransactionLog
+  nameWithType: EventStore.Core.TransactionLog
+  fullName: EventStore.Core.TransactionLog
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint
+  isExternal: false
+  name: Checkpoint
+  nameWithType: TFChunkChaser.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Checkpoint
+- uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Checkpoint
+  commentId: P:EventStore.Core.TransactionLog.ITransactionFileChaser.Checkpoint
+  parent: EventStore.Core.TransactionLog.ITransactionFileChaser
+  isExternal: false
+  name: Checkpoint
+  nameWithType: ITransactionFileChaser.Checkpoint
+  fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Checkpoint
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.#ctor*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.#ctor
+  isExternal: false
+  name: TFChunkChaser
+  nameWithType: TFChunkChaser.TFChunkChaser
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TFChunkChaser
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkDb
+  nameWithType: TFChunkDb
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open
+  isExternal: false
+  name: Open
+  nameWithType: TFChunkChaser.Open
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Open
+- uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Open
+  commentId: M:EventStore.Core.TransactionLog.ITransactionFileChaser.Open
+  parent: EventStore.Core.TransactionLog.ITransactionFileChaser
+  isExternal: false
+  name: Open()
+  nameWithType: ITransactionFileChaser.Open()
+  fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Open()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Open
+    name: Open
+    nameWithType: ITransactionFileChaser.Open
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Open
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Open
+    name: Open
+    nameWithType: ITransactionFileChaser.Open
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Open
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext
+  isExternal: false
+  name: TryReadNext
+  nameWithType: TFChunkChaser.TryReadNext
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.TryReadNext
+- uid: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+  commentId: M:EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+  parent: EventStore.Core.TransactionLog.ITransactionFileChaser
+  isExternal: false
+  name: TryReadNext(LogRecord)
+  nameWithType: ITransactionFileChaser.TryReadNext(LogRecord)
+  fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord)
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+    name: TryReadNext
+    nameWithType: ITransactionFileChaser.TryReadNext
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.LogRecord
+    name: LogRecord
+    nameWithType: LogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext(EventStore.Core.TransactionLog.LogRecords.LogRecord@)
+    name: TryReadNext
+    nameWithType: ITransactionFileChaser.TryReadNext
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.LogRecord
+    name: LogRecord
+    nameWithType: LogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.LogRecord
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: LogRecord
+  nameWithType: LogRecord
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.TransactionLog.LogRecords
+  commentId: N:EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: EventStore.Core.TransactionLog.LogRecords
+  nameWithType: EventStore.Core.TransactionLog.LogRecords
+  fullName: EventStore.Core.TransactionLog.LogRecords
+- uid: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+  commentId: M:EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+  parent: EventStore.Core.TransactionLog.ITransactionFileChaser
+  isExternal: false
+  name: TryReadNext()
+  nameWithType: ITransactionFileChaser.TryReadNext()
+  fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+    name: TryReadNext
+    nameWithType: ITransactionFileChaser.TryReadNext
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+    name: TryReadNext
+    nameWithType: ITransactionFileChaser.TryReadNext
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.TryReadNext
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.SeqReadResult
+  commentId: T:EventStore.Core.TransactionLog.SeqReadResult
+  parent: EventStore.Core.TransactionLog
+  isExternal: false
+  name: SeqReadResult
+  nameWithType: SeqReadResult
+  fullName: EventStore.Core.TransactionLog.SeqReadResult
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: TFChunkChaser.Dispose
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Dispose
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close
+  isExternal: false
+  name: Close
+  nameWithType: TFChunkChaser.Close
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Close
+- uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Close
+  commentId: M:EventStore.Core.TransactionLog.ITransactionFileChaser.Close
+  parent: EventStore.Core.TransactionLog.ITransactionFileChaser
+  isExternal: false
+  name: Close()
+  nameWithType: ITransactionFileChaser.Close()
+  fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Close()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Close
+    name: Close
+    nameWithType: ITransactionFileChaser.Close
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Close
+    name: Close
+    nameWithType: ITransactionFileChaser.Close
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush
+  isExternal: false
+  name: Flush
+  nameWithType: TFChunkChaser.Flush
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser.Flush
+- uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Flush
+  commentId: M:EventStore.Core.TransactionLog.ITransactionFileChaser.Flush
+  parent: EventStore.Core.TransactionLog.ITransactionFileChaser
+  isExternal: false
+  name: Flush()
+  nameWithType: ITransactionFileChaser.Flush()
+  fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Flush()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Flush
+    name: Flush
+    nameWithType: ITransactionFileChaser.Flush
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Flush
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.ITransactionFileChaser.Flush
+    name: Flush
+    nameWithType: ITransactionFileChaser.Flush
+    fullName: EventStore.Core.TransactionLog.ITransactionFileChaser.Flush
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

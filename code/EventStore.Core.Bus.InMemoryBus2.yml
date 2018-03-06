@@ -1,0 +1,1460 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Bus.InMemoryBus2
+  commentId: T:EventStore.Core.Bus.InMemoryBus2
+  id: InMemoryBus2
+  parent: EventStore.Core.Bus
+  children:
+  - EventStore.Core.Bus.InMemoryBus2.#ctor(System.String,System.Boolean,System.Nullable{TimeSpan})
+  - EventStore.Core.Bus.InMemoryBus2.CreateTest
+  - EventStore.Core.Bus.InMemoryBus2.DefaultSlowMessageThreshold
+  - EventStore.Core.Bus.InMemoryBus2.Handle(EventStore.Core.Messaging.Message)
+  - EventStore.Core.Bus.InMemoryBus2.Name
+  - EventStore.Core.Bus.InMemoryBus2.Publish(EventStore.Core.Messaging.Message)
+  - EventStore.Core.Bus.InMemoryBus2.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  - EventStore.Core.Bus.InMemoryBus2.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  langs:
+  - csharp
+  - vb
+  name: InMemoryBus2
+  nameWithType: InMemoryBus2
+  fullName: EventStore.Core.Bus.InMemoryBus2
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InMemoryBus2
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 126
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  summary: "\nSynchronously dispatches messages to zero or more subscribers.\nSubscribers are responsible for handling exceptions\n"
+  example: []
+  syntax:
+    content: 'public class InMemoryBus2 : object, IBus, ISubscriber, IPublisher, IHandle<Message>'
+    content.vb: >-
+      Public Class InMemoryBus2
+
+          Inherits Object
+
+          Implements IBus, ISubscriber, IPublisher, IHandle(Of Message)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IBus
+  - EventStore.Core.Bus.ISubscriber
+  - EventStore.Core.Bus.IPublisher
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Bus.InMemoryBus2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Bus.InMemoryBus2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Bus.InMemoryBus2.CreateTest
+  commentId: M:EventStore.Core.Bus.InMemoryBus2.CreateTest
+  id: CreateTest
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: CreateTest()
+  nameWithType: InMemoryBus2.CreateTest()
+  fullName: EventStore.Core.Bus.InMemoryBus2.CreateTest()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateTest
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 128
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: public static InMemoryBus2 CreateTest()
+    return:
+      type: EventStore.Core.Bus.InMemoryBus2
+    content.vb: Public Shared Function CreateTest As InMemoryBus2
+  overload: EventStore.Core.Bus.InMemoryBus2.CreateTest*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Bus.InMemoryBus2.DefaultSlowMessageThreshold
+  commentId: F:EventStore.Core.Bus.InMemoryBus2.DefaultSlowMessageThreshold
+  id: DefaultSlowMessageThreshold
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: DefaultSlowMessageThreshold
+  nameWithType: InMemoryBus2.DefaultSlowMessageThreshold
+  fullName: EventStore.Core.Bus.InMemoryBus2.DefaultSlowMessageThreshold
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: DefaultSlowMessageThreshold
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 133
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: public static readonly TimeSpan DefaultSlowMessageThreshold
+    return:
+      type: TimeSpan
+    content.vb: Public Shared ReadOnly DefaultSlowMessageThreshold As TimeSpan
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Core.Bus.InMemoryBus2.Name
+  commentId: P:EventStore.Core.Bus.InMemoryBus2.Name
+  id: Name
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: InMemoryBus2.Name
+  fullName: EventStore.Core.Bus.InMemoryBus2.Name
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Name
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 137
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: EventStore.Core.Bus.InMemoryBus2.Name*
+  implements:
+  - EventStore.Core.Bus.IBus.Name
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Bus.InMemoryBus2.#ctor(System.String,System.Boolean,System.Nullable{TimeSpan})
+  commentId: M:EventStore.Core.Bus.InMemoryBus2.#ctor(System.String,System.Boolean,System.Nullable{TimeSpan})
+  id: '#ctor(System.String,System.Boolean,System.Nullable{TimeSpan})'
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: InMemoryBus2(String, Boolean, Nullable<TimeSpan>)
+  nameWithType: InMemoryBus2.InMemoryBus2(String, Boolean, Nullable<TimeSpan>)
+  fullName: EventStore.Core.Bus.InMemoryBus2.InMemoryBus2(System.String, System.Boolean, System.Nullable<TimeSpan>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 148
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: public InMemoryBus2(string name, bool watchSlowMsg = true, TimeSpan? slowMsgThreshold = null)
+    parameters:
+    - id: name
+      type: System.String
+    - id: watchSlowMsg
+      type: System.Boolean
+    - id: slowMsgThreshold
+      type: System.Nullable{TimeSpan}
+    content.vb: Public Sub New(name As String, watchSlowMsg As Boolean = True, slowMsgThreshold As TimeSpan? = Nothing)
+  overload: EventStore.Core.Bus.InMemoryBus2.#ctor*
+  nameWithType.vb: InMemoryBus2.InMemoryBus2(String, Boolean, Nullable(Of TimeSpan))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Bus.InMemoryBus2.InMemoryBus2(System.String, System.Boolean, System.Nullable(Of TimeSpan))
+  name.vb: InMemoryBus2(String, Boolean, Nullable(Of TimeSpan))
+- uid: EventStore.Core.Bus.InMemoryBus2.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  commentId: M:EventStore.Core.Bus.InMemoryBus2.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  id: Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: Subscribe<T>(IHandle<T>)
+  nameWithType: InMemoryBus2.Subscribe<T>(IHandle<T>)
+  fullName: EventStore.Core.Bus.InMemoryBus2.Subscribe<T>(EventStore.Core.Bus.IHandle<T>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Subscribe
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 157
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: 'public void Subscribe<T>(IHandle<T> handler)where T : Message'
+    parameters:
+    - id: handler
+      type: EventStore.Core.Bus.IHandle{{T}}
+    typeParameters:
+    - id: T
+    content.vb: Public Sub Subscribe(Of T As Message)(handler As IHandle(Of T))
+  overload: EventStore.Core.Bus.InMemoryBus2.Subscribe*
+  implements:
+  - EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{{T}})
+  nameWithType.vb: InMemoryBus2.Subscribe(Of T)(IHandle(Of T))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Bus.InMemoryBus2.Subscribe(Of T)(EventStore.Core.Bus.IHandle(Of T))
+  name.vb: Subscribe(Of T)(IHandle(Of T))
+- uid: EventStore.Core.Bus.InMemoryBus2.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  commentId: M:EventStore.Core.Bus.InMemoryBus2.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  id: Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: Unsubscribe<T>(IHandle<T>)
+  nameWithType: InMemoryBus2.Unsubscribe<T>(IHandle<T>)
+  fullName: EventStore.Core.Bus.InMemoryBus2.Unsubscribe<T>(EventStore.Core.Bus.IHandle<T>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Unsubscribe
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 179
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: 'public void Unsubscribe<T>(IHandle<T> handler)where T : Message'
+    parameters:
+    - id: handler
+      type: EventStore.Core.Bus.IHandle{{T}}
+    typeParameters:
+    - id: T
+    content.vb: Public Sub Unsubscribe(Of T As Message)(handler As IHandle(Of T))
+  overload: EventStore.Core.Bus.InMemoryBus2.Unsubscribe*
+  implements:
+  - EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{{T}})
+  nameWithType.vb: InMemoryBus2.Unsubscribe(Of T)(IHandle(Of T))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Bus.InMemoryBus2.Unsubscribe(Of T)(EventStore.Core.Bus.IHandle(Of T))
+  name.vb: Unsubscribe(Of T)(IHandle(Of T))
+- uid: EventStore.Core.Bus.InMemoryBus2.Handle(EventStore.Core.Messaging.Message)
+  commentId: M:EventStore.Core.Bus.InMemoryBus2.Handle(EventStore.Core.Messaging.Message)
+  id: Handle(EventStore.Core.Messaging.Message)
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: Handle(Message)
+  nameWithType: InMemoryBus2.Handle(Message)
+  fullName: EventStore.Core.Bus.InMemoryBus2.Handle(EventStore.Core.Messaging.Message)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 199
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: public void Handle(Message message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messaging.Message
+    content.vb: Public Sub Handle(message As Message)
+  overload: EventStore.Core.Bus.InMemoryBus2.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.Handle(EventStore.Core.Messaging.Message)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Bus.InMemoryBus2.Publish(EventStore.Core.Messaging.Message)
+  commentId: M:EventStore.Core.Bus.InMemoryBus2.Publish(EventStore.Core.Messaging.Message)
+  id: Publish(EventStore.Core.Messaging.Message)
+  parent: EventStore.Core.Bus.InMemoryBus2
+  langs:
+  - csharp
+  - vb
+  name: Publish(Message)
+  nameWithType: InMemoryBus2.Publish(Message)
+  fullName: EventStore.Core.Bus.InMemoryBus2.Publish(EventStore.Core.Messaging.Message)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/InMemoryBus.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Publish
+    path: ../EventStore/src/EventStore.Core/Bus/InMemoryBus.cs
+    startLine: 204
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: public void Publish(Message message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messaging.Message
+    content.vb: Public Sub Publish(message As Message)
+  overload: EventStore.Core.Bus.InMemoryBus2.Publish*
+  implements:
+  - EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IBus
+  commentId: T:EventStore.Core.Bus.IBus
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IBus
+  nameWithType: IBus
+  fullName: EventStore.Core.Bus.IBus
+- uid: EventStore.Core.Bus.ISubscriber
+  commentId: T:EventStore.Core.Bus.ISubscriber
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: ISubscriber
+  nameWithType: ISubscriber
+  fullName: EventStore.Core.Bus.ISubscriber
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<Message>
+  nameWithType: IHandle<Message>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>
+  nameWithType.vb: IHandle(Of Message)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message)
+  name.vb: IHandle(Of Message)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.InMemoryBus2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<InMemoryBus2>()
+  nameWithType: ProtobufExtensions.Serialize<InMemoryBus2>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Bus.InMemoryBus2>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of InMemoryBus2)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Bus.InMemoryBus2)()
+  name.vb: Serialize(Of InMemoryBus2)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<InMemoryBus2>
+    nameWithType: ProtobufExtensions.Serialize<InMemoryBus2>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Bus.InMemoryBus2>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of InMemoryBus2)
+    nameWithType: ProtobufExtensions.Serialize(Of InMemoryBus2)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Bus.InMemoryBus2)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.InMemoryBus2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<InMemoryBus2>()
+  nameWithType: ProtobufExtensions.SerializeToArray<InMemoryBus2>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Bus.InMemoryBus2>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of InMemoryBus2)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Bus.InMemoryBus2)()
+  name.vb: SerializeToArray(Of InMemoryBus2)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<InMemoryBus2>
+    nameWithType: ProtobufExtensions.SerializeToArray<InMemoryBus2>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Bus.InMemoryBus2>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of InMemoryBus2)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of InMemoryBus2)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Bus.InMemoryBus2)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Bus.InMemoryBus2.CreateTest*
+  commentId: Overload:EventStore.Core.Bus.InMemoryBus2.CreateTest
+  isExternal: false
+  name: CreateTest
+  nameWithType: InMemoryBus2.CreateTest
+  fullName: EventStore.Core.Bus.InMemoryBus2.CreateTest
+- uid: EventStore.Core.Bus.InMemoryBus2
+  commentId: T:EventStore.Core.Bus.InMemoryBus2
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: InMemoryBus2
+  nameWithType: InMemoryBus2
+  fullName: EventStore.Core.Bus.InMemoryBus2
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Core.Bus.InMemoryBus2.Name*
+  commentId: Overload:EventStore.Core.Bus.InMemoryBus2.Name
+  isExternal: false
+  name: Name
+  nameWithType: InMemoryBus2.Name
+  fullName: EventStore.Core.Bus.InMemoryBus2.Name
+- uid: EventStore.Core.Bus.IBus.Name
+  commentId: P:EventStore.Core.Bus.IBus.Name
+  parent: EventStore.Core.Bus.IBus
+  isExternal: false
+  name: Name
+  nameWithType: IBus.Name
+  fullName: EventStore.Core.Bus.IBus.Name
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Bus.InMemoryBus2.#ctor*
+  commentId: Overload:EventStore.Core.Bus.InMemoryBus2.#ctor
+  isExternal: false
+  name: InMemoryBus2
+  nameWithType: InMemoryBus2.InMemoryBus2
+  fullName: EventStore.Core.Bus.InMemoryBus2.InMemoryBus2
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Nullable{TimeSpan}
+  commentId: '!:System.Nullable{TimeSpan}'
+  definition: System.Nullable`1
+  name: Nullable<TimeSpan>
+  nameWithType: Nullable<TimeSpan>
+  fullName: System.Nullable<TimeSpan>
+  nameWithType.vb: Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of TimeSpan)
+  name.vb: Nullable(Of TimeSpan)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: TimeSpan
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: TimeSpan
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.InMemoryBus2.Subscribe*
+  commentId: Overload:EventStore.Core.Bus.InMemoryBus2.Subscribe
+  isExternal: false
+  name: Subscribe
+  nameWithType: InMemoryBus2.Subscribe
+  fullName: EventStore.Core.Bus.InMemoryBus2.Subscribe
+- uid: EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{{T}})
+  commentId: M:EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  parent: EventStore.Core.Bus.ISubscriber
+  definition: EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  name: Subscribe<T>(IHandle<T>)
+  nameWithType: ISubscriber.Subscribe<T>(IHandle<T>)
+  fullName: EventStore.Core.Bus.ISubscriber.Subscribe<T>(EventStore.Core.Bus.IHandle<T>)
+  nameWithType.vb: ISubscriber.Subscribe(Of T)(IHandle(Of T))
+  fullName.vb: EventStore.Core.Bus.ISubscriber.Subscribe(Of T)(EventStore.Core.Bus.IHandle(Of T))
+  name.vb: Subscribe(Of T)(IHandle(Of T))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Subscribe<T>
+    nameWithType: ISubscriber.Subscribe<T>
+    fullName: EventStore.Core.Bus.ISubscriber.Subscribe<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Subscribe(Of T)
+    nameWithType: ISubscriber.Subscribe(Of T)
+    fullName: EventStore.Core.Bus.ISubscriber.Subscribe(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{{T}}
+  commentId: T:EventStore.Core.Bus.IHandle{`0}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  commentId: M:EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+  isExternal: false
+  name: Subscribe<T>(IHandle<T>)
+  nameWithType: ISubscriber.Subscribe<T>(IHandle<T>)
+  fullName: EventStore.Core.Bus.ISubscriber.Subscribe<T>(EventStore.Core.Bus.IHandle<T>)
+  nameWithType.vb: ISubscriber.Subscribe(Of T)(IHandle(Of T))
+  fullName.vb: EventStore.Core.Bus.ISubscriber.Subscribe(Of T)(EventStore.Core.Bus.IHandle(Of T))
+  name.vb: Subscribe(Of T)(IHandle(Of T))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Subscribe<T>
+    nameWithType: ISubscriber.Subscribe<T>
+    fullName: EventStore.Core.Bus.ISubscriber.Subscribe<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Subscribe(Of T)
+    nameWithType: ISubscriber.Subscribe(Of T)
+    fullName: EventStore.Core.Bus.ISubscriber.Subscribe(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.InMemoryBus2.Unsubscribe*
+  commentId: Overload:EventStore.Core.Bus.InMemoryBus2.Unsubscribe
+  isExternal: false
+  name: Unsubscribe
+  nameWithType: InMemoryBus2.Unsubscribe
+  fullName: EventStore.Core.Bus.InMemoryBus2.Unsubscribe
+- uid: EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{{T}})
+  commentId: M:EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  parent: EventStore.Core.Bus.ISubscriber
+  definition: EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  name: Unsubscribe<T>(IHandle<T>)
+  nameWithType: ISubscriber.Unsubscribe<T>(IHandle<T>)
+  fullName: EventStore.Core.Bus.ISubscriber.Unsubscribe<T>(EventStore.Core.Bus.IHandle<T>)
+  nameWithType.vb: ISubscriber.Unsubscribe(Of T)(IHandle(Of T))
+  fullName.vb: EventStore.Core.Bus.ISubscriber.Unsubscribe(Of T)(EventStore.Core.Bus.IHandle(Of T))
+  name.vb: Unsubscribe(Of T)(IHandle(Of T))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Unsubscribe<T>
+    nameWithType: ISubscriber.Unsubscribe<T>
+    fullName: EventStore.Core.Bus.ISubscriber.Unsubscribe<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Unsubscribe(Of T)
+    nameWithType: ISubscriber.Unsubscribe(Of T)
+    fullName: EventStore.Core.Bus.ISubscriber.Unsubscribe(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  commentId: M:EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+  isExternal: false
+  name: Unsubscribe<T>(IHandle<T>)
+  nameWithType: ISubscriber.Unsubscribe<T>(IHandle<T>)
+  fullName: EventStore.Core.Bus.ISubscriber.Unsubscribe<T>(EventStore.Core.Bus.IHandle<T>)
+  nameWithType.vb: ISubscriber.Unsubscribe(Of T)(IHandle(Of T))
+  fullName.vb: EventStore.Core.Bus.ISubscriber.Unsubscribe(Of T)(EventStore.Core.Bus.IHandle(Of T))
+  name.vb: Unsubscribe(Of T)(IHandle(Of T))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Unsubscribe<T>
+    nameWithType: ISubscriber.Unsubscribe<T>
+    fullName: EventStore.Core.Bus.ISubscriber.Unsubscribe<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{``0})
+    name: Unsubscribe(Of T)
+    nameWithType: ISubscriber.Unsubscribe(Of T)
+    fullName: EventStore.Core.Bus.ISubscriber.Unsubscribe(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.InMemoryBus2.Handle*
+  commentId: Overload:EventStore.Core.Bus.InMemoryBus2.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: InMemoryBus2.Handle
+  fullName: EventStore.Core.Bus.InMemoryBus2.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.Handle(EventStore.Core.Messaging.Message)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.Handle(EventStore.Core.Messaging.Message)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(Message)
+  nameWithType: IHandle<Message>.Handle(Message)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>.Handle(EventStore.Core.Messaging.Message)
+  nameWithType.vb: IHandle(Of Message).Handle(Message)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message).Handle(EventStore.Core.Messaging.Message)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<Message>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of Message).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.Message
+  commentId: T:EventStore.Core.Messaging.Message
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: Message
+  nameWithType: Message
+  fullName: EventStore.Core.Messaging.Message
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: EventStore.Core.Bus.InMemoryBus2.Publish*
+  commentId: Overload:EventStore.Core.Bus.InMemoryBus2.Publish
+  isExternal: false
+  name: Publish
+  nameWithType: InMemoryBus2.Publish
+  fullName: EventStore.Core.Bus.InMemoryBus2.Publish
+- uid: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  commentId: M:EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  parent: EventStore.Core.Bus.IPublisher
+  isExternal: false
+  name: Publish(Message)
+  nameWithType: IPublisher.Publish(Message)
+  fullName: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+    name: Publish
+    nameWithType: IPublisher.Publish
+    fullName: EventStore.Core.Bus.IPublisher.Publish
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+    name: Publish
+    nameWithType: IPublisher.Publish
+    fullName: EventStore.Core.Bus.IPublisher.Publish
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )

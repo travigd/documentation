@@ -1,0 +1,2304 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  commentId: T:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  id: ReadIndexTestScenario
+  parent: EventStore.Core.Tests.Services.Storage
+  children:
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.#ctor(System.Int32,System.Int64,System.Byte,System.Boolean)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Bus
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ChaserCheckpoint
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Db
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IndexBitnessVersion
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IODispatcher
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MaxEntriesInMemTable
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MetastreamMaxCount
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.PerformAdditionalCommitChecks
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReadIndex
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReplicationCheckpoint
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge(System.Boolean,System.Boolean)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TableIndex
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(Guid,System.Int64,System.String,System.Int64)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(System.Int64,System.String,System.Int64)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete(System.String)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit(EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare(System.String)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare(System.String,System.Int64,Guid,System.String,System.String)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Writer
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriterCheckpoint
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent(System.String,System.Int64,System.String,System.Nullable{DateTime},Guid,System.Boolean)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0(Guid,System.String,System.Int64,System.Int64,System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata(System.String,System.Int64,System.String,System.Nullable{DateTime})
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String,System.Int64)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String,System.Int64,System.Int64,System.String)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd(Guid,System.Int64,System.String)
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent(Guid,System.Int64,System.Int32,System.String,System.Int64,System.String,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: ReadIndexTestScenario
+  nameWithType: ReadIndexTestScenario
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadIndexTestScenario
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: 'public abstract class ReadIndexTestScenario : SpecificationWithDirectoryPerTestFixture'
+    content.vb: >-
+      Public MustInherit Class ReadIndexTestScenario
+
+          Inherits SpecificationWithDirectoryPerTestFixture
+  inheritance:
+  - System.Object
+  - EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  derivedClasses:
+  - EventStore.Core.Tests.Services.Storage.AllReader.when_reading_all_with_replication_checkpoint_set
+  - EventStore.Core.Tests.Services.Storage.BuildingIndex.when_building_an_index_off_tfile_with_multiple_events_in_a_stream
+  - EventStore.Core.Tests.Services.Storage.BuildingIndex.when_building_an_index_off_tfile_with_prepares_and_commits
+  - EventStore.Core.Tests.Services.Storage.BuildingIndex.when_building_an_index_off_tfile_with_prepares_and_commits_for_events_with_version_numbers_greater_than_int_maxvalue
+  - EventStore.Core.Tests.Services.Storage.BuildingIndex.when_building_an_index_off_tfile_with_prepares_and_commits_for_log_records_of_mixed_versions
+  - EventStore.Core.Tests.Services.Storage.BuildingIndex.when_building_an_index_off_tfile_with_prepares_but_no_commits
+  - EventStore.Core.Tests.Services.Storage.BuildingIndex.when_building_an_index_off_tfile_with_two_events_in_stream
+  - EventStore.Core.Tests.Services.Storage.CheckCommitStartingAt.when_writing_few_prepares_and_committing_one
+  - EventStore.Core.Tests.Services.Storage.CheckCommitStartingAt.when_writing_few_prepares_with_same_expected_version_and_committing_one_of_them
+  - EventStore.Core.Tests.Services.Storage.CheckCommitStartingAt.when_writing_few_prepares_with_same_expected_version_and_not_committing_them
+  - EventStore.Core.Tests.Services.Storage.CheckCommitStartingAt.when_writing_prepares_in_wrong_order_and_committing_in_right_order
+  - EventStore.Core.Tests.Services.Storage.CheckCommitStartingAt.when_writing_single_prepare
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.is_stream_deleted_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_stream_spanning_through_multiple_chunks_and_1_stream_with_same_hash_and_1_stream_with_different_hash_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_stream_spanning_through_multiple_chunks_in_db_with_other_streams_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_stream_spanning_through_multiple_chunks_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_stream_with_1_hash_collision_and_1_stream_with_other_hash_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_stream_with_2_hash_collisions_and_mixed_order_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_stream_with_version_numbers_greater_than_int_maxvalue
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_streams_with_different_hashes_spanning_through_multiple_chunks_in_db_with_1_stream_with_same_hash_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_streams_with_same_hash_spanning_through_multiple_chunks_in_db_with_1_stream_with_different_hash_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_deleting_the_only_existing_stream_in_db_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_hard_deleting_stream_with_log_version_0
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_reading_deleted_stream_written_with_old_log_record_version
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_writing_delete_prepare_but_no_commit_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.when_writing_few_prepares_with_same_event_number_and_commiting_delete_on_this_version_read_index_should
+  - EventStore.Core.Tests.Services.Storage.DeletingStream.with_empty_db_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_no_hash_collisions_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_single_deleted_event_stream_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_three_collisioned_streams_one_event_each_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_three_collisioned_streams_one_event_each_with_second_stream_deleted_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_three_collisioned_streams_with_different_number_of_events_each_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_three_collisioned_streams_with_different_number_of_events_third_one_deleted_each_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_two_collisioned_streams_one_event_each_first_stream_deleted_read_index_should
+  - EventStore.Core.Tests.Services.Storage.HashCollisions.with_two_collisioned_streams_one_event_each_read_index_should
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.AfterScavenge.when_having_stream_both_maxage_and_maxcount_specified_with_maxage_more_strict
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.AfterScavenge.when_having_stream_both_maxage_and_maxcount_specified_with_maxcount_more_strict
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.AfterScavenge.when_having_stream_with_maxage_specified
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.AfterScavenge.when_having_stream_with_maxcount_specified
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.AfterScavenge.when_having_stream_with_truncatebefore_specified
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.ReadRangeAndNextEventNumber.when_reading_stream_with_max_age
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.ReadRangeAndNextEventNumber.when_reading_stream_with_max_age_and_max_count_and_max_age_is_more_strict
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.ReadRangeAndNextEventNumber.when_reading_stream_with_max_age_and_max_count_and_max_count_is_more_strict
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.ReadRangeAndNextEventNumber.when_reading_stream_with_max_count
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.ReadRangeAndNextEventNumber.when_reading_stream_with_no_max_age_max_count
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.ReadRangeAndNextEventNumber.when_reading_stream_with_truncatebefore
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.when_having_one_stream_with_maxage_and_other_stream_with_maxcount_and_streams_have_same_hash
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.when_having_stream_both_maxage_and_maxcount_specified_with_maxage_more_strict
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.when_having_stream_both_maxage_and_maxcount_specified_with_maxcount_more_strict
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.when_having_stream_with_maxage_specified
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.when_having_stream_with_maxcount_specified
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.when_having_stream_with_maxcount_specified_and_long_transactions_written
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.when_having_stream_with_truncatebefore_specified
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_big_max_age
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_big_max_count
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_invalid_max_age_and_normal_max_count
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_invalid_max_count_and_normal_max_age
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_invalid_metadata
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_softdelete_truncatebefore
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_too_big_max_age
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_too_big_max_age_and_normal_max_count
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_too_big_max_count
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_too_big_max_count_and_normal_max_age
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_too_big_truncatebefore
+  - EventStore.Core.Tests.Services.Storage.MaxAgeMaxCount.with_truncatebefore_greater_than_int_maxvalue
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_deleting_duplicate_events
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_deleting_single_stream_spanning_through_2_chunks_in_2nd_chunk_in_db_with_3_chunks
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_deleting_single_stream_spanning_through_2_chunks_in_db_with_2_chunks
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_deleting_single_stream_spanning_through_2_chunks_in_db_with_3_chunks
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_having_commit_spanning_multiple_chunks
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_having_deleted_stream_spanning_two_chunks
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_scavenging_tfchunk_with_version0_log_records_and_deleted_records
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_scavenging_tfchunk_with_version0_log_records_using_transactions
+  - EventStore.Core.Tests.Services.Storage.Scavenge.when_writing_delete_prepare_without_commit_and_scavenging
+  - EventStore.Core.Tests.Services.Storage.Transactions.when_having_multievent_sequential_write_request_read_index_should
+  - EventStore.Core.Tests.Services.Storage.Transactions.when_having_two_intermingled_transactions_and_some_uncommited_prepares_in_the_end_read_index_should
+  - EventStore.Core.Tests.Services.Storage.Transactions.when_having_two_intermingled_transactions_and_some_uncommited_prepares_spanning_few_chunks_read_index_should
+  - EventStore.Core.Tests.Services.Storage.Transactions.when_having_two_intermingled_transactions_read_index_should
+  - EventStore.Core.Tests.Services.Storage.Transactions.when_having_two_intermingled_transactions_spanning_few_chunks_read_index_should
+  - EventStore.Core.Tests.Services.Storage.Transactions.when_rebuilding_index_for_partially_persisted_transaction
+  - EventStore.Core.Tests.TransactionLog.Truncation.TruncateScenario
+  inheritedMembers:
+  - EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.PathName
+  - EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+  - EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor(System.String)
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MaxEntriesInMemTable
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MaxEntriesInMemTable
+  id: MaxEntriesInMemTable
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: MaxEntriesInMemTable
+  nameWithType: ReadIndexTestScenario.MaxEntriesInMemTable
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MaxEntriesInMemTable
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MaxEntriesInMemTable
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected readonly int MaxEntriesInMemTable
+    return:
+      type: System.Int32
+    content.vb: Protected ReadOnly MaxEntriesInMemTable As Integer
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MetastreamMaxCount
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MetastreamMaxCount
+  id: MetastreamMaxCount
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: MetastreamMaxCount
+  nameWithType: ReadIndexTestScenario.MetastreamMaxCount
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.MetastreamMaxCount
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MetastreamMaxCount
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected readonly long MetastreamMaxCount
+    return:
+      type: System.Int64
+    content.vb: Protected ReadOnly MetastreamMaxCount As Long
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.PerformAdditionalCommitChecks
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.PerformAdditionalCommitChecks
+  id: PerformAdditionalCommitChecks
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: PerformAdditionalCommitChecks
+  nameWithType: ReadIndexTestScenario.PerformAdditionalCommitChecks
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.PerformAdditionalCommitChecks
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PerformAdditionalCommitChecks
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected readonly bool PerformAdditionalCommitChecks
+    return:
+      type: System.Boolean
+    content.vb: Protected ReadOnly PerformAdditionalCommitChecks As Boolean
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IndexBitnessVersion
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IndexBitnessVersion
+  id: IndexBitnessVersion
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: IndexBitnessVersion
+  nameWithType: ReadIndexTestScenario.IndexBitnessVersion
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IndexBitnessVersion
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IndexBitnessVersion
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected readonly byte IndexBitnessVersion
+    return:
+      type: System.Byte
+    content.vb: Protected ReadOnly IndexBitnessVersion As Byte
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TableIndex
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TableIndex
+  id: TableIndex
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: TableIndex
+  nameWithType: ReadIndexTestScenario.TableIndex
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TableIndex
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TableIndex
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected TableIndex TableIndex
+    return:
+      type: EventStore.Core.Index.TableIndex
+    content.vb: Protected TableIndex As TableIndex
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReadIndex
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReadIndex
+  id: ReadIndex
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: ReadIndex
+  nameWithType: ReadIndexTestScenario.ReadIndex
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReadIndex
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadIndex
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 30
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected IReadIndex ReadIndex
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+    content.vb: Protected ReadIndex As IReadIndex
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Db
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Db
+  id: Db
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: Db
+  nameWithType: ReadIndexTestScenario.Db
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Db
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Db
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected TFChunkDb Db
+    return:
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+    content.vb: Protected Db As TFChunkDb
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Writer
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Writer
+  id: Writer
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: Writer
+  nameWithType: ReadIndexTestScenario.Writer
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Writer
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Writer
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 33
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected TFChunkWriter Writer
+    return:
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+    content.vb: Protected Writer As TFChunkWriter
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriterCheckpoint
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriterCheckpoint
+  id: WriterCheckpoint
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriterCheckpoint
+  nameWithType: ReadIndexTestScenario.WriterCheckpoint
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriterCheckpoint
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriterCheckpoint
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 34
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected ICheckpoint WriterCheckpoint
+    return:
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    content.vb: Protected WriterCheckpoint As ICheckpoint
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ChaserCheckpoint
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ChaserCheckpoint
+  id: ChaserCheckpoint
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: ChaserCheckpoint
+  nameWithType: ReadIndexTestScenario.ChaserCheckpoint
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ChaserCheckpoint
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ChaserCheckpoint
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected ICheckpoint ChaserCheckpoint
+    return:
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    content.vb: Protected ChaserCheckpoint As ICheckpoint
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReplicationCheckpoint
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReplicationCheckpoint
+  id: ReplicationCheckpoint
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: ReplicationCheckpoint
+  nameWithType: ReadIndexTestScenario.ReplicationCheckpoint
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReplicationCheckpoint
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReplicationCheckpoint
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 36
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected ICheckpoint ReplicationCheckpoint
+    return:
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    content.vb: Protected ReplicationCheckpoint As ICheckpoint
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IODispatcher
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IODispatcher
+  id: IODispatcher
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: IODispatcher
+  nameWithType: ReadIndexTestScenario.IODispatcher
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.IODispatcher
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IODispatcher
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 37
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected IODispatcher IODispatcher
+    return:
+      type: EventStore.Core.Helpers.IODispatcher
+    content.vb: Protected IODispatcher As IODispatcher
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Bus
+  commentId: F:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Bus
+  id: Bus
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: Bus
+  nameWithType: ReadIndexTestScenario.Bus
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Bus
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Bus
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 38
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected InMemoryBus Bus
+    return:
+      type: EventStore.Core.Bus.InMemoryBus
+    content.vb: Protected Bus As InMemoryBus
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.#ctor(System.Int32,System.Int64,System.Byte,System.Boolean)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.#ctor(System.Int32,System.Int64,System.Byte,System.Boolean)
+  id: '#ctor(System.Int32,System.Int64,System.Byte,System.Boolean)'
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: ReadIndexTestScenario(Int32, Int64, Byte, Boolean)
+  nameWithType: ReadIndexTestScenario.ReadIndexTestScenario(Int32, Int64, Byte, Boolean)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReadIndexTestScenario(System.Int32, System.Int64, System.Byte, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 45
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected ReadIndexTestScenario(int maxEntriesInMemTable = 20, long metastreamMaxCount = null, byte indexBitnessVersion = null, bool performAdditionalChecks = true)
+    parameters:
+    - id: maxEntriesInMemTable
+      type: System.Int32
+    - id: metastreamMaxCount
+      type: System.Int64
+    - id: indexBitnessVersion
+      type: System.Byte
+    - id: performAdditionalChecks
+      type: System.Boolean
+    content.vb: Protected Sub New(maxEntriesInMemTable As Integer = 20, metastreamMaxCount As Long = Nothing, indexBitnessVersion As Byte = Nothing, performAdditionalChecks As Boolean = True)
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp
+  id: TestFixtureSetUp
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: TestFixtureSetUp()
+  nameWithType: ReadIndexTestScenario.TestFixtureSetUp()
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TestFixtureSetUp
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: public override void TestFixtureSetUp()
+    content.vb: Public Overrides Sub TestFixtureSetUp
+  overridden: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown
+  id: TestFixtureTearDown
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: TestFixtureTearDown()
+  nameWithType: ReadIndexTestScenario.TestFixtureTearDown()
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TestFixtureTearDown
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 110
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: public override void TestFixtureTearDown()
+    content.vb: Public Overrides Sub TestFixtureTearDown
+  overridden: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario
+  id: WriteTestScenario
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteTestScenario()
+  nameWithType: ReadIndexTestScenario.WriteTestScenario()
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteTestScenario
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 123
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected abstract void WriteTestScenario()
+    content.vb: Protected MustOverride Sub WriteTestScenario
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent(System.String,System.Int64,System.String,System.Nullable{DateTime},Guid,System.Boolean)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent(System.String,System.Int64,System.String,System.Nullable{DateTime},Guid,System.Boolean)
+  id: WriteSingleEvent(System.String,System.Int64,System.String,System.Nullable{DateTime},Guid,System.Boolean)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteSingleEvent(String, Int64, String, Nullable<DateTime>, Guid, Boolean)
+  nameWithType: ReadIndexTestScenario.WriteSingleEvent(String, Int64, String, Nullable<DateTime>, Guid, Boolean)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent(System.String, System.Int64, System.String, System.Nullable<DateTime>, Guid, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteSingleEvent
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 125
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected EventRecord WriteSingleEvent(string eventStreamId, long eventNumber, string data, DateTime? timestamp = null, Guid eventId = null, bool retryOnFail = false)
+    parameters:
+    - id: eventStreamId
+      type: System.String
+    - id: eventNumber
+      type: System.Int64
+    - id: data
+      type: System.String
+    - id: timestamp
+      type: System.Nullable{DateTime}
+    - id: eventId
+      type: Guid
+    - id: retryOnFail
+      type: System.Boolean
+    return:
+      type: EventStore.Core.Data.EventRecord
+    content.vb: Protected Function WriteSingleEvent(eventStreamId As String, eventNumber As Long, data As String, timestamp As DateTime? = Nothing, eventId As Guid = Nothing, retryOnFail As Boolean = False) As EventRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent*
+  nameWithType.vb: ReadIndexTestScenario.WriteSingleEvent(String, Int64, String, Nullable(Of DateTime), Guid, Boolean)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent(System.String, System.Int64, System.String, System.Nullable(Of DateTime), Guid, System.Boolean)
+  name.vb: WriteSingleEvent(String, Int64, String, Nullable(Of DateTime), Guid, Boolean)
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata(System.String,System.Int64,System.String,System.Nullable{DateTime})
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata(System.String,System.Int64,System.String,System.Nullable{DateTime})
+  id: WriteStreamMetadata(System.String,System.Int64,System.String,System.Nullable{DateTime})
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteStreamMetadata(String, Int64, String, Nullable<DateTime>)
+  nameWithType: ReadIndexTestScenario.WriteStreamMetadata(String, Int64, String, Nullable<DateTime>)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata(System.String, System.Int64, System.String, System.Nullable<DateTime>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteStreamMetadata
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 173
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected EventRecord WriteStreamMetadata(string eventStreamId, long eventNumber, string metadata, DateTime? timestamp = null)
+    parameters:
+    - id: eventStreamId
+      type: System.String
+    - id: eventNumber
+      type: System.Int64
+    - id: metadata
+      type: System.String
+    - id: timestamp
+      type: System.Nullable{DateTime}
+    return:
+      type: EventStore.Core.Data.EventRecord
+    content.vb: Protected Function WriteStreamMetadata(eventStreamId As String, eventNumber As Long, metadata As String, timestamp As DateTime? = Nothing) As EventRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata*
+  nameWithType.vb: ReadIndexTestScenario.WriteStreamMetadata(String, Int64, String, Nullable(Of DateTime))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata(System.String, System.Int64, System.String, System.Nullable(Of DateTime))
+  name.vb: WriteStreamMetadata(String, Int64, String, Nullable(Of DateTime))
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String,System.Int64,System.Int64,System.String)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String,System.Int64,System.Int64,System.String)
+  id: WriteTransactionBegin(System.String,System.Int64,System.Int64,System.String)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteTransactionBegin(String, Int64, Int64, String)
+  nameWithType: ReadIndexTestScenario.WriteTransactionBegin(String, Int64, Int64, String)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String, System.Int64, System.Int64, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteTransactionBegin
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 195
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected EventRecord WriteTransactionBegin(string eventStreamId, long expectedVersion, long eventNumber, string eventData)
+    parameters:
+    - id: eventStreamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: eventNumber
+      type: System.Int64
+    - id: eventData
+      type: System.String
+    return:
+      type: EventStore.Core.Data.EventRecord
+    content.vb: Protected Function WriteTransactionBegin(eventStreamId As String, expectedVersion As Long, eventNumber As Long, eventData As String) As EventRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String,System.Int64)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String,System.Int64)
+  id: WriteTransactionBegin(System.String,System.Int64)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteTransactionBegin(String, Int64)
+  nameWithType: ReadIndexTestScenario.WriteTransactionBegin(String, Int64)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin(System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteTransactionBegin
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 213
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected PrepareLogRecord WriteTransactionBegin(string eventStreamId, long expectedVersion)
+    parameters:
+    - id: eventStreamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    content.vb: Protected Function WriteTransactionBegin(eventStreamId As String, expectedVersion As Long) As PrepareLogRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent(Guid,System.Int64,System.Int32,System.String,System.Int64,System.String,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.Boolean)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent(Guid,System.Int64,System.Int32,System.String,System.Int64,System.String,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.Boolean)
+  id: WriteTransactionEvent(Guid,System.Int64,System.Int32,System.String,System.Int64,System.String,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.Boolean)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteTransactionEvent(Guid, Int64, Int32, String, Int64, String, PrepareFlags, Boolean)
+  nameWithType: ReadIndexTestScenario.WriteTransactionEvent(Guid, Int64, Int32, String, Int64, String, PrepareFlags, Boolean)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent(Guid, System.Int64, System.Int32, System.String, System.Int64, System.String, EventStore.Core.TransactionLog.LogRecords.PrepareFlags, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteTransactionEvent
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 221
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected EventRecord WriteTransactionEvent(Guid correlationId, long transactionPos, int transactionOffset, string eventStreamId, long eventNumber, string eventData, PrepareFlags flags, bool retryOnFail = false)
+    parameters:
+    - id: correlationId
+      type: Guid
+    - id: transactionPos
+      type: System.Int64
+    - id: transactionOffset
+      type: System.Int32
+    - id: eventStreamId
+      type: System.String
+    - id: eventNumber
+      type: System.Int64
+    - id: eventData
+      type: System.String
+    - id: flags
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+    - id: retryOnFail
+      type: System.Boolean
+    return:
+      type: EventStore.Core.Data.EventRecord
+    content.vb: Protected Function WriteTransactionEvent(correlationId As Guid, transactionPos As Long, transactionOffset As Integer, eventStreamId As String, eventNumber As Long, eventData As String, flags As PrepareFlags, retryOnFail As Boolean = False) As EventRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd(Guid,System.Int64,System.String)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd(Guid,System.Int64,System.String)
+  id: WriteTransactionEnd(Guid,System.Int64,System.String)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteTransactionEnd(Guid, Int64, String)
+  nameWithType: ReadIndexTestScenario.WriteTransactionEnd(Guid, Int64, String)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd(Guid, System.Int64, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteTransactionEnd
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 272
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected PrepareLogRecord WriteTransactionEnd(Guid correlationId, long transactionId, string eventStreamId)
+    parameters:
+    - id: correlationId
+      type: Guid
+    - id: transactionId
+      type: System.Int64
+    - id: eventStreamId
+      type: System.String
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    content.vb: Protected Function WriteTransactionEnd(correlationId As Guid, transactionId As Long, eventStreamId As String) As PrepareLogRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare(System.String,System.Int64,Guid,System.String,System.String)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare(System.String,System.Int64,Guid,System.String,System.String)
+  id: WritePrepare(System.String,System.Int64,Guid,System.String,System.String)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WritePrepare(String, Int64, Guid, String, String)
+  nameWithType: ReadIndexTestScenario.WritePrepare(String, Int64, Guid, String, String)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare(System.String, System.Int64, Guid, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WritePrepare
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 284
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected PrepareLogRecord WritePrepare(string streamId, long expectedVersion, Guid eventId = null, string eventType = null, string data = null)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: eventId
+      type: Guid
+    - id: eventType
+      type: System.String
+    - id: data
+      type: System.String
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    content.vb: Protected Function WritePrepare(streamId As String, expectedVersion As Long, eventId As Guid = Nothing, eventType As String = Nothing, data As String = Nothing) As PrepareLogRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(System.Int64,System.String,System.Int64)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(System.Int64,System.String,System.Int64)
+  id: WriteCommit(System.Int64,System.String,System.Int64)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteCommit(Int64, String, Int64)
+  nameWithType: ReadIndexTestScenario.WriteCommit(Int64, String, Int64)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(System.Int64, System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteCommit
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 305
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected CommitLogRecord WriteCommit(long preparePos, string eventStreamId, long eventNumber)
+    parameters:
+    - id: preparePos
+      type: System.Int64
+    - id: eventStreamId
+      type: System.String
+    - id: eventNumber
+      type: System.Int64
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    content.vb: Protected Function WriteCommit(preparePos As Long, eventStreamId As String, eventNumber As Long) As CommitLogRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(Guid,System.Int64,System.String,System.Int64)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(Guid,System.Int64,System.String,System.Int64)
+  id: WriteCommit(Guid,System.Int64,System.String,System.Int64)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteCommit(Guid, Int64, String, Int64)
+  nameWithType: ReadIndexTestScenario.WriteCommit(Guid, Int64, String, Int64)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit(Guid, System.Int64, System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteCommit
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 313
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected long WriteCommit(Guid correlationId, long transactionId, string eventStreamId, long eventNumber)
+    parameters:
+    - id: correlationId
+      type: Guid
+    - id: transactionId
+      type: System.Int64
+    - id: eventStreamId
+      type: System.String
+    - id: eventNumber
+      type: System.Int64
+    return:
+      type: System.Int64
+    content.vb: Protected Function WriteCommit(correlationId As Guid, transactionId As Long, eventStreamId As String, eventNumber As Long) As Long
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete(System.String)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete(System.String)
+  id: WriteDelete(System.String)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteDelete(String)
+  nameWithType: ReadIndexTestScenario.WriteDelete(String)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteDelete
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 321
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected EventRecord WriteDelete(string eventStreamId)
+    parameters:
+    - id: eventStreamId
+      type: System.String
+    return:
+      type: EventStore.Core.Data.EventRecord
+    content.vb: Protected Function WriteDelete(eventStreamId As String) As EventRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare(System.String)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare(System.String)
+  id: WriteDeletePrepare(System.String)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteDeletePrepare(String)
+  nameWithType: ReadIndexTestScenario.WriteDeletePrepare(String)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteDeletePrepare
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 336
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected PrepareLogRecord WriteDeletePrepare(string eventStreamId)
+    parameters:
+    - id: eventStreamId
+      type: System.String
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    content.vb: Protected Function WriteDeletePrepare(eventStreamId As String) As PrepareLogRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit(EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit(EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  id: WriteDeleteCommit(EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteDeleteCommit(PrepareLogRecord)
+  nameWithType: ReadIndexTestScenario.WriteDeleteCommit(PrepareLogRecord)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit(EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteDeleteCommit
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 346
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected CommitLogRecord WriteDeleteCommit(PrepareLogRecord prepare)
+    parameters:
+    - id: prepare
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    content.vb: Protected Function WriteDeleteCommit(prepare As PrepareLogRecord) As CommitLogRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0(Guid,System.String,System.Int64,System.Int64,System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0(Guid,System.String,System.Int64,System.Int64,System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+  id: WriteSingleEventWithLogVersion0(Guid,System.String,System.Int64,System.Int64,System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: WriteSingleEventWithLogVersion0(Guid, String, Int64, Int64, Nullable<PrepareFlags>)
+  nameWithType: ReadIndexTestScenario.WriteSingleEventWithLogVersion0(Guid, String, Int64, Int64, Nullable<PrepareFlags>)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0(Guid, System.String, System.Int64, System.Int64, System.Nullable<EventStore.Core.TransactionLog.LogRecords.PrepareFlags>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteSingleEventWithLogVersion0
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 358
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected PrepareLogRecord WriteSingleEventWithLogVersion0(Guid id, string streamId, long position, long expectedVersion, PrepareFlags? flags = null)
+    parameters:
+    - id: id
+      type: Guid
+    - id: streamId
+      type: System.String
+    - id: position
+      type: System.Int64
+    - id: expectedVersion
+      type: System.Int64
+    - id: flags
+      type: System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags}
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    content.vb: Protected Function WriteSingleEventWithLogVersion0(id As Guid, streamId As String, position As Long, expectedVersion As Long, flags As PrepareFlags? = Nothing) As PrepareLogRecord
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0*
+  nameWithType.vb: ReadIndexTestScenario.WriteSingleEventWithLogVersion0(Guid, String, Int64, Int64, Nullable(Of PrepareFlags))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0(Guid, System.String, System.Int64, System.Int64, System.Nullable(Of EventStore.Core.TransactionLog.LogRecords.PrepareFlags))
+  name.vb: WriteSingleEventWithLogVersion0(Guid, String, Int64, Int64, Nullable(Of PrepareFlags))
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos
+  id: GetBackwardReadPos
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: GetBackwardReadPos()
+  nameWithType: ReadIndexTestScenario.GetBackwardReadPos()
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetBackwardReadPos
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 371
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected TFPos GetBackwardReadPos()
+    return:
+      type: EventStore.Core.Data.TFPos
+    content.vb: Protected Function GetBackwardReadPos As TFPos
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge(System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge(System.Boolean,System.Boolean)
+  id: Scavenge(System.Boolean,System.Boolean)
+  parent: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario
+  langs:
+  - csharp
+  - vb
+  name: Scavenge(Boolean, Boolean)
+  nameWithType: ReadIndexTestScenario.Scavenge(Boolean, Boolean)
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge(System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Scavenge
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Storage/ReadIndexTestScenario.cs
+    startLine: 377
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.Storage
+  syntax:
+    content: protected void Scavenge(bool completeLast, bool mergeChunks)
+    parameters:
+    - id: completeLast
+      type: System.Boolean
+    - id: mergeChunks
+      type: System.Boolean
+    content.vb: Protected Sub Scavenge(completeLast As Boolean, mergeChunks As Boolean)
+  overload: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: EventStore.Core.Tests.Services.Storage
+  commentId: N:EventStore.Core.Tests.Services.Storage
+  isExternal: false
+  name: EventStore.Core.Tests.Services.Storage
+  nameWithType: EventStore.Core.Tests.Services.Storage
+  fullName: EventStore.Core.Tests.Services.Storage
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  commentId: T:EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  parent: EventStore.Core.Tests
+  isExternal: false
+  name: SpecificationWithDirectoryPerTestFixture
+  nameWithType: SpecificationWithDirectoryPerTestFixture
+  fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+- uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.PathName
+  commentId: F:EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.PathName
+  parent: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  isExternal: false
+  name: PathName
+  nameWithType: SpecificationWithDirectoryPerTestFixture.PathName
+  fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.PathName
+- uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+  commentId: M:EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+  parent: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  isExternal: false
+  name: GetTempFilePath()
+  nameWithType: SpecificationWithDirectoryPerTestFixture.GetTempFilePath()
+  fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+    name: GetTempFilePath
+    nameWithType: SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+    name: GetTempFilePath
+    nameWithType: SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetTempFilePath
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor(System.String)
+  commentId: M:EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor(System.String)
+  parent: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  isExternal: true
+  name: GetFilePathFor(String)
+  nameWithType: SpecificationWithDirectoryPerTestFixture.GetFilePathFor(String)
+  fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor(System.String)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor(System.String)
+    name: GetFilePathFor
+    nameWithType: SpecificationWithDirectoryPerTestFixture.GetFilePathFor
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor(System.String)
+    name: GetFilePathFor
+    nameWithType: SpecificationWithDirectoryPerTestFixture.GetFilePathFor
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.GetFilePathFor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ReadIndexTestScenario>()
+  nameWithType: ProtobufExtensions.Serialize<ReadIndexTestScenario>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ReadIndexTestScenario)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario)()
+  name.vb: Serialize(Of ReadIndexTestScenario)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ReadIndexTestScenario>
+    nameWithType: ProtobufExtensions.Serialize<ReadIndexTestScenario>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ReadIndexTestScenario)
+    nameWithType: ProtobufExtensions.Serialize(Of ReadIndexTestScenario)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ReadIndexTestScenario>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ReadIndexTestScenario>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ReadIndexTestScenario)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario)()
+  name.vb: SerializeToArray(Of ReadIndexTestScenario)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ReadIndexTestScenario>
+    nameWithType: ProtobufExtensions.SerializeToArray<ReadIndexTestScenario>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ReadIndexTestScenario)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ReadIndexTestScenario)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests
+  commentId: N:EventStore.Core.Tests
+  isExternal: false
+  name: EventStore.Core.Tests
+  nameWithType: EventStore.Core.Tests
+  fullName: EventStore.Core.Tests
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Byte
+  isExternal: true
+  name: Byte
+  nameWithType: Byte
+  fullName: System.Byte
+- uid: EventStore.Core.Index.TableIndex
+  commentId: T:EventStore.Core.Index.TableIndex
+  parent: EventStore.Core.Index
+  isExternal: false
+  name: TableIndex
+  nameWithType: TableIndex
+  fullName: EventStore.Core.Index.TableIndex
+- uid: EventStore.Core.Index
+  commentId: N:EventStore.Core.Index
+  isExternal: false
+  name: EventStore.Core.Index
+  nameWithType: EventStore.Core.Index
+  fullName: EventStore.Core.Index
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IReadIndex
+  nameWithType: IReadIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+- uid: EventStore.Core.Services.Storage.ReaderIndex
+  commentId: N:EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: EventStore.Core.Services.Storage.ReaderIndex
+  nameWithType: EventStore.Core.Services.Storage.ReaderIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkDb
+  nameWithType: TFChunkDb
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+- uid: EventStore.Core.TransactionLog.Chunks
+  commentId: N:EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Chunks
+  nameWithType: EventStore.Core.TransactionLog.Chunks
+  fullName: EventStore.Core.TransactionLog.Chunks
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkWriter
+  nameWithType: TFChunkWriter
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: EventStore.Core.Bus.InMemoryBus
+  commentId: T:EventStore.Core.Bus.InMemoryBus
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: InMemoryBus
+  nameWithType: InMemoryBus
+  fullName: EventStore.Core.Bus.InMemoryBus
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.#ctor*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.#ctor
+  isExternal: false
+  name: ReadIndexTestScenario
+  nameWithType: ReadIndexTestScenario.ReadIndexTestScenario
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.ReadIndexTestScenario
+- uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+  commentId: M:EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+  parent: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  isExternal: false
+  name: TestFixtureSetUp()
+  nameWithType: SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp()
+  fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+    name: TestFixtureSetUp
+    nameWithType: SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+    name: TestFixtureSetUp
+    nameWithType: SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureSetUp
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp
+  isExternal: false
+  name: TestFixtureSetUp
+  nameWithType: ReadIndexTestScenario.TestFixtureSetUp
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureSetUp
+- uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+  commentId: M:EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+  parent: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture
+  isExternal: false
+  name: TestFixtureTearDown()
+  nameWithType: SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown()
+  fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+    name: TestFixtureTearDown
+    nameWithType: SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+    name: TestFixtureTearDown
+    nameWithType: SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+    fullName: EventStore.Core.Tests.SpecificationWithDirectoryPerTestFixture.TestFixtureTearDown
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown
+  isExternal: false
+  name: TestFixtureTearDown
+  nameWithType: ReadIndexTestScenario.TestFixtureTearDown
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.TestFixtureTearDown
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario
+  isExternal: false
+  name: WriteTestScenario
+  nameWithType: ReadIndexTestScenario.WriteTestScenario
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTestScenario
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent
+  isExternal: false
+  name: WriteSingleEvent
+  nameWithType: ReadIndexTestScenario.WriteSingleEvent
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEvent
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Nullable{DateTime}
+  commentId: '!:System.Nullable{DateTime}'
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.Data.EventRecord
+  commentId: T:EventStore.Core.Data.EventRecord
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: EventRecord
+  nameWithType: EventRecord
+  fullName: EventStore.Core.Data.EventRecord
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  isExternal: false
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata
+  isExternal: false
+  name: WriteStreamMetadata
+  nameWithType: ReadIndexTestScenario.WriteStreamMetadata
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteStreamMetadata
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin
+  isExternal: false
+  name: WriteTransactionBegin
+  nameWithType: ReadIndexTestScenario.WriteTransactionBegin
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionBegin
+- uid: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: PrepareLogRecord
+  nameWithType: PrepareLogRecord
+  fullName: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+- uid: EventStore.Core.TransactionLog.LogRecords
+  commentId: N:EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: EventStore.Core.TransactionLog.LogRecords
+  nameWithType: EventStore.Core.TransactionLog.LogRecords
+  fullName: EventStore.Core.TransactionLog.LogRecords
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent
+  isExternal: false
+  name: WriteTransactionEvent
+  nameWithType: ReadIndexTestScenario.WriteTransactionEvent
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEvent
+- uid: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: PrepareFlags
+  nameWithType: PrepareFlags
+  fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd
+  isExternal: false
+  name: WriteTransactionEnd
+  nameWithType: ReadIndexTestScenario.WriteTransactionEnd
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteTransactionEnd
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare
+  isExternal: false
+  name: WritePrepare
+  nameWithType: ReadIndexTestScenario.WritePrepare
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WritePrepare
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit
+  isExternal: false
+  name: WriteCommit
+  nameWithType: ReadIndexTestScenario.WriteCommit
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteCommit
+- uid: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: CommitLogRecord
+  nameWithType: CommitLogRecord
+  fullName: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete
+  isExternal: false
+  name: WriteDelete
+  nameWithType: ReadIndexTestScenario.WriteDelete
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDelete
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare
+  isExternal: false
+  name: WriteDeletePrepare
+  nameWithType: ReadIndexTestScenario.WriteDeletePrepare
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeletePrepare
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit
+  isExternal: false
+  name: WriteDeleteCommit
+  nameWithType: ReadIndexTestScenario.WriteDeleteCommit
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteDeleteCommit
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0
+  isExternal: false
+  name: WriteSingleEventWithLogVersion0
+  nameWithType: ReadIndexTestScenario.WriteSingleEventWithLogVersion0
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.WriteSingleEventWithLogVersion0
+- uid: System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags}
+  commentId: '!:System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags}'
+  definition: System.Nullable`1
+  name: Nullable<PrepareFlags>
+  nameWithType: Nullable<PrepareFlags>
+  fullName: System.Nullable<EventStore.Core.TransactionLog.LogRecords.PrepareFlags>
+  nameWithType.vb: Nullable(Of PrepareFlags)
+  fullName.vb: System.Nullable(Of EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
+  name.vb: Nullable(Of PrepareFlags)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+    name: PrepareFlags
+    nameWithType: PrepareFlags
+    fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+    name: PrepareFlags
+    nameWithType: PrepareFlags
+    fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos
+  isExternal: false
+  name: GetBackwardReadPos
+  nameWithType: ReadIndexTestScenario.GetBackwardReadPos
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.GetBackwardReadPos
+- uid: EventStore.Core.Data.TFPos
+  commentId: T:EventStore.Core.Data.TFPos
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: TFPos
+  nameWithType: TFPos
+  fullName: EventStore.Core.Data.TFPos
+- uid: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge*
+  commentId: Overload:EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge
+  isExternal: false
+  name: Scavenge
+  nameWithType: ReadIndexTestScenario.Scavenge
+  fullName: EventStore.Core.Tests.Services.Storage.ReadIndexTestScenario.Scavenge

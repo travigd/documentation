@@ -1,0 +1,867 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Cluster.ClusterInfo
+  commentId: T:EventStore.Core.Cluster.ClusterInfo
+  id: ClusterInfo
+  parent: EventStore.Core.Cluster
+  children:
+  - EventStore.Core.Cluster.ClusterInfo.#ctor(EventStore.Core.Cluster.MemberInfo[])
+  - EventStore.Core.Cluster.ClusterInfo.#ctor(EventStore.Core.Messages.ClusterInfoDto)
+  - EventStore.Core.Cluster.ClusterInfo.#ctor(IEnumerable{EventStore.Core.Cluster.MemberInfo})
+  - EventStore.Core.Cluster.ClusterInfo.HasChangedSince(EventStore.Core.Cluster.ClusterInfo)
+  - EventStore.Core.Cluster.ClusterInfo.Members
+  - EventStore.Core.Cluster.ClusterInfo.ToString
+  langs:
+  - csharp
+  - vb
+  name: ClusterInfo
+  nameWithType: ClusterInfo
+  fullName: EventStore.Core.Cluster.ClusterInfo
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/ClusterInfo.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ClusterInfo
+    path: ../EventStore/src/EventStore.Core/Cluster/ClusterInfo.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster
+  syntax:
+    content: 'public class ClusterInfo : object'
+    content.vb: >-
+      Public Class ClusterInfo
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Cluster.ClusterInfo.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Cluster.ClusterInfo.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Cluster.ClusterInfo.Members
+  commentId: F:EventStore.Core.Cluster.ClusterInfo.Members
+  id: Members
+  parent: EventStore.Core.Cluster.ClusterInfo
+  langs:
+  - csharp
+  - vb
+  name: Members
+  nameWithType: ClusterInfo.Members
+  fullName: EventStore.Core.Cluster.ClusterInfo.Members
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/ClusterInfo.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Members
+    path: ../EventStore/src/EventStore.Core/Cluster/ClusterInfo.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster
+  syntax:
+    content: public readonly MemberInfo[] Members
+    return:
+      type: EventStore.Core.Cluster.MemberInfo[]
+    content.vb: Public ReadOnly Members As MemberInfo()
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Cluster.ClusterInfo.#ctor(EventStore.Core.Cluster.MemberInfo[])
+  commentId: M:EventStore.Core.Cluster.ClusterInfo.#ctor(EventStore.Core.Cluster.MemberInfo[])
+  id: '#ctor(EventStore.Core.Cluster.MemberInfo[])'
+  parent: EventStore.Core.Cluster.ClusterInfo
+  langs:
+  - csharp
+  - vb
+  name: ClusterInfo(MemberInfo[])
+  nameWithType: ClusterInfo.ClusterInfo(MemberInfo[])
+  fullName: EventStore.Core.Cluster.ClusterInfo.ClusterInfo(EventStore.Core.Cluster.MemberInfo[])
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/ClusterInfo.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Cluster/ClusterInfo.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster
+  syntax:
+    content: public ClusterInfo(params MemberInfo[] members)
+    parameters:
+    - id: members
+      type: EventStore.Core.Cluster.MemberInfo[]
+    content.vb: Public Sub New(ParamArray members As MemberInfo())
+  overload: EventStore.Core.Cluster.ClusterInfo.#ctor*
+  nameWithType.vb: ClusterInfo.ClusterInfo(MemberInfo())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Cluster.ClusterInfo.ClusterInfo(EventStore.Core.Cluster.MemberInfo())
+  name.vb: ClusterInfo(MemberInfo())
+- uid: EventStore.Core.Cluster.ClusterInfo.#ctor(IEnumerable{EventStore.Core.Cluster.MemberInfo})
+  commentId: M:EventStore.Core.Cluster.ClusterInfo.#ctor(IEnumerable{EventStore.Core.Cluster.MemberInfo})
+  id: '#ctor(IEnumerable{EventStore.Core.Cluster.MemberInfo})'
+  parent: EventStore.Core.Cluster.ClusterInfo
+  langs:
+  - csharp
+  - vb
+  name: ClusterInfo(IEnumerable<MemberInfo>)
+  nameWithType: ClusterInfo.ClusterInfo(IEnumerable<MemberInfo>)
+  fullName: EventStore.Core.Cluster.ClusterInfo.ClusterInfo(IEnumerable<EventStore.Core.Cluster.MemberInfo>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/ClusterInfo.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Cluster/ClusterInfo.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster
+  syntax:
+    content: public ClusterInfo(IEnumerable<MemberInfo> members)
+    parameters:
+    - id: members
+      type: IEnumerable{EventStore.Core.Cluster.MemberInfo}
+    content.vb: Public Sub New(members As IEnumerable(Of MemberInfo))
+  overload: EventStore.Core.Cluster.ClusterInfo.#ctor*
+  nameWithType.vb: ClusterInfo.ClusterInfo(IEnumerable(Of MemberInfo))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Cluster.ClusterInfo.ClusterInfo(IEnumerable(Of EventStore.Core.Cluster.MemberInfo))
+  name.vb: ClusterInfo(IEnumerable(Of MemberInfo))
+- uid: EventStore.Core.Cluster.ClusterInfo.#ctor(EventStore.Core.Messages.ClusterInfoDto)
+  commentId: M:EventStore.Core.Cluster.ClusterInfo.#ctor(EventStore.Core.Messages.ClusterInfoDto)
+  id: '#ctor(EventStore.Core.Messages.ClusterInfoDto)'
+  parent: EventStore.Core.Cluster.ClusterInfo
+  langs:
+  - csharp
+  - vb
+  name: ClusterInfo(ClusterInfoDto)
+  nameWithType: ClusterInfo.ClusterInfo(ClusterInfoDto)
+  fullName: EventStore.Core.Cluster.ClusterInfo.ClusterInfo(EventStore.Core.Messages.ClusterInfoDto)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/ClusterInfo.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Cluster/ClusterInfo.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster
+  syntax:
+    content: public ClusterInfo(ClusterInfoDto dto)
+    parameters:
+    - id: dto
+      type: EventStore.Core.Messages.ClusterInfoDto
+    content.vb: Public Sub New(dto As ClusterInfoDto)
+  overload: EventStore.Core.Cluster.ClusterInfo.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Cluster.ClusterInfo.ToString
+  commentId: M:EventStore.Core.Cluster.ClusterInfo.ToString
+  id: ToString
+  parent: EventStore.Core.Cluster.ClusterInfo
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ClusterInfo.ToString()
+  fullName: EventStore.Core.Cluster.ClusterInfo.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/ClusterInfo.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToString
+    path: ../EventStore/src/EventStore.Core/Cluster/ClusterInfo.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: EventStore.Core.Cluster.ClusterInfo.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Core.Cluster.ClusterInfo.HasChangedSince(EventStore.Core.Cluster.ClusterInfo)
+  commentId: M:EventStore.Core.Cluster.ClusterInfo.HasChangedSince(EventStore.Core.Cluster.ClusterInfo)
+  id: HasChangedSince(EventStore.Core.Cluster.ClusterInfo)
+  parent: EventStore.Core.Cluster.ClusterInfo
+  langs:
+  - csharp
+  - vb
+  name: HasChangedSince(ClusterInfo)
+  nameWithType: ClusterInfo.HasChangedSince(ClusterInfo)
+  fullName: EventStore.Core.Cluster.ClusterInfo.HasChangedSince(EventStore.Core.Cluster.ClusterInfo)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/ClusterInfo.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: HasChangedSince
+    path: ../EventStore/src/EventStore.Core/Cluster/ClusterInfo.cs
+    startLine: 34
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster
+  syntax:
+    content: public bool HasChangedSince(ClusterInfo other)
+    parameters:
+    - id: other
+      type: EventStore.Core.Cluster.ClusterInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function HasChangedSince(other As ClusterInfo) As Boolean
+  overload: EventStore.Core.Cluster.ClusterInfo.HasChangedSince*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Cluster
+  commentId: N:EventStore.Core.Cluster
+  isExternal: false
+  name: EventStore.Core.Cluster
+  nameWithType: EventStore.Core.Cluster
+  fullName: EventStore.Core.Cluster
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Cluster.ClusterInfo.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ClusterInfo>()
+  nameWithType: ProtobufExtensions.Serialize<ClusterInfo>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Cluster.ClusterInfo>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ClusterInfo)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Cluster.ClusterInfo)()
+  name.vb: Serialize(Of ClusterInfo)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ClusterInfo>
+    nameWithType: ProtobufExtensions.Serialize<ClusterInfo>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Cluster.ClusterInfo>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ClusterInfo)
+    nameWithType: ProtobufExtensions.Serialize(Of ClusterInfo)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Cluster.ClusterInfo)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Cluster.ClusterInfo.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ClusterInfo>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ClusterInfo>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Cluster.ClusterInfo>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ClusterInfo)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Cluster.ClusterInfo)()
+  name.vb: SerializeToArray(Of ClusterInfo)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ClusterInfo>
+    nameWithType: ProtobufExtensions.SerializeToArray<ClusterInfo>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Cluster.ClusterInfo>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ClusterInfo)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ClusterInfo)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Cluster.ClusterInfo)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Cluster.MemberInfo[]
+  name: MemberInfo[]
+  nameWithType: MemberInfo[]
+  fullName: EventStore.Core.Cluster.MemberInfo[]
+  nameWithType.vb: MemberInfo()
+  fullName.vb: EventStore.Core.Cluster.MemberInfo()
+  name.vb: MemberInfo()
+  spec.csharp:
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Core.Cluster.ClusterInfo.#ctor*
+  commentId: Overload:EventStore.Core.Cluster.ClusterInfo.#ctor
+  isExternal: false
+  name: ClusterInfo
+  nameWithType: ClusterInfo.ClusterInfo
+  fullName: EventStore.Core.Cluster.ClusterInfo.ClusterInfo
+- uid: IEnumerable{EventStore.Core.Cluster.MemberInfo}
+  commentId: '!:IEnumerable{EventStore.Core.Cluster.MemberInfo}'
+  definition: IEnumerable`1
+  name: IEnumerable<MemberInfo>
+  nameWithType: IEnumerable<MemberInfo>
+  fullName: IEnumerable<EventStore.Core.Cluster.MemberInfo>
+  nameWithType.vb: IEnumerable(Of MemberInfo)
+  fullName.vb: IEnumerable(Of EventStore.Core.Cluster.MemberInfo)
+  name.vb: IEnumerable(Of MemberInfo)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClusterInfoDto
+  commentId: T:EventStore.Core.Messages.ClusterInfoDto
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClusterInfoDto
+  nameWithType: ClusterInfoDto
+  fullName: EventStore.Core.Messages.ClusterInfoDto
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Cluster.ClusterInfo.ToString*
+  commentId: Overload:EventStore.Core.Cluster.ClusterInfo.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: ClusterInfo.ToString
+  fullName: EventStore.Core.Cluster.ClusterInfo.ToString
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Cluster.ClusterInfo.HasChangedSince*
+  commentId: Overload:EventStore.Core.Cluster.ClusterInfo.HasChangedSince
+  isExternal: false
+  name: HasChangedSince
+  nameWithType: ClusterInfo.HasChangedSince
+  fullName: EventStore.Core.Cluster.ClusterInfo.HasChangedSince
+- uid: EventStore.Core.Cluster.ClusterInfo
+  commentId: T:EventStore.Core.Cluster.ClusterInfo
+  parent: EventStore.Core.Cluster
+  isExternal: false
+  name: ClusterInfo
+  nameWithType: ClusterInfo
+  fullName: EventStore.Core.Cluster.ClusterInfo
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

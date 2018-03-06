@@ -1,0 +1,2585 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Storage.StorageWriterService
+  commentId: T:EventStore.Core.Services.Storage.StorageWriterService
+  id: StorageWriterService
+  parent: EventStore.Core.Services.Storage
+  children:
+  - EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  - EventStore.Core.Services.Storage.StorageWriterService.BlockWriter
+  - EventStore.Core.Services.Storage.StorageWriterService.Bus
+  - EventStore.Core.Services.Storage.StorageWriterService.Db
+  - EventStore.Core.Services.Storage.StorageWriterService.EpochManager
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteCommit}#Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteDelete}#Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WritePrepares}#Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionData}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionPrepare}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionStart}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#SystemInit}#Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WaitForChaserToCatchUp}#Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WriteEpoch}#Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  - EventStore.Core.Services.Storage.StorageWriterService.Flush(System.Boolean)
+  - EventStore.Core.Services.Storage.StorageWriterService.FlushMessagesInQueue
+  - EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  - EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  - EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta(System.Byte[],System.Int64,System.Byte[]@)
+  - EventStore.Core.Services.Storage.StorageWriterService.StorageWriterQueue
+  - EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage``1
+  - EventStore.Core.Services.Storage.StorageWriterService.TicksPerMs
+  - EventStore.Core.Services.Storage.StorageWriterService.Writer
+  langs:
+  - csharp
+  - vb
+  name: StorageWriterService
+  nameWithType: StorageWriterService
+  fullName: EventStore.Core.Services.Storage.StorageWriterService
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StorageWriterService
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: 'public class StorageWriterService : object, IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.WriteEpoch>, IHandle<SystemMessage.WaitForChaserToCatchUp>, IHandle<StorageMessage.WritePrepares>, IHandle<StorageMessage.WriteDelete>, IHandle<StorageMessage.WriteTransactionStart>, IHandle<StorageMessage.WriteTransactionData>, IHandle<StorageMessage.WriteTransactionPrepare>, IHandle<StorageMessage.WriteCommit>, IHandle<MonitoringMessage.InternalStatsRequest>'
+    content.vb: >-
+      Public Class StorageWriterService
+
+          Inherits Object
+
+          Implements IHandle(Of SystemMessage.SystemInit), IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.WriteEpoch), IHandle(Of SystemMessage.WaitForChaserToCatchUp), IHandle(Of StorageMessage.WritePrepares), IHandle(Of StorageMessage.WriteDelete), IHandle(Of StorageMessage.WriteTransactionStart), IHandle(Of StorageMessage.WriteTransactionData), IHandle(Of StorageMessage.WriteTransactionPrepare), IHandle(Of StorageMessage.WriteCommit), IHandle(Of MonitoringMessage.InternalStatsRequest)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - EventStore.Core.Services.ClusterStorageWriterService
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WriteEpoch}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WritePrepares}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteDelete}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionStart}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionData}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Storage.StorageWriterService.TicksPerMs
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.TicksPerMs
+  id: TicksPerMs
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: TicksPerMs
+  nameWithType: StorageWriterService.TicksPerMs
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.TicksPerMs
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TicksPerMs
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 39
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected static readonly int TicksPerMs
+    return:
+      type: System.Int32
+    content.vb: Protected Shared ReadOnly TicksPerMs As Integer
+  modifiers.csharp:
+  - protected
+  - static
+  - readonly
+  modifiers.vb:
+  - Protected
+  - Shared
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Db
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.Db
+  id: Db
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: Db
+  nameWithType: StorageWriterService.Db
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Db
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Db
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 42
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected readonly TFChunkDb Db
+    return:
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+    content.vb: Protected ReadOnly Db As TFChunkDb
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Writer
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.Writer
+  id: Writer
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: Writer
+  nameWithType: StorageWriterService.Writer
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Writer
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Writer
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 43
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected readonly TFChunkWriter Writer
+    return:
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+    content.vb: Protected ReadOnly Writer As TFChunkWriter
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EpochManager
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.EpochManager
+  id: EpochManager
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: EpochManager
+  nameWithType: StorageWriterService.EpochManager
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EpochManager
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EpochManager
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 45
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected readonly IEpochManager EpochManager
+    return:
+      type: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+    content.vb: Protected ReadOnly EpochManager As IEpochManager
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Bus
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.Bus
+  id: Bus
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: Bus
+  nameWithType: StorageWriterService.Bus
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Bus
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Bus
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 47
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected readonly IPublisher Bus
+    return:
+      type: EventStore.Core.Bus.IPublisher
+    content.vb: Protected ReadOnly Bus As IPublisher
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.StorageWriterService.StorageWriterQueue
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.StorageWriterQueue
+  id: StorageWriterQueue
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: StorageWriterQueue
+  nameWithType: StorageWriterService.StorageWriterQueue
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.StorageWriterQueue
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StorageWriterQueue
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected readonly IQueuedHandler StorageWriterQueue
+    return:
+      type: EventStore.Core.Bus.IQueuedHandler
+    content.vb: Protected ReadOnly StorageWriterQueue As IQueuedHandler
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.StorageWriterService.FlushMessagesInQueue
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.FlushMessagesInQueue
+  id: FlushMessagesInQueue
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: FlushMessagesInQueue
+  nameWithType: StorageWriterService.FlushMessagesInQueue
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.FlushMessagesInQueue
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: FlushMessagesInQueue
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 57
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected int FlushMessagesInQueue
+    return:
+      type: System.Int32
+    content.vb: Protected FlushMessagesInQueue As Integer
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Services.Storage.StorageWriterService.BlockWriter
+  commentId: F:EventStore.Core.Services.Storage.StorageWriterService.BlockWriter
+  id: BlockWriter
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: BlockWriter
+  nameWithType: StorageWriterService.BlockWriter
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.BlockWriter
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: BlockWriter
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 59
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected bool BlockWriter
+    return:
+      type: System.Boolean
+    content.vb: Protected BlockWriter As Boolean
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)'
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: StorageWriterService(IPublisher, ISubscriber, TimeSpan, TFChunkDb, TFChunkWriter, IIndexWriter, IEpochManager)
+  nameWithType: StorageWriterService.StorageWriterService(IPublisher, ISubscriber, TimeSpan, TFChunkDb, TFChunkWriter, IIndexWriter, IEpochManager)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.StorageWriterService(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.ISubscriber, TimeSpan, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Chunks.TFChunkWriter, EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter, EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 73
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public StorageWriterService(IPublisher bus, ISubscriber subscribeToBus, TimeSpan minFlushDelay, TFChunkDb db, TFChunkWriter writer, IIndexWriter indexWriter, IEpochManager epochManager)
+    parameters:
+    - id: bus
+      type: EventStore.Core.Bus.IPublisher
+    - id: subscribeToBus
+      type: EventStore.Core.Bus.ISubscriber
+    - id: minFlushDelay
+      type: TimeSpan
+    - id: db
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+    - id: writer
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+    - id: indexWriter
+      type: EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+    - id: epochManager
+      type: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+    content.vb: Public Sub New(bus As IPublisher, subscribeToBus As ISubscriber, minFlushDelay As TimeSpan, db As TFChunkDb, writer As TFChunkWriter, indexWriter As IIndexWriter, epochManager As IEpochManager)
+  overload: EventStore.Core.Services.Storage.StorageWriterService.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage``1
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage``1
+  id: SubscribeToMessage``1
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: SubscribeToMessage<T>()
+  nameWithType: StorageWriterService.SubscribeToMessage<T>()
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage<T>()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscribeToMessage
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 120
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: 'protected void SubscribeToMessage<T>()where T : Message'
+    typeParameters:
+    - id: T
+    content.vb: Protected Sub SubscribeToMessage(Of T As Message)
+  overload: EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage*
+  nameWithType.vb: StorageWriterService.SubscribeToMessage(Of T)()
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage(Of T)()
+  name.vb: SubscribeToMessage(Of T)()
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#SystemInit}#Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#SystemInit}#Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#SystemInit}#Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit)
+  nameWithType: StorageWriterService.IHandle<SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 173
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.SystemInit
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(message As SystemMessage.SystemInit) Implements IHandle(Of SystemMessage.SystemInit).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#SystemInit}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  id: Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: StorageWriterService.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 178
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public virtual void Handle(SystemMessage.StateChangeMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    content.vb: Public Overridable Sub Handle(message As SystemMessage.StateChangeMessage)
+  overload: EventStore.Core.Services.Storage.StorageWriterService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WriteEpoch}#Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WriteEpoch}#Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WriteEpoch}#Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<SystemMessage.WriteEpoch>.Handle(SystemMessage.WriteEpoch)
+  nameWithType: StorageWriterService.IHandle<SystemMessage.WriteEpoch>.Handle(SystemMessage.WriteEpoch)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 198
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<SystemMessage.WriteEpoch>.Handle(SystemMessage.WriteEpoch message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.WriteEpoch
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle(message As SystemMessage.WriteEpoch) Implements IHandle(Of SystemMessage.WriteEpoch).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WriteEpoch}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WriteEpoch}.Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle(SystemMessage.WriteEpoch)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle(SystemMessage.WriteEpoch)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WaitForChaserToCatchUp}#Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WaitForChaserToCatchUp}#Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WaitForChaserToCatchUp}#Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<SystemMessage.WaitForChaserToCatchUp>.Handle(SystemMessage.WaitForChaserToCatchUp)
+  nameWithType: StorageWriterService.IHandle<SystemMessage.WaitForChaserToCatchUp>.Handle(SystemMessage.WaitForChaserToCatchUp)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 208
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<SystemMessage.WaitForChaserToCatchUp>.Handle(SystemMessage.WaitForChaserToCatchUp message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle(message As SystemMessage.WaitForChaserToCatchUp) Implements IHandle(Of SystemMessage.WaitForChaserToCatchUp).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WaitForChaserToCatchUp}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp}.Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle(SystemMessage.WaitForChaserToCatchUp)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle(SystemMessage.WaitForChaserToCatchUp)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WritePrepares}#Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WritePrepares}#Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WritePrepares}#Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<StorageMessage.WritePrepares>.Handle(StorageMessage.WritePrepares)
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WritePrepares>.Handle(StorageMessage.WritePrepares)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 236
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<StorageMessage.WritePrepares>.Handle(StorageMessage.WritePrepares msg)
+    parameters:
+    - id: msg
+      type: EventStore.Core.Messages.StorageMessage.WritePrepares
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle(msg As StorageMessage.WritePrepares) Implements IHandle(Of StorageMessage.WritePrepares).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WritePrepares}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WritePrepares}.Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle(StorageMessage.WritePrepares)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle(StorageMessage.WritePrepares)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta(System.Byte[],System.Int64,System.Byte[]@)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta(System.Byte[],System.Int64,System.Byte[]@)
+  id: SoftUndeleteRawMeta(System.Byte[],System.Int64,System.Byte[]@)
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: SoftUndeleteRawMeta(Byte[], Int64, out Byte[])
+  nameWithType: StorageWriterService.SoftUndeleteRawMeta(Byte[], Int64, out Byte[])
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta(System.Byte[], System.Int64, out System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SoftUndeleteRawMeta
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 344
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public bool SoftUndeleteRawMeta(byte[] rawMeta, long recreateFromEventNumber, out byte[] modifiedMeta)
+    parameters:
+    - id: rawMeta
+      type: System.Byte[]
+    - id: recreateFromEventNumber
+      type: System.Int64
+    - id: modifiedMeta
+      type: System.Byte[]
+    return:
+      type: System.Boolean
+    content.vb: Public Function SoftUndeleteRawMeta(rawMeta As Byte(), recreateFromEventNumber As Long, ByRef modifiedMeta As Byte()) As Boolean
+  overload: EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta*
+  nameWithType.vb: StorageWriterService.SoftUndeleteRawMeta(Byte(), Int64, ByRef Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta(System.Byte(), System.Int64, ByRef System.Byte())
+  name.vb: SoftUndeleteRawMeta(Byte(), Int64, ByRef Byte())
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteDelete}#Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteDelete}#Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteDelete}#Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<StorageMessage.WriteDelete>.Handle(StorageMessage.WriteDelete)
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteDelete>.Handle(StorageMessage.WriteDelete)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 367
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<StorageMessage.WriteDelete>.Handle(StorageMessage.WriteDelete message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.WriteDelete
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle(message As StorageMessage.WriteDelete) Implements IHandle(Of StorageMessage.WriteDelete).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteDelete}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteDelete}.Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle(StorageMessage.WriteDelete)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle(StorageMessage.WriteDelete)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionStart}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionStart}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionStart}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<StorageMessage.WriteTransactionStart>.Handle(StorageMessage.WriteTransactionStart)
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteTransactionStart>.Handle(StorageMessage.WriteTransactionStart)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 420
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<StorageMessage.WriteTransactionStart>.Handle(StorageMessage.WriteTransactionStart message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle(message As StorageMessage.WriteTransactionStart) Implements IHandle(Of StorageMessage.WriteTransactionStart).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionStart}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionStart}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle(StorageMessage.WriteTransactionStart)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle(StorageMessage.WriteTransactionStart)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionData}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionData}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionData}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<StorageMessage.WriteTransactionData>.Handle(StorageMessage.WriteTransactionData)
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteTransactionData>.Handle(StorageMessage.WriteTransactionData)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 449
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<StorageMessage.WriteTransactionData>.Handle(StorageMessage.WriteTransactionData message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle(message As StorageMessage.WriteTransactionData) Implements IHandle(Of StorageMessage.WriteTransactionData).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionData}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionData}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle(StorageMessage.WriteTransactionData)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle(StorageMessage.WriteTransactionData)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionPrepare}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionPrepare}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionPrepare}#Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<StorageMessage.WriteTransactionPrepare>.Handle(StorageMessage.WriteTransactionPrepare)
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteTransactionPrepare>.Handle(StorageMessage.WriteTransactionPrepare)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 495
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<StorageMessage.WriteTransactionPrepare>.Handle(StorageMessage.WriteTransactionPrepare message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle(message As StorageMessage.WriteTransactionPrepare) Implements IHandle(Of StorageMessage.WriteTransactionPrepare).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionPrepare}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle(StorageMessage.WriteTransactionPrepare)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle(StorageMessage.WriteTransactionPrepare)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteCommit}#Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteCommit}#Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  id: EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteCommit}#Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  isEii: true
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: IHandle<StorageMessage.WriteCommit>.Handle(StorageMessage.WriteCommit)
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteCommit>.Handle(StorageMessage.WriteCommit)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 540
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: void IHandle<StorageMessage.WriteCommit>.Handle(StorageMessage.WriteCommit message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.WriteCommit
+    content.vb: Sub EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle(message As StorageMessage.WriteCommit) Implements IHandle(Of StorageMessage.WriteCommit).Handle
+  overload: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteCommit}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}.Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle(StorageMessage.WriteCommit)
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle(StorageMessage.WriteCommit)
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Flush(System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.Flush(System.Boolean)
+  id: Flush(System.Boolean)
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: Flush(Boolean)
+  nameWithType: StorageWriterService.Flush(Boolean)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Flush(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Flush
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 671
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: protected bool Flush(bool force = false)
+    parameters:
+    - id: force
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Protected Function Flush(force As Boolean = False) As Boolean
+  overload: EventStore.Core.Services.Storage.StorageWriterService.Flush*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  id: Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  parent: EventStore.Core.Services.Storage.StorageWriterService
+  langs:
+  - csharp
+  - vb
+  name: Handle(MonitoringMessage.InternalStatsRequest)
+  nameWithType: StorageWriterService.Handle(MonitoringMessage.InternalStatsRequest)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 731
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public void Handle(MonitoringMessage.InternalStatsRequest message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+    content.vb: Public Sub Handle(message As MonitoringMessage.InternalStatsRequest)
+  overload: EventStore.Core.Services.Storage.StorageWriterService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.Storage
+  commentId: N:EventStore.Core.Services.Storage
+  isExternal: false
+  name: EventStore.Core.Services.Storage
+  nameWithType: EventStore.Core.Services.Storage
+  fullName: EventStore.Core.Services.Storage
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.SystemInit>
+  nameWithType: IHandle<SystemMessage.SystemInit>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>
+  nameWithType.vb: IHandle(Of SystemMessage.SystemInit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit)
+  name.vb: IHandle(Of SystemMessage.SystemInit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.StateChangeMessage>
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  name.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WriteEpoch}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WriteEpoch}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.WriteEpoch>
+  nameWithType: IHandle<SystemMessage.WriteEpoch>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>
+  nameWithType.vb: IHandle(Of SystemMessage.WriteEpoch)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  name.vb: IHandle(Of SystemMessage.WriteEpoch)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.WriteEpoch
+    name: SystemMessage.WriteEpoch
+    nameWithType: SystemMessage.WriteEpoch
+    fullName: EventStore.Core.Messages.SystemMessage.WriteEpoch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.WriteEpoch
+    name: SystemMessage.WriteEpoch
+    nameWithType: SystemMessage.WriteEpoch
+    fullName: EventStore.Core.Messages.SystemMessage.WriteEpoch
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.WaitForChaserToCatchUp>
+  nameWithType: IHandle<SystemMessage.WaitForChaserToCatchUp>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>
+  nameWithType.vb: IHandle(Of SystemMessage.WaitForChaserToCatchUp)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  name.vb: IHandle(Of SystemMessage.WaitForChaserToCatchUp)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+    name: SystemMessage.WaitForChaserToCatchUp
+    nameWithType: SystemMessage.WaitForChaserToCatchUp
+    fullName: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+    name: SystemMessage.WaitForChaserToCatchUp
+    nameWithType: SystemMessage.WaitForChaserToCatchUp
+    fullName: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WritePrepares}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WritePrepares}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.WritePrepares>
+  nameWithType: IHandle<StorageMessage.WritePrepares>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>
+  nameWithType.vb: IHandle(Of StorageMessage.WritePrepares)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WritePrepares)
+  name.vb: IHandle(Of StorageMessage.WritePrepares)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.WritePrepares
+    name: StorageMessage.WritePrepares
+    nameWithType: StorageMessage.WritePrepares
+    fullName: EventStore.Core.Messages.StorageMessage.WritePrepares
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.WritePrepares
+    name: StorageMessage.WritePrepares
+    nameWithType: StorageMessage.WritePrepares
+    fullName: EventStore.Core.Messages.StorageMessage.WritePrepares
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteDelete}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteDelete}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.WriteDelete>
+  nameWithType: IHandle<StorageMessage.WriteDelete>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>
+  nameWithType.vb: IHandle(Of StorageMessage.WriteDelete)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteDelete)
+  name.vb: IHandle(Of StorageMessage.WriteDelete)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.WriteDelete
+    name: StorageMessage.WriteDelete
+    nameWithType: StorageMessage.WriteDelete
+    fullName: EventStore.Core.Messages.StorageMessage.WriteDelete
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.WriteDelete
+    name: StorageMessage.WriteDelete
+    nameWithType: StorageMessage.WriteDelete
+    fullName: EventStore.Core.Messages.StorageMessage.WriteDelete
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionStart}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionStart}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.WriteTransactionStart>
+  nameWithType: IHandle<StorageMessage.WriteTransactionStart>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>
+  nameWithType.vb: IHandle(Of StorageMessage.WriteTransactionStart)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  name.vb: IHandle(Of StorageMessage.WriteTransactionStart)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+    name: StorageMessage.WriteTransactionStart
+    nameWithType: StorageMessage.WriteTransactionStart
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+    name: StorageMessage.WriteTransactionStart
+    nameWithType: StorageMessage.WriteTransactionStart
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionData}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionData}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.WriteTransactionData>
+  nameWithType: IHandle<StorageMessage.WriteTransactionData>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>
+  nameWithType.vb: IHandle(Of StorageMessage.WriteTransactionData)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  name.vb: IHandle(Of StorageMessage.WriteTransactionData)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+    name: StorageMessage.WriteTransactionData
+    nameWithType: StorageMessage.WriteTransactionData
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+    name: StorageMessage.WriteTransactionData
+    nameWithType: StorageMessage.WriteTransactionData
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.WriteTransactionPrepare>
+  nameWithType: IHandle<StorageMessage.WriteTransactionPrepare>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>
+  nameWithType.vb: IHandle(Of StorageMessage.WriteTransactionPrepare)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  name.vb: IHandle(Of StorageMessage.WriteTransactionPrepare)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+    name: StorageMessage.WriteTransactionPrepare
+    nameWithType: StorageMessage.WriteTransactionPrepare
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+    name: StorageMessage.WriteTransactionPrepare
+    nameWithType: StorageMessage.WriteTransactionPrepare
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.WriteCommit>
+  nameWithType: IHandle<StorageMessage.WriteCommit>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>
+  nameWithType.vb: IHandle(Of StorageMessage.WriteCommit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteCommit)
+  name.vb: IHandle(Of StorageMessage.WriteCommit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.WriteCommit
+    name: StorageMessage.WriteCommit
+    nameWithType: StorageMessage.WriteCommit
+    fullName: EventStore.Core.Messages.StorageMessage.WriteCommit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.WriteCommit
+    name: StorageMessage.WriteCommit
+    nameWithType: StorageMessage.WriteCommit
+    fullName: EventStore.Core.Messages.StorageMessage.WriteCommit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<MonitoringMessage.InternalStatsRequest>
+  nameWithType: IHandle<MonitoringMessage.InternalStatsRequest>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest>
+  nameWithType.vb: IHandle(Of MonitoringMessage.InternalStatsRequest)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  name.vb: IHandle(Of MonitoringMessage.InternalStatsRequest)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+    name: MonitoringMessage.InternalStatsRequest
+    nameWithType: MonitoringMessage.InternalStatsRequest
+    fullName: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+    name: MonitoringMessage.InternalStatsRequest
+    nameWithType: MonitoringMessage.InternalStatsRequest
+    fullName: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<StorageWriterService>()
+  nameWithType: ProtobufExtensions.Serialize<StorageWriterService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.StorageWriterService>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of StorageWriterService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.StorageWriterService)()
+  name.vb: Serialize(Of StorageWriterService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<StorageWriterService>
+    nameWithType: ProtobufExtensions.Serialize<StorageWriterService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.StorageWriterService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of StorageWriterService)
+    nameWithType: ProtobufExtensions.Serialize(Of StorageWriterService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.StorageWriterService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<StorageWriterService>()
+  nameWithType: ProtobufExtensions.SerializeToArray<StorageWriterService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.StorageWriterService>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of StorageWriterService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.StorageWriterService)()
+  name.vb: SerializeToArray(Of StorageWriterService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<StorageWriterService>
+    nameWithType: ProtobufExtensions.SerializeToArray<StorageWriterService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.StorageWriterService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of StorageWriterService)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of StorageWriterService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.StorageWriterService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkDb
+  nameWithType: TFChunkDb
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+- uid: EventStore.Core.TransactionLog.Chunks
+  commentId: N:EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Chunks
+  nameWithType: EventStore.Core.TransactionLog.Chunks
+  fullName: EventStore.Core.TransactionLog.Chunks
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkWriter
+  nameWithType: TFChunkWriter
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  commentId: T:EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  parent: EventStore.Core.Services.Storage.EpochManager
+  isExternal: false
+  name: IEpochManager
+  nameWithType: IEpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+- uid: EventStore.Core.Services.Storage.EpochManager
+  commentId: N:EventStore.Core.Services.Storage.EpochManager
+  isExternal: false
+  name: EventStore.Core.Services.Storage.EpochManager
+  nameWithType: EventStore.Core.Services.Storage.EpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Bus.IQueuedHandler
+  commentId: T:EventStore.Core.Bus.IQueuedHandler
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IQueuedHandler
+  nameWithType: IQueuedHandler
+  fullName: EventStore.Core.Bus.IQueuedHandler
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Services.Storage.StorageWriterService.#ctor*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.#ctor
+  isExternal: false
+  name: StorageWriterService
+  nameWithType: StorageWriterService.StorageWriterService
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.StorageWriterService
+- uid: EventStore.Core.Bus.ISubscriber
+  commentId: T:EventStore.Core.Bus.ISubscriber
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: ISubscriber
+  nameWithType: ISubscriber
+  fullName: EventStore.Core.Bus.ISubscriber
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IIndexWriter
+  nameWithType: IIndexWriter
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+- uid: EventStore.Core.Services.Storage.ReaderIndex
+  commentId: N:EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: EventStore.Core.Services.Storage.ReaderIndex
+  nameWithType: EventStore.Core.Services.Storage.ReaderIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage
+  isExternal: false
+  name: SubscribeToMessage
+  nameWithType: StorageWriterService.SubscribeToMessage
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#SystemInit}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#SystemInit}#Handle
+  isExternal: false
+  name: IHandle<SystemMessage.SystemInit>.Handle
+  nameWithType: StorageWriterService.IHandle<SystemMessage.SystemInit>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.SystemInit)
+  nameWithType: IHandle<SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  nameWithType.vb: IHandle(Of SystemMessage.SystemInit).Handle(SystemMessage.SystemInit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit).Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.SystemInit>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.SystemInit).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.SystemInit
+  commentId: T:EventStore.Core.Messages.SystemMessage.SystemInit
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.SystemInit
+  nameWithType: SystemMessage.SystemInit
+  fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: StorageWriterService.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage).Handle(SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.StateChangeMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  commentId: T:EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.StateChangeMessage
+  nameWithType: SystemMessage.StateChangeMessage
+  fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WriteEpoch}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WriteEpoch}#Handle
+  isExternal: false
+  name: IHandle<SystemMessage.WriteEpoch>.Handle
+  nameWithType: StorageWriterService.IHandle<SystemMessage.WriteEpoch>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WriteEpoch}.Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WriteEpoch}.Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WriteEpoch}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.WriteEpoch)
+  nameWithType: IHandle<SystemMessage.WriteEpoch>.Handle(SystemMessage.WriteEpoch)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  nameWithType.vb: IHandle(Of SystemMessage.WriteEpoch).Handle(SystemMessage.WriteEpoch)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.WriteEpoch).Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.WriteEpoch>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.WriteEpoch
+    name: SystemMessage.WriteEpoch
+    nameWithType: SystemMessage.WriteEpoch
+    fullName: EventStore.Core.Messages.SystemMessage.WriteEpoch
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.WriteEpoch).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.WriteEpoch).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.WriteEpoch
+    name: SystemMessage.WriteEpoch
+    nameWithType: SystemMessage.WriteEpoch
+    fullName: EventStore.Core.Messages.SystemMessage.WriteEpoch
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.WriteEpoch
+  commentId: T:EventStore.Core.Messages.SystemMessage.WriteEpoch
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.WriteEpoch
+  nameWithType: SystemMessage.WriteEpoch
+  fullName: EventStore.Core.Messages.SystemMessage.WriteEpoch
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WaitForChaserToCatchUp}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#SystemMessage#WaitForChaserToCatchUp}#Handle
+  isExternal: false
+  name: IHandle<SystemMessage.WaitForChaserToCatchUp>.Handle
+  nameWithType: StorageWriterService.IHandle<SystemMessage.WaitForChaserToCatchUp>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp}.Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp}.Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.WaitForChaserToCatchUp)
+  nameWithType: IHandle<SystemMessage.WaitForChaserToCatchUp>.Handle(SystemMessage.WaitForChaserToCatchUp)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  nameWithType.vb: IHandle(Of SystemMessage.WaitForChaserToCatchUp).Handle(SystemMessage.WaitForChaserToCatchUp)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp).Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.WaitForChaserToCatchUp>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+    name: SystemMessage.WaitForChaserToCatchUp
+    nameWithType: SystemMessage.WaitForChaserToCatchUp
+    fullName: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.WaitForChaserToCatchUp).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+    name: SystemMessage.WaitForChaserToCatchUp
+    nameWithType: SystemMessage.WaitForChaserToCatchUp
+    fullName: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+  commentId: T:EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.WaitForChaserToCatchUp
+  nameWithType: SystemMessage.WaitForChaserToCatchUp
+  fullName: EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WritePrepares}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WritePrepares}#Handle
+  isExternal: false
+  name: IHandle<StorageMessage.WritePrepares>.Handle
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WritePrepares>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WritePrepares}.Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WritePrepares}.Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WritePrepares}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.WritePrepares)
+  nameWithType: IHandle<StorageMessage.WritePrepares>.Handle(StorageMessage.WritePrepares)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  nameWithType.vb: IHandle(Of StorageMessage.WritePrepares).Handle(StorageMessage.WritePrepares)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WritePrepares).Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.WritePrepares>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WritePrepares
+    name: StorageMessage.WritePrepares
+    nameWithType: StorageMessage.WritePrepares
+    fullName: EventStore.Core.Messages.StorageMessage.WritePrepares
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.WritePrepares).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WritePrepares).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WritePrepares
+    name: StorageMessage.WritePrepares
+    nameWithType: StorageMessage.WritePrepares
+    fullName: EventStore.Core.Messages.StorageMessage.WritePrepares
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.WritePrepares
+  commentId: T:EventStore.Core.Messages.StorageMessage.WritePrepares
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.WritePrepares
+  nameWithType: StorageMessage.WritePrepares
+  fullName: EventStore.Core.Messages.StorageMessage.WritePrepares
+- uid: EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta
+  isExternal: false
+  name: SoftUndeleteRawMeta
+  nameWithType: StorageWriterService.SoftUndeleteRawMeta
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteDelete}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteDelete}#Handle
+  isExternal: false
+  name: IHandle<StorageMessage.WriteDelete>.Handle
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteDelete>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteDelete}.Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteDelete}.Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteDelete}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.WriteDelete)
+  nameWithType: IHandle<StorageMessage.WriteDelete>.Handle(StorageMessage.WriteDelete)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  nameWithType.vb: IHandle(Of StorageMessage.WriteDelete).Handle(StorageMessage.WriteDelete)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteDelete).Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.WriteDelete>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteDelete
+    name: StorageMessage.WriteDelete
+    nameWithType: StorageMessage.WriteDelete
+    fullName: EventStore.Core.Messages.StorageMessage.WriteDelete
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.WriteDelete).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteDelete).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteDelete
+    name: StorageMessage.WriteDelete
+    nameWithType: StorageMessage.WriteDelete
+    fullName: EventStore.Core.Messages.StorageMessage.WriteDelete
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.WriteDelete
+  commentId: T:EventStore.Core.Messages.StorageMessage.WriteDelete
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.WriteDelete
+  nameWithType: StorageMessage.WriteDelete
+  fullName: EventStore.Core.Messages.StorageMessage.WriteDelete
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionStart}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionStart}#Handle
+  isExternal: false
+  name: IHandle<StorageMessage.WriteTransactionStart>.Handle
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteTransactionStart>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionStart}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionStart}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionStart}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.WriteTransactionStart)
+  nameWithType: IHandle<StorageMessage.WriteTransactionStart>.Handle(StorageMessage.WriteTransactionStart)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  nameWithType.vb: IHandle(Of StorageMessage.WriteTransactionStart).Handle(StorageMessage.WriteTransactionStart)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionStart).Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.WriteTransactionStart>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+    name: StorageMessage.WriteTransactionStart
+    nameWithType: StorageMessage.WriteTransactionStart
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.WriteTransactionStart).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionStart).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+    name: StorageMessage.WriteTransactionStart
+    nameWithType: StorageMessage.WriteTransactionStart
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+  commentId: T:EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.WriteTransactionStart
+  nameWithType: StorageMessage.WriteTransactionStart
+  fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionStart
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionData}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionData}#Handle
+  isExternal: false
+  name: IHandle<StorageMessage.WriteTransactionData>.Handle
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteTransactionData>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionData}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionData}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionData}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.WriteTransactionData)
+  nameWithType: IHandle<StorageMessage.WriteTransactionData>.Handle(StorageMessage.WriteTransactionData)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  nameWithType.vb: IHandle(Of StorageMessage.WriteTransactionData).Handle(StorageMessage.WriteTransactionData)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionData).Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.WriteTransactionData>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+    name: StorageMessage.WriteTransactionData
+    nameWithType: StorageMessage.WriteTransactionData
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.WriteTransactionData).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionData).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+    name: StorageMessage.WriteTransactionData
+    nameWithType: StorageMessage.WriteTransactionData
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+  commentId: T:EventStore.Core.Messages.StorageMessage.WriteTransactionData
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.WriteTransactionData
+  nameWithType: StorageMessage.WriteTransactionData
+  fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionData
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionPrepare}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteTransactionPrepare}#Handle
+  isExternal: false
+  name: IHandle<StorageMessage.WriteTransactionPrepare>.Handle
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteTransactionPrepare>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.WriteTransactionPrepare)
+  nameWithType: IHandle<StorageMessage.WriteTransactionPrepare>.Handle(StorageMessage.WriteTransactionPrepare)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  nameWithType.vb: IHandle(Of StorageMessage.WriteTransactionPrepare).Handle(StorageMessage.WriteTransactionPrepare)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare).Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.WriteTransactionPrepare>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+    name: StorageMessage.WriteTransactionPrepare
+    nameWithType: StorageMessage.WriteTransactionPrepare
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.WriteTransactionPrepare).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+    name: StorageMessage.WriteTransactionPrepare
+    nameWithType: StorageMessage.WriteTransactionPrepare
+    fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+  commentId: T:EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.WriteTransactionPrepare
+  nameWithType: StorageMessage.WriteTransactionPrepare
+  fullName: EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare
+- uid: EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteCommit}#Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#WriteCommit}#Handle
+  isExternal: false
+  name: IHandle<StorageMessage.WriteCommit>.Handle
+  nameWithType: StorageWriterService.IHandle<StorageMessage.WriteCommit>.Handle
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle
+  nameWithType.vb: StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}.Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}.Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.WriteCommit)
+  nameWithType: IHandle<StorageMessage.WriteCommit>.Handle(StorageMessage.WriteCommit)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  nameWithType.vb: IHandle(Of StorageMessage.WriteCommit).Handle(StorageMessage.WriteCommit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteCommit).Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.WriteCommit>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteCommit
+    name: StorageMessage.WriteCommit
+    nameWithType: StorageMessage.WriteCommit
+    fullName: EventStore.Core.Messages.StorageMessage.WriteCommit
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.WriteCommit).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WriteCommit).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WriteCommit
+    name: StorageMessage.WriteCommit
+    nameWithType: StorageMessage.WriteCommit
+    fullName: EventStore.Core.Messages.StorageMessage.WriteCommit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.WriteCommit
+  commentId: T:EventStore.Core.Messages.StorageMessage.WriteCommit
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.WriteCommit
+  nameWithType: StorageMessage.WriteCommit
+  fullName: EventStore.Core.Messages.StorageMessage.WriteCommit
+- uid: EventStore.Core.Services.Storage.StorageWriterService.Flush*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.Flush
+  isExternal: false
+  name: Flush
+  nameWithType: StorageWriterService.Flush
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.Flush
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(MonitoringMessage.InternalStatsRequest)
+  nameWithType: IHandle<MonitoringMessage.InternalStatsRequest>.Handle(MonitoringMessage.InternalStatsRequest)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest>.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  nameWithType.vb: IHandle(Of MonitoringMessage.InternalStatsRequest).Handle(MonitoringMessage.InternalStatsRequest)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest).Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<MonitoringMessage.InternalStatsRequest>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+    name: MonitoringMessage.InternalStatsRequest
+    nameWithType: MonitoringMessage.InternalStatsRequest
+    fullName: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of MonitoringMessage.InternalStatsRequest).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+    name: MonitoringMessage.InternalStatsRequest
+    nameWithType: MonitoringMessage.InternalStatsRequest
+    fullName: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+  commentId: T:EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: MonitoringMessage.InternalStatsRequest
+  nameWithType: MonitoringMessage.InternalStatsRequest
+  fullName: EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest

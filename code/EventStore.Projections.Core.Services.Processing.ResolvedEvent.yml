@@ -1,0 +1,1460 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  commentId: T:EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  id: ResolvedEvent
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(EventStore.Core.Data.ResolvedEvent,System.Byte[])
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.Data
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventId
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventType
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsJson
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStream
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStreamTombstone
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.Metadata
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionMetadata
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.StreamMetadata
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: ResolvedEvent
+  nameWithType: ResolvedEvent
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ResolvedEvent
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class ResolvedEvent : object'
+    content.vb: >-
+      Public Class ResolvedEvent
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventId
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventId
+  id: EventId
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: EventId
+  nameWithType: ResolvedEvent.EventId
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventId
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventId
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly Guid EventId
+    return:
+      type: Guid
+    content.vb: Public ReadOnly EventId As Guid
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventType
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventType
+  id: EventType
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: EventType
+  nameWithType: ResolvedEvent.EventType
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventType
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventType
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly string EventType
+    return:
+      type: System.String
+    content.vb: Public ReadOnly EventType As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsJson
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsJson
+  id: IsJson
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: IsJson
+  nameWithType: ResolvedEvent.IsJson
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsJson
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsJson
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly bool IsJson
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly IsJson As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Timestamp
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.Timestamp
+  id: Timestamp
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: Timestamp
+  nameWithType: ResolvedEvent.Timestamp
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Timestamp
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Timestamp
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly DateTime Timestamp
+    return:
+      type: DateTime
+    content.vb: Public ReadOnly Timestamp As DateTime
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Data
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.Data
+  id: Data
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: ResolvedEvent.Data
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Data
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Data
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly string Data
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Data As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Metadata
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.Metadata
+  id: Metadata
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: Metadata
+  nameWithType: ResolvedEvent.Metadata
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Metadata
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Metadata
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 30
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly string Metadata
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Metadata As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionMetadata
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionMetadata
+  id: PositionMetadata
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: PositionMetadata
+  nameWithType: ResolvedEvent.PositionMetadata
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionMetadata
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PositionMetadata
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 31
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly string PositionMetadata
+    return:
+      type: System.String
+    content.vb: Public ReadOnly PositionMetadata As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.StreamMetadata
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.StreamMetadata
+  id: StreamMetadata
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: StreamMetadata
+  nameWithType: ResolvedEvent.StreamMetadata
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.StreamMetadata
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StreamMetadata
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly string StreamMetadata
+    return:
+      type: System.String
+    content.vb: Public ReadOnly StreamMetadata As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStream
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStream
+  id: IsLinkToDeletedStream
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: IsLinkToDeletedStream
+  nameWithType: ResolvedEvent.IsLinkToDeletedStream
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStream
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsLinkToDeletedStream
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 33
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly bool IsLinkToDeletedStream
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly IsLinkToDeletedStream As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStreamTombstone
+  commentId: F:EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStreamTombstone
+  id: IsLinkToDeletedStreamTombstone
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: IsLinkToDeletedStreamTombstone
+  nameWithType: ResolvedEvent.IsLinkToDeletedStreamTombstone
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStreamTombstone
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsLinkToDeletedStreamTombstone
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 34
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly bool IsLinkToDeletedStreamTombstone
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly IsLinkToDeletedStreamTombstone As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(EventStore.Core.Data.ResolvedEvent,System.Byte[])
+  commentId: M:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(EventStore.Core.Data.ResolvedEvent,System.Byte[])
+  id: '#ctor(EventStore.Core.Data.ResolvedEvent,System.Byte[])'
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: ResolvedEvent(ResolvedEvent, Byte[])
+  nameWithType: ResolvedEvent.ResolvedEvent(ResolvedEvent, Byte[])
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(EventStore.Core.Data.ResolvedEvent, System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 36
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public ResolvedEvent(ResolvedEvent resolvedEvent, byte[] streamMetadata)
+    parameters:
+    - id: resolvedEvent
+      type: EventStore.Core.Data.ResolvedEvent
+    - id: streamMetadata
+      type: System.Byte[]
+    content.vb: Public Sub New(resolvedEvent As ResolvedEvent, streamMetadata As Byte())
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor*
+  nameWithType.vb: ResolvedEvent.ResolvedEvent(ResolvedEvent, Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(EventStore.Core.Data.ResolvedEvent, System.Byte())
+  name.vb: ResolvedEvent(ResolvedEvent, Byte())
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)
+  id: '#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)'
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte[], Byte[], Byte[], Byte[], DateTime)
+  nameWithType: ResolvedEvent.ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte[], Byte[], Byte[], Byte[], DateTime)
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos, Guid, System.String, System.Boolean, System.Byte[], System.Byte[], System.Byte[], System.Byte[], DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 127
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public ResolvedEvent(string positionStreamId, long positionSequenceNumber, string eventStreamId, long eventSequenceNumber, bool resolvedLinkTo, TFPos position, TFPos eventOrLinkTargetPosition, Guid eventId, string eventType, bool isJson, byte[] data, byte[] metadata, byte[] positionMetadata, byte[] streamMetadata, DateTime timestamp)
+    parameters:
+    - id: positionStreamId
+      type: System.String
+    - id: positionSequenceNumber
+      type: System.Int64
+    - id: eventStreamId
+      type: System.String
+    - id: eventSequenceNumber
+      type: System.Int64
+    - id: resolvedLinkTo
+      type: System.Boolean
+    - id: position
+      type: EventStore.Core.Data.TFPos
+    - id: eventOrLinkTargetPosition
+      type: EventStore.Core.Data.TFPos
+    - id: eventId
+      type: Guid
+    - id: eventType
+      type: System.String
+    - id: isJson
+      type: System.Boolean
+    - id: data
+      type: System.Byte[]
+    - id: metadata
+      type: System.Byte[]
+    - id: positionMetadata
+      type: System.Byte[]
+    - id: streamMetadata
+      type: System.Byte[]
+    - id: timestamp
+      type: DateTime
+    content.vb: Public Sub New(positionStreamId As String, positionSequenceNumber As Long, eventStreamId As String, eventSequenceNumber As Long, resolvedLinkTo As Boolean, position As TFPos, eventOrLinkTargetPosition As TFPos, eventId As Guid, eventType As String, isJson As Boolean, data As Byte(), metadata As Byte(), positionMetadata As Byte(), streamMetadata As Byte(), timestamp As DateTime)
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor*
+  nameWithType.vb: ResolvedEvent.ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte(), Byte(), Byte(), Byte(), DateTime)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos, Guid, System.String, System.Boolean, System.Byte(), System.Byte(), System.Byte(), System.Byte(), DateTime)
+  name.vb: ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte(), Byte(), Byte(), Byte(), DateTime)
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)'
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, Guid, String, Boolean, String, String, String, String)
+  nameWithType: ResolvedEvent.ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, Guid, String, Boolean, String, String, String, String)
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, Guid, System.String, System.Boolean, System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 153
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public ResolvedEvent(string positionStreamId, long positionSequenceNumber, string eventStreamId, long eventSequenceNumber, bool resolvedLinkTo, TFPos position, Guid eventId, string eventType, bool isJson, string data, string metadata, string positionMetadata = null, string streamMetadata = null)
+    parameters:
+    - id: positionStreamId
+      type: System.String
+    - id: positionSequenceNumber
+      type: System.Int64
+    - id: eventStreamId
+      type: System.String
+    - id: eventSequenceNumber
+      type: System.Int64
+    - id: resolvedLinkTo
+      type: System.Boolean
+    - id: position
+      type: EventStore.Core.Data.TFPos
+    - id: eventId
+      type: Guid
+    - id: eventType
+      type: System.String
+    - id: isJson
+      type: System.Boolean
+    - id: data
+      type: System.String
+    - id: metadata
+      type: System.String
+    - id: positionMetadata
+      type: System.String
+    - id: streamMetadata
+      type: System.String
+    content.vb: Public Sub New(positionStreamId As String, positionSequenceNumber As Long, eventStreamId As String, eventSequenceNumber As Long, resolvedLinkTo As Boolean, position As TFPos, eventId As Guid, eventType As String, isJson As Boolean, data As String, metadata As String, positionMetadata As String = Nothing, streamMetadata As String = Nothing)
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId
+  id: EventStreamId
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: EventStreamId
+  nameWithType: ResolvedEvent.EventStreamId
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStreamId
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 181
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public string EventStreamId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property EventStreamId As String
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber
+  id: EventSequenceNumber
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: EventSequenceNumber
+  nameWithType: ResolvedEvent.EventSequenceNumber
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventSequenceNumber
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 186
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public long EventSequenceNumber { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property EventSequenceNumber As Long
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo
+  id: ResolvedLinkTo
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: ResolvedLinkTo
+  nameWithType: ResolvedEvent.ResolvedLinkTo
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ResolvedLinkTo
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 191
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool ResolvedLinkTo { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property ResolvedLinkTo As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId
+  id: PositionStreamId
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: PositionStreamId
+  nameWithType: ResolvedEvent.PositionStreamId
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PositionStreamId
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 196
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public string PositionStreamId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property PositionStreamId As String
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber
+  id: PositionSequenceNumber
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: PositionSequenceNumber
+  nameWithType: ResolvedEvent.PositionSequenceNumber
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PositionSequenceNumber
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 201
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public long PositionSequenceNumber { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property PositionSequenceNumber As Long
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position
+  id: Position
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: ResolvedEvent.Position
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Position
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 206
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public TFPos Position { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Data.TFPos
+    content.vb: Public ReadOnly Property Position As TFPos
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
+  id: EventOrLinkTargetPosition
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: EventOrLinkTargetPosition
+  nameWithType: ResolvedEvent.EventOrLinkTargetPosition
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventOrLinkTargetPosition
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 211
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public TFPos EventOrLinkTargetPosition { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Data.TFPos
+    content.vb: Public ReadOnly Property EventOrLinkTargetPosition As TFPos
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition
+  id: LinkOrEventPosition
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: LinkOrEventPosition
+  nameWithType: ResolvedEvent.LinkOrEventPosition
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LinkOrEventPosition
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 216
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public TFPos LinkOrEventPosition { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Data.TFPos
+    content.vb: Public ReadOnly Property LinkOrEventPosition As TFPos
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent
+  commentId: P:EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent
+  id: IsStreamDeletedEvent
+  parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: IsStreamDeletedEvent
+  nameWithType: ResolvedEvent.IsStreamDeletedEvent
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsStreamDeletedEvent
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    startLine: 221
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool IsStreamDeletedEvent { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsStreamDeletedEvent As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ResolvedEvent>()
+  nameWithType: ProtobufExtensions.Serialize<ResolvedEvent>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.ResolvedEvent>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ResolvedEvent)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.ResolvedEvent)()
+  name.vb: Serialize(Of ResolvedEvent)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ResolvedEvent>
+    nameWithType: ProtobufExtensions.Serialize<ResolvedEvent>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.ResolvedEvent>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ResolvedEvent)
+    nameWithType: ProtobufExtensions.Serialize(Of ResolvedEvent)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.ResolvedEvent)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ResolvedEvent>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ResolvedEvent>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.ResolvedEvent>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ResolvedEvent)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.ResolvedEvent)()
+  name.vb: SerializeToArray(Of ResolvedEvent)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ResolvedEvent>
+    nameWithType: ProtobufExtensions.SerializeToArray<ResolvedEvent>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.ResolvedEvent>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ResolvedEvent)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ResolvedEvent)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.ResolvedEvent)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor
+  isExternal: false
+  name: ResolvedEvent
+  nameWithType: ResolvedEvent.ResolvedEvent
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent
+- uid: EventStore.Core.Data.ResolvedEvent
+  commentId: T:EventStore.Core.Data.ResolvedEvent
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: ResolvedEvent
+  nameWithType: ResolvedEvent
+  fullName: EventStore.Core.Data.ResolvedEvent
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  isExternal: false
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Data.TFPos
+  commentId: T:EventStore.Core.Data.TFPos
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: TFPos
+  nameWithType: TFPos
+  fullName: EventStore.Core.Data.TFPos
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId
+  isExternal: false
+  name: EventStreamId
+  nameWithType: ResolvedEvent.EventStreamId
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber
+  isExternal: false
+  name: EventSequenceNumber
+  nameWithType: ResolvedEvent.EventSequenceNumber
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo
+  isExternal: false
+  name: ResolvedLinkTo
+  nameWithType: ResolvedEvent.ResolvedLinkTo
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId
+  isExternal: false
+  name: PositionStreamId
+  nameWithType: ResolvedEvent.PositionStreamId
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber
+  isExternal: false
+  name: PositionSequenceNumber
+  nameWithType: ResolvedEvent.PositionSequenceNumber
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position
+  isExternal: false
+  name: Position
+  nameWithType: ResolvedEvent.Position
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
+  isExternal: false
+  name: EventOrLinkTargetPosition
+  nameWithType: ResolvedEvent.EventOrLinkTargetPosition
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition
+  isExternal: false
+  name: LinkOrEventPosition
+  nameWithType: ResolvedEvent.LinkOrEventPosition
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent
+  isExternal: false
+  name: IsStreamDeletedEvent
+  nameWithType: ResolvedEvent.IsStreamDeletedEvent
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent

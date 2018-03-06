@@ -1,0 +1,1274 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService
+  commentId: T:EventStore.Core.Services.Transport.Tcp.TcpService
+  id: TcpService
+  parent: EventStore.Core.Services.Transport.Tcp
+  children:
+  - EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
+  - EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
+  - EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  - EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  - EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  langs:
+  - csharp
+  - vb
+  name: TcpService
+  nameWithType: TcpService
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TcpService
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Tcp
+  syntax:
+    content: 'public class TcpService : object, IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.BecomeShuttingDown>'
+    content.vb: >-
+      Public Class TcpService
+
+          Inherits Object
+
+          Implements IHandle(Of SystemMessage.SystemInit), IHandle(Of SystemMessage.SystemStart), IHandle(Of SystemMessage.BecomeShuttingDown)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.Transport.Tcp.TcpService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Transport.Tcp.TcpService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)'
+  parent: EventStore.Core.Services.Transport.Tcp.TcpService
+  langs:
+  - csharp
+  - vb
+  name: TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, ITcpDispatcher, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
+  nameWithType: TcpService.TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, ITcpDispatcher, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, TimeSpan, TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, X509Certificate, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    startLine: 44
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Tcp
+  syntax:
+    content: public TcpService(IPublisher publisher, IPEndPoint serverEndPoint, IPublisher networkSendQueue, TcpServiceType serviceType, TcpSecurityType securityType, ITcpDispatcher dispatcher, TimeSpan heartbeatInterval, TimeSpan heartbeatTimeout, IAuthenticationProvider authProvider, X509Certificate certificate, int connectionPendingSendBytesThreshold)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: serverEndPoint
+      type: IPEndPoint
+    - id: networkSendQueue
+      type: EventStore.Core.Bus.IPublisher
+    - id: serviceType
+      type: EventStore.Core.Services.Transport.Tcp.TcpServiceType
+    - id: securityType
+      type: EventStore.Core.Services.Transport.Tcp.TcpSecurityType
+    - id: dispatcher
+      type: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+    - id: heartbeatInterval
+      type: TimeSpan
+    - id: heartbeatTimeout
+      type: TimeSpan
+    - id: authProvider
+      type: EventStore.Core.Authentication.IAuthenticationProvider
+    - id: certificate
+      type: X509Certificate
+    - id: connectionPendingSendBytesThreshold
+      type: System.Int32
+    content.vb: Public Sub New(publisher As IPublisher, serverEndPoint As IPEndPoint, networkSendQueue As IPublisher, serviceType As TcpServiceType, securityType As TcpSecurityType, dispatcher As ITcpDispatcher, heartbeatInterval As TimeSpan, heartbeatTimeout As TimeSpan, authProvider As IAuthenticationProvider, certificate As X509Certificate, connectionPendingSendBytesThreshold As Integer)
+  overload: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)'
+  parent: EventStore.Core.Services.Transport.Tcp.TcpService
+  langs:
+  - csharp
+  - vb
+  name: TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, Func<Guid, IPEndPoint, ITcpDispatcher>, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
+  nameWithType: TcpService.TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, Func<Guid, IPEndPoint, ITcpDispatcher>, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, Func<Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher>, TimeSpan, TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, X509Certificate, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    startLine: 60
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Tcp
+  syntax:
+    content: public TcpService(IPublisher publisher, IPEndPoint serverEndPoint, IPublisher networkSendQueue, TcpServiceType serviceType, TcpSecurityType securityType, Func<Guid, IPEndPoint, ITcpDispatcher> dispatcherFactory, TimeSpan heartbeatInterval, TimeSpan heartbeatTimeout, IAuthenticationProvider authProvider, X509Certificate certificate, int connectionPendingSendBytesThreshold)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: serverEndPoint
+      type: IPEndPoint
+    - id: networkSendQueue
+      type: EventStore.Core.Bus.IPublisher
+    - id: serviceType
+      type: EventStore.Core.Services.Transport.Tcp.TcpServiceType
+    - id: securityType
+      type: EventStore.Core.Services.Transport.Tcp.TcpSecurityType
+    - id: dispatcherFactory
+      type: Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}
+    - id: heartbeatInterval
+      type: TimeSpan
+    - id: heartbeatTimeout
+      type: TimeSpan
+    - id: authProvider
+      type: EventStore.Core.Authentication.IAuthenticationProvider
+    - id: certificate
+      type: X509Certificate
+    - id: connectionPendingSendBytesThreshold
+      type: System.Int32
+    content.vb: Public Sub New(publisher As IPublisher, serverEndPoint As IPEndPoint, networkSendQueue As IPublisher, serviceType As TcpServiceType, securityType As TcpSecurityType, dispatcherFactory As Func(Of Guid, IPEndPoint, ITcpDispatcher), heartbeatInterval As TimeSpan, heartbeatTimeout As TimeSpan, authProvider As IAuthenticationProvider, certificate As X509Certificate, connectionPendingSendBytesThreshold As Integer)
+  overload: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor*
+  nameWithType.vb: TcpService.TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, Func(Of Guid, IPEndPoint, ITcpDispatcher), TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, Func(Of Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher), TimeSpan, TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, X509Certificate, System.Int32)
+  name.vb: TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, Func(Of Guid, IPEndPoint, ITcpDispatcher), TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  id: Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  parent: EventStore.Core.Services.Transport.Tcp.TcpService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.SystemInit)
+  nameWithType: TcpService.Handle(SystemMessage.SystemInit)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    startLine: 94
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Tcp
+  syntax:
+    content: public void Handle(SystemMessage.SystemInit message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.SystemInit
+    content.vb: Public Sub Handle(message As SystemMessage.SystemInit)
+  overload: EventStore.Core.Services.Transport.Tcp.TcpService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  id: Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  parent: EventStore.Core.Services.Transport.Tcp.TcpService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.SystemStart)
+  nameWithType: TcpService.Handle(SystemMessage.SystemStart)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    startLine: 106
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Tcp
+  syntax:
+    content: public void Handle(SystemMessage.SystemStart message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.SystemStart
+    content.vb: Public Sub Handle(message As SystemMessage.SystemStart)
+  overload: EventStore.Core.Services.Transport.Tcp.TcpService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Services.Transport.Tcp.TcpService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: TcpService.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    startLine: 110
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Tcp
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShuttingDown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShuttingDown)
+  overload: EventStore.Core.Services.Transport.Tcp.TcpService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.SystemInit>
+  nameWithType: IHandle<SystemMessage.SystemInit>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>
+  nameWithType.vb: IHandle(Of SystemMessage.SystemInit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit)
+  name.vb: IHandle(Of SystemMessage.SystemInit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.SystemStart>
+  nameWithType: IHandle<SystemMessage.SystemStart>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemStart>
+  nameWithType.vb: IHandle(Of SystemMessage.SystemStart)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemStart)
+  name.vb: IHandle(Of SystemMessage.SystemStart)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShuttingDown>
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  name.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TcpService>()
+  nameWithType: ProtobufExtensions.Serialize<TcpService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Transport.Tcp.TcpService>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TcpService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Transport.Tcp.TcpService)()
+  name.vb: Serialize(Of TcpService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TcpService>
+    nameWithType: ProtobufExtensions.Serialize<TcpService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Transport.Tcp.TcpService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TcpService)
+    nameWithType: ProtobufExtensions.Serialize(Of TcpService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Transport.Tcp.TcpService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TcpService>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TcpService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Transport.Tcp.TcpService>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TcpService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Transport.Tcp.TcpService)()
+  name.vb: SerializeToArray(Of TcpService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TcpService>
+    nameWithType: ProtobufExtensions.SerializeToArray<TcpService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Transport.Tcp.TcpService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TcpService)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TcpService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Transport.Tcp.TcpService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor*
+  commentId: Overload:EventStore.Core.Services.Transport.Tcp.TcpService.#ctor
+  isExternal: false
+  name: TcpService
+  nameWithType: TcpService.TcpService
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: IPEndPoint
+  isExternal: true
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: IPEndPoint
+- uid: EventStore.Core.Services.Transport.Tcp.TcpServiceType
+  commentId: T:EventStore.Core.Services.Transport.Tcp.TcpServiceType
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: TcpServiceType
+  nameWithType: TcpServiceType
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpServiceType
+- uid: EventStore.Core.Services.Transport.Tcp.TcpSecurityType
+  commentId: T:EventStore.Core.Services.Transport.Tcp.TcpSecurityType
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: TcpSecurityType
+  nameWithType: TcpSecurityType
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpSecurityType
+- uid: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ITcpDispatcher
+  nameWithType: ITcpDispatcher
+  fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Core.Authentication.IAuthenticationProvider
+  commentId: T:EventStore.Core.Authentication.IAuthenticationProvider
+  parent: EventStore.Core.Authentication
+  isExternal: false
+  name: IAuthenticationProvider
+  nameWithType: IAuthenticationProvider
+  fullName: EventStore.Core.Authentication.IAuthenticationProvider
+- uid: X509Certificate
+  isExternal: true
+  name: X509Certificate
+  nameWithType: X509Certificate
+  fullName: X509Certificate
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.Authentication
+  commentId: N:EventStore.Core.Authentication
+  isExternal: false
+  name: EventStore.Core.Authentication
+  nameWithType: EventStore.Core.Authentication
+  fullName: EventStore.Core.Authentication
+- uid: Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}
+  commentId: '!:Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}'
+  definition: Func`3
+  name: Func<Guid, IPEndPoint, ITcpDispatcher>
+  nameWithType: Func<Guid, IPEndPoint, ITcpDispatcher>
+  fullName: Func<Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher>
+  nameWithType.vb: Func(Of Guid, IPEndPoint, ITcpDispatcher)
+  fullName.vb: Func(Of Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher)
+  name.vb: Func(Of Guid, IPEndPoint, ITcpDispatcher)
+  spec.csharp:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPEndPoint
+    name: IPEndPoint
+    nameWithType: IPEndPoint
+    fullName: IPEndPoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+    name: ITcpDispatcher
+    nameWithType: ITcpDispatcher
+    fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPEndPoint
+    name: IPEndPoint
+    nameWithType: IPEndPoint
+    fullName: IPEndPoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+    name: ITcpDispatcher
+    nameWithType: ITcpDispatcher
+    fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func`3
+  isExternal: true
+  name: Func<, , >
+  nameWithType: Func<, , >
+  fullName: Func<, , >
+  nameWithType.vb: Func(Of , , )
+  fullName.vb: Func(Of , , )
+  name.vb: Func(Of , , )
+  spec.csharp:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.Handle*
+  commentId: Overload:EventStore.Core.Services.Transport.Tcp.TcpService.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: TcpService.Handle
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.SystemInit)
+  nameWithType: IHandle<SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  nameWithType.vb: IHandle(Of SystemMessage.SystemInit).Handle(SystemMessage.SystemInit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit).Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.SystemInit>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.SystemInit).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.SystemInit
+  commentId: T:EventStore.Core.Messages.SystemMessage.SystemInit
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.SystemInit
+  nameWithType: SystemMessage.SystemInit
+  fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.SystemStart)
+  nameWithType: IHandle<SystemMessage.SystemStart>.Handle(SystemMessage.SystemStart)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemStart>.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  nameWithType.vb: IHandle(Of SystemMessage.SystemStart).Handle(SystemMessage.SystemStart)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemStart).Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.SystemStart>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemStart>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.SystemStart).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemStart).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.SystemStart
+  commentId: T:EventStore.Core.Messages.SystemMessage.SystemStart
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.SystemStart
+  nameWithType: SystemMessage.SystemStart
+  fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown).Handle(SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShuttingDown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShuttingDown
+  nameWithType: SystemMessage.BecomeShuttingDown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown

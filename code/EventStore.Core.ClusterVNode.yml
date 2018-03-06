@@ -1,0 +1,1816 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.ClusterVNode
+  commentId: T:EventStore.Core.ClusterVNode
+  id: ClusterVNode
+  parent: EventStore.Core
+  children:
+  - EventStore.Core.ClusterVNode.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Cluster.Settings.ClusterVNodeSettings,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Services.Transport.Http.Controllers.InfoController,EventStore.Core.ISubsystem[])
+  - EventStore.Core.ClusterVNode.ExternalHttpService
+  - EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  - EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  - EventStore.Core.ClusterVNode.InternalAuthenticationProvider
+  - EventStore.Core.ClusterVNode.InternalHttpService
+  - EventStore.Core.ClusterVNode.MainBus
+  - EventStore.Core.ClusterVNode.MainQueue
+  - EventStore.Core.ClusterVNode.NetworkSendService
+  - EventStore.Core.ClusterVNode.NodeStatusChanged
+  - EventStore.Core.ClusterVNode.OnNodeStatusChanged(EventStore.Core.VNodeStatusChangeArgs)
+  - EventStore.Core.ClusterVNode.Start
+  - EventStore.Core.ClusterVNode.StartAndWaitUntilReady
+  - EventStore.Core.ClusterVNode.Stop
+  - EventStore.Core.ClusterVNode.Stop(TimeSpan,System.Boolean,System.Boolean)
+  - EventStore.Core.ClusterVNode.StopNonblocking(System.Boolean,System.Boolean)
+  - EventStore.Core.ClusterVNode.TimerService
+  - EventStore.Core.ClusterVNode.ToString
+  langs:
+  - csharp
+  - vb
+  name: ClusterVNode
+  nameWithType: ClusterVNode
+  fullName: EventStore.Core.ClusterVNode
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ClusterVNode
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 41
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: 'public class ClusterVNode : object, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShutdown>'
+    content.vb: >-
+      Public Class ClusterVNode
+
+          Inherits Object
+
+          Implements IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.BecomeShutdown)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.ClusterVNode.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.ClusterVNode.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.ClusterVNode.MainQueue
+  commentId: P:EventStore.Core.ClusterVNode.MainQueue
+  id: MainQueue
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: MainQueue
+  nameWithType: ClusterVNode.MainQueue
+  fullName: EventStore.Core.ClusterVNode.MainQueue
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MainQueue
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 47
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public IQueuedHandler MainQueue { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Bus.IQueuedHandler
+    content.vb: Public ReadOnly Property MainQueue As IQueuedHandler
+  overload: EventStore.Core.ClusterVNode.MainQueue*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.ClusterVNode.MainBus
+  commentId: P:EventStore.Core.ClusterVNode.MainBus
+  id: MainBus
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: MainBus
+  nameWithType: ClusterVNode.MainBus
+  fullName: EventStore.Core.ClusterVNode.MainBus
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MainBus
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 48
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public ISubscriber MainBus { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Bus.ISubscriber
+    content.vb: Public ReadOnly Property MainBus As ISubscriber
+  overload: EventStore.Core.ClusterVNode.MainBus*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.ClusterVNode.InternalHttpService
+  commentId: P:EventStore.Core.ClusterVNode.InternalHttpService
+  id: InternalHttpService
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: InternalHttpService
+  nameWithType: ClusterVNode.InternalHttpService
+  fullName: EventStore.Core.ClusterVNode.InternalHttpService
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InternalHttpService
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public HttpService InternalHttpService { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Services.Transport.Http.HttpService
+    content.vb: Public ReadOnly Property InternalHttpService As HttpService
+  overload: EventStore.Core.ClusterVNode.InternalHttpService*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.ClusterVNode.ExternalHttpService
+  commentId: P:EventStore.Core.ClusterVNode.ExternalHttpService
+  id: ExternalHttpService
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: ExternalHttpService
+  nameWithType: ClusterVNode.ExternalHttpService
+  fullName: EventStore.Core.ClusterVNode.ExternalHttpService
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ExternalHttpService
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 50
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public HttpService ExternalHttpService { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Services.Transport.Http.HttpService
+    content.vb: Public ReadOnly Property ExternalHttpService As HttpService
+  overload: EventStore.Core.ClusterVNode.ExternalHttpService*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.ClusterVNode.TimerService
+  commentId: P:EventStore.Core.ClusterVNode.TimerService
+  id: TimerService
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: TimerService
+  nameWithType: ClusterVNode.TimerService
+  fullName: EventStore.Core.ClusterVNode.TimerService
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TimerService
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 51
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public TimerService TimerService { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Services.TimerService.TimerService
+    content.vb: Public ReadOnly Property TimerService As TimerService
+  overload: EventStore.Core.ClusterVNode.TimerService*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.ClusterVNode.NetworkSendService
+  commentId: P:EventStore.Core.ClusterVNode.NetworkSendService
+  id: NetworkSendService
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: NetworkSendService
+  nameWithType: ClusterVNode.NetworkSendService
+  fullName: EventStore.Core.ClusterVNode.NetworkSendService
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: NetworkSendService
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 52
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public IPublisher NetworkSendService { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Bus.IPublisher
+    content.vb: Public ReadOnly Property NetworkSendService As IPublisher
+  overload: EventStore.Core.ClusterVNode.NetworkSendService*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.ClusterVNode.InternalAuthenticationProvider
+  commentId: P:EventStore.Core.ClusterVNode.InternalAuthenticationProvider
+  id: InternalAuthenticationProvider
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: InternalAuthenticationProvider
+  nameWithType: ClusterVNode.InternalAuthenticationProvider
+  fullName: EventStore.Core.ClusterVNode.InternalAuthenticationProvider
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InternalAuthenticationProvider
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 53
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public IAuthenticationProvider InternalAuthenticationProvider { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Authentication.IAuthenticationProvider
+    content.vb: Public ReadOnly Property InternalAuthenticationProvider As IAuthenticationProvider
+  overload: EventStore.Core.ClusterVNode.InternalAuthenticationProvider*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.ClusterVNode.NodeStatusChanged
+  commentId: E:EventStore.Core.ClusterVNode.NodeStatusChanged
+  id: NodeStatusChanged
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: NodeStatusChanged
+  nameWithType: ClusterVNode.NodeStatusChanged
+  fullName: EventStore.Core.ClusterVNode.NodeStatusChanged
+  type: Event
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: NodeStatusChanged
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 73
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public event EventHandler<VNodeStatusChangeArgs> NodeStatusChanged
+    return:
+      type: EventHandler{EventStore.Core.VNodeStatusChangeArgs}
+    content.vb: Public Event NodeStatusChanged As EventHandler(Of VNodeStatusChangeArgs)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.OnNodeStatusChanged(EventStore.Core.VNodeStatusChangeArgs)
+  commentId: M:EventStore.Core.ClusterVNode.OnNodeStatusChanged(EventStore.Core.VNodeStatusChangeArgs)
+  id: OnNodeStatusChanged(EventStore.Core.VNodeStatusChangeArgs)
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: OnNodeStatusChanged(VNodeStatusChangeArgs)
+  nameWithType: ClusterVNode.OnNodeStatusChanged(VNodeStatusChangeArgs)
+  fullName: EventStore.Core.ClusterVNode.OnNodeStatusChanged(EventStore.Core.VNodeStatusChangeArgs)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OnNodeStatusChanged
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 75
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: protected virtual void OnNodeStatusChanged(VNodeStatusChangeArgs e)
+    parameters:
+    - id: e
+      type: EventStore.Core.VNodeStatusChangeArgs
+    content.vb: Protected Overridable Sub OnNodeStatusChanged(e As VNodeStatusChangeArgs)
+  overload: EventStore.Core.ClusterVNode.OnNodeStatusChanged*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: EventStore.Core.ClusterVNode.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Cluster.Settings.ClusterVNodeSettings,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Services.Transport.Http.Controllers.InfoController,EventStore.Core.ISubsystem[])
+  commentId: M:EventStore.Core.ClusterVNode.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Cluster.Settings.ClusterVNodeSettings,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Services.Transport.Http.Controllers.InfoController,EventStore.Core.ISubsystem[])
+  id: '#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Cluster.Settings.ClusterVNodeSettings,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Services.Transport.Http.Controllers.InfoController,EventStore.Core.ISubsystem[])'
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: ClusterVNode(TFChunkDb, ClusterVNodeSettings, IGossipSeedSource, InfoController, ISubsystem[])
+  nameWithType: ClusterVNode.ClusterVNode(TFChunkDb, ClusterVNodeSettings, IGossipSeedSource, InfoController, ISubsystem[])
+  fullName: EventStore.Core.ClusterVNode.ClusterVNode(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Cluster.Settings.ClusterVNodeSettings, EventStore.Core.Services.Gossip.IGossipSeedSource, EventStore.Core.Services.Transport.Http.Controllers.InfoController, EventStore.Core.ISubsystem[])
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 82
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public ClusterVNode(TFChunkDb db, ClusterVNodeSettings vNodeSettings, IGossipSeedSource gossipSeedSource, InfoController infoController, params ISubsystem[] subsystems)
+    parameters:
+    - id: db
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+    - id: vNodeSettings
+      type: EventStore.Core.Cluster.Settings.ClusterVNodeSettings
+    - id: gossipSeedSource
+      type: EventStore.Core.Services.Gossip.IGossipSeedSource
+    - id: infoController
+      type: EventStore.Core.Services.Transport.Http.Controllers.InfoController
+    - id: subsystems
+      type: EventStore.Core.ISubsystem[]
+    content.vb: Public Sub New(db As TFChunkDb, vNodeSettings As ClusterVNodeSettings, gossipSeedSource As IGossipSeedSource, infoController As InfoController, ParamArray subsystems As ISubsystem())
+  overload: EventStore.Core.ClusterVNode.#ctor*
+  nameWithType.vb: ClusterVNode.ClusterVNode(TFChunkDb, ClusterVNodeSettings, IGossipSeedSource, InfoController, ISubsystem())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.ClusterVNode.ClusterVNode(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Cluster.Settings.ClusterVNodeSettings, EventStore.Core.Services.Gossip.IGossipSeedSource, EventStore.Core.Services.Transport.Http.Controllers.InfoController, EventStore.Core.ISubsystem())
+  name.vb: ClusterVNode(TFChunkDb, ClusterVNodeSettings, IGossipSeedSource, InfoController, ISubsystem())
+- uid: EventStore.Core.ClusterVNode.Start
+  commentId: M:EventStore.Core.ClusterVNode.Start
+  id: Start
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: ClusterVNode.Start()
+  fullName: EventStore.Core.ClusterVNode.Start()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Start
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 576
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: EventStore.Core.ClusterVNode.Start*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.StopNonblocking(System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.ClusterVNode.StopNonblocking(System.Boolean,System.Boolean)
+  id: StopNonblocking(System.Boolean,System.Boolean)
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: StopNonblocking(Boolean, Boolean)
+  nameWithType: ClusterVNode.StopNonblocking(Boolean, Boolean)
+  fullName: EventStore.Core.ClusterVNode.StopNonblocking(System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StopNonblocking
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 581
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public void StopNonblocking(bool exitProcess, bool shutdownHttp)
+    parameters:
+    - id: exitProcess
+      type: System.Boolean
+    - id: shutdownHttp
+      type: System.Boolean
+    content.vb: Public Sub StopNonblocking(exitProcess As Boolean, shutdownHttp As Boolean)
+  overload: EventStore.Core.ClusterVNode.StopNonblocking*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.Stop
+  commentId: M:EventStore.Core.ClusterVNode.Stop
+  id: Stop
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: Stop()
+  nameWithType: ClusterVNode.Stop()
+  fullName: EventStore.Core.ClusterVNode.Stop()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Stop
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 590
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public bool Stop()
+    return:
+      type: System.Boolean
+    content.vb: Public Function Stop As Boolean
+  overload: EventStore.Core.ClusterVNode.Stop*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.Stop(TimeSpan,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.ClusterVNode.Stop(TimeSpan,System.Boolean,System.Boolean)
+  id: Stop(TimeSpan,System.Boolean,System.Boolean)
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: Stop(TimeSpan, Boolean, Boolean)
+  nameWithType: ClusterVNode.Stop(TimeSpan, Boolean, Boolean)
+  fullName: EventStore.Core.ClusterVNode.Stop(TimeSpan, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Stop
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 595
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public bool Stop(TimeSpan timeout, bool exitProcess, bool shutdownHttp)
+    parameters:
+    - id: timeout
+      type: TimeSpan
+    - id: exitProcess
+      type: System.Boolean
+    - id: shutdownHttp
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function Stop(timeout As TimeSpan, exitProcess As Boolean, shutdownHttp As Boolean) As Boolean
+  overload: EventStore.Core.ClusterVNode.Stop*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  id: Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: ClusterVNode.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 601
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public void Handle(SystemMessage.StateChangeMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    content.vb: Public Sub Handle(message As SystemMessage.StateChangeMessage)
+  overload: EventStore.Core.ClusterVNode.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  commentId: M:EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShutdown)
+  nameWithType: ClusterVNode.Handle(SystemMessage.BecomeShutdown)
+  fullName: EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 606
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShutdown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShutdown)
+  overload: EventStore.Core.ClusterVNode.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.StartAndWaitUntilReady
+  commentId: M:EventStore.Core.ClusterVNode.StartAndWaitUntilReady
+  id: StartAndWaitUntilReady
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: StartAndWaitUntilReady()
+  nameWithType: ClusterVNode.StartAndWaitUntilReady()
+  fullName: EventStore.Core.ClusterVNode.StartAndWaitUntilReady()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StartAndWaitUntilReady
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 611
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public Task<ClusterVNode> StartAndWaitUntilReady()
+    return:
+      type: Task{EventStore.Core.ClusterVNode}
+    content.vb: Public Function StartAndWaitUntilReady As Task(Of ClusterVNode)
+  overload: EventStore.Core.ClusterVNode.StartAndWaitUntilReady*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.ClusterVNode.ToString
+  commentId: M:EventStore.Core.ClusterVNode.ToString
+  id: ToString
+  parent: EventStore.Core.ClusterVNode
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ClusterVNode.ToString()
+  fullName: EventStore.Core.ClusterVNode.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/ClusterVNode.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToString
+    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    startLine: 623
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: EventStore.Core.ClusterVNode.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.Core
+  commentId: N:EventStore.Core
+  isExternal: false
+  name: EventStore.Core
+  nameWithType: EventStore.Core
+  fullName: EventStore.Core
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.StateChangeMessage>
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  name.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShutdown>
+  nameWithType: IHandle<SystemMessage.BecomeShutdown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShutdown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  name.vb: IHandle(Of SystemMessage.BecomeShutdown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.ClusterVNode.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ClusterVNode>()
+  nameWithType: ProtobufExtensions.Serialize<ClusterVNode>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.ClusterVNode>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ClusterVNode)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.ClusterVNode)()
+  name.vb: Serialize(Of ClusterVNode)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ClusterVNode>
+    nameWithType: ProtobufExtensions.Serialize<ClusterVNode>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.ClusterVNode>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ClusterVNode)
+    nameWithType: ProtobufExtensions.Serialize(Of ClusterVNode)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.ClusterVNode)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.ClusterVNode.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ClusterVNode>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ClusterVNode>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.ClusterVNode>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ClusterVNode)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.ClusterVNode)()
+  name.vb: SerializeToArray(Of ClusterVNode)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ClusterVNode>
+    nameWithType: ProtobufExtensions.SerializeToArray<ClusterVNode>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.ClusterVNode>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ClusterVNode)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ClusterVNode)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.ClusterVNode)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.ClusterVNode.MainQueue*
+  commentId: Overload:EventStore.Core.ClusterVNode.MainQueue
+  isExternal: false
+  name: MainQueue
+  nameWithType: ClusterVNode.MainQueue
+  fullName: EventStore.Core.ClusterVNode.MainQueue
+- uid: EventStore.Core.Bus.IQueuedHandler
+  commentId: T:EventStore.Core.Bus.IQueuedHandler
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IQueuedHandler
+  nameWithType: IQueuedHandler
+  fullName: EventStore.Core.Bus.IQueuedHandler
+- uid: EventStore.Core.ClusterVNode.MainBus*
+  commentId: Overload:EventStore.Core.ClusterVNode.MainBus
+  isExternal: false
+  name: MainBus
+  nameWithType: ClusterVNode.MainBus
+  fullName: EventStore.Core.ClusterVNode.MainBus
+- uid: EventStore.Core.Bus.ISubscriber
+  commentId: T:EventStore.Core.Bus.ISubscriber
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: ISubscriber
+  nameWithType: ISubscriber
+  fullName: EventStore.Core.Bus.ISubscriber
+- uid: EventStore.Core.ClusterVNode.InternalHttpService*
+  commentId: Overload:EventStore.Core.ClusterVNode.InternalHttpService
+  isExternal: false
+  name: InternalHttpService
+  nameWithType: ClusterVNode.InternalHttpService
+  fullName: EventStore.Core.ClusterVNode.InternalHttpService
+- uid: EventStore.Core.Services.Transport.Http.HttpService
+  commentId: T:EventStore.Core.Services.Transport.Http.HttpService
+  parent: EventStore.Core.Services.Transport.Http
+  isExternal: false
+  name: HttpService
+  nameWithType: HttpService
+  fullName: EventStore.Core.Services.Transport.Http.HttpService
+- uid: EventStore.Core.Services.Transport.Http
+  commentId: N:EventStore.Core.Services.Transport.Http
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Http
+  nameWithType: EventStore.Core.Services.Transport.Http
+  fullName: EventStore.Core.Services.Transport.Http
+- uid: EventStore.Core.ClusterVNode.ExternalHttpService*
+  commentId: Overload:EventStore.Core.ClusterVNode.ExternalHttpService
+  isExternal: false
+  name: ExternalHttpService
+  nameWithType: ClusterVNode.ExternalHttpService
+  fullName: EventStore.Core.ClusterVNode.ExternalHttpService
+- uid: EventStore.Core.ClusterVNode.TimerService*
+  commentId: Overload:EventStore.Core.ClusterVNode.TimerService
+  isExternal: false
+  name: TimerService
+  nameWithType: ClusterVNode.TimerService
+  fullName: EventStore.Core.ClusterVNode.TimerService
+- uid: EventStore.Core.Services.TimerService.TimerService
+  commentId: T:EventStore.Core.Services.TimerService.TimerService
+  parent: EventStore.Core.Services.TimerService
+  isExternal: false
+  name: TimerService
+  nameWithType: TimerService
+  fullName: EventStore.Core.Services.TimerService.TimerService
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  isExternal: false
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: EventStore.Core.ClusterVNode.NetworkSendService*
+  commentId: Overload:EventStore.Core.ClusterVNode.NetworkSendService
+  isExternal: false
+  name: NetworkSendService
+  nameWithType: ClusterVNode.NetworkSendService
+  fullName: EventStore.Core.ClusterVNode.NetworkSendService
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.ClusterVNode.InternalAuthenticationProvider*
+  commentId: Overload:EventStore.Core.ClusterVNode.InternalAuthenticationProvider
+  isExternal: false
+  name: InternalAuthenticationProvider
+  nameWithType: ClusterVNode.InternalAuthenticationProvider
+  fullName: EventStore.Core.ClusterVNode.InternalAuthenticationProvider
+- uid: EventStore.Core.Authentication.IAuthenticationProvider
+  commentId: T:EventStore.Core.Authentication.IAuthenticationProvider
+  parent: EventStore.Core.Authentication
+  isExternal: false
+  name: IAuthenticationProvider
+  nameWithType: IAuthenticationProvider
+  fullName: EventStore.Core.Authentication.IAuthenticationProvider
+- uid: EventStore.Core.Authentication
+  commentId: N:EventStore.Core.Authentication
+  isExternal: false
+  name: EventStore.Core.Authentication
+  nameWithType: EventStore.Core.Authentication
+  fullName: EventStore.Core.Authentication
+- uid: EventHandler{EventStore.Core.VNodeStatusChangeArgs}
+  commentId: '!:EventHandler{EventStore.Core.VNodeStatusChangeArgs}'
+  definition: EventHandler`1
+  name: EventHandler<VNodeStatusChangeArgs>
+  nameWithType: EventHandler<VNodeStatusChangeArgs>
+  fullName: EventHandler<EventStore.Core.VNodeStatusChangeArgs>
+  nameWithType.vb: EventHandler(Of VNodeStatusChangeArgs)
+  fullName.vb: EventHandler(Of EventStore.Core.VNodeStatusChangeArgs)
+  name.vb: EventHandler(Of VNodeStatusChangeArgs)
+  spec.csharp:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.VNodeStatusChangeArgs
+    name: VNodeStatusChangeArgs
+    nameWithType: VNodeStatusChangeArgs
+    fullName: EventStore.Core.VNodeStatusChangeArgs
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.VNodeStatusChangeArgs
+    name: VNodeStatusChangeArgs
+    nameWithType: VNodeStatusChangeArgs
+    fullName: EventStore.Core.VNodeStatusChangeArgs
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventHandler`1
+  isExternal: true
+  name: EventHandler<>
+  nameWithType: EventHandler<>
+  fullName: EventHandler<>
+  nameWithType.vb: EventHandler(Of )
+  fullName.vb: EventHandler(Of )
+  name.vb: EventHandler(Of )
+  spec.csharp:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.ClusterVNode.OnNodeStatusChanged*
+  commentId: Overload:EventStore.Core.ClusterVNode.OnNodeStatusChanged
+  isExternal: false
+  name: OnNodeStatusChanged
+  nameWithType: ClusterVNode.OnNodeStatusChanged
+  fullName: EventStore.Core.ClusterVNode.OnNodeStatusChanged
+- uid: EventStore.Core.VNodeStatusChangeArgs
+  commentId: T:EventStore.Core.VNodeStatusChangeArgs
+  parent: EventStore.Core
+  isExternal: false
+  name: VNodeStatusChangeArgs
+  nameWithType: VNodeStatusChangeArgs
+  fullName: EventStore.Core.VNodeStatusChangeArgs
+- uid: EventStore.Core.ClusterVNode.#ctor*
+  commentId: Overload:EventStore.Core.ClusterVNode.#ctor
+  isExternal: false
+  name: ClusterVNode
+  nameWithType: ClusterVNode.ClusterVNode
+  fullName: EventStore.Core.ClusterVNode.ClusterVNode
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkDb
+  nameWithType: TFChunkDb
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+- uid: EventStore.Core.Cluster.Settings.ClusterVNodeSettings
+  commentId: T:EventStore.Core.Cluster.Settings.ClusterVNodeSettings
+  parent: EventStore.Core.Cluster.Settings
+  isExternal: false
+  name: ClusterVNodeSettings
+  nameWithType: ClusterVNodeSettings
+  fullName: EventStore.Core.Cluster.Settings.ClusterVNodeSettings
+- uid: EventStore.Core.Services.Gossip.IGossipSeedSource
+  commentId: T:EventStore.Core.Services.Gossip.IGossipSeedSource
+  parent: EventStore.Core.Services.Gossip
+  isExternal: false
+  name: IGossipSeedSource
+  nameWithType: IGossipSeedSource
+  fullName: EventStore.Core.Services.Gossip.IGossipSeedSource
+- uid: EventStore.Core.Services.Transport.Http.Controllers.InfoController
+  commentId: T:EventStore.Core.Services.Transport.Http.Controllers.InfoController
+  parent: EventStore.Core.Services.Transport.Http.Controllers
+  isExternal: false
+  name: InfoController
+  nameWithType: InfoController
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.InfoController
+- uid: EventStore.Core.ISubsystem[]
+  name: ISubsystem[]
+  nameWithType: ISubsystem[]
+  fullName: EventStore.Core.ISubsystem[]
+  nameWithType.vb: ISubsystem()
+  fullName.vb: EventStore.Core.ISubsystem()
+  name.vb: ISubsystem()
+  spec.csharp:
+  - uid: EventStore.Core.ISubsystem
+    name: ISubsystem
+    nameWithType: ISubsystem
+    fullName: EventStore.Core.ISubsystem
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Core.ISubsystem
+    name: ISubsystem
+    nameWithType: ISubsystem
+    fullName: EventStore.Core.ISubsystem
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Core.TransactionLog.Chunks
+  commentId: N:EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Chunks
+  nameWithType: EventStore.Core.TransactionLog.Chunks
+  fullName: EventStore.Core.TransactionLog.Chunks
+- uid: EventStore.Core.Cluster.Settings
+  commentId: N:EventStore.Core.Cluster.Settings
+  isExternal: false
+  name: EventStore.Core.Cluster.Settings
+  nameWithType: EventStore.Core.Cluster.Settings
+  fullName: EventStore.Core.Cluster.Settings
+- uid: EventStore.Core.Services.Gossip
+  commentId: N:EventStore.Core.Services.Gossip
+  isExternal: false
+  name: EventStore.Core.Services.Gossip
+  nameWithType: EventStore.Core.Services.Gossip
+  fullName: EventStore.Core.Services.Gossip
+- uid: EventStore.Core.Services.Transport.Http.Controllers
+  commentId: N:EventStore.Core.Services.Transport.Http.Controllers
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Http.Controllers
+  nameWithType: EventStore.Core.Services.Transport.Http.Controllers
+  fullName: EventStore.Core.Services.Transport.Http.Controllers
+- uid: EventStore.Core.ClusterVNode.Start*
+  commentId: Overload:EventStore.Core.ClusterVNode.Start
+  isExternal: false
+  name: Start
+  nameWithType: ClusterVNode.Start
+  fullName: EventStore.Core.ClusterVNode.Start
+- uid: EventStore.Core.ClusterVNode.StopNonblocking*
+  commentId: Overload:EventStore.Core.ClusterVNode.StopNonblocking
+  isExternal: false
+  name: StopNonblocking
+  nameWithType: ClusterVNode.StopNonblocking
+  fullName: EventStore.Core.ClusterVNode.StopNonblocking
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.ClusterVNode.Stop*
+  commentId: Overload:EventStore.Core.ClusterVNode.Stop
+  isExternal: false
+  name: Stop
+  nameWithType: ClusterVNode.Stop
+  fullName: EventStore.Core.ClusterVNode.Stop
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Core.ClusterVNode.Handle*
+  commentId: Overload:EventStore.Core.ClusterVNode.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: ClusterVNode.Handle
+  fullName: EventStore.Core.ClusterVNode.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage).Handle(SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.StateChangeMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  commentId: T:EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.StateChangeMessage
+  nameWithType: SystemMessage.StateChangeMessage
+  fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShutdown)
+  nameWithType: IHandle<SystemMessage.BecomeShutdown>.Handle(SystemMessage.BecomeShutdown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShutdown).Handle(SystemMessage.BecomeShutdown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShutdown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShutdown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShutdown
+  nameWithType: SystemMessage.BecomeShutdown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+- uid: EventStore.Core.ClusterVNode.StartAndWaitUntilReady*
+  commentId: Overload:EventStore.Core.ClusterVNode.StartAndWaitUntilReady
+  isExternal: false
+  name: StartAndWaitUntilReady
+  nameWithType: ClusterVNode.StartAndWaitUntilReady
+  fullName: EventStore.Core.ClusterVNode.StartAndWaitUntilReady
+- uid: Task{EventStore.Core.ClusterVNode}
+  commentId: '!:Task{EventStore.Core.ClusterVNode}'
+  definition: Task`1
+  name: Task<ClusterVNode>
+  nameWithType: Task<ClusterVNode>
+  fullName: Task<EventStore.Core.ClusterVNode>
+  nameWithType.vb: Task(Of ClusterVNode)
+  fullName.vb: Task(Of EventStore.Core.ClusterVNode)
+  name.vb: Task(Of ClusterVNode)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.ClusterVNode
+    name: ClusterVNode
+    nameWithType: ClusterVNode
+    fullName: EventStore.Core.ClusterVNode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.ClusterVNode
+    name: ClusterVNode
+    nameWithType: ClusterVNode
+    fullName: EventStore.Core.ClusterVNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.ClusterVNode.ToString*
+  commentId: Overload:EventStore.Core.ClusterVNode.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: ClusterVNode.ToString
+  fullName: EventStore.Core.ClusterVNode.ToString
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

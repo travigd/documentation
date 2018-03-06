@@ -1,0 +1,2187 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.ElectionsService
+  commentId: T:EventStore.Core.Services.ElectionsService
+  id: ElectionsService
+  parent: EventStore.Core.Services
+  children:
+  - EventStore.Core.Services.ElectionsService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Data.VNodeInfo,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  - EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  - EventStore.Core.Services.ElectionsService.SubscribeMessages(EventStore.Core.Bus.ISubscriber)
+  langs:
+  - csharp
+  - vb
+  name: ElectionsService
+  nameWithType: ElectionsService
+  fullName: EventStore.Core.Services.ElectionsService
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ElectionsService
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: 'public class ElectionsService : object, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<GossipMessage.GossipUpdated>, IHandle<ElectionMessage.StartElections>, IHandle<ElectionMessage.ElectionsTimedOut>, IHandle<ElectionMessage.ViewChange>, IHandle<ElectionMessage.ViewChangeProof>, IHandle<ElectionMessage.SendViewChangeProof>, IHandle<ElectionMessage.Prepare>, IHandle<ElectionMessage.PrepareOk>, IHandle<ElectionMessage.Proposal>, IHandle<ElectionMessage.Accept>'
+    content.vb: >-
+      Public Class ElectionsService
+
+          Inherits Object
+
+          Implements IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of GossipMessage.GossipUpdated), IHandle(Of ElectionMessage.StartElections), IHandle(Of ElectionMessage.ElectionsTimedOut), IHandle(Of ElectionMessage.ViewChange), IHandle(Of ElectionMessage.ViewChangeProof), IHandle(Of ElectionMessage.SendViewChangeProof), IHandle(Of ElectionMessage.Prepare), IHandle(Of ElectionMessage.PrepareOk), IHandle(Of ElectionMessage.Proposal), IHandle(Of ElectionMessage.Accept)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.GossipMessage.GossipUpdated}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.StartElections}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChange}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChangeProof}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.SendViewChangeProof}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Prepare}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.PrepareOk}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Proposal}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Accept}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.ElectionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.ElectionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.ElectionsService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Data.VNodeInfo,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32)
+  commentId: M:EventStore.Core.Services.ElectionsService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Data.VNodeInfo,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Data.VNodeInfo,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32)'
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: ElectionsService(IPublisher, VNodeInfo, Int32, ICheckpoint, ICheckpoint, IEpochManager, Func<Int64>, Int32)
+  nameWithType: ElectionsService.ElectionsService(IPublisher, VNodeInfo, Int32, ICheckpoint, ICheckpoint, IEpochManager, Func<Int64>, Int32)
+  fullName: EventStore.Core.Services.ElectionsService.ElectionsService(EventStore.Core.Bus.IPublisher, EventStore.Core.Data.VNodeInfo, System.Int32, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.Services.Storage.EpochManager.IEpochManager, Func<System.Int64>, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 68
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public ElectionsService(IPublisher publisher, VNodeInfo nodeInfo, int clusterSize, ICheckpoint writerCheckpoint, ICheckpoint chaserCheckpoint, IEpochManager epochManager, Func<long> getLastCommitPosition, int nodePriority)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: nodeInfo
+      type: EventStore.Core.Data.VNodeInfo
+    - id: clusterSize
+      type: System.Int32
+    - id: writerCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    - id: chaserCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    - id: epochManager
+      type: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+    - id: getLastCommitPosition
+      type: Func{System.Int64}
+    - id: nodePriority
+      type: System.Int32
+    content.vb: Public Sub New(publisher As IPublisher, nodeInfo As VNodeInfo, clusterSize As Integer, writerCheckpoint As ICheckpoint, chaserCheckpoint As ICheckpoint, epochManager As IEpochManager, getLastCommitPosition As Func(Of Long), nodePriority As Integer)
+  overload: EventStore.Core.Services.ElectionsService.#ctor*
+  nameWithType.vb: ElectionsService.ElectionsService(IPublisher, VNodeInfo, Int32, ICheckpoint, ICheckpoint, IEpochManager, Func(Of Int64), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Services.ElectionsService.ElectionsService(EventStore.Core.Bus.IPublisher, EventStore.Core.Data.VNodeInfo, System.Int32, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.Services.Storage.EpochManager.IEpochManager, Func(Of System.Int64), System.Int32)
+  name.vb: ElectionsService(IPublisher, VNodeInfo, Int32, ICheckpoint, ICheckpoint, IEpochManager, Func(Of Int64), Int32)
+- uid: EventStore.Core.Services.ElectionsService.SubscribeMessages(EventStore.Core.Bus.ISubscriber)
+  commentId: M:EventStore.Core.Services.ElectionsService.SubscribeMessages(EventStore.Core.Bus.ISubscriber)
+  id: SubscribeMessages(EventStore.Core.Bus.ISubscriber)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: SubscribeMessages(ISubscriber)
+  nameWithType: ElectionsService.SubscribeMessages(ISubscriber)
+  fullName: EventStore.Core.Services.ElectionsService.SubscribeMessages(EventStore.Core.Bus.ISubscriber)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscribeMessages
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 110
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void SubscribeMessages(ISubscriber subscriber)
+    parameters:
+    - id: subscriber
+      type: EventStore.Core.Bus.ISubscriber
+    content.vb: Public Sub SubscribeMessages(subscriber As ISubscriber)
+  overload: EventStore.Core.Services.ElectionsService.SubscribeMessages*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: ElectionsService.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 125
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShuttingDown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShuttingDown)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  id: Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(GossipMessage.GossipUpdated)
+  nameWithType: ElectionsService.Handle(GossipMessage.GossipUpdated)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 130
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(GossipMessage.GossipUpdated message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.GossipMessage.GossipUpdated
+    content.vb: Public Sub Handle(message As GossipMessage.GossipUpdated)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.GossipMessage.GossipUpdated}.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.StartElections)
+  nameWithType: ElectionsService.Handle(ElectionMessage.StartElections)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 138
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.StartElections message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.StartElections
+    content.vb: Public Sub Handle(message As ElectionMessage.StartElections)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.StartElections}.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.ElectionsTimedOut)
+  nameWithType: ElectionsService.Handle(ElectionMessage.ElectionsTimedOut)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 150
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.ElectionsTimedOut message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+    content.vb: Public Sub Handle(message As ElectionMessage.ElectionsTimedOut)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut}.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.ViewChange)
+  nameWithType: ElectionsService.Handle(ElectionMessage.ViewChange)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 190
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.ViewChange message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.ViewChange
+    content.vb: Public Sub Handle(message As ElectionMessage.ViewChange)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChange}.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.SendViewChangeProof)
+  nameWithType: ElectionsService.Handle(ElectionMessage.SendViewChangeProof)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 210
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.SendViewChangeProof message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+    content.vb: Public Sub Handle(message As ElectionMessage.SendViewChangeProof)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.SendViewChangeProof}.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.ViewChangeProof)
+  nameWithType: ElectionsService.Handle(ElectionMessage.ViewChangeProof)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 222
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.ViewChangeProof message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+    content.vb: Public Sub Handle(message As ElectionMessage.ViewChangeProof)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChangeProof}.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.Prepare)
+  nameWithType: ElectionsService.Handle(ElectionMessage.Prepare)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 267
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.Prepare message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.Prepare
+    content.vb: Public Sub Handle(message As ElectionMessage.Prepare)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Prepare}.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.PrepareOk)
+  nameWithType: ElectionsService.Handle(ElectionMessage.PrepareOk)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 300
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.PrepareOk msg)
+    parameters:
+    - id: msg
+      type: EventStore.Core.Messages.ElectionMessage.PrepareOk
+    content.vb: Public Sub Handle(msg As ElectionMessage.PrepareOk)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.PrepareOk}.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.Proposal)
+  nameWithType: ElectionsService.Handle(ElectionMessage.Proposal)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 435
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.Proposal message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.Proposal
+    content.vb: Public Sub Handle(message As ElectionMessage.Proposal)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Proposal}.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  commentId: M:EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  id: Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  parent: EventStore.Core.Services.ElectionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ElectionMessage.Accept)
+  nameWithType: ElectionsService.Handle(ElectionMessage.Accept)
+  fullName: EventStore.Core.Services.ElectionsService.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/ElectionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/ElectionsService.cs
+    startLine: 471
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ElectionMessage.Accept message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ElectionMessage.Accept
+    content.vb: Public Sub Handle(message As ElectionMessage.Accept)
+  overload: EventStore.Core.Services.ElectionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Accept}.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services
+  commentId: N:EventStore.Core.Services
+  isExternal: false
+  name: EventStore.Core.Services
+  nameWithType: EventStore.Core.Services
+  fullName: EventStore.Core.Services
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShuttingDown>
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  name.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.GossipMessage.GossipUpdated}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.GossipMessage.GossipUpdated}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<GossipMessage.GossipUpdated>
+  nameWithType: IHandle<GossipMessage.GossipUpdated>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.GossipMessage.GossipUpdated>
+  nameWithType.vb: IHandle(Of GossipMessage.GossipUpdated)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  name.vb: IHandle(Of GossipMessage.GossipUpdated)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.GossipMessage.GossipUpdated
+    name: GossipMessage.GossipUpdated
+    nameWithType: GossipMessage.GossipUpdated
+    fullName: EventStore.Core.Messages.GossipMessage.GossipUpdated
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.GossipMessage.GossipUpdated
+    name: GossipMessage.GossipUpdated
+    nameWithType: GossipMessage.GossipUpdated
+    fullName: EventStore.Core.Messages.GossipMessage.GossipUpdated
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.StartElections}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.StartElections}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.StartElections>
+  nameWithType: IHandle<ElectionMessage.StartElections>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.StartElections>
+  nameWithType.vb: IHandle(Of ElectionMessage.StartElections)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.StartElections)
+  name.vb: IHandle(Of ElectionMessage.StartElections)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.StartElections
+    name: ElectionMessage.StartElections
+    nameWithType: ElectionMessage.StartElections
+    fullName: EventStore.Core.Messages.ElectionMessage.StartElections
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.StartElections
+    name: ElectionMessage.StartElections
+    nameWithType: ElectionMessage.StartElections
+    fullName: EventStore.Core.Messages.ElectionMessage.StartElections
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.ElectionsTimedOut>
+  nameWithType: IHandle<ElectionMessage.ElectionsTimedOut>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut>
+  nameWithType.vb: IHandle(Of ElectionMessage.ElectionsTimedOut)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  name.vb: IHandle(Of ElectionMessage.ElectionsTimedOut)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+    name: ElectionMessage.ElectionsTimedOut
+    nameWithType: ElectionMessage.ElectionsTimedOut
+    fullName: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+    name: ElectionMessage.ElectionsTimedOut
+    nameWithType: ElectionMessage.ElectionsTimedOut
+    fullName: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChange}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChange}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.ViewChange>
+  nameWithType: IHandle<ElectionMessage.ViewChange>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ViewChange>
+  nameWithType.vb: IHandle(Of ElectionMessage.ViewChange)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ViewChange)
+  name.vb: IHandle(Of ElectionMessage.ViewChange)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChange
+    name: ElectionMessage.ViewChange
+    nameWithType: ElectionMessage.ViewChange
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChange
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChange
+    name: ElectionMessage.ViewChange
+    nameWithType: ElectionMessage.ViewChange
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChange
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChangeProof}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChangeProof}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.ViewChangeProof>
+  nameWithType: IHandle<ElectionMessage.ViewChangeProof>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ViewChangeProof>
+  nameWithType.vb: IHandle(Of ElectionMessage.ViewChangeProof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  name.vb: IHandle(Of ElectionMessage.ViewChangeProof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+    name: ElectionMessage.ViewChangeProof
+    nameWithType: ElectionMessage.ViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+    name: ElectionMessage.ViewChangeProof
+    nameWithType: ElectionMessage.ViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.SendViewChangeProof}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.SendViewChangeProof}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.SendViewChangeProof>
+  nameWithType: IHandle<ElectionMessage.SendViewChangeProof>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.SendViewChangeProof>
+  nameWithType.vb: IHandle(Of ElectionMessage.SendViewChangeProof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  name.vb: IHandle(Of ElectionMessage.SendViewChangeProof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+    name: ElectionMessage.SendViewChangeProof
+    nameWithType: ElectionMessage.SendViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+    name: ElectionMessage.SendViewChangeProof
+    nameWithType: ElectionMessage.SendViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Prepare}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Prepare}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.Prepare>
+  nameWithType: IHandle<ElectionMessage.Prepare>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Prepare>
+  nameWithType.vb: IHandle(Of ElectionMessage.Prepare)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Prepare)
+  name.vb: IHandle(Of ElectionMessage.Prepare)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.Prepare
+    name: ElectionMessage.Prepare
+    nameWithType: ElectionMessage.Prepare
+    fullName: EventStore.Core.Messages.ElectionMessage.Prepare
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.Prepare
+    name: ElectionMessage.Prepare
+    nameWithType: ElectionMessage.Prepare
+    fullName: EventStore.Core.Messages.ElectionMessage.Prepare
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.PrepareOk}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.PrepareOk}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.PrepareOk>
+  nameWithType: IHandle<ElectionMessage.PrepareOk>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.PrepareOk>
+  nameWithType.vb: IHandle(Of ElectionMessage.PrepareOk)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  name.vb: IHandle(Of ElectionMessage.PrepareOk)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.PrepareOk
+    name: ElectionMessage.PrepareOk
+    nameWithType: ElectionMessage.PrepareOk
+    fullName: EventStore.Core.Messages.ElectionMessage.PrepareOk
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.PrepareOk
+    name: ElectionMessage.PrepareOk
+    nameWithType: ElectionMessage.PrepareOk
+    fullName: EventStore.Core.Messages.ElectionMessage.PrepareOk
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Proposal}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Proposal}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.Proposal>
+  nameWithType: IHandle<ElectionMessage.Proposal>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Proposal>
+  nameWithType.vb: IHandle(Of ElectionMessage.Proposal)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Proposal)
+  name.vb: IHandle(Of ElectionMessage.Proposal)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.Proposal
+    name: ElectionMessage.Proposal
+    nameWithType: ElectionMessage.Proposal
+    fullName: EventStore.Core.Messages.ElectionMessage.Proposal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.Proposal
+    name: ElectionMessage.Proposal
+    nameWithType: ElectionMessage.Proposal
+    fullName: EventStore.Core.Messages.ElectionMessage.Proposal
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Accept}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Accept}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ElectionMessage.Accept>
+  nameWithType: IHandle<ElectionMessage.Accept>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Accept>
+  nameWithType.vb: IHandle(Of ElectionMessage.Accept)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Accept)
+  name.vb: IHandle(Of ElectionMessage.Accept)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ElectionMessage.Accept
+    name: ElectionMessage.Accept
+    nameWithType: ElectionMessage.Accept
+    fullName: EventStore.Core.Messages.ElectionMessage.Accept
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ElectionMessage.Accept
+    name: ElectionMessage.Accept
+    nameWithType: ElectionMessage.Accept
+    fullName: EventStore.Core.Messages.ElectionMessage.Accept
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.ElectionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ElectionsService>()
+  nameWithType: ProtobufExtensions.Serialize<ElectionsService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.ElectionsService>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ElectionsService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.ElectionsService)()
+  name.vb: Serialize(Of ElectionsService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ElectionsService>
+    nameWithType: ProtobufExtensions.Serialize<ElectionsService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.ElectionsService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ElectionsService)
+    nameWithType: ProtobufExtensions.Serialize(Of ElectionsService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.ElectionsService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.ElectionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ElectionsService>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ElectionsService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.ElectionsService>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ElectionsService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.ElectionsService)()
+  name.vb: SerializeToArray(Of ElectionsService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ElectionsService>
+    nameWithType: ProtobufExtensions.SerializeToArray<ElectionsService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.ElectionsService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ElectionsService)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ElectionsService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.ElectionsService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.ElectionsService.#ctor*
+  commentId: Overload:EventStore.Core.Services.ElectionsService.#ctor
+  isExternal: false
+  name: ElectionsService
+  nameWithType: ElectionsService.ElectionsService
+  fullName: EventStore.Core.Services.ElectionsService.ElectionsService
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Data.VNodeInfo
+  commentId: T:EventStore.Core.Data.VNodeInfo
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: VNodeInfo
+  nameWithType: VNodeInfo
+  fullName: EventStore.Core.Data.VNodeInfo
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  commentId: T:EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  parent: EventStore.Core.Services.Storage.EpochManager
+  isExternal: false
+  name: IEpochManager
+  nameWithType: IEpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+- uid: Func{System.Int64}
+  commentId: '!:Func{System.Int64}'
+  definition: Func`1
+  name: Func<Int64>
+  nameWithType: Func<Int64>
+  fullName: Func<System.Int64>
+  nameWithType.vb: Func(Of Int64)
+  fullName.vb: Func(Of System.Int64)
+  name.vb: Func(Of Int64)
+  spec.csharp:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  isExternal: false
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: EventStore.Core.Services.Storage.EpochManager
+  commentId: N:EventStore.Core.Services.Storage.EpochManager
+  isExternal: false
+  name: EventStore.Core.Services.Storage.EpochManager
+  nameWithType: EventStore.Core.Services.Storage.EpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager
+- uid: Func`1
+  isExternal: true
+  name: Func<>
+  nameWithType: Func<>
+  fullName: Func<>
+  nameWithType.vb: Func(Of )
+  fullName.vb: Func(Of )
+  name.vb: Func(Of )
+  spec.csharp:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.ElectionsService.SubscribeMessages*
+  commentId: Overload:EventStore.Core.Services.ElectionsService.SubscribeMessages
+  isExternal: false
+  name: SubscribeMessages
+  nameWithType: ElectionsService.SubscribeMessages
+  fullName: EventStore.Core.Services.ElectionsService.SubscribeMessages
+- uid: EventStore.Core.Bus.ISubscriber
+  commentId: T:EventStore.Core.Bus.ISubscriber
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: ISubscriber
+  nameWithType: ISubscriber
+  fullName: EventStore.Core.Bus.ISubscriber
+- uid: EventStore.Core.Services.ElectionsService.Handle*
+  commentId: Overload:EventStore.Core.Services.ElectionsService.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: ElectionsService.Handle
+  fullName: EventStore.Core.Services.ElectionsService.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown).Handle(SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShuttingDown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShuttingDown
+  nameWithType: SystemMessage.BecomeShuttingDown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.GossipMessage.GossipUpdated}.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.GossipMessage.GossipUpdated}.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.GossipMessage.GossipUpdated}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(GossipMessage.GossipUpdated)
+  nameWithType: IHandle<GossipMessage.GossipUpdated>.Handle(GossipMessage.GossipUpdated)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.GossipMessage.GossipUpdated>.Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  nameWithType.vb: IHandle(Of GossipMessage.GossipUpdated).Handle(GossipMessage.GossipUpdated)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.GossipMessage.GossipUpdated).Handle(EventStore.Core.Messages.GossipMessage.GossipUpdated)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<GossipMessage.GossipUpdated>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.GossipMessage.GossipUpdated>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.GossipMessage.GossipUpdated
+    name: GossipMessage.GossipUpdated
+    nameWithType: GossipMessage.GossipUpdated
+    fullName: EventStore.Core.Messages.GossipMessage.GossipUpdated
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of GossipMessage.GossipUpdated).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.GossipMessage.GossipUpdated).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.GossipMessage.GossipUpdated
+    name: GossipMessage.GossipUpdated
+    nameWithType: GossipMessage.GossipUpdated
+    fullName: EventStore.Core.Messages.GossipMessage.GossipUpdated
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.GossipMessage.GossipUpdated
+  commentId: T:EventStore.Core.Messages.GossipMessage.GossipUpdated
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: GossipMessage.GossipUpdated
+  nameWithType: GossipMessage.GossipUpdated
+  fullName: EventStore.Core.Messages.GossipMessage.GossipUpdated
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.StartElections}.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.StartElections}.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.StartElections}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.StartElections)
+  nameWithType: IHandle<ElectionMessage.StartElections>.Handle(ElectionMessage.StartElections)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.StartElections>.Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  nameWithType.vb: IHandle(Of ElectionMessage.StartElections).Handle(ElectionMessage.StartElections)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.StartElections).Handle(EventStore.Core.Messages.ElectionMessage.StartElections)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.StartElections>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.StartElections>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.StartElections
+    name: ElectionMessage.StartElections
+    nameWithType: ElectionMessage.StartElections
+    fullName: EventStore.Core.Messages.ElectionMessage.StartElections
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.StartElections).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.StartElections).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.StartElections
+    name: ElectionMessage.StartElections
+    nameWithType: ElectionMessage.StartElections
+    fullName: EventStore.Core.Messages.ElectionMessage.StartElections
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.StartElections
+  commentId: T:EventStore.Core.Messages.ElectionMessage.StartElections
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.StartElections
+  nameWithType: ElectionMessage.StartElections
+  fullName: EventStore.Core.Messages.ElectionMessage.StartElections
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut}.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut}.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.ElectionsTimedOut)
+  nameWithType: IHandle<ElectionMessage.ElectionsTimedOut>.Handle(ElectionMessage.ElectionsTimedOut)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut>.Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  nameWithType.vb: IHandle(Of ElectionMessage.ElectionsTimedOut).Handle(ElectionMessage.ElectionsTimedOut)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut).Handle(EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.ElectionsTimedOut>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+    name: ElectionMessage.ElectionsTimedOut
+    nameWithType: ElectionMessage.ElectionsTimedOut
+    fullName: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.ElectionsTimedOut).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+    name: ElectionMessage.ElectionsTimedOut
+    nameWithType: ElectionMessage.ElectionsTimedOut
+    fullName: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+  commentId: T:EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.ElectionsTimedOut
+  nameWithType: ElectionMessage.ElectionsTimedOut
+  fullName: EventStore.Core.Messages.ElectionMessage.ElectionsTimedOut
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChange}.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChange}.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChange}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.ViewChange)
+  nameWithType: IHandle<ElectionMessage.ViewChange>.Handle(ElectionMessage.ViewChange)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ViewChange>.Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  nameWithType.vb: IHandle(Of ElectionMessage.ViewChange).Handle(ElectionMessage.ViewChange)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ViewChange).Handle(EventStore.Core.Messages.ElectionMessage.ViewChange)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.ViewChange>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ViewChange>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChange
+    name: ElectionMessage.ViewChange
+    nameWithType: ElectionMessage.ViewChange
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChange
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.ViewChange).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ViewChange).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChange
+    name: ElectionMessage.ViewChange
+    nameWithType: ElectionMessage.ViewChange
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChange
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.ViewChange
+  commentId: T:EventStore.Core.Messages.ElectionMessage.ViewChange
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.ViewChange
+  nameWithType: ElectionMessage.ViewChange
+  fullName: EventStore.Core.Messages.ElectionMessage.ViewChange
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.SendViewChangeProof}.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.SendViewChangeProof}.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.SendViewChangeProof}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.SendViewChangeProof)
+  nameWithType: IHandle<ElectionMessage.SendViewChangeProof>.Handle(ElectionMessage.SendViewChangeProof)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.SendViewChangeProof>.Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  nameWithType.vb: IHandle(Of ElectionMessage.SendViewChangeProof).Handle(ElectionMessage.SendViewChangeProof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.SendViewChangeProof).Handle(EventStore.Core.Messages.ElectionMessage.SendViewChangeProof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.SendViewChangeProof>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.SendViewChangeProof>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+    name: ElectionMessage.SendViewChangeProof
+    nameWithType: ElectionMessage.SendViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.SendViewChangeProof).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.SendViewChangeProof).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+    name: ElectionMessage.SendViewChangeProof
+    nameWithType: ElectionMessage.SendViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+  commentId: T:EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.SendViewChangeProof
+  nameWithType: ElectionMessage.SendViewChangeProof
+  fullName: EventStore.Core.Messages.ElectionMessage.SendViewChangeProof
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChangeProof}.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChangeProof}.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.ViewChangeProof}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.ViewChangeProof)
+  nameWithType: IHandle<ElectionMessage.ViewChangeProof>.Handle(ElectionMessage.ViewChangeProof)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ViewChangeProof>.Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  nameWithType.vb: IHandle(Of ElectionMessage.ViewChangeProof).Handle(ElectionMessage.ViewChangeProof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ViewChangeProof).Handle(EventStore.Core.Messages.ElectionMessage.ViewChangeProof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.ViewChangeProof>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.ViewChangeProof>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+    name: ElectionMessage.ViewChangeProof
+    nameWithType: ElectionMessage.ViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.ViewChangeProof).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.ViewChangeProof).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+    name: ElectionMessage.ViewChangeProof
+    nameWithType: ElectionMessage.ViewChangeProof
+    fullName: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+  commentId: T:EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.ViewChangeProof
+  nameWithType: ElectionMessage.ViewChangeProof
+  fullName: EventStore.Core.Messages.ElectionMessage.ViewChangeProof
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Prepare}.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Prepare}.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Prepare}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.Prepare)
+  nameWithType: IHandle<ElectionMessage.Prepare>.Handle(ElectionMessage.Prepare)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Prepare>.Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  nameWithType.vb: IHandle(Of ElectionMessage.Prepare).Handle(ElectionMessage.Prepare)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Prepare).Handle(EventStore.Core.Messages.ElectionMessage.Prepare)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.Prepare>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Prepare>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.Prepare
+    name: ElectionMessage.Prepare
+    nameWithType: ElectionMessage.Prepare
+    fullName: EventStore.Core.Messages.ElectionMessage.Prepare
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.Prepare).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Prepare).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.Prepare
+    name: ElectionMessage.Prepare
+    nameWithType: ElectionMessage.Prepare
+    fullName: EventStore.Core.Messages.ElectionMessage.Prepare
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.Prepare
+  commentId: T:EventStore.Core.Messages.ElectionMessage.Prepare
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.Prepare
+  nameWithType: ElectionMessage.Prepare
+  fullName: EventStore.Core.Messages.ElectionMessage.Prepare
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.PrepareOk}.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.PrepareOk}.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.PrepareOk}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.PrepareOk)
+  nameWithType: IHandle<ElectionMessage.PrepareOk>.Handle(ElectionMessage.PrepareOk)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.PrepareOk>.Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  nameWithType.vb: IHandle(Of ElectionMessage.PrepareOk).Handle(ElectionMessage.PrepareOk)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.PrepareOk).Handle(EventStore.Core.Messages.ElectionMessage.PrepareOk)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.PrepareOk>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.PrepareOk>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.PrepareOk
+    name: ElectionMessage.PrepareOk
+    nameWithType: ElectionMessage.PrepareOk
+    fullName: EventStore.Core.Messages.ElectionMessage.PrepareOk
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.PrepareOk).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.PrepareOk).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.PrepareOk
+    name: ElectionMessage.PrepareOk
+    nameWithType: ElectionMessage.PrepareOk
+    fullName: EventStore.Core.Messages.ElectionMessage.PrepareOk
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.PrepareOk
+  commentId: T:EventStore.Core.Messages.ElectionMessage.PrepareOk
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.PrepareOk
+  nameWithType: ElectionMessage.PrepareOk
+  fullName: EventStore.Core.Messages.ElectionMessage.PrepareOk
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Proposal}.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Proposal}.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Proposal}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.Proposal)
+  nameWithType: IHandle<ElectionMessage.Proposal>.Handle(ElectionMessage.Proposal)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Proposal>.Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  nameWithType.vb: IHandle(Of ElectionMessage.Proposal).Handle(ElectionMessage.Proposal)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Proposal).Handle(EventStore.Core.Messages.ElectionMessage.Proposal)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.Proposal>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Proposal>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.Proposal
+    name: ElectionMessage.Proposal
+    nameWithType: ElectionMessage.Proposal
+    fullName: EventStore.Core.Messages.ElectionMessage.Proposal
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.Proposal).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Proposal).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.Proposal
+    name: ElectionMessage.Proposal
+    nameWithType: ElectionMessage.Proposal
+    fullName: EventStore.Core.Messages.ElectionMessage.Proposal
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.Proposal
+  commentId: T:EventStore.Core.Messages.ElectionMessage.Proposal
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.Proposal
+  nameWithType: ElectionMessage.Proposal
+  fullName: EventStore.Core.Messages.ElectionMessage.Proposal
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Accept}.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Accept}.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ElectionMessage.Accept}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ElectionMessage.Accept)
+  nameWithType: IHandle<ElectionMessage.Accept>.Handle(ElectionMessage.Accept)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Accept>.Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  nameWithType.vb: IHandle(Of ElectionMessage.Accept).Handle(ElectionMessage.Accept)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Accept).Handle(EventStore.Core.Messages.ElectionMessage.Accept)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ElectionMessage.Accept>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ElectionMessage.Accept>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.Accept
+    name: ElectionMessage.Accept
+    nameWithType: ElectionMessage.Accept
+    fullName: EventStore.Core.Messages.ElectionMessage.Accept
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ElectionMessage.Accept).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ElectionMessage.Accept).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ElectionMessage.Accept
+    name: ElectionMessage.Accept
+    nameWithType: ElectionMessage.Accept
+    fullName: EventStore.Core.Messages.ElectionMessage.Accept
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ElectionMessage.Accept
+  commentId: T:EventStore.Core.Messages.ElectionMessage.Accept
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ElectionMessage.Accept
+  nameWithType: ElectionMessage.Accept
+  fullName: EventStore.Core.Messages.ElectionMessage.Accept

@@ -1,0 +1,1246 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  id: IReadIndex
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  children:
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess(System.String,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType,IPrincipal)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId(System.Int64)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber(System.String)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata(System.String)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init(System.Int64)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted(System.String)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward(EventStore.Core.Data.TFPos,System.Int32)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward(EventStore.Core.Data.TFPos,System.Int32)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent(System.String,System.Int64)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward(System.String,System.Int64,System.Int32)
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward(System.String,System.Int64,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: IReadIndex
+  nameWithType: IReadIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  type: Interface
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IReadIndex
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public interface IReadIndex
+    content.vb: Public Interface IReadIndex
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition
+  commentId: P:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition
+  id: LastCommitPosition
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: LastCommitPosition
+  nameWithType: IReadIndex.LastCommitPosition
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LastCommitPosition
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: long LastCommitPosition { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: ReadOnly Property LastCommitPosition As Long
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition
+  commentId: P:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition
+  id: LastReplicatedPosition
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: LastReplicatedPosition
+  nameWithType: IReadIndex.LastReplicatedPosition
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LastReplicatedPosition
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: long LastReplicatedPosition { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: ReadOnly Property LastReplicatedPosition As Long
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter
+  commentId: P:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter
+  id: IndexWriter
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: IndexWriter
+  nameWithType: IReadIndex.IndexWriter
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IndexWriter
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: IIndexWriter IndexWriter { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+    content.vb: ReadOnly Property IndexWriter As IIndexWriter
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init(System.Int64)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init(System.Int64)
+  id: Init(System.Int64)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: Init(Int64)
+  nameWithType: IReadIndex.Init(Int64)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Init
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: void Init(long buildToPosition)
+    parameters:
+    - id: buildToPosition
+      type: System.Int64
+    content.vb: Sub Init(buildToPosition As Long)
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics
+  id: GetStatistics
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: GetStatistics()
+  nameWithType: IReadIndex.GetStatistics()
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetStatistics
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: ReadIndexStats GetStatistics()
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.ReadIndexStats
+    content.vb: Function GetStatistics As ReadIndexStats
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent(System.String,System.Int64)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent(System.String,System.Int64)
+  id: ReadEvent(System.String,System.Int64)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: ReadEvent(String, Int64)
+  nameWithType: IReadIndex.ReadEvent(String, Int64)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent(System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadEvent
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: IndexReadEventResult ReadEvent(string streamId, long eventNumber)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: eventNumber
+      type: System.Int64
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.IndexReadEventResult
+    content.vb: Function ReadEvent(streamId As String, eventNumber As Long) As IndexReadEventResult
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward(System.String,System.Int64,System.Int32)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward(System.String,System.Int64,System.Int32)
+  id: ReadStreamEventsBackward(System.String,System.Int64,System.Int32)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: ReadStreamEventsBackward(String, Int64, Int32)
+  nameWithType: IReadIndex.ReadStreamEventsBackward(String, Int64, Int32)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward(System.String, System.Int64, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadStreamEventsBackward
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 15
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: IndexReadStreamResult ReadStreamEventsBackward(string streamId, long fromEventNumber, int maxCount)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: fromEventNumber
+      type: System.Int64
+    - id: maxCount
+      type: System.Int32
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.IndexReadStreamResult
+    content.vb: Function ReadStreamEventsBackward(streamId As String, fromEventNumber As Long, maxCount As Integer) As IndexReadStreamResult
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward(System.String,System.Int64,System.Int32)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward(System.String,System.Int64,System.Int32)
+  id: ReadStreamEventsForward(System.String,System.Int64,System.Int32)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: ReadStreamEventsForward(String, Int64, Int32)
+  nameWithType: IReadIndex.ReadStreamEventsForward(String, Int64, Int32)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward(System.String, System.Int64, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadStreamEventsForward
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: IndexReadStreamResult ReadStreamEventsForward(string streamId, long fromEventNumber, int maxCount)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: fromEventNumber
+      type: System.Int64
+    - id: maxCount
+      type: System.Int32
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.IndexReadStreamResult
+    content.vb: Function ReadStreamEventsForward(streamId As String, fromEventNumber As Long, maxCount As Integer) As IndexReadStreamResult
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward(EventStore.Core.Data.TFPos,System.Int32)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward(EventStore.Core.Data.TFPos,System.Int32)
+  id: ReadAllEventsForward(EventStore.Core.Data.TFPos,System.Int32)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: ReadAllEventsForward(TFPos, Int32)
+  nameWithType: IReadIndex.ReadAllEventsForward(TFPos, Int32)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward(EventStore.Core.Data.TFPos, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadAllEventsForward
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 21
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  summary: "\nReturns event records in the sequence they were committed into TF.\nPositions is specified as pre-positions (pointer at the beginning of the record).\n"
+  example: []
+  syntax:
+    content: IndexReadAllResult ReadAllEventsForward(TFPos pos, int maxCount)
+    parameters:
+    - id: pos
+      type: EventStore.Core.Data.TFPos
+    - id: maxCount
+      type: System.Int32
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.IndexReadAllResult
+    content.vb: Function ReadAllEventsForward(pos As TFPos, maxCount As Integer) As IndexReadAllResult
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward(EventStore.Core.Data.TFPos,System.Int32)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward(EventStore.Core.Data.TFPos,System.Int32)
+  id: ReadAllEventsBackward(EventStore.Core.Data.TFPos,System.Int32)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: ReadAllEventsBackward(TFPos, Int32)
+  nameWithType: IReadIndex.ReadAllEventsBackward(TFPos, Int32)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward(EventStore.Core.Data.TFPos, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadAllEventsBackward
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  summary: "\nReturns event records in the reverse sequence they were committed into TF.\nPositions is specified as post-positions (pointer after the end of record).\n"
+  example: []
+  syntax:
+    content: IndexReadAllResult ReadAllEventsBackward(TFPos pos, int maxCount)
+    parameters:
+    - id: pos
+      type: EventStore.Core.Data.TFPos
+    - id: maxCount
+      type: System.Int32
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.IndexReadAllResult
+    content.vb: Function ReadAllEventsBackward(pos As TFPos, maxCount As Integer) As IndexReadAllResult
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted(System.String)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted(System.String)
+  id: IsStreamDeleted(System.String)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: IsStreamDeleted(String)
+  nameWithType: IReadIndex.IsStreamDeleted(String)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsStreamDeleted
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: bool IsStreamDeleted(string streamId)
+    parameters:
+    - id: streamId
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Function IsStreamDeleted(streamId As String) As Boolean
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber(System.String)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber(System.String)
+  id: GetStreamLastEventNumber(System.String)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: GetStreamLastEventNumber(String)
+  nameWithType: IReadIndex.GetStreamLastEventNumber(String)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetStreamLastEventNumber
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: long GetStreamLastEventNumber(string streamId)
+    parameters:
+    - id: streamId
+      type: System.String
+    return:
+      type: System.Int64
+    content.vb: Function GetStreamLastEventNumber(streamId As String) As Long
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata(System.String)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata(System.String)
+  id: GetStreamMetadata(System.String)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: GetStreamMetadata(String)
+  nameWithType: IReadIndex.GetStreamMetadata(String)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetStreamMetadata
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 30
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: StreamMetadata GetStreamMetadata(string streamId)
+    parameters:
+    - id: streamId
+      type: System.String
+    return:
+      type: EventStore.Core.Data.StreamMetadata
+    content.vb: Function GetStreamMetadata(streamId As String) As StreamMetadata
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId(System.Int64)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId(System.Int64)
+  id: GetEventStreamIdByTransactionId(System.Int64)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: GetEventStreamIdByTransactionId(Int64)
+  nameWithType: IReadIndex.GetEventStreamIdByTransactionId(Int64)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetEventStreamIdByTransactionId
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: string GetEventStreamIdByTransactionId(long transactionId)
+    parameters:
+    - id: transactionId
+      type: System.Int64
+    return:
+      type: System.String
+    content.vb: Function GetEventStreamIdByTransactionId(transactionId As Long) As String
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess(System.String,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType,IPrincipal)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess(System.String,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType,IPrincipal)
+  id: CheckStreamAccess(System.String,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType,IPrincipal)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: CheckStreamAccess(String, StreamAccessType, IPrincipal)
+  nameWithType: IReadIndex.CheckStreamAccess(String, StreamAccessType, IPrincipal)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess(System.String, EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType, IPrincipal)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CheckStreamAccess
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 33
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: StreamAccess CheckStreamAccess(string streamId, StreamAccessType streamAccessType, IPrincipal user)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: streamAccessType
+      type: EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+    - id: user
+      type: IPrincipal
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.StreamAccess
+    content.vb: Function CheckStreamAccess(streamId As String, streamAccessType As StreamAccessType, user As IPrincipal) As StreamAccess
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close
+  id: Close
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  nameWithType: IReadIndex.Close()
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Close
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: void Close()
+    content.vb: Sub Close
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close*
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose
+  id: Dispose
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: IReadIndex.Dispose()
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IReadIndex.cs
+    startLine: 36
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: void Dispose()
+    content.vb: Sub Dispose
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose*
+references:
+- uid: EventStore.Core.Services.Storage.ReaderIndex
+  commentId: N:EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: EventStore.Core.Services.Storage.ReaderIndex
+  nameWithType: EventStore.Core.Services.Storage.ReaderIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IReadIndex>()
+  nameWithType: ProtobufExtensions.Serialize<IReadIndex>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.ReaderIndex.IReadIndex>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IReadIndex)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)()
+  name.vb: Serialize(Of IReadIndex)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IReadIndex>
+    nameWithType: ProtobufExtensions.Serialize<IReadIndex>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.ReaderIndex.IReadIndex>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IReadIndex)
+    nameWithType: ProtobufExtensions.Serialize(Of IReadIndex)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IReadIndex>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IReadIndex>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.ReaderIndex.IReadIndex>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IReadIndex)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)()
+  name.vb: SerializeToArray(Of IReadIndex)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IReadIndex>
+    nameWithType: ProtobufExtensions.SerializeToArray<IReadIndex>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.ReaderIndex.IReadIndex>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IReadIndex)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IReadIndex)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition
+  isExternal: false
+  name: LastCommitPosition
+  nameWithType: IReadIndex.LastCommitPosition
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastCommitPosition
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition
+  isExternal: false
+  name: LastReplicatedPosition
+  nameWithType: IReadIndex.LastReplicatedPosition
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.LastReplicatedPosition
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter
+  isExternal: false
+  name: IndexWriter
+  nameWithType: IReadIndex.IndexWriter
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IndexWriter
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IIndexWriter
+  nameWithType: IIndexWriter
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init
+  isExternal: false
+  name: Init
+  nameWithType: IReadIndex.Init
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Init
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics
+  isExternal: false
+  name: GetStatistics
+  nameWithType: IReadIndex.GetStatistics
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStatistics
+- uid: EventStore.Core.Services.Storage.ReaderIndex.ReadIndexStats
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.ReadIndexStats
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: ReadIndexStats
+  nameWithType: ReadIndexStats
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.ReadIndexStats
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent
+  isExternal: false
+  name: ReadEvent
+  nameWithType: IReadIndex.ReadEvent
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadEvent
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexReadEventResult
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IndexReadEventResult
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IndexReadEventResult
+  nameWithType: IndexReadEventResult
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexReadEventResult
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward
+  isExternal: false
+  name: ReadStreamEventsBackward
+  nameWithType: IReadIndex.ReadStreamEventsBackward
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsBackward
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexReadStreamResult
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IndexReadStreamResult
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IndexReadStreamResult
+  nameWithType: IndexReadStreamResult
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexReadStreamResult
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward
+  isExternal: false
+  name: ReadStreamEventsForward
+  nameWithType: IReadIndex.ReadStreamEventsForward
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadStreamEventsForward
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward
+  isExternal: false
+  name: ReadAllEventsForward
+  nameWithType: IReadIndex.ReadAllEventsForward
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsForward
+- uid: EventStore.Core.Data.TFPos
+  commentId: T:EventStore.Core.Data.TFPos
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: TFPos
+  nameWithType: TFPos
+  fullName: EventStore.Core.Data.TFPos
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexReadAllResult
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IndexReadAllResult
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IndexReadAllResult
+  nameWithType: IndexReadAllResult
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexReadAllResult
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  isExternal: false
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward
+  isExternal: false
+  name: ReadAllEventsBackward
+  nameWithType: IReadIndex.ReadAllEventsBackward
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.ReadAllEventsBackward
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted
+  isExternal: false
+  name: IsStreamDeleted
+  nameWithType: IReadIndex.IsStreamDeleted
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.IsStreamDeleted
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber
+  isExternal: false
+  name: GetStreamLastEventNumber
+  nameWithType: IReadIndex.GetStreamLastEventNumber
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamLastEventNumber
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata
+  isExternal: false
+  name: GetStreamMetadata
+  nameWithType: IReadIndex.GetStreamMetadata
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetStreamMetadata
+- uid: EventStore.Core.Data.StreamMetadata
+  commentId: T:EventStore.Core.Data.StreamMetadata
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: StreamMetadata
+  nameWithType: StreamMetadata
+  fullName: EventStore.Core.Data.StreamMetadata
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId
+  isExternal: false
+  name: GetEventStreamIdByTransactionId
+  nameWithType: IReadIndex.GetEventStreamIdByTransactionId
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.GetEventStreamIdByTransactionId
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess
+  isExternal: false
+  name: CheckStreamAccess
+  nameWithType: IReadIndex.CheckStreamAccess
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.CheckStreamAccess
+- uid: EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: StreamAccessType
+  nameWithType: StreamAccessType
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+- uid: IPrincipal
+  isExternal: true
+  name: IPrincipal
+  nameWithType: IPrincipal
+  fullName: IPrincipal
+- uid: EventStore.Core.Services.Storage.ReaderIndex.StreamAccess
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.StreamAccess
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: StreamAccess
+  nameWithType: StreamAccess
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.StreamAccess
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close
+  isExternal: false
+  name: Close
+  nameWithType: IReadIndex.Close
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Close
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: IReadIndex.Dispose
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex.Dispose

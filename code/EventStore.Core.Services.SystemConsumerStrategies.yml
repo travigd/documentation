@@ -1,0 +1,168 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.SystemConsumerStrategies
+  commentId: T:EventStore.Core.Services.SystemConsumerStrategies
+  id: SystemConsumerStrategies
+  parent: EventStore.Core.Services
+  children:
+  - EventStore.Core.Services.SystemConsumerStrategies.DispatchToSingle
+  - EventStore.Core.Services.SystemConsumerStrategies.Pinned
+  - EventStore.Core.Services.SystemConsumerStrategies.RoundRobin
+  langs:
+  - csharp
+  - vb
+  name: SystemConsumerStrategies
+  nameWithType: SystemConsumerStrategies
+  fullName: EventStore.Core.Services.SystemConsumerStrategies
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SystemNames.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SystemConsumerStrategies
+    path: ../EventStore/src/EventStore.Core/Services/SystemNames.cs
+    startLine: 159
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  summary: "\nSystem supported consumer strategies for use with persistent subscriptions.\n"
+  example: []
+  syntax:
+    content: 'public static class SystemConsumerStrategies : object'
+    content.vb: >-
+      Public Module SystemConsumerStrategies
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.Core.Services.SystemConsumerStrategies.DispatchToSingle
+  commentId: F:EventStore.Core.Services.SystemConsumerStrategies.DispatchToSingle
+  id: DispatchToSingle
+  parent: EventStore.Core.Services.SystemConsumerStrategies
+  langs:
+  - csharp
+  - vb
+  name: DispatchToSingle
+  nameWithType: SystemConsumerStrategies.DispatchToSingle
+  fullName: EventStore.Core.Services.SystemConsumerStrategies.DispatchToSingle
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SystemNames.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: DispatchToSingle
+    path: ../EventStore/src/EventStore.Core/Services/SystemNames.cs
+    startLine: 164
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  summary: "\nDistributes events to a single client until it is full. Then round robin to the next client.\n"
+  example: []
+  syntax:
+    content: public const string DispatchToSingle = null
+    return:
+      type: System.String
+    content.vb: Public Const DispatchToSingle As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.Core.Services.SystemConsumerStrategies.RoundRobin
+  commentId: F:EventStore.Core.Services.SystemConsumerStrategies.RoundRobin
+  id: RoundRobin
+  parent: EventStore.Core.Services.SystemConsumerStrategies
+  langs:
+  - csharp
+  - vb
+  name: RoundRobin
+  nameWithType: SystemConsumerStrategies.RoundRobin
+  fullName: EventStore.Core.Services.SystemConsumerStrategies.RoundRobin
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SystemNames.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RoundRobin
+    path: ../EventStore/src/EventStore.Core/Services/SystemNames.cs
+    startLine: 169
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  summary: "\nDistribute events to each client in a round robin fashion.\n"
+  example: []
+  syntax:
+    content: public const string RoundRobin = null
+    return:
+      type: System.String
+    content.vb: Public Const RoundRobin As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.Core.Services.SystemConsumerStrategies.Pinned
+  commentId: F:EventStore.Core.Services.SystemConsumerStrategies.Pinned
+  id: Pinned
+  parent: EventStore.Core.Services.SystemConsumerStrategies
+  langs:
+  - csharp
+  - vb
+  name: Pinned
+  nameWithType: SystemConsumerStrategies.Pinned
+  fullName: EventStore.Core.Services.SystemConsumerStrategies.Pinned
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SystemNames.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Pinned
+    path: ../EventStore/src/EventStore.Core/Services/SystemNames.cs
+    startLine: 175
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  summary: "\nDistribute events of the same streamId to the same client until it disconnects on a best efforts basis. \nDesigned to be used with indexes such as the category projection.\n"
+  example: []
+  syntax:
+    content: public const string Pinned = null
+    return:
+      type: System.String
+    content.vb: Public Const Pinned As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: EventStore.Core.Services
+  commentId: N:EventStore.Core.Services
+  isExternal: false
+  name: EventStore.Core.Services
+  nameWithType: EventStore.Core.Services
+  fullName: EventStore.Core.Services
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

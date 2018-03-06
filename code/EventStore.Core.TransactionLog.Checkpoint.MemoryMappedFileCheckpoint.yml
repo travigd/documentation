@@ -1,0 +1,1227 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  id: MemoryMappedFileCheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  children:
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor(System.String)
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.Int64)
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flushed
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed(System.Int64)
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write(System.Int64)
+  langs:
+  - csharp
+  - vb
+  name: MemoryMappedFileCheckpoint
+  nameWithType: MemoryMappedFileCheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MemoryMappedFileCheckpoint
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: 'public class MemoryMappedFileCheckpoint : object, ICheckpoint, IDisposable'
+    content.vb: >-
+      Public Class MemoryMappedFileCheckpoint
+
+          Inherits Object
+
+          Implements ICheckpoint, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  - IDisposable
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name
+  commentId: P:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name
+  id: Name
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: MemoryMappedFileCheckpoint.Name
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Name
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor(System.String)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: MemoryMappedFileCheckpoint(String)
+  nameWithType: MemoryMappedFileCheckpoint.MemoryMappedFileCheckpoint(String)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.MemoryMappedFileCheckpoint(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 21
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public MemoryMappedFileCheckpoint(string filename)
+    parameters:
+    - id: filename
+      type: System.String
+    content.vb: Public Sub New(filename As String)
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.Int64)
+  id: '#ctor(System.String,System.String,System.Boolean,System.Boolean,System.Int64)'
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: MemoryMappedFileCheckpoint(String, String, Boolean, Boolean, Int64)
+  nameWithType: MemoryMappedFileCheckpoint.MemoryMappedFileCheckpoint(String, String, Boolean, Boolean, Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.MemoryMappedFileCheckpoint(System.String, System.String, System.Boolean, System.Boolean, System.Int64)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public MemoryMappedFileCheckpoint(string filename, string name, bool cached, bool mustExist = false, long initValue = null)
+    parameters:
+    - id: filename
+      type: System.String
+    - id: name
+      type: System.String
+    - id: cached
+      type: System.Boolean
+    - id: mustExist
+      type: System.Boolean
+    - id: initValue
+      type: System.Int64
+    content.vb: Public Sub New(filename As String, name As String, cached As Boolean, mustExist As Boolean = False, initValue As Long = Nothing)
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close
+  id: Close
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  nameWithType: MemoryMappedFileCheckpoint.Close()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Close
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Close()
+    content.vb: Public Sub Close
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write(System.Int64)
+  id: Write(System.Int64)
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Write(Int64)
+  nameWithType: MemoryMappedFileCheckpoint.Write(Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Write
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 61
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Write(long checkpoint)
+    parameters:
+    - id: checkpoint
+      type: System.Int64
+    content.vb: Public Sub Write(checkpoint As Long)
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush
+  id: Flush
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Flush()
+  nameWithType: MemoryMappedFileCheckpoint.Flush()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Flush
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 66
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Flush()
+    content.vb: Public Sub Flush
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read
+  id: Read
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Read()
+  nameWithType: MemoryMappedFileCheckpoint.Read()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Read
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 84
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public long Read()
+    return:
+      type: System.Int64
+    content.vb: Public Function Read As Long
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed
+  id: ReadNonFlushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: ReadNonFlushed()
+  nameWithType: MemoryMappedFileCheckpoint.ReadNonFlushed()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadNonFlushed
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 94
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public long ReadNonFlushed()
+    return:
+      type: System.Int64
+    content.vb: Public Function ReadNonFlushed As Long
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flushed
+  commentId: E:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flushed
+  id: Flushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Flushed
+  nameWithType: MemoryMappedFileCheckpoint.Flushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flushed
+  type: Event
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Flushed
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 99
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public event Action<long> Flushed
+    return:
+      type: Action{System.Int64}
+    content.vb: Public Event Flushed As Action(Of Long)
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed(System.Int64)
+  id: OnFlushed(System.Int64)
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: OnFlushed(Int64)
+  nameWithType: MemoryMappedFileCheckpoint.OnFlushed(Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OnFlushed
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 101
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: protected virtual void OnFlushed(long obj)
+    parameters:
+    - id: obj
+      type: System.Int64
+    content.vb: Protected Overridable Sub OnFlushed(obj As Long)
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose
+  id: Dispose
+  parent: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: MemoryMappedFileCheckpoint.Dispose()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/MemoryMappedFileCheckpoint.cs
+    startLine: 108
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<MemoryMappedFileCheckpoint>()
+  nameWithType: ProtobufExtensions.Serialize<MemoryMappedFileCheckpoint>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of MemoryMappedFileCheckpoint)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint)()
+  name.vb: Serialize(Of MemoryMappedFileCheckpoint)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<MemoryMappedFileCheckpoint>
+    nameWithType: ProtobufExtensions.Serialize<MemoryMappedFileCheckpoint>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of MemoryMappedFileCheckpoint)
+    nameWithType: ProtobufExtensions.Serialize(Of MemoryMappedFileCheckpoint)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<MemoryMappedFileCheckpoint>()
+  nameWithType: ProtobufExtensions.SerializeToArray<MemoryMappedFileCheckpoint>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of MemoryMappedFileCheckpoint)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint)()
+  name.vb: SerializeToArray(Of MemoryMappedFileCheckpoint)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<MemoryMappedFileCheckpoint>
+    nameWithType: ProtobufExtensions.SerializeToArray<MemoryMappedFileCheckpoint>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of MemoryMappedFileCheckpoint)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of MemoryMappedFileCheckpoint)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name
+  isExternal: false
+  name: Name
+  nameWithType: MemoryMappedFileCheckpoint.Name
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Name
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+  commentId: P:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Name
+  nameWithType: ICheckpoint.Name
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.#ctor
+  isExternal: false
+  name: MemoryMappedFileCheckpoint
+  nameWithType: MemoryMappedFileCheckpoint.MemoryMappedFileCheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.MemoryMappedFileCheckpoint
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close
+  isExternal: false
+  name: Close
+  nameWithType: MemoryMappedFileCheckpoint.Close
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Close
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Close()
+  nameWithType: ICheckpoint.Close()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+    name: Close
+    nameWithType: ICheckpoint.Close
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+    name: Close
+    nameWithType: ICheckpoint.Close
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write
+  isExternal: false
+  name: Write
+  nameWithType: MemoryMappedFileCheckpoint.Write
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Write
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: true
+  name: Write(Int64)
+  nameWithType: ICheckpoint.Write(Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+    name: Write
+    nameWithType: ICheckpoint.Write
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+    name: Write
+    nameWithType: ICheckpoint.Write
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush
+  isExternal: false
+  name: Flush
+  nameWithType: MemoryMappedFileCheckpoint.Flush
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Flush
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Flush()
+  nameWithType: ICheckpoint.Flush()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+    name: Flush
+    nameWithType: ICheckpoint.Flush
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+    name: Flush
+    nameWithType: ICheckpoint.Flush
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read
+  isExternal: false
+  name: Read
+  nameWithType: MemoryMappedFileCheckpoint.Read
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Read
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Read()
+  nameWithType: ICheckpoint.Read()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+    name: Read
+    nameWithType: ICheckpoint.Read
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+    name: Read
+    nameWithType: ICheckpoint.Read
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed
+  isExternal: false
+  name: ReadNonFlushed
+  nameWithType: MemoryMappedFileCheckpoint.ReadNonFlushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.ReadNonFlushed
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: ReadNonFlushed()
+  nameWithType: ICheckpoint.ReadNonFlushed()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+    name: ReadNonFlushed
+    nameWithType: ICheckpoint.ReadNonFlushed
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+    name: ReadNonFlushed
+    nameWithType: ICheckpoint.ReadNonFlushed
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+  commentId: E:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Flushed
+  nameWithType: ICheckpoint.Flushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+- uid: Action{System.Int64}
+  commentId: '!:Action{System.Int64}'
+  definition: Action`1
+  name: Action<Int64>
+  nameWithType: Action<Int64>
+  fullName: Action<System.Int64>
+  nameWithType.vb: Action(Of Int64)
+  fullName.vb: Action(Of System.Int64)
+  name.vb: Action(Of Int64)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed
+  isExternal: false
+  name: OnFlushed
+  nameWithType: MemoryMappedFileCheckpoint.OnFlushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.OnFlushed
+- uid: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: MemoryMappedFileCheckpoint.Dispose
+  fullName: EventStore.Core.TransactionLog.Checkpoint.MemoryMappedFileCheckpoint.Dispose

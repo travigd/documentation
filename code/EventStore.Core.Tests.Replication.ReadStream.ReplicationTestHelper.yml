@@ -1,0 +1,430 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  commentId: T:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  id: ReplicationTestHelper
+  parent: EventStore.Core.Tests.Replication.ReadStream
+  children:
+  - EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  - EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  - EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String,System.Int64)
+  - EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  - EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  - EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,EventStore.Core.Data.Event[],System.String)
+  langs:
+  - csharp
+  - vb
+  name: ReplicationTestHelper
+  nameWithType: ReplicationTestHelper
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReplicationTestHelper
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Replication.ReadStream
+  syntax:
+    content: 'public static class ReplicationTestHelper : object'
+    content.vb: >-
+      Public Module ReplicationTestHelper
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,EventStore.Core.Data.Event[],System.String)
+  commentId: M:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,EventStore.Core.Data.Event[],System.String)
+  id: WriteEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,EventStore.Core.Data.Event[],System.String)
+  parent: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteEvent(MiniClusterNode, Event[], String)
+  nameWithType: ReplicationTestHelper.WriteEvent(MiniClusterNode, Event[], String)
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent(EventStore.Core.Tests.Helpers.MiniClusterNode, EventStore.Core.Data.Event[], System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteEvent
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Replication.ReadStream
+  syntax:
+    content: public static ClientMessage.WriteEventsCompleted WriteEvent(MiniClusterNode node, Event[] events, string streamId)
+    parameters:
+    - id: node
+      type: EventStore.Core.Tests.Helpers.MiniClusterNode
+    - id: events
+      type: EventStore.Core.Data.Event[]
+    - id: streamId
+      type: System.String
+    return:
+      type: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    content.vb: Public Shared Function WriteEvent(node As MiniClusterNode, events As  Event (), streamId As String) As ClientMessage.WriteEventsCompleted
+  overload: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent*
+  nameWithType.vb: ReplicationTestHelper.WriteEvent(MiniClusterNode, Event(), String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent(EventStore.Core.Tests.Helpers.MiniClusterNode, EventStore.Core.Data.Event(), System.String)
+  name.vb: WriteEvent(MiniClusterNode, Event(), String)
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  commentId: M:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  id: ReadAllEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  parent: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadAllEventsForward(MiniClusterNode, Int64)
+  nameWithType: ReplicationTestHelper.ReadAllEventsForward(MiniClusterNode, Int64)
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadAllEventsForward
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Replication.ReadStream
+  syntax:
+    content: public static ClientMessage.ReadAllEventsForwardCompleted ReadAllEventsForward(MiniClusterNode node, long position)
+    parameters:
+    - id: node
+      type: EventStore.Core.Tests.Helpers.MiniClusterNode
+    - id: position
+      type: System.Int64
+    return:
+      type: EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted
+    content.vb: Public Shared Function ReadAllEventsForward(node As MiniClusterNode, position As Long) As ClientMessage.ReadAllEventsForwardCompleted
+  overload: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  commentId: M:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  id: ReadAllEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.Int64)
+  parent: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadAllEventsBackward(MiniClusterNode, Int64)
+  nameWithType: ReplicationTestHelper.ReadAllEventsBackward(MiniClusterNode, Int64)
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadAllEventsBackward
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+    startLine: 66
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Replication.ReadStream
+  syntax:
+    content: public static ClientMessage.ReadAllEventsBackwardCompleted ReadAllEventsBackward(MiniClusterNode node, long position)
+    parameters:
+    - id: node
+      type: EventStore.Core.Tests.Helpers.MiniClusterNode
+    - id: position
+      type: System.Int64
+    return:
+      type: EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted
+    content.vb: Public Shared Function ReadAllEventsBackward(node As MiniClusterNode, position As Long) As ClientMessage.ReadAllEventsBackwardCompleted
+  overload: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  commentId: M:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  id: ReadStreamEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  parent: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadStreamEventsForward(MiniClusterNode, String)
+  nameWithType: ReplicationTestHelper.ReadStreamEventsForward(MiniClusterNode, String)
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward(EventStore.Core.Tests.Helpers.MiniClusterNode, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadStreamEventsForward
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+    startLine: 97
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Replication.ReadStream
+  syntax:
+    content: public static ClientMessage.ReadStreamEventsForwardCompleted ReadStreamEventsForward(MiniClusterNode node, string streamId)
+    parameters:
+    - id: node
+      type: EventStore.Core.Tests.Helpers.MiniClusterNode
+    - id: streamId
+      type: System.String
+    return:
+      type: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    content.vb: Public Shared Function ReadStreamEventsForward(node As MiniClusterNode, streamId As String) As ClientMessage.ReadStreamEventsForwardCompleted
+  overload: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  commentId: M:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  id: ReadStreamEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String)
+  parent: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadStreamEventsBackward(MiniClusterNode, String)
+  nameWithType: ReplicationTestHelper.ReadStreamEventsBackward(MiniClusterNode, String)
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward(EventStore.Core.Tests.Helpers.MiniClusterNode, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadStreamEventsBackward
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+    startLine: 117
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Replication.ReadStream
+  syntax:
+    content: public static ClientMessage.ReadStreamEventsBackwardCompleted ReadStreamEventsBackward(MiniClusterNode node, string streamId)
+    parameters:
+    - id: node
+      type: EventStore.Core.Tests.Helpers.MiniClusterNode
+    - id: streamId
+      type: System.String
+    return:
+      type: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    content.vb: Public Shared Function ReadStreamEventsBackward(node As MiniClusterNode, streamId As String) As ClientMessage.ReadStreamEventsBackwardCompleted
+  overload: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String,System.Int64)
+  commentId: M:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String,System.Int64)
+  id: ReadEvent(EventStore.Core.Tests.Helpers.MiniClusterNode,System.String,System.Int64)
+  parent: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadEvent(MiniClusterNode, String, Int64)
+  nameWithType: ReplicationTestHelper.ReadEvent(MiniClusterNode, String, Int64)
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent(EventStore.Core.Tests.Helpers.MiniClusterNode, System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadEvent
+    path: ../EventStore/src/EventStore.Core.Tests/Services/Replication/ReplicationTestHelper.cs
+    startLine: 137
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Replication.ReadStream
+  syntax:
+    content: public static ClientMessage.ReadEventCompleted ReadEvent(MiniClusterNode node, string streamId, long eventNumber)
+    parameters:
+    - id: node
+      type: EventStore.Core.Tests.Helpers.MiniClusterNode
+    - id: streamId
+      type: System.String
+    - id: eventNumber
+      type: System.Int64
+    return:
+      type: EventStore.Core.Messages.ClientMessage.ReadEventCompleted
+    content.vb: Public Shared Function ReadEvent(node As MiniClusterNode, streamId As String, eventNumber As Long) As ClientMessage.ReadEventCompleted
+  overload: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: EventStore.Core.Tests.Replication.ReadStream
+  commentId: N:EventStore.Core.Tests.Replication.ReadStream
+  isExternal: false
+  name: EventStore.Core.Tests.Replication.ReadStream
+  nameWithType: EventStore.Core.Tests.Replication.ReadStream
+  fullName: EventStore.Core.Tests.Replication.ReadStream
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent*
+  commentId: Overload:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent
+  isExternal: false
+  name: WriteEvent
+  nameWithType: ReplicationTestHelper.WriteEvent
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.WriteEvent
+- uid: EventStore.Core.Tests.Helpers.MiniClusterNode
+  commentId: T:EventStore.Core.Tests.Helpers.MiniClusterNode
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: MiniClusterNode
+  nameWithType: MiniClusterNode
+  fullName: EventStore.Core.Tests.Helpers.MiniClusterNode
+- uid: EventStore.Core.Data.Event[]
+  name: Event[]
+  nameWithType: Event[]
+  fullName: EventStore.Core.Data.Event[]
+  nameWithType.vb: Event()
+  fullName.vb: EventStore.Core.Data.Event()
+  name.vb: Event()
+  spec.csharp:
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  commentId: T:EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.WriteEventsCompleted
+  nameWithType: ClientMessage.WriteEventsCompleted
+  fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward*
+  commentId: Overload:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward
+  isExternal: false
+  name: ReadAllEventsForward
+  nameWithType: ReplicationTestHelper.ReadAllEventsForward
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsForward
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReadAllEventsForwardCompleted
+  nameWithType: ClientMessage.ReadAllEventsForwardCompleted
+  fullName: EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward*
+  commentId: Overload:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward
+  isExternal: false
+  name: ReadAllEventsBackward
+  nameWithType: ReplicationTestHelper.ReadAllEventsBackward
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadAllEventsBackward
+- uid: EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReadAllEventsBackwardCompleted
+  nameWithType: ClientMessage.ReadAllEventsBackwardCompleted
+  fullName: EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward*
+  commentId: Overload:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward
+  isExternal: false
+  name: ReadStreamEventsForward
+  nameWithType: ReplicationTestHelper.ReadStreamEventsForward
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsForward
+- uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReadStreamEventsForwardCompleted
+  nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+  fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward*
+  commentId: Overload:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward
+  isExternal: false
+  name: ReadStreamEventsBackward
+  nameWithType: ReplicationTestHelper.ReadStreamEventsBackward
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadStreamEventsBackward
+- uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReadStreamEventsBackwardCompleted
+  nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+  fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+- uid: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent*
+  commentId: Overload:EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent
+  isExternal: false
+  name: ReadEvent
+  nameWithType: ReplicationTestHelper.ReadEvent
+  fullName: EventStore.Core.Tests.Replication.ReadStream.ReplicationTestHelper.ReadEvent
+- uid: EventStore.Core.Messages.ClientMessage.ReadEventCompleted
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReadEventCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReadEventCompleted
+  nameWithType: ClientMessage.ReadEventCompleted
+  fullName: EventStore.Core.Messages.ClientMessage.ReadEventCompleted

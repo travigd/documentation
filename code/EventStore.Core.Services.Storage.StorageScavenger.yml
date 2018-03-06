@@ -1,0 +1,967 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Storage.StorageScavenger
+  commentId: T:EventStore.Core.Services.Storage.StorageScavenger
+  id: StorageScavenger
+  parent: EventStore.Core.Services.Storage
+  children:
+  - EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)
+  - EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  - EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  langs:
+  - csharp
+  - vb
+  name: StorageScavenger
+  nameWithType: StorageScavenger
+  fullName: EventStore.Core.Services.Storage.StorageScavenger
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StorageScavenger
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: 'public class StorageScavenger : object, IHandle<ClientMessage.ScavengeDatabase>, IHandle<UserManagementMessage.UserManagementServiceInitialized>'
+    content.vb: >-
+      Public Class StorageScavenger
+
+          Inherits Object
+
+          Implements IHandle(Of ClientMessage.ScavengeDatabase), IHandle(Of UserManagementMessage.UserManagementServiceInitialized)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.Storage.StorageScavenger.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Storage.StorageScavenger.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)
+  id: '#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)'
+  parent: EventStore.Core.Services.Storage.StorageScavenger
+  langs:
+  - csharp
+  - vb
+  name: StorageScavenger(TFChunkDb, IODispatcher, ITableIndex, IReadIndex, Boolean, String, Boolean, Int32, Boolean)
+  nameWithType: StorageScavenger.StorageScavenger(TFChunkDb, IODispatcher, ITableIndex, IReadIndex, Boolean, String, Boolean, Int32, Boolean)
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.StorageScavenger(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Helpers.IODispatcher, EventStore.Core.Index.ITableIndex, EventStore.Core.Services.Storage.ReaderIndex.IReadIndex, System.Boolean, System.String, System.Boolean, System.Int32, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public StorageScavenger(TFChunkDb db, IODispatcher ioDispatcher, ITableIndex tableIndex, IReadIndex readIndex, bool alwaysKeepScavenged, string nodeEndpoint, bool mergeChunks, int scavengeHistoryMaxAge, bool unsafeIgnoreHardDeletes)
+    parameters:
+    - id: db
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: tableIndex
+      type: EventStore.Core.Index.ITableIndex
+    - id: readIndex
+      type: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+    - id: alwaysKeepScavenged
+      type: System.Boolean
+    - id: nodeEndpoint
+      type: System.String
+    - id: mergeChunks
+      type: System.Boolean
+    - id: scavengeHistoryMaxAge
+      type: System.Int32
+    - id: unsafeIgnoreHardDeletes
+      type: System.Boolean
+    content.vb: Public Sub New(db As TFChunkDb, ioDispatcher As IODispatcher, tableIndex As ITableIndex, readIndex As IReadIndex, alwaysKeepScavenged As Boolean, nodeEndpoint As String, mergeChunks As Boolean, scavengeHistoryMaxAge As Integer, unsafeIgnoreHardDeletes As Boolean)
+  overload: EventStore.Core.Services.Storage.StorageScavenger.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  id: Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  parent: EventStore.Core.Services.Storage.StorageScavenger
+  langs:
+  - csharp
+  - vb
+  name: Handle(UserManagementMessage.UserManagementServiceInitialized)
+  nameWithType: StorageScavenger.Handle(UserManagementMessage.UserManagementServiceInitialized)
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
+    startLine: 56
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public void Handle(UserManagementMessage.UserManagementServiceInitialized message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+    content.vb: Public Sub Handle(message As UserManagementMessage.UserManagementServiceInitialized)
+  overload: EventStore.Core.Services.Storage.StorageScavenger.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  id: Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  parent: EventStore.Core.Services.Storage.StorageScavenger
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.ScavengeDatabase)
+  nameWithType: StorageScavenger.Handle(ClientMessage.ScavengeDatabase)
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
+    startLine: 61
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public void Handle(ClientMessage.ScavengeDatabase message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+    content.vb: Public Sub Handle(message As ClientMessage.ScavengeDatabase)
+  overload: EventStore.Core.Services.Storage.StorageScavenger.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.Storage
+  commentId: N:EventStore.Core.Services.Storage
+  isExternal: false
+  name: EventStore.Core.Services.Storage
+  nameWithType: EventStore.Core.Services.Storage
+  fullName: EventStore.Core.Services.Storage
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.ScavengeDatabase>
+  nameWithType: IHandle<ClientMessage.ScavengeDatabase>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ScavengeDatabase>
+  nameWithType.vb: IHandle(Of ClientMessage.ScavengeDatabase)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  name.vb: IHandle(Of ClientMessage.ScavengeDatabase)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+    name: ClientMessage.ScavengeDatabase
+    nameWithType: ClientMessage.ScavengeDatabase
+    fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+    name: ClientMessage.ScavengeDatabase
+    nameWithType: ClientMessage.ScavengeDatabase
+    fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<UserManagementMessage.UserManagementServiceInitialized>
+  nameWithType: IHandle<UserManagementMessage.UserManagementServiceInitialized>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized>
+  nameWithType.vb: IHandle(Of UserManagementMessage.UserManagementServiceInitialized)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  name.vb: IHandle(Of UserManagementMessage.UserManagementServiceInitialized)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+    name: UserManagementMessage.UserManagementServiceInitialized
+    nameWithType: UserManagementMessage.UserManagementServiceInitialized
+    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+    name: UserManagementMessage.UserManagementServiceInitialized
+    nameWithType: UserManagementMessage.UserManagementServiceInitialized
+    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.StorageScavenger.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<StorageScavenger>()
+  nameWithType: ProtobufExtensions.Serialize<StorageScavenger>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.StorageScavenger>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of StorageScavenger)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.StorageScavenger)()
+  name.vb: Serialize(Of StorageScavenger)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<StorageScavenger>
+    nameWithType: ProtobufExtensions.Serialize<StorageScavenger>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.StorageScavenger>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of StorageScavenger)
+    nameWithType: ProtobufExtensions.Serialize(Of StorageScavenger)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.StorageScavenger)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.StorageScavenger.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<StorageScavenger>()
+  nameWithType: ProtobufExtensions.SerializeToArray<StorageScavenger>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.StorageScavenger>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of StorageScavenger)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.StorageScavenger)()
+  name.vb: SerializeToArray(Of StorageScavenger)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<StorageScavenger>
+    nameWithType: ProtobufExtensions.SerializeToArray<StorageScavenger>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.StorageScavenger>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of StorageScavenger)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of StorageScavenger)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.StorageScavenger)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.Storage.StorageScavenger.#ctor*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageScavenger.#ctor
+  isExternal: false
+  name: StorageScavenger
+  nameWithType: StorageScavenger.StorageScavenger
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.StorageScavenger
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkDb
+  nameWithType: TFChunkDb
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: EventStore.Core.Index.ITableIndex
+  commentId: T:EventStore.Core.Index.ITableIndex
+  parent: EventStore.Core.Index
+  isExternal: false
+  name: ITableIndex
+  nameWithType: ITableIndex
+  fullName: EventStore.Core.Index.ITableIndex
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IReadIndex
+  nameWithType: IReadIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.TransactionLog.Chunks
+  commentId: N:EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Chunks
+  nameWithType: EventStore.Core.TransactionLog.Chunks
+  fullName: EventStore.Core.TransactionLog.Chunks
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: EventStore.Core.Index
+  commentId: N:EventStore.Core.Index
+  isExternal: false
+  name: EventStore.Core.Index
+  nameWithType: EventStore.Core.Index
+  fullName: EventStore.Core.Index
+- uid: EventStore.Core.Services.Storage.ReaderIndex
+  commentId: N:EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: EventStore.Core.Services.Storage.ReaderIndex
+  nameWithType: EventStore.Core.Services.Storage.ReaderIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: EventStore.Core.Services.Storage.StorageScavenger.Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageScavenger.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: StorageScavenger.Handle
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(UserManagementMessage.UserManagementServiceInitialized)
+  nameWithType: IHandle<UserManagementMessage.UserManagementServiceInitialized>.Handle(UserManagementMessage.UserManagementServiceInitialized)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized>.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  nameWithType.vb: IHandle(Of UserManagementMessage.UserManagementServiceInitialized).Handle(UserManagementMessage.UserManagementServiceInitialized)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized).Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<UserManagementMessage.UserManagementServiceInitialized>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+    name: UserManagementMessage.UserManagementServiceInitialized
+    nameWithType: UserManagementMessage.UserManagementServiceInitialized
+    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of UserManagementMessage.UserManagementServiceInitialized).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+    name: UserManagementMessage.UserManagementServiceInitialized
+    nameWithType: UserManagementMessage.UserManagementServiceInitialized
+    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  commentId: T:EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: UserManagementMessage.UserManagementServiceInitialized
+  nameWithType: UserManagementMessage.UserManagementServiceInitialized
+  fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.ScavengeDatabase)
+  nameWithType: IHandle<ClientMessage.ScavengeDatabase>.Handle(ClientMessage.ScavengeDatabase)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ScavengeDatabase>.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  nameWithType.vb: IHandle(Of ClientMessage.ScavengeDatabase).Handle(ClientMessage.ScavengeDatabase)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ScavengeDatabase).Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.ScavengeDatabase>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ScavengeDatabase>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+    name: ClientMessage.ScavengeDatabase
+    nameWithType: ClientMessage.ScavengeDatabase
+    fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.ScavengeDatabase).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ScavengeDatabase).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+    name: ClientMessage.ScavengeDatabase
+    nameWithType: ClientMessage.ScavengeDatabase
+    fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  commentId: T:EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ScavengeDatabase
+  nameWithType: ClientMessage.ScavengeDatabase
+  fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase

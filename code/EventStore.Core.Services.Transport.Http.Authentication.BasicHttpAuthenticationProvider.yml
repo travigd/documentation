@@ -1,0 +1,834 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider
+  commentId: T:EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider
+  id: BasicHttpAuthenticationProvider
+  parent: EventStore.Core.Services.Transport.Http.Authentication
+  children:
+  - EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.#ctor(EventStore.Core.Authentication.IAuthenticationProvider)
+  - EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  langs:
+  - csharp
+  - vb
+  name: BasicHttpAuthenticationProvider
+  nameWithType: BasicHttpAuthenticationProvider
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Authentication/BasicHttpAuthenticationProvider.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: BasicHttpAuthenticationProvider
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Authentication/BasicHttpAuthenticationProvider.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Authentication
+  syntax:
+    content: 'public class BasicHttpAuthenticationProvider : HttpAuthenticationProvider'
+    content.vb: >-
+      Public Class BasicHttpAuthenticationProvider
+
+          Inherits HttpAuthenticationProvider
+  inheritance:
+  - System.Object
+  - EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  inheritedMembers:
+  - EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage,IPrincipal)
+  - EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  - EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  - EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.#ctor(EventStore.Core.Authentication.IAuthenticationProvider)
+  commentId: M:EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.#ctor(EventStore.Core.Authentication.IAuthenticationProvider)
+  id: '#ctor(EventStore.Core.Authentication.IAuthenticationProvider)'
+  parent: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider
+  langs:
+  - csharp
+  - vb
+  name: BasicHttpAuthenticationProvider(IAuthenticationProvider)
+  nameWithType: BasicHttpAuthenticationProvider.BasicHttpAuthenticationProvider(IAuthenticationProvider)
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.BasicHttpAuthenticationProvider(EventStore.Core.Authentication.IAuthenticationProvider)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Authentication/BasicHttpAuthenticationProvider.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Authentication/BasicHttpAuthenticationProvider.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Authentication
+  syntax:
+    content: public BasicHttpAuthenticationProvider(IAuthenticationProvider internalAuthenticationProvider)
+    parameters:
+    - id: internalAuthenticationProvider
+      type: EventStore.Core.Authentication.IAuthenticationProvider
+    content.vb: Public Sub New(internalAuthenticationProvider As IAuthenticationProvider)
+  overload: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  commentId: M:EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  id: Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  parent: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider
+  langs:
+  - csharp
+  - vb
+  name: Authenticate(IncomingHttpRequestMessage)
+  nameWithType: BasicHttpAuthenticationProvider.Authenticate(IncomingHttpRequestMessage)
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Authentication/BasicHttpAuthenticationProvider.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Authenticate
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Authentication/BasicHttpAuthenticationProvider.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Authentication
+  syntax:
+    content: public override bool Authenticate(IncomingHttpRequestMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Authenticate(message As IncomingHttpRequestMessage) As Boolean
+  overridden: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  overload: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.Core.Services.Transport.Http.Authentication
+  commentId: N:EventStore.Core.Services.Transport.Http.Authentication
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Http.Authentication
+  nameWithType: EventStore.Core.Services.Transport.Http.Authentication
+  fullName: EventStore.Core.Services.Transport.Http.Authentication
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  commentId: T:EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  parent: EventStore.Core.Services.Transport.Http.Authentication
+  isExternal: false
+  name: HttpAuthenticationProvider
+  nameWithType: HttpAuthenticationProvider
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+- uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage,IPrincipal)
+  commentId: M:EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage,IPrincipal)
+  parent: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  isExternal: true
+  name: Authenticated(IncomingHttpRequestMessage, IPrincipal)
+  nameWithType: HttpAuthenticationProvider.Authenticated(IncomingHttpRequestMessage, IPrincipal)
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage, IPrincipal)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage,IPrincipal)
+    name: Authenticated
+    nameWithType: HttpAuthenticationProvider.Authenticated
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+    name: IncomingHttpRequestMessage
+    nameWithType: IncomingHttpRequestMessage
+    fullName: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage,IPrincipal)
+    name: Authenticated
+    nameWithType: HttpAuthenticationProvider.Authenticated
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+    name: IncomingHttpRequestMessage
+    nameWithType: IncomingHttpRequestMessage
+    fullName: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  commentId: M:EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  parent: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  isExternal: false
+  name: ReplyUnauthorized(HttpEntity)
+  nameWithType: HttpAuthenticationProvider.ReplyUnauthorized(HttpEntity)
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized(EventStore.Transport.Http.EntityManagement.HttpEntity)
+    name: ReplyUnauthorized
+    nameWithType: HttpAuthenticationProvider.ReplyUnauthorized
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntity
+    name: HttpEntity
+    nameWithType: HttpEntity
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized(EventStore.Transport.Http.EntityManagement.HttpEntity)
+    name: ReplyUnauthorized
+    nameWithType: HttpAuthenticationProvider.ReplyUnauthorized
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyUnauthorized
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntity
+    name: HttpEntity
+    nameWithType: HttpEntity
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  commentId: M:EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  parent: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  isExternal: false
+  name: ReplyInternalServerError(HttpEntity)
+  nameWithType: HttpAuthenticationProvider.ReplyInternalServerError(HttpEntity)
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError(EventStore.Transport.Http.EntityManagement.HttpEntity)
+    name: ReplyInternalServerError
+    nameWithType: HttpAuthenticationProvider.ReplyInternalServerError
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntity
+    name: HttpEntity
+    nameWithType: HttpEntity
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError(EventStore.Transport.Http.EntityManagement.HttpEntity)
+    name: ReplyInternalServerError
+    nameWithType: HttpAuthenticationProvider.ReplyInternalServerError
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyInternalServerError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntity
+    name: HttpEntity
+    nameWithType: HttpEntity
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  commentId: M:EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  parent: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  isExternal: false
+  name: ReplyNotYetAvailable(HttpEntity)
+  nameWithType: HttpAuthenticationProvider.ReplyNotYetAvailable(HttpEntity)
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable(EventStore.Transport.Http.EntityManagement.HttpEntity)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable(EventStore.Transport.Http.EntityManagement.HttpEntity)
+    name: ReplyNotYetAvailable
+    nameWithType: HttpAuthenticationProvider.ReplyNotYetAvailable
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntity
+    name: HttpEntity
+    nameWithType: HttpEntity
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable(EventStore.Transport.Http.EntityManagement.HttpEntity)
+    name: ReplyNotYetAvailable
+    nameWithType: HttpAuthenticationProvider.ReplyNotYetAvailable
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.ReplyNotYetAvailable
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntity
+    name: HttpEntity
+    nameWithType: HttpEntity
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<BasicHttpAuthenticationProvider>()
+  nameWithType: ProtobufExtensions.Serialize<BasicHttpAuthenticationProvider>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of BasicHttpAuthenticationProvider)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider)()
+  name.vb: Serialize(Of BasicHttpAuthenticationProvider)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<BasicHttpAuthenticationProvider>
+    nameWithType: ProtobufExtensions.Serialize<BasicHttpAuthenticationProvider>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of BasicHttpAuthenticationProvider)
+    nameWithType: ProtobufExtensions.Serialize(Of BasicHttpAuthenticationProvider)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<BasicHttpAuthenticationProvider>()
+  nameWithType: ProtobufExtensions.SerializeToArray<BasicHttpAuthenticationProvider>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of BasicHttpAuthenticationProvider)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider)()
+  name.vb: SerializeToArray(Of BasicHttpAuthenticationProvider)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<BasicHttpAuthenticationProvider>
+    nameWithType: ProtobufExtensions.SerializeToArray<BasicHttpAuthenticationProvider>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of BasicHttpAuthenticationProvider)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of BasicHttpAuthenticationProvider)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.#ctor*
+  commentId: Overload:EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.#ctor
+  isExternal: false
+  name: BasicHttpAuthenticationProvider
+  nameWithType: BasicHttpAuthenticationProvider.BasicHttpAuthenticationProvider
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.BasicHttpAuthenticationProvider
+- uid: EventStore.Core.Authentication.IAuthenticationProvider
+  commentId: T:EventStore.Core.Authentication.IAuthenticationProvider
+  parent: EventStore.Core.Authentication
+  isExternal: false
+  name: IAuthenticationProvider
+  nameWithType: IAuthenticationProvider
+  fullName: EventStore.Core.Authentication.IAuthenticationProvider
+- uid: EventStore.Core.Authentication
+  commentId: N:EventStore.Core.Authentication
+  isExternal: false
+  name: EventStore.Core.Authentication
+  nameWithType: EventStore.Core.Authentication
+  fullName: EventStore.Core.Authentication
+- uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  commentId: M:EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  parent: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider
+  isExternal: false
+  name: Authenticate(IncomingHttpRequestMessage)
+  nameWithType: HttpAuthenticationProvider.Authenticate(IncomingHttpRequestMessage)
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+    name: Authenticate
+    nameWithType: HttpAuthenticationProvider.Authenticate
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+    name: IncomingHttpRequestMessage
+    nameWithType: IncomingHttpRequestMessage
+    fullName: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate(EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage)
+    name: Authenticate
+    nameWithType: HttpAuthenticationProvider.Authenticate
+    fullName: EventStore.Core.Services.Transport.Http.Authentication.HttpAuthenticationProvider.Authenticate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+    name: IncomingHttpRequestMessage
+    nameWithType: IncomingHttpRequestMessage
+    fullName: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate*
+  commentId: Overload:EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate
+  isExternal: false
+  name: Authenticate
+  nameWithType: BasicHttpAuthenticationProvider.Authenticate
+  fullName: EventStore.Core.Services.Transport.Http.Authentication.BasicHttpAuthenticationProvider.Authenticate
+- uid: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+  commentId: T:EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+  parent: EventStore.Core.Services.Transport.Http.Messages
+  isExternal: false
+  name: IncomingHttpRequestMessage
+  nameWithType: IncomingHttpRequestMessage
+  fullName: EventStore.Core.Services.Transport.Http.Messages.IncomingHttpRequestMessage
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Services.Transport.Http.Messages
+  commentId: N:EventStore.Core.Services.Transport.Http.Messages
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Http.Messages
+  nameWithType: EventStore.Core.Services.Transport.Http.Messages
+  fullName: EventStore.Core.Services.Transport.Http.Messages

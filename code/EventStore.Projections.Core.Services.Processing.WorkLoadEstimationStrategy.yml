@@ -1,0 +1,743 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  commentId: T:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  id: WorkLoadEstimationStrategy
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.#ctor(System.Int64,System.Int32)
+  - EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  - EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  - EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  - EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  langs:
+  - csharp
+  - vb
+  name: WorkLoadEstimationStrategy
+  nameWithType: WorkLoadEstimationStrategy
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WorkLoadEstimationStrategy
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+    startLine: 2
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class WorkLoadEstimationStrategy : object'
+    content.vb: >-
+      Public Class WorkLoadEstimationStrategy
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.#ctor(System.Int64,System.Int32)
+  commentId: M:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.#ctor(System.Int64,System.Int32)
+  id: '#ctor(System.Int64,System.Int32)'
+  parent: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  langs:
+  - csharp
+  - vb
+  name: WorkLoadEstimationStrategy(Int64, Int32)
+  nameWithType: WorkLoadEstimationStrategy.WorkLoadEstimationStrategy(Int64, Int32)
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.WorkLoadEstimationStrategy(System.Int64, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public WorkLoadEstimationStrategy(long maxScheduledSizePerWorker, int maxUnmeasuredTasksPerWorker)
+    parameters:
+    - id: maxScheduledSizePerWorker
+      type: System.Int64
+    - id: maxUnmeasuredTasksPerWorker
+      type: System.Int32
+    content.vb: Public Sub New(maxScheduledSizePerWorker As Long, maxUnmeasuredTasksPerWorker As Integer)
+  overload: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  commentId: M:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  id: MayScheduleOn(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  parent: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  langs:
+  - csharp
+  - vb
+  name: MayScheduleOn(ParallelProcessingLoadBalancer.WorkerState)
+  nameWithType: WorkLoadEstimationStrategy.MayScheduleOn(ParallelProcessingLoadBalancer.WorkerState)
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MayScheduleOn
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool MayScheduleOn(ParallelProcessingLoadBalancer.WorkerState leastLoadedWorkerState)
+    parameters:
+    - id: leastLoadedWorkerState
+      type: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+    return:
+      type: System.Boolean
+    content.vb: Public Function MayScheduleOn(leastLoadedWorkerState As ParallelProcessingLoadBalancer.WorkerState) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  commentId: M:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  id: EstimateWorkerLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  parent: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  langs:
+  - csharp
+  - vb
+  name: EstimateWorkerLoad(ParallelProcessingLoadBalancer.WorkerState)
+  nameWithType: WorkLoadEstimationStrategy.EstimateWorkerLoad(ParallelProcessingLoadBalancer.WorkerState)
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EstimateWorkerLoad
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public long EstimateWorkerLoad(ParallelProcessingLoadBalancer.WorkerState workerState)
+    parameters:
+    - id: workerState
+      type: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+    return:
+      type: System.Int64
+    content.vb: Public Function EstimateWorkerLoad(workerState As ParallelProcessingLoadBalancer.WorkerState) As Long
+  overload: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  commentId: M:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  id: RemoveTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  parent: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  langs:
+  - csharp
+  - vb
+  name: RemoveTaskLoad(ParallelProcessingLoadBalancer.WorkerState, ParallelProcessingLoadBalancer.TaskState)
+  nameWithType: WorkLoadEstimationStrategy.RemoveTaskLoad(ParallelProcessingLoadBalancer.WorkerState, ParallelProcessingLoadBalancer.TaskState)
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState, EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RemoveTaskLoad
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void RemoveTaskLoad(ParallelProcessingLoadBalancer.WorkerState workerState, ParallelProcessingLoadBalancer.TaskState taskState)
+    parameters:
+    - id: workerState
+      type: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+    - id: taskState
+      type: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState
+    content.vb: Public Sub RemoveTaskLoad(workerState As ParallelProcessingLoadBalancer.WorkerState, taskState As ParallelProcessingLoadBalancer.TaskState)
+  overload: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  commentId: M:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  id: AddTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState,EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  parent: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+  langs:
+  - csharp
+  - vb
+  name: AddTaskLoad(ParallelProcessingLoadBalancer.WorkerState, ParallelProcessingLoadBalancer.TaskState)
+  nameWithType: WorkLoadEstimationStrategy.AddTaskLoad(ParallelProcessingLoadBalancer.WorkerState, ParallelProcessingLoadBalancer.TaskState)
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad(EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState, EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AddTaskLoad
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/WorkLoadEstimationStrategy.cs
+    startLine: 38
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void AddTaskLoad(ParallelProcessingLoadBalancer.WorkerState worker, ParallelProcessingLoadBalancer.TaskState task)
+    parameters:
+    - id: worker
+      type: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+    - id: task
+      type: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState
+    content.vb: Public Sub AddTaskLoad(worker As ParallelProcessingLoadBalancer.WorkerState, task As ParallelProcessingLoadBalancer.TaskState)
+  overload: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<WorkLoadEstimationStrategy>()
+  nameWithType: ProtobufExtensions.Serialize<WorkLoadEstimationStrategy>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of WorkLoadEstimationStrategy)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy)()
+  name.vb: Serialize(Of WorkLoadEstimationStrategy)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<WorkLoadEstimationStrategy>
+    nameWithType: ProtobufExtensions.Serialize<WorkLoadEstimationStrategy>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of WorkLoadEstimationStrategy)
+    nameWithType: ProtobufExtensions.Serialize(Of WorkLoadEstimationStrategy)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<WorkLoadEstimationStrategy>()
+  nameWithType: ProtobufExtensions.SerializeToArray<WorkLoadEstimationStrategy>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of WorkLoadEstimationStrategy)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy)()
+  name.vb: SerializeToArray(Of WorkLoadEstimationStrategy)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<WorkLoadEstimationStrategy>
+    nameWithType: ProtobufExtensions.SerializeToArray<WorkLoadEstimationStrategy>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of WorkLoadEstimationStrategy)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of WorkLoadEstimationStrategy)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.#ctor
+  isExternal: false
+  name: WorkLoadEstimationStrategy
+  nameWithType: WorkLoadEstimationStrategy.WorkLoadEstimationStrategy
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.WorkLoadEstimationStrategy
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn
+  isExternal: false
+  name: MayScheduleOn
+  nameWithType: WorkLoadEstimationStrategy.MayScheduleOn
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.MayScheduleOn
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+  commentId: T:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ParallelProcessingLoadBalancer.WorkerState
+  nameWithType: ParallelProcessingLoadBalancer.WorkerState
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad
+  isExternal: false
+  name: EstimateWorkerLoad
+  nameWithType: WorkLoadEstimationStrategy.EstimateWorkerLoad
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.EstimateWorkerLoad
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad
+  isExternal: false
+  name: RemoveTaskLoad
+  nameWithType: WorkLoadEstimationStrategy.RemoveTaskLoad
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.RemoveTaskLoad
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState
+  commentId: T:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ParallelProcessingLoadBalancer.TaskState
+  nameWithType: ParallelProcessingLoadBalancer.TaskState
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState
+- uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad
+  isExternal: false
+  name: AddTaskLoad
+  nameWithType: WorkLoadEstimationStrategy.AddTaskLoad
+  fullName: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy.AddTaskLoad

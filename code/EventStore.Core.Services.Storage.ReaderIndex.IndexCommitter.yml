@@ -1,0 +1,1291 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  id: IndexCommitter
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  children:
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend,EventStore.Core.Services.Storage.ReaderIndex.IIndexReader,EventStore.Core.Index.ITableIndex,System.Boolean)
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init(System.Int64)
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Log
+  langs:
+  - csharp
+  - vb
+  name: IndexCommitter
+  nameWithType: IndexCommitter
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IndexCommitter
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: 'public class IndexCommitter : object, IIndexCommitter'
+    content.vb: >-
+      Public Class IndexCommitter
+
+          Inherits Object
+
+          Implements IIndexCommitter
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Log
+  commentId: F:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Log
+  id: Log
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: Log
+  nameWithType: IndexCommitter.Log
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Log
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Log
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public static readonly ILogger Log
+    return:
+      type: EventStore.Common.Log.ILogger
+    content.vb: Public Shared ReadOnly Log As ILogger
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition
+  commentId: P:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition
+  id: LastCommitPosition
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: LastCommitPosition
+  nameWithType: IndexCommitter.LastCommitPosition
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LastCommitPosition
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 30
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public long LastCommitPosition { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property LastCommitPosition As Long
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition*
+  implements:
+  - EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.LastCommitPosition
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend,EventStore.Core.Services.Storage.ReaderIndex.IIndexReader,EventStore.Core.Index.ITableIndex,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend,EventStore.Core.Services.Storage.ReaderIndex.IIndexReader,EventStore.Core.Index.ITableIndex,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend,EventStore.Core.Services.Storage.ReaderIndex.IIndexReader,EventStore.Core.Index.ITableIndex,System.Boolean)'
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: IndexCommitter(IPublisher, IIndexBackend, IIndexReader, ITableIndex, Boolean)
+  nameWithType: IndexCommitter.IndexCommitter(IPublisher, IIndexBackend, IIndexReader, ITableIndex, Boolean)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.IndexCommitter(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend, EventStore.Core.Services.Storage.ReaderIndex.IIndexReader, EventStore.Core.Index.ITableIndex, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 42
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public IndexCommitter(IPublisher bus, IIndexBackend backend, IIndexReader indexReader, ITableIndex tableIndex, bool additionalCommitChecks)
+    parameters:
+    - id: bus
+      type: EventStore.Core.Bus.IPublisher
+    - id: backend
+      type: EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend
+    - id: indexReader
+      type: EventStore.Core.Services.Storage.ReaderIndex.IIndexReader
+    - id: tableIndex
+      type: EventStore.Core.Index.ITableIndex
+    - id: additionalCommitChecks
+      type: System.Boolean
+    content.vb: Public Sub New(bus As IPublisher, backend As IIndexBackend, indexReader As IIndexReader, tableIndex As ITableIndex, additionalCommitChecks As Boolean)
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init(System.Int64)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init(System.Int64)
+  id: Init(System.Int64)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: Init(Int64)
+  nameWithType: IndexCommitter.Init(Int64)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Init
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 52
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public void Init(long buildToPosition)
+    parameters:
+    - id: buildToPosition
+      type: System.Int64
+    content.vb: Public Sub Init(buildToPosition As Long)
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init*
+  implements:
+  - EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init(System.Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose
+  id: Dispose
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: IndexCommitter.Dispose()
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 131
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose*
+  implements:
+  - EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  id: GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: GetCommitLastEventNumber(CommitLogRecord)
+  nameWithType: IndexCommitter.GetCommitLastEventNumber(CommitLogRecord)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetCommitLastEventNumber
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 144
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public long GetCommitLastEventNumber(CommitLogRecord commit)
+    parameters:
+    - id: commit
+      type: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    return:
+      type: System.Int64
+    content.vb: Public Function GetCommitLastEventNumber(commit As CommitLogRecord) As Long
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber*
+  implements:
+  - EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+  id: Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: Commit(CommitLogRecord, Boolean, Boolean)
+  nameWithType: IndexCommitter.Commit(CommitLogRecord, Boolean, Boolean)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Commit
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 163
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public long Commit(CommitLogRecord commit, bool isTfEof, bool cacheLastEventNumber)
+    parameters:
+    - id: commit
+      type: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    - id: isTfEof
+      type: System.Boolean
+    - id: cacheLastEventNumber
+      type: System.Boolean
+    return:
+      type: System.Int64
+    content.vb: Public Function Commit(commit As CommitLogRecord, isTfEof As Boolean, cacheLastEventNumber As Boolean) As Long
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit*
+  implements:
+  - EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+  id: Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter
+  langs:
+  - csharp
+  - vb
+  name: Commit(IList<PrepareLogRecord>, Boolean, Boolean)
+  nameWithType: IndexCommitter.Commit(IList<PrepareLogRecord>, Boolean, Boolean)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(IList<EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord>, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Commit
+    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/IndexCommitter.cs
+    startLine: 240
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: public long Commit(IList<PrepareLogRecord> commitedPrepares, bool isTfEof, bool cacheLastEventNumber)
+    parameters:
+    - id: commitedPrepares
+      type: IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord}
+    - id: isTfEof
+      type: System.Boolean
+    - id: cacheLastEventNumber
+      type: System.Boolean
+    return:
+      type: System.Int64
+    content.vb: Public Function Commit(commitedPrepares As IList(Of PrepareLogRecord), isTfEof As Boolean, cacheLastEventNumber As Boolean) As Long
+  overload: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit*
+  implements:
+  - EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+  nameWithType.vb: IndexCommitter.Commit(IList(Of PrepareLogRecord), Boolean, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit(IList(Of EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord), System.Boolean, System.Boolean)
+  name.vb: Commit(IList(Of PrepareLogRecord), Boolean, Boolean)
+references:
+- uid: EventStore.Core.Services.Storage.ReaderIndex
+  commentId: N:EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: EventStore.Core.Services.Storage.ReaderIndex
+  nameWithType: EventStore.Core.Services.Storage.ReaderIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IIndexCommitter
+  nameWithType: IIndexCommitter
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IndexCommitter>()
+  nameWithType: ProtobufExtensions.Serialize<IndexCommitter>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IndexCommitter)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter)()
+  name.vb: Serialize(Of IndexCommitter)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IndexCommitter>
+    nameWithType: ProtobufExtensions.Serialize<IndexCommitter>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IndexCommitter)
+    nameWithType: ProtobufExtensions.Serialize(Of IndexCommitter)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IndexCommitter>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IndexCommitter>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IndexCommitter)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter)()
+  name.vb: SerializeToArray(Of IndexCommitter)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IndexCommitter>
+    nameWithType: ProtobufExtensions.SerializeToArray<IndexCommitter>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IndexCommitter)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IndexCommitter)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Common.Log.ILogger
+  commentId: T:EventStore.Common.Log.ILogger
+  parent: EventStore.Common.Log
+  isExternal: false
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.Common.Log.ILogger
+- uid: EventStore.Common.Log
+  commentId: N:EventStore.Common.Log
+  isExternal: false
+  name: EventStore.Common.Log
+  nameWithType: EventStore.Common.Log
+  fullName: EventStore.Common.Log
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition
+  isExternal: false
+  name: LastCommitPosition
+  nameWithType: IndexCommitter.LastCommitPosition
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.LastCommitPosition
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.LastCommitPosition
+  commentId: P:EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.LastCommitPosition
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  isExternal: false
+  name: LastCommitPosition
+  nameWithType: IIndexCommitter.LastCommitPosition
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.LastCommitPosition
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.#ctor*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.#ctor
+  isExternal: false
+  name: IndexCommitter
+  nameWithType: IndexCommitter.IndexCommitter
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.IndexCommitter
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IIndexBackend
+  nameWithType: IIndexBackend
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexBackend
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexReader
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IIndexReader
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IIndexReader
+  nameWithType: IIndexReader
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexReader
+- uid: EventStore.Core.Index.ITableIndex
+  commentId: T:EventStore.Core.Index.ITableIndex
+  parent: EventStore.Core.Index
+  isExternal: false
+  name: ITableIndex
+  nameWithType: ITableIndex
+  fullName: EventStore.Core.Index.ITableIndex
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Index
+  commentId: N:EventStore.Core.Index
+  isExternal: false
+  name: EventStore.Core.Index
+  nameWithType: EventStore.Core.Index
+  fullName: EventStore.Core.Index
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init
+  isExternal: false
+  name: Init
+  nameWithType: IndexCommitter.Init
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Init
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init(System.Int64)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init(System.Int64)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  isExternal: true
+  name: Init(Int64)
+  nameWithType: IIndexCommitter.Init(Int64)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init(System.Int64)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init(System.Int64)
+    name: Init
+    nameWithType: IIndexCommitter.Init
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init(System.Int64)
+    name: Init
+    nameWithType: IIndexCommitter.Init
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: IndexCommitter.Dispose
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Dispose
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  isExternal: false
+  name: Dispose()
+  nameWithType: IIndexCommitter.Dispose()
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose
+    name: Dispose
+    nameWithType: IIndexCommitter.Dispose
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose
+    name: Dispose
+    nameWithType: IIndexCommitter.Dispose
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber
+  isExternal: false
+  name: GetCommitLastEventNumber
+  nameWithType: IndexCommitter.GetCommitLastEventNumber
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.GetCommitLastEventNumber
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  isExternal: false
+  name: GetCommitLastEventNumber(CommitLogRecord)
+  nameWithType: IIndexCommitter.GetCommitLastEventNumber(CommitLogRecord)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+    name: GetCommitLastEventNumber
+    nameWithType: IIndexCommitter.GetCommitLastEventNumber
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    name: CommitLogRecord
+    nameWithType: CommitLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
+    name: GetCommitLastEventNumber
+    nameWithType: IIndexCommitter.GetCommitLastEventNumber
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.GetCommitLastEventNumber
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    name: CommitLogRecord
+    nameWithType: CommitLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: CommitLogRecord
+  nameWithType: CommitLogRecord
+  fullName: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+- uid: EventStore.Core.TransactionLog.LogRecords
+  commentId: N:EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: EventStore.Core.TransactionLog.LogRecords
+  nameWithType: EventStore.Core.TransactionLog.LogRecords
+  fullName: EventStore.Core.TransactionLog.LogRecords
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit*
+  commentId: Overload:EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit
+  isExternal: false
+  name: Commit
+  nameWithType: IndexCommitter.Commit
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IndexCommitter.Commit
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  isExternal: true
+  name: Commit(CommitLogRecord, Boolean, Boolean)
+  nameWithType: IIndexCommitter.Commit(CommitLogRecord, Boolean, Boolean)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord, System.Boolean, System.Boolean)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+    name: Commit
+    nameWithType: IIndexCommitter.Commit
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    name: CommitLogRecord
+    nameWithType: CommitLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Boolean,System.Boolean)
+    name: Commit
+    nameWithType: IIndexCommitter.Commit
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+    name: CommitLogRecord
+    nameWithType: CommitLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+  parent: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
+  isExternal: true
+  name: Commit(IList<PrepareLogRecord>, Boolean, Boolean)
+  nameWithType: IIndexCommitter.Commit(IList<PrepareLogRecord>, Boolean, Boolean)
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(IList<EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord>, System.Boolean, System.Boolean)
+  nameWithType.vb: IIndexCommitter.Commit(IList(Of PrepareLogRecord), Boolean, Boolean)
+  fullName.vb: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(IList(Of EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord), System.Boolean, System.Boolean)
+  name.vb: Commit(IList(Of PrepareLogRecord), Boolean, Boolean)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+    name: Commit
+    nameWithType: IIndexCommitter.Commit
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    name: PrepareLogRecord
+    nameWithType: PrepareLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit(IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord},System.Boolean,System.Boolean)
+    name: Commit
+    nameWithType: IIndexCommitter.Commit
+    fullName: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter.Commit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    name: PrepareLogRecord
+    nameWithType: PrepareLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord}
+  commentId: '!:IList{EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord}'
+  definition: IList`1
+  name: IList<PrepareLogRecord>
+  nameWithType: IList<PrepareLogRecord>
+  fullName: IList<EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord>
+  nameWithType.vb: IList(Of PrepareLogRecord)
+  fullName.vb: IList(Of EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  name.vb: IList(Of PrepareLogRecord)
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    name: PrepareLogRecord
+    nameWithType: PrepareLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    name: PrepareLogRecord
+    nameWithType: PrepareLogRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IList`1
+  isExternal: true
+  name: IList<>
+  nameWithType: IList<>
+  fullName: IList<>
+  nameWithType.vb: IList(Of )
+  fullName.vb: IList(Of )
+  name.vb: IList(Of )
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

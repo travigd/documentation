@@ -1,0 +1,946 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  commentId: T:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  id: when_handling_eof_message
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  children:
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When
+  langs:
+  - csharp
+  - vb
+  name: when_handling_eof_message
+  nameWithType: when_handling_eof_message
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: when_handling_eof_message
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+    startLine: 220
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  syntax:
+    content: 'public class when_handling_eof_message : FeedReaderSpecification'
+    content.vb: >-
+      Public Class when_handling_eof_message
+
+          Inherits FeedReaderSpecification
+  inheritance:
+  - System.Object
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  inheritedMembers:
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._bus
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._subscriptionDispatcher
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._testQueryDefinition
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._consumer
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._feedReader
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource
+  id: GivenQuerySource
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  langs:
+  - csharp
+  - vb
+  name: GivenQuerySource()
+  nameWithType: when_handling_eof_message.GivenQuerySource()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GivenQuerySource
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+    startLine: 227
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  syntax:
+    content: protected override QuerySourcesDefinition GivenQuerySource()
+    return:
+      type: EventStore.Projections.Core.Messages.QuerySourcesDefinition
+    content.vb: Protected Overrides Function GivenQuerySource As QuerySourcesDefinition
+  overridden: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource
+  overload: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given
+  id: Given
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  langs:
+  - csharp
+  - vb
+  name: Given()
+  nameWithType: when_handling_eof_message.Given()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Given
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+    startLine: 232
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  syntax:
+    content: protected override void Given()
+    content.vb: Protected Overrides Sub Given
+  overridden: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given
+  overload: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When
+  id: When
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  langs:
+  - csharp
+  - vb
+  name: When()
+  nameWithType: when_handling_eof_message.When()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: When
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+    startLine: 251
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  syntax:
+    content: protected override void When()
+    content.vb: Protected Overrides Sub When
+  overridden: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When
+  overload: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message
+  id: publishes_feed_page_message
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  langs:
+  - csharp
+  - vb
+  name: publishes_feed_page_message()
+  nameWithType: when_handling_eof_message.publishes_feed_page_message()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: publishes_feed_page_message
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+    startLine: 258
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  syntax:
+    content: public void publishes_feed_page_message()
+    content.vb: Public Sub publishes_feed_page_message
+  overload: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events
+  id: publishes_feed_page_with_all_received_events
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  langs:
+  - csharp
+  - vb
+  name: publishes_feed_page_with_all_received_events()
+  nameWithType: when_handling_eof_message.publishes_feed_page_with_all_received_events()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: publishes_feed_page_with_all_received_events
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+    startLine: 265
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  syntax:
+    content: public void publishes_feed_page_with_all_received_events()
+    content.vb: Public Sub publishes_feed_page_with_all_received_events
+  overload: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order
+  id: publishes_feed_page_with_events_in_correct_order
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message
+  langs:
+  - csharp
+  - vb
+  name: publishes_feed_page_with_events_in_correct_order()
+  nameWithType: when_handling_eof_message.publishes_feed_page_with_events_in_correct_order()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: publishes_feed_page_with_events_in_correct_order
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/feed_reader/feed_reader.cs
+    startLine: 272
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  syntax:
+    content: public void publishes_feed_page_with_events_in_correct_order()
+    content.vb: Public Sub publishes_feed_page_with_events_in_correct_order
+  overload: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  commentId: N:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  isExternal: false
+  name: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  nameWithType: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  commentId: T:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader
+  isExternal: false
+  name: FeedReaderSpecification
+  nameWithType: FeedReaderSpecification
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._bus
+  commentId: F:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._bus
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: _bus
+  nameWithType: FeedReaderSpecification._bus
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._bus
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._subscriptionDispatcher
+  commentId: F:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._subscriptionDispatcher
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: _subscriptionDispatcher
+  nameWithType: FeedReaderSpecification._subscriptionDispatcher
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._subscriptionDispatcher
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._testQueryDefinition
+  commentId: F:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._testQueryDefinition
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: _testQueryDefinition
+  nameWithType: FeedReaderSpecification._testQueryDefinition
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._testQueryDefinition
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._consumer
+  commentId: F:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._consumer
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: _consumer
+  nameWithType: FeedReaderSpecification._consumer
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._consumer
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._feedReader
+  commentId: F:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._feedReader
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: _feedReader
+  nameWithType: FeedReaderSpecification._feedReader
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification._feedReader
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: SetUp()
+  nameWithType: FeedReaderSpecification.SetUp()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp
+    name: SetUp
+    nameWithType: FeedReaderSpecification.SetUp
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp
+    name: SetUp
+    nameWithType: FeedReaderSpecification.SetUp
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.SetUp
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: GivenFromPosition()
+  nameWithType: FeedReaderSpecification.GivenFromPosition()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition
+    name: GivenFromPosition
+    nameWithType: FeedReaderSpecification.GivenFromPosition
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition
+    name: GivenFromPosition
+    nameWithType: FeedReaderSpecification.GivenFromPosition
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenFromPosition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<when_handling_eof_message>()
+  nameWithType: ProtobufExtensions.Serialize<when_handling_eof_message>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of when_handling_eof_message)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message)()
+  name.vb: Serialize(Of when_handling_eof_message)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<when_handling_eof_message>
+    nameWithType: ProtobufExtensions.Serialize<when_handling_eof_message>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of when_handling_eof_message)
+    nameWithType: ProtobufExtensions.Serialize(Of when_handling_eof_message)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<when_handling_eof_message>()
+  nameWithType: ProtobufExtensions.SerializeToArray<when_handling_eof_message>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of when_handling_eof_message)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message)()
+  name.vb: SerializeToArray(Of when_handling_eof_message)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<when_handling_eof_message>
+    nameWithType: ProtobufExtensions.SerializeToArray<when_handling_eof_message>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of when_handling_eof_message)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of when_handling_eof_message)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: GivenQuerySource()
+  nameWithType: FeedReaderSpecification.GivenQuerySource()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource
+    name: GivenQuerySource
+    nameWithType: FeedReaderSpecification.GivenQuerySource
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource
+    name: GivenQuerySource
+    nameWithType: FeedReaderSpecification.GivenQuerySource
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.GivenQuerySource
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource
+  isExternal: false
+  name: GivenQuerySource
+  nameWithType: when_handling_eof_message.GivenQuerySource
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.GivenQuerySource
+- uid: EventStore.Projections.Core.Messages.QuerySourcesDefinition
+  commentId: T:EventStore.Projections.Core.Messages.QuerySourcesDefinition
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: QuerySourcesDefinition
+  nameWithType: QuerySourcesDefinition
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesDefinition
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: Given()
+  nameWithType: FeedReaderSpecification.Given()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given
+    name: Given
+    nameWithType: FeedReaderSpecification.Given
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given
+    name: Given
+    nameWithType: FeedReaderSpecification.Given
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.Given
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given
+  isExternal: false
+  name: Given
+  nameWithType: when_handling_eof_message.Given
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.Given
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When
+  commentId: M:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When
+  parent: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification
+  isExternal: false
+  name: When()
+  nameWithType: FeedReaderSpecification.When()
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When
+    name: When
+    nameWithType: FeedReaderSpecification.When
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When
+    name: When
+    nameWithType: FeedReaderSpecification.When
+    fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.FeedReaderSpecification.When
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When
+  isExternal: false
+  name: When
+  nameWithType: when_handling_eof_message.When
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.When
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message
+  isExternal: false
+  name: publishes_feed_page_message
+  nameWithType: when_handling_eof_message.publishes_feed_page_message
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_message
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events
+  isExternal: false
+  name: publishes_feed_page_with_all_received_events
+  nameWithType: when_handling_eof_message.publishes_feed_page_with_all_received_events
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_all_received_events
+- uid: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order
+  isExternal: false
+  name: publishes_feed_page_with_events_in_correct_order
+  nameWithType: when_handling_eof_message.publishes_feed_page_with_events_in_correct_order
+  fullName: EventStore.Projections.Core.Tests.Services.feed_reader.feed_reader.when_handling_eof_message.publishes_feed_page_with_events_in_correct_order

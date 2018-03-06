@@ -1,0 +1,715 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.TransactionLog.TFReaderLease
+  commentId: T:EventStore.Core.TransactionLog.TFReaderLease
+  id: TFReaderLease
+  parent: EventStore.Core.TransactionLog
+  children:
+  - EventStore.Core.TransactionLog.TFReaderLease.#ctor(EventStore.Core.DataStructures.ObjectPool{EventStore.Core.TransactionLog.ITransactionFileReader})
+  - EventStore.Core.TransactionLog.TFReaderLease.#ctor(EventStore.Core.TransactionLog.ITransactionFileReader)
+  - EventStore.Core.TransactionLog.TFReaderLease.ExistsAt(System.Int64)
+  - EventStore.Core.TransactionLog.TFReaderLease.Reader
+  - EventStore.Core.TransactionLog.TFReaderLease.Reposition(System.Int64)
+  - EventStore.Core.TransactionLog.TFReaderLease.TryReadAt(System.Int64)
+  - EventStore.Core.TransactionLog.TFReaderLease.TryReadNext
+  - EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev
+  langs:
+  - csharp
+  - vb
+  name: TFReaderLease
+  nameWithType: TFReaderLease
+  fullName: EventStore.Core.TransactionLog.TFReaderLease
+  type: Struct
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TFReaderLease
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: 'public struct TFReaderLease : IDisposable'
+    content.vb: >-
+      Public Structure TFReaderLease
+
+          Implements IDisposable
+  implements:
+  - IDisposable
+  extensionMethods:
+  - EventStore.Core.TransactionLog.TFReaderLease.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  - EventStore.Core.TransactionLog.TFReaderLease.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.TransactionLog.TFReaderLease.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: EventStore.Core.TransactionLog.TFReaderLease.Reader
+  commentId: F:EventStore.Core.TransactionLog.TFReaderLease.Reader
+  id: Reader
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: Reader
+  nameWithType: TFReaderLease.Reader
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.Reader
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Reader
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public readonly ITransactionFileReader Reader
+    return:
+      type: EventStore.Core.TransactionLog.ITransactionFileReader
+    content.vb: Public ReadOnly Reader As ITransactionFileReader
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.TransactionLog.TFReaderLease.#ctor(EventStore.Core.DataStructures.ObjectPool{EventStore.Core.TransactionLog.ITransactionFileReader})
+  commentId: M:EventStore.Core.TransactionLog.TFReaderLease.#ctor(EventStore.Core.DataStructures.ObjectPool{EventStore.Core.TransactionLog.ITransactionFileReader})
+  id: '#ctor(EventStore.Core.DataStructures.ObjectPool{EventStore.Core.TransactionLog.ITransactionFileReader})'
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: TFReaderLease(ObjectPool<ITransactionFileReader>)
+  nameWithType: TFReaderLease.TFReaderLease(ObjectPool<ITransactionFileReader>)
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TFReaderLease(EventStore.Core.DataStructures.ObjectPool<EventStore.Core.TransactionLog.ITransactionFileReader>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 21
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public TFReaderLease(ObjectPool<ITransactionFileReader> pool)
+    parameters:
+    - id: pool
+      type: EventStore.Core.DataStructures.ObjectPool{EventStore.Core.TransactionLog.ITransactionFileReader}
+    content.vb: Public Sub New(pool As ObjectPool(Of ITransactionFileReader))
+  overload: EventStore.Core.TransactionLog.TFReaderLease.#ctor*
+  nameWithType.vb: TFReaderLease.TFReaderLease(ObjectPool(Of ITransactionFileReader))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.TransactionLog.TFReaderLease.TFReaderLease(EventStore.Core.DataStructures.ObjectPool(Of EventStore.Core.TransactionLog.ITransactionFileReader))
+  name.vb: TFReaderLease(ObjectPool(Of ITransactionFileReader))
+- uid: EventStore.Core.TransactionLog.TFReaderLease.#ctor(EventStore.Core.TransactionLog.ITransactionFileReader)
+  commentId: M:EventStore.Core.TransactionLog.TFReaderLease.#ctor(EventStore.Core.TransactionLog.ITransactionFileReader)
+  id: '#ctor(EventStore.Core.TransactionLog.ITransactionFileReader)'
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: TFReaderLease(ITransactionFileReader)
+  nameWithType: TFReaderLease.TFReaderLease(ITransactionFileReader)
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TFReaderLease(EventStore.Core.TransactionLog.ITransactionFileReader)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public TFReaderLease(ITransactionFileReader reader)
+    parameters:
+    - id: reader
+      type: EventStore.Core.TransactionLog.ITransactionFileReader
+    content.vb: Public Sub New(reader As ITransactionFileReader)
+  overload: EventStore.Core.TransactionLog.TFReaderLease.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.TFReaderLease.Reposition(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.TFReaderLease.Reposition(System.Int64)
+  id: Reposition(System.Int64)
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: Reposition(Int64)
+  nameWithType: TFReaderLease.Reposition(Int64)
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.Reposition(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Reposition
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 39
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public void Reposition(long position)
+    parameters:
+    - id: position
+      type: System.Int64
+    content.vb: Public Sub Reposition(position As Long)
+  overload: EventStore.Core.TransactionLog.TFReaderLease.Reposition*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.TFReaderLease.TryReadNext
+  commentId: M:EventStore.Core.TransactionLog.TFReaderLease.TryReadNext
+  id: TryReadNext
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: TryReadNext()
+  nameWithType: TFReaderLease.TryReadNext()
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TryReadNext()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TryReadNext
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 44
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public SeqReadResult TryReadNext()
+    return:
+      type: EventStore.Core.TransactionLog.SeqReadResult
+    content.vb: Public Function TryReadNext As SeqReadResult
+  overload: EventStore.Core.TransactionLog.TFReaderLease.TryReadNext*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev
+  commentId: M:EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev
+  id: TryReadPrev
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: TryReadPrev()
+  nameWithType: TFReaderLease.TryReadPrev()
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TryReadPrev
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public SeqReadResult TryReadPrev()
+    return:
+      type: EventStore.Core.TransactionLog.SeqReadResult
+    content.vb: Public Function TryReadPrev As SeqReadResult
+  overload: EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.TFReaderLease.ExistsAt(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.TFReaderLease.ExistsAt(System.Int64)
+  id: ExistsAt(System.Int64)
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: ExistsAt(Int64)
+  nameWithType: TFReaderLease.ExistsAt(Int64)
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.ExistsAt(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ExistsAt
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public bool ExistsAt(long position)
+    parameters:
+    - id: position
+      type: System.Int64
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExistsAt(position As Long) As Boolean
+  overload: EventStore.Core.TransactionLog.TFReaderLease.ExistsAt*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.TFReaderLease.TryReadAt(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.TFReaderLease.TryReadAt(System.Int64)
+  id: TryReadAt(System.Int64)
+  parent: EventStore.Core.TransactionLog.TFReaderLease
+  langs:
+  - csharp
+  - vb
+  name: TryReadAt(Int64)
+  nameWithType: TFReaderLease.TryReadAt(Int64)
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TryReadAt(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TryReadAt
+    path: ../EventStore/src/EventStore.Core/TransactionLog/ITransactionFileReader.cs
+    startLine: 59
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog
+  syntax:
+    content: public RecordReadResult TryReadAt(long position)
+    parameters:
+    - id: position
+      type: System.Int64
+    return:
+      type: EventStore.Core.TransactionLog.RecordReadResult
+    content.vb: Public Function TryReadAt(position As Long) As RecordReadResult
+  overload: EventStore.Core.TransactionLog.TFReaderLease.TryReadAt*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.TransactionLog
+  commentId: N:EventStore.Core.TransactionLog
+  isExternal: false
+  name: EventStore.Core.TransactionLog
+  nameWithType: EventStore.Core.TransactionLog
+  fullName: EventStore.Core.TransactionLog
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: EventStore.Core.TransactionLog.TFReaderLease.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<TFReaderLease>()
+  nameWithType: EnumExtensions.EnumValueName<TFReaderLease>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.Core.TransactionLog.TFReaderLease>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of TFReaderLease)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.Core.TransactionLog.TFReaderLease)()
+  name.vb: EnumValueName(Of TFReaderLease)()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<TFReaderLease>
+    nameWithType: EnumExtensions.EnumValueName<TFReaderLease>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.Core.TransactionLog.TFReaderLease>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of TFReaderLease)
+    nameWithType: EnumExtensions.EnumValueName(Of TFReaderLease)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.Core.TransactionLog.TFReaderLease)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.TFReaderLease.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TFReaderLease>()
+  nameWithType: ProtobufExtensions.Serialize<TFReaderLease>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.TFReaderLease>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TFReaderLease)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.TFReaderLease)()
+  name.vb: Serialize(Of TFReaderLease)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TFReaderLease>
+    nameWithType: ProtobufExtensions.Serialize<TFReaderLease>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.TFReaderLease>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TFReaderLease)
+    nameWithType: ProtobufExtensions.Serialize(Of TFReaderLease)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.TFReaderLease)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.TFReaderLease.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TFReaderLease>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TFReaderLease>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.TFReaderLease>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TFReaderLease)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.TFReaderLease)()
+  name.vb: SerializeToArray(Of TFReaderLease)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TFReaderLease>
+    nameWithType: ProtobufExtensions.SerializeToArray<TFReaderLease>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.TFReaderLease>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TFReaderLease)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TFReaderLease)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.TFReaderLease)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  isExternal: false
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.TransactionLog.ITransactionFileReader
+  commentId: T:EventStore.Core.TransactionLog.ITransactionFileReader
+  parent: EventStore.Core.TransactionLog
+  isExternal: false
+  name: ITransactionFileReader
+  nameWithType: ITransactionFileReader
+  fullName: EventStore.Core.TransactionLog.ITransactionFileReader
+- uid: EventStore.Core.TransactionLog.TFReaderLease.#ctor*
+  commentId: Overload:EventStore.Core.TransactionLog.TFReaderLease.#ctor
+  isExternal: false
+  name: TFReaderLease
+  nameWithType: TFReaderLease.TFReaderLease
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TFReaderLease
+- uid: EventStore.Core.DataStructures.ObjectPool{EventStore.Core.TransactionLog.ITransactionFileReader}
+  commentId: T:EventStore.Core.DataStructures.ObjectPool{EventStore.Core.TransactionLog.ITransactionFileReader}
+  parent: EventStore.Core.DataStructures
+  definition: EventStore.Core.DataStructures.ObjectPool`1
+  name: ObjectPool<ITransactionFileReader>
+  nameWithType: ObjectPool<ITransactionFileReader>
+  fullName: EventStore.Core.DataStructures.ObjectPool<EventStore.Core.TransactionLog.ITransactionFileReader>
+  nameWithType.vb: ObjectPool(Of ITransactionFileReader)
+  fullName.vb: EventStore.Core.DataStructures.ObjectPool(Of EventStore.Core.TransactionLog.ITransactionFileReader)
+  name.vb: ObjectPool(Of ITransactionFileReader)
+  spec.csharp:
+  - uid: EventStore.Core.DataStructures.ObjectPool`1
+    name: ObjectPool
+    nameWithType: ObjectPool
+    fullName: EventStore.Core.DataStructures.ObjectPool
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.TransactionLog.ITransactionFileReader
+    name: ITransactionFileReader
+    nameWithType: ITransactionFileReader
+    fullName: EventStore.Core.TransactionLog.ITransactionFileReader
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.DataStructures.ObjectPool`1
+    name: ObjectPool
+    nameWithType: ObjectPool
+    fullName: EventStore.Core.DataStructures.ObjectPool
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.TransactionLog.ITransactionFileReader
+    name: ITransactionFileReader
+    nameWithType: ITransactionFileReader
+    fullName: EventStore.Core.TransactionLog.ITransactionFileReader
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.DataStructures.ObjectPool`1
+  commentId: T:EventStore.Core.DataStructures.ObjectPool`1
+  isExternal: false
+  name: ObjectPool<T>
+  nameWithType: ObjectPool<T>
+  fullName: EventStore.Core.DataStructures.ObjectPool<T>
+  nameWithType.vb: ObjectPool(Of T)
+  fullName.vb: EventStore.Core.DataStructures.ObjectPool(Of T)
+  name.vb: ObjectPool(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.DataStructures.ObjectPool`1
+    name: ObjectPool
+    nameWithType: ObjectPool
+    fullName: EventStore.Core.DataStructures.ObjectPool
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.DataStructures.ObjectPool`1
+    name: ObjectPool
+    nameWithType: ObjectPool
+    fullName: EventStore.Core.DataStructures.ObjectPool
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.DataStructures
+  commentId: N:EventStore.Core.DataStructures
+  isExternal: false
+  name: EventStore.Core.DataStructures
+  nameWithType: EventStore.Core.DataStructures
+  fullName: EventStore.Core.DataStructures
+- uid: EventStore.Core.TransactionLog.TFReaderLease.Reposition*
+  commentId: Overload:EventStore.Core.TransactionLog.TFReaderLease.Reposition
+  isExternal: false
+  name: Reposition
+  nameWithType: TFReaderLease.Reposition
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.Reposition
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.TransactionLog.TFReaderLease.TryReadNext*
+  commentId: Overload:EventStore.Core.TransactionLog.TFReaderLease.TryReadNext
+  isExternal: false
+  name: TryReadNext
+  nameWithType: TFReaderLease.TryReadNext
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TryReadNext
+- uid: EventStore.Core.TransactionLog.SeqReadResult
+  commentId: T:EventStore.Core.TransactionLog.SeqReadResult
+  parent: EventStore.Core.TransactionLog
+  isExternal: false
+  name: SeqReadResult
+  nameWithType: SeqReadResult
+  fullName: EventStore.Core.TransactionLog.SeqReadResult
+- uid: EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev*
+  commentId: Overload:EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev
+  isExternal: false
+  name: TryReadPrev
+  nameWithType: TFReaderLease.TryReadPrev
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TryReadPrev
+- uid: EventStore.Core.TransactionLog.TFReaderLease.ExistsAt*
+  commentId: Overload:EventStore.Core.TransactionLog.TFReaderLease.ExistsAt
+  isExternal: false
+  name: ExistsAt
+  nameWithType: TFReaderLease.ExistsAt
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.ExistsAt
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.TransactionLog.TFReaderLease.TryReadAt*
+  commentId: Overload:EventStore.Core.TransactionLog.TFReaderLease.TryReadAt
+  isExternal: false
+  name: TryReadAt
+  nameWithType: TFReaderLease.TryReadAt
+  fullName: EventStore.Core.TransactionLog.TFReaderLease.TryReadAt
+- uid: EventStore.Core.TransactionLog.RecordReadResult
+  commentId: T:EventStore.Core.TransactionLog.RecordReadResult
+  parent: EventStore.Core.TransactionLog
+  isExternal: false
+  name: RecordReadResult
+  nameWithType: RecordReadResult
+  fullName: EventStore.Core.TransactionLog.RecordReadResult

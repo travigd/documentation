@@ -1,0 +1,260 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Tests.TransactionLog.TFChunkHelper
+  commentId: T:EventStore.Core.Tests.TransactionLog.TFChunkHelper
+  id: TFChunkHelper
+  parent: EventStore.Core.Tests.TransactionLog
+  children:
+  - EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  - EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32)
+  - EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk(System.String,System.Int32,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: TFChunkHelper
+  nameWithType: TFChunkHelper
+  fullName: EventStore.Core.Tests.TransactionLog.TFChunkHelper
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TFChunkHelper
+    path: ../EventStore/src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.TransactionLog
+  syntax:
+    content: 'public static class TFChunkHelper : object'
+    content.vb: >-
+      Public Module TFChunkHelper
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32)
+  commentId: M:EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32)
+  id: CreateDbConfig(System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32)
+  parent: EventStore.Core.Tests.TransactionLog.TFChunkHelper
+  langs:
+  - csharp
+  - vb
+  name: CreateDbConfig(String, Int64, Int64, Int64, Int64, Int32)
+  nameWithType: TFChunkHelper.CreateDbConfig(String, Int64, Int64, Int64, Int64, Int32)
+  fullName: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String, System.Int64, System.Int64, System.Int64, System.Int64, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateDbConfig
+    path: ../EventStore/src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.TransactionLog
+  syntax:
+    content: public static TFChunkDbConfig CreateDbConfig(string pathName, long writerCheckpointPosition, long chaserCheckpointPosition = null, long epochCheckpointPosition = null, long truncateCheckpoint = null, int chunkSize = 10000)
+    parameters:
+    - id: pathName
+      type: System.String
+    - id: writerCheckpointPosition
+      type: System.Int64
+    - id: chaserCheckpointPosition
+      type: System.Int64
+    - id: epochCheckpointPosition
+      type: System.Int64
+    - id: truncateCheckpoint
+      type: System.Int64
+    - id: chunkSize
+      type: System.Int32
+    return:
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+    content.vb: Public Shared Function CreateDbConfig(pathName As String, writerCheckpointPosition As Long, chaserCheckpointPosition As Long = Nothing, epochCheckpointPosition As Long = Nothing, truncateCheckpoint As Long = Nothing, chunkSize As Integer = 10000) As TFChunkDbConfig
+  overload: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  commentId: M:EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  id: CreateDbConfig(System.String,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  parent: EventStore.Core.Tests.TransactionLog.TFChunkHelper
+  langs:
+  - csharp
+  - vb
+  name: CreateDbConfig(String, ICheckpoint, ICheckpoint, Int32, ICheckpoint)
+  nameWithType: TFChunkHelper.CreateDbConfig(String, ICheckpoint, ICheckpoint, Int32, ICheckpoint)
+  fullName: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig(System.String, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int32, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateDbConfig
+    path: ../EventStore/src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.TransactionLog
+  syntax:
+    content: public static TFChunkDbConfig CreateDbConfig(string pathName, ICheckpoint writerCheckpoint, ICheckpoint chaserCheckpoint, int chunkSize = 10000, ICheckpoint replicationCheckpoint = null)
+    parameters:
+    - id: pathName
+      type: System.String
+    - id: writerCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    - id: chaserCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    - id: chunkSize
+      type: System.Int32
+    - id: replicationCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    return:
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+    content.vb: Public Shared Function CreateDbConfig(pathName As String, writerCheckpoint As ICheckpoint, chaserCheckpoint As ICheckpoint, chunkSize As Integer = 10000, replicationCheckpoint As ICheckpoint = Nothing) As TFChunkDbConfig
+  overload: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk(System.String,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk(System.String,System.Int32,System.Boolean)
+  id: CreateNewChunk(System.String,System.Int32,System.Boolean)
+  parent: EventStore.Core.Tests.TransactionLog.TFChunkHelper
+  langs:
+  - csharp
+  - vb
+  name: CreateNewChunk(String, Int32, Boolean)
+  nameWithType: TFChunkHelper.CreateNewChunk(String, Int32, Boolean)
+  fullName: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk(System.String, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateNewChunk
+    path: ../EventStore/src/EventStore.Core.Tests/TransactionLog/TFChunkHelper.cs
+    startLine: 40
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.TransactionLog
+  syntax:
+    content: public static TFChunk CreateNewChunk(string fileName, int chunkSize = 4096, bool isScavenged = false)
+    parameters:
+    - id: fileName
+      type: System.String
+    - id: chunkSize
+      type: System.Int32
+    - id: isScavenged
+      type: System.Boolean
+    return:
+      type: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
+    content.vb: Public Shared Function CreateNewChunk(fileName As String, chunkSize As Integer = 4096, isScavenged As Boolean = False) As TFChunk
+  overload: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: EventStore.Core.Tests.TransactionLog
+  commentId: N:EventStore.Core.Tests.TransactionLog
+  isExternal: false
+  name: EventStore.Core.Tests.TransactionLog
+  nameWithType: EventStore.Core.Tests.TransactionLog
+  fullName: EventStore.Core.Tests.TransactionLog
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig*
+  commentId: Overload:EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig
+  isExternal: false
+  name: CreateDbConfig
+  nameWithType: TFChunkHelper.CreateDbConfig
+  fullName: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateDbConfig
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+  parent: EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: TFChunkDbConfig
+  nameWithType: TFChunkDbConfig
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+- uid: EventStore.Core.TransactionLog.Chunks
+  commentId: N:EventStore.Core.TransactionLog.Chunks
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Chunks
+  nameWithType: EventStore.Core.TransactionLog.Chunks
+  fullName: EventStore.Core.TransactionLog.Chunks
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk*
+  commentId: Overload:EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk
+  isExternal: false
+  name: CreateNewChunk
+  nameWithType: TFChunkHelper.CreateNewChunk
+  fullName: EventStore.Core.Tests.TransactionLog.TFChunkHelper.CreateNewChunk
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunk
+  isExternal: false
+  name: TFChunk
+  nameWithType: TFChunk
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk
+  commentId: N:EventStore.Core.TransactionLog.Chunks.TFChunk
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Chunks.TFChunk
+  nameWithType: EventStore.Core.TransactionLog.Chunks.TFChunk
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk

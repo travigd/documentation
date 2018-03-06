@@ -1,0 +1,921 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  commentId: T:EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  id: when_writing_multiple_bytes
+  parent: EventStore.BufferManagement.Tests
+  children:
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity
+  langs:
+  - csharp
+  - vb
+  name: when_writing_multiple_bytes
+  nameWithType: when_writing_multiple_bytes
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: when_writing_multiple_bytes
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 339
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: 'public class when_writing_multiple_bytes : has_buffer_manager_fixture'
+    content.vb: >-
+      Public Class when_writing_multiple_bytes
+
+          Inherits has_buffer_manager_fixture
+  inheritance:
+  - System.Object
+  - EventStore.BufferManagement.Tests.has_buffer_manager_fixture
+  inheritedMembers:
+  - EventStore.BufferManagement.Tests.has_buffer_manager_fixture.BufferManager
+  - EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.BufferManagement.Tests.when_writing_multiple_bytes.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception
+  id: a_null_byte_array_throws_an_argumentnullexception
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: a_null_byte_array_throws_an_argumentnullexception()
+  nameWithType: when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: a_null_byte_array_throws_an_argumentnullexception
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 342
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void a_null_byte_array_throws_an_argumentnullexception()
+    content.vb: Public Sub a_null_byte_array_throws_an_argumentnullexception
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  id: an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+  nameWithType: when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 349
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+    content.vb: Public Sub an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  id: a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+  nameWithType: when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 356
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception()
+    content.vb: Public Sub a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception
+  id: a_negative_count_throws_an_argumentoutofrangeexception
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: a_negative_count_throws_an_argumentoutofrangeexception()
+  nameWithType: when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: a_negative_count_throws_an_argumentoutofrangeexception
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 363
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void a_negative_count_throws_an_argumentoutofrangeexception()
+    content.vb: Public Sub a_negative_count_throws_an_argumentoutofrangeexception
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception
+  id: a_negative_offset_throws_an_argumentoutofrangeexception
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: a_negative_offset_throws_an_argumentoutofrangeexception()
+  nameWithType: when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: a_negative_offset_throws_an_argumentoutofrangeexception
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 370
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void a_negative_offset_throws_an_argumentoutofrangeexception()
+    content.vb: Public Sub a_negative_offset_throws_an_argumentoutofrangeexception
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written
+  id: length_is_updated_to_include_bytes_written
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: length_is_updated_to_include_bytes_written()
+  nameWithType: when_writing_multiple_bytes.length_is_updated_to_include_bytes_written()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: length_is_updated_to_include_bytes_written
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 377
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void length_is_updated_to_include_bytes_written()
+    content.vb: Public Sub length_is_updated_to_include_bytes_written
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer
+  id: data_is_written_to_the_internal_buffer
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: data_is_written_to_the_internal_buffer()
+  nameWithType: when_writing_multiple_bytes.data_is_written_to_the_internal_buffer()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: data_is_written_to_the_internal_buffer
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 386
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void data_is_written_to_the_internal_buffer()
+    content.vb: Public Sub data_is_written_to_the_internal_buffer
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity
+  id: pool_can_expand_capacity
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: pool_can_expand_capacity()
+  nameWithType: when_writing_multiple_bytes.pool_can_expand_capacity()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: pool_can_expand_capacity
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 398
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void pool_can_expand_capacity()
+    content.vb: Public Sub pool_can_expand_capacity
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset
+  id: can_write_given_a_self_offset
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: can_write_given_a_self_offset()
+  nameWithType: when_writing_multiple_bytes.can_write_given_a_self_offset()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: can_write_given_a_self_offset
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 408
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void can_write_given_a_self_offset()
+    content.vb: Public Sub can_write_given_a_self_offset
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset
+  commentId: M:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset
+  id: can_write_given_a_source_offset
+  parent: EventStore.BufferManagement.Tests.when_writing_multiple_bytes
+  langs:
+  - csharp
+  - vb
+  name: can_write_given_a_source_offset()
+  nameWithType: when_writing_multiple_bytes.can_write_given_a_source_offset()
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: can_write_given_a_source_offset
+    path: ../EventStore/src/EventStore.BufferManagement.Tests/BufferPoolTests.cs
+    startLine: 420
+  assemblies:
+  - EventStore.BufferManagement.Tests
+  namespace: EventStore.BufferManagement.Tests
+  syntax:
+    content: public void can_write_given_a_source_offset()
+    content.vb: Public Sub can_write_given_a_source_offset
+  overload: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.BufferManagement.Tests
+  commentId: N:EventStore.BufferManagement.Tests
+  isExternal: false
+  name: EventStore.BufferManagement.Tests
+  nameWithType: EventStore.BufferManagement.Tests
+  fullName: EventStore.BufferManagement.Tests
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.BufferManagement.Tests.has_buffer_manager_fixture
+  commentId: T:EventStore.BufferManagement.Tests.has_buffer_manager_fixture
+  parent: EventStore.BufferManagement.Tests
+  isExternal: false
+  name: has_buffer_manager_fixture
+  nameWithType: has_buffer_manager_fixture
+  fullName: EventStore.BufferManagement.Tests.has_buffer_manager_fixture
+- uid: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.BufferManager
+  commentId: F:EventStore.BufferManagement.Tests.has_buffer_manager_fixture.BufferManager
+  parent: EventStore.BufferManagement.Tests.has_buffer_manager_fixture
+  isExternal: false
+  name: BufferManager
+  nameWithType: has_buffer_manager_fixture.BufferManager
+  fullName: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.BufferManager
+- uid: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup
+  commentId: M:EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup
+  parent: EventStore.BufferManagement.Tests.has_buffer_manager_fixture
+  isExternal: false
+  name: Setup()
+  nameWithType: has_buffer_manager_fixture.Setup()
+  fullName: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup()
+  spec.csharp:
+  - uid: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup
+    name: Setup
+    nameWithType: has_buffer_manager_fixture.Setup
+    fullName: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup
+    name: Setup
+    nameWithType: has_buffer_manager_fixture.Setup
+    fullName: EventStore.BufferManagement.Tests.has_buffer_manager_fixture.Setup
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<when_writing_multiple_bytes>()
+  nameWithType: ProtobufExtensions.Serialize<when_writing_multiple_bytes>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.BufferManagement.Tests.when_writing_multiple_bytes>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of when_writing_multiple_bytes)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.BufferManagement.Tests.when_writing_multiple_bytes)()
+  name.vb: Serialize(Of when_writing_multiple_bytes)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<when_writing_multiple_bytes>
+    nameWithType: ProtobufExtensions.Serialize<when_writing_multiple_bytes>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.BufferManagement.Tests.when_writing_multiple_bytes>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of when_writing_multiple_bytes)
+    nameWithType: ProtobufExtensions.Serialize(Of when_writing_multiple_bytes)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.BufferManagement.Tests.when_writing_multiple_bytes)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<when_writing_multiple_bytes>()
+  nameWithType: ProtobufExtensions.SerializeToArray<when_writing_multiple_bytes>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.BufferManagement.Tests.when_writing_multiple_bytes>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of when_writing_multiple_bytes)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.BufferManagement.Tests.when_writing_multiple_bytes)()
+  name.vb: SerializeToArray(Of when_writing_multiple_bytes)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<when_writing_multiple_bytes>
+    nameWithType: ProtobufExtensions.SerializeToArray<when_writing_multiple_bytes>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.BufferManagement.Tests.when_writing_multiple_bytes>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of when_writing_multiple_bytes)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of when_writing_multiple_bytes)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.BufferManagement.Tests.when_writing_multiple_bytes)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception
+  isExternal: false
+  name: a_null_byte_array_throws_an_argumentnullexception
+  nameWithType: when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_null_byte_array_throws_an_argumentnullexception
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  isExternal: false
+  name: an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  nameWithType: when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.an_offset_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  isExternal: false
+  name: a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  nameWithType: when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_count_larger_than_the_buffer_throws_an_argumentoutofrangeexception
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception
+  isExternal: false
+  name: a_negative_count_throws_an_argumentoutofrangeexception
+  nameWithType: when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_count_throws_an_argumentoutofrangeexception
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception
+  isExternal: false
+  name: a_negative_offset_throws_an_argumentoutofrangeexception
+  nameWithType: when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.a_negative_offset_throws_an_argumentoutofrangeexception
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written
+  isExternal: false
+  name: length_is_updated_to_include_bytes_written
+  nameWithType: when_writing_multiple_bytes.length_is_updated_to_include_bytes_written
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.length_is_updated_to_include_bytes_written
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer
+  isExternal: false
+  name: data_is_written_to_the_internal_buffer
+  nameWithType: when_writing_multiple_bytes.data_is_written_to_the_internal_buffer
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.data_is_written_to_the_internal_buffer
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity
+  isExternal: false
+  name: pool_can_expand_capacity
+  nameWithType: when_writing_multiple_bytes.pool_can_expand_capacity
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.pool_can_expand_capacity
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset
+  isExternal: false
+  name: can_write_given_a_self_offset
+  nameWithType: when_writing_multiple_bytes.can_write_given_a_self_offset
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_self_offset
+- uid: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset*
+  commentId: Overload:EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset
+  isExternal: false
+  name: can_write_given_a_source_offset
+  nameWithType: when_writing_multiple_bytes.can_write_given_a_source_offset
+  fullName: EventStore.BufferManagement.Tests.when_writing_multiple_bytes.can_write_given_a_source_offset

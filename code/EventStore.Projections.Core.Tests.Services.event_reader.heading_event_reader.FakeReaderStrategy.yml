@@ -1,0 +1,978 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  commentId: T:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  id: FakeReaderStrategy
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  children:
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: FakeReaderStrategy
+  nameWithType: FakeReaderStrategy
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: FakeReaderStrategy
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 164
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: 'public class FakeReaderStrategy : object, IReaderStrategy'
+    content.vb: >-
+      Public Class FakeReaderStrategy
+
+          Inherits Object
+
+          Implements IReaderStrategy
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter
+  id: EventFilter
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  langs:
+  - csharp
+  - vb
+  name: EventFilter
+  nameWithType: FakeReaderStrategy.EventFilter
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventFilter
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 166
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public EventFilter EventFilter { get; set; }
+    parameters: []
+    return:
+      type: EventStore.Projections.Core.Services.Processing.EventFilter
+    content.vb: Public Property EventFilter As EventFilter
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IReaderStrategy.EventFilter
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable
+  id: IsReadingOrderRepeatable
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  langs:
+  - csharp
+  - vb
+  name: IsReadingOrderRepeatable
+  nameWithType: FakeReaderStrategy.IsReadingOrderRepeatable
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsReadingOrderRepeatable
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 167
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public bool IsReadingOrderRepeatable { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsReadingOrderRepeatable As Boolean
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IReaderStrategy.IsReadingOrderRepeatable
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger
+  id: PositionTagger
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  langs:
+  - csharp
+  - vb
+  name: PositionTagger
+  nameWithType: FakeReaderStrategy.PositionTagger
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PositionTagger
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 168
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public PositionTagger PositionTagger { get; set; }
+    parameters: []
+    return:
+      type: EventStore.Projections.Core.Services.Processing.PositionTagger
+    content.vb: Public Property PositionTagger As PositionTagger
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IReaderStrategy.PositionTagger
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId
+  id: EventReaderId
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  langs:
+  - csharp
+  - vb
+  name: EventReaderId
+  nameWithType: FakeReaderStrategy.EventReaderId
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventReaderId
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 170
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public Guid EventReaderId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property EventReaderId As Guid
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  id: CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  langs:
+  - csharp
+  - vb
+  name: CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable<Int32>)
+  nameWithType: FakeReaderStrategy.CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable<Int32>)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader(Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable<System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreatePausedEventReader
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 172
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public IEventReader CreatePausedEventReader(Guid eventReaderId, IPublisher publisher, IODispatcher ioDispatcher, CheckpointTag checkpointTag, bool stopOnEof, int ? stopAfterNEvents)
+    parameters:
+    - id: eventReaderId
+      type: Guid
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: checkpointTag
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: stopOnEof
+      type: System.Boolean
+    - id: stopAfterNEvents
+      type: System.Nullable{System.Int32}
+    return:
+      type: EventStore.Projections.Core.Services.Processing.IEventReader
+    content.vb: Public Function CreatePausedEventReader(eventReaderId As Guid, publisher As IPublisher, ioDispatcher As IODispatcher, checkpointTag As CheckpointTag, stopOnEof As Boolean, stopAfterNEvents As Integer?) As IEventReader
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader*
+  nameWithType.vb: FakeReaderStrategy.CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable(Of Int32))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader(Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable(Of System.Int32))
+  name.vb: CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable(Of Int32))
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  id: CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy
+  langs:
+  - csharp
+  - vb
+  name: CreateReaderSubscription(IPublisher, CheckpointTag, Guid, ReaderSubscriptionOptions)
+  nameWithType: FakeReaderStrategy.CreateReaderSubscription(IPublisher, CheckpointTag, Guid, ReaderSubscriptionOptions)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateReaderSubscription
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 177
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public IReaderSubscription CreateReaderSubscription(IPublisher publisher, CheckpointTag fromCheckpointTag, Guid subscriptionId, ReaderSubscriptionOptions readerSubscriptionOptions)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: fromCheckpointTag
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: subscriptionId
+      type: Guid
+    - id: readerSubscriptionOptions
+      type: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
+    return:
+      type: EventStore.Projections.Core.Services.Processing.IReaderSubscription
+    content.vb: Public Function CreateReaderSubscription(publisher As IPublisher, fromCheckpointTag As CheckpointTag, subscriptionId As Guid, readerSubscriptionOptions As ReaderSubscriptionOptions) As IReaderSubscription
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  commentId: N:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  isExternal: false
+  name: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  nameWithType: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  commentId: T:EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: IReaderStrategy
+  nameWithType: IReaderStrategy
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<FakeReaderStrategy>()
+  nameWithType: ProtobufExtensions.Serialize<FakeReaderStrategy>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of FakeReaderStrategy)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy)()
+  name.vb: Serialize(Of FakeReaderStrategy)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<FakeReaderStrategy>
+    nameWithType: ProtobufExtensions.Serialize<FakeReaderStrategy>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of FakeReaderStrategy)
+    nameWithType: ProtobufExtensions.Serialize(Of FakeReaderStrategy)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<FakeReaderStrategy>()
+  nameWithType: ProtobufExtensions.SerializeToArray<FakeReaderStrategy>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of FakeReaderStrategy)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy)()
+  name.vb: SerializeToArray(Of FakeReaderStrategy)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<FakeReaderStrategy>
+    nameWithType: ProtobufExtensions.SerializeToArray<FakeReaderStrategy>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of FakeReaderStrategy)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of FakeReaderStrategy)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter
+  isExternal: false
+  name: EventFilter
+  nameWithType: FakeReaderStrategy.EventFilter
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventFilter
+- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.EventFilter
+  commentId: P:EventStore.Projections.Core.Services.Processing.IReaderStrategy.EventFilter
+  parent: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  isExternal: false
+  name: EventFilter
+  nameWithType: IReaderStrategy.EventFilter
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.EventFilter
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter
+  commentId: T:EventStore.Projections.Core.Services.Processing.EventFilter
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventFilter
+  nameWithType: EventFilter
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable
+  isExternal: false
+  name: IsReadingOrderRepeatable
+  nameWithType: FakeReaderStrategy.IsReadingOrderRepeatable
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.IsReadingOrderRepeatable
+- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.IsReadingOrderRepeatable
+  commentId: P:EventStore.Projections.Core.Services.Processing.IReaderStrategy.IsReadingOrderRepeatable
+  parent: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  isExternal: false
+  name: IsReadingOrderRepeatable
+  nameWithType: IReaderStrategy.IsReadingOrderRepeatable
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.IsReadingOrderRepeatable
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger
+  isExternal: false
+  name: PositionTagger
+  nameWithType: FakeReaderStrategy.PositionTagger
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.PositionTagger
+- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.PositionTagger
+  commentId: P:EventStore.Projections.Core.Services.Processing.IReaderStrategy.PositionTagger
+  parent: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  isExternal: false
+  name: PositionTagger
+  nameWithType: IReaderStrategy.PositionTagger
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.PositionTagger
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger
+  commentId: T:EventStore.Projections.Core.Services.Processing.PositionTagger
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: PositionTagger
+  nameWithType: PositionTagger
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId
+  isExternal: false
+  name: EventReaderId
+  nameWithType: FakeReaderStrategy.EventReaderId
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.EventReaderId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader
+  isExternal: false
+  name: CreatePausedEventReader
+  nameWithType: FakeReaderStrategy.CreatePausedEventReader
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreatePausedEventReader
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: System.Nullable{System.Int32}
+  commentId: '!:System.Nullable{System.Int32}'
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.IEventReader
+  commentId: T:EventStore.Projections.Core.Services.Processing.IEventReader
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: IEventReader
+  nameWithType: IEventReader
+  fullName: EventStore.Projections.Core.Services.Processing.IEventReader
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription
+  isExternal: false
+  name: CreateReaderSubscription
+  nameWithType: FakeReaderStrategy.CreateReaderSubscription
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderStrategy.CreateReaderSubscription
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
+  commentId: T:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ReaderSubscriptionOptions
+  nameWithType: ReaderSubscriptionOptions
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
+- uid: EventStore.Projections.Core.Services.Processing.IReaderSubscription
+  commentId: T:EventStore.Projections.Core.Services.Processing.IReaderSubscription
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: IReaderSubscription
+  nameWithType: IReaderSubscription
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderSubscription

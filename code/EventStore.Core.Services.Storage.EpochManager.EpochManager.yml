@@ -1,0 +1,1518 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  commentId: T:EventStore.Core.Services.Storage.EpochManager.EpochManager
+  id: EpochManager
+  parent: EventStore.Core.Services.Storage.EpochManager
+  children:
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.ITransactionFileWriter,System.Int32,System.Int32,Func{EventStore.Core.TransactionLog.ITransactionFileReader})
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.CachedEpochCount
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch(System.Int32,System.Boolean)
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs(System.Int32)
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.Init
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch
+  langs:
+  - csharp
+  - vb
+  name: EpochManager
+  nameWithType: EpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EpochManager
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: 'public class EpochManager : object, IEpochManager'
+    content.vb: >-
+      Public Class EpochManager
+
+          Inherits Object
+
+          Implements IEpochManager
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Storage.EpochManager.EpochManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.CachedEpochCount
+  commentId: F:EventStore.Core.Services.Storage.EpochManager.EpochManager.CachedEpochCount
+  id: CachedEpochCount
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: CachedEpochCount
+  nameWithType: EpochManager.CachedEpochCount
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.CachedEpochCount
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CachedEpochCount
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public readonly int CachedEpochCount
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly CachedEpochCount As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber
+  commentId: P:EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber
+  id: LastEpochNumber
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: LastEpochNumber
+  nameWithType: EpochManager.LastEpochNumber
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LastEpochNumber
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public int LastEpochNumber { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property LastEpochNumber As Integer
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.LastEpochNumber
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.ITransactionFileWriter,System.Int32,System.Int32,Func{EventStore.Core.TransactionLog.ITransactionFileReader})
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.ITransactionFileWriter,System.Int32,System.Int32,Func{EventStore.Core.TransactionLog.ITransactionFileReader})
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.ITransactionFileWriter,System.Int32,System.Int32,Func{EventStore.Core.TransactionLog.ITransactionFileReader})'
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: EpochManager(IPublisher, Int32, ICheckpoint, ITransactionFileWriter, Int32, Int32, Func<ITransactionFileReader>)
+  nameWithType: EpochManager.EpochManager(IPublisher, Int32, ICheckpoint, ITransactionFileWriter, Int32, Int32, Func<ITransactionFileReader>)
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.EpochManager(EventStore.Core.Bus.IPublisher, System.Int32, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.ITransactionFileWriter, System.Int32, System.Int32, Func<EventStore.Core.TransactionLog.ITransactionFileReader>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 31
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public EpochManager(IPublisher bus, int cachedEpochCount, ICheckpoint checkpoint, ITransactionFileWriter writer, int initialReaderCount, int maxReaderCount, Func<ITransactionFileReader> readerFactory)
+    parameters:
+    - id: bus
+      type: EventStore.Core.Bus.IPublisher
+    - id: cachedEpochCount
+      type: System.Int32
+    - id: checkpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    - id: writer
+      type: EventStore.Core.TransactionLog.ITransactionFileWriter
+    - id: initialReaderCount
+      type: System.Int32
+    - id: maxReaderCount
+      type: System.Int32
+    - id: readerFactory
+      type: Func{EventStore.Core.TransactionLog.ITransactionFileReader}
+    content.vb: Public Sub New(bus As IPublisher, cachedEpochCount As Integer, checkpoint As ICheckpoint, writer As ITransactionFileWriter, initialReaderCount As Integer, maxReaderCount As Integer, readerFactory As Func(Of ITransactionFileReader))
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.#ctor*
+  nameWithType.vb: EpochManager.EpochManager(IPublisher, Int32, ICheckpoint, ITransactionFileWriter, Int32, Int32, Func(Of ITransactionFileReader))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Services.Storage.EpochManager.EpochManager.EpochManager(EventStore.Core.Bus.IPublisher, System.Int32, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.ITransactionFileWriter, System.Int32, System.Int32, Func(Of EventStore.Core.TransactionLog.ITransactionFileReader))
+  name.vb: EpochManager(IPublisher, Int32, ICheckpoint, ITransactionFileWriter, Int32, Int32, Func(Of ITransactionFileReader))
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.Init
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.Init
+  id: Init
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: EpochManager.Init()
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.Init()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Init
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 56
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public void Init()
+    content.vb: Public Sub Init
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.Init*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch
+  id: GetLastEpoch
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: GetLastEpoch()
+  nameWithType: EpochManager.GetLastEpoch()
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetLastEpoch
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 61
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public EpochRecord GetLastEpoch()
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    content.vb: Public Function GetLastEpoch As EpochRecord
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs(System.Int32)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs(System.Int32)
+  id: GetLastEpochs(System.Int32)
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: GetLastEpochs(Int32)
+  nameWithType: EpochManager.GetLastEpochs(Int32)
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetLastEpochs
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 122
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public EpochRecord[] GetLastEpochs(int maxCount)
+    parameters:
+    - id: maxCount
+      type: System.Int32
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.EpochRecord[]
+    content.vb: Public Function GetLastEpochs(maxCount As Integer) As EpochRecord()
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch(System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch(System.Int32,System.Boolean)
+  id: GetEpoch(System.Int32,System.Boolean)
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: GetEpoch(Int32, Boolean)
+  nameWithType: EpochManager.GetEpoch(Int32, Boolean)
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch(System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetEpoch
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 138
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public EpochRecord GetEpoch(int epochNumber, bool throwIfNotFound)
+    parameters:
+    - id: epochNumber
+      type: System.Int32
+    - id: throwIfNotFound
+      type: System.Boolean
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    content.vb: Public Function GetEpoch(epochNumber As Integer, throwIfNotFound As Boolean) As EpochRecord
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch(System.Int32,System.Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+  id: IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: IsCorrectEpochAt(Int64, Int32, Guid)
+  nameWithType: EpochManager.IsCorrectEpochAt(Int64, Int32, Guid)
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt(System.Int64, System.Int32, Guid)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsCorrectEpochAt
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 159
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public bool IsCorrectEpochAt(long epochPosition, int epochNumber, Guid epochId)
+    parameters:
+    - id: epochPosition
+      type: System.Int64
+    - id: epochNumber
+      type: System.Int32
+    - id: epochId
+      type: Guid
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsCorrectEpochAt(epochPosition As Long, epochNumber As Integer, epochId As Guid) As Boolean
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch
+  id: WriteNewEpoch
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: WriteNewEpoch()
+  nameWithType: EpochManager.WriteNewEpoch()
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteNewEpoch
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 197
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public void WriteNewEpoch()
+    content.vb: Public Sub WriteNewEpoch
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  id: SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: SetLastEpoch(EpochRecord)
+  nameWithType: EpochManager.SetLastEpoch(EpochRecord)
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SetLastEpoch
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 239
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public void SetLastEpoch(EpochRecord epoch)
+    parameters:
+    - id: epoch
+      type: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    content.vb: Public Sub SetLastEpoch(epoch As EpochRecord)
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+  id: GetEpochWithAllEpochs(System.Int32,System.Boolean)
+  parent: EventStore.Core.Services.Storage.EpochManager.EpochManager
+  langs:
+  - csharp
+  - vb
+  name: GetEpochWithAllEpochs(Int32, Boolean)
+  nameWithType: EpochManager.GetEpochWithAllEpochs(Int32, Boolean)
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs(System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetEpochWithAllEpochs
+    path: ../EventStore/src/EventStore.Core/Services/Storage/EpochManager/EpochManager.cs
+    startLine: 285
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.EpochManager
+  syntax:
+    content: public EpochRecord GetEpochWithAllEpochs(int epochNumber, bool throwIfNotFound)
+    parameters:
+    - id: epochNumber
+      type: System.Int32
+    - id: throwIfNotFound
+      type: System.Boolean
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    content.vb: Public Function GetEpochWithAllEpochs(epochNumber As Integer, throwIfNotFound As Boolean) As EpochRecord
+  overload: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs*
+  implements:
+  - EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.Storage.EpochManager
+  commentId: N:EventStore.Core.Services.Storage.EpochManager
+  isExternal: false
+  name: EventStore.Core.Services.Storage.EpochManager
+  nameWithType: EventStore.Core.Services.Storage.EpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  commentId: T:EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  parent: EventStore.Core.Services.Storage.EpochManager
+  isExternal: false
+  name: IEpochManager
+  nameWithType: IEpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<EpochManager>()
+  nameWithType: ProtobufExtensions.Serialize<EpochManager>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.EpochManager.EpochManager>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of EpochManager)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.EpochManager.EpochManager)()
+  name.vb: Serialize(Of EpochManager)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<EpochManager>
+    nameWithType: ProtobufExtensions.Serialize<EpochManager>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Storage.EpochManager.EpochManager>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of EpochManager)
+    nameWithType: ProtobufExtensions.Serialize(Of EpochManager)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Storage.EpochManager.EpochManager)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<EpochManager>()
+  nameWithType: ProtobufExtensions.SerializeToArray<EpochManager>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.EpochManager.EpochManager>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of EpochManager)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.EpochManager.EpochManager)()
+  name.vb: SerializeToArray(Of EpochManager)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<EpochManager>
+    nameWithType: ProtobufExtensions.SerializeToArray<EpochManager>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Storage.EpochManager.EpochManager>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of EpochManager)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of EpochManager)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Storage.EpochManager.EpochManager)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber
+  isExternal: false
+  name: LastEpochNumber
+  nameWithType: EpochManager.LastEpochNumber
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.LastEpochNumber
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.LastEpochNumber
+  commentId: P:EventStore.Core.Services.Storage.EpochManager.IEpochManager.LastEpochNumber
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: false
+  name: LastEpochNumber
+  nameWithType: IEpochManager.LastEpochNumber
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.LastEpochNumber
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.#ctor*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.#ctor
+  isExternal: false
+  name: EpochManager
+  nameWithType: EpochManager.EpochManager
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.EpochManager
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: EventStore.Core.TransactionLog.ITransactionFileWriter
+  commentId: T:EventStore.Core.TransactionLog.ITransactionFileWriter
+  parent: EventStore.Core.TransactionLog
+  isExternal: false
+  name: ITransactionFileWriter
+  nameWithType: ITransactionFileWriter
+  fullName: EventStore.Core.TransactionLog.ITransactionFileWriter
+- uid: Func{EventStore.Core.TransactionLog.ITransactionFileReader}
+  commentId: '!:Func{EventStore.Core.TransactionLog.ITransactionFileReader}'
+  definition: Func`1
+  name: Func<ITransactionFileReader>
+  nameWithType: Func<ITransactionFileReader>
+  fullName: Func<EventStore.Core.TransactionLog.ITransactionFileReader>
+  nameWithType.vb: Func(Of ITransactionFileReader)
+  fullName.vb: Func(Of EventStore.Core.TransactionLog.ITransactionFileReader)
+  name.vb: Func(Of ITransactionFileReader)
+  spec.csharp:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.TransactionLog.ITransactionFileReader
+    name: ITransactionFileReader
+    nameWithType: ITransactionFileReader
+    fullName: EventStore.Core.TransactionLog.ITransactionFileReader
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.TransactionLog.ITransactionFileReader
+    name: ITransactionFileReader
+    nameWithType: ITransactionFileReader
+    fullName: EventStore.Core.TransactionLog.ITransactionFileReader
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: EventStore.Core.TransactionLog
+  commentId: N:EventStore.Core.TransactionLog
+  isExternal: false
+  name: EventStore.Core.TransactionLog
+  nameWithType: EventStore.Core.TransactionLog
+  fullName: EventStore.Core.TransactionLog
+- uid: Func`1
+  isExternal: true
+  name: Func<>
+  nameWithType: Func<>
+  fullName: Func<>
+  nameWithType.vb: Func(Of )
+  fullName.vb: Func(Of )
+  name.vb: Func(Of )
+  spec.csharp:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`1
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.Init*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.Init
+  isExternal: false
+  name: Init
+  nameWithType: EpochManager.Init
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.Init
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: false
+  name: Init()
+  nameWithType: IEpochManager.Init()
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init
+    name: Init
+    nameWithType: IEpochManager.Init
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init
+    name: Init
+    nameWithType: IEpochManager.Init
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch
+  isExternal: false
+  name: GetLastEpoch
+  nameWithType: EpochManager.GetLastEpoch
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpoch
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: false
+  name: GetLastEpoch()
+  nameWithType: IEpochManager.GetLastEpoch()
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch
+    name: GetLastEpoch
+    nameWithType: IEpochManager.GetLastEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch
+    name: GetLastEpoch
+    nameWithType: IEpochManager.GetLastEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.EpochRecord
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: EpochRecord
+  nameWithType: EpochRecord
+  fullName: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+- uid: EventStore.Core.TransactionLog.LogRecords
+  commentId: N:EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: EventStore.Core.TransactionLog.LogRecords
+  nameWithType: EventStore.Core.TransactionLog.LogRecords
+  fullName: EventStore.Core.TransactionLog.LogRecords
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs
+  isExternal: false
+  name: GetLastEpochs
+  nameWithType: EpochManager.GetLastEpochs
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetLastEpochs
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs(System.Int32)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs(System.Int32)
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: true
+  name: GetLastEpochs(Int32)
+  nameWithType: IEpochManager.GetLastEpochs(Int32)
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs(System.Int32)
+    name: GetLastEpochs
+    nameWithType: IEpochManager.GetLastEpochs
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs(System.Int32)
+    name: GetLastEpochs
+    nameWithType: IEpochManager.GetLastEpochs
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetLastEpochs
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.LogRecords.EpochRecord[]
+  name: EpochRecord[]
+  nameWithType: EpochRecord[]
+  fullName: EventStore.Core.TransactionLog.LogRecords.EpochRecord[]
+  nameWithType.vb: EpochRecord()
+  fullName.vb: EventStore.Core.TransactionLog.LogRecords.EpochRecord()
+  name.vb: EpochRecord()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    name: EpochRecord
+    nameWithType: EpochRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    name: EpochRecord
+    nameWithType: EpochRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch
+  isExternal: false
+  name: GetEpoch
+  nameWithType: EpochManager.GetEpoch
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpoch
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch(System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch(System.Int32,System.Boolean)
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: true
+  name: GetEpoch(Int32, Boolean)
+  nameWithType: IEpochManager.GetEpoch(Int32, Boolean)
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch(System.Int32, System.Boolean)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch(System.Int32,System.Boolean)
+    name: GetEpoch
+    nameWithType: IEpochManager.GetEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch(System.Int32,System.Boolean)
+    name: GetEpoch
+    nameWithType: IEpochManager.GetEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt
+  isExternal: false
+  name: IsCorrectEpochAt
+  nameWithType: EpochManager.IsCorrectEpochAt
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.IsCorrectEpochAt
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: true
+  name: IsCorrectEpochAt(Int64, Int32, Guid)
+  nameWithType: IEpochManager.IsCorrectEpochAt(Int64, Int32, Guid)
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt(System.Int64, System.Int32, Guid)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+    name: IsCorrectEpochAt
+    nameWithType: IEpochManager.IsCorrectEpochAt
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt(System.Int64,System.Int32,Guid)
+    name: IsCorrectEpochAt
+    nameWithType: IEpochManager.IsCorrectEpochAt
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.IsCorrectEpochAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch
+  isExternal: false
+  name: WriteNewEpoch
+  nameWithType: EpochManager.WriteNewEpoch
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.WriteNewEpoch
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: false
+  name: WriteNewEpoch()
+  nameWithType: IEpochManager.WriteNewEpoch()
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch
+    name: WriteNewEpoch
+    nameWithType: IEpochManager.WriteNewEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch
+    name: WriteNewEpoch
+    nameWithType: IEpochManager.WriteNewEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.WriteNewEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch
+  isExternal: false
+  name: SetLastEpoch
+  nameWithType: EpochManager.SetLastEpoch
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.SetLastEpoch
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: false
+  name: SetLastEpoch(EpochRecord)
+  nameWithType: IEpochManager.SetLastEpoch(EpochRecord)
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+    name: SetLastEpoch
+    nameWithType: IEpochManager.SetLastEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    name: EpochRecord
+    nameWithType: EpochRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch(EventStore.Core.TransactionLog.LogRecords.EpochRecord)
+    name: SetLastEpoch
+    nameWithType: IEpochManager.SetLastEpoch
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.SetLastEpoch
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+    name: EpochRecord
+    nameWithType: EpochRecord
+    fullName: EventStore.Core.TransactionLog.LogRecords.EpochRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs*
+  commentId: Overload:EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs
+  isExternal: false
+  name: GetEpochWithAllEpochs
+  nameWithType: EpochManager.GetEpochWithAllEpochs
+  fullName: EventStore.Core.Services.Storage.EpochManager.EpochManager.GetEpochWithAllEpochs
+- uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+  parent: EventStore.Core.Services.Storage.EpochManager.IEpochManager
+  isExternal: true
+  name: GetEpochWithAllEpochs(Int32, Boolean)
+  nameWithType: IEpochManager.GetEpochWithAllEpochs(Int32, Boolean)
+  fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs(System.Int32, System.Boolean)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+    name: GetEpochWithAllEpochs
+    nameWithType: IEpochManager.GetEpochWithAllEpochs
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs(System.Int32,System.Boolean)
+    name: GetEpochWithAllEpochs
+    nameWithType: IEpochManager.GetEpochWithAllEpochs
+    fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager.GetEpochWithAllEpochs
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

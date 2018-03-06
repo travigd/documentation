@@ -1,0 +1,1554 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.ConnectionSettings
+  commentId: T:EventStore.ClientAPI.ConnectionSettings
+  id: ConnectionSettings
+  parent: EventStore.ClientAPI
+  children:
+  - EventStore.ClientAPI.ConnectionSettings.ClientConnectionTimeout
+  - EventStore.ClientAPI.ConnectionSettings.ClusterDns
+  - EventStore.ClientAPI.ConnectionSettings.Create
+  - EventStore.ClientAPI.ConnectionSettings.Default
+  - EventStore.ClientAPI.ConnectionSettings.DefaultUserCredentials
+  - EventStore.ClientAPI.ConnectionSettings.ExternalGossipPort
+  - EventStore.ClientAPI.ConnectionSettings.FailOnNoServerResponse
+  - EventStore.ClientAPI.ConnectionSettings.GossipSeeds
+  - EventStore.ClientAPI.ConnectionSettings.GossipTimeout
+  - EventStore.ClientAPI.ConnectionSettings.HeartbeatInterval
+  - EventStore.ClientAPI.ConnectionSettings.HeartbeatTimeout
+  - EventStore.ClientAPI.ConnectionSettings.Log
+  - EventStore.ClientAPI.ConnectionSettings.MaxConcurrentItems
+  - EventStore.ClientAPI.ConnectionSettings.MaxDiscoverAttempts
+  - EventStore.ClientAPI.ConnectionSettings.MaxQueueSize
+  - EventStore.ClientAPI.ConnectionSettings.MaxReconnections
+  - EventStore.ClientAPI.ConnectionSettings.MaxRetries
+  - EventStore.ClientAPI.ConnectionSettings.OperationTimeout
+  - EventStore.ClientAPI.ConnectionSettings.OperationTimeoutCheckPeriod
+  - EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
+  - EventStore.ClientAPI.ConnectionSettings.ReconnectionDelay
+  - EventStore.ClientAPI.ConnectionSettings.RequireMaster
+  - EventStore.ClientAPI.ConnectionSettings.TargetHost
+  - EventStore.ClientAPI.ConnectionSettings.UseSslConnection
+  - EventStore.ClientAPI.ConnectionSettings.ValidateServer
+  - EventStore.ClientAPI.ConnectionSettings.VerboseLogging
+  langs:
+  - csharp
+  - vb
+  name: ConnectionSettings
+  nameWithType: ConnectionSettings
+  fullName: EventStore.ClientAPI.ConnectionSettings
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ConnectionSettings
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 12
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nA <xref href=\"EventStore.ClientAPI.ConnectionSettings\" data-throw-if-not-resolved=\"false\"></xref> object is an immutable representation of the settings for an\n<xref href=\"EventStore.ClientAPI.IEventStoreConnection\" data-throw-if-not-resolved=\"false\"></xref>. You can build a <xref href=\"EventStore.ClientAPI.ConnectionSettings\" data-throw-if-not-resolved=\"false\"></xref> object using\na <xref href=\"EventStore.ClientAPI.ConnectionSettingsBuilder\" data-throw-if-not-resolved=\"false\"></xref>, either via the <xref href=\"EventStore.ClientAPI.ConnectionSettings.Create\" data-throw-if-not-resolved=\"false\"></xref> method, or via\nthe constructor of <xref href=\"EventStore.ClientAPI.ConnectionSettingsBuilder\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public sealed class ConnectionSettings : object'
+    content.vb: >-
+      Public NotInheritable Class ConnectionSettings
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.ClientAPI.ConnectionSettings.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.ClientAPI.ConnectionSettings.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: EventStore.ClientAPI.ConnectionSettings.Default
+  commentId: P:EventStore.ClientAPI.ConnectionSettings.Default
+  id: Default
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: ConnectionSettings.Default
+  fullName: EventStore.ClientAPI.ConnectionSettings.Default
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Default
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 19
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe default <xref href=\"EventStore.ClientAPI.ConnectionSettings\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static ConnectionSettings Default { get; }
+    parameters: []
+    return:
+      type: EventStore.ClientAPI.ConnectionSettings
+    content.vb: Public Shared ReadOnly Property Default As ConnectionSettings
+  overload: EventStore.ClientAPI.ConnectionSettings.Default*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.Create
+  commentId: M:EventStore.ClientAPI.ConnectionSettings.Create
+  id: Create
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: Create()
+  nameWithType: ConnectionSettings.Create()
+  fullName: EventStore.ClientAPI.ConnectionSettings.Create()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Create
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 25
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCreates a new set of <xref href=\"EventStore.ClientAPI.ConnectionSettings\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static ConnectionSettingsBuilder Create()
+    return:
+      type: EventStore.ClientAPI.ConnectionSettingsBuilder
+      description: A <xref href="EventStore.ClientAPI.ConnectionSettingsBuilder" data-throw-if-not-resolved="false"></xref> you can use to build up a <xref href="EventStore.ClientAPI.ConnectionSettings" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function Create As ConnectionSettingsBuilder
+  overload: EventStore.ClientAPI.ConnectionSettings.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.ConnectionSettings.Log
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.Log
+  id: Log
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: Log
+  nameWithType: ConnectionSettings.Log
+  fullName: EventStore.ClientAPI.ConnectionSettings.Log
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Log
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 33
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe <xref href=\"EventStore.ClientAPI.ILogger\" data-throw-if-not-resolved=\"false\"></xref> that this connection will use.\n"
+  example: []
+  syntax:
+    content: public readonly ILogger Log
+    return:
+      type: EventStore.ClientAPI.ILogger
+    content.vb: Public ReadOnly Log As ILogger
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.VerboseLogging
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.VerboseLogging
+  id: VerboseLogging
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: VerboseLogging
+  nameWithType: ConnectionSettings.VerboseLogging
+  fullName: EventStore.ClientAPI.ConnectionSettings.VerboseLogging
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: VerboseLogging
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 37
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to use excessive logging of <xref href=\"EventStore.ClientAPI.EventStoreConnection\" data-throw-if-not-resolved=\"false\"></xref> internal logic.\n"
+  example: []
+  syntax:
+    content: public readonly bool VerboseLogging
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly VerboseLogging As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.MaxQueueSize
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.MaxQueueSize
+  id: MaxQueueSize
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxQueueSize
+  nameWithType: ConnectionSettings.MaxQueueSize
+  fullName: EventStore.ClientAPI.ConnectionSettings.MaxQueueSize
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MaxQueueSize
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 41
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe maximum number of outstanding items allowed in the queue.\n"
+  example: []
+  syntax:
+    content: public readonly int MaxQueueSize
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly MaxQueueSize As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.MaxConcurrentItems
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.MaxConcurrentItems
+  id: MaxConcurrentItems
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxConcurrentItems
+  nameWithType: ConnectionSettings.MaxConcurrentItems
+  fullName: EventStore.ClientAPI.ConnectionSettings.MaxConcurrentItems
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MaxConcurrentItems
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 45
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe maximum number of allowed asynchronous operations to be in process.\n"
+  example: []
+  syntax:
+    content: public readonly int MaxConcurrentItems
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly MaxConcurrentItems As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.MaxRetries
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.MaxRetries
+  id: MaxRetries
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxRetries
+  nameWithType: ConnectionSettings.MaxRetries
+  fullName: EventStore.ClientAPI.ConnectionSettings.MaxRetries
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MaxRetries
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 49
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe maximum number of retry attempts.\n"
+  example: []
+  syntax:
+    content: public readonly int MaxRetries
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly MaxRetries As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.MaxReconnections
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.MaxReconnections
+  id: MaxReconnections
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxReconnections
+  nameWithType: ConnectionSettings.MaxReconnections
+  fullName: EventStore.ClientAPI.ConnectionSettings.MaxReconnections
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MaxReconnections
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 53
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe maximum number of times to allow for reconnection.\n"
+  example: []
+  syntax:
+    content: public readonly int MaxReconnections
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly MaxReconnections As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.RequireMaster
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.RequireMaster
+  id: RequireMaster
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: RequireMaster
+  nameWithType: ConnectionSettings.RequireMaster
+  fullName: EventStore.ClientAPI.ConnectionSettings.RequireMaster
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RequireMaster
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 57
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to require EventStore to refuse serving read or write request if it is not master.\n"
+  example: []
+  syntax:
+    content: public readonly bool RequireMaster
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly RequireMaster As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.ReconnectionDelay
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.ReconnectionDelay
+  id: ReconnectionDelay
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: ReconnectionDelay
+  nameWithType: ConnectionSettings.ReconnectionDelay
+  fullName: EventStore.ClientAPI.ConnectionSettings.ReconnectionDelay
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReconnectionDelay
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 61
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe amount of time to delay before attempting to reconnect.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan ReconnectionDelay
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly ReconnectionDelay As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.OperationTimeout
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.OperationTimeout
+  id: OperationTimeout
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: OperationTimeout
+  nameWithType: ConnectionSettings.OperationTimeout
+  fullName: EventStore.ClientAPI.ConnectionSettings.OperationTimeout
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OperationTimeout
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 65
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe amount of time before an operation is considered to have timed out.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan OperationTimeout
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly OperationTimeout As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.OperationTimeoutCheckPeriod
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.OperationTimeoutCheckPeriod
+  id: OperationTimeoutCheckPeriod
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: OperationTimeoutCheckPeriod
+  nameWithType: ConnectionSettings.OperationTimeoutCheckPeriod
+  fullName: EventStore.ClientAPI.ConnectionSettings.OperationTimeoutCheckPeriod
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OperationTimeoutCheckPeriod
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 69
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe amount of time that timeouts are checked in the system.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan OperationTimeoutCheckPeriod
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly OperationTimeoutCheckPeriod As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.DefaultUserCredentials
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.DefaultUserCredentials
+  id: DefaultUserCredentials
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: DefaultUserCredentials
+  nameWithType: ConnectionSettings.DefaultUserCredentials
+  fullName: EventStore.ClientAPI.ConnectionSettings.DefaultUserCredentials
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: DefaultUserCredentials
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 73
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe <xref href=\"EventStore.ClientAPI.SystemData.UserCredentials\" data-throw-if-not-resolved=\"false\"></xref> to use for operations where other <xref href=\"EventStore.ClientAPI.SystemData.UserCredentials\" data-throw-if-not-resolved=\"false\"></xref> are not explicitly supplied.\n"
+  example: []
+  syntax:
+    content: public readonly UserCredentials DefaultUserCredentials
+    return:
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+    content.vb: Public ReadOnly DefaultUserCredentials As UserCredentials
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.UseSslConnection
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.UseSslConnection
+  id: UseSslConnection
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: UseSslConnection
+  nameWithType: ConnectionSettings.UseSslConnection
+  fullName: EventStore.ClientAPI.ConnectionSettings.UseSslConnection
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: UseSslConnection
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 77
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether the connection is encrypted using SSL.\n"
+  example: []
+  syntax:
+    content: public readonly bool UseSslConnection
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly UseSslConnection As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.TargetHost
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.TargetHost
+  id: TargetHost
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: TargetHost
+  nameWithType: ConnectionSettings.TargetHost
+  fullName: EventStore.ClientAPI.ConnectionSettings.TargetHost
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TargetHost
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 81
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe host name of the server expected on the SSL certificate.\n"
+  example: []
+  syntax:
+    content: public readonly string TargetHost
+    return:
+      type: System.String
+    content.vb: Public ReadOnly TargetHost As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.ValidateServer
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.ValidateServer
+  id: ValidateServer
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: ValidateServer
+  nameWithType: ConnectionSettings.ValidateServer
+  fullName: EventStore.ClientAPI.ConnectionSettings.ValidateServer
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ValidateServer
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 85
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to validate the server SSL certificate.\n"
+  example: []
+  syntax:
+    content: public readonly bool ValidateServer
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly ValidateServer As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.FailOnNoServerResponse
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.FailOnNoServerResponse
+  id: FailOnNoServerResponse
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: FailOnNoServerResponse
+  nameWithType: ConnectionSettings.FailOnNoServerResponse
+  fullName: EventStore.ClientAPI.ConnectionSettings.FailOnNoServerResponse
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: FailOnNoServerResponse
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 90
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to raise an error if no response is received from the server for an operation.\n"
+  example: []
+  syntax:
+    content: public readonly bool FailOnNoServerResponse
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly FailOnNoServerResponse As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.HeartbeatInterval
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.HeartbeatInterval
+  id: HeartbeatInterval
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: HeartbeatInterval
+  nameWithType: ConnectionSettings.HeartbeatInterval
+  fullName: EventStore.ClientAPI.ConnectionSettings.HeartbeatInterval
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: HeartbeatInterval
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 94
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe interval at which to send heartbeat messages.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan HeartbeatInterval
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly HeartbeatInterval As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.HeartbeatTimeout
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.HeartbeatTimeout
+  id: HeartbeatTimeout
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: HeartbeatTimeout
+  nameWithType: ConnectionSettings.HeartbeatTimeout
+  fullName: EventStore.ClientAPI.ConnectionSettings.HeartbeatTimeout
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: HeartbeatTimeout
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 98
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe interval after which an unacknowledged heartbeat will cause the connection to be considered faulted and disconnect.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan HeartbeatTimeout
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly HeartbeatTimeout As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.ClusterDns
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.ClusterDns
+  id: ClusterDns
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: ClusterDns
+  nameWithType: ConnectionSettings.ClusterDns
+  fullName: EventStore.ClientAPI.ConnectionSettings.ClusterDns
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ClusterDns
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 103
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe DNS name to use for discovering endpoints.\n"
+  example: []
+  syntax:
+    content: public readonly string ClusterDns
+    return:
+      type: System.String
+    content.vb: Public ReadOnly ClusterDns As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.MaxDiscoverAttempts
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.MaxDiscoverAttempts
+  id: MaxDiscoverAttempts
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxDiscoverAttempts
+  nameWithType: ConnectionSettings.MaxDiscoverAttempts
+  fullName: EventStore.ClientAPI.ConnectionSettings.MaxDiscoverAttempts
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MaxDiscoverAttempts
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 107
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe maximum number of attempts for discovering endpoints.\n"
+  example: []
+  syntax:
+    content: public readonly int MaxDiscoverAttempts
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly MaxDiscoverAttempts As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.ExternalGossipPort
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.ExternalGossipPort
+  id: ExternalGossipPort
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: ExternalGossipPort
+  nameWithType: ConnectionSettings.ExternalGossipPort
+  fullName: EventStore.ClientAPI.ConnectionSettings.ExternalGossipPort
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ExternalGossipPort
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 111
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe well-known endpoint on which cluster managers are running.\n"
+  example: []
+  syntax:
+    content: public readonly int ExternalGossipPort
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly ExternalGossipPort As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.GossipSeeds
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.GossipSeeds
+  id: GossipSeeds
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: GossipSeeds
+  nameWithType: ConnectionSettings.GossipSeeds
+  fullName: EventStore.ClientAPI.ConnectionSettings.GossipSeeds
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GossipSeeds
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 116
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nEndpoints for seeding gossip if not using DNS.\n"
+  example: []
+  syntax:
+    content: public readonly GossipSeed[] GossipSeeds
+    return:
+      type: EventStore.ClientAPI.GossipSeed[]
+    content.vb: Public ReadOnly GossipSeeds As GossipSeed()
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.GossipTimeout
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.GossipTimeout
+  id: GossipTimeout
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: GossipTimeout
+  nameWithType: ConnectionSettings.GossipTimeout
+  fullName: EventStore.ClientAPI.ConnectionSettings.GossipTimeout
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GossipTimeout
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 121
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nTimeout for cluster gossip.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan GossipTimeout
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly GossipTimeout As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
+  id: PreferRandomNode
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: PreferRandomNode
+  nameWithType: ConnectionSettings.PreferRandomNode
+  fullName: EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PreferRandomNode
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 126
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to randomly choose a node that&apos;s alive from the known nodes. \n"
+  example: []
+  syntax:
+    content: public readonly bool PreferRandomNode
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly PreferRandomNode As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.ClientConnectionTimeout
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.ClientConnectionTimeout
+  id: ClientConnectionTimeout
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: ClientConnectionTimeout
+  nameWithType: ConnectionSettings.ClientConnectionTimeout
+  fullName: EventStore.ClientAPI.ConnectionSettings.ClientConnectionTimeout
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ClientConnectionTimeout
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 131
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe interval after which a client will time out during connection.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan ClientConnectionTimeout
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly ClientConnectionTimeout As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: EventStore.ClientAPI.ConnectionSettings
+  commentId: T:EventStore.ClientAPI.ConnectionSettings
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: ConnectionSettings
+  nameWithType: ConnectionSettings
+  fullName: EventStore.ClientAPI.ConnectionSettings
+- uid: EventStore.ClientAPI.IEventStoreConnection
+  commentId: T:EventStore.ClientAPI.IEventStoreConnection
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: IEventStoreConnection
+  nameWithType: IEventStoreConnection
+  fullName: EventStore.ClientAPI.IEventStoreConnection
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder
+  commentId: T:EventStore.ClientAPI.ConnectionSettingsBuilder
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: ConnectionSettingsBuilder
+  nameWithType: ConnectionSettingsBuilder
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder
+- uid: EventStore.ClientAPI.ConnectionSettings.Create
+  commentId: M:EventStore.ClientAPI.ConnectionSettings.Create
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  isExternal: false
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.ConnectionSettings.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ConnectionSettings>()
+  nameWithType: ProtobufExtensions.Serialize<ConnectionSettings>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.ConnectionSettings>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ConnectionSettings)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.ConnectionSettings)()
+  name.vb: Serialize(Of ConnectionSettings)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ConnectionSettings>
+    nameWithType: ProtobufExtensions.Serialize<ConnectionSettings>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.ConnectionSettings>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ConnectionSettings)
+    nameWithType: ProtobufExtensions.Serialize(Of ConnectionSettings)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.ConnectionSettings)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.ConnectionSettings.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ConnectionSettings>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ConnectionSettings>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.ConnectionSettings>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ConnectionSettings)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.ConnectionSettings)()
+  name.vb: SerializeToArray(Of ConnectionSettings)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ConnectionSettings>
+    nameWithType: ProtobufExtensions.SerializeToArray<ConnectionSettings>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.ConnectionSettings>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ConnectionSettings)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ConnectionSettings)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.ConnectionSettings)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.ClientAPI.ConnectionSettings.Default*
+  commentId: Overload:EventStore.ClientAPI.ConnectionSettings.Default
+  isExternal: false
+  name: Default
+  nameWithType: ConnectionSettings.Default
+  fullName: EventStore.ClientAPI.ConnectionSettings.Default
+- uid: EventStore.ClientAPI.ConnectionSettings.Create*
+  commentId: Overload:EventStore.ClientAPI.ConnectionSettings.Create
+  isExternal: false
+  name: Create
+  nameWithType: ConnectionSettings.Create
+  fullName: EventStore.ClientAPI.ConnectionSettings.Create
+- uid: EventStore.ClientAPI.ILogger
+  commentId: T:EventStore.ClientAPI.ILogger
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.ClientAPI.ILogger
+- uid: EventStore.ClientAPI.EventStoreConnection
+  commentId: T:EventStore.ClientAPI.EventStoreConnection
+  isExternal: false
+  name: EventStoreConnection
+  nameWithType: EventStoreConnection
+  fullName: EventStore.ClientAPI.EventStoreConnection
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.ClientAPI.SystemData.UserCredentials
+  commentId: T:EventStore.ClientAPI.SystemData.UserCredentials
+  parent: EventStore.ClientAPI.SystemData
+  isExternal: false
+  name: UserCredentials
+  nameWithType: UserCredentials
+  fullName: EventStore.ClientAPI.SystemData.UserCredentials
+- uid: EventStore.ClientAPI.SystemData
+  commentId: N:EventStore.ClientAPI.SystemData
+  isExternal: false
+  name: EventStore.ClientAPI.SystemData
+  nameWithType: EventStore.ClientAPI.SystemData
+  fullName: EventStore.ClientAPI.SystemData
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.ClientAPI.GossipSeed[]
+  name: GossipSeed[]
+  nameWithType: GossipSeed[]
+  fullName: EventStore.ClientAPI.GossipSeed[]
+  nameWithType.vb: GossipSeed()
+  fullName.vb: EventStore.ClientAPI.GossipSeed()
+  name.vb: GossipSeed()
+  spec.csharp:
+  - uid: EventStore.ClientAPI.GossipSeed
+    name: GossipSeed
+    nameWithType: GossipSeed
+    fullName: EventStore.ClientAPI.GossipSeed
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.ClientAPI.GossipSeed
+    name: GossipSeed
+    nameWithType: GossipSeed
+    fullName: EventStore.ClientAPI.GossipSeed
+  - name: ()
+    nameWithType: ()
+    fullName: ()

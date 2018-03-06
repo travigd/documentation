@@ -1,0 +1,1074 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Bus.IQueuedHandler
+  commentId: T:EventStore.Core.Bus.IQueuedHandler
+  id: IQueuedHandler
+  parent: EventStore.Core.Bus
+  children:
+  - EventStore.Core.Bus.IQueuedHandler.GetStatistics
+  - EventStore.Core.Bus.IQueuedHandler.Name
+  - EventStore.Core.Bus.IQueuedHandler.RequestStop
+  - EventStore.Core.Bus.IQueuedHandler.Start
+  - EventStore.Core.Bus.IQueuedHandler.Stop
+  langs:
+  - csharp
+  - vb
+  name: IQueuedHandler
+  nameWithType: IQueuedHandler
+  fullName: EventStore.Core.Bus.IQueuedHandler
+  type: Interface
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/IQueuedHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IQueuedHandler
+    path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: 'public interface IQueuedHandler : IHandle<Message>, IPublisher'
+    content.vb: >-
+      Public Interface IQueuedHandler
+
+          Inherits IHandle(Of Message), IPublisher
+  inheritedMembers:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.Handle(EventStore.Core.Messaging.Message)
+  - EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+  - EventStore.Core.Bus.IQueuedHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Bus.IQueuedHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: EventStore.Core.Bus.IQueuedHandler.Name
+  commentId: P:EventStore.Core.Bus.IQueuedHandler.Name
+  id: Name
+  parent: EventStore.Core.Bus.IQueuedHandler
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IQueuedHandler.Name
+  fullName: EventStore.Core.Bus.IQueuedHandler.Name
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/IQueuedHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Name
+    path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Name As String
+  overload: EventStore.Core.Bus.IQueuedHandler.Name*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Bus.IQueuedHandler.Start
+  commentId: M:EventStore.Core.Bus.IQueuedHandler.Start
+  id: Start
+  parent: EventStore.Core.Bus.IQueuedHandler
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: IQueuedHandler.Start()
+  fullName: EventStore.Core.Bus.IQueuedHandler.Start()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/IQueuedHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Start
+    path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: void Start()
+    content.vb: Sub Start
+  overload: EventStore.Core.Bus.IQueuedHandler.Start*
+- uid: EventStore.Core.Bus.IQueuedHandler.Stop
+  commentId: M:EventStore.Core.Bus.IQueuedHandler.Stop
+  id: Stop
+  parent: EventStore.Core.Bus.IQueuedHandler
+  langs:
+  - csharp
+  - vb
+  name: Stop()
+  nameWithType: IQueuedHandler.Stop()
+  fullName: EventStore.Core.Bus.IQueuedHandler.Stop()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/IQueuedHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Stop
+    path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: void Stop()
+    content.vb: Sub Stop
+  overload: EventStore.Core.Bus.IQueuedHandler.Stop*
+- uid: EventStore.Core.Bus.IQueuedHandler.RequestStop
+  commentId: M:EventStore.Core.Bus.IQueuedHandler.RequestStop
+  id: RequestStop
+  parent: EventStore.Core.Bus.IQueuedHandler
+  langs:
+  - csharp
+  - vb
+  name: RequestStop()
+  nameWithType: IQueuedHandler.RequestStop()
+  fullName: EventStore.Core.Bus.IQueuedHandler.RequestStop()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/IQueuedHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RequestStop
+    path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: void RequestStop()
+    content.vb: Sub RequestStop
+  overload: EventStore.Core.Bus.IQueuedHandler.RequestStop*
+- uid: EventStore.Core.Bus.IQueuedHandler.GetStatistics
+  commentId: M:EventStore.Core.Bus.IQueuedHandler.GetStatistics
+  id: GetStatistics
+  parent: EventStore.Core.Bus.IQueuedHandler
+  langs:
+  - csharp
+  - vb
+  name: GetStatistics()
+  nameWithType: IQueuedHandler.GetStatistics()
+  fullName: EventStore.Core.Bus.IQueuedHandler.GetStatistics()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Bus/IQueuedHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetStatistics
+    path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Bus
+  syntax:
+    content: QueueStats GetStatistics()
+    return:
+      type: EventStore.Core.Services.Monitoring.Stats.QueueStats
+    content.vb: Function GetStatistics As QueueStats
+  overload: EventStore.Core.Bus.IQueuedHandler.GetStatistics*
+references:
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.Handle(EventStore.Core.Messaging.Message)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.Handle(EventStore.Core.Messaging.Message)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(Message)
+  nameWithType: IHandle<Message>.Handle(Message)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>.Handle(EventStore.Core.Messaging.Message)
+  nameWithType.vb: IHandle(Of Message).Handle(Message)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message).Handle(EventStore.Core.Messaging.Message)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<Message>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of Message).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  commentId: M:EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  parent: EventStore.Core.Bus.IPublisher
+  isExternal: false
+  name: Publish(Message)
+  nameWithType: IPublisher.Publish(Message)
+  fullName: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+    name: Publish
+    nameWithType: IPublisher.Publish
+    fullName: EventStore.Core.Bus.IPublisher.Publish
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
+    name: Publish
+    nameWithType: IPublisher.Publish
+    fullName: EventStore.Core.Bus.IPublisher.Publish
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  name: WidenFrom<TInput, Message>()
+  nameWithType: HandleExtensions.WidenFrom<TInput, Message>()
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, EventStore.Core.Messaging.Message>()
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, Message)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, EventStore.Core.Messaging.Message)()
+  name.vb: WidenFrom(Of TInput, Message)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom<TInput, Message>
+    nameWithType: HandleExtensions.WidenFrom<TInput, Message>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, EventStore.Core.Messaging.Message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom(Of TInput, Message)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, Message)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, EventStore.Core.Messaging.Message)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  name: NarrowTo<TInput, Message>()
+  nameWithType: HandleExtensions.NarrowTo<TInput, Message>()
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, EventStore.Core.Messaging.Message>()
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, Message)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, EventStore.Core.Messaging.Message)()
+  name.vb: NarrowTo(Of TInput, Message)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo<TInput, Message>
+    nameWithType: HandleExtensions.NarrowTo<TInput, Message>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, EventStore.Core.Messaging.Message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo(Of TInput, Message)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, Message)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, EventStore.Core.Messaging.Message)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IQueuedHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IQueuedHandler>()
+  nameWithType: ProtobufExtensions.Serialize<IQueuedHandler>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Bus.IQueuedHandler>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IQueuedHandler)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Bus.IQueuedHandler)()
+  name.vb: Serialize(Of IQueuedHandler)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IQueuedHandler>
+    nameWithType: ProtobufExtensions.Serialize<IQueuedHandler>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Bus.IQueuedHandler>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IQueuedHandler)
+    nameWithType: ProtobufExtensions.Serialize(Of IQueuedHandler)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Bus.IQueuedHandler)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IQueuedHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IQueuedHandler>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IQueuedHandler>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Bus.IQueuedHandler>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IQueuedHandler)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Bus.IQueuedHandler)()
+  name.vb: SerializeToArray(Of IQueuedHandler)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IQueuedHandler>
+    nameWithType: ProtobufExtensions.SerializeToArray<IQueuedHandler>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Bus.IQueuedHandler>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IQueuedHandler)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IQueuedHandler)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Bus.IQueuedHandler)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<Message>
+  nameWithType: IHandle<Message>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>
+  nameWithType.vb: IHandle(Of Message)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message)
+  name.vb: IHandle(Of Message)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  isExternal: false
+  name: WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom<TInput, TOutput>
+    nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom(Of TInput, TOutput)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.HandleExtensions
+  commentId: T:EventStore.Core.Bus.HandleExtensions
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: HandleExtensions
+  nameWithType: HandleExtensions
+  fullName: EventStore.Core.Bus.HandleExtensions
+- uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  isExternal: false
+  name: NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo<TInput, TOutput>
+    nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo(Of TInput, TOutput)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Bus.IQueuedHandler.Name*
+  commentId: Overload:EventStore.Core.Bus.IQueuedHandler.Name
+  isExternal: false
+  name: Name
+  nameWithType: IQueuedHandler.Name
+  fullName: EventStore.Core.Bus.IQueuedHandler.Name
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Bus.IQueuedHandler.Start*
+  commentId: Overload:EventStore.Core.Bus.IQueuedHandler.Start
+  isExternal: false
+  name: Start
+  nameWithType: IQueuedHandler.Start
+  fullName: EventStore.Core.Bus.IQueuedHandler.Start
+- uid: EventStore.Core.Bus.IQueuedHandler.Stop*
+  commentId: Overload:EventStore.Core.Bus.IQueuedHandler.Stop
+  isExternal: false
+  name: Stop
+  nameWithType: IQueuedHandler.Stop
+  fullName: EventStore.Core.Bus.IQueuedHandler.Stop
+- uid: EventStore.Core.Bus.IQueuedHandler.RequestStop*
+  commentId: Overload:EventStore.Core.Bus.IQueuedHandler.RequestStop
+  isExternal: false
+  name: RequestStop
+  nameWithType: IQueuedHandler.RequestStop
+  fullName: EventStore.Core.Bus.IQueuedHandler.RequestStop
+- uid: EventStore.Core.Bus.IQueuedHandler.GetStatistics*
+  commentId: Overload:EventStore.Core.Bus.IQueuedHandler.GetStatistics
+  isExternal: false
+  name: GetStatistics
+  nameWithType: IQueuedHandler.GetStatistics
+  fullName: EventStore.Core.Bus.IQueuedHandler.GetStatistics
+- uid: EventStore.Core.Services.Monitoring.Stats.QueueStats
+  commentId: T:EventStore.Core.Services.Monitoring.Stats.QueueStats
+  parent: EventStore.Core.Services.Monitoring.Stats
+  isExternal: false
+  name: QueueStats
+  nameWithType: QueueStats
+  fullName: EventStore.Core.Services.Monitoring.Stats.QueueStats
+- uid: EventStore.Core.Services.Monitoring.Stats
+  commentId: N:EventStore.Core.Services.Monitoring.Stats
+  isExternal: false
+  name: EventStore.Core.Services.Monitoring.Stats
+  nameWithType: EventStore.Core.Services.Monitoring.Stats
+  fullName: EventStore.Core.Services.Monitoring.Stats

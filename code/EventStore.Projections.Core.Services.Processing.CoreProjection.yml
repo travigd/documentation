@@ -1,0 +1,2582 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection
+  commentId: T:EventStore.Projections.Core.Services.Processing.CoreProjection
+  id: CoreProjection
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.Failed)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Kill
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.String)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting(System.String)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Start
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Stop
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed
+  langs:
+  - csharp
+  - vb
+  name: CoreProjection
+  nameWithType: CoreProjection
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CoreProjection
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class CoreProjection : IDisposable, ICoreProjection, IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>, IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>, IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>, IHandle<CoreProjectionProcessingMessage.RestartRequested>, IHandle<CoreProjectionProcessingMessage.Failed>, ICoreProjectionForProcessingPhase, IHandle<CoreProjectionManagementMessage.GetState>, IHandle<CoreProjectionManagementMessage.GetResult>, IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>'
+    content.vb: >-
+      Public Class CoreProjection
+
+          Inherits IDisposable
+
+          Implements ICoreProjection, IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded), IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded), IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted), IHandle(Of CoreProjectionProcessingMessage.RestartRequested), IHandle(Of CoreProjectionProcessingMessage.Failed), ICoreProjectionForProcessingPhase, IHandle(Of CoreProjectionManagementMessage.GetState), IHandle(Of CoreProjectionManagementMessage.GetResult), IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Projections.Core.Messages.ICoreProjection
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointCompleted}
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
+  id: '#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)'
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: CoreProjection(ProjectionProcessingStrategy, ProjectionVersion, Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ILogger, ProjectionNamesBuilder, CoreProjectionCheckpointWriter, PartitionStateCache, String, ITimeProvider)
+  nameWithType: CoreProjection.CoreProjection(ProjectionProcessingStrategy, ProjectionVersion, Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ILogger, ProjectionNamesBuilder, CoreProjectionCheckpointWriter, PartitionStateCache, String, ITimeProvider)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.CoreProjection(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy, EventStore.Projections.Core.Services.Processing.ProjectionVersion, Guid, EventStore.Core.Bus.IPublisher, Guid, IPrincipal, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Common.Log.ILogger, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter, EventStore.Projections.Core.Services.Processing.PartitionStateCache, System.String, EventStore.Core.Services.TimerService.ITimeProvider)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 85
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public CoreProjection(ProjectionProcessingStrategy projectionProcessingStrategy, ProjectionVersion version, Guid projectionCorrelationId, IPublisher inputQueue, Guid workerId, IPrincipal runAs, IPublisher publisher, IODispatcher ioDispatcher, ReaderSubscriptionDispatcher subscriptionDispatcher, ILogger logger, ProjectionNamesBuilder namingBuilder, CoreProjectionCheckpointWriter coreProjectionCheckpointWriter, PartitionStateCache partitionStateCache, string effectiveProjectionName, ITimeProvider timeProvider)
+    parameters:
+    - id: projectionProcessingStrategy
+      type: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+    - id: version
+      type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+    - id: projectionCorrelationId
+      type: Guid
+    - id: inputQueue
+      type: EventStore.Core.Bus.IPublisher
+    - id: workerId
+      type: Guid
+    - id: runAs
+      type: IPrincipal
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: subscriptionDispatcher
+      type: EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+    - id: logger
+      type: EventStore.Common.Log.ILogger
+    - id: namingBuilder
+      type: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+    - id: coreProjectionCheckpointWriter
+      type: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+    - id: partitionStateCache
+      type: EventStore.Projections.Core.Services.Processing.PartitionStateCache
+    - id: effectiveProjectionName
+      type: System.String
+    - id: timeProvider
+      type: EventStore.Core.Services.TimerService.ITimeProvider
+    content.vb: Public Sub New(projectionProcessingStrategy As ProjectionProcessingStrategy, version As ProjectionVersion, projectionCorrelationId As Guid, inputQueue As IPublisher, workerId As Guid, runAs As IPrincipal, publisher As IPublisher, ioDispatcher As IODispatcher, subscriptionDispatcher As ReaderSubscriptionDispatcher, logger As ILogger, namingBuilder As ProjectionNamesBuilder, coreProjectionCheckpointWriter As CoreProjectionCheckpointWriter, partitionStateCache As PartitionStateCache, effectiveProjectionName As String, timeProvider As ITimeProvider)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Start
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Start
+  id: Start
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: CoreProjection.Start()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Start()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Start
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 169
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Start*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped
+  id: LoadStopped
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: LoadStopped()
+  nameWithType: CoreProjection.LoadStopped()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LoadStopped
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 185
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void LoadStopped()
+    content.vb: Public Sub LoadStopped
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Stop
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Stop
+  id: Stop
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Stop()
+  nameWithType: CoreProjection.Stop()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Stop()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Stop
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 192
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Stop()
+    content.vb: Public Sub Stop
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Stop*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Kill
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Kill
+  id: Kill
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Kill()
+  nameWithType: CoreProjection.Kill()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Kill()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Kill
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 210
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Kill()
+    content.vb: Public Sub Kill
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Kill*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase
+  id: CompletePhase
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: CompletePhase()
+  nameWithType: CoreProjection.CompletePhase()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CompletePhase
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 238
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void CompletePhase()
+    content.vb: Public Sub CompletePhase
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionManagementMessage.GetState)
+  nameWithType: CoreProjection.Handle(CoreProjectionManagementMessage.GetState)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 249
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionManagementMessage.GetState message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    content.vb: Public Sub Handle(message As CoreProjectionManagementMessage.GetState)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionManagementMessage.GetResult)
+  nameWithType: CoreProjection.Handle(CoreProjectionManagementMessage.GetResult)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 266
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionManagementMessage.GetResult message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    content.vb: Public Sub Handle(message As CoreProjectionManagementMessage.GetResult)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  id: Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  nameWithType: CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 283
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionProcessingMessage.CheckpointCompleted message)
+    parameters:
+    - id: message
+      type: CoreProjectionProcessingMessage.CheckpointCompleted
+    content.vb: Public Sub Handle(message As CoreProjectionProcessingMessage.CheckpointCompleted)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointCompleted}.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  id: Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  nameWithType: CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 288
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionProcessingMessage.CheckpointLoaded message)
+    parameters:
+    - id: message
+      type: CoreProjectionProcessingMessage.CheckpointLoaded
+    content.vb: Public Sub Handle(message As CoreProjectionProcessingMessage.CheckpointLoaded)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  id: Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  nameWithType: CoreProjection.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 322
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded message)
+    parameters:
+    - id: message
+      type: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    content.vb: Public Sub Handle(message As CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  id: Handle(CoreProjectionProcessingMessage.RestartRequested)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionProcessingMessage.RestartRequested)
+  nameWithType: CoreProjection.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 335
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionProcessingMessage.RestartRequested message)
+    parameters:
+    - id: message
+      type: CoreProjectionProcessingMessage.RestartRequested
+    content.vb: Public Sub Handle(message As CoreProjectionProcessingMessage.RestartRequested)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.Failed)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.Failed)
+  id: Handle(CoreProjectionProcessingMessage.Failed)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionProcessingMessage.Failed)
+  nameWithType: CoreProjection.Handle(CoreProjectionProcessingMessage.Failed)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.Failed)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 358
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionProcessingMessage.Failed message)
+    parameters:
+    - id: message
+      type: CoreProjectionProcessingMessage.Failed
+    content.vb: Public Sub Handle(message As CoreProjectionProcessingMessage.Failed)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}.Handle(CoreProjectionProcessingMessage.Failed)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed
+  id: EnsureUnsubscribed
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: EnsureUnsubscribed()
+  nameWithType: CoreProjection.EnsureUnsubscribed()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EnsureUnsubscribed
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 363
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void EnsureUnsubscribed()
+    content.vb: Public Sub EnsureUnsubscribed
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose
+  id: Dispose
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: CoreProjection.Dispose()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 651
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending
+  id: EnsureTickPending
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: EnsureTickPending()
+  nameWithType: CoreProjection.EnsureTickPending()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EnsureTickPending
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 660
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void EnsureTickPending()
+    content.vb: Public Sub EnsureTickPending
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
+  id: SetFaulted(Exception)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: SetFaulted(Exception)
+  nameWithType: CoreProjection.SetFaulted(Exception)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SetFaulted
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 671
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void SetFaulted(Exception ex)
+    parameters:
+    - id: ex
+      type: Exception
+    content.vb: Public Sub SetFaulted(ex As Exception)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.String)
+  id: SetFaulted(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: SetFaulted(String)
+  nameWithType: CoreProjection.SetFaulted(String)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SetFaulted
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 676
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void SetFaulted(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+    content.vb: Public Sub SetFaulted(reason As String)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting(System.String)
+  id: SetFaulting(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: SetFaulting(String)
+  nameWithType: CoreProjection.SetFaulting(String)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SetFaulting
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 684
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void SetFaulting(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+    content.vb: Public Sub SetFaulting(reason As String)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  id: SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: SetCurrentCheckpointSuggestedWorkItem(CheckpointSuggestedWorkItem)
+  nameWithType: CoreProjection.SetCurrentCheckpointSuggestedWorkItem(CheckpointSuggestedWorkItem)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SetCurrentCheckpointSuggestedWorkItem
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 714
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void SetCurrentCheckpointSuggestedWorkItem(CheckpointSuggestedWorkItem checkpointSuggestedWorkItem)
+    parameters:
+    - id: checkpointSuggestedWorkItem
+      type: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+    content.vb: Public Sub SetCurrentCheckpointSuggestedWorkItem(checkpointSuggestedWorkItem As CheckpointSuggestedWorkItem)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
+  commentId: P:EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
+  id: LastProcessedEventPosition
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: LastProcessedEventPosition
+  nameWithType: CoreProjection.LastProcessedEventPosition
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LastProcessedEventPosition
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 735
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public CheckpointTag LastProcessedEventPosition { get; }
+    parameters: []
+    return:
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Public ReadOnly Property LastProcessedEventPosition As CheckpointTag
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.LastProcessedEventPosition
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed
+  id: Subscribed
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Subscribed()
+  nameWithType: CoreProjection.Subscribed()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Subscribed
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 740
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Subscribed()
+    content.vb: Public Sub Subscribed
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.SlaveProjectionsStarted)
+  nameWithType: CoreProjection.Handle(ProjectionManagementMessage.SlaveProjectionsStarted)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    startLine: 745
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.SlaveProjectionsStarted message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.SlaveProjectionsStarted)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Messages.ICoreProjection
+  commentId: T:EventStore.Projections.Core.Messages.ICoreProjection
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ICoreProjection
+  nameWithType: ICoreProjection
+  fullName: EventStore.Projections.Core.Messages.ICoreProjection
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}
+  commentId: T:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>
+  nameWithType: IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded)
+  name.vb: IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreProjectionProcessingMessage.CheckpointLoaded
+    name: CoreProjectionProcessingMessage.CheckpointLoaded
+    nameWithType: CoreProjectionProcessingMessage.CheckpointLoaded
+    fullName: CoreProjectionProcessingMessage.CheckpointLoaded
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreProjectionProcessingMessage.CheckpointLoaded
+    name: CoreProjectionProcessingMessage.CheckpointLoaded
+    nameWithType: CoreProjectionProcessingMessage.CheckpointLoaded
+    fullName: CoreProjectionProcessingMessage.CheckpointLoaded
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}
+  commentId: T:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>
+  nameWithType: IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  name.vb: IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    name: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    nameWithType: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    fullName: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    name: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    nameWithType: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    fullName: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointCompleted}
+  commentId: T:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointCompleted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>
+  nameWithType: IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted)
+  name.vb: IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreProjectionProcessingMessage.CheckpointCompleted
+    name: CoreProjectionProcessingMessage.CheckpointCompleted
+    nameWithType: CoreProjectionProcessingMessage.CheckpointCompleted
+    fullName: CoreProjectionProcessingMessage.CheckpointCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreProjectionProcessingMessage.CheckpointCompleted
+    name: CoreProjectionProcessingMessage.CheckpointCompleted
+    nameWithType: CoreProjectionProcessingMessage.CheckpointCompleted
+    fullName: CoreProjectionProcessingMessage.CheckpointCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}
+  commentId: T:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionProcessingMessage.RestartRequested>
+  nameWithType: IHandle<CoreProjectionProcessingMessage.RestartRequested>
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.RestartRequested>
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.RestartRequested)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.RestartRequested)
+  name.vb: IHandle(Of CoreProjectionProcessingMessage.RestartRequested)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreProjectionProcessingMessage.RestartRequested
+    name: CoreProjectionProcessingMessage.RestartRequested
+    nameWithType: CoreProjectionProcessingMessage.RestartRequested
+    fullName: CoreProjectionProcessingMessage.RestartRequested
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreProjectionProcessingMessage.RestartRequested
+    name: CoreProjectionProcessingMessage.RestartRequested
+    nameWithType: CoreProjectionProcessingMessage.RestartRequested
+    fullName: CoreProjectionProcessingMessage.RestartRequested
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}
+  commentId: T:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionProcessingMessage.Failed>
+  nameWithType: IHandle<CoreProjectionProcessingMessage.Failed>
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.Failed>
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.Failed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.Failed)
+  name.vb: IHandle(Of CoreProjectionProcessingMessage.Failed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreProjectionProcessingMessage.Failed
+    name: CoreProjectionProcessingMessage.Failed
+    nameWithType: CoreProjectionProcessingMessage.Failed
+    fullName: CoreProjectionProcessingMessage.Failed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreProjectionProcessingMessage.Failed
+    name: CoreProjectionProcessingMessage.Failed
+    nameWithType: CoreProjectionProcessingMessage.Failed
+    fullName: CoreProjectionProcessingMessage.Failed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  commentId: T:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ICoreProjectionForProcessingPhase
+  nameWithType: ICoreProjectionForProcessingPhase
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionManagementMessage.GetState>
+  nameWithType: IHandle<CoreProjectionManagementMessage.GetState>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState>
+  nameWithType.vb: IHandle(Of CoreProjectionManagementMessage.GetState)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  name.vb: IHandle(Of CoreProjectionManagementMessage.GetState)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    name: CoreProjectionManagementMessage.GetState
+    nameWithType: CoreProjectionManagementMessage.GetState
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    name: CoreProjectionManagementMessage.GetState
+    nameWithType: CoreProjectionManagementMessage.GetState
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionManagementMessage.GetResult>
+  nameWithType: IHandle<CoreProjectionManagementMessage.GetResult>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult>
+  nameWithType.vb: IHandle(Of CoreProjectionManagementMessage.GetResult)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  name.vb: IHandle(Of CoreProjectionManagementMessage.GetResult)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    name: CoreProjectionManagementMessage.GetResult
+    nameWithType: CoreProjectionManagementMessage.GetResult
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    name: CoreProjectionManagementMessage.GetResult
+    nameWithType: CoreProjectionManagementMessage.GetResult
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>
+  nameWithType: IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted>
+  nameWithType.vb: IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  name.vb: IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+    name: ProjectionManagementMessage.SlaveProjectionsStarted
+    nameWithType: ProjectionManagementMessage.SlaveProjectionsStarted
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+    name: ProjectionManagementMessage.SlaveProjectionsStarted
+    nameWithType: ProjectionManagementMessage.SlaveProjectionsStarted
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<CoreProjection>()
+  nameWithType: ProtobufExtensions.Serialize<CoreProjection>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.CoreProjection>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of CoreProjection)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.CoreProjection)()
+  name.vb: Serialize(Of CoreProjection)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<CoreProjection>
+    nameWithType: ProtobufExtensions.Serialize<CoreProjection>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.CoreProjection>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of CoreProjection)
+    nameWithType: ProtobufExtensions.Serialize(Of CoreProjection)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.CoreProjection)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<CoreProjection>()
+  nameWithType: ProtobufExtensions.SerializeToArray<CoreProjection>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.CoreProjection>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of CoreProjection)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.CoreProjection)()
+  name.vb: SerializeToArray(Of CoreProjection)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<CoreProjection>
+    nameWithType: ProtobufExtensions.SerializeToArray<CoreProjection>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.CoreProjection>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of CoreProjection)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of CoreProjection)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.CoreProjection)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor
+  isExternal: false
+  name: CoreProjection
+  nameWithType: CoreProjection.CoreProjection
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.CoreProjection
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ProjectionProcessingStrategy
+  nameWithType: ProjectionProcessingStrategy
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+  commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionVersion
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ProjectionVersion
+  nameWithType: ProjectionVersion
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: IPrincipal
+  isExternal: true
+  name: IPrincipal
+  nameWithType: IPrincipal
+  fullName: IPrincipal
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+  commentId: T:EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+  parent: EventStore.Projections.Core.Services
+  isExternal: false
+  name: ReaderSubscriptionDispatcher
+  nameWithType: ReaderSubscriptionDispatcher
+  fullName: EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+- uid: EventStore.Common.Log.ILogger
+  commentId: T:EventStore.Common.Log.ILogger
+  parent: EventStore.Common.Log
+  isExternal: false
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.Common.Log.ILogger
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+  commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ProjectionNamesBuilder
+  nameWithType: ProjectionNamesBuilder
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+  commentId: T:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: CoreProjectionCheckpointWriter
+  nameWithType: CoreProjectionCheckpointWriter
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+- uid: EventStore.Projections.Core.Services.Processing.PartitionStateCache
+  commentId: T:EventStore.Projections.Core.Services.Processing.PartitionStateCache
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: PartitionStateCache
+  nameWithType: PartitionStateCache
+  fullName: EventStore.Projections.Core.Services.Processing.PartitionStateCache
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Services.TimerService.ITimeProvider
+  commentId: T:EventStore.Core.Services.TimerService.ITimeProvider
+  parent: EventStore.Core.Services.TimerService
+  isExternal: false
+  name: ITimeProvider
+  nameWithType: ITimeProvider
+  fullName: EventStore.Core.Services.TimerService.ITimeProvider
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: EventStore.Projections.Core.Services
+  commentId: N:EventStore.Projections.Core.Services
+  isExternal: false
+  name: EventStore.Projections.Core.Services
+  nameWithType: EventStore.Projections.Core.Services
+  fullName: EventStore.Projections.Core.Services
+- uid: EventStore.Common.Log
+  commentId: N:EventStore.Common.Log
+  isExternal: false
+  name: EventStore.Common.Log
+  nameWithType: EventStore.Common.Log
+  fullName: EventStore.Common.Log
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  isExternal: false
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Start*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.Start
+  isExternal: false
+  name: Start
+  nameWithType: CoreProjection.Start
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Start
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped
+  isExternal: false
+  name: LoadStopped
+  nameWithType: CoreProjection.LoadStopped
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Stop*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.Stop
+  isExternal: false
+  name: Stop
+  nameWithType: CoreProjection.Stop
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Stop
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Kill*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.Kill
+  isExternal: false
+  name: Kill
+  nameWithType: CoreProjection.Kill
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Kill
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase
+  isExternal: false
+  name: CompletePhase
+  nameWithType: CoreProjection.CompletePhase
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: false
+  name: CompletePhase()
+  nameWithType: ICoreProjectionForProcessingPhase.CompletePhase()
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase
+    name: CompletePhase
+    nameWithType: ICoreProjectionForProcessingPhase.CompletePhase
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase
+    name: CompletePhase
+    nameWithType: ICoreProjectionForProcessingPhase.CompletePhase
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.CompletePhase
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: CoreProjection.Handle
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionManagementMessage.GetState)
+  nameWithType: IHandle<CoreProjectionManagementMessage.GetState>.Handle(CoreProjectionManagementMessage.GetState)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState>.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  nameWithType.vb: IHandle(Of CoreProjectionManagementMessage.GetState).Handle(CoreProjectionManagementMessage.GetState)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState).Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionManagementMessage.GetState>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    name: CoreProjectionManagementMessage.GetState
+    nameWithType: CoreProjectionManagementMessage.GetState
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionManagementMessage.GetState).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    name: CoreProjectionManagementMessage.GetState
+    nameWithType: CoreProjectionManagementMessage.GetState
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionManagementMessage.GetState
+  nameWithType: CoreProjectionManagementMessage.GetState
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionManagementMessage.GetResult)
+  nameWithType: IHandle<CoreProjectionManagementMessage.GetResult>.Handle(CoreProjectionManagementMessage.GetResult)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult>.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  nameWithType.vb: IHandle(Of CoreProjectionManagementMessage.GetResult).Handle(CoreProjectionManagementMessage.GetResult)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult).Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionManagementMessage.GetResult>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    name: CoreProjectionManagementMessage.GetResult
+    nameWithType: CoreProjectionManagementMessage.GetResult
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionManagementMessage.GetResult).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    name: CoreProjectionManagementMessage.GetResult
+    nameWithType: CoreProjectionManagementMessage.GetResult
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionManagementMessage.GetResult
+  nameWithType: CoreProjectionManagementMessage.GetResult
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointCompleted}.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  commentId: M:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointCompleted}.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  parent: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointCompleted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  nameWithType: IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted).Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted).Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.CheckpointCompleted
+    name: CoreProjectionProcessingMessage.CheckpointCompleted
+    nameWithType: CoreProjectionProcessingMessage.CheckpointCompleted
+    fullName: CoreProjectionProcessingMessage.CheckpointCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.CheckpointCompleted
+    name: CoreProjectionProcessingMessage.CheckpointCompleted
+    nameWithType: CoreProjectionProcessingMessage.CheckpointCompleted
+    fullName: CoreProjectionProcessingMessage.CheckpointCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreProjectionProcessingMessage.CheckpointCompleted
+  commentId: T:CoreProjectionProcessingMessage.CheckpointCompleted
+  isExternal: false
+  name: CoreProjectionProcessingMessage.CheckpointCompleted
+  nameWithType: CoreProjectionProcessingMessage.CheckpointCompleted
+  fullName: CoreProjectionProcessingMessage.CheckpointCompleted
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  commentId: M:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  parent: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  nameWithType: IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded).Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded).Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>.Handle
+    fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.CheckpointLoaded
+    name: CoreProjectionProcessingMessage.CheckpointLoaded
+    nameWithType: CoreProjectionProcessingMessage.CheckpointLoaded
+    fullName: CoreProjectionProcessingMessage.CheckpointLoaded
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.CheckpointLoaded
+    name: CoreProjectionProcessingMessage.CheckpointLoaded
+    nameWithType: CoreProjectionProcessingMessage.CheckpointLoaded
+    fullName: CoreProjectionProcessingMessage.CheckpointLoaded
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreProjectionProcessingMessage.CheckpointLoaded
+  commentId: T:CoreProjectionProcessingMessage.CheckpointLoaded
+  isExternal: false
+  name: CoreProjectionProcessingMessage.CheckpointLoaded
+  nameWithType: CoreProjectionProcessingMessage.CheckpointLoaded
+  fullName: CoreProjectionProcessingMessage.CheckpointLoaded
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  commentId: M:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  parent: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  nameWithType: IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded).Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded).Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>.Handle
+    fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    name: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    nameWithType: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    fullName: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    name: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    nameWithType: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+    fullName: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  commentId: T:CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  isExternal: false
+  name: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  nameWithType: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+  fullName: CoreProjectionProcessingMessage.PrerecordedEventsLoaded
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  commentId: M:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  parent: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionProcessingMessage.RestartRequested)
+  nameWithType: IHandle<CoreProjectionProcessingMessage.RestartRequested>.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.RestartRequested>.Handle(CoreProjectionProcessingMessage.RestartRequested)
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.RestartRequested).Handle(CoreProjectionProcessingMessage.RestartRequested)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.RestartRequested).Handle(CoreProjectionProcessingMessage.RestartRequested)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionProcessingMessage.RestartRequested>.Handle
+    fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.RestartRequested>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.RestartRequested
+    name: CoreProjectionProcessingMessage.RestartRequested
+    nameWithType: CoreProjectionProcessingMessage.RestartRequested
+    fullName: CoreProjectionProcessingMessage.RestartRequested
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionProcessingMessage.RestartRequested).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.RestartRequested).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.RestartRequested
+    name: CoreProjectionProcessingMessage.RestartRequested
+    nameWithType: CoreProjectionProcessingMessage.RestartRequested
+    fullName: CoreProjectionProcessingMessage.RestartRequested
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreProjectionProcessingMessage.RestartRequested
+  commentId: T:CoreProjectionProcessingMessage.RestartRequested
+  isExternal: false
+  name: CoreProjectionProcessingMessage.RestartRequested
+  nameWithType: CoreProjectionProcessingMessage.RestartRequested
+  fullName: CoreProjectionProcessingMessage.RestartRequested
+- uid: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}.Handle(CoreProjectionProcessingMessage.Failed)
+  commentId: M:EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}.Handle(CoreProjectionProcessingMessage.Failed)
+  parent: EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionProcessingMessage.Failed)
+  nameWithType: IHandle<CoreProjectionProcessingMessage.Failed>.Handle(CoreProjectionProcessingMessage.Failed)
+  fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.Failed>.Handle(CoreProjectionProcessingMessage.Failed)
+  nameWithType.vb: IHandle(Of CoreProjectionProcessingMessage.Failed).Handle(CoreProjectionProcessingMessage.Failed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.Failed).Handle(CoreProjectionProcessingMessage.Failed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionProcessingMessage.Failed>.Handle
+    fullName: EventStore.Core.Bus.IHandle<CoreProjectionProcessingMessage.Failed>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.Failed
+    name: CoreProjectionProcessingMessage.Failed
+    nameWithType: CoreProjectionProcessingMessage.Failed
+    fullName: CoreProjectionProcessingMessage.Failed
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionProcessingMessage.Failed).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of CoreProjectionProcessingMessage.Failed).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreProjectionProcessingMessage.Failed
+    name: CoreProjectionProcessingMessage.Failed
+    nameWithType: CoreProjectionProcessingMessage.Failed
+    fullName: CoreProjectionProcessingMessage.Failed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreProjectionProcessingMessage.Failed
+  commentId: T:CoreProjectionProcessingMessage.Failed
+  isExternal: false
+  name: CoreProjectionProcessingMessage.Failed
+  nameWithType: CoreProjectionProcessingMessage.Failed
+  fullName: CoreProjectionProcessingMessage.Failed
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed
+  isExternal: false
+  name: EnsureUnsubscribed
+  nameWithType: CoreProjection.EnsureUnsubscribed
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: CoreProjection.Dispose
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending
+  isExternal: false
+  name: EnsureTickPending
+  nameWithType: CoreProjection.EnsureTickPending
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: false
+  name: EnsureTickPending()
+  nameWithType: ICoreProjectionForProcessingPhase.EnsureTickPending()
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending
+    name: EnsureTickPending
+    nameWithType: ICoreProjectionForProcessingPhase.EnsureTickPending
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending
+    name: EnsureTickPending
+    nameWithType: ICoreProjectionForProcessingPhase.EnsureTickPending
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.EnsureTickPending
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted
+  isExternal: false
+  name: SetFaulted
+  nameWithType: CoreProjection.SetFaulted
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: true
+  name: SetFaulted(Exception)
+  nameWithType: ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+    name: SetFaulted
+    nameWithType: ICoreProjectionForProcessingPhase.SetFaulted
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: Exception
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+    name: SetFaulted
+    nameWithType: ICoreProjectionForProcessingPhase.SetFaulted
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: Exception
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: Exception
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: true
+  name: SetFaulted(String)
+  nameWithType: ICoreProjectionForProcessingPhase.SetFaulted(String)
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
+    name: SetFaulted
+    nameWithType: ICoreProjectionForProcessingPhase.SetFaulted
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
+    name: SetFaulted
+    nameWithType: ICoreProjectionForProcessingPhase.SetFaulted
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting
+  isExternal: false
+  name: SetFaulting
+  nameWithType: CoreProjection.SetFaulting
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: true
+  name: SetFaulting(String)
+  nameWithType: ICoreProjectionForProcessingPhase.SetFaulting(String)
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting(System.String)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting(System.String)
+    name: SetFaulting
+    nameWithType: ICoreProjectionForProcessingPhase.SetFaulting
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting(System.String)
+    name: SetFaulting
+    nameWithType: ICoreProjectionForProcessingPhase.SetFaulting
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem
+  isExternal: false
+  name: SetCurrentCheckpointSuggestedWorkItem
+  nameWithType: CoreProjection.SetCurrentCheckpointSuggestedWorkItem
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: false
+  name: SetCurrentCheckpointSuggestedWorkItem(CheckpointSuggestedWorkItem)
+  nameWithType: ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(CheckpointSuggestedWorkItem)
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+    name: SetCurrentCheckpointSuggestedWorkItem
+    nameWithType: ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+    name: CheckpointSuggestedWorkItem
+    nameWithType: CheckpointSuggestedWorkItem
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
+    name: SetCurrentCheckpointSuggestedWorkItem
+    nameWithType: ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetCurrentCheckpointSuggestedWorkItem
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+    name: CheckpointSuggestedWorkItem
+    nameWithType: CheckpointSuggestedWorkItem
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: CheckpointSuggestedWorkItem
+  nameWithType: CheckpointSuggestedWorkItem
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
+  isExternal: false
+  name: LastProcessedEventPosition
+  nameWithType: CoreProjection.LastProcessedEventPosition
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.LastProcessedEventPosition
+  commentId: P:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.LastProcessedEventPosition
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: false
+  name: LastProcessedEventPosition
+  nameWithType: ICoreProjectionForProcessingPhase.LastProcessedEventPosition
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.LastProcessedEventPosition
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed
+  isExternal: false
+  name: Subscribed
+  nameWithType: CoreProjection.Subscribed
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed
+  parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+  isExternal: false
+  name: Subscribed()
+  nameWithType: ICoreProjectionForProcessingPhase.Subscribed()
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed
+    name: Subscribed
+    nameWithType: ICoreProjectionForProcessingPhase.Subscribed
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed
+    name: Subscribed
+    nameWithType: ICoreProjectionForProcessingPhase.Subscribed
+    fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.Subscribed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ProjectionManagementMessage.SlaveProjectionsStarted)
+  nameWithType: IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>.Handle(ProjectionManagementMessage.SlaveProjectionsStarted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted>.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  nameWithType.vb: IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted).Handle(ProjectionManagementMessage.SlaveProjectionsStarted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted).Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+    name: ProjectionManagementMessage.SlaveProjectionsStarted
+    nameWithType: ProjectionManagementMessage.SlaveProjectionsStarted
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+    name: ProjectionManagementMessage.SlaveProjectionsStarted
+    nameWithType: ProjectionManagementMessage.SlaveProjectionsStarted
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.SlaveProjectionsStarted
+  nameWithType: ProjectionManagementMessage.SlaveProjectionsStarted
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted

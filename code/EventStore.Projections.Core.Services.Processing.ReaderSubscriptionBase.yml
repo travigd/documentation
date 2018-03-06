@@ -1,0 +1,1402 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  commentId: T:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  id: ReaderSubscriptionBase
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Core.Services.TimerService.ITimeProvider,System.Nullable{System.Int64},System.Nullable{System.Int32},System.Int32,System.Boolean,System.Nullable{System.Int32})
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._eventFilter
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTagger
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTracker
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._tag
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag
+  langs:
+  - csharp
+  - vb
+  name: ReaderSubscriptionBase
+  nameWithType: ReaderSubscriptionBase
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReaderSubscriptionBase
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class ReaderSubscriptionBase : object'
+    content.vb: >-
+      Public Class ReaderSubscriptionBase
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - EventStore.Projections.Core.Services.Processing.EventReorderingReaderSubscription
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscription
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._eventFilter
+  commentId: F:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._eventFilter
+  id: _eventFilter
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: _eventFilter
+  nameWithType: ReaderSubscriptionBase._eventFilter
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._eventFilter
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: _eventFilter
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected readonly EventFilter _eventFilter
+    return:
+      type: EventStore.Projections.Core.Services.Processing.EventFilter
+    content.vb: Protected ReadOnly _eventFilter As EventFilter
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTagger
+  commentId: F:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTagger
+  id: _positionTagger
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: _positionTagger
+  nameWithType: ReaderSubscriptionBase._positionTagger
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTagger
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: _positionTagger
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected readonly PositionTagger _positionTagger
+    return:
+      type: EventStore.Projections.Core.Services.Processing.PositionTagger
+    content.vb: Protected ReadOnly _positionTagger As PositionTagger
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTracker
+  commentId: F:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTracker
+  id: _positionTracker
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: _positionTracker
+  nameWithType: ReaderSubscriptionBase._positionTracker
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._positionTracker
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: _positionTracker
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected readonly PositionTracker _positionTracker
+    return:
+      type: EventStore.Projections.Core.Services.Processing.PositionTracker
+    content.vb: Protected ReadOnly _positionTracker As PositionTracker
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._tag
+  commentId: F:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._tag
+  id: _tag
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: _tag
+  nameWithType: ReaderSubscriptionBase._tag
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase._tag
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: _tag
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected string _tag
+    return:
+      type: System.String
+    content.vb: Protected _tag As String
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Core.Services.TimerService.ITimeProvider,System.Nullable{System.Int64},System.Nullable{System.Int32},System.Int32,System.Boolean,System.Nullable{System.Int32})
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Core.Services.TimerService.ITimeProvider,System.Nullable{System.Int64},System.Nullable{System.Int32},System.Int32,System.Boolean,System.Nullable{System.Int32})
+  id: '#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Core.Services.TimerService.ITimeProvider,System.Nullable{System.Int64},System.Nullable{System.Int32},System.Int32,System.Boolean,System.Nullable{System.Int32})'
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: ReaderSubscriptionBase(IPublisher, Guid, CheckpointTag, IReaderStrategy, ITimeProvider, Nullable<Int64>, Nullable<Int32>, Int32, Boolean, Nullable<Int32>)
+  nameWithType: ReaderSubscriptionBase.ReaderSubscriptionBase(IPublisher, Guid, CheckpointTag, IReaderStrategy, ITimeProvider, Nullable<Int64>, Nullable<Int32>, Int32, Boolean, Nullable<Int32>)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ReaderSubscriptionBase(EventStore.Core.Bus.IPublisher, Guid, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.IReaderStrategy, EventStore.Core.Services.TimerService.ITimeProvider, System.Nullable<System.Int64>, System.Nullable<System.Int32>, System.Int32, System.Boolean, System.Nullable<System.Int32>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 31
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected ReaderSubscriptionBase(IPublisher publisher, Guid subscriptionId, CheckpointTag from, IReaderStrategy readerStrategy, ITimeProvider timeProvider, long ? checkpointUnhandledBytesThreshold, int ? checkpointProcessedEventsThreshold, int checkpointAfterMs, bool stopOnEof, int ? stopAfterNEvents)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: subscriptionId
+      type: Guid
+    - id: from
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: readerStrategy
+      type: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+    - id: timeProvider
+      type: EventStore.Core.Services.TimerService.ITimeProvider
+    - id: checkpointUnhandledBytesThreshold
+      type: System.Nullable{System.Int64}
+    - id: checkpointProcessedEventsThreshold
+      type: System.Nullable{System.Int32}
+    - id: checkpointAfterMs
+      type: System.Int32
+    - id: stopOnEof
+      type: System.Boolean
+    - id: stopAfterNEvents
+      type: System.Nullable{System.Int32}
+    content.vb: Protected Sub New(publisher As IPublisher, subscriptionId As Guid, from As CheckpointTag, readerStrategy As IReaderStrategy, timeProvider As ITimeProvider, checkpointUnhandledBytesThreshold As Long?, checkpointProcessedEventsThreshold As Integer?, checkpointAfterMs As Integer, stopOnEof As Boolean, stopAfterNEvents As Integer?)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.#ctor*
+  nameWithType.vb: ReaderSubscriptionBase.ReaderSubscriptionBase(IPublisher, Guid, CheckpointTag, IReaderStrategy, ITimeProvider, Nullable(Of Int64), Nullable(Of Int32), Int32, Boolean, Nullable(Of Int32))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ReaderSubscriptionBase(EventStore.Core.Bus.IPublisher, Guid, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.IReaderStrategy, EventStore.Core.Services.TimerService.ITimeProvider, System.Nullable(Of System.Int64), System.Nullable(Of System.Int32), System.Int32, System.Boolean, System.Nullable(Of System.Int32))
+  name.vb: ReaderSubscriptionBase(IPublisher, Guid, CheckpointTag, IReaderStrategy, ITimeProvider, Nullable(Of Int64), Nullable(Of Int32), Int32, Boolean, Nullable(Of Int32))
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag
+  commentId: P:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag
+  id: Tag
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: Tag
+  nameWithType: ReaderSubscriptionBase.Tag
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Tag
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 67
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public string Tag { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Tag As String
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId
+  commentId: P:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId
+  id: SubscriptionId
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: SubscriptionId
+  nameWithType: ReaderSubscriptionBase.SubscriptionId
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscriptionId
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 72
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public Guid SubscriptionId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property SubscriptionId As Guid
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  id: ProcessOne(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: ProcessOne(ReaderSubscriptionMessage.CommittedEventDistributed)
+  nameWithType: ReaderSubscriptionBase.ProcessOne(ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ProcessOne
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 77
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected void ProcessOne(ReaderSubscriptionMessage.CommittedEventDistributed message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    content.vb: Protected Sub ProcessOne(message As ReaderSubscriptionMessage.CommittedEventDistributed)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  id: PublishPartitionDeleted(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: PublishPartitionDeleted(String, CheckpointTag)
+  nameWithType: ReaderSubscriptionBase.PublishPartitionDeleted(String, CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PublishPartitionDeleted
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 173
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected void PublishPartitionDeleted(string partition, CheckpointTag deletePosition)
+    parameters:
+    - id: partition
+      type: System.String
+    - id: deletePosition
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Protected Sub PublishPartitionDeleted(partition As String, deletePosition As CheckpointTag)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  id: CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: CreatePausedEventReader(IPublisher, IODispatcher, Guid)
+  nameWithType: ReaderSubscriptionBase.CreatePausedEventReader(IPublisher, IODispatcher, Guid)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader(EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, Guid)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreatePausedEventReader
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 199
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public IEventReader CreatePausedEventReader(IPublisher publisher, IODispatcher ioDispatcher, Guid eventReaderId)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: eventReaderId
+      type: Guid
+    return:
+      type: EventStore.Projections.Core.Services.Processing.IEventReader
+    content.vb: Public Function CreatePausedEventReader(publisher As IPublisher, ioDispatcher As IODispatcher, eventReaderId As Guid) As IEventReader
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderEof)
+  nameWithType: ReaderSubscriptionBase.Handle(ReaderSubscriptionMessage.EventReaderEof)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 208
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderEof message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderEof)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionEof)
+  nameWithType: ReaderSubscriptionBase.Handle(ReaderSubscriptionMessage.EventReaderPartitionEof)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 230
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderPartitionEof message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderPartitionEof)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  nameWithType: ReaderSubscriptionBase.Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 243
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  nameWithType: ReaderSubscriptionBase.Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 254
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderStarting)
+  nameWithType: ReaderSubscriptionBase.Handle(ReaderSubscriptionMessage.EventReaderStarting)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 268
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderStarting message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderStarting)
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached
+  id: EofReached
+  parent: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+  langs:
+  - csharp
+  - vb
+  name: EofReached()
+  nameWithType: ReaderSubscriptionBase.EofReached()
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EofReached
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderSubscriptionBase.cs
+    startLine: 273
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected virtual void EofReached()
+    content.vb: Protected Overridable Sub EofReached
+  overload: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ReaderSubscriptionBase>()
+  nameWithType: ProtobufExtensions.Serialize<ReaderSubscriptionBase>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ReaderSubscriptionBase)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase)()
+  name.vb: Serialize(Of ReaderSubscriptionBase)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ReaderSubscriptionBase>
+    nameWithType: ProtobufExtensions.Serialize<ReaderSubscriptionBase>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ReaderSubscriptionBase)
+    nameWithType: ProtobufExtensions.Serialize(Of ReaderSubscriptionBase)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ReaderSubscriptionBase>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ReaderSubscriptionBase>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ReaderSubscriptionBase)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase)()
+  name.vb: SerializeToArray(Of ReaderSubscriptionBase)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ReaderSubscriptionBase>
+    nameWithType: ProtobufExtensions.SerializeToArray<ReaderSubscriptionBase>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ReaderSubscriptionBase)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ReaderSubscriptionBase)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter
+  commentId: T:EventStore.Projections.Core.Services.Processing.EventFilter
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventFilter
+  nameWithType: EventFilter
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger
+  commentId: T:EventStore.Projections.Core.Services.Processing.PositionTagger
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: PositionTagger
+  nameWithType: PositionTagger
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger
+- uid: EventStore.Projections.Core.Services.Processing.PositionTracker
+  commentId: T:EventStore.Projections.Core.Services.Processing.PositionTracker
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: PositionTracker
+  nameWithType: PositionTracker
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTracker
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.#ctor
+  isExternal: false
+  name: ReaderSubscriptionBase
+  nameWithType: ReaderSubscriptionBase.ReaderSubscriptionBase
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ReaderSubscriptionBase
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  commentId: T:EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: IReaderStrategy
+  nameWithType: IReaderStrategy
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+- uid: EventStore.Core.Services.TimerService.ITimeProvider
+  commentId: T:EventStore.Core.Services.TimerService.ITimeProvider
+  parent: EventStore.Core.Services.TimerService
+  isExternal: false
+  name: ITimeProvider
+  nameWithType: ITimeProvider
+  fullName: EventStore.Core.Services.TimerService.ITimeProvider
+- uid: System.Nullable{System.Int64}
+  commentId: '!:System.Nullable{System.Int64}'
+  definition: System.Nullable`1
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
+  fullName: System.Nullable<System.Int64>
+  nameWithType.vb: Nullable(Of Int64)
+  fullName.vb: System.Nullable(Of System.Int64)
+  name.vb: Nullable(Of Int64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{System.Int32}
+  commentId: '!:System.Nullable{System.Int32}'
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  isExternal: false
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag
+  isExternal: false
+  name: Tag
+  nameWithType: ReaderSubscriptionBase.Tag
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Tag
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId
+  isExternal: false
+  name: SubscriptionId
+  nameWithType: ReaderSubscriptionBase.SubscriptionId
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.SubscriptionId
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne
+  isExternal: false
+  name: ProcessOne
+  nameWithType: ReaderSubscriptionBase.ProcessOne
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.ProcessOne
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.CommittedEventDistributed
+  nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted
+  isExternal: false
+  name: PublishPartitionDeleted
+  nameWithType: ReaderSubscriptionBase.PublishPartitionDeleted
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.PublishPartitionDeleted
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader
+  isExternal: false
+  name: CreatePausedEventReader
+  nameWithType: ReaderSubscriptionBase.CreatePausedEventReader
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.CreatePausedEventReader
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: EventStore.Projections.Core.Services.Processing.IEventReader
+  commentId: T:EventStore.Projections.Core.Services.Processing.IEventReader
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: IEventReader
+  nameWithType: IEventReader
+  fullName: EventStore.Projections.Core.Services.Processing.IEventReader
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: ReaderSubscriptionBase.Handle
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.Handle
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderEof
+  nameWithType: ReaderSubscriptionMessage.EventReaderEof
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderPartitionEof
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+  nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderStarting
+  nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+- uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached
+  isExternal: false
+  name: EofReached
+  nameWithType: ReaderSubscriptionBase.EofReached
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase.EofReached

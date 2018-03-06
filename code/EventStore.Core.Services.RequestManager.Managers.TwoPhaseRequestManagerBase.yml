@@ -1,0 +1,2105 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  commentId: T:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  id: TwoPhaseRequestManagerBase
+  parent: EventStore.Core.Services.RequestManager.Managers
+  children:
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CommitTimeout
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest(EventStore.Core.Messages.OperationResult,System.String,System.Int64)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest(System.Int64,System.Int64,System.Int64,System.Int64)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PrepareTimeout
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PublishEnvelope
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Publisher
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope
+  langs:
+  - csharp
+  - vb
+  name: TwoPhaseRequestManagerBase
+  nameWithType: TwoPhaseRequestManagerBase
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TwoPhaseRequestManagerBase
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: 'public abstract class TwoPhaseRequestManagerBase : object, IRequestManager, IHandle<StorageMessage.CheckStreamAccessCompleted>, IHandle<StorageMessage.AlreadyCommitted>, IHandle<StorageMessage.PrepareAck>, IHandle<StorageMessage.CommitReplicated>, IHandle<StorageMessage.WrongExpectedVersion>, IHandle<StorageMessage.StreamDeleted>, IHandle<StorageMessage.RequestManagerTimerTick>'
+    content.vb: >-
+      Public MustInherit Class TwoPhaseRequestManagerBase
+
+          Inherits Object
+
+          Implements IRequestManager, IHandle(Of StorageMessage.CheckStreamAccessCompleted), IHandle(Of StorageMessage.AlreadyCommitted), IHandle(Of StorageMessage.PrepareAck), IHandle(Of StorageMessage.CommitReplicated), IHandle(Of StorageMessage.WrongExpectedVersion), IHandle(Of StorageMessage.StreamDeleted), IHandle(Of StorageMessage.RequestManagerTimerTick)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - EventStore.Core.Services.RequestManager.Managers.DeleteStreamTwoPhaseRequestManager
+  - EventStore.Core.Services.RequestManager.Managers.TransactionCommitTwoPhaseRequestManager
+  - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager
+  implements:
+  - EventStore.Core.Services.RequestManager.IRequestManager
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.AlreadyCommitted}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitReplicated}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WrongExpectedVersion}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Publisher
+  commentId: F:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Publisher
+  id: Publisher
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Publisher
+  nameWithType: TwoPhaseRequestManagerBase.Publisher
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Publisher
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Publisher
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected readonly IPublisher Publisher
+    return:
+      type: EventStore.Core.Bus.IPublisher
+    content.vb: Protected ReadOnly Publisher As IPublisher
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PublishEnvelope
+  commentId: F:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PublishEnvelope
+  id: PublishEnvelope
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: PublishEnvelope
+  nameWithType: TwoPhaseRequestManagerBase.PublishEnvelope
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PublishEnvelope
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PublishEnvelope
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected readonly IEnvelope PublishEnvelope
+    return:
+      type: EventStore.Core.Messaging.IEnvelope
+    content.vb: Protected ReadOnly PublishEnvelope As IEnvelope
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope
+  commentId: P:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope
+  id: ResponseEnvelope
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: ResponseEnvelope
+  nameWithType: TwoPhaseRequestManagerBase.ResponseEnvelope
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ResponseEnvelope
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected IEnvelope ResponseEnvelope { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Messaging.IEnvelope
+    content.vb: Protected ReadOnly Property ResponseEnvelope As IEnvelope
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope*
+  modifiers.csharp:
+  - protected
+  - get
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId
+  commentId: P:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId
+  id: ClientCorrId
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: ClientCorrId
+  nameWithType: TwoPhaseRequestManagerBase.ClientCorrId
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ClientCorrId
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected Guid ClientCorrId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Protected ReadOnly Property ClientCorrId As Guid
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId*
+  modifiers.csharp:
+  - protected
+  - get
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime
+  commentId: P:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime
+  id: NextTimeoutTime
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: NextTimeoutTime
+  nameWithType: TwoPhaseRequestManagerBase.NextTimeoutTime
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: NextTimeoutTime
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected DateTime NextTimeoutTime { get; }
+    parameters: []
+    return:
+      type: DateTime
+    content.vb: Protected ReadOnly Property NextTimeoutTime As DateTime
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime*
+  modifiers.csharp:
+  - protected
+  - get
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PrepareTimeout
+  commentId: F:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PrepareTimeout
+  id: PrepareTimeout
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: PrepareTimeout
+  nameWithType: TwoPhaseRequestManagerBase.PrepareTimeout
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PrepareTimeout
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PrepareTimeout
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 31
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected readonly TimeSpan PrepareTimeout
+    return:
+      type: TimeSpan
+    content.vb: Protected ReadOnly PrepareTimeout As TimeSpan
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CommitTimeout
+  commentId: F:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CommitTimeout
+  id: CommitTimeout
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: CommitTimeout
+  nameWithType: TwoPhaseRequestManagerBase.CommitTimeout
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CommitTimeout
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CommitTimeout
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected readonly TimeSpan CommitTimeout
+    return:
+      type: TimeSpan
+    content.vb: Protected ReadOnly CommitTimeout As TimeSpan
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)'
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: TwoPhaseRequestManagerBase(IPublisher, Int32, TimeSpan, TimeSpan, Boolean)
+  nameWithType: TwoPhaseRequestManagerBase.TwoPhaseRequestManagerBase(IPublisher, Int32, TimeSpan, TimeSpan, Boolean)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.TwoPhaseRequestManagerBase(EventStore.Core.Bus.IPublisher, System.Int32, TimeSpan, TimeSpan, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 44
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected TwoPhaseRequestManagerBase(IPublisher publisher, int prepareCount, TimeSpan prepareTimeout, TimeSpan commitTimeout, bool betterOrdering)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: prepareCount
+      type: System.Int32
+    - id: prepareTimeout
+      type: TimeSpan
+    - id: commitTimeout
+      type: TimeSpan
+    - id: betterOrdering
+      type: System.Boolean
+    content.vb: Protected Sub New(publisher As IPublisher, prepareCount As Integer, prepareTimeout As TimeSpan, commitTimeout As TimeSpan, betterOrdering As Boolean)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  id: OnSecurityAccessGranted(Guid)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: OnSecurityAccessGranted(Guid)
+  nameWithType: TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OnSecurityAccessGranted
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 63
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected abstract void OnSecurityAccessGranted(Guid internalCorrId)
+    parameters:
+    - id: internalCorrId
+      type: Guid
+    content.vb: Protected MustOverride Sub OnSecurityAccessGranted(internalCorrId As Guid)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  id: InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: InitNoPreparePhase(IEnvelope, Guid, Guid, String, IPrincipal, StreamAccessType)
+  nameWithType: TwoPhaseRequestManagerBase.InitNoPreparePhase(IEnvelope, Guid, Guid, String, IPrincipal, StreamAccessType)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope, Guid, Guid, System.String, IPrincipal, EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InitNoPreparePhase
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 65
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected void InitNoPreparePhase(IEnvelope responseEnvelope, Guid internalCorrId, Guid clientCorrId, string eventStreamId, IPrincipal user, StreamAccessType accessType)
+    parameters:
+    - id: responseEnvelope
+      type: EventStore.Core.Messaging.IEnvelope
+    - id: internalCorrId
+      type: Guid
+    - id: clientCorrId
+      type: Guid
+    - id: eventStreamId
+      type: System.String
+    - id: user
+      type: IPrincipal
+    - id: accessType
+      type: EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+    content.vb: Protected Sub InitNoPreparePhase(responseEnvelope As IEnvelope, internalCorrId As Guid, clientCorrId As Guid, eventStreamId As String, user As IPrincipal, accessType As StreamAccessType)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  id: InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: InitTwoPhase(IEnvelope, Guid, Guid, Int64, IPrincipal, StreamAccessType)
+  nameWithType: TwoPhaseRequestManagerBase.InitTwoPhase(IEnvelope, Guid, Guid, Int64, IPrincipal, StreamAccessType)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope, Guid, Guid, System.Int64, IPrincipal, EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InitTwoPhase
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 83
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected void InitTwoPhase(IEnvelope responseEnvelope, Guid internalCorrId, Guid clientCorrId, long transactionId, IPrincipal user, StreamAccessType accessType)
+    parameters:
+    - id: responseEnvelope
+      type: EventStore.Core.Messaging.IEnvelope
+    - id: internalCorrId
+      type: Guid
+    - id: clientCorrId
+      type: Guid
+    - id: transactionId
+      type: System.Int64
+    - id: user
+      type: IPrincipal
+    - id: accessType
+      type: EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+    content.vb: Protected Sub InitTwoPhase(responseEnvelope As IEnvelope, internalCorrId As Guid, clientCorrId As Guid, transactionId As Long, user As IPrincipal, accessType As StreamAccessType)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  id: Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.CheckStreamAccessCompleted)
+  nameWithType: TwoPhaseRequestManagerBase.Handle(StorageMessage.CheckStreamAccessCompleted)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 102
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: public void Handle(StorageMessage.CheckStreamAccessCompleted message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+    content.vb: Public Sub Handle(message As StorageMessage.CheckStreamAccessCompleted)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted}.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  id: Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.WrongExpectedVersion)
+  nameWithType: TwoPhaseRequestManagerBase.Handle(StorageMessage.WrongExpectedVersion)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 110
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: public void Handle(StorageMessage.WrongExpectedVersion message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+    content.vb: Public Sub Handle(message As StorageMessage.WrongExpectedVersion)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WrongExpectedVersion}.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  id: Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.StreamDeleted)
+  nameWithType: TwoPhaseRequestManagerBase.Handle(StorageMessage.StreamDeleted)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 118
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: public void Handle(StorageMessage.StreamDeleted message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.StreamDeleted
+    content.vb: Public Sub Handle(message As StorageMessage.StreamDeleted)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  id: Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.RequestManagerTimerTick)
+  nameWithType: TwoPhaseRequestManagerBase.Handle(StorageMessage.RequestManagerTimerTick)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 126
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: public void Handle(StorageMessage.RequestManagerTimerTick message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+    content.vb: Public Sub Handle(message As StorageMessage.RequestManagerTimerTick)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  id: Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.AlreadyCommitted)
+  nameWithType: TwoPhaseRequestManagerBase.Handle(StorageMessage.AlreadyCommitted)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 137
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: public void Handle(StorageMessage.AlreadyCommitted message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+    content.vb: Public Sub Handle(message As StorageMessage.AlreadyCommitted)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.AlreadyCommitted}.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  id: Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.PrepareAck)
+  nameWithType: TwoPhaseRequestManagerBase.Handle(StorageMessage.PrepareAck)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 144
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: public void Handle(StorageMessage.PrepareAck message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.PrepareAck
+    content.vb: Public Sub Handle(message As StorageMessage.PrepareAck)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  id: Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.CommitReplicated)
+  nameWithType: TwoPhaseRequestManagerBase.Handle(StorageMessage.CommitReplicated)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 163
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: public void Handle(StorageMessage.CommitReplicated message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.CommitReplicated
+    content.vb: Public Sub Handle(message As StorageMessage.CommitReplicated)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitReplicated}.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest(System.Int64,System.Int64,System.Int64,System.Int64)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest(System.Int64,System.Int64,System.Int64,System.Int64)
+  id: CompleteSuccessRequest(System.Int64,System.Int64,System.Int64,System.Int64)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: CompleteSuccessRequest(Int64, Int64, Int64, Int64)
+  nameWithType: TwoPhaseRequestManagerBase.CompleteSuccessRequest(Int64, Int64, Int64, Int64)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest(System.Int64, System.Int64, System.Int64, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CompleteSuccessRequest
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 171
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected virtual void CompleteSuccessRequest(long firstEventNumber, long lastEventNumber, long preparePosition, long commitPosition)
+    parameters:
+    - id: firstEventNumber
+      type: System.Int64
+    - id: lastEventNumber
+      type: System.Int64
+    - id: preparePosition
+      type: System.Int64
+    - id: commitPosition
+      type: System.Int64
+    content.vb: Protected Overridable Sub CompleteSuccessRequest(firstEventNumber As Long, lastEventNumber As Long, preparePosition As Long, commitPosition As Long)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest(EventStore.Core.Messages.OperationResult,System.String,System.Int64)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest(EventStore.Core.Messages.OperationResult,System.String,System.Int64)
+  id: CompleteFailedRequest(EventStore.Core.Messages.OperationResult,System.String,System.Int64)
+  parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
+  langs:
+  - csharp
+  - vb
+  name: CompleteFailedRequest(OperationResult, String, Int64)
+  nameWithType: TwoPhaseRequestManagerBase.CompleteFailedRequest(OperationResult, String, Int64)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest(EventStore.Core.Messages.OperationResult, System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CompleteFailedRequest
+    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/TwoPhaseRequestManagerBase.cs
+    startLine: 177
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.RequestManager.Managers
+  syntax:
+    content: protected virtual void CompleteFailedRequest(OperationResult result, string error, long currentVersion = null)
+    parameters:
+    - id: result
+      type: EventStore.Core.Messages.OperationResult
+    - id: error
+      type: System.String
+    - id: currentVersion
+      type: System.Int64
+    content.vb: Protected Overridable Sub CompleteFailedRequest(result As OperationResult, error As String, currentVersion As Long = Nothing)
+  overload: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: EventStore.Core.Services.RequestManager.Managers
+  commentId: N:EventStore.Core.Services.RequestManager.Managers
+  isExternal: false
+  name: EventStore.Core.Services.RequestManager.Managers
+  nameWithType: EventStore.Core.Services.RequestManager.Managers
+  fullName: EventStore.Core.Services.RequestManager.Managers
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Services.RequestManager.IRequestManager
+  commentId: T:EventStore.Core.Services.RequestManager.IRequestManager
+  parent: EventStore.Core.Services.RequestManager
+  isExternal: false
+  name: IRequestManager
+  nameWithType: IRequestManager
+  fullName: EventStore.Core.Services.RequestManager.IRequestManager
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.CheckStreamAccessCompleted>
+  nameWithType: IHandle<StorageMessage.CheckStreamAccessCompleted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted>
+  nameWithType.vb: IHandle(Of StorageMessage.CheckStreamAccessCompleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  name.vb: IHandle(Of StorageMessage.CheckStreamAccessCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+    name: StorageMessage.CheckStreamAccessCompleted
+    nameWithType: StorageMessage.CheckStreamAccessCompleted
+    fullName: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+    name: StorageMessage.CheckStreamAccessCompleted
+    nameWithType: StorageMessage.CheckStreamAccessCompleted
+    fullName: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.AlreadyCommitted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.AlreadyCommitted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.AlreadyCommitted>
+  nameWithType: IHandle<StorageMessage.AlreadyCommitted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.AlreadyCommitted>
+  nameWithType.vb: IHandle(Of StorageMessage.AlreadyCommitted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  name.vb: IHandle(Of StorageMessage.AlreadyCommitted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+    name: StorageMessage.AlreadyCommitted
+    nameWithType: StorageMessage.AlreadyCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+    name: StorageMessage.AlreadyCommitted
+    nameWithType: StorageMessage.AlreadyCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.PrepareAck>
+  nameWithType: IHandle<StorageMessage.PrepareAck>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.PrepareAck>
+  nameWithType.vb: IHandle(Of StorageMessage.PrepareAck)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.PrepareAck)
+  name.vb: IHandle(Of StorageMessage.PrepareAck)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.PrepareAck
+    name: StorageMessage.PrepareAck
+    nameWithType: StorageMessage.PrepareAck
+    fullName: EventStore.Core.Messages.StorageMessage.PrepareAck
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.PrepareAck
+    name: StorageMessage.PrepareAck
+    nameWithType: StorageMessage.PrepareAck
+    fullName: EventStore.Core.Messages.StorageMessage.PrepareAck
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitReplicated}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitReplicated}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.CommitReplicated>
+  nameWithType: IHandle<StorageMessage.CommitReplicated>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CommitReplicated>
+  nameWithType.vb: IHandle(Of StorageMessage.CommitReplicated)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  name.vb: IHandle(Of StorageMessage.CommitReplicated)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.CommitReplicated
+    name: StorageMessage.CommitReplicated
+    nameWithType: StorageMessage.CommitReplicated
+    fullName: EventStore.Core.Messages.StorageMessage.CommitReplicated
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.CommitReplicated
+    name: StorageMessage.CommitReplicated
+    nameWithType: StorageMessage.CommitReplicated
+    fullName: EventStore.Core.Messages.StorageMessage.CommitReplicated
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WrongExpectedVersion}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WrongExpectedVersion}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.WrongExpectedVersion>
+  nameWithType: IHandle<StorageMessage.WrongExpectedVersion>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WrongExpectedVersion>
+  nameWithType.vb: IHandle(Of StorageMessage.WrongExpectedVersion)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  name.vb: IHandle(Of StorageMessage.WrongExpectedVersion)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+    name: StorageMessage.WrongExpectedVersion
+    nameWithType: StorageMessage.WrongExpectedVersion
+    fullName: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+    name: StorageMessage.WrongExpectedVersion
+    nameWithType: StorageMessage.WrongExpectedVersion
+    fullName: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.StreamDeleted>
+  nameWithType: IHandle<StorageMessage.StreamDeleted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.StreamDeleted>
+  nameWithType.vb: IHandle(Of StorageMessage.StreamDeleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  name.vb: IHandle(Of StorageMessage.StreamDeleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.StreamDeleted
+    name: StorageMessage.StreamDeleted
+    nameWithType: StorageMessage.StreamDeleted
+    fullName: EventStore.Core.Messages.StorageMessage.StreamDeleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.StreamDeleted
+    name: StorageMessage.StreamDeleted
+    nameWithType: StorageMessage.StreamDeleted
+    fullName: EventStore.Core.Messages.StorageMessage.StreamDeleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.RequestManagerTimerTick>
+  nameWithType: IHandle<StorageMessage.RequestManagerTimerTick>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick>
+  nameWithType.vb: IHandle(Of StorageMessage.RequestManagerTimerTick)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  name.vb: IHandle(Of StorageMessage.RequestManagerTimerTick)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+    name: StorageMessage.RequestManagerTimerTick
+    nameWithType: StorageMessage.RequestManagerTimerTick
+    fullName: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+    name: StorageMessage.RequestManagerTimerTick
+    nameWithType: StorageMessage.RequestManagerTimerTick
+    fullName: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TwoPhaseRequestManagerBase>()
+  nameWithType: ProtobufExtensions.Serialize<TwoPhaseRequestManagerBase>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TwoPhaseRequestManagerBase)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase)()
+  name.vb: Serialize(Of TwoPhaseRequestManagerBase)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TwoPhaseRequestManagerBase>
+    nameWithType: ProtobufExtensions.Serialize<TwoPhaseRequestManagerBase>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TwoPhaseRequestManagerBase)
+    nameWithType: ProtobufExtensions.Serialize(Of TwoPhaseRequestManagerBase)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TwoPhaseRequestManagerBase>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TwoPhaseRequestManagerBase>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TwoPhaseRequestManagerBase)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase)()
+  name.vb: SerializeToArray(Of TwoPhaseRequestManagerBase)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TwoPhaseRequestManagerBase>
+    nameWithType: ProtobufExtensions.SerializeToArray<TwoPhaseRequestManagerBase>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TwoPhaseRequestManagerBase)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TwoPhaseRequestManagerBase)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.RequestManager
+  commentId: N:EventStore.Core.Services.RequestManager
+  isExternal: false
+  name: EventStore.Core.Services.RequestManager
+  nameWithType: EventStore.Core.Services.RequestManager
+  fullName: EventStore.Core.Services.RequestManager
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Messaging.IEnvelope
+  commentId: T:EventStore.Core.Messaging.IEnvelope
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: IEnvelope
+  nameWithType: IEnvelope
+  fullName: EventStore.Core.Messaging.IEnvelope
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope
+  isExternal: false
+  name: ResponseEnvelope
+  nameWithType: TwoPhaseRequestManagerBase.ResponseEnvelope
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ResponseEnvelope
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId
+  isExternal: false
+  name: ClientCorrId
+  nameWithType: TwoPhaseRequestManagerBase.ClientCorrId
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.ClientCorrId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime
+  isExternal: false
+  name: NextTimeoutTime
+  nameWithType: TwoPhaseRequestManagerBase.NextTimeoutTime
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime
+- uid: DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.#ctor*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.#ctor
+  isExternal: false
+  name: TwoPhaseRequestManagerBase
+  nameWithType: TwoPhaseRequestManagerBase.TwoPhaseRequestManagerBase
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.TwoPhaseRequestManagerBase
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted
+  isExternal: false
+  name: OnSecurityAccessGranted
+  nameWithType: TwoPhaseRequestManagerBase.OnSecurityAccessGranted
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase
+  isExternal: false
+  name: InitNoPreparePhase
+  nameWithType: TwoPhaseRequestManagerBase.InitNoPreparePhase
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: IPrincipal
+  isExternal: true
+  name: IPrincipal
+  nameWithType: IPrincipal
+  fullName: IPrincipal
+- uid: EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: StreamAccessType
+  nameWithType: StreamAccessType
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType
+- uid: EventStore.Core.Services.Storage.ReaderIndex
+  commentId: N:EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: EventStore.Core.Services.Storage.ReaderIndex
+  nameWithType: EventStore.Core.Services.Storage.ReaderIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase
+  isExternal: false
+  name: InitTwoPhase
+  nameWithType: TwoPhaseRequestManagerBase.InitTwoPhase
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: TwoPhaseRequestManagerBase.Handle
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted}.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted}.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.CheckStreamAccessCompleted)
+  nameWithType: IHandle<StorageMessage.CheckStreamAccessCompleted>.Handle(StorageMessage.CheckStreamAccessCompleted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted>.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  nameWithType.vb: IHandle(Of StorageMessage.CheckStreamAccessCompleted).Handle(StorageMessage.CheckStreamAccessCompleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted).Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.CheckStreamAccessCompleted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+    name: StorageMessage.CheckStreamAccessCompleted
+    nameWithType: StorageMessage.CheckStreamAccessCompleted
+    fullName: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.CheckStreamAccessCompleted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+    name: StorageMessage.CheckStreamAccessCompleted
+    nameWithType: StorageMessage.CheckStreamAccessCompleted
+    fullName: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+  commentId: T:EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.CheckStreamAccessCompleted
+  nameWithType: StorageMessage.CheckStreamAccessCompleted
+  fullName: EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WrongExpectedVersion}.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WrongExpectedVersion}.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WrongExpectedVersion}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.WrongExpectedVersion)
+  nameWithType: IHandle<StorageMessage.WrongExpectedVersion>.Handle(StorageMessage.WrongExpectedVersion)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WrongExpectedVersion>.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  nameWithType.vb: IHandle(Of StorageMessage.WrongExpectedVersion).Handle(StorageMessage.WrongExpectedVersion)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WrongExpectedVersion).Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.WrongExpectedVersion>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WrongExpectedVersion>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+    name: StorageMessage.WrongExpectedVersion
+    nameWithType: StorageMessage.WrongExpectedVersion
+    fullName: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.WrongExpectedVersion).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.WrongExpectedVersion).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+    name: StorageMessage.WrongExpectedVersion
+    nameWithType: StorageMessage.WrongExpectedVersion
+    fullName: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+  commentId: T:EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.WrongExpectedVersion
+  nameWithType: StorageMessage.WrongExpectedVersion
+  fullName: EventStore.Core.Messages.StorageMessage.WrongExpectedVersion
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.StreamDeleted)
+  nameWithType: IHandle<StorageMessage.StreamDeleted>.Handle(StorageMessage.StreamDeleted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.StreamDeleted>.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  nameWithType.vb: IHandle(Of StorageMessage.StreamDeleted).Handle(StorageMessage.StreamDeleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.StreamDeleted).Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.StreamDeleted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.StreamDeleted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.StreamDeleted
+    name: StorageMessage.StreamDeleted
+    nameWithType: StorageMessage.StreamDeleted
+    fullName: EventStore.Core.Messages.StorageMessage.StreamDeleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.StreamDeleted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.StreamDeleted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.StreamDeleted
+    name: StorageMessage.StreamDeleted
+    nameWithType: StorageMessage.StreamDeleted
+    fullName: EventStore.Core.Messages.StorageMessage.StreamDeleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.StreamDeleted
+  commentId: T:EventStore.Core.Messages.StorageMessage.StreamDeleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.StreamDeleted
+  nameWithType: StorageMessage.StreamDeleted
+  fullName: EventStore.Core.Messages.StorageMessage.StreamDeleted
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.RequestManagerTimerTick)
+  nameWithType: IHandle<StorageMessage.RequestManagerTimerTick>.Handle(StorageMessage.RequestManagerTimerTick)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick>.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  nameWithType.vb: IHandle(Of StorageMessage.RequestManagerTimerTick).Handle(StorageMessage.RequestManagerTimerTick)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick).Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.RequestManagerTimerTick>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+    name: StorageMessage.RequestManagerTimerTick
+    nameWithType: StorageMessage.RequestManagerTimerTick
+    fullName: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.RequestManagerTimerTick).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+    name: StorageMessage.RequestManagerTimerTick
+    nameWithType: StorageMessage.RequestManagerTimerTick
+    fullName: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+  commentId: T:EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.RequestManagerTimerTick
+  nameWithType: StorageMessage.RequestManagerTimerTick
+  fullName: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.AlreadyCommitted}.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.AlreadyCommitted}.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.AlreadyCommitted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.AlreadyCommitted)
+  nameWithType: IHandle<StorageMessage.AlreadyCommitted>.Handle(StorageMessage.AlreadyCommitted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.AlreadyCommitted>.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  nameWithType.vb: IHandle(Of StorageMessage.AlreadyCommitted).Handle(StorageMessage.AlreadyCommitted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.AlreadyCommitted).Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.AlreadyCommitted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.AlreadyCommitted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+    name: StorageMessage.AlreadyCommitted
+    nameWithType: StorageMessage.AlreadyCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.AlreadyCommitted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.AlreadyCommitted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+    name: StorageMessage.AlreadyCommitted
+    nameWithType: StorageMessage.AlreadyCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+  commentId: T:EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.AlreadyCommitted
+  nameWithType: StorageMessage.AlreadyCommitted
+  fullName: EventStore.Core.Messages.StorageMessage.AlreadyCommitted
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.PrepareAck)
+  nameWithType: IHandle<StorageMessage.PrepareAck>.Handle(StorageMessage.PrepareAck)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.PrepareAck>.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  nameWithType.vb: IHandle(Of StorageMessage.PrepareAck).Handle(StorageMessage.PrepareAck)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.PrepareAck).Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.PrepareAck>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.PrepareAck>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.PrepareAck
+    name: StorageMessage.PrepareAck
+    nameWithType: StorageMessage.PrepareAck
+    fullName: EventStore.Core.Messages.StorageMessage.PrepareAck
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.PrepareAck).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.PrepareAck).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.PrepareAck
+    name: StorageMessage.PrepareAck
+    nameWithType: StorageMessage.PrepareAck
+    fullName: EventStore.Core.Messages.StorageMessage.PrepareAck
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.PrepareAck
+  commentId: T:EventStore.Core.Messages.StorageMessage.PrepareAck
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.PrepareAck
+  nameWithType: StorageMessage.PrepareAck
+  fullName: EventStore.Core.Messages.StorageMessage.PrepareAck
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitReplicated}.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitReplicated}.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitReplicated}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.CommitReplicated)
+  nameWithType: IHandle<StorageMessage.CommitReplicated>.Handle(StorageMessage.CommitReplicated)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CommitReplicated>.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  nameWithType.vb: IHandle(Of StorageMessage.CommitReplicated).Handle(StorageMessage.CommitReplicated)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.CommitReplicated).Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.CommitReplicated>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CommitReplicated>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.CommitReplicated
+    name: StorageMessage.CommitReplicated
+    nameWithType: StorageMessage.CommitReplicated
+    fullName: EventStore.Core.Messages.StorageMessage.CommitReplicated
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.CommitReplicated).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.CommitReplicated).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.CommitReplicated
+    name: StorageMessage.CommitReplicated
+    nameWithType: StorageMessage.CommitReplicated
+    fullName: EventStore.Core.Messages.StorageMessage.CommitReplicated
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.CommitReplicated
+  commentId: T:EventStore.Core.Messages.StorageMessage.CommitReplicated
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.CommitReplicated
+  nameWithType: StorageMessage.CommitReplicated
+  fullName: EventStore.Core.Messages.StorageMessage.CommitReplicated
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest
+  isExternal: false
+  name: CompleteSuccessRequest
+  nameWithType: TwoPhaseRequestManagerBase.CompleteSuccessRequest
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest*
+  commentId: Overload:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest
+  isExternal: false
+  name: CompleteFailedRequest
+  nameWithType: TwoPhaseRequestManagerBase.CompleteFailedRequest
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest
+- uid: EventStore.Core.Messages.OperationResult
+  commentId: T:EventStore.Core.Messages.OperationResult
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: OperationResult
+  nameWithType: OperationResult
+  fullName: EventStore.Core.Messages.OperationResult

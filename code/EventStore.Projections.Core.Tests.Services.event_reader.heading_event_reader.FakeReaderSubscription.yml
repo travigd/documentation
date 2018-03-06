@@ -1,0 +1,2481 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  commentId: T:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  id: FakeReaderSubscription
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  children:
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted)
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag
+  langs:
+  - csharp
+  - vb
+  name: FakeReaderSubscription
+  nameWithType: FakeReaderSubscription
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: FakeReaderSubscription
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: 'public class FakeReaderSubscription : object, IReaderSubscription, IHandle<ReaderSubscriptionMessage.CommittedEventDistributed>, IHandle<ReaderSubscriptionMessage.EventReaderIdle>, IHandle<ReaderSubscriptionMessage.EventReaderStarting>, IHandle<ReaderSubscriptionMessage.EventReaderEof>, IHandle<ReaderSubscriptionMessage.EventReaderPartitionEof>, IHandle<ReaderSubscriptionMessage.EventReaderPartitionDeleted>, IHandle<ReaderSubscriptionMessage.EventReaderPartitionMeasured>, IHandle<ReaderSubscriptionMessage.EventReaderNotAuthorized>'
+    content.vb: >-
+      Public Class FakeReaderSubscription
+
+          Inherits Object
+
+          Implements IReaderSubscription, IHandle(Of ReaderSubscriptionMessage.CommittedEventDistributed), IHandle(Of ReaderSubscriptionMessage.EventReaderIdle), IHandle(Of ReaderSubscriptionMessage.EventReaderStarting), IHandle(Of ReaderSubscriptionMessage.EventReaderEof), IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionEof), IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted), IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionMeasured), IHandle(Of ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IReaderSubscription
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.CommittedEventDistributed)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.CommittedEventDistributed message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.CommittedEventDistributed)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents
+  id: ReceivedEvents
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: ReceivedEvents
+  nameWithType: FakeReaderSubscription.ReceivedEvents
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceivedEvents
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 44
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public List<ReaderSubscriptionMessage.CommittedEventDistributed> ReceivedEvents { get; }
+    parameters: []
+    return:
+      type: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}
+    content.vb: Public ReadOnly Property ReceivedEvents As List(Of ReaderSubscriptionMessage.CommittedEventDistributed)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications
+  id: ReceivedIdleNotifications
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: ReceivedIdleNotifications
+  nameWithType: FakeReaderSubscription.ReceivedIdleNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceivedIdleNotifications
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public List<ReaderSubscriptionMessage.EventReaderIdle> ReceivedIdleNotifications { get; }
+    parameters: []
+    return:
+      type: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}
+    content.vb: Public ReadOnly Property ReceivedIdleNotifications As List(Of ReaderSubscriptionMessage.EventReaderIdle)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications
+  id: ReceivedStartingNotifications
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: ReceivedStartingNotifications
+  nameWithType: FakeReaderSubscription.ReceivedStartingNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceivedStartingNotifications
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public List<ReaderSubscriptionMessage.EventReaderStarting> ReceivedStartingNotifications { get; }
+    parameters: []
+    return:
+      type: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}
+    content.vb: Public ReadOnly Property ReceivedStartingNotifications As List(Of ReaderSubscriptionMessage.EventReaderStarting)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications
+  id: ReceivedEofNotifications
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: ReceivedEofNotifications
+  nameWithType: FakeReaderSubscription.ReceivedEofNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceivedEofNotifications
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 59
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public List<ReaderSubscriptionMessage.EventReaderEof> ReceivedEofNotifications { get; }
+    parameters: []
+    return:
+      type: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}
+    content.vb: Public ReadOnly Property ReceivedEofNotifications As List(Of ReaderSubscriptionMessage.EventReaderEof)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications
+  id: ReceivedPartitionEofNotifications
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: ReceivedPartitionEofNotifications
+  nameWithType: FakeReaderSubscription.ReceivedPartitionEofNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceivedPartitionEofNotifications
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 64
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public List<ReaderSubscriptionMessage.EventReaderPartitionEof> ReceivedPartitionEofNotifications { get; }
+    parameters: []
+    return:
+      type: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}
+    content.vb: Public ReadOnly Property ReceivedPartitionEofNotifications As List(Of ReaderSubscriptionMessage.EventReaderPartitionEof)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+  id: ReceivedPartitionDeletedNotifications
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: ReceivedPartitionDeletedNotifications
+  nameWithType: FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceivedPartitionDeletedNotifications
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 69
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public List<ReaderSubscriptionMessage.EventReaderPartitionDeleted> ReceivedPartitionDeletedNotifications { get; }
+    parameters: []
+    return:
+      type: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}
+    content.vb: Public ReadOnly Property ReceivedPartitionDeletedNotifications As List(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+  id: ReceivedNotAuthorizedNotifications
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: ReceivedNotAuthorizedNotifications
+  nameWithType: FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceivedNotAuthorizedNotifications
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 74
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public List<ReaderSubscriptionMessage.EventReaderNotAuthorized> ReceivedNotAuthorizedNotifications { get; }
+    parameters: []
+    return:
+      type: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}
+    content.vb: Public ReadOnly Property ReceivedNotAuthorizedNotifications As List(Of ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderIdle)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.EventReaderIdle)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 79
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderIdle message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderIdle)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderStarting)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.EventReaderStarting)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 84
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderStarting message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderStarting)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderEof)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.EventReaderEof)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 89
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderEof message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderEof)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionEof)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.EventReaderPartitionEof)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 94
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderPartitionEof message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderPartitionEof)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 99
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderPartitionDeleted message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 104
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 109
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionMessage.Faulted)
+  nameWithType: FakeReaderSubscription.Handle(ReaderSubscriptionMessage.Faulted)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 114
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public void Handle(ReaderSubscriptionMessage.Faulted message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted
+    content.vb: Public Sub Handle(message As ReaderSubscriptionMessage.Faulted)
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag
+  id: Tag
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: Tag
+  nameWithType: FakeReaderSubscription.Tag
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Tag
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 119
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public string Tag { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Tag As String
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IReaderSubscription.Tag
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId
+  id: SubscriptionId
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: SubscriptionId
+  nameWithType: FakeReaderSubscription.SubscriptionId
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscriptionId
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 124
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public Guid SubscriptionId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property SubscriptionId As Guid
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader
+  commentId: P:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader
+  id: EventReader
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: EventReader
+  nameWithType: FakeReaderSubscription.EventReader
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventReader
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 130
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public FakeEventReader EventReader { get; }
+    parameters: []
+    return:
+      type: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeEventReader
+    content.vb: Public ReadOnly Property EventReader As FakeEventReader
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  commentId: M:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  id: CreatePausedEventReader(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,Guid)
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription
+  langs:
+  - csharp
+  - vb
+  name: CreatePausedEventReader(IPublisher, IODispatcher, Guid)
+  nameWithType: FakeReaderSubscription.CreatePausedEventReader(IPublisher, IODispatcher, Guid)
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader(EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, Guid)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreatePausedEventReader
+    path: ../EventStore/src/EventStore.Projections.Core.Tests/Services/event_reader/heading_event_reader/FakeReaderSubscription.cs
+    startLine: 132
+  assemblies:
+  - EventStore.Projections.Core.Tests
+  namespace: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  syntax:
+    content: public IEventReader CreatePausedEventReader(IPublisher publisher, IODispatcher ioDispatcher, Guid forkedEventReaderId)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: forkedEventReaderId
+      type: Guid
+    return:
+      type: EventStore.Projections.Core.Services.Processing.IEventReader
+    content.vb: Public Function CreatePausedEventReader(publisher As IPublisher, ioDispatcher As IODispatcher, forkedEventReaderId As Guid) As IEventReader
+  overload: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  commentId: N:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  isExternal: false
+  name: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  nameWithType: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.Processing.IReaderSubscription
+  commentId: T:EventStore.Projections.Core.Services.Processing.IReaderSubscription
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: IReaderSubscription
+  nameWithType: IReaderSubscription
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderSubscription
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.CommittedEventDistributed>
+  nameWithType: IHandle<ReaderSubscriptionMessage.CommittedEventDistributed>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.CommittedEventDistributed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    name: ReaderSubscriptionMessage.CommittedEventDistributed
+    nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    name: ReaderSubscriptionMessage.CommittedEventDistributed
+    nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.EventReaderIdle>
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderIdle>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderIdle)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderIdle)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    name: ReaderSubscriptionMessage.EventReaderIdle
+    nameWithType: ReaderSubscriptionMessage.EventReaderIdle
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    name: ReaderSubscriptionMessage.EventReaderIdle
+    nameWithType: ReaderSubscriptionMessage.EventReaderIdle
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.EventReaderStarting>
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderStarting>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderStarting)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderStarting)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    name: ReaderSubscriptionMessage.EventReaderStarting
+    nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    name: ReaderSubscriptionMessage.EventReaderStarting
+    nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.EventReaderEof>
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderEof>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderEof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderEof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    name: ReaderSubscriptionMessage.EventReaderEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    name: ReaderSubscriptionMessage.EventReaderEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.EventReaderPartitionEof>
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionEof>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionEof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionEof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    name: ReaderSubscriptionMessage.EventReaderPartitionEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    name: ReaderSubscriptionMessage.EventReaderPartitionEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.EventReaderPartitionMeasured>
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionMeasured>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    name: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    name: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionMessage.EventReaderNotAuthorized>
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderNotAuthorized>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  name.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<FakeReaderSubscription>()
+  nameWithType: ProtobufExtensions.Serialize<FakeReaderSubscription>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of FakeReaderSubscription)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription)()
+  name.vb: Serialize(Of FakeReaderSubscription)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<FakeReaderSubscription>
+    nameWithType: ProtobufExtensions.Serialize<FakeReaderSubscription>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of FakeReaderSubscription)
+    nameWithType: ProtobufExtensions.Serialize(Of FakeReaderSubscription)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<FakeReaderSubscription>()
+  nameWithType: ProtobufExtensions.SerializeToArray<FakeReaderSubscription>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of FakeReaderSubscription)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription)()
+  name.vb: SerializeToArray(Of FakeReaderSubscription)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<FakeReaderSubscription>
+    nameWithType: ProtobufExtensions.SerializeToArray<FakeReaderSubscription>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of FakeReaderSubscription)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of FakeReaderSubscription)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: FakeReaderSubscription.Handle
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.CommittedEventDistributed)
+  nameWithType: IHandle<ReaderSubscriptionMessage.CommittedEventDistributed>.Handle(ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.CommittedEventDistributed).Handle(ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.CommittedEventDistributed>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    name: ReaderSubscriptionMessage.CommittedEventDistributed
+    nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.CommittedEventDistributed).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    name: ReaderSubscriptionMessage.CommittedEventDistributed
+    nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.CommittedEventDistributed
+  nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents
+  isExternal: false
+  name: ReceivedEvents
+  nameWithType: FakeReaderSubscription.ReceivedEvents
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEvents
+- uid: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}
+  commentId: '!:List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed}'
+  definition: List`1
+  name: List<ReaderSubscriptionMessage.CommittedEventDistributed>
+  nameWithType: List<ReaderSubscriptionMessage.CommittedEventDistributed>
+  fullName: List<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed>
+  nameWithType.vb: List(Of ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName.vb: List(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  name.vb: List(Of ReaderSubscriptionMessage.CommittedEventDistributed)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    name: ReaderSubscriptionMessage.CommittedEventDistributed
+    nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    name: ReaderSubscriptionMessage.CommittedEventDistributed
+    nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: List`1
+  isExternal: true
+  name: List<>
+  nameWithType: List<>
+  fullName: List<>
+  nameWithType.vb: List(Of )
+  fullName.vb: List(Of )
+  name.vb: List(Of )
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications
+  isExternal: false
+  name: ReceivedIdleNotifications
+  nameWithType: FakeReaderSubscription.ReceivedIdleNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedIdleNotifications
+- uid: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}
+  commentId: '!:List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}'
+  definition: List`1
+  name: List<ReaderSubscriptionMessage.EventReaderIdle>
+  nameWithType: List<ReaderSubscriptionMessage.EventReaderIdle>
+  fullName: List<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle>
+  nameWithType.vb: List(Of ReaderSubscriptionMessage.EventReaderIdle)
+  fullName.vb: List(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  name.vb: List(Of ReaderSubscriptionMessage.EventReaderIdle)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    name: ReaderSubscriptionMessage.EventReaderIdle
+    nameWithType: ReaderSubscriptionMessage.EventReaderIdle
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    name: ReaderSubscriptionMessage.EventReaderIdle
+    nameWithType: ReaderSubscriptionMessage.EventReaderIdle
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications
+  isExternal: false
+  name: ReceivedStartingNotifications
+  nameWithType: FakeReaderSubscription.ReceivedStartingNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedStartingNotifications
+- uid: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}
+  commentId: '!:List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}'
+  definition: List`1
+  name: List<ReaderSubscriptionMessage.EventReaderStarting>
+  nameWithType: List<ReaderSubscriptionMessage.EventReaderStarting>
+  fullName: List<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting>
+  nameWithType.vb: List(Of ReaderSubscriptionMessage.EventReaderStarting)
+  fullName.vb: List(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  name.vb: List(Of ReaderSubscriptionMessage.EventReaderStarting)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    name: ReaderSubscriptionMessage.EventReaderStarting
+    nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    name: ReaderSubscriptionMessage.EventReaderStarting
+    nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications
+  isExternal: false
+  name: ReceivedEofNotifications
+  nameWithType: FakeReaderSubscription.ReceivedEofNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedEofNotifications
+- uid: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}
+  commentId: '!:List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}'
+  definition: List`1
+  name: List<ReaderSubscriptionMessage.EventReaderEof>
+  nameWithType: List<ReaderSubscriptionMessage.EventReaderEof>
+  fullName: List<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof>
+  nameWithType.vb: List(Of ReaderSubscriptionMessage.EventReaderEof)
+  fullName.vb: List(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  name.vb: List(Of ReaderSubscriptionMessage.EventReaderEof)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    name: ReaderSubscriptionMessage.EventReaderEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    name: ReaderSubscriptionMessage.EventReaderEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications
+  isExternal: false
+  name: ReceivedPartitionEofNotifications
+  nameWithType: FakeReaderSubscription.ReceivedPartitionEofNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionEofNotifications
+- uid: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}
+  commentId: '!:List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}'
+  definition: List`1
+  name: List<ReaderSubscriptionMessage.EventReaderPartitionEof>
+  nameWithType: List<ReaderSubscriptionMessage.EventReaderPartitionEof>
+  fullName: List<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof>
+  nameWithType.vb: List(Of ReaderSubscriptionMessage.EventReaderPartitionEof)
+  fullName.vb: List(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  name.vb: List(Of ReaderSubscriptionMessage.EventReaderPartitionEof)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    name: ReaderSubscriptionMessage.EventReaderPartitionEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    name: ReaderSubscriptionMessage.EventReaderPartitionEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+  isExternal: false
+  name: ReceivedPartitionDeletedNotifications
+  nameWithType: FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedPartitionDeletedNotifications
+- uid: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}
+  commentId: '!:List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}'
+  definition: List`1
+  name: List<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  nameWithType: List<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  fullName: List<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  nameWithType.vb: List(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  fullName.vb: List(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  name.vb: List(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+  isExternal: false
+  name: ReceivedNotAuthorizedNotifications
+  nameWithType: FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.ReceivedNotAuthorizedNotifications
+- uid: List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}
+  commentId: '!:List{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}'
+  definition: List`1
+  name: List<ReaderSubscriptionMessage.EventReaderNotAuthorized>
+  nameWithType: List<ReaderSubscriptionMessage.EventReaderNotAuthorized>
+  fullName: List<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized>
+  nameWithType.vb: List(Of ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  fullName.vb: List(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  name.vb: List(Of ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.EventReaderIdle)
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderIdle>.Handle(ReaderSubscriptionMessage.EventReaderIdle)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderIdle).Handle(ReaderSubscriptionMessage.EventReaderIdle)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderIdle>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    name: ReaderSubscriptionMessage.EventReaderIdle
+    nameWithType: ReaderSubscriptionMessage.EventReaderIdle
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.EventReaderIdle).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    name: ReaderSubscriptionMessage.EventReaderIdle
+    nameWithType: ReaderSubscriptionMessage.EventReaderIdle
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderIdle
+  nameWithType: ReaderSubscriptionMessage.EventReaderIdle
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.EventReaderStarting)
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderStarting>.Handle(ReaderSubscriptionMessage.EventReaderStarting)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderStarting).Handle(ReaderSubscriptionMessage.EventReaderStarting)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderStarting>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    name: ReaderSubscriptionMessage.EventReaderStarting
+    nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.EventReaderStarting).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    name: ReaderSubscriptionMessage.EventReaderStarting
+    nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderStarting
+  nameWithType: ReaderSubscriptionMessage.EventReaderStarting
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.EventReaderEof)
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderEof>.Handle(ReaderSubscriptionMessage.EventReaderEof)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderEof).Handle(ReaderSubscriptionMessage.EventReaderEof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderEof>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    name: ReaderSubscriptionMessage.EventReaderEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.EventReaderEof).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    name: ReaderSubscriptionMessage.EventReaderEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderEof
+  nameWithType: ReaderSubscriptionMessage.EventReaderEof
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionEof)
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionEof>.Handle(ReaderSubscriptionMessage.EventReaderPartitionEof)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionEof).Handle(ReaderSubscriptionMessage.EventReaderPartitionEof)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionEof>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    name: ReaderSubscriptionMessage.EventReaderPartitionEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionEof).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    name: ReaderSubscriptionMessage.EventReaderPartitionEof
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderPartitionEof
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionDeleted>.Handle(ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted).Handle(ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionDeleted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionMeasured>.Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionMeasured).Handle(ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderPartitionMeasured>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    name: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.EventReaderPartitionMeasured).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    name: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    nameWithType: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderNotAuthorized>.Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionMessage.EventReaderNotAuthorized).Handle(ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionMessage.EventReaderNotAuthorized>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionMessage.EventReaderNotAuthorized).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+  nameWithType: ReaderSubscriptionMessage.EventReaderNotAuthorized
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.Faulted
+  nameWithType: ReaderSubscriptionMessage.Faulted
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag
+  isExternal: false
+  name: Tag
+  nameWithType: FakeReaderSubscription.Tag
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.Tag
+- uid: EventStore.Projections.Core.Services.Processing.IReaderSubscription.Tag
+  commentId: P:EventStore.Projections.Core.Services.Processing.IReaderSubscription.Tag
+  parent: EventStore.Projections.Core.Services.Processing.IReaderSubscription
+  isExternal: false
+  name: Tag
+  nameWithType: IReaderSubscription.Tag
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderSubscription.Tag
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId
+  isExternal: false
+  name: SubscriptionId
+  nameWithType: FakeReaderSubscription.SubscriptionId
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.SubscriptionId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader
+  isExternal: false
+  name: EventReader
+  nameWithType: FakeReaderSubscription.EventReader
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.EventReader
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeEventReader
+  commentId: T:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeEventReader
+  parent: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader
+  isExternal: false
+  name: FakeEventReader
+  nameWithType: FakeEventReader
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeEventReader
+- uid: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader*
+  commentId: Overload:EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader
+  isExternal: false
+  name: CreatePausedEventReader
+  nameWithType: FakeReaderSubscription.CreatePausedEventReader
+  fullName: EventStore.Projections.Core.Tests.Services.event_reader.heading_event_reader.FakeReaderSubscription.CreatePausedEventReader
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: EventStore.Projections.Core.Services.Processing.IEventReader
+  commentId: T:EventStore.Projections.Core.Services.Processing.IEventReader
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: IEventReader
+  nameWithType: IEventReader
+  fullName: EventStore.Projections.Core.Services.Processing.IEventReader
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers

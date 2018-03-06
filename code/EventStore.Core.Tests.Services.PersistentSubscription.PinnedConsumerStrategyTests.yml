@@ -1,0 +1,948 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  commentId: T:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  id: PinnedConsumerStrategyTests
+  parent: EventStore.Core.Tests.Services.PersistentSubscription
+  children:
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client
+  langs:
+  - csharp
+  - vb
+  name: PinnedConsumerStrategyTests
+  nameWithType: PinnedConsumerStrategyTests
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PinnedConsumerStrategyTests
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: 'public class PinnedConsumerStrategyTests : object'
+    content.vb: >-
+      Public Class PinnedConsumerStrategyTests
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  id: live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id()
+  nameWithType: PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id()
+    content.vb: Public Sub live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer
+  id: new_stream_is_round_robinned_to_next_consumer
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: new_stream_is_round_robinned_to_next_consumer()
+  nameWithType: PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: new_stream_is_round_robinned_to_next_consumer
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 55
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void new_stream_is_round_robinned_to_next_consumer()
+    content.vb: Public Sub new_stream_is_round_robinned_to_next_consumer
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id
+  id: resolved_link_events_use_event_stream_id
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: resolved_link_events_use_event_stream_id()
+  nameWithType: PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: resolved_link_events_use_event_stream_id
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 94
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void resolved_link_events_use_event_stream_id()
+    content.vb: Public Sub resolved_link_events_use_event_stream_id
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id
+  id: link_events_use_data_to_detect_stream_id
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: link_events_use_data_to_detect_stream_id()
+  nameWithType: PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: link_events_use_data_to_detect_stream_id
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 134
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void link_events_use_data_to_detect_stream_id()
+    content.vb: Public Sub link_events_use_data_to_detect_stream_id
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client
+  id: unsubscribed_client_has_assigned_streams_sent_to_another_client
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: unsubscribed_client_has_assigned_streams_sent_to_another_client()
+  nameWithType: PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: unsubscribed_client_has_assigned_streams_sent_to_another_client
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 174
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void unsubscribed_client_has_assigned_streams_sent_to_another_client()
+    content.vb: Public Sub unsubscribed_client_has_assigned_streams_sent_to_another_client
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work
+  id: new_subscription_gets_work
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: new_subscription_gets_work()
+  nameWithType: PinnedConsumerStrategyTests.new_subscription_gets_work()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: new_subscription_gets_work
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 207
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void new_subscription_gets_work()
+    content.vb: Public Sub new_subscription_gets_work
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference
+  id: bad_availablecapacity_scneanrio_causing_null_reference
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: bad_availablecapacity_scneanrio_causing_null_reference()
+  nameWithType: PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: bad_availablecapacity_scneanrio_causing_null_reference
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 251
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void bad_availablecapacity_scneanrio_causing_null_reference()
+    content.vb: Public Sub bad_availablecapacity_scneanrio_causing_null_reference
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client
+  id: disconnected_client_has_assigned_streams_sent_to_another_client
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: disconnected_client_has_assigned_streams_sent_to_another_client()
+  nameWithType: PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: disconnected_client_has_assigned_streams_sent_to_another_client
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 288
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void disconnected_client_has_assigned_streams_sent_to_another_client()
+    content.vb: Public Sub disconnected_client_has_assigned_streams_sent_to_another_client
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked
+  id: available_capacity_is_tracked
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: available_capacity_is_tracked()
+  nameWithType: PinnedConsumerStrategyTests.available_capacity_is_tracked()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: available_capacity_is_tracked
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 321
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void available_capacity_is_tracked()
+    content.vb: Public Sub available_capacity_is_tracked
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages
+  id: available_capacity_is_tracked_with_inflight_messages
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: available_capacity_is_tracked_with_inflight_messages()
+  nameWithType: PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: available_capacity_is_tracked_with_inflight_messages
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 357
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void available_capacity_is_tracked_with_inflight_messages()
+    content.vb: Public Sub available_capacity_is_tracked_with_inflight_messages
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages
+  id: available_capacity_is_tracked_with_acked_messages
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: available_capacity_is_tracked_with_acked_messages()
+  nameWithType: PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: available_capacity_is_tracked_with_acked_messages
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 400
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void available_capacity_is_tracked_with_acked_messages()
+    content.vb: Public Sub available_capacity_is_tracked_with_acked_messages
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full
+  commentId: M:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full
+  id: events_are_skipped_if_assigned_client_full
+  parent: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests
+  langs:
+  - csharp
+  - vb
+  name: events_are_skipped_if_assigned_client_full()
+  nameWithType: PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full()
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: events_are_skipped_if_assigned_client_full
+    path: ../EventStore/src/EventStore.Core.Tests/Services/PersistentSubscription/PinnedConsumerStrategyTests.cs
+    startLine: 446
+  assemblies:
+  - EventStore.Core.Tests
+  namespace: EventStore.Core.Tests.Services.PersistentSubscription
+  syntax:
+    content: public void events_are_skipped_if_assigned_client_full()
+    content.vb: Public Sub events_are_skipped_if_assigned_client_full
+  overload: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Tests.Services.PersistentSubscription
+  commentId: N:EventStore.Core.Tests.Services.PersistentSubscription
+  isExternal: false
+  name: EventStore.Core.Tests.Services.PersistentSubscription
+  nameWithType: EventStore.Core.Tests.Services.PersistentSubscription
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription
+- uid: System.Object
+  commentId: T:System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  name: AsDynamic()
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<PinnedConsumerStrategyTests>()
+  nameWithType: ProtobufExtensions.Serialize<PinnedConsumerStrategyTests>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of PinnedConsumerStrategyTests)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests)()
+  name.vb: Serialize(Of PinnedConsumerStrategyTests)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<PinnedConsumerStrategyTests>
+    nameWithType: ProtobufExtensions.Serialize<PinnedConsumerStrategyTests>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of PinnedConsumerStrategyTests)
+    nameWithType: ProtobufExtensions.Serialize(Of PinnedConsumerStrategyTests)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<PinnedConsumerStrategyTests>()
+  nameWithType: ProtobufExtensions.SerializeToArray<PinnedConsumerStrategyTests>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of PinnedConsumerStrategyTests)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests)()
+  name.vb: SerializeToArray(Of PinnedConsumerStrategyTests)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<PinnedConsumerStrategyTests>
+    nameWithType: ProtobufExtensions.SerializeToArray<PinnedConsumerStrategyTests>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of PinnedConsumerStrategyTests)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of PinnedConsumerStrategyTests)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  isExternal: true
+  name: AsDynamic(Object)
+  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+  spec.csharp:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
+    name: AsDynamic
+    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
+    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+  parent: EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: PrivateReflectionDynamicObjectExtensions
+  nameWithType: PrivateReflectionDynamicObjectExtensions
+  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Tests.Helpers
+  commentId: N:EventStore.Core.Tests.Helpers
+  isExternal: false
+  name: EventStore.Core.Tests.Helpers
+  nameWithType: EventStore.Core.Tests.Helpers
+  fullName: EventStore.Core.Tests.Helpers
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  isExternal: false
+  name: live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  nameWithType: PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.live_subscription_with_pinned_pushes_events_to_same_client_for_stream_id
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer
+  isExternal: false
+  name: new_stream_is_round_robinned_to_next_consumer
+  nameWithType: PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_stream_is_round_robinned_to_next_consumer
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id
+  isExternal: false
+  name: resolved_link_events_use_event_stream_id
+  nameWithType: PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.resolved_link_events_use_event_stream_id
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id
+  isExternal: false
+  name: link_events_use_data_to_detect_stream_id
+  nameWithType: PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.link_events_use_data_to_detect_stream_id
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client
+  isExternal: false
+  name: unsubscribed_client_has_assigned_streams_sent_to_another_client
+  nameWithType: PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.unsubscribed_client_has_assigned_streams_sent_to_another_client
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work
+  isExternal: false
+  name: new_subscription_gets_work
+  nameWithType: PinnedConsumerStrategyTests.new_subscription_gets_work
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.new_subscription_gets_work
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference
+  isExternal: false
+  name: bad_availablecapacity_scneanrio_causing_null_reference
+  nameWithType: PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.bad_availablecapacity_scneanrio_causing_null_reference
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client
+  isExternal: false
+  name: disconnected_client_has_assigned_streams_sent_to_another_client
+  nameWithType: PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.disconnected_client_has_assigned_streams_sent_to_another_client
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked
+  isExternal: false
+  name: available_capacity_is_tracked
+  nameWithType: PinnedConsumerStrategyTests.available_capacity_is_tracked
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages
+  isExternal: false
+  name: available_capacity_is_tracked_with_inflight_messages
+  nameWithType: PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_inflight_messages
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages
+  isExternal: false
+  name: available_capacity_is_tracked_with_acked_messages
+  nameWithType: PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.available_capacity_is_tracked_with_acked_messages
+- uid: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full*
+  commentId: Overload:EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full
+  isExternal: false
+  name: events_are_skipped_if_assigned_client_full
+  nameWithType: PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full
+  fullName: EventStore.Core.Tests.Services.PersistentSubscription.PinnedConsumerStrategyTests.events_are_skipped_if_assigned_client_full
