@@ -38,7 +38,7 @@
 
 ## [Installing on Ubuntu via the Debian Repository](server/installing-from-debian-repositories.md)
 
-## [Running the Event Store](server)
+## [Running Event Store](server/index.md)
 
 ## [Access Control Lists](server/users-and-access-control-lists.md)
 
@@ -136,4 +136,4 @@
 
 <!--  TODO: How to do this-->
 
-## [Code base docs](code)
+## [Code base docs](code/)
