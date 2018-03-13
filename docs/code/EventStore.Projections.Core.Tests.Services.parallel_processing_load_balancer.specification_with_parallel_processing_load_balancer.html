@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="dns-prefetch" href="//geteventstore.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <title>Class specification_with_parallel_processing_load_balancer
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class specification_with_parallel_processing_load_balancer
+   ">
+    <meta name="generator" content="docfx 2.32.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+      <link rel="stylesheet" href="../../styles/main12.css">
+        <link rel="stylesheet" href="../../styles/print.css" media="print">
+              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <style media="print">
+                  pre {
+                      white-space: pre-wrap;
+                  }
+                  .site-navigation-toggle, .docs-toc-toggle, .footer__menu {
+                      display: none;
+                  }
+                  p, ul, ol {
+                      max-width: 100% !important;
+                  }
+                  .version-dropdown__selected {
+  
+                  }
+                  .version-dropdown__options {
+  
+                  }
+              </style>
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header class="site-banner">
+        
+        
+        <nav id="autocollapse" class="navbar navbar-green ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+              <!-- TODO: There must be a way to get this to work properly. -->
+              <ul class="nav level1 navbar-nav">
+              <li class="site-navigation__item"><a href="https://geteventstore.com/community">Community</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/support">Commercial Support</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/blog">Blog</a></li>
+                              <li class="site-navigation__item"><a href="http://docs.geteventstore.com">Documentation</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/downloads">Downloads</a></li>
+                              </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+        
+          </div>
+        
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer">
+  
+  
+  <h1 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer" class="text-break">Class specification_with_parallel_processing_load_balancer
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">specification_with_parallel_processing_load_balancer</span></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_accounting_completed_task.html">when_accounting_completed_task</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_accounting_completed_unmeasured_task.html">when_accounting_completed_unmeasured_task</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_accounting_measured_tasks.html">when_accounting_measured_tasks</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_completing_a_task_and_other_pending.html">when_completing_a_task_and_other_pending</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_completing_a_task_and_others_pending.html">when_completing_a_task_and_others_pending</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_scheduling_first_task.html">when_scheduling_first_task</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_scheduling_first_tasks.html">when_scheduling_first_tasks</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_scheduling_many_measured_tasks.html">when_scheduling_many_measured_tasks</a></div>
+      <div class="level2"><a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.when_scheduling_many_unmeasured_tasks.html">when_scheduling_many_unmeasured_tasks</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.html">EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer</a></h6>
+  <h6><strong>Assembly</strong>: EventStore.Projections.Core.Tests.dll</h6>
+  <h5 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class specification_with_parallel_processing_load_balancer : object</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__balancer.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._balancer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L8">View Source</a>
+  </span>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__balancer" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._balancer">_balancer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ParallelProcessingLoadBalancer _balancer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.html">ParallelProcessingLoadBalancer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__maxScheduledSizePerWorker.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._maxScheduledSizePerWorker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L11">View Source</a>
+  </span>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__maxScheduledSizePerWorker" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._maxScheduledSizePerWorker">_maxScheduledSizePerWorker</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected long _maxScheduledSizePerWorker</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__maxUnmeasuredTasksPerWorker.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._maxUnmeasuredTasksPerWorker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L12">View Source</a>
+  </span>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__maxUnmeasuredTasksPerWorker" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._maxUnmeasuredTasksPerWorker">_maxUnmeasuredTasksPerWorker</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int _maxUnmeasuredTasksPerWorker</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__workers.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._workers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L10">View Source</a>
+  </span>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer__workers" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer._workers">_workers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int _workers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_Given.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.Given%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L14">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_Given_" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.Given*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_Given" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.Given">Given()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Given()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenBalancer.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenBalancer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L17">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenBalancer_" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenBalancer*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenBalancer" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenBalancer">GivenBalancer()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual ParallelProcessingLoadBalancer GivenBalancer()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.html">ParallelProcessingLoadBalancer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenMaxScheduledSizePerWorker.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenMaxScheduledSizePerWorker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L28">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenMaxScheduledSizePerWorker_" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenMaxScheduledSizePerWorker*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenMaxScheduledSizePerWorker" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenMaxScheduledSizePerWorker">GivenMaxScheduledSizePerWorker()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual long GivenMaxScheduledSizePerWorker()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenMaxUnmeasuredTasksPerWorker.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenMaxUnmeasuredTasksPerWorker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L23">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenMaxUnmeasuredTasksPerWorker_" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenMaxUnmeasuredTasksPerWorker*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenMaxUnmeasuredTasksPerWorker" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenMaxUnmeasuredTasksPerWorker">GivenMaxUnmeasuredTasksPerWorker()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int GivenMaxUnmeasuredTasksPerWorker()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenWorkers.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenWorkers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L33">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenWorkers_" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenWorkers*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_GivenWorkers" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.GivenWorkers">GivenWorkers()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int GivenWorkers()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_SetUp.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.SetUp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L38">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_SetUp_" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.SetUp*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_SetUp" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.SetUp">SetUp()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetUp()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_When.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.When%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L15">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_When_" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.When*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer_When" data-uid="EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer.When">When()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void When()</code></pre>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="EventStore.Common.Utils.Json.html#EventStore_Common_Utils_Json_ToJsonBytes_System_Object_">Json.ToJsonBytes(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Common.Utils.Json.html#EventStore_Common_Utils_Json_ToJson_System_Object_">Json.ToJson(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Common.Utils.Json.html#EventStore_Common_Utils_Json_ToCanonicalJson_System_Object_">Json.ToCanonicalJson(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.html#EventStore_Core_Tests_Helpers_PrivateReflectionDynamicObjectExtensions_AsDynamic_System_Object_">PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.html#EventStore_Core_Services_Transport_Tcp_ProtobufExtensions_Serialize__1___0_">ProtobufExtensions.Serialize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.html#EventStore_Core_Services_Transport_Tcp_ProtobufExtensions_SerializeToArray__1___0_">ProtobufExtensions.SerializeToArray&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_parallel_processing_load_balancer_specification_with_parallel_processing_load_balancer.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.parallel_processing_load_balancer.specification_with_parallel_processing_load_balancer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/parallel_processing_load_balancer/specification_with_parallel_processing_load_balancer.cs/#L6" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

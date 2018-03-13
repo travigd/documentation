@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="dns-prefetch" href="//geteventstore.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <title>Stream Metadata </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Stream Metadata ">
+    <meta name="generator" content="docfx 2.32.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+      <link rel="stylesheet" href="../../styles/main12.css">
+        <link rel="stylesheet" href="../../styles/print.css" media="print">
+              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <style media="print">
+                  pre {
+                      white-space: pre-wrap;
+                  }
+                  .site-navigation-toggle, .docs-toc-toggle, .footer__menu {
+                      display: none;
+                  }
+                  p, ul, ol {
+                      max-width: 100% !important;
+                  }
+                  .version-dropdown__selected {
+  
+                  }
+                  .version-dropdown__options {
+  
+                  }
+              </style>
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header class="site-banner">
+        
+        
+        <nav id="autocollapse" class="navbar navbar-green ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+              <!-- TODO: There must be a way to get this to work properly. -->
+              <ul class="nav level1 navbar-nav">
+              <li class="site-navigation__item"><a href="https://geteventstore.com/community">Community</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/support">Commercial Support</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/blog">Blog</a></li>
+                              <li class="site-navigation__item"><a href="http://docs.geteventstore.com">Documentation</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/downloads">Downloads</a></li>
+                              </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+        
+          </div>
+        
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="eventstore.org/Event Store HTTP API/4.0.2/updateStreamMetadata">
+<h1 id="stream-metadata">Stream Metadata</h1>
+
+<!--  TODO: Break up to write / read? And maybe transclude-->
+<h2 id="writing-metadata">Writing Metadata</h2>
+<p>To update the metadata for a stream, issue a <code>POST</code> request to the metadata resource. This will replace the current metadata with the information posted.</p>
+<p>Inside a file named <em>metadata.txt</em>:</p>
+<pre><code class="lang-json">[
+    {
+        &quot;eventId&quot;: &quot;7c314750-05e1-439f-b2eb-f5b0e019be72&quot;,
+        &quot;eventType&quot;: &quot;$user-updated&quot;,
+        &quot;data&quot;: {
+            &quot;readRole&quot;: &quot;$all&quot;,
+            &quot;metaReadRole&quot;: &quot;$all&quot;
+        }
+    }
+]
+</code></pre><p>You can also add user-specified metadata here. Some examples of good uses of user-specified metadata:</p>
+<ul>
+<li>which adapter is responsible for populating a stream.</li>
+<li>which projection caused a stream to be created.</li>
+<li>a correlation ID of some business process.</li>
+</ul>
+<p>This information is then posted to the stream:</p>
+<div class="tabGroup" id="tabgroup_vOpnT1zokb">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_vOpnT1zokb_tabid-7" role="tab" aria-controls="tabpanel_vOpnT1zokb_tabid-7" data-tab="tabid-7" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_vOpnT1zokb_tabid-8" role="tab" aria-controls="tabpanel_vOpnT1zokb_tabid-8" data-tab="tabid-8" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_vOpnT1zokb_tabid-7" role="tabpanel" data-tab="tabid-7">
+<pre><code class="lang-bash">curl -i -d @metadata.txt http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit -H &quot;Content-Type: application/vnd.eventstore.events+json&quot;
+</code></pre></section>
+<section id="tabpanel_vOpnT1zokb_tabid-8" role="tabpanel" data-tab="tabid-8" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 201 Created
+Content-Length: 0
+Content-Type: text/plain; charset: utf-8
+Location: http://127.0.0.1:2113/streams/%24%24%24users/1
+Server: Microsoft-HTTPAPI/2.0
+Access-Control-Allow-Methods: GET, POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+Date: Sun, 16 Jun 2013 14:50:21 GMT
+</code></pre></section>
+</div>
+<p>If the specified user does not have permissions to write to the stream metadata, you will receive a &#39;401 Unauthorized&#39; response:</p>
+<div class="tabGroup" id="tabgroup_vOpnT1zokb-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_vOpnT1zokb-1_tabid-9" role="tab" aria-controls="tabpanel_vOpnT1zokb-1_tabid-9" data-tab="tabid-9" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_vOpnT1zokb-1_tabid-10" role="tab" aria-controls="tabpanel_vOpnT1zokb-1_tabid-10" data-tab="tabid-10" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_vOpnT1zokb-1_tabid-9" role="tabpanel" data-tab="tabid-9">
+<pre><code class="lang-bash">curl -i -d @metadata.txt http://127.0.0.1:2113/streams/$users/metadata --user invaliduser:invalidpass -H &quot;Content-Type: application/vnd.eventstore.events+json&quot;
+</code></pre></section>
+<section id="tabpanel_vOpnT1zokb-1_tabid-10" role="tabpanel" data-tab="tabid-10" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 401 Unauthorized
+Content-Length: 0
+Server: Microsoft-HTTPAPI/2.0
+Access-Control-Allow-Methods:
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+WWW-Authenticate: Basic realm=&quot;ES&quot;
+Date: Sun, 16 Jun 2013 14:51:37 GMT
+</code></pre></section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/EventStore/docs.geteventstore.com/blob/swagger-docfx/http-api/update-stream-metadata.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

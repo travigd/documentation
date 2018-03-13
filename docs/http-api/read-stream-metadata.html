@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="dns-prefetch" href="//geteventstore.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <title>Stream Metadata </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Stream Metadata ">
+    <meta name="generator" content="docfx 2.32.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+      <link rel="stylesheet" href="../../styles/main12.css">
+        <link rel="stylesheet" href="../../styles/print.css" media="print">
+              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <style media="print">
+                  pre {
+                      white-space: pre-wrap;
+                  }
+                  .site-navigation-toggle, .docs-toc-toggle, .footer__menu {
+                      display: none;
+                  }
+                  p, ul, ol {
+                      max-width: 100% !important;
+                  }
+                  .version-dropdown__selected {
+  
+                  }
+                  .version-dropdown__options {
+  
+                  }
+              </style>
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header class="site-banner">
+        
+        
+        <nav id="autocollapse" class="navbar navbar-green ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+              <!-- TODO: There must be a way to get this to work properly. -->
+              <ul class="nav level1 navbar-nav">
+              <li class="site-navigation__item"><a href="https://geteventstore.com/community">Community</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/support">Commercial Support</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/blog">Blog</a></li>
+                              <li class="site-navigation__item"><a href="http://docs.geteventstore.com">Documentation</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/downloads">Downloads</a></li>
+                              </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+        
+          </div>
+        
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="eventstore.org/Event Store HTTP API/4.0.2/readStreamMetadata">
+<h1 id="stream-metadata">Stream Metadata</h1>
+
+<!--  TODO: Break up to write / read? And maybe transclude-->
+<p>Every stream in Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also add information into stream metadata for use with projections or the client API.</p>
+<p>A common use case for information you may want to store in metadata is information associated with an event that is not part of the event.</p>
+<p>Examples of this might be:</p>
+<ul>
+<li>Which user wrote the event.</li>
+<li>Which application server were they talking to.</li>
+<li>What IP address did the request come from?</li>
+</ul>
+<p>Stream metadata is stored internally as JSON, and you can access it over the HTTP APIs.</p>
+<h2 id="reading-stream-metadata">Reading Stream Metadata</h2>
+<p>To read the metadata, issue a <code>GET</code> request to the attached metadata resource, which is of the form:</p>
+<pre><code class="lang-http">http://{eventstore}/streams/{stream-name}/metadata
+</code></pre><p>You should not access metadata by constructing this URL yourself, as the right to change the resource address is reserved. Instead, you should follow the link for from the stream itself, which will enable your client to tolerate future changes to the addressing structure without breaking.</p>
+<div class="tabGroup" id="tabgroup_1+uUutSRbb">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1+uUutSRbb_tabid-1" role="tab" aria-controls="tabpanel_1+uUutSRbb_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1+uUutSRbb_tabid-2" role="tab" aria-controls="tabpanel_1+uUutSRbb_tabid-2" data-tab="tabid-2" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_1+uUutSRbb_tabid-1" role="tabpanel" data-tab="tabid-1">
+<pre><code class="lang-bash">curl -i http://127.0.0.1:2113/streams/$users --user admin:changeit
+</code></pre></section>
+<section id="tabpanel_1+uUutSRbb_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 200 OK
+Cache-Control: max-age=0, no-cache, must-revalidate
+Content-Length: 1267
+Content-Type: application/vnd.eventstore.atom+json; charset: utf-8
+ETag: &quot;0;-2060438500&quot;
+Vary: Accept
+Server: Microsoft-HTTPAPI/2.0
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+Date: Sun, 16 Jun 2013 15:08:49 GMT
+
+{
+  &quot;title&quot;: &quot;Event stream &#39;$users&#39;&quot;,
+  &quot;id&quot;: &quot;&lt;http://127.0.0.1:2113/streams/%24users&quot;&gt;,
+  &quot;updated&quot;: &quot;2013-06-16T15:08:47.5245306Z&quot;,
+  &quot;author&quot;: {
+    &quot;name&quot;: &quot;EventStore&quot;
+  },
+  &quot;links&quot;: [
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/%24users&quot;,
+      &quot;relation&quot;: &quot;self&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/%24users/head/backward/20&quot;,
+      &quot;relation&quot;: &quot;first&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/%24users/0/forward/20&quot;,
+      &quot;relation&quot;: &quot;last&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/%24users/1/forward/20&quot;,
+      &quot;relation&quot;: &quot;previous&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/%24users/metadata&quot;,
+      &quot;relation&quot;: &quot;metadata&quot;
+    }
+  ],
+...
+</code></pre></section>
+</div>
+<p>Once you have the URI of the metadata stream, a <code>GET</code> request will retrieve the metadata:</p>
+<div class="tabGroup" id="tabgroup_1+uUutSRbb-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1+uUutSRbb-1_tabid-3" role="tab" aria-controls="tabpanel_1+uUutSRbb-1_tabid-3" data-tab="tabid-3" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1+uUutSRbb-1_tabid-4" role="tab" aria-controls="tabpanel_1+uUutSRbb-1_tabid-4" data-tab="tabid-4" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_1+uUutSRbb-1_tabid-3" role="tabpanel" data-tab="tabid-3">
+<pre><code class="lang-bash">curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
+</code></pre></section>
+<section id="tabpanel_1+uUutSRbb-1_tabid-4" role="tabpanel" data-tab="tabid-4" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 200 OK
+Cache-Control: max-age=31536000, public
+Content-Length: 652
+Content-Type: application/vnd.eventstore.atom+json; charset: utf-8
+Vary: Accept
+Server: Microsoft-HTTPAPI/2.0
+Access-Control-Allow-Methods: GET, POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+Date: Sun, 16 Jun 2013 13:18:29 GMT
+
+{
+  &quot;title&quot;: &quot;0@$$$users&quot;,
+  &quot;id&quot;: &quot;&lt;http://127.0.0.1:2113/streams/%24%24%24users/0&quot;&gt;,
+  &quot;updated&quot;: &quot;2013-06-16T12:25:13.8428624Z&quot;,
+  &quot;author&quot;: {
+    &quot;name&quot;: &quot;EventStore&quot;
+  },
+  &quot;summary&quot;: &quot;$metadata&quot;,
+  &quot;content&quot;: {
+    &quot;eventStreamId&quot;: &quot;$$$users&quot;,
+    &quot;eventNumber&quot;: 0,
+    &quot;eventType&quot;: &quot;$metadata&quot;,
+    &quot;data&quot;: {
+      &quot;readRole&quot;: &quot;$all&quot;,
+      &quot;metaReadRole&quot;: &quot;$all&quot;
+    },
+    &quot;metadata&quot;: &quot;&quot;
+  },
+  &quot;links&quot;: [
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/%24%24%24users/0&quot;,
+      &quot;relation&quot;: &quot;edit&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/%24%24%24users/0&quot;,
+      &quot;relation&quot;: &quot;alternate&quot;
+    }
+  ]
+}
+</code></pre></section>
+</div>
+<p>Reading metadata may require that you pass credentials if you have security enabled, as in the examples above. If you do not pass credentials and they are required you will receive a &#39;401 Unauthorized&#39; response.</p>
+<div class="tabGroup" id="tabgroup_1+uUutSRbb-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1+uUutSRbb-2_tabid-5" role="tab" aria-controls="tabpanel_1+uUutSRbb-2_tabid-5" data-tab="tabid-5" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1+uUutSRbb-2_tabid-6" role="tab" aria-controls="tabpanel_1+uUutSRbb-2_tabid-6" data-tab="tabid-6" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_1+uUutSRbb-2_tabid-5" role="tabpanel" data-tab="tabid-5">
+<pre><code class="lang-bash">curl -i http://127.0.0.1:2113/streams/$users/metadata
+</code></pre></section>
+<section id="tabpanel_1+uUutSRbb-2_tabid-6" role="tabpanel" data-tab="tabid-6" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 401 Unauthorized
+Content-Length: 0
+Content-Type: text/plain; charset: utf-8
+Server: Microsoft-HTTPAPI/2.0
+Access-Control-Allow-Methods: GET, POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+WWW-Authenticate: Basic realm=&quot;ES&quot;
+Date: Sun, 16 Jun 2013 13:20:22 GMT
+</code></pre></section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/EventStore/docs.geteventstore.com/blob/swagger-docfx/http-api/read-stream-metadata.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

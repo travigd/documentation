@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="dns-prefetch" href="//geteventstore.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <title>Class when_writing_the_projections_initialized_event_fails
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class when_writing_the_projections_initialized_event_fails
+   ">
+    <meta name="generator" content="docfx 2.32.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+      <link rel="stylesheet" href="../../styles/main12.css">
+        <link rel="stylesheet" href="../../styles/print.css" media="print">
+              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <style media="print">
+                  pre {
+                      white-space: pre-wrap;
+                  }
+                  .site-navigation-toggle, .docs-toc-toggle, .footer__menu {
+                      display: none;
+                  }
+                  p, ul, ol {
+                      max-width: 100% !important;
+                  }
+                  .version-dropdown__selected {
+  
+                  }
+                  .version-dropdown__options {
+  
+                  }
+              </style>
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header class="site-banner">
+        
+        
+        <nav id="autocollapse" class="navbar navbar-green ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+              <!-- TODO: There must be a way to get this to work properly. -->
+              <ul class="nav level1 navbar-nav">
+              <li class="site-navigation__item"><a href="https://geteventstore.com/community">Community</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/support">Commercial Support</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/blog">Blog</a></li>
+                              <li class="site-navigation__item"><a href="http://docs.geteventstore.com">Documentation</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/downloads">Downloads</a></li>
+                              </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+        
+          </div>
+        
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails">
+  
+  
+  <h1 id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails" class="text-break">Class when_writing_the_projections_initialized_event_fails
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html">TestFixtureWithReadWriteDispatchers</a></div>
+    <div class="level2"><a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html">TestFixtureWithExistingEvents</a></div>
+    <div class="level3"><a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html">TestFixtureWithExistingEvents</a></div>
+    <div class="level4"><a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html">TestFixtureWithProjectionCoreAndManagementServices</a></div>
+    <div class="level5"><span class="xref">when_writing_the_projections_initialized_event_fails</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward.html">ClientMessage.ReadStreamEventsBackward</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward.html">ClientMessage.ReadStreamEventsForward</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.ReadAllEventsForward.html">ClientMessage.ReadAllEventsForward</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.WriteEvents.html">ClientMessage.WriteEvents</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.TransactionStart.html">ClientMessage.TransactionStart</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.TransactionWrite.html">ClientMessage.TransactionWrite</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.TransactionCommit.html">ClientMessage.TransactionCommit</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Core.Messages.ClientMessage.DeleteStream.html">ClientMessage.DeleteStream</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick.html">ProjectionCoreServiceMessage.CoreTick</a>&gt;</div>
+    <div><a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle</a>&lt;<a class="xref" href="EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.ReaderTick.html">ReaderCoreServiceMessage.ReaderTick</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices__manager">TestFixtureWithProjectionCoreAndManagementServices._manager</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices__managerMessageDispatcher">TestFixtureWithProjectionCoreAndManagementServices._managerMessageDispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices__processingQueues">TestFixtureWithProjectionCoreAndManagementServices._processingQueues</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices_Given1">TestFixtureWithProjectionCoreAndManagementServices.Given1()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices_GiveInputQueue">TestFixtureWithProjectionCoreAndManagementServices.GiveInputQueue()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices_Setup">TestFixtureWithProjectionCoreAndManagementServices.Setup()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices_GivenProcessingQueues">TestFixtureWithProjectionCoreAndManagementServices.GivenProcessingQueues()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html#EventStore_Projections_Core_Tests_Services_core_projection_TestFixtureWithExistingEvents__subscriptionDispatcher">TestFixtureWithExistingEvents._subscriptionDispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html#EventStore_Projections_Core_Tests_Services_core_projection_TestFixtureWithExistingEvents_AwakeService">TestFixtureWithExistingEvents.AwakeService</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html#EventStore_Projections_Core_Tests_Services_core_projection_TestFixtureWithExistingEvents_SetUp">TestFixtureWithExistingEvents.SetUp()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html#EventStore_Projections_Core_Tests_Services_core_projection_TestFixtureWithExistingEvents_Handle_EventStore_Projections_Core_Messages_ProjectionCoreServiceMessage_CoreTick_">TestFixtureWithExistingEvents.Handle(ProjectionCoreServiceMessage.CoreTick)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html#EventStore_Projections_Core_Tests_Services_core_projection_TestFixtureWithExistingEvents_Handle_EventStore_Projections_Core_Messages_ReaderCoreServiceMessage_ReaderTick_">TestFixtureWithExistingEvents.Handle(ReaderCoreServiceMessage.ReaderTick)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html#EventStore_Projections_Core_Tests_Services_core_projection_TestFixtureWithExistingEvents_TicksAreHandledImmediately">TestFixtureWithExistingEvents.TicksAreHandledImmediately()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Projections.Core.Tests.Services.core_projection.TestFixtureWithExistingEvents.html#EventStore_Projections_Core_Tests_Services_core_projection_TestFixtureWithExistingEvents_CreateWriteEvent_System_String_System_String_System_String_System_String_System_Boolean_System_Nullable_Guid__">TestFixtureWithExistingEvents.CreateWriteEvent(String, String, String, String, Boolean, Nullable&lt;Guid&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents__listEventsHandler">TestFixtureWithExistingEvents._listEventsHandler</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents__streams">TestFixtureWithExistingEvents._streams</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents__all">TestFixtureWithExistingEvents._all</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents__deletedStreams">TestFixtureWithExistingEvents._deletedStreams</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents__activeTransactions">TestFixtureWithExistingEvents._activeTransactions</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_ExistingStreamMetadata_System_String_System_String_">TestFixtureWithExistingEvents.ExistingStreamMetadata(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_ExistingEvent_System_String_System_String_System_String_System_String_System_Boolean_">TestFixtureWithExistingEvents.ExistingEvent(String, String, String, String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AllReadsTimeOut">TestFixtureWithExistingEvents.AllReadsTimeOut()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_EnableReadAll">TestFixtureWithExistingEvents.EnableReadAll()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_ReadsBackwardQueuesUp">TestFixtureWithExistingEvents.ReadsBackwardQueuesUp()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_CompleteOneReadBackwards">TestFixtureWithExistingEvents.CompleteOneReadBackwards()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_NoStream_System_String_">TestFixtureWithExistingEvents.NoStream(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_NoOtherStreams">TestFixtureWithExistingEvents.NoOtherStreams()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_DeletedStream_System_String_">TestFixtureWithExistingEvents.DeletedStream(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AllWritesSucceed">TestFixtureWithExistingEvents.AllWritesSucceed()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AllWritesToSucceed_System_String_">TestFixtureWithExistingEvents.AllWritesToSucceed(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AllWritesQueueUp">TestFixtureWithExistingEvents.AllWritesQueueUp()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_OneWriteCompletes">TestFixtureWithExistingEvents.OneWriteCompletes()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_CompleteWriteWithResult_EventStore_Core_Messages_OperationResult_">TestFixtureWithExistingEvents.CompleteWriteWithResult(OperationResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AllWriteComplete">TestFixtureWithExistingEvents.AllWriteComplete()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_setup1">TestFixtureWithExistingEvents.setup1()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_ReadStreamEventsBackward_">TestFixtureWithExistingEvents.Handle(ClientMessage.ReadStreamEventsBackward)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_ReadStreamEventsForward_">TestFixtureWithExistingEvents.Handle(ClientMessage.ReadStreamEventsForward)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_WriteEvents_">TestFixtureWithExistingEvents.Handle(ClientMessage.WriteEvents)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_DeleteStream_">TestFixtureWithExistingEvents.Handle(ClientMessage.DeleteStream)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_ReadAllEventsForward_">TestFixtureWithExistingEvents.Handle(ClientMessage.ReadAllEventsForward)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_TransactionStart_">TestFixtureWithExistingEvents.Handle(ClientMessage.TransactionStart)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_TransactionWrite_">TestFixtureWithExistingEvents.Handle(ClientMessage.TransactionWrite)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Handle_EventStore_Core_Messages_ClientMessage_TransactionCommit_">TestFixtureWithExistingEvents.Handle(ClientMessage.TransactionCommit)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_GetTfPos_System_String_System_Int64_">TestFixtureWithExistingEvents.GetTfPos(String, Int64)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertLastEvent_System_String_System_String_System_String_System_Int32_">TestFixtureWithExistingEvents.AssertLastEvent(String, String, String, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertLastEventJson__1_System_String___0_System_String_System_Int32_">TestFixtureWithExistingEvents.AssertLastEventJson&lt;T&gt;(String, T, String, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertLastEventIs_System_String_System_String_System_String_System_Int32_">TestFixtureWithExistingEvents.AssertLastEventIs(String, String, String, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertStreamTail_System_String_System_String___">TestFixtureWithExistingEvents.AssertStreamTail(String, String[])</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertStreamTailWithLinks_System_String_System_String___">TestFixtureWithExistingEvents.AssertStreamTailWithLinks(String, String[])</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertStreamContains_System_String_System_String___">TestFixtureWithExistingEvents.AssertStreamContains(String, String[])</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertEvent_System_String_System_Int64_System_String_">TestFixtureWithExistingEvents.AssertEvent(String, Int64, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertEmptyStream_System_String_">TestFixtureWithExistingEvents.AssertEmptyStream(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_AssertEmptyOrNoStream_System_String_">TestFixtureWithExistingEvents.AssertEmptyOrNoStream(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_DumpStream_System_String_">TestFixtureWithExistingEvents.DumpStream(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__bus">TestFixtureWithReadWriteDispatchers._bus</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__streamDispatcher">TestFixtureWithReadWriteDispatchers._streamDispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__writeDispatcher">TestFixtureWithReadWriteDispatchers._writeDispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__readDispatcher">TestFixtureWithReadWriteDispatchers._readDispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__consumer">TestFixtureWithReadWriteDispatchers._consumer</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__ioDispatcher">TestFixtureWithReadWriteDispatchers._ioDispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__queue">TestFixtureWithReadWriteDispatchers._queue</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__otherQueues">TestFixtureWithReadWriteDispatchers._otherQueues</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers__timeProvider">TestFixtureWithReadWriteDispatchers._timeProvider</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_Envelope">TestFixtureWithReadWriteDispatchers.Envelope</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_HandledMessages">TestFixtureWithReadWriteDispatchers.HandledMessages</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_setup0">TestFixtureWithReadWriteDispatchers.setup0()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_GetInputQueue">TestFixtureWithReadWriteDispatchers.GetInputQueue()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_DisableTimer">TestFixtureWithReadWriteDispatchers.DisableTimer()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_EnableTimer">TestFixtureWithReadWriteDispatchers.EnableTimer()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_WhenLoop">TestFixtureWithReadWriteDispatchers.WhenLoop()</a>
+    </div>
+    <div>
+      <span class="xref">EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.WhenLoop(IEnumerable&lt;&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.EatException&lt;T&gt;(Func&lt;&gt;, T)</span>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_PreWhen">TestFixtureWithReadWriteDispatchers.PreWhen()</a>
+    </div>
+    <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_Yield">TestFixtureWithReadWriteDispatchers.Yield</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.html">EventStore.Projections.Core.Tests.Services.projections_manager</a></h6>
+  <h6><strong>Assembly</strong>: EventStore.Projections.Core.Tests.dll</h6>
+  <h5 id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class when_writing_the_projections_initialized_event_fails : TestFixtureWithProjectionCoreAndManagementServices, IHandle&lt;ClientMessage.ReadStreamEventsBackward&gt;, IHandle&lt;ClientMessage.ReadStreamEventsForward&gt;, IHandle&lt;ClientMessage.ReadAllEventsForward&gt;, IHandle&lt;ClientMessage.WriteEvents&gt;, IHandle&lt;ClientMessage.TransactionStart&gt;, IHandle&lt;ClientMessage.TransactionWrite&gt;, IHandle&lt;ClientMessage.TransactionCommit&gt;, IHandle&lt;ClientMessage.DeleteStream&gt;, IHandle&lt;ProjectionCoreServiceMessage.CoreTick&gt;, IHandle&lt;ReaderCoreServiceMessage.ReaderTick&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails__ctor_EventStore_Core_Messages_OperationResult_.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.%23ctor(EventStore.Core.Messages.OperationResult)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/projections_manager/when_the_projections_initialized_write_fails.cs/#L27">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails__ctor_" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.#ctor*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails__ctor_EventStore_Core_Messages_OperationResult_" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.#ctor(EventStore.Core.Messages.OperationResult)">when_writing_the_projections_initialized_event_fails(OperationResult)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public when_writing_the_projections_initialized_event_fails(OperationResult failureCondition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EventStore.Core.Messages.OperationResult.html">OperationResult</a></td>
+        <td><span class="parametername">failureCondition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_Given.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.Given%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/projections_manager/when_the_projections_initialized_write_fails.cs/#L32">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_Given_" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.Given*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_Given" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.Given">Given()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Given()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithExistingEvents.html#EventStore_Core_Tests_Helpers_TestFixtureWithExistingEvents_Given">TestFixtureWithExistingEvents.Given()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_GivenInitializeSystemProjections.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.GivenInitializeSystemProjections%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/projections_manager/when_the_projections_initialized_write_fails.cs/#L38">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_GivenInitializeSystemProjections_" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.GivenInitializeSystemProjections*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_GivenInitializeSystemProjections" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.GivenInitializeSystemProjections">GivenInitializeSystemProjections()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool GivenInitializeSystemProjections()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="EventStore.Projections.Core.Tests.Services.projections_manager.TestFixtureWithProjectionCoreAndManagementServices.html#EventStore_Projections_Core_Tests_Services_projections_manager_TestFixtureWithProjectionCoreAndManagementServices_GivenInitializeSystemProjections">TestFixtureWithProjectionCoreAndManagementServices.GivenInitializeSystemProjections()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_retries_writing_with_the_same_event_id.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.retries_writing_with_the_same_event_id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/projections_manager/when_the_projections_initialized_write_fails.cs/#L50">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_retries_writing_with_the_same_event_id_" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.retries_writing_with_the_same_event_id*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_retries_writing_with_the_same_event_id" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.retries_writing_with_the_same_event_id">retries_writing_with_the_same_event_id()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void retries_writing_with_the_same_event_id()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_When.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.When%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/projections_manager/when_the_projections_initialized_write_fails.cs/#L43">View Source</a>
+  </span>
+  <a id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_When_" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.When*"></a>
+  <h4 id="EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails_When" data-uid="EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails.When">When()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;TestFixtureWithReadWriteDispatchers.WhenStep&gt; When()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.WhenStep.html">TestFixtureWithReadWriteDispatchers.WhenStep</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="EventStore.Core.Tests.Helpers.TestFixtureWithReadWriteDispatchers.html#EventStore_Core_Tests_Helpers_TestFixtureWithReadWriteDispatchers_When">TestFixtureWithReadWriteDispatchers.When()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Bus.IHandle-1.html">IHandle&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="EventStore.Common.Utils.Json.html#EventStore_Common_Utils_Json_ToJsonBytes_System_Object_">Json.ToJsonBytes(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Common.Utils.Json.html#EventStore_Common_Utils_Json_ToJson_System_Object_">Json.ToJson(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Common.Utils.Json.html#EventStore_Common_Utils_Json_ToCanonicalJson_System_Object_">Json.ToCanonicalJson(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.html#EventStore_Core_Tests_Helpers_PrivateReflectionDynamicObjectExtensions_AsDynamic_System_Object_">PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.html#EventStore_Core_Services_Transport_Tcp_ProtobufExtensions_Serialize__1___0_">ProtobufExtensions.Serialize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.html#EventStore_Core_Services_Transport_Tcp_ProtobufExtensions_SerializeToArray__1___0_">ProtobufExtensions.SerializeToArray&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ChrisChinchilla/EventStore/new/docs/apiSpec/new?filename=EventStore_Projections_Core_Tests_Services_projections_manager_when_writing_the_projections_initialized_event_fails.md&amp;value=---%0Auid%3A%20EventStore.Projections.Core.Tests.Services.projections_manager.when_writing_the_projections_initialized_event_fails%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/ChrisChinchilla/EventStore/blob/docs/src/EventStore.Projections.Core.Tests/Services/projections_manager/when_the_projections_initialized_write_fails.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

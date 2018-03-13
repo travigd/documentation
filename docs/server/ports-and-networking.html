@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="dns-prefetch" href="//geteventstore.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <title>Ports and networking </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Ports and networking ">
+    <meta name="generator" content="docfx 2.32.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+      <link rel="stylesheet" href="../../styles/main12.css">
+        <link rel="stylesheet" href="../../styles/print.css" media="print">
+              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <style media="print">
+                  pre {
+                      white-space: pre-wrap;
+                  }
+                  .site-navigation-toggle, .docs-toc-toggle, .footer__menu {
+                      display: none;
+                  }
+                  p, ul, ol {
+                      max-width: 100% !important;
+                  }
+                  .version-dropdown__selected {
+  
+                  }
+                  .version-dropdown__options {
+  
+                  }
+              </style>
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header class="site-banner">
+        
+        
+        <nav id="autocollapse" class="navbar navbar-green ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+              <!-- TODO: There must be a way to get this to work properly. -->
+              <ul class="nav level1 navbar-nav">
+              <li class="site-navigation__item"><a href="https://geteventstore.com/community">Community</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/support">Commercial Support</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/blog">Blog</a></li>
+                              <li class="site-navigation__item"><a href="http://docs.geteventstore.com">Documentation</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/downloads">Downloads</a></li>
+                              </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+        
+          </div>
+        
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ports-and-networking">Ports and networking</h1>
+
+<h2 id="single-node">Single Node</h2>
+<p>If you run Event Store as a single node, it will only use two ports. The first port is the external HTTP port. Event Store uses this port for both the client HTTP APIs and for the management HTTP interface. The default external HTTP port is 2113. The second port used is the TCP interface for clients connecting over the client API, and the default for the port is 1113.</p>
+<p>Event Store in Windows will try to add access via <code>http.sys</code> automatically for the 2113 port.</p>
+<p>You should ensure that these ports are open and allowed via a firewall if you are using a firewall on the machine.</p>
+<h2 id="cluster-node">Cluster Node</h2>
+<p>When running in cluster mode the networking for Event Store is more complex. Cluster mode requires 4 ports to run. The ports are for internal HTTP, internal TCP, external HTTP, and external TCP.</p>
+<p>The internal and external interfaces allow for separation of traffic. The internal network is where all cluster communications runs while the external interfaces is where all client communications runs. This allows for interesting setups such as putting internal communications on a different network than external client communications. You may wish to do this for many reasons including putting communications on separate NICs, locking down internal communications from a security perspective, or for security purposes. A good example of this might be when allowing clients over HTTP to talk directly to Event Store, you can move internal communications to a separate network to ensure the management interface and internal operations are not accessible from the outside.</p>
+<p>The external TCP and HTTP are similar to the HTTP and TCP ports of a single node deploy. Event Store runs Client requests over the HTTP API through the external HTTP port. You can run without the management API on the external interface (internal only). The external and the internal interfaces support the gossip protocol. You can control whether the admin interface is available on the external HTTP interface using the <code>admin-on-ext</code> <a href="command-line-arguments.html">option</a>. You can control whether gossip is enable on external with the <code>gossip-on-ext</code> <a href="command-line-arguments.html">option</a> (though you normally want it).</p>
+<p>You configure the internal TCP and HTTP ports in the same way as the external. All internal communications for the cluster happen over these interfaces. Elections and internal gossip happen over HTTP. Replication and forwarding of client requests happens over the TCP channel.</p>
+<p>When setting up a cluster the nodes must be able to reach each other over both the internal HTTP channel and the internal TCP channel. You should ensure that these ports are open on firewalls on the machines and between the machines.</p>
+<h2 id="heartbeat-timeouts">Heartbeat Timeouts</h2>
+<p>Event Store uses heartbeats over all TCP connections to attempt to discover dead clients and nodes. Setting heartbeat timeouts is hard, set them too short and you will get false positives, set them too long and discovery of dead clients and nodes becomes slower.</p>
+<p>Each heartbeat has two points of configuration. The first is the &#39;interval&#39;, this represents how often the system should consider a heartbeat. There will not be a heartbeat sent for every interval. Heartbeats work by saying &quot;if I have not received something from this node within the last interval send a heartbeat request&quot;. As such on a busy system you will not send any heartbeats. The second point of configuration is the &#39;timeout&#39;, when sending a heartbeat, how long do you wait for the client or node to respond to the heartbeat request.</p>
+<p>Varying environments want drastically different values for these settings. While low numbers work well on a LAN they tend to not work well in the cloud. The defaults are likely fine on a LAN, in the cloud consider a setting of interval 5000ms and timeout 1000ms which should be fine for most installations.</p>
+<div class="TIP"><h5>Tip</h5><p>If in question err on the side of higher numbers, it will add a small period of time to discover a dead client or node and is better than the alternative, which is false positives.</p>
+</div>
+<h2 id="advertise-as">Advertise As</h2>
+<p>There are times when due to NAT or other reasons a node may not be bound to the address it is reachable from other nodes as. As an example the machine has an IP address of 192.168.1.13 but the node is visible to other nodes as 10.114.12.112.</p>
+<p>The option <code>advertise-as</code> allows you to tell the node that even though it is bound to a given address it should not gossip that address as its address. Instead it will use the address that you tell it to use. In the example above you would configure</p>
+<pre><code class="lang-bash">--ext-ip 192.168.1.13 --advertise-as 10.114.12.112
+</code></pre><p>Or use the equivalent configuration via environment variables or a configuration file.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/EventStore/docs.geteventstore.com/blob/swagger-docfx/server/ports-and-networking.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
