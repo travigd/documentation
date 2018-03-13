@@ -1,11 +1,7 @@
----
-title: "User Management"
-section: ".NET API"
-version: "4.0.2"
----
+# User Management
 
-The Event Store Client API includes helper methods that use the HTTP API to allow for the management of users. This document will describe the methods found in the `UsersManager` class. All methods in this class are asynchronous.
-<!-- TODO: Moved, to check -->
+The Event Store Client API includes helper methods that use the HTTP API to allow for the management of users. This document describes the methods found in the `UsersManager` class. All methods in this class are asynchronous.
+
 ## Methods
 
 ### Create a User
@@ -50,13 +46,11 @@ public Task<List<UserDetails>> ListAllAsync(UserCredentials userCredentials = nu
 
 ### Get Details of User
 
-This will return the details of the user supplied in user credentials (e.g. the user making the request).
+Return the details of the user supplied in user credentials (e.g. the user making the request).
 
 ```csharp
 public Task<UserDetails> GetCurrentUserAsync(UserCredentials userCredentials)
 ```
-
-<!-- TODO: Explanations of the below -->
 
 ### Get Details of Logged in User
 

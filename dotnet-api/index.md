@@ -1,15 +1,10 @@
----
-title: "Overview"
-section: ".NET API"
-version: "4.0.2"
-pinned: true
----
+# Overview
 
 The .NET Client API communicates with Event Store over TCP, using length-prefixed serialised protocol buffers. The API allows for reading and writing operations, as well as for subscriptions to individual event streams or all events written.
 
 ## EventStoreConnection
 
-The `EventStoreConnection` class maintains a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe, and we recommend that you create only one instance per application.
+The `EventStoreConnection` class maintains a full-duplex connection between the client and the Event Store server. `EventStoreConnection` is thread-safe, and we recommend that you create one instance per application.
 
 All operations are handled fully asynchronously, returning either a `Task` or a `Task<T>`. If you need to execute synchronously, call `.Wait()` on the asynchronous version.
 
