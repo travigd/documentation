@@ -118,7 +118,7 @@ Keep-Alive: timeout=15,max=100
 
 Open the UI after this command to the _Stream Browser_ tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.
 
-You can also setup [Access Control Lists](~/server/access-control-lists.md) on your streams by changing the metadata of the stream.
+You can also setup [Access Control Lists](~/server/users-and-access-control-lists.md) on your streams by changing the metadata of the stream.
 
 ## Reading From a Stream
 

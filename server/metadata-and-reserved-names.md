@@ -69,7 +69,7 @@ Security access control lists are also included in the `$acl` section of the str
     </tbody>
 </table>
 
-You can find more details on access control lists can [here](access-control-lists.md).
+You can find more details on access control lists can [here](users-and-access-control-lists.md).
 
 ## Event Metadata
 

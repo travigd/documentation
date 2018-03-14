@@ -9,7 +9,7 @@ This document explains how to use .NET API for setting up and consuming competin
 
 ## Creating a Persistent Subscription
 
-Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](~/server/access-control-lists).
+Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](~/server/users-and-access-control-lists.md).
 
 ```csharp
 Task<PersistentSubscriptionCreateResult> CreatePersistentSubscriptionAsync(string stream, string groupName, PersistentSubscriptionSettings settings, UserCredentials credentials);
@@ -17,7 +17,7 @@ Task<PersistentSubscriptionCreateResult> CreatePersistentSubscriptionAsync(strin
 
 ## Updating a Persistent Subscription
 
-You can edit the settings of an existing subscription while it is running. This action drops the current subscribers and resets the subscription internally. This requires [admin permissions](~/server/access-control-lists).
+You can edit the settings of an existing subscription while it is running. This action drops the current subscribers and resets the subscription internally. This requires [admin permissions](~/server/users-and-access-control-lists.md).
 
 ```csharp
 Task<PersistentSubscriptionUpdateResult> UpdatePersistentSubscriptionAsync(string stream, string groupName, PersistentSubscriptionSettings settings, UserCredentials credentials);
@@ -73,7 +73,8 @@ Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` o
 
 The first step of dealing with a subscription group is to create one. You will receive an error if you attempt to create a subscription group multiple times. You must have admin permissions to create a persistent subscription group.
 
-> [!NOTE] Normally you wouldn't create the subscription group in your general executable code. Instead, you create it as a step during an install or as an admin task when setting up Event Store. You should assume the subscription exists in your code.
+> [!NOTE]
+> Normally you wouldn't create the subscription group in your general executable code. Instead, you create it as a step during an install or as an admin task when setting up Event Store. You should assume the subscription exists in your code.
 
 ```csharp
 PersistentSubscriptionSettings settings = PersistentSubscriptionSettings.Create()

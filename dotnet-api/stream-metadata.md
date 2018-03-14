@@ -116,7 +116,7 @@ You can add user-specified metadata via the `SetCustomMetadata` overloads. Some 
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
 ```
 
-This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes. The server only understands JSON. Read [Access Control Lists](~/server/access-control-lists.md) for more information on the format in JSON for access control lists.
+This method will put the data that is in metadata as the stream metadata. Metadata in this case can be anything in a vector of bytes. The server only understands JSON. Read [Access Control Lists](~/server/users-and-access-control-lists.md) for more information on the format in JSON for access control lists.
 
 > [!NOTE]
 > Writing metadata may require that you pass credentials if you have security enabled by default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.

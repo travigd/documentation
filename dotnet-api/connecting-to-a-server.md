@@ -24,7 +24,8 @@ The `EventStoreConnection` classes uses the static `Create` methods to create a 
 | `(obsolete) Create(ConnectionSettings settings, IPEndPoint tcpEndPoint)`                    | Connects to a single node with custom settings (see [Customising Connection Settings](#customising-connection-settings)) |
 | `(obsolete) Create(ConnectionSettings connectionSettings, ClusterSettings clusterSettings)` | Connects to an Event Store HA cluster with custom settings (see [Cluster Settings](#cluster-settings))                   |
 
-> [!NOTE] The connection returned by these methods is inactive. Use the `ConnectAsync()` method to establish a connection with the server.
+> [!NOTE]
+> The connection returned by these methods is inactive. Use the `ConnectAsync()` method to establish a connection with the server.
 
 ## URIs
 
@@ -106,7 +107,7 @@ Tells the connection to try gossiping to the gossip seeds `192.168.0.2` or `192.
 
 > [!NOTE]
 > See the fluent API below for defaults of values.
->
+
 > [!NOTE]
 > You can also use the `ConnectionString` class to return a `ConnectionSettings` object.
 
@@ -139,7 +140,7 @@ By default information about connection, disconnection and errors are logged, ho
 
 ### User Credentials
 
-Event Store supports [Access Control Lists](~/server/access-control-lists.md) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to set default credentials for all operations on the connection.
+Event Store supports [Access Control Lists](~/server/users-and-access-control-lists.md) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to set default credentials for all operations on the connection.
 
 | Builder Method                                           | Description                                                                                                                       |
 | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -221,7 +222,8 @@ Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
 | `SetMaxDiscoverAttempts(int maxDiscoverAttempts)` | Sets the maximum number of attempts for discovery (Default: 10).                      |
 | `SetGossipTimeout(TimeSpan timeout)`              | Sets the period after which gossip times out if none is received (Default: 1 second). |
 
-> [!NOTE] If you are using the commercial edition of Event Store HA with Manager nodes in place, the gossip port should be the port number of the external HTTP port on which the managers are running. If you are using the open source edition of Event Store HA the gossip port should be the External HTTP port that the nodes are running on. If you cannot use a well-known port for this across all nodes you can instead use gossip seed discovery and set the `IPEndPoint` of some seed nodes instead.
+> [!NOTE]
+> If you are using the commercial edition of Event Store HA with Manager nodes in place, the gossip port should be the port number of the external HTTP port on which the managers are running. If you are using the open source edition of Event Store HA the gossip port should be the External HTTP port that the nodes are running on. If you cannot use a well-known port for this across all nodes you can instead use gossip seed discovery and set the `IPEndPoint` of some seed nodes instead.
 
 ### Connecting Using Gossip Seeds
 

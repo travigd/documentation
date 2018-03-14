@@ -78,4 +78,4 @@ Along with authentication, Event Store supports per stream configuration of Acce
 
 To set access control lists over HTTP you can post to the metadata stream as with setting any other metadata. You can also set Access Control Lists for a stream in the web UI.
 
-For more information on the structure of how Access Control Lists work please read [Access Control Lists](~/server/access-control-lists.md).
+For more information on the structure of how Access Control Lists work please read [Access Control Lists](~/server/users-and-access-control-lists.md).

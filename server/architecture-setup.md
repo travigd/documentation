@@ -3,7 +3,7 @@
 
 ## Authentication Options
 
-There are two main options for authentication with Event Store. You secure Event Store itself, or you can use per-stream [Access Control Lists](../server/access-control-lists.md) to give more fine-grained control on which users can access which data. You can also take a hybrid approach that mixes the two.
+There are two main options for authentication with Event Store. You secure Event Store itself, or you can use per-stream [Access Control Lists](~/server/users-and-access-control-lists.md) to give more fine-grained control on which users can access which data. You can also take a hybrid approach that mixes the two.
 
 ### Secure Event Store
 

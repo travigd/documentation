@@ -6,7 +6,7 @@ This document explains how to use HTTP API for setting up and consuming competin
 
 ## Creating a Persistent Subscription
 
-Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](/server/access-control-lists).
+Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](~/server/users-and-access-control-lists.md).
 
 | URI                                           | Supported Content Types | Method |
 | --------------------------------------------- | ----------------------- | ------ |
@@ -86,7 +86,7 @@ By default, reading a stream via a persistent subscription will return a single 
 | `count`             | How many events to return for the request.                   |
 | `embed`             | `None`, `Content`, `Rich`, `Body`, `PrettyBody`, `TryHarder` |
 
-Read [Reading Streams]({{site.baseurl}}/http-api/reading-streams) for information on the different embed levels.
+Read [Reading Streams](~/http-api/reading-streams.md) for information on the different embed levels.
 
 ### Response
 
