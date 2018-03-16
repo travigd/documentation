@@ -72,9 +72,13 @@
 
 ## [Overview](dotnet-api/index.md)
 
-## [Competing Consumers](dotnet-api/competing-consumers.md)
-
 ## [Connecting to a Server](dotnet-api/connecting-to-a-server.md)
+
+## [Writing to a Stream](dotnet-api/writing-to-a-stream.md)
+
+## [Reading Events](dotnet-api/reading-events.md)
+
+## [Competing Consumers](dotnet-api/competing-consumers.md)
 
 ## [Embedded Client](dotnet-api/embedded-client.md)
 
@@ -82,13 +86,10 @@
 
 ## [Projections Management](dotnet-api/projections.md)
 
-## [Reading Events](dotnet-api/reading-events.md)
-
 ## [Stream Metadata](dotnet-api/stream-metadata.md)
 
 ## [User Management](dotnet-api/users.md)
 
-## [Writing to a Stream](dotnet-api/writing-to-a-stream.md)
 
 # HTTP API
 
@@ -116,8 +117,6 @@
 
 ## [Errors](http-api/errors.md)
 
-## [HTTP API Spec](http-api/swagger.json)
-
 # Projections
 
 ## [API](projections/api.md)
@@ -132,8 +131,10 @@
 
 ## [User Defined Projections](projections/user-defined-projections.md)
 
-# Code documentation
+# Reference
 
-<!--  TODO: How to do this-->
+<!--  TODO: How to do this best? -->
 
 ## [Code base docs](code/)
+
+## [HTTP API Spec](http-api/swagger.json)
