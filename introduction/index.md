@@ -18,7 +18,7 @@ Event Store has Chocolatey packages available that you can install with the foll
 ```powershell
 choco install eventstore-oss
 ```
-You can also [download](https://geteventstore.com/downloads) a binary, unzip the archive and run from the folder location.
+You can also [download](https://eventstore.org/downloads/) a binary, unzip the archive and run from the folder location.
 
 Then with an administrator console run the following command:
 

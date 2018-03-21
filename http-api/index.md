@@ -23,7 +23,7 @@ Many environments have already implemented the AtomPub protocol, that simplifies
 | Objective-C | <https://geekli.st/darvin/repos/MWFeedParser>                     |
 
 > [!NOTE]
-> The above list are not officially supported by Event Store, if you know of any others [then please let us know](https://geteventstore.com/contact/).
+> The above list are not officially supported by Event Store, if you know of any others [then please let us know](https://eventstore.org/contact/).
 
 ### Content Types
 
