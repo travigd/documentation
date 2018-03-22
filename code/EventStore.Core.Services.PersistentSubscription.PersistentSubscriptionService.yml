@@ -47,9 +47,7 @@ items:
     content: 'public class PersistentSubscriptionService : object, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<TcpMessage.ConnectionClosed>, IHandle<SystemMessage.BecomeMaster>, IHandle<SubscriptionMessage.PersistentSubscriptionTimerTick>, IHandle<ClientMessage.ReplayAllParkedMessages>, IHandle<ClientMessage.ReplayParkedMessage>, IHandle<SystemMessage.StateChangeMessage>, IHandle<ClientMessage.ConnectToPersistentSubscription>, IHandle<StorageMessage.EventCommitted>, IHandle<ClientMessage.UnsubscribeFromStream>, IHandle<ClientMessage.PersistentSubscriptionAckEvents>, IHandle<ClientMessage.PersistentSubscriptionNackEvents>, IHandle<ClientMessage.CreatePersistentSubscription>, IHandle<ClientMessage.UpdatePersistentSubscription>, IHandle<ClientMessage.DeletePersistentSubscription>, IHandle<ClientMessage.ReadNextNPersistentMessages>, IHandle<MonitoringMessage.GetAllPersistentSubscriptionStats>, IHandle<MonitoringMessage.GetPersistentSubscriptionStats>, IHandle<MonitoringMessage.GetStreamPersistentSubscriptionStats>'
     content.vb: >-
       Public Class PersistentSubscriptionService
-
           Inherits Object
-
           Implements IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of TcpMessage.ConnectionClosed), IHandle(Of SystemMessage.BecomeMaster), IHandle(Of SubscriptionMessage.PersistentSubscriptionTimerTick), IHandle(Of ClientMessage.ReplayAllParkedMessages), IHandle(Of ClientMessage.ReplayParkedMessage), IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of ClientMessage.ConnectToPersistentSubscription), IHandle(Of StorageMessage.EventCommitted), IHandle(Of ClientMessage.UnsubscribeFromStream), IHandle(Of ClientMessage.PersistentSubscriptionAckEvents), IHandle(Of ClientMessage.PersistentSubscriptionNackEvents), IHandle(Of ClientMessage.CreatePersistentSubscription), IHandle(Of ClientMessage.UpdatePersistentSubscription), IHandle(Of ClientMessage.DeletePersistentSubscription), IHandle(Of ClientMessage.ReadNextNPersistentMessages), IHandle(Of MonitoringMessage.GetAllPersistentSubscriptionStats), IHandle(Of MonitoringMessage.GetPersistentSubscriptionStats), IHandle(Of MonitoringMessage.GetStreamPersistentSubscriptionStats)
   inheritance:
   - System.Object
@@ -77,7 +75,6 @@ items:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
-  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -789,7 +786,6 @@ references:
   nameWithType: EventStore.Core.Services.PersistentSubscription
   fullName: EventStore.Core.Services.PersistentSubscription
 - uid: System.Object
-  commentId: T:System.Object
   isExternal: true
   name: Object
   nameWithType: Object
@@ -1641,35 +1637,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  name: AsDynamic()
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
@@ -1898,51 +1865,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  isExternal: true
-  name: AsDynamic(Object)
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  parent: EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: PrivateReflectionDynamicObjectExtensions
-  nameWithType: PrivateReflectionDynamicObjectExtensions
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   isExternal: false
@@ -2030,12 +1952,6 @@ references:
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
-- uid: EventStore.Core.Tests.Helpers
-  commentId: N:EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: EventStore.Core.Tests.Helpers
-  nameWithType: EventStore.Core.Tests.Helpers
-  fullName: EventStore.Core.Tests.Helpers
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
   isExternal: false

@@ -66,9 +66,7 @@ items:
     content: 'public class ProjectionManager : IDisposable, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.SystemCoreReady>, IHandle<SystemMessage.EpochWritten>, IHandle<ClientMessage.ReadStreamEventsBackwardCompleted>, IHandle<ClientMessage.ReadStreamEventsForwardCompleted>, IHandle<ClientMessage.WriteEventsCompleted>, IHandle<ClientMessage.DeleteStreamCompleted>, IHandle<ProjectionManagementMessage.Command.Post>, IHandle<ProjectionManagementMessage.Command.UpdateQuery>, IHandle<ProjectionManagementMessage.Command.GetQuery>, IHandle<ProjectionManagementMessage.Command.Delete>, IHandle<ProjectionManagementMessage.Command.GetStatistics>, IHandle<ProjectionManagementMessage.Command.GetState>, IHandle<ProjectionManagementMessage.Command.GetResult>, IHandle<ProjectionManagementMessage.Command.Disable>, IHandle<ProjectionManagementMessage.Command.Enable>, IHandle<ProjectionManagementMessage.Command.Abort>, IHandle<ProjectionManagementMessage.Command.SetRunAs>, IHandle<ProjectionManagementMessage.Command.Reset>, IHandle<ProjectionManagementMessage.Command.StartSlaveProjections>, IHandle<ProjectionManagementMessage.Command.GetConfig>, IHandle<ProjectionManagementMessage.Command.UpdateConfig>, IHandle<ProjectionManagementMessage.Internal.CleanupExpired>, IHandle<ProjectionManagementMessage.Internal.Deleted>, IHandle<CoreProjectionStatusMessage.Started>, IHandle<CoreProjectionStatusMessage.Stopped>, IHandle<CoreProjectionStatusMessage.Faulted>, IHandle<CoreProjectionStatusMessage.Prepared>, IHandle<CoreProjectionStatusMessage.StateReport>, IHandle<CoreProjectionStatusMessage.ResultReport>, IHandle<CoreProjectionStatusMessage.StatisticsReport>, IHandle<CoreProjectionManagementMessage.SlaveProjectionReaderAssigned>, IHandle<ProjectionManagementMessage.RegisterSystemProjection>, IHandle<CoreProjectionStatusMessage.ProjectionWorkerStarted>, IHandle<ProjectionManagementMessage.ReaderReady>'
     content.vb: >-
       Public Class ProjectionManager
-
           Inherits IDisposable
-
           Implements IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.SystemCoreReady), IHandle(Of SystemMessage.EpochWritten), IHandle(Of ClientMessage.ReadStreamEventsBackwardCompleted), IHandle(Of ClientMessage.ReadStreamEventsForwardCompleted), IHandle(Of ClientMessage.WriteEventsCompleted), IHandle(Of ClientMessage.DeleteStreamCompleted), IHandle(Of ProjectionManagementMessage.Command.Post), IHandle(Of ProjectionManagementMessage.Command.UpdateQuery), IHandle(Of ProjectionManagementMessage.Command.GetQuery), IHandle(Of ProjectionManagementMessage.Command.Delete), IHandle(Of ProjectionManagementMessage.Command.GetStatistics), IHandle(Of ProjectionManagementMessage.Command.GetState), IHandle(Of ProjectionManagementMessage.Command.GetResult), IHandle(Of ProjectionManagementMessage.Command.Disable), IHandle(Of ProjectionManagementMessage.Command.Enable), IHandle(Of ProjectionManagementMessage.Command.Abort), IHandle(Of ProjectionManagementMessage.Command.SetRunAs), IHandle(Of ProjectionManagementMessage.Command.Reset), IHandle(Of ProjectionManagementMessage.Command.StartSlaveProjections), IHandle(Of ProjectionManagementMessage.Command.GetConfig), IHandle(Of ProjectionManagementMessage.Command.UpdateConfig), IHandle(Of ProjectionManagementMessage.Internal.CleanupExpired), IHandle(Of ProjectionManagementMessage.Internal.Deleted), IHandle(Of CoreProjectionStatusMessage.Started), IHandle(Of CoreProjectionStatusMessage.Stopped), IHandle(Of CoreProjectionStatusMessage.Faulted), IHandle(Of CoreProjectionStatusMessage.Prepared), IHandle(Of CoreProjectionStatusMessage.StateReport), IHandle(Of CoreProjectionStatusMessage.ResultReport), IHandle(Of CoreProjectionStatusMessage.StatisticsReport), IHandle(Of CoreProjectionManagementMessage.SlaveProjectionReaderAssigned), IHandle(Of ProjectionManagementMessage.RegisterSystemProjection), IHandle(Of CoreProjectionStatusMessage.ProjectionWorkerStarted), IHandle(Of ProjectionManagementMessage.ReaderReady)
   inheritance:
   - System.Object
@@ -112,7 +110,6 @@ items:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
-  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
   - EventStore.Projections.Core.Services.Management.ProjectionManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Projections.Core.Services.Management.ProjectionManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -1500,7 +1497,6 @@ references:
   nameWithType: EventStore.Projections.Core.Services.Management
   fullName: EventStore.Projections.Core.Services.Management
 - uid: System.Object
-  commentId: T:System.Object
   isExternal: true
   name: Object
   nameWithType: Object
@@ -2992,35 +2988,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  name: AsDynamic()
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: EventStore.Projections.Core.Services.Management.ProjectionManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
@@ -3249,51 +3216,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  isExternal: true
-  name: AsDynamic(Object)
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  parent: EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: PrivateReflectionDynamicObjectExtensions
-  nameWithType: PrivateReflectionDynamicObjectExtensions
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   isExternal: false
@@ -3381,12 +3303,6 @@ references:
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
-- uid: EventStore.Core.Tests.Helpers
-  commentId: N:EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: EventStore.Core.Tests.Helpers
-  nameWithType: EventStore.Core.Tests.Helpers
-  fullName: EventStore.Core.Tests.Helpers
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
   isExternal: false

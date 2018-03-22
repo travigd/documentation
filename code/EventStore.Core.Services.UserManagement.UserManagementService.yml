@@ -43,9 +43,7 @@ items:
     content: 'public class UserManagementService : object, IHandle<UserManagementMessage.Get>, IHandle<UserManagementMessage.GetAll>, IHandle<UserManagementMessage.Create>, IHandle<UserManagementMessage.Update>, IHandle<UserManagementMessage.Enable>, IHandle<UserManagementMessage.Disable>, IHandle<UserManagementMessage.ResetPassword>, IHandle<UserManagementMessage.ChangePassword>, IHandle<UserManagementMessage.Delete>, IHandle<SystemMessage.BecomeMaster>'
     content.vb: >-
       Public Class UserManagementService
-
           Inherits Object
-
           Implements IHandle(Of UserManagementMessage.Get), IHandle(Of UserManagementMessage.GetAll), IHandle(Of UserManagementMessage.Create), IHandle(Of UserManagementMessage.Update), IHandle(Of UserManagementMessage.Enable), IHandle(Of UserManagementMessage.Disable), IHandle(Of UserManagementMessage.ResetPassword), IHandle(Of UserManagementMessage.ChangePassword), IHandle(Of UserManagementMessage.Delete), IHandle(Of SystemMessage.BecomeMaster)
   inheritance:
   - System.Object
@@ -64,7 +62,6 @@ items:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
-  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
   - EventStore.Core.Services.UserManagement.UserManagementService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Services.UserManagement.UserManagementService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -635,7 +632,6 @@ references:
   nameWithType: EventStore.Core.Services.UserManagement
   fullName: EventStore.Core.Services.UserManagement
 - uid: System.Object
-  commentId: T:System.Object
   isExternal: true
   name: Object
   nameWithType: Object
@@ -1127,35 +1123,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  name: AsDynamic()
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: EventStore.Core.Services.UserManagement.UserManagementService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
@@ -1384,51 +1351,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  isExternal: true
-  name: AsDynamic(Object)
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  parent: EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: PrivateReflectionDynamicObjectExtensions
-  nameWithType: PrivateReflectionDynamicObjectExtensions
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   isExternal: false
@@ -1516,12 +1438,6 @@ references:
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
-- uid: EventStore.Core.Tests.Helpers
-  commentId: N:EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: EventStore.Core.Tests.Helpers
-  nameWithType: EventStore.Core.Tests.Helpers
-  fullName: EventStore.Core.Tests.Helpers
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
   isExternal: false

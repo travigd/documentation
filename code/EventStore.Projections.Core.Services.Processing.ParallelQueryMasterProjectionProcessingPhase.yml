@@ -37,9 +37,7 @@ items:
     content: 'public class ParallelQueryMasterProjectionProcessingPhase : EventSubscriptionBasedProjectionProcessingPhase, IProjectionPhaseCompleter, IProjectionPhaseCheckpointManager, IHandle<EventReaderSubscriptionMessage.ProgressChanged>, IHandle<EventReaderSubscriptionMessage.SubscriptionStarted>, IHandle<EventReaderSubscriptionMessage.NotAuthorized>, IHandle<EventReaderSubscriptionMessage.EofReached>, IHandle<EventReaderSubscriptionMessage.CheckpointSuggested>, IHandle<EventReaderSubscriptionMessage.ReaderAssignedReader>, IHandle<EventReaderSubscriptionMessage.Failed>, IProjectionProcessingPhase, IDisposable, IHandle<CoreProjectionManagementMessage.GetState>, IHandle<CoreProjectionManagementMessage.GetResult>, IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>, IProjectionPhaseStateManager, IHandle<EventReaderSubscriptionMessage.CommittedEventReceived>, ISpoolStreamWorkItemContainer'
     content.vb: >-
       Public Class ParallelQueryMasterProjectionProcessingPhase
-
           Inherits EventSubscriptionBasedProjectionProcessingPhase
-
           Implements IProjectionPhaseCompleter, IProjectionPhaseCheckpointManager, IHandle(Of EventReaderSubscriptionMessage.ProgressChanged), IHandle(Of EventReaderSubscriptionMessage.SubscriptionStarted), IHandle(Of EventReaderSubscriptionMessage.NotAuthorized), IHandle(Of EventReaderSubscriptionMessage.EofReached), IHandle(Of EventReaderSubscriptionMessage.CheckpointSuggested), IHandle(Of EventReaderSubscriptionMessage.ReaderAssignedReader), IHandle(Of EventReaderSubscriptionMessage.Failed), IProjectionProcessingPhase, IDisposable, IHandle(Of CoreProjectionManagementMessage.GetState), IHandle(Of CoreProjectionManagementMessage.GetResult), IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded), IProjectionPhaseStateManager, IHandle(Of EventReaderSubscriptionMessage.CommittedEventReceived), ISpoolStreamWorkItemContainer
   inheritance:
   - System.Object
@@ -131,7 +129,6 @@ items:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
-  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -537,7 +534,6 @@ references:
   nameWithType: EventStore.Projections.Core.Services.Processing
   fullName: EventStore.Projections.Core.Services.Processing
 - uid: System.Object
-  commentId: T:System.Object
   isExternal: true
   name: Object
   nameWithType: Object
@@ -2967,35 +2963,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  name: AsDynamic()
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
@@ -3224,51 +3191,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  isExternal: true
-  name: AsDynamic(Object)
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  parent: EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: PrivateReflectionDynamicObjectExtensions
-  nameWithType: PrivateReflectionDynamicObjectExtensions
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   isExternal: false
@@ -3356,12 +3278,6 @@ references:
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
-- uid: EventStore.Core.Tests.Helpers
-  commentId: N:EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: EventStore.Core.Tests.Helpers
-  nameWithType: EventStore.Core.Tests.Helpers
-  fullName: EventStore.Core.Tests.Helpers
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
   isExternal: false

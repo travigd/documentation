@@ -28,18 +28,15 @@ items:
     content: 'public interface IBus : IPublisher, ISubscriber'
     content.vb: >-
       Public Interface IBus
-
           Inherits IPublisher, ISubscriber
   inheritedMembers:
   - EventStore.Core.Bus.IPublisher.Publish(EventStore.Core.Messaging.Message)
   - EventStore.Core.Bus.ISubscriber.Subscribe``1(EventStore.Core.Bus.IHandle{{T}})
   - EventStore.Core.Bus.ISubscriber.Unsubscribe``1(EventStore.Core.Bus.IHandle{{T}})
   extensionMethods:
-  - EventStore.Core.Bus.ISubscriber.EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(Action{{T}})
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
-  - System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
   - EventStore.Core.Bus.IBus.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Bus.IBus.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -241,66 +238,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Bus.ISubscriber.EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(Action{{T}})
-  commentId: M:EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(EventStore.Core.Bus.ISubscriber,Action{``0})
-  parent: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions
-  definition: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(EventStore.Core.Bus.ISubscriber,Action{``0})
-  name: Subscribe<T>(Action<T>)
-  nameWithType: BusTestingExtentions.Subscribe<T>(Action<T>)
-  fullName: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe<T>(Action<T>)
-  nameWithType.vb: BusTestingExtentions.Subscribe(Of T)(Action(Of T))
-  fullName.vb: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe(Of T)(Action(Of T))
-  name.vb: Subscribe(Of T)(Action(Of T))
-  spec.csharp:
-  - uid: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(Action{``0})
-    name: Subscribe<T>
-    nameWithType: BusTestingExtentions.Subscribe<T>
-    fullName: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Action`1
-    name: Action
-    nameWithType: Action
-    fullName: Action
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(Action{``0})
-    name: Subscribe(Of T)
-    nameWithType: BusTestingExtentions.Subscribe(Of T)
-    fullName: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Action`1
-    name: Action
-    nameWithType: Action
-    fullName: Action
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -382,35 +319,6 @@ references:
     name: ToCanonicalJson
     nameWithType: Json.ToCanonicalJson
     fullName: EventStore.Common.Utils.Json.ToCanonicalJson
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  parent: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  definition: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  name: AsDynamic()
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic()
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
   - name: (
     nameWithType: (
     fullName: (
@@ -609,86 +517,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(EventStore.Core.Bus.ISubscriber,Action{``0})
-  commentId: M:EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(EventStore.Core.Bus.ISubscriber,Action{``0})
-  isExternal: true
-  name: Subscribe<T>(ISubscriber, Action<T>)
-  nameWithType: BusTestingExtentions.Subscribe<T>(ISubscriber, Action<T>)
-  fullName: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe<T>(EventStore.Core.Bus.ISubscriber, Action<T>)
-  nameWithType.vb: BusTestingExtentions.Subscribe(Of T)(ISubscriber, Action(Of T))
-  fullName.vb: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe(Of T)(EventStore.Core.Bus.ISubscriber, Action(Of T))
-  name.vb: Subscribe(Of T)(ISubscriber, Action(Of T))
-  spec.csharp:
-  - uid: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(EventStore.Core.Bus.ISubscriber,Action{``0})
-    name: Subscribe<T>
-    nameWithType: BusTestingExtentions.Subscribe<T>
-    fullName: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: EventStore.Core.Bus.ISubscriber
-    name: ISubscriber
-    nameWithType: ISubscriber
-    fullName: EventStore.Core.Bus.ISubscriber
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: Action`1
-    name: Action
-    nameWithType: Action
-    fullName: Action
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe``1(EventStore.Core.Bus.ISubscriber,Action{``0})
-    name: Subscribe(Of T)
-    nameWithType: BusTestingExtentions.Subscribe(Of T)
-    fullName: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions.Subscribe(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: EventStore.Core.Bus.ISubscriber
-    name: ISubscriber
-    nameWithType: ISubscriber
-    fullName: EventStore.Core.Bus.ISubscriber
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: Action`1
-    name: Action
-    nameWithType: Action
-    fullName: Action
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions
-  commentId: T:EventStore.Projections.Core.Tests.Playground.BusTestingExtentions
-  parent: EventStore.Projections.Core.Tests.Playground
-  isExternal: false
-  name: BusTestingExtentions
-  nameWithType: BusTestingExtentions
-  fullName: EventStore.Projections.Core.Tests.Playground.BusTestingExtentions
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -810,51 +638,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  commentId: M:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  isExternal: true
-  name: AsDynamic(Object)
-  nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic(Object)
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-  spec.csharp:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic(System.Object)
-    name: AsDynamic
-    nameWithType: PrivateReflectionDynamicObjectExtensions.AsDynamic
-    fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions.AsDynamic
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  commentId: T:EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
-  parent: EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: PrivateReflectionDynamicObjectExtensions
-  nameWithType: PrivateReflectionDynamicObjectExtensions
-  fullName: EventStore.Core.Tests.Helpers.PrivateReflectionDynamicObjectExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   isExternal: false
@@ -936,24 +719,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Tests.Playground
-  commentId: N:EventStore.Projections.Core.Tests.Playground
-  isExternal: false
-  name: EventStore.Projections.Core.Tests.Playground
-  nameWithType: EventStore.Projections.Core.Tests.Playground
-  fullName: EventStore.Projections.Core.Tests.Playground
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
   isExternal: false
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
-- uid: EventStore.Core.Tests.Helpers
-  commentId: N:EventStore.Core.Tests.Helpers
-  isExternal: false
-  name: EventStore.Core.Tests.Helpers
-  nameWithType: EventStore.Core.Tests.Helpers
-  fullName: EventStore.Core.Tests.Helpers
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
   isExternal: false
