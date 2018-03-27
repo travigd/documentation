@@ -95,8 +95,6 @@
 
 ## [Overview](http-api/index.md)
 
-## [Security](http-api/security.md)
-
 ## [Creating a Stream](http-api/creating-a-stream.md)
 
 ## [Writing to a Stream](http-api/writing-to-a-stream.md)
@@ -115,26 +113,28 @@
 
 ## [Optional HTTP Headers](http-api/optional-http-headers.md)
 
+## [Security](http-api/security.md)
+
 ## [Errors](http-api/errors.md)
 
 # Projections
 
+## [Getting Started](projections/getting-started.md)
+
 ## [API](projections/api.md)
+
+## [User Defined Projections](projections/user-defined-projections.md)
 
 ## [Config](projections/projections-config.md)
 
 ## [Debugging](projections/debugging.md)
 
-## [Getting Started](projections/getting-started.md)
-
 ## [System Projections](projections/system-projections.md)
-
-## [User Defined Projections](projections/user-defined-projections.md)
 
 # Reference
 
 <!--  TODO: How to do this best? -->
 
-## [Code base docs](code/)
+## [Code base](code/)
 
 ## [HTTP API Spec](http-api/swagger.json)
