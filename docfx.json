@@ -6,24 +6,17 @@
           "src": "../EventStore",
           "files": [
             "src/**.csproj"
-          ],
-          "exclude": [
-            "**/obj/**",
-            "**/bin/**",
-            "docs/**"
           ]
         }
       ],
       "dest": "code",
-      "filter": "filterConfig.yml",
-      "disableGitFeatures": false
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {
     "content": [
       {
-        "files": "http-api/swagger.json",
-        "dest":"docs/http-api"
+        "files": "http-api/swagger.json"
       },
       {
         "files": [
@@ -34,43 +27,27 @@
           "introduction/**.md",
           "projections/**.md",
           "server/**.md",
-          "*.md"
-        ],
-        "exclude": [],
-        "dest":"docs"
+          "*.md",
+          "toc.md"
+        ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**"
-        ],
-        "exclude": [
-          "obj/**",
-          "docs/**",
-          ".git/**"
+          "images/**",
+          "assets/**"
         ]
       }
     ],
-    "overwrite": [],
-    "dest": "docs",
+    "dest": "_site",
     "exclude": [
       ".git/**"
     ],
-    "globalMetadataFiles": [],
-    "fileMetadataFiles": [],
-
       "template": [
         "../es-docs-template",
         "../dfx-plugins/rest.tagpage.2.31.0/content",
         "../dfx-plugins/rest.operationpage.2.31.0/content"
-      ],
-
-    "postProcessors": [],
-    "noLangKeyword": false,
-    "keepFileLink": false,
-    "cleanupCacheHistory": false,
-    "disableGitFeatures": false,
-    "disableBreadcrumbs": false
+      ]
   }
 }
