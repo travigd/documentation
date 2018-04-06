@@ -1,0 +1,853 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="dns-prefetch" href="//geteventstore.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <title>Getting Started </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting Started ">
+    <meta name="generator" content="docfx 2.34.0.0">
+  <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+      <link rel="stylesheet" href="../styles/main12.css">
+        <link rel="stylesheet" href="../styles/print.css" media="print">
+              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <style media="print">
+                  pre {
+                      white-space: pre-wrap;
+                  }
+                  .site-navigation-toggle, .docs-toc-toggle, .footer__menu {
+                      display: none;
+                  }
+                  p, ul, ol {
+                      max-width: 100% !important;
+                  }
+                  .version-dropdown__selected {
+  
+                  }
+                  .version-dropdown__options {
+  
+                  }
+              </style>
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header class="site-banner">
+        
+        
+        <nav id="autocollapse" class="navbar navbar-green ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+              <!-- TODO: There must be a way to get this to work properly. -->
+              <ul class="nav level1 navbar-nav">
+              <li class="site-navigation__item"><a href="https://geteventstore.com/community">Community</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/support">Commercial Support</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/blog">Blog</a></li>
+                              <li class="site-navigation__item"><a href="http://docs.geteventstore.com">Documentation</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/downloads">Downloads</a></li>
+                              </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <!--  TODO: Currently override (git history) shouldn't need to.-->
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+        
+          </div>
+        
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="getting-started">Getting Started</h1>
+
+<p>This guide will show you how to get started with Event Store using the Atom publishing protocol as the primary interface. It covers installation and basic operations such as writing to a stream, reading from a stream, and subscribing to a stream.</p>
+<div class="WARNING"><h5>Warning</h5><p>The described is for development and evaluation of Event Store. It does not describe a production setup.</p>
+</div>
+<h2 id="install-and-run">Install and Run</h2>
+<div class="tabGroup" id="tabgroup_jkCGdkmrsH">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH_tabid-1" role="tab" aria-controls="tabpanel_jkCGdkmrsH_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Windows</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH_tabid-2" role="tab" aria-controls="tabpanel_jkCGdkmrsH_tabid-2" data-tab="tabid-2" tabindex="-1">Linux</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH_tabid-3" role="tab" aria-controls="tabpanel_jkCGdkmrsH_tabid-3" data-tab="tabid-3" tabindex="-1">Docker</a>
+</li>
+</ul>
+<section id="tabpanel_jkCGdkmrsH_tabid-1" role="tabpanel" data-tab="tabid-1">
+<p>The prerequisites for Installing on Windows are:</p>
+<ul>
+<li>NET Framework 4.0+</li>
+<li>Windows platform SDK with compilers (v7.1) or Visual C++ installed (Only required for a full build)</li>
+</ul>
+<p>Event Store has Chocolatey packages available that you can install with the following command:</p>
+<pre><code class="lang-powershell">choco install eventstore-oss
+</code></pre><p>You can also <a href="https://eventstore.org/downloads/">download</a> a binary, unzip the archive and run from the folder location.</p>
+<p>Then with an administrator console run the following command:</p>
+<pre><code class="lang-powershell">EventStore.ClusterNode.exe --db ./db --log ./logs
+</code></pre><p>This will start Event Store with the database stored at the path <em>./db</em> and the logs in <em>./logs</em>. You can view further command line arguments in the <a href="../server/index.html">server docs</a>.</p>
+<p>Event Store is running in an admin context because it will start a HTTP server through <code>http.sys</code>. For permanent or production instances you will need to provide an ACL such as:</p>
+<pre><code class="lang-powershell">netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
+</code></pre></section>
+<section id="tabpanel_jkCGdkmrsH_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<p>The prerequisites for Installing on Linux are:</p>
+<ul>
+<li>Mono 4.6.2</li>
+</ul>
+<p>Event Store has pre-built <a href="https://packagecloud.io/EventStore/EventStore-OSS">packages available for Debian-based distributions</a>, <a href="https://packagecloud.io/EventStore/EventStore-OSS/install#bash-rpm">manual instructions for distributions that use RPM</a>, or you can <a href="https://github.com/EventStore/EventStore#linux">build from source</a>.</p>
+<p>If you installed from a pre-built package, start Event Store with:</p>
+<pre><code class="lang-bash">sudo service eventstore start
+</code></pre><p>Or, in all other cases you can run the Event Store binary or use our run-node shell script which exports the environment variable <code>LD_LIBRARY_PATH</code> to include the installation path of Event Store, which is necessary if you are planning to use projections.</p>
+<pre><code class="lang-bash">./run-node.sh --db ./ESData
+</code></pre><div class="NOTE"><h5>Note</h5><p>We recommend that when using Linux you set the &#39;open file limit&#39; to a high number. The precise value depends on your usecase, but at miniumum, between <code>30,000</code> and <code>60,000</code>.</p>
+</div>
+</section>
+<section id="tabpanel_jkCGdkmrsH_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
+<p>Event Store has <a href="https://hub.docker.com/r/eventstore/eventstore/">a Docker image</a> available for any platform that supports Docker:</p>
+<pre><code class="lang-bash">docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
+</code></pre></section>
+</div>
+<p>Event Store should now be running at <a href="http://127.0.0.1:2113/">http://127.0.0.1:2113/</a> to see the admin console. The console will ask for a username and password. The defaults are <code>admin:changeit</code>.</p>
+<h2 id="writing-events-to-an-event-stream">Writing Events to an Event Stream</h2>
+<p>Event Store operates on a concept of Event Streams, and the first operation we will look at is how to write to a stream. If you are Event Sourcing a domain model a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, create as many as you need.</p>
+<p>To begin, open a text editor, copy and paste the following event definition, and save it as <em>event.txt</em>.</p>
+<pre><code class="lang-json">[
+  {
+    &quot;eventId&quot;: &quot;fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4&quot;,
+    &quot;eventType&quot;: &quot;event-type&quot;,
+    &quot;data&quot;: {
+
+      &quot;a&quot;: &quot;1&quot;
+    }
+  }
+]
+</code></pre><p>To write the event to a stream, issue the following cURL command.</p>
+<div class="tabGroup" id="tabgroup_jkCGdkmrsH-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-1_tabid-4" role="tab" aria-controls="tabpanel_jkCGdkmrsH-1_tabid-4" data-tab="tabid-4" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-1_tabid-5" role="tab" aria-controls="tabpanel_jkCGdkmrsH-1_tabid-5" data-tab="tabid-5" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_jkCGdkmrsH-1_tabid-4" role="tabpanel" data-tab="tabid-4">
+<pre><code class="lang-shell">curl -i -d @event.txt &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;
+</code></pre></section>
+<section id="tabpanel_jkCGdkmrsH-1_tabid-5" role="tabpanel" data-tab="tabid-5" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 201 Created
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+Location: http://127.0.0.1:2113/streams/newstream/0
+Content-Type: text/plain; charset: utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Fri, 28 Jun 2013 12:17:59 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+</code></pre></section>
+</div>
+<div class="NOTE"><h5>Note</h5><p>You can also post events as XML, by changing the <code>Content-Type</code> header to <code>XML</code>.</p>
+</div>
+<p>Open the UI after this command to the <em>Stream Browser</em> tab and you will see the stream you created. If you post to a stream that doesn’t exist, Event Store will create it. You can click it to view an HTML representation of your stream.</p>
+<p>You can also setup <a href="../server/users-and-access-control-lists/index.html">Access Control Lists</a> on your streams by changing the metadata of the stream.</p>
+<h2 id="reading-from-a-stream">Reading From a Stream</h2>
+<p>Event Store exposes all streams as <a href="http://tools.ietf.org/html/rfc4287">atom feeds</a>, and you can read data from the stream by navigating to the <em>head</em> URI of the stream <a href="http://127.0.0.1:2113/streams/newstream">http://127.0.0.1:2113/streams/newstream</a> with cURL.</p>
+<div class="tabGroup" id="tabgroup_jkCGdkmrsH-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-2_tabid-6" role="tab" aria-controls="tabpanel_jkCGdkmrsH-2_tabid-6" data-tab="tabid-6" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-2_tabid-7" role="tab" aria-controls="tabpanel_jkCGdkmrsH-2_tabid-7" data-tab="tabid-7" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_jkCGdkmrsH-2_tabid-6" role="tabpanel" data-tab="tabid-6">
+<pre><code class="lang-shell">curl -i -H &quot;Accept:application/vnd.eventstore.atom+json&quot; &quot;http://127.0.0.1:2113/streams/newstream&quot;
+</code></pre></section>
+<section id="tabpanel_jkCGdkmrsH-2_tabid-7" role="tabpanel" data-tab="tabid-7" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 200 OK
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-Forwarded-Host, X-Forwarded-Prefix, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTos
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position, ES-CurrentVersion
+Cache-Control: max-age=0, no-cache, must-revalidate
+Vary: Accept
+ETag: &quot;0;-2060438500&quot;
+Content-Type: application/vnd.eventstore.atom+json; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Fri, 15 Dec 2017 12:23:23 GMT
+Content-Length: 1262
+Keep-Alive: timeout=15,max=100
+
+{
+  &quot;title&quot;: &quot;Event stream &#39;newstream&#39;&quot;,
+  &quot;id&quot;: &quot;http://127.0.0.1:2113/streams/newstream&quot;,
+  &quot;updated&quot;: &quot;2017-12-15T12:19:32.021776Z&quot;,
+  &quot;streamId&quot;: &quot;newstream&quot;,
+  &quot;author&quot;: {
+    &quot;name&quot;: &quot;EventStore&quot;
+  },
+  &quot;headOfStream&quot;: true,
+  &quot;selfUrl&quot;: &quot;http://127.0.0.1:2113/streams/newstream&quot;,
+  &quot;eTag&quot;: &quot;0;-2060438500&quot;,
+  &quot;links&quot;: [
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/newstream&quot;,
+      &quot;relation&quot;: &quot;self&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/newstream/head/backward/20&quot;,
+      &quot;relation&quot;: &quot;first&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/newstream/1/forward/20&quot;,
+      &quot;relation&quot;: &quot;previous&quot;
+    },
+    {
+      &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/newstream/metadata&quot;,
+      &quot;relation&quot;: &quot;metadata&quot;
+    }
+  ],
+  &quot;entries&quot;: [
+    {
+      &quot;title&quot;: &quot;0@newstream&quot;,
+      &quot;id&quot;: &quot;http://127.0.0.1:2113/streams/newstream/0&quot;,
+      &quot;updated&quot;: &quot;2017-12-15T12:19:32.021776Z&quot;,
+      &quot;author&quot;: {
+        &quot;name&quot;: &quot;EventStore&quot;
+      },
+      &quot;summary&quot;: &quot;event-type&quot;,
+      &quot;links&quot;: [
+        {
+          &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/newstream/0&quot;,
+          &quot;relation&quot;: &quot;edit&quot;
+        },
+        {
+          &quot;uri&quot;: &quot;http://127.0.0.1:2113/streams/newstream/0&quot;,
+          &quot;relation&quot;: &quot;alternate&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre></section>
+</div>
+<div class="NOTE"><h5>Note</h5><p>This example uses cURL, but you can read Atom feeds with a wide variety of applications and languages.</p>
+</div>
+<div class="NOTE"><h5>Note</h5><p>This command asked Event Store to return the feed in JSON format, you can also use <code>Accept:application/atom+xml</code> if you prefer XML.</p>
+</div>
+<p>The feed has a single item inside of it, the one you just posted. You can then get the event by issuing a <code>GET</code> to the <code>alternate</code> URI value.</p>
+<div class="tabGroup" id="tabgroup_jkCGdkmrsH-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-3_tabid-8" role="tab" aria-controls="tabpanel_jkCGdkmrsH-3_tabid-8" data-tab="tabid-8" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-3_tabid-9" role="tab" aria-controls="tabpanel_jkCGdkmrsH-3_tabid-9" data-tab="tabid-9" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_jkCGdkmrsH-3_tabid-8" role="tabpanel" data-tab="tabid-8">
+<pre><code class="lang-shell">curl -i http://127.0.0.1:2113/streams/newstream/0 -H &quot;Accept: application/json&quot;
+</code></pre></section>
+<section id="tabpanel_jkCGdkmrsH-3_tabid-9" role="tabpanel" data-tab="tabid-9" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 200 OK
+Access-Control-Allow-Methods: GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+Cache-Control: max-age=31536000, public
+Vary: Accept
+Content-Type: application/json; charset: utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Wed, 03 Jul 2013 11:09:12 GMT
+Content-Length: 14
+Keep-Alive: timeout=15,max=100
+
+{
+  &quot;a&quot;: &quot;1&quot;
+}
+</code></pre></section>
+</div>
+<div class="NOTE"><h5>Note</h5><p>You can also use <code>Accept: text/xml</code> if you prefer XML.</p>
+</div>
+<p>To read a single page feed, you request the feed and then iterate through the event links by executing <code>GET</code> requests. This may feel inefficient at first but remember the event URIs and most of the page URIs are infinitely cachable.</p>
+<p>You can also <code>GET</code> the events in the feed itself if by using <code>?embed=body</code> in the request. You can find further information on this <a href="../http-api/reading-streams/index.html">here</a>.</p>
+<p>Sometimes your feed may span more than one atom page, and you will need to paginate through the feed. You do this by following the relation links in the feed. To read a feed from the beginning to the end you would go to the <em>last</em> link and then continue to read the <em>previous</em> page. You can also do more of a twitter style follow and start from now and take the last say 50 to display by using <em>first</em> then <em>next</em>.</p>
+<!-- TODO: Add an example -->
+<h2 id="subscribing-to-stream-to-receive-updates">Subscribing to Stream to Receive Updates</h2>
+<p>Another common operation is to listen to a stream for changes. This works the same way as paging through an Atom feed. As new events arrive, new <em>previous</em> links are created and you can continue following them. The example below is in C# and includes both paging and subscribing over time. If you wanted to provide an <em>at least once</em> assurance with the following code, save the last URI you received.</p>
+<!-- TODO: Test the below and how do you set them up? -->
+<div class="tabGroup" id="tabgroup_jkCGdkmrsH-4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-4_tabid-10" role="tab" aria-controls="tabpanel_jkCGdkmrsH-4_tabid-10" data-tab="tabid-10" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_jkCGdkmrsH-4_tabid-11" role="tab" aria-controls="tabpanel_jkCGdkmrsH-4_tabid-11" data-tab="tabid-11" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_jkCGdkmrsH-4_tabid-10" role="tabpanel" data-tab="tabid-10">
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.ServiceModel.Syndication; // reference &quot;System.ServiceModel&quot;
+using System.Threading;
+using System.Xml;
+
+namespace AtomPoller
+{
+    class Program
+    {
+        private static SyndicationLink GetNamedLink(IEnumerable&lt;SyndicationLink&gt; links, string name)
+        {
+            return links.FirstOrDefault(link =&gt; link.RelationshipType == name);
+        }
+        static Uri GetLast(Uri head)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(head);
+            request.Credentials = new NetworkCredential(&quot;admin&quot;, &quot;changeit&quot;);
+            request.Accept = &quot;application/atom+xml&quot;;
+            try
+            {
+                using (var response = (HttpWebResponse) request.GetResponse())
+                {
+                    if (response.StatusCode == HttpStatusCode.NotFound)
+                        return null;
+                    using (var xmlreader = XmlReader.Create(response.GetResponseStream()))
+                    {
+                        var feed = SyndicationFeed.Load(xmlreader);
+                        var last = GetNamedLink(feed.Links, &quot;last&quot;);
+                        return (last != null) ? last.Uri : GetNamedLink(feed.Links, &quot;self&quot;).Uri;
+                    }
+                }
+            }
+            catch(WebException ex)
+            {
+                if (((HttpWebResponse) ex.Response).StatusCode == HttpStatusCode.NotFound) return null;
+                throw;
+            }
+        }
+
+        private static void ProcessItem(SyndicationItem item)
+        {
+            Console.WriteLine(item.Title.Text);
+            //get events
+            var request = (HttpWebRequest)WebRequest.Create(GetNamedLink(item.Links, &quot;alternate&quot;).Uri);
+            request.Credentials = new NetworkCredential(&quot;admin&quot;, &quot;changeit&quot;);
+            request.Accept = &quot;application/json&quot;;
+            using (var response = request.GetResponse())
+            {
+                var streamReader = new StreamReader(response.GetResponseStream());
+                Console.WriteLine(streamReader.ReadToEnd());
+            }
+        }
+
+        private static Uri ReadPrevious(Uri uri)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(uri);
+            request.Credentials = new NetworkCredential(&quot;admin&quot;, &quot;changeit&quot;);
+            request.Accept = &quot;application/atom+xml&quot;;
+            using(var response = request.GetResponse())
+            {
+                using(var xmlreader = XmlReader.Create(response.GetResponseStream()))
+                {
+                    var feed = SyndicationFeed.Load(xmlreader);
+                    foreach (var item in feed.Items.Reverse())
+                    {
+                        ProcessItem(item);
+                    }
+                    var prev = GetNamedLink(feed.Links, &quot;previous&quot;);
+                    return prev == null ? uri : prev.Uri;
+                }
+            }
+        }
+
+        private static void PostMessage()
+        {
+            var message = &quot;[{&#39;eventType&#39;:&#39;MyFirstEvent&#39;, &#39;eventId&#39;:&#39;&quot;
+                + Guid.NewGuid() + &quot;&#39;, &#39;data&#39;:{&#39;name&#39;:&#39;hello world!&#39;, &#39;number&#39;:&quot;
+                + new Random().Next() + &quot;}}]&quot;;
+            var request = WebRequest.Create(&quot;http://127.0.0.1:2113/streams/yourstream&quot;);
+            request.Method = &quot;POST&quot;;
+            request.ContentType = &quot;application/vnd.eventstore.events+json&quot;;
+            request.ContentLength = message.Length;
+            using(var sw= new StreamWriter(request.GetRequestStream()))
+            {
+                sw.Write(message);
+            }
+            using(var response = request.GetResponse())
+            {
+                response.Close();
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            var timer = new Timer(o =&gt; PostMessage(), null, 1000, 1000);
+            Uri last = null;
+            Console.WriteLine(&quot;Press any key to exit.&quot;);
+            var stop = false;
+            while (last == null &amp;&amp; !stop)
+            {
+                last = GetLast(new Uri(&quot;http://127.0.0.1:2113/streams/yourstream&quot;));
+                if(last == null) Thread.Sleep(1000);
+                if (Console.KeyAvailable)
+                {
+                    stop = true;
+                }
+            }
+
+            while(!stop)
+            {
+                var current = ReadPrevious(last);
+                if(last == current)
+                {
+                    Thread.Sleep(1000);
+                }
+                last = current;
+                if(Console.KeyAvailable)
+                {
+                    stop = true;
+                }
+            }
+        }
+    }
+
+}
+</code></pre></section>
+<section id="tabpanel_jkCGdkmrsH-4_tabid-11" role="tabpanel" data-tab="tabid-11" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-javascript">    if (!window.es) { window.es = {}; };
+    es.projection = function (settings) {
+
+        var projectionBody = settings.body;
+        var onStateUpdate = settings.onStateUpdate || function () { };
+        var showError = settings.showError || function () { };
+        var hideError = settings.hideError || function () { };
+
+        var currentTimeout = null;
+        var currentAjaxes = null;
+        var category = null;
+
+        return {
+            start: startProjection,
+            stop: stopProjection
+        };
+
+        function startProjection() {
+
+            stopProjection();
+            var processor = $initialize_hosted_projections();
+            projectionBody();
+            processor.initialize();
+
+            var sources = JSON.parse(processor.get_sources());
+            if (sources.all_streams
+                || (sources.categories != null &amp;&amp; sources.categories.length &gt; 1)
+                || (sources.streams != null &amp;&amp; sources.streams.length &gt; 1)) {
+                throw &quot;Unsupported projection source to run in the web browser&quot;;
+            }
+
+            if (sources.categories != null &amp;&amp; sources.categories.length == 1) {
+                category = sources.categories[0];
+                startPolling(&quot;$ce-&quot; + category, process_event);
+            } else {
+                category = null;
+                startPolling(sources.streams[0], process_event);
+            }
+
+            function process_event(event) {
+                var parsedEvent = event;
+
+                processor.process_event(parsedEvent.data,
+                                parsedEvent.eventStreamId,
+                                parsedEvent.eventType,
+                                category,
+                                parsedEvent.eventNumber,
+                                parsedEvent.metadata);
+                var stateStr = processor.get_state();
+                var stateObj = JSON.parse(stateStr);
+
+                onStateUpdate(stateObj, stateStr);
+            }
+        };
+
+        function stopProjection() {
+            if (currentTimeout !== null)
+                clearTimeout(currentTimeout);
+            if (currentAjaxes !== null) {
+                for (var i = 0, l = currentAjaxes.length; i &lt; l; i++) {
+                    currentAjaxes[i].abort();
+                }
+            }
+
+            currentAjaxes = null;
+            currentTimeout = null;
+        };
+
+        function startPolling(streamId, callback) {
+
+            var firstPageUrl = &#39;/streams/&#39; + encodeURIComponent(streamId);
+            var lastProcessedPageUrl = null;
+            var lastProcessedEntry = null;
+
+            // not used yet - when something fails we just retry
+            var defaultFail = function(a, b, c) { alert(&#39;Failed!&#39;); };
+
+            readAll(null, null);
+
+            function readAll(fromPageUrl, fromEntry) {
+
+                lastProcessedPageUrl = fromPageUrl;
+                lastProcessedEntry = fromEntry;
+
+                readFirstPage({
+                    pageRead: pageRead,
+                    noEntries: noEntries,
+                    fail: defaultFail
+                });
+
+                function pageRead(firstPageUrl, lastEntry) {
+
+                    // check for end of stream
+                    if (lastProcessedEntry !== null &amp;&amp; Entry.isNewerOrSame(lastProcessedEntry, lastEntry)) {
+                        delayedReadAll(lastProcessedPageUrl, lastProcessedEntry);
+                        return;
+                    }
+
+                    readRange({
+                        page: fromPageUrl || firstPageUrl,
+                        from: fromEntry || null,
+                        to: lastEntry,
+                        processEvent: callback,
+                        endOfStream: delayedReadAll,
+                        success: function (lastReadPageUrl, lastReadEntry) { readAll(lastReadPageUrl, lastReadEntry); },
+                        fail: defaultFail
+                    });
+                }
+
+                function noEntries() {
+                    delayedReadAll(lastProcessedPageUrl, lastProcessedEntry);
+                }
+
+                function delayedReadAll(page, entry) {
+                    setTimeout(function () { readAll(page, entry); }, 1000);
+                }
+            }
+
+            function readFirstPage(sets) {
+
+                var pageRead = sets.pageRead;
+                var noEntries = sets.noEntries;
+                var fail = sets.fail;
+
+                $.ajax(firstPageUrl, {
+                    headers: {
+                        &#39;Accept&#39;: &#39;application/json&#39;
+                    },
+                    success: function (page) {
+                        if (page.entries.length === 0) {
+                            noEntries();
+                        }
+                        var lastEntry = page.entries[0];
+                        var lastPage = $.grep(page.links, function (link) { return link.relation === &#39;last&#39;; })[0].uri;
+                        pageRead(lastPage, lastEntry);
+                    },
+                    error: function (jqXhr, status, error) {
+                        setTimeout(function () { readFirstPage(sets); }, 1000);
+                        //fail.apply(window, arguments);
+                    }
+                });
+            }
+
+            function readRange(sets) {
+
+                var page = sets.page;
+                var from = sets.from;
+                var to = sets.to;
+                var processEvent = sets.processEvent;
+                var success = sets.success;
+                var fail = sets.fail;
+
+                readByPages(page);
+
+                function readByPages(fromPage) {
+                    readPage({
+                        url: fromPage,
+                        lowerBound: from,
+                        upperBound: to,
+                        processEvent: processEvent,
+                        onPageRead: function (nextPage) {
+                            readByPages(nextPage);
+                        },
+                        onUpperBound: function (lastReadPageUrl, lastReadEntry) {
+                            success(lastReadPageUrl, lastReadEntry);
+                        },
+                        fail: fail
+                    });
+                }
+            }
+
+            function readPage(sets) {
+
+                var pageUrl = sets.url;
+                var fromEntry = sets.lowerBound;
+                var toEntry = sets.upperBound;
+                var processEvent = sets.processEvent;
+                var onPageRead = sets.onPageRead;
+                var onUpperBound = sets.onUpperBound;
+                var fail = sets.fail;
+
+                $.ajax(pageUrl, {
+                    headers: {
+                        &#39;Accept&#39;: &#39;application/json&#39;
+                    },
+                    success: function (page) {
+                        var nextPage = $.grep(page.links, function (link) { return link.relation === &#39;previous&#39;; })[0].uri;
+                        var entries = $.grep(page.entries, function (entry) {
+                            // if we&#39;ve read more entries then we were asked to - it&#39;s ok - just set lastEntry correctly
+                            return fromEntry === null || Entry.isNewer(entry, fromEntry);
+                        });
+                        var onEntriesRead = null;
+
+                        if (Entry.isOnPage(pageUrl, toEntry)) {
+
+                            // setting LastEntry as null is ok - readAll will just continue reading from beginning of page. And as deleted events won&#39;t appear again - no duplicates will be processed
+
+                            if (entries.length === 0) {
+                                onUpperBound(pageUrl, toEntry);
+                                return;
+                            }
+
+                            var lastEntry = Entry.max(entries);
+                            onEntriesRead = function () { onUpperBound(pageUrl, lastEntry); };
+                        } else {
+                            onEntriesRead = function () { onPageRead(nextPage); };
+                        }
+
+                        if (entries.length === 0) {
+                            onPageRead(nextPage); // probably was deleted by maxAge/maxCount
+                            return;
+                        }
+
+                        getEvents(entries, processEvent, onEntriesRead);
+                    },
+                    error: function () {
+                        setTimeout(function () { readPage(sets); }, 1000);
+                    }
+                });
+
+
+
+                function getEvents(entries, processEvent, onFinish) {
+
+                    var eventsUrls = $.map(entries, function (entry) {
+                        var jsonLink = $.grep(entry.links, function (link) { return link.type === &#39;application/json&#39;; })[0].uri;
+                        return jsonLink;
+                    });
+
+                    var eventsUrlsCount = eventsUrls.length;
+                    var processedEventUrlsCount = 0;
+                    var receivedEvents = [];
+
+                    currentAjaxes = [];
+
+                    for (var i = 0; i &lt; eventsUrlsCount; i++) {
+                        var url = eventsUrls[i];
+                        var ajax = $.ajax(url, {
+                            headers: {
+                                &quot;Accept&quot;: &quot;application/json&quot;
+                            },
+                            dataType: &#39;json&#39;,
+                            success: successFeed,
+                            error: errorFeed
+                        });
+                        currentAjaxes.push(ajax);
+                    }
+
+                    function successFeed(data) {
+                        receivedEvents.push(data);
+                        processBatchItem();
+                    }
+
+                    function errorFeed(jqXHR, status, error) {
+                        if (jqXHR.responseCode === 404) {
+                            // do nothing. entry may have been erased by maxAge/maxCount
+                            processBatchItem();
+                        } else {
+                            // throw &#39;TODO: consider what to do if server is down or busy&#39;
+                        }
+                    }
+
+                    function processBatchItem() {
+                        processedEventUrlsCount++;
+
+                        if (processedEventUrlsCount === eventsUrlsCount) {
+                            currentAjaxes = []; // no easy way to remove ajaxes from array when they arrive, so just remove all when batch done
+
+                            var successfullReads = receivedEvents.length;
+                            // can&#39;t do much about unsuccessfull reads :\
+
+                            processReceivedEvents(receivedEvents);
+                            receivedEvents = null;
+
+                            onFinish();
+                        }
+                    }
+
+                    function processReceivedEvents(events) {
+                        events.sort(function (a, b) {
+                            return a.eventNumber - b.eventNumber;
+                        });
+
+                        for (var j = 0, l = events.length; j &lt; l; j++) {
+                            processEvent(events[j]);
+                        }
+                    }
+                }
+            }
+
+            var Entry = {};
+            Entry.isNewer = function (entry1, entry2) {
+                return Entry.compare(entry1, entry2) &gt; 0;
+            };
+            Entry.isNewerOrSame = function (entry1, entry2) {
+                return Entry.compare(entry1, entry2) &gt;= 0;
+            };
+            Entry.isOlderOrSame = function (entry1, entry2) {
+                return Entry.compare(entry1, entry2) &lt;= 0;
+            };
+            Entry.compare = function (entry1, entry2) {
+                return Entry.getId(entry1) - Entry.getId(entry2);
+            };
+            Entry.getId = function (entry) {
+                var strId = entry.id.substring(entry.id.lastIndexOf(&quot;/&quot;) + 1, entry.id.length);
+                return parseInt(strId);
+            };
+            Entry.isOnPage = function (pageUrl, entry) {
+                var entryId = Entry.getId(entry);
+
+                // example: http://127.0.0.1:2114/streams/$stats-127.0.0.1:2114/range/39/20
+                var urlParts = pageUrl.split(&#39;/&#39;);
+                var start = parseInt(urlParts[urlParts.length - 2]); // before last
+                var backwardCount = parseInt(urlParts[urlParts.length - 1]); // last
+
+                return entryId &gt; start - backwardCount &amp;&amp; entryId &lt;= start;
+            };
+            Entry.max = function (array) {
+                if (array.length === 0)
+                    throw &#39;Cannot get max element in empty array&#39;;
+                var res = array[0];
+                for (var i = 1, l = array.length; i &lt; l; i++) {
+                    if (Entry.compare(array[i], res) &gt; 0) {
+                        res = array[i];
+                    }
+                }
+                return res;
+            };
+        }
+    };
+</code></pre></section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/EventStore/docs.geteventstore.com/blob/swagger-docfx/introduction/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer site-footer">
+          <div class="container inner-container">
+                      <p class="footer__copyright">&copy; 2018 Event Store LLP</p>
+                      <ul class="footer__menu">
+                          <li class="footer__menu__item"><a href="https://eventstore.org/">Home</a></li>
+                          <li class="footer__menu__item"><a href="https://eventstore.org/about/">About Us</a></li>
+                          <li class="footer__menu__item"><a href="https://eventstore.zendesk.com">Support Sign In</a></li>
+                          <li class="footer__menu__item"><a href="https://eventstore.org/terms/">Terms</a></li>
+                          <li class="footer__menu__item"><a href="https://eventstore.org/contact/">Contact</a></li>
+                      </ul>
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-46209892-15"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-46209892-15');
+        </script>  </body>
+</html>
