@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="dns-prefetch" href="//geteventstore.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <title>Optional HTTP Headers: Expected Version </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Optional HTTP Headers: Expected Version ">
+    <meta name="generator" content="docfx 2.32.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+      <link rel="stylesheet" href="../../../styles/main12.css">
+        <link rel="stylesheet" href="../../../styles/print.css" media="print">
+              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <style media="print">
+                  pre {
+                      white-space: pre-wrap;
+                  }
+                  .site-navigation-toggle, .docs-toc-toggle, .footer__menu {
+                      display: none;
+                  }
+                  p, ul, ol {
+                      max-width: 100% !important;
+                  }
+                  .version-dropdown__selected {
+  
+                  }
+                  .version-dropdown__options {
+  
+                  }
+              </style>
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header class="site-banner">
+        
+        
+        <nav id="autocollapse" class="navbar navbar-green ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+              <!-- TODO: There must be a way to get this to work properly. -->
+              <ul class="nav level1 navbar-nav">
+              <li class="site-navigation__item"><a href="https://geteventstore.com/community">Community</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/support">Commercial Support</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/blog">Blog</a></li>
+                              <li class="site-navigation__item"><a href="http://docs.geteventstore.com">Documentation</a></li>
+                              <li class="site-navigation__item"><a href="https://geteventstore.com/downloads">Downloads</a></li>
+                              </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+        
+          </div>
+        
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="optional-http-headers-expected-version">Optional HTTP Headers: Expected Version</h1>
+
+<p>When writing to a stream you often want to use <code>Expected Version</code> to allow for optimistic concurrency with a stream.</p>
+<p>i.e. my write can succeed if I have seen everyone else&#39;s writes.</p>
+<p>You most commonly use this for a domain object projection, You can set <code>ExpectedVersion</code> as <code>ES-ExpectedVersion: #</code>.</p>
+<p>By default the <code>ES-ExpectedVersion</code> is <code>-2</code> (append). You can set an actual version number as well or <code>-1</code> to say that the stream should not exist when processing (e.g. you expect to be creating it), or <code>-4</code> to say that the stream should exist with any number of events in it.</p>
+<p>If the <code>ExpectedVersion</code> does not match the version of the stream, Event Store will return an HTTP 400 <code>Wrong expected EventNumber</code> response. This response contains the current version of the stream in an <code>ES-CurrentVersion</code> header.</p>
+<p>In the following cURL command <code>ExpectedVersion</code> is not set (and it will append or create/append to the stream).</p>
+<div class="tabGroup" id="tabgroup_aBQ1I+q7tV">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_aBQ1I+q7tV_tabid-1" role="tab" aria-controls="tabpanel_aBQ1I+q7tV_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_aBQ1I+q7tV_tabid-2" role="tab" aria-controls="tabpanel_aBQ1I+q7tV_tabid-2" data-tab="tabid-2" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_aBQ1I+q7tV_tabid-1" role="tabpanel" data-tab="tabid-1">
+<pre><code class="lang-bash">curl -i -d @event.js &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/json&quot;
+</code></pre></section>
+<section id="tabpanel_aBQ1I+q7tV_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 201 Created
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+Location: http://127.0.0.1:2113/streams/newstream/0
+Content-Type: text/plain; charset: utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Thu, 27 Jun 2013 14:26:14 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+</code></pre></section>
+</div>
+<p>The stream &#39;newstream&#39; now has one event. If appending with an expected version of &#39;3&#39; this will not work.</p>
+<div class="tabGroup" id="tabgroup_aBQ1I+q7tV-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_aBQ1I+q7tV-1_tabid-3" role="tab" aria-controls="tabpanel_aBQ1I+q7tV-1_tabid-3" data-tab="tabid-3" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_aBQ1I+q7tV-1_tabid-4" role="tab" aria-controls="tabpanel_aBQ1I+q7tV-1_tabid-4" data-tab="tabid-4" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_aBQ1I+q7tV-1_tabid-3" role="tabpanel" data-tab="tabid-3">
+<pre><code class="lang-bash">curl -i -d @event.js &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/json&quot; -H &quot;ES-ExpectedVersion: 3&quot;
+</code></pre></section>
+<section id="tabpanel_aBQ1I+q7tV-1_tabid-4" role="tabpanel" data-tab="tabid-4" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 400 Wrong expected EventNumber
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+ES-CurrentVersion: 0
+Content-Type: text/plain; charset: utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Thu, 27 Jun 2013 14:27:24 GMT
+Content-Length: 0
+Connection: close
+</code></pre></section>
+</div>
+<p>You can see from the <code>ES-CurrentVersion</code> header above that the stream is at version zero. Appending with an expected version of zero will work. The expected version is always the version of the last event you know of in the stream.</p>
+<div class="tabGroup" id="tabgroup_aBQ1I+q7tV-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_aBQ1I+q7tV-2_tabid-5" role="tab" aria-controls="tabpanel_aBQ1I+q7tV-2_tabid-5" data-tab="tabid-5" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_aBQ1I+q7tV-2_tabid-6" role="tab" aria-controls="tabpanel_aBQ1I+q7tV-2_tabid-6" data-tab="tabid-6" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_aBQ1I+q7tV-2_tabid-5" role="tabpanel" data-tab="tabid-5">
+<pre><code class="lang-bash">curl -i -d @event.js &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/json&quot; -H &quot;ES-ExpectedVersion: 0&quot;
+</code></pre></section>
+<section id="tabpanel_aBQ1I+q7tV-2_tabid-6" role="tabpanel" data-tab="tabid-6" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-http">HTTP/1.1 201 Created
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
+Access-Control-Allow-Origin: *
+Location: http://127.0.0.1:2113/streams/newstream/1
+Content-Type: text/plain; charset: utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Thu, 27 Jun 2013 14:47:10 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+</code></pre></section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/EventStore/docs.geteventstore.com/blob/swagger-docfx/http-api/optional-http-headers/expected-version.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
