@@ -1,8 +1,8 @@
 ---
-title: "Setting up a Cluster with Manager Nodes"
-section: "Server"
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Setting up a Cluster with Manager Nodes
 
 High availability Event Store allows you to run more than one node as a cluster. There are two modes available for clustering:
 
@@ -95,7 +95,7 @@ To configure the cluster correctly, there are a number of steps to follow:
 
 ### DNS entry
 
-It depends on which DNS server is in use, but the eventual lookup should read:
+HIt depends on which DNS server is in use, but the eventual lookup should read:
 
 ```bash
 nslookup cluster1.eventstore.local

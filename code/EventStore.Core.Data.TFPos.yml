@@ -1,0 +1,1223 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Data.TFPos
+  commentId: T:EventStore.Core.Data.TFPos
+  id: TFPos
+  parent: EventStore.Core.Data
+  children:
+  - EventStore.Core.Data.TFPos.#ctor(System.Int64,System.Int64)
+  - EventStore.Core.Data.TFPos.AsString
+  - EventStore.Core.Data.TFPos.CommitPosition
+  - EventStore.Core.Data.TFPos.CompareTo(EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.Equals(EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.Equals(System.Object)
+  - EventStore.Core.Data.TFPos.GetHashCode
+  - EventStore.Core.Data.TFPos.HeadOfTf
+  - EventStore.Core.Data.TFPos.Invalid
+  - EventStore.Core.Data.TFPos.op_Equality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.op_GreaterThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.op_GreaterThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.op_Inequality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.op_LessThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.op_LessThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  - EventStore.Core.Data.TFPos.PreparePosition
+  - EventStore.Core.Data.TFPos.ToString
+  - EventStore.Core.Data.TFPos.TryParse(System.String,EventStore.Core.Data.TFPos@)
+  langs:
+  - csharp
+  - vb
+  name: TFPos
+  nameWithType: TFPos
+  fullName: EventStore.Core.Data.TFPos
+  type: Struct
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TFPos
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: 'public struct TFPos : IEquatable<TFPos>, IComparable<TFPos>'
+    content.vb: >-
+      Public Structure TFPos
+          Implements IEquatable(Of TFPos), IComparable(Of TFPos)
+  implements:
+  - IEquatable{EventStore.Core.Data.TFPos}
+  - IComparable{EventStore.Core.Data.TFPos}
+  extensionMethods:
+  - EventStore.Core.Data.TFPos.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  - EventStore.Core.Data.TFPos.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Data.TFPos.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: EventStore.Core.Data.TFPos.Invalid
+  commentId: F:EventStore.Core.Data.TFPos.Invalid
+  id: Invalid
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: TFPos.Invalid
+  fullName: EventStore.Core.Data.TFPos.Invalid
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Invalid
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static readonly TFPos Invalid
+    return:
+      type: EventStore.Core.Data.TFPos
+    content.vb: Public Shared ReadOnly Invalid As TFPos
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Core.Data.TFPos.HeadOfTf
+  commentId: F:EventStore.Core.Data.TFPos.HeadOfTf
+  id: HeadOfTf
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: HeadOfTf
+  nameWithType: TFPos.HeadOfTf
+  fullName: EventStore.Core.Data.TFPos.HeadOfTf
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: HeadOfTf
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static readonly TFPos HeadOfTf
+    return:
+      type: EventStore.Core.Data.TFPos
+    content.vb: Public Shared ReadOnly HeadOfTf As TFPos
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Core.Data.TFPos.CommitPosition
+  commentId: F:EventStore.Core.Data.TFPos.CommitPosition
+  id: CommitPosition
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: CommitPosition
+  nameWithType: TFPos.CommitPosition
+  fullName: EventStore.Core.Data.TFPos.CommitPosition
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CommitPosition
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly long CommitPosition
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly CommitPosition As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.TFPos.PreparePosition
+  commentId: F:EventStore.Core.Data.TFPos.PreparePosition
+  id: PreparePosition
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: PreparePosition
+  nameWithType: TFPos.PreparePosition
+  fullName: EventStore.Core.Data.TFPos.PreparePosition
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PreparePosition
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly long PreparePosition
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly PreparePosition As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.TFPos.#ctor(System.Int64,System.Int64)
+  commentId: M:EventStore.Core.Data.TFPos.#ctor(System.Int64,System.Int64)
+  id: '#ctor(System.Int64,System.Int64)'
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: TFPos(Int64, Int64)
+  nameWithType: TFPos.TFPos(Int64, Int64)
+  fullName: EventStore.Core.Data.TFPos.TFPos(System.Int64, System.Int64)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public TFPos(long commitPosition, long preparePosition)
+    parameters:
+    - id: commitPosition
+      type: System.Int64
+    - id: preparePosition
+      type: System.Int64
+    content.vb: Public Sub New(commitPosition As Long, preparePosition As Long)
+  overload: EventStore.Core.Data.TFPos.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Data.TFPos.AsString
+  commentId: M:EventStore.Core.Data.TFPos.AsString
+  id: AsString
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: AsString()
+  nameWithType: TFPos.AsString()
+  fullName: EventStore.Core.Data.TFPos.AsString()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AsString
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public string AsString()
+    return:
+      type: System.String
+    content.vb: Public Function AsString As String
+  overload: EventStore.Core.Data.TFPos.AsString*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Data.TFPos.TryParse(System.String,EventStore.Core.Data.TFPos@)
+  commentId: M:EventStore.Core.Data.TFPos.TryParse(System.String,EventStore.Core.Data.TFPos@)
+  id: TryParse(System.String,EventStore.Core.Data.TFPos@)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: TryParse(String, out TFPos)
+  nameWithType: TFPos.TryParse(String, out TFPos)
+  fullName: EventStore.Core.Data.TFPos.TryParse(System.String, out EventStore.Core.Data.TFPos)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TryParse
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool TryParse(string s, out TFPos pos)
+    parameters:
+    - id: s
+      type: System.String
+    - id: pos
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function TryParse(s As String, ByRef pos As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.TryParse*
+  nameWithType.vb: TFPos.TryParse(String, ByRef TFPos)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Core.Data.TFPos.TryParse(System.String, ByRef EventStore.Core.Data.TFPos)
+  name.vb: TryParse(String, ByRef TFPos)
+- uid: EventStore.Core.Data.TFPos.CompareTo(EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.CompareTo(EventStore.Core.Data.TFPos)
+  id: CompareTo(EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: CompareTo(TFPos)
+  nameWithType: TFPos.CompareTo(TFPos)
+  fullName: EventStore.Core.Data.TFPos.CompareTo(EventStore.Core.Data.TFPos)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CompareTo
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 41
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public int CompareTo(TFPos other)
+    parameters:
+    - id: other
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Int32
+    content.vb: Public Function CompareTo(other As TFPos) As Integer
+  overload: EventStore.Core.Data.TFPos.CompareTo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Data.TFPos.Equals(EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.Equals(EventStore.Core.Data.TFPos)
+  id: Equals(EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: Equals(TFPos)
+  nameWithType: TFPos.Equals(TFPos)
+  fullName: EventStore.Core.Data.TFPos.Equals(EventStore.Core.Data.TFPos)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Equals
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 50
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public bool Equals(TFPos other)
+    parameters:
+    - id: other
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.Equals*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Data.TFPos.Equals(System.Object)
+  commentId: M:EventStore.Core.Data.TFPos.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: TFPos.Equals(Object)
+  fullName: EventStore.Core.Data.TFPos.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Equals
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 55
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overload: EventStore.Core.Data.TFPos.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Core.Data.TFPos.GetHashCode
+  commentId: M:EventStore.Core.Data.TFPos.GetHashCode
+  id: GetHashCode
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: TFPos.GetHashCode()
+  fullName: EventStore.Core.Data.TFPos.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetHashCode
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 61
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overload: EventStore.Core.Data.TFPos.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Core.Data.TFPos.op_Equality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.op_Equality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  id: op_Equality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: Equality(TFPos, TFPos)
+  nameWithType: TFPos.Equality(TFPos, TFPos)
+  fullName: EventStore.Core.Data.TFPos.Equality(EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_Equality
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 69
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator ==(TFPos left, TFPos right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.TFPos
+    - id: right
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As TFPos, right As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.TFPos.op_Inequality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.op_Inequality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  id: op_Inequality(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: Inequality(TFPos, TFPos)
+  nameWithType: TFPos.Inequality(TFPos, TFPos)
+  fullName: EventStore.Core.Data.TFPos.Inequality(EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_Inequality
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 74
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator !=(TFPos left, TFPos right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.TFPos
+    - id: right
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As TFPos, right As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.TFPos.op_LessThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.op_LessThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  id: op_LessThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: LessThanOrEqual(TFPos, TFPos)
+  nameWithType: TFPos.LessThanOrEqual(TFPos, TFPos)
+  fullName: EventStore.Core.Data.TFPos.LessThanOrEqual(EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_LessThanOrEqual
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 79
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator <=(TFPos left, TFPos right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.TFPos
+    - id: right
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <=(left As TFPos, right As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.op_LessThanOrEqual*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.TFPos.op_GreaterThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.op_GreaterThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  id: op_GreaterThanOrEqual(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: GreaterThanOrEqual(TFPos, TFPos)
+  nameWithType: TFPos.GreaterThanOrEqual(TFPos, TFPos)
+  fullName: EventStore.Core.Data.TFPos.GreaterThanOrEqual(EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_GreaterThanOrEqual
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 84
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator >=(TFPos left, TFPos right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.TFPos
+    - id: right
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator >=(left As TFPos, right As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.op_GreaterThanOrEqual*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.TFPos.op_LessThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.op_LessThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  id: op_LessThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: LessThan(TFPos, TFPos)
+  nameWithType: TFPos.LessThan(TFPos, TFPos)
+  fullName: EventStore.Core.Data.TFPos.LessThan(EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_LessThan
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 89
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator <(TFPos left, TFPos right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.TFPos
+    - id: right
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <(left As TFPos, right As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.op_LessThan*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.TFPos.op_GreaterThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  commentId: M:EventStore.Core.Data.TFPos.op_GreaterThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  id: op_GreaterThan(EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos)
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: GreaterThan(TFPos, TFPos)
+  nameWithType: TFPos.GreaterThan(TFPos, TFPos)
+  fullName: EventStore.Core.Data.TFPos.GreaterThan(EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_GreaterThan
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 95
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator>(TFPos left, TFPos right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.TFPos
+    - id: right
+      type: EventStore.Core.Data.TFPos
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator>(left As TFPos, right As TFPos) As Boolean
+  overload: EventStore.Core.Data.TFPos.op_GreaterThan*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.TFPos.ToString
+  commentId: M:EventStore.Core.Data.TFPos.ToString
+  id: ToString
+  parent: EventStore.Core.Data.TFPos
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: TFPos.ToString()
+  fullName: EventStore.Core.Data.TFPos.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/TFPos.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToString
+    path: ../EventStore/src/EventStore.Core/Data/TFPos.cs
+    startLine: 101
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: EventStore.Core.Data.TFPos.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  isExternal: false
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: IEquatable{EventStore.Core.Data.TFPos}
+  commentId: '!:IEquatable{EventStore.Core.Data.TFPos}'
+  definition: IEquatable`1
+  name: IEquatable<TFPos>
+  nameWithType: IEquatable<TFPos>
+  fullName: IEquatable<EventStore.Core.Data.TFPos>
+  nameWithType.vb: IEquatable(Of TFPos)
+  fullName.vb: IEquatable(Of EventStore.Core.Data.TFPos)
+  name.vb: IEquatable(Of TFPos)
+  spec.csharp:
+  - uid: IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IComparable{EventStore.Core.Data.TFPos}
+  commentId: '!:IComparable{EventStore.Core.Data.TFPos}'
+  definition: IComparable`1
+  name: IComparable<TFPos>
+  nameWithType: IComparable<TFPos>
+  fullName: IComparable<EventStore.Core.Data.TFPos>
+  nameWithType.vb: IComparable(Of TFPos)
+  fullName.vb: IComparable(Of EventStore.Core.Data.TFPos)
+  name.vb: IComparable(Of TFPos)
+  spec.csharp:
+  - uid: IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data.TFPos.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<TFPos>()
+  nameWithType: EnumExtensions.EnumValueName<TFPos>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.Core.Data.TFPos>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of TFPos)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.Core.Data.TFPos)()
+  name.vb: EnumValueName(Of TFPos)()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<TFPos>
+    nameWithType: EnumExtensions.EnumValueName<TFPos>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.Core.Data.TFPos>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of TFPos)
+    nameWithType: EnumExtensions.EnumValueName(Of TFPos)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.Core.Data.TFPos)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data.TFPos.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TFPos>()
+  nameWithType: ProtobufExtensions.Serialize<TFPos>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Data.TFPos>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TFPos)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Data.TFPos)()
+  name.vb: Serialize(Of TFPos)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TFPos>
+    nameWithType: ProtobufExtensions.Serialize<TFPos>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Data.TFPos>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TFPos)
+    nameWithType: ProtobufExtensions.Serialize(Of TFPos)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Data.TFPos)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data.TFPos.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TFPos>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TFPos>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Data.TFPos>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TFPos)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Data.TFPos)()
+  name.vb: SerializeToArray(Of TFPos)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TFPos>
+    nameWithType: ProtobufExtensions.SerializeToArray<TFPos>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Data.TFPos>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TFPos)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TFPos)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Data.TFPos)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEquatable`1
+  isExternal: true
+  name: IEquatable<>
+  nameWithType: IEquatable<>
+  fullName: IEquatable<>
+  nameWithType.vb: IEquatable(Of )
+  fullName.vb: IEquatable(Of )
+  name.vb: IEquatable(Of )
+  spec.csharp:
+  - uid: IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IComparable`1
+  isExternal: true
+  name: IComparable<>
+  nameWithType: IComparable<>
+  fullName: IComparable<>
+  nameWithType.vb: IComparable(Of )
+  fullName.vb: IComparable(Of )
+  name.vb: IComparable(Of )
+  spec.csharp:
+  - uid: IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  isExternal: false
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Data.TFPos
+  commentId: T:EventStore.Core.Data.TFPos
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: TFPos
+  nameWithType: TFPos
+  fullName: EventStore.Core.Data.TFPos
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Data.TFPos.#ctor*
+  commentId: Overload:EventStore.Core.Data.TFPos.#ctor
+  isExternal: false
+  name: TFPos
+  nameWithType: TFPos.TFPos
+  fullName: EventStore.Core.Data.TFPos.TFPos
+- uid: EventStore.Core.Data.TFPos.AsString*
+  commentId: Overload:EventStore.Core.Data.TFPos.AsString
+  isExternal: false
+  name: AsString
+  nameWithType: TFPos.AsString
+  fullName: EventStore.Core.Data.TFPos.AsString
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Data.TFPos.TryParse*
+  commentId: Overload:EventStore.Core.Data.TFPos.TryParse
+  isExternal: false
+  name: TryParse
+  nameWithType: TFPos.TryParse
+  fullName: EventStore.Core.Data.TFPos.TryParse
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Data.TFPos.CompareTo*
+  commentId: Overload:EventStore.Core.Data.TFPos.CompareTo
+  isExternal: false
+  name: CompareTo
+  nameWithType: TFPos.CompareTo
+  fullName: EventStore.Core.Data.TFPos.CompareTo
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.Data.TFPos.Equals*
+  commentId: Overload:EventStore.Core.Data.TFPos.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: TFPos.Equals
+  fullName: EventStore.Core.Data.TFPos.Equals
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Data.TFPos.GetHashCode*
+  commentId: Overload:EventStore.Core.Data.TFPos.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: TFPos.GetHashCode
+  fullName: EventStore.Core.Data.TFPos.GetHashCode
+- uid: EventStore.Core.Data.TFPos.op_Equality*
+  commentId: Overload:EventStore.Core.Data.TFPos.op_Equality
+  isExternal: false
+  name: Equality
+  nameWithType: TFPos.Equality
+  fullName: EventStore.Core.Data.TFPos.Equality
+- uid: EventStore.Core.Data.TFPos.op_Inequality*
+  commentId: Overload:EventStore.Core.Data.TFPos.op_Inequality
+  isExternal: false
+  name: Inequality
+  nameWithType: TFPos.Inequality
+  fullName: EventStore.Core.Data.TFPos.Inequality
+- uid: EventStore.Core.Data.TFPos.op_LessThanOrEqual*
+  commentId: Overload:EventStore.Core.Data.TFPos.op_LessThanOrEqual
+  isExternal: false
+  name: LessThanOrEqual
+  nameWithType: TFPos.LessThanOrEqual
+  fullName: EventStore.Core.Data.TFPos.LessThanOrEqual
+- uid: EventStore.Core.Data.TFPos.op_GreaterThanOrEqual*
+  commentId: Overload:EventStore.Core.Data.TFPos.op_GreaterThanOrEqual
+  isExternal: false
+  name: GreaterThanOrEqual
+  nameWithType: TFPos.GreaterThanOrEqual
+  fullName: EventStore.Core.Data.TFPos.GreaterThanOrEqual
+- uid: EventStore.Core.Data.TFPos.op_LessThan*
+  commentId: Overload:EventStore.Core.Data.TFPos.op_LessThan
+  isExternal: false
+  name: LessThan
+  nameWithType: TFPos.LessThan
+  fullName: EventStore.Core.Data.TFPos.LessThan
+- uid: EventStore.Core.Data.TFPos.op_GreaterThan*
+  commentId: Overload:EventStore.Core.Data.TFPos.op_GreaterThan
+  isExternal: false
+  name: GreaterThan
+  nameWithType: TFPos.GreaterThan
+  fullName: EventStore.Core.Data.TFPos.GreaterThan
+- uid: EventStore.Core.Data.TFPos.ToString*
+  commentId: Overload:EventStore.Core.Data.TFPos.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: TFPos.ToString
+  fullName: EventStore.Core.Data.TFPos.ToString

@@ -1,0 +1,320 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Messaging.Forwarder
+  commentId: T:EventStore.Core.Messaging.Forwarder
+  id: Forwarder
+  parent: EventStore.Core.Messaging
+  children:
+  - EventStore.Core.Messaging.Forwarder.Create``1(EventStore.Core.Bus.IPublisher)
+  - EventStore.Core.Messaging.Forwarder.CreateBalancing``1(EventStore.Core.Bus.IPublisher[])
+  - EventStore.Core.Messaging.Forwarder.CreateTracing``1(EventStore.Core.Bus.IPublisher,System.String)
+  langs:
+  - csharp
+  - vb
+  name: Forwarder
+  nameWithType: Forwarder
+  fullName: EventStore.Core.Messaging.Forwarder
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/Forwarder.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Forwarder
+    path: ../EventStore/src/EventStore.Core/Messaging/Forwarder.cs
+    startLine: 6
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: 'public static class Forwarder : object'
+    content.vb: >-
+      Public Module Forwarder
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.Core.Messaging.Forwarder.Create``1(EventStore.Core.Bus.IPublisher)
+  commentId: M:EventStore.Core.Messaging.Forwarder.Create``1(EventStore.Core.Bus.IPublisher)
+  id: Create``1(EventStore.Core.Bus.IPublisher)
+  parent: EventStore.Core.Messaging.Forwarder
+  langs:
+  - csharp
+  - vb
+  name: Create<T>(IPublisher)
+  nameWithType: Forwarder.Create<T>(IPublisher)
+  fullName: EventStore.Core.Messaging.Forwarder.Create<T>(EventStore.Core.Bus.IPublisher)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/Forwarder.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Create
+    path: ../EventStore/src/EventStore.Core/Messaging/Forwarder.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  summary: "\nCreates a message handler publishing all incoming messages on destination.  \n"
+  example: []
+  syntax:
+    content: 'public static IHandle<T> Create<T>(IPublisher to)where T : Message'
+    parameters:
+    - id: to
+      type: EventStore.Core.Bus.IPublisher
+    typeParameters:
+    - id: T
+    return:
+      type: EventStore.Core.Bus.IHandle{{T}}
+    content.vb: Public Shared Function Create(Of T As Message)(to As IPublisher) As IHandle(Of T)
+  overload: EventStore.Core.Messaging.Forwarder.Create*
+  nameWithType.vb: Forwarder.Create(Of T)(IPublisher)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Core.Messaging.Forwarder.Create(Of T)(EventStore.Core.Bus.IPublisher)
+  name.vb: Create(Of T)(IPublisher)
+- uid: EventStore.Core.Messaging.Forwarder.CreateTracing``1(EventStore.Core.Bus.IPublisher,System.String)
+  commentId: M:EventStore.Core.Messaging.Forwarder.CreateTracing``1(EventStore.Core.Bus.IPublisher,System.String)
+  id: CreateTracing``1(EventStore.Core.Bus.IPublisher,System.String)
+  parent: EventStore.Core.Messaging.Forwarder
+  langs:
+  - csharp
+  - vb
+  name: CreateTracing<T>(IPublisher, String)
+  nameWithType: Forwarder.CreateTracing<T>(IPublisher, String)
+  fullName: EventStore.Core.Messaging.Forwarder.CreateTracing<T>(EventStore.Core.Bus.IPublisher, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/Forwarder.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateTracing
+    path: ../EventStore/src/EventStore.Core/Messaging/Forwarder.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: 'public static IHandle<T> CreateTracing<T>(IPublisher to, string prefix)where T : Message'
+    parameters:
+    - id: to
+      type: EventStore.Core.Bus.IPublisher
+    - id: prefix
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: EventStore.Core.Bus.IHandle{{T}}
+    content.vb: Public Shared Function CreateTracing(Of T As Message)(to As IPublisher, prefix As String) As IHandle(Of T)
+  overload: EventStore.Core.Messaging.Forwarder.CreateTracing*
+  nameWithType.vb: Forwarder.CreateTracing(Of T)(IPublisher, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Core.Messaging.Forwarder.CreateTracing(Of T)(EventStore.Core.Bus.IPublisher, System.String)
+  name.vb: CreateTracing(Of T)(IPublisher, String)
+- uid: EventStore.Core.Messaging.Forwarder.CreateBalancing``1(EventStore.Core.Bus.IPublisher[])
+  commentId: M:EventStore.Core.Messaging.Forwarder.CreateBalancing``1(EventStore.Core.Bus.IPublisher[])
+  id: CreateBalancing``1(EventStore.Core.Bus.IPublisher[])
+  parent: EventStore.Core.Messaging.Forwarder
+  langs:
+  - csharp
+  - vb
+  name: CreateBalancing<T>(IPublisher[])
+  nameWithType: Forwarder.CreateBalancing<T>(IPublisher[])
+  fullName: EventStore.Core.Messaging.Forwarder.CreateBalancing<T>(EventStore.Core.Bus.IPublisher[])
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/Forwarder.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateBalancing
+    path: ../EventStore/src/EventStore.Core/Messaging/Forwarder.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  summary: "\nCreates a message handler publishing all incoming messages onto one of the destinations.  \n"
+  example: []
+  syntax:
+    content: 'public static IHandle<T> CreateBalancing<T>(params IPublisher[] to)where T : Message'
+    parameters:
+    - id: to
+      type: EventStore.Core.Bus.IPublisher[]
+    typeParameters:
+    - id: T
+    return:
+      type: EventStore.Core.Bus.IHandle{{T}}
+    content.vb: Public Shared Function CreateBalancing(Of T As Message)(ParamArray to As IPublisher()) As IHandle(Of T)
+  overload: EventStore.Core.Messaging.Forwarder.CreateBalancing*
+  nameWithType.vb: Forwarder.CreateBalancing(Of T)(IPublisher())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Core.Messaging.Forwarder.CreateBalancing(Of T)(EventStore.Core.Bus.IPublisher())
+  name.vb: CreateBalancing(Of T)(IPublisher())
+references:
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Messaging.Forwarder.Create*
+  commentId: Overload:EventStore.Core.Messaging.Forwarder.Create
+  isExternal: false
+  name: Create
+  nameWithType: Forwarder.Create
+  fullName: EventStore.Core.Messaging.Forwarder.Create
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Bus.IHandle{{T}}
+  commentId: T:EventStore.Core.Bus.IHandle{`0}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.Forwarder.CreateTracing*
+  commentId: Overload:EventStore.Core.Messaging.Forwarder.CreateTracing
+  isExternal: false
+  name: CreateTracing
+  nameWithType: Forwarder.CreateTracing
+  fullName: EventStore.Core.Messaging.Forwarder.CreateTracing
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Messaging.Forwarder.CreateBalancing*
+  commentId: Overload:EventStore.Core.Messaging.Forwarder.CreateBalancing
+  isExternal: false
+  name: CreateBalancing
+  nameWithType: Forwarder.CreateBalancing
+  fullName: EventStore.Core.Messaging.Forwarder.CreateBalancing
+- uid: EventStore.Core.Bus.IPublisher[]
+  name: IPublisher[]
+  nameWithType: IPublisher[]
+  fullName: EventStore.Core.Bus.IPublisher[]
+  nameWithType.vb: IPublisher()
+  fullName.vb: EventStore.Core.Bus.IPublisher()
+  name.vb: IPublisher()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IPublisher
+    name: IPublisher
+    nameWithType: IPublisher
+    fullName: EventStore.Core.Bus.IPublisher
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IPublisher
+    name: IPublisher
+    nameWithType: IPublisher
+    fullName: EventStore.Core.Bus.IPublisher
+  - name: ()
+    nameWithType: ()
+    fullName: ()

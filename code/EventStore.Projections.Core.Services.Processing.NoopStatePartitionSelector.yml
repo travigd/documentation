@@ -1,0 +1,605 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector
+  commentId: T:EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector
+  id: NoopStatePartitionSelector
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  - EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  langs:
+  - csharp
+  - vb
+  name: NoopStatePartitionSelector
+  nameWithType: NoopStatePartitionSelector
+  fullName: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/NoopStatePartitionSelector.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: NoopStatePartitionSelector
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/NoopStatePartitionSelector.cs
+    startLine: 4
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class NoopStatePartitionSelector : StatePartitionSelector'
+    content.vb: >-
+      Public Class NoopStatePartitionSelector
+          Inherits StatePartitionSelector
+  inheritance:
+  - System.Object
+  - EventStore.Projections.Core.Services.Processing.StatePartitionSelector
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  commentId: M:EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  id: GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  parent: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector
+  langs:
+  - csharp
+  - vb
+  name: GetStatePartition(EventReaderSubscriptionMessage.CommittedEventReceived)
+  nameWithType: NoopStatePartitionSelector.GetStatePartition(EventReaderSubscriptionMessage.CommittedEventReceived)
+  fullName: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/NoopStatePartitionSelector.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetStatePartition
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/NoopStatePartitionSelector.cs
+    startLine: 6
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override string GetStatePartition(EventReaderSubscriptionMessage.CommittedEventReceived event)
+    parameters:
+    - id: event
+      type: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+    return:
+      type: System.String
+    content.vb: Public Overrides Function GetStatePartition(event As EventReaderSubscriptionMessage.CommittedEventReceived) As String
+  overridden: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  overload: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  commentId: M:EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  id: EventReaderBasePartitionDeletedIsSupported
+  parent: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector
+  langs:
+  - csharp
+  - vb
+  name: EventReaderBasePartitionDeletedIsSupported()
+  nameWithType: NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported()
+  fullName: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/NoopStatePartitionSelector.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventReaderBasePartitionDeletedIsSupported
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/NoopStatePartitionSelector.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override bool EventReaderBasePartitionDeletedIsSupported()
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function EventReaderBasePartitionDeletedIsSupported As Boolean
+  overridden: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  overload: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector
+  commentId: T:EventStore.Projections.Core.Services.Processing.StatePartitionSelector
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: StatePartitionSelector
+  nameWithType: StatePartitionSelector
+  fullName: EventStore.Projections.Core.Services.Processing.StatePartitionSelector
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<NoopStatePartitionSelector>()
+  nameWithType: ProtobufExtensions.Serialize<NoopStatePartitionSelector>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of NoopStatePartitionSelector)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector)()
+  name.vb: Serialize(Of NoopStatePartitionSelector)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<NoopStatePartitionSelector>
+    nameWithType: ProtobufExtensions.Serialize<NoopStatePartitionSelector>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of NoopStatePartitionSelector)
+    nameWithType: ProtobufExtensions.Serialize(Of NoopStatePartitionSelector)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<NoopStatePartitionSelector>()
+  nameWithType: ProtobufExtensions.SerializeToArray<NoopStatePartitionSelector>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of NoopStatePartitionSelector)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector)()
+  name.vb: SerializeToArray(Of NoopStatePartitionSelector)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<NoopStatePartitionSelector>
+    nameWithType: ProtobufExtensions.SerializeToArray<NoopStatePartitionSelector>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of NoopStatePartitionSelector)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of NoopStatePartitionSelector)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  commentId: M:EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  parent: EventStore.Projections.Core.Services.Processing.StatePartitionSelector
+  isExternal: false
+  name: GetStatePartition(EventReaderSubscriptionMessage.CommittedEventReceived)
+  nameWithType: StatePartitionSelector.GetStatePartition(EventReaderSubscriptionMessage.CommittedEventReceived)
+  fullName: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+    name: GetStatePartition
+    nameWithType: StatePartitionSelector.GetStatePartition
+    fullName: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+    name: EventReaderSubscriptionMessage.CommittedEventReceived
+    nameWithType: EventReaderSubscriptionMessage.CommittedEventReceived
+    fullName: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
+    name: GetStatePartition
+    nameWithType: StatePartitionSelector.GetStatePartition
+    fullName: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.GetStatePartition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+    name: EventReaderSubscriptionMessage.CommittedEventReceived
+    nameWithType: EventReaderSubscriptionMessage.CommittedEventReceived
+    fullName: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition
+  isExternal: false
+  name: GetStatePartition
+  nameWithType: NoopStatePartitionSelector.GetStatePartition
+  fullName: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.GetStatePartition
+- uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+  commentId: T:EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventReaderSubscriptionMessage.CommittedEventReceived
+  nameWithType: EventReaderSubscriptionMessage.CommittedEventReceived
+  fullName: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  commentId: M:EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  parent: EventStore.Projections.Core.Services.Processing.StatePartitionSelector
+  isExternal: false
+  name: EventReaderBasePartitionDeletedIsSupported()
+  nameWithType: StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported()
+  fullName: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+    name: EventReaderBasePartitionDeletedIsSupported
+    nameWithType: StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+    fullName: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+    name: EventReaderBasePartitionDeletedIsSupported
+    nameWithType: StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+    fullName: EventStore.Projections.Core.Services.Processing.StatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  isExternal: false
+  name: EventReaderBasePartitionDeletedIsSupported
+  nameWithType: NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+  fullName: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector.EventReaderBasePartitionDeletedIsSupported
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

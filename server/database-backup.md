@@ -1,33 +1,40 @@
 ---
-title: "Database Backup"
-section: "Server"
-version: "4.0.2"
+outputFileName: index.html
 ---
 
-Backing up an Event Store database is straightforward, however it is reliant on carrying out the steps below in the correct order.
+# Database Backup
+
+Backing up an Event Store database is straightforward, but relies on you carrying out the steps below in the correct order.
 
 ## Backing up a database
 
-1. Copy all _*.chk_ files to the backup location.
-2. Copy the remaining files and directories to the backup location.
+1.  Copy all _*.chk_ files to the backup location.
+2.  Copy the remaining files and directories to the backup location.
+
+Example:
+
+```bash
+rsync -a /data/eventstore/db/*.chk /backup/eventstore/db/
+rsync -a /data/eventstore/db/index /backup/eventstore/db/
+rsync -a /data/eventstore/db/*.0* /backup/eventstore/db/
+```
 
 ## Restoring a database
 
-1. Create a copy of _chaser.chk_ and call it _truncate.chk_.
-2. Copy all files to the desired location.
+1.  Create a copy of _chaser.chk_ and call it _truncate.chk_.
+2.  Copy all files to the desired location.
 
-<span class="note">
-Many people do not rely on hot backups in a highly available cluster but instead increase their node counts to keep further copies of data.
-</span>
+> [!NOTE]
+> Many people do not rely on hot backups in a highly available cluster but instead increase their node counts to keep further copies of data.
 
 ## Differential backup
 
-Most data is stored in *chunk files*, named `chunkX.Y`, where X is the chunk number, and Y is the version of that chunk file. As Event Store scavenges, it creates new versions of scavenged chunks which are interchangeable with older versions (but for the removed data).
+Eventstore stores most data in _chunk files_, named `chunkX.Y`, where X is the chunk number, and Y is the version of that chunk file. As Event Store scavenges, it creates new versions of scavenged chunks which are interchangeable with older versions (but for the removed data).
 
 Consequently, it is only necessary to keep the file whose name has the highest `Y` for each `X`, as well as the checkpoint files and the index directory (to avoid expensive index rebuilding).
 
 ## Other Options
 
-There are many other options available for backing up an Event Store database. For example it is possible to set up a durable subscription that would write all of the events to another storage mechanism such as a key/value or column store. These methods would require a manual set up for restoring back to a cluster group.
+There are many other options available for backing up an Event Store database. For example it is possible to set up a durable subscription that would write all the events to another storage mechanism such as a key/value or column store. These methods would require a manual set up for restoring back to a cluster group.
 
-This option can be expanded upon to use a second Event Store node/cluster as a back up. This is commonly known as a primary/secondary back up scheme. The primary cluster runs and asynchronously pushes data to a second cluster as described above. The second cluster/node is available in the case of disaster on the primary cluster. If you are using this strategy then it is recommended to only support manual failover from Primary to Secondary as automated strategies risk causing a [split brain](http://en.wikipedia.org/wiki/Split-brain_%28computing%29) problem.
+You can expand upon this option to use a second Event Store node/cluster as a back up. This is commonly known as a primary/secondary back up scheme. The primary cluster runs and asynchronously pushes data to a second cluster as described above. The second cluster/node is available in case of disaster on the primary cluster. If you are using this strategy then we recommend you only support manual failover from Primary to Secondary as automated strategies risk causing a [split brain](http://en.wikipedia.org/wiki/Split-brain_%28computing%29) problem.

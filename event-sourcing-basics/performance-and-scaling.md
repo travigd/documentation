@@ -1,8 +1,8 @@
 ---
-title: "Performance and Scalability"
-section: "Event Sourcing Basics"
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Performance and Scalability
 
 There are also architectural benefits to not deleting data. The storage system becomes an append-only architecture. Append-only architectures typically distribute and scale more easily than updating architectures because there are fewer locks to deal with.
 
@@ -10,7 +10,7 @@ A common performance optimization is the use of "horizontal partitioning" (or "s
 
 One problem with horizontal partitioning with an RDMS is that it is necessary to define the key with which the partitioning should operate. This problem goes away when using events. Aggregate IDs are the only partition point in the system. No matter how many aggregates exist or how they may change structures, the aggregate ID associated with events is the only partition point in the system. Horizontally partitioning an Event Store is a simpler process.
 
-### Saving Objects
+## Saving Objects
 
 When dealing with a stereotypical system utilizing an RDMS it can be complex to figure out what has changed within the aggregate. Many tools have been built to help alleviate the pain that arises from this task but is the need for a tool a sign of a bigger problem?
 
@@ -18,7 +18,7 @@ Most Object-relational mapping (ORM) tools figure out the changes that occurred 
 
 In a system that is Domain Event centric, the aggregates are themselves tracking strong events as to what has changed within them. There is no complex process for comparing to another copy of a graph. Instead simply ask the aggregate for its changes. The operation to ask for changes is far more efficient than having to figure out what has changed.
 
-### Loading Objects
+## Loading Objects
 
 A similar issue exists when loading objects. Consider the work that involved with loading a graph of objects in a stereotypical relational database backed system. Often there are many queries that must be issued to build the aggregate. To help minimize the latency cost of these queries many ORMs have introduced a heuristic of "Lazy Loading" also known as "Delayed Loading", where a proxy is given in lieu of the real object. The data is only loaded when some code attempts to use that particular object.
 

@@ -1,0 +1,842 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  commentId: T:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  id: SlaveProjectionDefinitions.Definition
+  parent: EventStore.Projections.Core.Messages
+  children:
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.#ctor(System.String,System.String,System.String,EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber,EventStore.Projections.Core.Services.ProjectionMode,System.Boolean,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Management.SerializedRunAs)
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.CheckpointsEnabled
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EmitEnabled
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EnableRunAs
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.HandlerType
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Mode
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Name
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Query
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RequestedNumber
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RunAs1
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.TrackEmittedStreams
+  langs:
+  - csharp
+  - vb
+  name: SlaveProjectionDefinitions.Definition
+  nameWithType: SlaveProjectionDefinitions.Definition
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Definition
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: 'public class Definition : object'
+    content.vb: >-
+      Public Class Definition
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.#ctor(System.String,System.String,System.String,EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber,EventStore.Projections.Core.Services.ProjectionMode,System.Boolean,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Management.SerializedRunAs)
+  commentId: M:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.#ctor(System.String,System.String,System.String,EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber,EventStore.Projections.Core.Services.ProjectionMode,System.Boolean,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Management.SerializedRunAs)
+  id: '#ctor(System.String,System.String,System.String,EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber,EventStore.Projections.Core.Services.ProjectionMode,System.Boolean,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Management.SerializedRunAs)'
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: Definition(String, String, String, SlaveProjectionDefinitions.SlaveProjectionRequestedNumber, ProjectionMode, Boolean, Boolean, Boolean, Boolean, SerializedRunAs)
+  nameWithType: SlaveProjectionDefinitions.Definition.Definition(String, String, String, SlaveProjectionDefinitions.SlaveProjectionRequestedNumber, ProjectionMode, Boolean, Boolean, Boolean, Boolean, SerializedRunAs)
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Definition(System.String, System.String, System.String, EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber, EventStore.Projections.Core.Services.ProjectionMode, System.Boolean, System.Boolean, System.Boolean, System.Boolean, EventStore.Projections.Core.Services.Management.SerializedRunAs)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public Definition(string name, string handlerType, string query, SlaveProjectionDefinitions.SlaveProjectionRequestedNumber requestedNumber, ProjectionMode mode, bool emitEnabled, bool checkpointsEnabled, bool enableRunAs, bool trackEmittedStreams, SerializedRunAs runAs1)
+    parameters:
+    - id: name
+      type: System.String
+    - id: handlerType
+      type: System.String
+    - id: query
+      type: System.String
+    - id: requestedNumber
+      type: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+    - id: mode
+      type: EventStore.Projections.Core.Services.ProjectionMode
+    - id: emitEnabled
+      type: System.Boolean
+    - id: checkpointsEnabled
+      type: System.Boolean
+    - id: enableRunAs
+      type: System.Boolean
+    - id: trackEmittedStreams
+      type: System.Boolean
+    - id: runAs1
+      type: EventStore.Projections.Core.Services.Management.SerializedRunAs
+    content.vb: Public Sub New(name As String, handlerType As String, query As String, requestedNumber As SlaveProjectionDefinitions.SlaveProjectionRequestedNumber, mode As ProjectionMode, emitEnabled As Boolean, checkpointsEnabled As Boolean, enableRunAs As Boolean, trackEmittedStreams As Boolean, runAs1 As SerializedRunAs)
+  overload: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Name
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Name
+  id: Name
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: SlaveProjectionDefinitions.Definition.Name
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Name
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Name
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public string Name
+    return:
+      type: System.String
+    content.vb: Public Name As String
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RequestedNumber
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RequestedNumber
+  id: RequestedNumber
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: RequestedNumber
+  nameWithType: SlaveProjectionDefinitions.Definition.RequestedNumber
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RequestedNumber
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RequestedNumber
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 37
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public SlaveProjectionDefinitions.SlaveProjectionRequestedNumber RequestedNumber
+    return:
+      type: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+    content.vb: Public RequestedNumber As SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Mode
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Mode
+  id: Mode
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: Mode
+  nameWithType: SlaveProjectionDefinitions.Definition.Mode
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Mode
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Mode
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 39
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public ProjectionMode Mode
+    return:
+      type: EventStore.Projections.Core.Services.ProjectionMode
+    content.vb: Public Mode As ProjectionMode
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EmitEnabled
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EmitEnabled
+  id: EmitEnabled
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: EmitEnabled
+  nameWithType: SlaveProjectionDefinitions.Definition.EmitEnabled
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EmitEnabled
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EmitEnabled
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 41
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public bool EmitEnabled
+    return:
+      type: System.Boolean
+    content.vb: Public EmitEnabled As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.CheckpointsEnabled
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.CheckpointsEnabled
+  id: CheckpointsEnabled
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: CheckpointsEnabled
+  nameWithType: SlaveProjectionDefinitions.Definition.CheckpointsEnabled
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.CheckpointsEnabled
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CheckpointsEnabled
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 43
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public bool CheckpointsEnabled
+    return:
+      type: System.Boolean
+    content.vb: Public CheckpointsEnabled As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.TrackEmittedStreams
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.TrackEmittedStreams
+  id: TrackEmittedStreams
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: TrackEmittedStreams
+  nameWithType: SlaveProjectionDefinitions.Definition.TrackEmittedStreams
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.TrackEmittedStreams
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TrackEmittedStreams
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 45
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public bool TrackEmittedStreams
+    return:
+      type: System.Boolean
+    content.vb: Public TrackEmittedStreams As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EnableRunAs
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EnableRunAs
+  id: EnableRunAs
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: EnableRunAs
+  nameWithType: SlaveProjectionDefinitions.Definition.EnableRunAs
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EnableRunAs
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EnableRunAs
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 47
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public bool EnableRunAs
+    return:
+      type: System.Boolean
+    content.vb: Public EnableRunAs As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RunAs1
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RunAs1
+  id: RunAs1
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: RunAs1
+  nameWithType: SlaveProjectionDefinitions.Definition.RunAs1
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.RunAs1
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RunAs1
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public SerializedRunAs RunAs1
+    return:
+      type: EventStore.Projections.Core.Services.Management.SerializedRunAs
+    content.vb: Public RunAs1 As SerializedRunAs
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.HandlerType
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.HandlerType
+  id: HandlerType
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: HandlerType
+  nameWithType: SlaveProjectionDefinitions.Definition.HandlerType
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.HandlerType
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: HandlerType
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 51
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public string HandlerType
+    return:
+      type: System.String
+    content.vb: Public HandlerType As String
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Query
+  commentId: F:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Query
+  id: Query
+  parent: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+  langs:
+  - csharp
+  - vb
+  name: Query
+  nameWithType: SlaveProjectionDefinitions.Definition.Query
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Query
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Query
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/SlaveProjectionDefinitions.cs
+    startLine: 53
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public string Query
+    return:
+      type: System.String
+    content.vb: Public Query As String
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<SlaveProjectionDefinitions.Definition>()
+  nameWithType: ProtobufExtensions.Serialize<SlaveProjectionDefinitions.Definition>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of SlaveProjectionDefinitions.Definition)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition)()
+  name.vb: Serialize(Of SlaveProjectionDefinitions.Definition)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<SlaveProjectionDefinitions.Definition>
+    nameWithType: ProtobufExtensions.Serialize<SlaveProjectionDefinitions.Definition>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of SlaveProjectionDefinitions.Definition)
+    nameWithType: ProtobufExtensions.Serialize(Of SlaveProjectionDefinitions.Definition)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<SlaveProjectionDefinitions.Definition>()
+  nameWithType: ProtobufExtensions.SerializeToArray<SlaveProjectionDefinitions.Definition>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of SlaveProjectionDefinitions.Definition)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition)()
+  name.vb: SerializeToArray(Of SlaveProjectionDefinitions.Definition)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<SlaveProjectionDefinitions.Definition>
+    nameWithType: ProtobufExtensions.SerializeToArray<SlaveProjectionDefinitions.Definition>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of SlaveProjectionDefinitions.Definition)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of SlaveProjectionDefinitions.Definition)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.#ctor
+  isExternal: false
+  name: Definition
+  nameWithType: SlaveProjectionDefinitions.Definition.Definition
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition.Definition
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+  commentId: T:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+  nameWithType: SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+- uid: EventStore.Projections.Core.Services.ProjectionMode
+  commentId: T:EventStore.Projections.Core.Services.ProjectionMode
+  parent: EventStore.Projections.Core.Services
+  isExternal: false
+  name: ProjectionMode
+  nameWithType: ProjectionMode
+  fullName: EventStore.Projections.Core.Services.ProjectionMode
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Services.Management.SerializedRunAs
+  commentId: T:EventStore.Projections.Core.Services.Management.SerializedRunAs
+  parent: EventStore.Projections.Core.Services.Management
+  isExternal: false
+  name: SerializedRunAs
+  nameWithType: SerializedRunAs
+  fullName: EventStore.Projections.Core.Services.Management.SerializedRunAs
+- uid: EventStore.Projections.Core.Services
+  commentId: N:EventStore.Projections.Core.Services
+  isExternal: false
+  name: EventStore.Projections.Core.Services
+  nameWithType: EventStore.Projections.Core.Services
+  fullName: EventStore.Projections.Core.Services
+- uid: EventStore.Projections.Core.Services.Management
+  commentId: N:EventStore.Projections.Core.Services.Management
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Management
+  nameWithType: EventStore.Projections.Core.Services.Management
+  fullName: EventStore.Projections.Core.Services.Management

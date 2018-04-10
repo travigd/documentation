@@ -1,0 +1,720 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+  commentId: T:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+  id: ParallelProcessingLoadBalancer
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.#ctor(System.Int32,System.Int64,System.Int32)
+  - EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted(System.Object)
+  - EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured(System.Object,System.Int64)
+  - EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask``1(``0,Action{``0,System.Int32})
+  langs:
+  - csharp
+  - vb
+  name: ParallelProcessingLoadBalancer
+  nameWithType: ParallelProcessingLoadBalancer
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ParallelProcessingLoadBalancer
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class ParallelProcessingLoadBalancer : object'
+    content.vb: >-
+      Public Class ParallelProcessingLoadBalancer
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.#ctor(System.Int32,System.Int64,System.Int32)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.#ctor(System.Int32,System.Int64,System.Int32)
+  id: '#ctor(System.Int32,System.Int64,System.Int32)'
+  parent: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+  langs:
+  - csharp
+  - vb
+  name: ParallelProcessingLoadBalancer(Int32, Int64, Int32)
+  nameWithType: ParallelProcessingLoadBalancer.ParallelProcessingLoadBalancer(Int32, Int64, Int32)
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ParallelProcessingLoadBalancer(System.Int32, System.Int64, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+    startLine: 39
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public ParallelProcessingLoadBalancer(int workers, long maxScheduledSizePerWorker, int maxUnmeasuredTasksPerWorker)
+    parameters:
+    - id: workers
+      type: System.Int32
+    - id: maxScheduledSizePerWorker
+      type: System.Int64
+    - id: maxUnmeasuredTasksPerWorker
+      type: System.Int32
+    content.vb: Public Sub New(workers As Integer, maxScheduledSizePerWorker As Long, maxUnmeasuredTasksPerWorker As Integer)
+  overload: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured(System.Object,System.Int64)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured(System.Object,System.Int64)
+  id: AccountMeasured(System.Object,System.Int64)
+  parent: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+  langs:
+  - csharp
+  - vb
+  name: AccountMeasured(Object, Int64)
+  nameWithType: ParallelProcessingLoadBalancer.AccountMeasured(Object, Int64)
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured(System.Object, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AccountMeasured
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void AccountMeasured(object task, long size)
+    parameters:
+    - id: task
+      type: System.Object
+    - id: size
+      type: System.Int64
+    content.vb: Public Sub AccountMeasured(task As Object, size As Long)
+  overload: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted(System.Object)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted(System.Object)
+  id: AccountCompleted(System.Object)
+  parent: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+  langs:
+  - csharp
+  - vb
+  name: AccountCompleted(Object)
+  nameWithType: ParallelProcessingLoadBalancer.AccountCompleted(Object)
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AccountCompleted
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+    startLine: 65
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void AccountCompleted(object task)
+    parameters:
+    - id: task
+      type: System.Object
+    content.vb: Public Sub AccountCompleted(task As Object)
+  overload: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask``1(``0,Action{``0,System.Int32})
+  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask``1(``0,Action{``0,System.Int32})
+  id: ScheduleTask``1(``0,Action{``0,System.Int32})
+  parent: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+  langs:
+  - csharp
+  - vb
+  name: ScheduleTask<T>(T, Action<T, Int32>)
+  nameWithType: ParallelProcessingLoadBalancer.ScheduleTask<T>(T, Action<T, Int32>)
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask<T>(T, Action<T, System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ScheduleTask
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelProcessingLoadBalancer.cs
+    startLine: 73
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void ScheduleTask<T>(T task, Action<T, int> scheduled)
+    parameters:
+    - id: task
+      type: '{T}'
+    - id: scheduled
+      type: Action{{T},System.Int32}
+    typeParameters:
+    - id: T
+    content.vb: Public Sub ScheduleTask(Of T)(task As T, scheduled As Action(Of T, Integer))
+  overload: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask*
+  nameWithType.vb: ParallelProcessingLoadBalancer.ScheduleTask(Of T)(T, Action(Of T, Int32))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask(Of T)(T, Action(Of T, System.Int32))
+  name.vb: ScheduleTask(Of T)(T, Action(Of T, Int32))
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ParallelProcessingLoadBalancer>()
+  nameWithType: ProtobufExtensions.Serialize<ParallelProcessingLoadBalancer>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ParallelProcessingLoadBalancer)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer)()
+  name.vb: Serialize(Of ParallelProcessingLoadBalancer)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ParallelProcessingLoadBalancer>
+    nameWithType: ProtobufExtensions.Serialize<ParallelProcessingLoadBalancer>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ParallelProcessingLoadBalancer)
+    nameWithType: ProtobufExtensions.Serialize(Of ParallelProcessingLoadBalancer)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ParallelProcessingLoadBalancer>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ParallelProcessingLoadBalancer>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ParallelProcessingLoadBalancer)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer)()
+  name.vb: SerializeToArray(Of ParallelProcessingLoadBalancer)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ParallelProcessingLoadBalancer>
+    nameWithType: ProtobufExtensions.SerializeToArray<ParallelProcessingLoadBalancer>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ParallelProcessingLoadBalancer)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ParallelProcessingLoadBalancer)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.#ctor
+  isExternal: false
+  name: ParallelProcessingLoadBalancer
+  nameWithType: ParallelProcessingLoadBalancer.ParallelProcessingLoadBalancer
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ParallelProcessingLoadBalancer
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured
+  isExternal: false
+  name: AccountMeasured
+  nameWithType: ParallelProcessingLoadBalancer.AccountMeasured
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountMeasured
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted
+  isExternal: false
+  name: AccountCompleted
+  nameWithType: ParallelProcessingLoadBalancer.AccountCompleted
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.AccountCompleted
+- uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask
+  isExternal: false
+  name: ScheduleTask
+  nameWithType: ParallelProcessingLoadBalancer.ScheduleTask
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.ScheduleTask
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Action{{T},System.Int32}
+  commentId: '!:Action{``0,System.Int32}'
+  definition: Action`2
+  name: Action<T, Int32>
+  nameWithType: Action<T, Int32>
+  fullName: Action<T, System.Int32>
+  nameWithType.vb: Action(Of T, Int32)
+  fullName.vb: Action(Of T, System.Int32)
+  name.vb: Action(Of T, Int32)
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Action`2
+  isExternal: true
+  name: Action<, >
+  nameWithType: Action<, >
+  fullName: Action<, >
+  nameWithType.vb: Action(Of , )
+  fullName.vb: Action(Of , )
+  name.vb: Action(Of , )
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,1558 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Monitoring.MonitoringService
+  commentId: T:EventStore.Core.Services.Monitoring.MonitoringService
+  id: MonitoringService
+  parent: EventStore.Core.Services.Monitoring
+  children:
+  - EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)
+  - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  - EventStore.Core.Services.Monitoring.MonitoringService.MemoizePeriod
+  - EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick(System.Object)
+  langs:
+  - csharp
+  - vb
+  name: MonitoringService
+  nameWithType: MonitoringService
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MonitoringService
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: 'public class MonitoringService : object, IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<SystemMessage.BecomeShutdown>, IHandle<ClientMessage.WriteEventsCompleted>, IHandle<MonitoringMessage.GetFreshStats>, IHandle<MonitoringMessage.GetFreshTcpConnectionStats>'
+    content.vb: >-
+      Public Class MonitoringService
+          Inherits Object
+          Implements IHandle(Of SystemMessage.SystemInit), IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of SystemMessage.BecomeShutdown), IHandle(Of ClientMessage.WriteEventsCompleted), IHandle(Of MonitoringMessage.GetFreshStats), IHandle(Of MonitoringMessage.GetFreshTcpConnectionStats)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Services.Monitoring.MonitoringService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Monitoring.MonitoringService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.MemoizePeriod
+  commentId: F:EventStore.Core.Services.Monitoring.MonitoringService.MemoizePeriod
+  id: MemoizePeriod
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: MemoizePeriod
+  nameWithType: MonitoringService.MemoizePeriod
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.MemoizePeriod
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MemoizePeriod
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 39
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public static readonly TimeSpan MemoizePeriod
+    return:
+      type: TimeSpan
+    content.vb: Public Shared ReadOnly MemoizePeriod As TimeSpan
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)
+  id: '#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)'
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: MonitoringService(IQueuedHandler, IPublisher, IPublisher, ICheckpoint, String, TimeSpan, IPEndPoint, StatsStorage, IPEndPoint, IPEndPoint)
+  nameWithType: MonitoringService.MonitoringService(IQueuedHandler, IPublisher, IPublisher, ICheckpoint, String, TimeSpan, IPEndPoint, StatsStorage, IPEndPoint, IPEndPoint)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.MonitoringService(EventStore.Core.Bus.IQueuedHandler, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.String, TimeSpan, IPEndPoint, EventStore.Core.Services.Monitoring.StatsStorage, IPEndPoint, IPEndPoint)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 63
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public MonitoringService(IQueuedHandler monitoringQueue, IPublisher statsCollectionBus, IPublisher mainBus, ICheckpoint writerCheckpoint, string dbPath, TimeSpan statsCollectionPeriod, IPEndPoint nodeEndpoint, StatsStorage statsStorage, IPEndPoint tcpEndpoint, IPEndPoint tcpSecureEndpoint)
+    parameters:
+    - id: monitoringQueue
+      type: EventStore.Core.Bus.IQueuedHandler
+    - id: statsCollectionBus
+      type: EventStore.Core.Bus.IPublisher
+    - id: mainBus
+      type: EventStore.Core.Bus.IPublisher
+    - id: writerCheckpoint
+      type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+    - id: dbPath
+      type: System.String
+    - id: statsCollectionPeriod
+      type: TimeSpan
+    - id: nodeEndpoint
+      type: IPEndPoint
+    - id: statsStorage
+      type: EventStore.Core.Services.Monitoring.StatsStorage
+    - id: tcpEndpoint
+      type: IPEndPoint
+    - id: tcpSecureEndpoint
+      type: IPEndPoint
+    content.vb: Public Sub New(monitoringQueue As IQueuedHandler, statsCollectionBus As IPublisher, mainBus As IPublisher, writerCheckpoint As ICheckpoint, dbPath As String, statsCollectionPeriod As TimeSpan, nodeEndpoint As IPEndPoint, statsStorage As StatsStorage, tcpEndpoint As IPEndPoint, tcpSecureEndpoint As IPEndPoint)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  id: Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.SystemInit)
+  nameWithType: MonitoringService.Handle(SystemMessage.SystemInit)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 95
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void Handle(SystemMessage.SystemInit message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.SystemInit
+    content.vb: Public Sub Handle(message As SystemMessage.SystemInit)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick(System.Object)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick(System.Object)
+  id: OnTimerTick(System.Object)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: OnTimerTick(Object)
+  nameWithType: MonitoringService.OnTimerTick(Object)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OnTimerTick
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 101
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void OnTimerTick(object state)
+    parameters:
+    - id: state
+      type: System.Object
+    content.vb: Public Sub OnTimerTick(state As Object)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  id: Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: MonitoringService.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 173
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void Handle(SystemMessage.StateChangeMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    content.vb: Public Sub Handle(message As SystemMessage.StateChangeMessage)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: MonitoringService.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 194
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShuttingDown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShuttingDown)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShutdown)
+  nameWithType: MonitoringService.Handle(SystemMessage.BecomeShutdown)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 208
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShutdown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShutdown)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  id: Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.WriteEventsCompleted)
+  nameWithType: MonitoringService.Handle(ClientMessage.WriteEventsCompleted)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 225
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void Handle(ClientMessage.WriteEventsCompleted message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    content.vb: Public Sub Handle(message As ClientMessage.WriteEventsCompleted)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  id: Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: Handle(MonitoringMessage.GetFreshStats)
+  nameWithType: MonitoringService.Handle(MonitoringMessage.GetFreshStats)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 262
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void Handle(MonitoringMessage.GetFreshStats message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+    content.vb: Public Sub Handle(message As MonitoringMessage.GetFreshStats)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  id: Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  parent: EventStore.Core.Services.Monitoring.MonitoringService
+  langs:
+  - csharp
+  - vb
+  name: Handle(MonitoringMessage.GetFreshTcpConnectionStats)
+  nameWithType: MonitoringService.Handle(MonitoringMessage.GetFreshTcpConnectionStats)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 294
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring
+  syntax:
+    content: public void Handle(MonitoringMessage.GetFreshTcpConnectionStats message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+    content.vb: Public Sub Handle(message As MonitoringMessage.GetFreshTcpConnectionStats)
+  overload: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.Monitoring
+  commentId: N:EventStore.Core.Services.Monitoring
+  isExternal: false
+  name: EventStore.Core.Services.Monitoring
+  nameWithType: EventStore.Core.Services.Monitoring
+  fullName: EventStore.Core.Services.Monitoring
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.SystemInit>
+  nameWithType: IHandle<SystemMessage.SystemInit>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>
+  nameWithType.vb: IHandle(Of SystemMessage.SystemInit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit)
+  name.vb: IHandle(Of SystemMessage.SystemInit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.StateChangeMessage>
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  name.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShuttingDown>
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  name.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShutdown>
+  nameWithType: IHandle<SystemMessage.BecomeShutdown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShutdown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  name.vb: IHandle(Of SystemMessage.BecomeShutdown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.WriteEventsCompleted>
+  nameWithType: IHandle<ClientMessage.WriteEventsCompleted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>
+  nameWithType.vb: IHandle(Of ClientMessage.WriteEventsCompleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  name.vb: IHandle(Of ClientMessage.WriteEventsCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<MonitoringMessage.GetFreshStats>
+  nameWithType: IHandle<MonitoringMessage.GetFreshStats>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetFreshStats>
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetFreshStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  name.vb: IHandle(Of MonitoringMessage.GetFreshStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+    name: MonitoringMessage.GetFreshStats
+    nameWithType: MonitoringMessage.GetFreshStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+    name: MonitoringMessage.GetFreshStats
+    nameWithType: MonitoringMessage.GetFreshStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<MonitoringMessage.GetFreshTcpConnectionStats>
+  nameWithType: IHandle<MonitoringMessage.GetFreshTcpConnectionStats>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats>
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetFreshTcpConnectionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  name.vb: IHandle(Of MonitoringMessage.GetFreshTcpConnectionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+    name: MonitoringMessage.GetFreshTcpConnectionStats
+    nameWithType: MonitoringMessage.GetFreshTcpConnectionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+    name: MonitoringMessage.GetFreshTcpConnectionStats
+    nameWithType: MonitoringMessage.GetFreshTcpConnectionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<MonitoringService>()
+  nameWithType: ProtobufExtensions.Serialize<MonitoringService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Monitoring.MonitoringService>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of MonitoringService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Monitoring.MonitoringService)()
+  name.vb: Serialize(Of MonitoringService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<MonitoringService>
+    nameWithType: ProtobufExtensions.Serialize<MonitoringService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Monitoring.MonitoringService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of MonitoringService)
+    nameWithType: ProtobufExtensions.Serialize(Of MonitoringService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Monitoring.MonitoringService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<MonitoringService>()
+  nameWithType: ProtobufExtensions.SerializeToArray<MonitoringService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Monitoring.MonitoringService>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of MonitoringService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Monitoring.MonitoringService)()
+  name.vb: SerializeToArray(Of MonitoringService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<MonitoringService>
+    nameWithType: ProtobufExtensions.SerializeToArray<MonitoringService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Monitoring.MonitoringService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of MonitoringService)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of MonitoringService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Monitoring.MonitoringService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.#ctor*
+  commentId: Overload:EventStore.Core.Services.Monitoring.MonitoringService.#ctor
+  isExternal: false
+  name: MonitoringService
+  nameWithType: MonitoringService.MonitoringService
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.MonitoringService
+- uid: EventStore.Core.Bus.IQueuedHandler
+  commentId: T:EventStore.Core.Bus.IQueuedHandler
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IQueuedHandler
+  nameWithType: IQueuedHandler
+  fullName: EventStore.Core.Bus.IQueuedHandler
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: IPEndPoint
+  isExternal: true
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: IPEndPoint
+- uid: EventStore.Core.Services.Monitoring.StatsStorage
+  commentId: T:EventStore.Core.Services.Monitoring.StatsStorage
+  parent: EventStore.Core.Services.Monitoring
+  isExternal: false
+  name: StatsStorage
+  nameWithType: StatsStorage
+  fullName: EventStore.Core.Services.Monitoring.StatsStorage
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
+  commentId: Overload:EventStore.Core.Services.Monitoring.MonitoringService.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: MonitoringService.Handle
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.SystemInit)
+  nameWithType: IHandle<SystemMessage.SystemInit>.Handle(SystemMessage.SystemInit)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  nameWithType.vb: IHandle(Of SystemMessage.SystemInit).Handle(SystemMessage.SystemInit)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit).Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.SystemInit>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.SystemInit).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemInit).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemInit
+    name: SystemMessage.SystemInit
+    nameWithType: SystemMessage.SystemInit
+    fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.SystemInit
+  commentId: T:EventStore.Core.Messages.SystemMessage.SystemInit
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.SystemInit
+  nameWithType: SystemMessage.SystemInit
+  fullName: EventStore.Core.Messages.SystemMessage.SystemInit
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick*
+  commentId: Overload:EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick
+  isExternal: false
+  name: OnTimerTick
+  nameWithType: MonitoringService.OnTimerTick
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage).Handle(SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.StateChangeMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  commentId: T:EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.StateChangeMessage
+  nameWithType: SystemMessage.StateChangeMessage
+  fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown).Handle(SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShuttingDown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShuttingDown
+  nameWithType: SystemMessage.BecomeShuttingDown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShutdown)
+  nameWithType: IHandle<SystemMessage.BecomeShutdown>.Handle(SystemMessage.BecomeShutdown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShutdown).Handle(SystemMessage.BecomeShutdown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShutdown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShutdown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShutdown
+  nameWithType: SystemMessage.BecomeShutdown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.WriteEventsCompleted)
+  nameWithType: IHandle<ClientMessage.WriteEventsCompleted>.Handle(ClientMessage.WriteEventsCompleted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  nameWithType.vb: IHandle(Of ClientMessage.WriteEventsCompleted).Handle(ClientMessage.WriteEventsCompleted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted).Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.WriteEventsCompleted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.WriteEventsCompleted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  commentId: T:EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.WriteEventsCompleted
+  nameWithType: ClientMessage.WriteEventsCompleted
+  fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(MonitoringMessage.GetFreshStats)
+  nameWithType: IHandle<MonitoringMessage.GetFreshStats>.Handle(MonitoringMessage.GetFreshStats)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetFreshStats>.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetFreshStats).Handle(MonitoringMessage.GetFreshStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetFreshStats).Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<MonitoringMessage.GetFreshStats>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetFreshStats>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+    name: MonitoringMessage.GetFreshStats
+    nameWithType: MonitoringMessage.GetFreshStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of MonitoringMessage.GetFreshStats).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetFreshStats).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+    name: MonitoringMessage.GetFreshStats
+    nameWithType: MonitoringMessage.GetFreshStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+  commentId: T:EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: MonitoringMessage.GetFreshStats
+  nameWithType: MonitoringMessage.GetFreshStats
+  fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshStats
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(MonitoringMessage.GetFreshTcpConnectionStats)
+  nameWithType: IHandle<MonitoringMessage.GetFreshTcpConnectionStats>.Handle(MonitoringMessage.GetFreshTcpConnectionStats)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats>.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetFreshTcpConnectionStats).Handle(MonitoringMessage.GetFreshTcpConnectionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats).Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<MonitoringMessage.GetFreshTcpConnectionStats>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+    name: MonitoringMessage.GetFreshTcpConnectionStats
+    nameWithType: MonitoringMessage.GetFreshTcpConnectionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of MonitoringMessage.GetFreshTcpConnectionStats).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+    name: MonitoringMessage.GetFreshTcpConnectionStats
+    nameWithType: MonitoringMessage.GetFreshTcpConnectionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+  commentId: T:EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: MonitoringMessage.GetFreshTcpConnectionStats
+  nameWithType: MonitoringMessage.GetFreshTcpConnectionStats
+  fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats

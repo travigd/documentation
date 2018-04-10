@@ -1,0 +1,313 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  commentId: T:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  id: ProjectionStateHandlerTestExtensions
+  parent: EventStore.Projections.Core.Services
+  children:
+  - EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName(Type)
+  - EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  - EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: ProjectionStateHandlerTestExtensions
+  nameWithType: ProjectionStateHandlerTestExtensions
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ProjectionStateHandlerTestExtensions
+    path: ../EventStore/src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+    startLine: 72
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: 'public static class ProjectionStateHandlerTestExtensions : object'
+    content.vb: >-
+      Public Module ProjectionStateHandlerTestExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  id: ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  isExtensionMethod: true
+  parent: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  langs:
+  - csharp
+  - vb
+  name: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, out String, out EmittedEventEnvelope[], Boolean)
+  nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, out String, out EmittedEventEnvelope[], Boolean)
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, Guid, System.Int64, System.String, System.String, out System.String, out EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ProcessEvent
+    path: ../EventStore/src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+    startLine: 74
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public static bool ProcessEvent(this IProjectionStateHandler self, string partition, CheckpointTag eventPosition, string streamId, string eventType, string category, Guid eventId, long eventSequenceNumber, string metadata, string data, out string state, out EmittedEventEnvelope[] emittedEvents, bool isJson = true)
+    parameters:
+    - id: self
+      type: EventStore.Projections.Core.Services.IProjectionStateHandler
+    - id: partition
+      type: System.String
+    - id: eventPosition
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: streamId
+      type: System.String
+    - id: eventType
+      type: System.String
+    - id: category
+      type: System.String
+    - id: eventId
+      type: Guid
+    - id: eventSequenceNumber
+      type: System.Int64
+    - id: metadata
+      type: System.String
+    - id: data
+      type: System.String
+    - id: state
+      type: System.String
+    - id: emittedEvents
+      type: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
+    - id: isJson
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ProcessEvent(self As IProjectionStateHandler, partition As String, eventPosition As CheckpointTag, streamId As String, eventType As String, category As String, eventId As Guid, eventSequenceNumber As Long, metadata As String, data As String, ByRef state As String, ByRef emittedEvents As EmittedEventEnvelope(), isJson As Boolean = True) As Boolean
+  overload: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent*
+  nameWithType.vb: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, ByRef String, ByRef EmittedEventEnvelope(), Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, Guid, System.Int64, System.String, System.String, ByRef System.String, ByRef EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Boolean)
+  name.vb: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, ByRef String, ByRef EmittedEventEnvelope(), Boolean)
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  id: ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  isExtensionMethod: true
+  parent: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  langs:
+  - csharp
+  - vb
+  name: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, out String, out String, out EmittedEventEnvelope[], Boolean)
+  nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, out String, out String, out EmittedEventEnvelope[], Boolean)
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, Guid, System.Int64, System.String, System.String, out System.String, out System.String, out EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ProcessEvent
+    path: ../EventStore/src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+    startLine: 87
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public static bool ProcessEvent(this IProjectionStateHandler self, string partition, CheckpointTag eventPosition, string streamId, string eventType, string category, Guid eventId, long eventSequenceNumber, string metadata, string data, out string state, out string sharedState, out EmittedEventEnvelope[] emittedEvents, bool isJson = true)
+    parameters:
+    - id: self
+      type: EventStore.Projections.Core.Services.IProjectionStateHandler
+    - id: partition
+      type: System.String
+    - id: eventPosition
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: streamId
+      type: System.String
+    - id: eventType
+      type: System.String
+    - id: category
+      type: System.String
+    - id: eventId
+      type: Guid
+    - id: eventSequenceNumber
+      type: System.Int64
+    - id: metadata
+      type: System.String
+    - id: data
+      type: System.String
+    - id: state
+      type: System.String
+    - id: sharedState
+      type: System.String
+    - id: emittedEvents
+      type: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
+    - id: isJson
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ProcessEvent(self As IProjectionStateHandler, partition As String, eventPosition As CheckpointTag, streamId As String, eventType As String, category As String, eventId As Guid, eventSequenceNumber As Long, metadata As String, data As String, ByRef state As String, ByRef sharedState As String, ByRef emittedEvents As EmittedEventEnvelope(), isJson As Boolean = True) As Boolean
+  overload: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent*
+  nameWithType.vb: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, ByRef String, ByRef String, ByRef EmittedEventEnvelope(), Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, Guid, System.Int64, System.String, System.String, ByRef System.String, ByRef System.String, ByRef EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Boolean)
+  name.vb: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, ByRef String, ByRef String, ByRef EmittedEventEnvelope(), Boolean)
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName(Type)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName(Type)
+  id: GetNativeHandlerName(Type)
+  isExtensionMethod: true
+  parent: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetNativeHandlerName(Type)
+  nameWithType: ProjectionStateHandlerTestExtensions.GetNativeHandlerName(Type)
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName(Type)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetNativeHandlerName
+    path: ../EventStore/src/EventStore.Projections.Core/Services/IProjectionStateHandler.cs
+    startLine: 99
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public static string GetNativeHandlerName(this Type handlerType)
+    parameters:
+    - id: handlerType
+      type: Type
+    return:
+      type: System.String
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetNativeHandlerName(handlerType As Type) As String
+  overload: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: EventStore.Projections.Core.Services
+  commentId: N:EventStore.Projections.Core.Services
+  isExternal: false
+  name: EventStore.Projections.Core.Services
+  nameWithType: EventStore.Projections.Core.Services
+  fullName: EventStore.Projections.Core.Services
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent*
+  commentId: Overload:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  isExternal: false
+  name: ProcessEvent
+  nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+- uid: EventStore.Projections.Core.Services.IProjectionStateHandler
+  commentId: T:EventStore.Projections.Core.Services.IProjectionStateHandler
+  parent: EventStore.Projections.Core.Services
+  isExternal: false
+  name: IProjectionStateHandler
+  nameWithType: IProjectionStateHandler
+  fullName: EventStore.Projections.Core.Services.IProjectionStateHandler
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
+  name: EmittedEventEnvelope[]
+  nameWithType: EmittedEventEnvelope[]
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
+  nameWithType.vb: EmittedEventEnvelope()
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope()
+  name.vb: EmittedEventEnvelope()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName*
+  commentId: Overload:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName
+  isExternal: false
+  name: GetNativeHandlerName
+  nameWithType: ProjectionStateHandlerTestExtensions.GetNativeHandlerName
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.GetNativeHandlerName
+- uid: Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: Type

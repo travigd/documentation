@@ -1,63 +1,68 @@
 ---
-title: Writing to a Stream
-section: HTTP API
-version: 4.0.2
+outputFileName: index.html
 ---
+
+# Writing to a Stream
 
 You write to a stream over HTTP using a `POST` request to the resource of the stream. If the stream does not exist then the stream will be implicitly created.
 
 ## Single Event
 
-<span class="note">
-Writing a single event has changed from Event Store 2.X.X to Event Store 3.X.X.
-In Event Store 3.X.X a post of <code>application/json</code> assumes the post data to be the actual event.
-When you need to write multiple events, use <code>application/vnd.eventstore.events+json</code> instead.
-</span>
+> [!NOTE]
+> Writing a single event has changed from Event Store 2.X.X to Event Store 3.X.X.
+> In Event Store 3.X.X a post of `application/json` assumes the post data to be the actual event.
+> When you need to write multiple events, use `application/vnd.eventstore.events+json` instead.
 
-You can write an event to a stream using any client that supports HTTP. To write an event `POST` it to the head URI of the stream:
+Issuing a `POST` request with the data below to a stream, with the correct content type set, will result in writing the event to the stream, and a `201` response from the server, giving you the location of the event.
 
 In a file named _myevent.txt_
 
 ```json
-{
-  "something" : "has data"
-}
+[
+  {
+    "eventId": "fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4",
+    "eventType": "event-type",
+    "data": { "a": "1" }
+  }
+]
 ```
 
 `POST` the following request:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
-```bash
-curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E"
-```
-</div>
-<div data-lang="response" markdown="1">
-```http
-HTTP/1.1 201 Created
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
-Location: http://127.0.0.1:2113/streams/newstream/1
-Content-Type: text/plain; charset=utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Mon, 21 Apr 2014 20:59:22 GMT
-Content-Length: 0
-Keep-Alive: timeout=15,max=100
-```
-</div>
-</div>
+### [Request](#tab/tabid-1)
 
-The event will be available in the stream. Some clients may not be able to generate a GUID (or may not want to generate a GUID) for the ID. You need this ID for idempotence <!-- is this a real word? --> purposes but the server can generate it for you. If we were to leave off the `ES-EventId` header you would see different behavior:
-
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
 ```bash
 curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
+```http
+HTTP/1.1 201 Created
+Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion, ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo, ES-ExpectedVersion
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Location, ES-Position
+Location: http://127.0.0.1:2113/streams/newstream2/0
+Content-Type: text/plain; charset=utf-8
+Server: Mono-HTTPAPI/1.0
+Date: Thu, 29 Jan 2015 14:28:05 GMT
+Content-Length: 0
+Keep-Alive: timeout=15,max=100
+```
+
+* * *
+
+The event will be available in the stream. Some clients may not be able to generate a GUID (or may not want to generate a GUID) for the ID. You need this ID for idempotence purposes but the server can generate it for you. If we were to leave off the `ES-EventId` header you would see different behavior:
+
+### [Request](#tab/tabid-3)
+
+```bash
+curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent"
+```
+
+### [Response](#tab/tabid-4)
+
 ```http
 HTTP/1.1 301 FOUND
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -71,18 +76,19 @@ Date: Mon, 21 Apr 2014 21:01:29 GMT
 Content-Length: 28
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 In this case Event Store has responded with a `301 redirect`. The location points to another URI that you can post the event to. This new URI will be idempotent for posting to even without an event ID.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-5)
+
 ```bash
 curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream/incoming/ad1c1288-0d61-4995-88b2-06c57a42495b" -H "Content-Type: application/json" -H "ES-EventType: SomeEvent"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-6)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: GET, POST, OPTIONS
@@ -96,20 +102,21 @@ Date: Mon, 21 Apr 2014 21:15:33 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 It is generally recommended to include an event ID if possible as it will result in fewer round trips between the client and the server.
 
 When posting to either the stream or to the returned redirect clients must include the `EventType` header. If you forget to include the header you will receive an error.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-7)
+
 ```bash
 curl -i -d @myevent.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-8)
+
 ```http
 HTTP/1.1 400 Must include an event type with the request either in body or as ES-EventType header.
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -122,8 +129,8 @@ Date: Mon, 21 Apr 2014 21:05:45 GMT
 Content-Length: 0
 Connection: close
 ```
-</div>
-</div>
+
+* * *
 
 ## Event Store Events Media Type
 
@@ -158,13 +165,14 @@ The data is represented by the following jschema (`eventId` must be a UUID).
 
 To create a stream, issue a `POST` request to the `/streams/newstream` resource:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-9)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-10)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -177,8 +185,8 @@ Date: Fri, 28 Jun 2013 12:17:59 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 ### Appending Events
 
@@ -186,13 +194,14 @@ To append events, issue a `POST` request to the same resource again and edit the
 
 <!-- TODO: This doesn't show that -->
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-11)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-12)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -205,20 +214,21 @@ Date: Fri, 28 Jun 2013 12:32:18 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 ### Data only events
 
 Version 3.7.0 of Event Store added support for the `application/octet-stream` content type to support data only events. When creating these events, you will need to provide the `ES-EventType` and `ES-EventId` headers and cannot have metadata associated with the Event. In the example below `SGVsbG8gV29ybGQ=` is the data you `POST` to the stream:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-13)
+
 ```bash
 curl -i -d "SGVsbG8gV29ybGQ=" "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/octet-stream" -H "ES-EventType:rawDataType" -H "ES-EventId:eeccf3ce-4f54-409d-8870-b35dd836cca6"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-14)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -232,24 +242,24 @@ Date: Mon, 27 Jun 2016 13:15:27 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 ## Expected Version
 
 The expected version header is a number representing the version of the stream you read from. For example if you read from the stream and it was at version 5 then you expect it to be at version 5. This can allow for optimistic locking when multiple applications are reading/writing to streams. If your expected version is not the current version you will receive a HTTP status code of 400.
 
-<span class="note">
-See the idempotency section below, if you post the same event twice it will be idempotent and will not give a version error.
-</span>
+> [!NOTE]
+> See the idempotency section below, if you post the same event twice it will be idempotent and will not give a version error.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-15)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-ExpectedVersion: 3"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-16)
+
 ```http
 HTTP/1.1 400 Wrong expected EventNumber
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -261,8 +271,8 @@ Date: Fri, 28 Jun 2013 12:33:30 GMT
 Content-Length: 0
 Connection: close
 ```
-</div>
-</div>
+
+* * *
 
 There are some special values you can put into the expected version header.
 
@@ -303,13 +313,14 @@ When you write multiple events in a single post, Event Store treats them transac
 
 Appends to streams are idempotent based upon the `EventId` assigned in your post. If you were to re-run the last cURL command it will return the same value again.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-17)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-18)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: DELETE, GET, POST, OPTIONS
@@ -322,22 +333,23 @@ Date: Wed, 03 Apr 2013 15:21:53 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 This is important behaviour as this is how you implement error handling. If you receive a timeout, broken connection, no answer, etc from your HTTP `POST` then it's your responsibility is to retry the post. You must also keep the same `uuid` that you assigned to the event in the first `POST`.
 
-If you are using the expected version parameter with your message, then Event Store is 100% idempotent. If you use `Any` as your expected version value, Event Store will do its best to keep events idempotent but cannot assure that everything is fully idempotent and you will end up in 'at-least-once' messaging. [Read this guide](http-api/optimistic-concurrency-and-idempotence) for more details on idempotency.
+If you are using the expected version parameter with your message, then Event Store is 100% idempotent. If you use `Any` as your expected version value, Event Store will do its best to keep events idempotent but cannot assure that everything is fully idempotent and you will end up in 'at-least-once' messaging. [Read this guide](~/http-api/optimistic-concurrency-and-idempotence.md) for more details on idempotency.
 
 This idempotency also applies to the URIs generated by the server if you post a body as an event without the `ES-EventId` header associated with the request:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-19)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-20)
+
 ```http
 HTTP/1.1 301 FOUND
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -351,18 +363,19 @@ Date: Mon, 21 Apr 2014 21:11:59 GMT
 Content-Length: 28
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 You can then post multiple times to the generated redirect URI and Event Store will make the requests will idempotent for you:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-21)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream/incoming/c7248fc1-3db4-42c1-96aa-a071c92649d1" -H "Content-Type: application/json" -H "ES-EventType: SomeEvent"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-22)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: GET, POST, OPTIONS
@@ -376,18 +389,19 @@ Date: Mon, 21 Apr 2014 21:14:28 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *
 
 If you retry the post:
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-23)
+
 ```bash
 curl -i -d @event.txt "http://127.0.0.1:2113/streams/newstream/incoming/c7248fc1-3db4-42c1-96aa-a071c92649d1" -H "Content-Type: application/json" -H "ES-EventType: SomeEvent"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-24)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: GET, POST, OPTIONS
@@ -401,5 +415,5 @@ Date: Mon, 21 Apr 2014 21:15:33 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+
+* * *

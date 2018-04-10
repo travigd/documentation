@@ -1,0 +1,2888 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  commentId: T:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  id: PersistentSubscriptionService
+  parent: EventStore.Core.Services.PersistentSubscription
+  children:
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty
+  langs:
+  - csharp
+  - vb
+  name: PersistentSubscriptionService
+  nameWithType: PersistentSubscriptionService
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PersistentSubscriptionService
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: 'public class PersistentSubscriptionService : object, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<TcpMessage.ConnectionClosed>, IHandle<SystemMessage.BecomeMaster>, IHandle<SubscriptionMessage.PersistentSubscriptionTimerTick>, IHandle<ClientMessage.ReplayAllParkedMessages>, IHandle<ClientMessage.ReplayParkedMessage>, IHandle<SystemMessage.StateChangeMessage>, IHandle<ClientMessage.ConnectToPersistentSubscription>, IHandle<StorageMessage.EventCommitted>, IHandle<ClientMessage.UnsubscribeFromStream>, IHandle<ClientMessage.PersistentSubscriptionAckEvents>, IHandle<ClientMessage.PersistentSubscriptionNackEvents>, IHandle<ClientMessage.CreatePersistentSubscription>, IHandle<ClientMessage.UpdatePersistentSubscription>, IHandle<ClientMessage.DeletePersistentSubscription>, IHandle<ClientMessage.ReadNextNPersistentMessages>, IHandle<MonitoringMessage.GetAllPersistentSubscriptionStats>, IHandle<MonitoringMessage.GetPersistentSubscriptionStats>, IHandle<MonitoringMessage.GetStreamPersistentSubscriptionStats>'
+    content.vb: >-
+      Public Class PersistentSubscriptionService
+          Inherits Object
+          Implements IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of TcpMessage.ConnectionClosed), IHandle(Of SystemMessage.BecomeMaster), IHandle(Of SubscriptionMessage.PersistentSubscriptionTimerTick), IHandle(Of ClientMessage.ReplayAllParkedMessages), IHandle(Of ClientMessage.ReplayParkedMessage), IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of ClientMessage.ConnectToPersistentSubscription), IHandle(Of StorageMessage.EventCommitted), IHandle(Of ClientMessage.UnsubscribeFromStream), IHandle(Of ClientMessage.PersistentSubscriptionAckEvents), IHandle(Of ClientMessage.PersistentSubscriptionNackEvents), IHandle(Of ClientMessage.CreatePersistentSubscription), IHandle(Of ClientMessage.UpdatePersistentSubscription), IHandle(Of ClientMessage.DeletePersistentSubscription), IHandle(Of ClientMessage.ReadNextNPersistentMessages), IHandle(Of MonitoringMessage.GetAllPersistentSubscriptionStats), IHandle(Of MonitoringMessage.GetPersistentSubscriptionStats), IHandle(Of MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayParkedMessage}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty
+  id: InitToEmpty
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: InitToEmpty()
+  nameWithType: PersistentSubscriptionService.InitToEmpty()
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InitToEmpty
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 76
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void InitToEmpty()
+    content.vb: Public Sub InitToEmpty
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  id: Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: PersistentSubscriptionService.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 83
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(SystemMessage.StateChangeMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    content.vb: Public Sub Handle(message As SystemMessage.StateChangeMessage)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeMaster)
+  nameWithType: PersistentSubscriptionService.Handle(SystemMessage.BecomeMaster)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 93
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(SystemMessage.BecomeMaster message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeMaster
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeMaster)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: PersistentSubscriptionService.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 103
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShuttingDown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShuttingDown)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  id: Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.UnsubscribeFromStream)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.UnsubscribeFromStream)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 129
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.UnsubscribeFromStream message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    content.vb: Public Sub Handle(message As ClientMessage.UnsubscribeFromStream)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  id: Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.CreatePersistentSubscription)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.CreatePersistentSubscription)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 135
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.CreatePersistentSubscription message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+    content.vb: Public Sub Handle(message As ClientMessage.CreatePersistentSubscription)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  id: Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.UpdatePersistentSubscription)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.UpdatePersistentSubscription)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 214
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.UpdatePersistentSubscription message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+    content.vb: Public Sub Handle(message As ClientMessage.UpdatePersistentSubscription)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  id: Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.DeletePersistentSubscription)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.DeletePersistentSubscription)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 337
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.DeletePersistentSubscription message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+    content.vb: Public Sub Handle(message As ClientMessage.DeletePersistentSubscription)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  id: Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(TcpMessage.ConnectionClosed)
+  nameWithType: PersistentSubscriptionService.Handle(TcpMessage.ConnectionClosed)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 411
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(TcpMessage.ConnectionClosed message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    content.vb: Public Sub Handle(message As TcpMessage.ConnectionClosed)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  id: Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.ConnectToPersistentSubscription)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.ConnectToPersistentSubscription)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 422
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.ConnectToPersistentSubscription message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+    content.vb: Public Sub Handle(message As ClientMessage.ConnectToPersistentSubscription)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  id: Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.EventCommitted)
+  nameWithType: PersistentSubscriptionService.Handle(StorageMessage.EventCommitted)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 466
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(StorageMessage.EventCommitted message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.EventCommitted
+    content.vb: Public Sub Handle(message As StorageMessage.EventCommitted)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  id: Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.PersistentSubscriptionAckEvents)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.PersistentSubscriptionAckEvents)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 513
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.PersistentSubscriptionAckEvents message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+    content.vb: Public Sub Handle(message As ClientMessage.PersistentSubscriptionAckEvents)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents}.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  id: Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.PersistentSubscriptionNackEvents)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.PersistentSubscriptionNackEvents)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 523
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.PersistentSubscriptionNackEvents message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+    content.vb: Public Sub Handle(message As ClientMessage.PersistentSubscriptionNackEvents)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents}.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  id: Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.ReadNextNPersistentMessages)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.ReadNextNPersistentMessages)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 533
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.ReadNextNPersistentMessages message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+    content.vb: Public Sub Handle(message As ClientMessage.ReadNextNPersistentMessages)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages}.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  id: Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.ReplayAllParkedMessages)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.ReplayAllParkedMessages)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 578
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.ReplayAllParkedMessages message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+    content.vb: Public Sub Handle(message As ClientMessage.ReplayAllParkedMessages)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages}.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  id: Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.ReplayParkedMessage)
+  nameWithType: PersistentSubscriptionService.Handle(ClientMessage.ReplayParkedMessage)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 606
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(ClientMessage.ReplayParkedMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+    content.vb: Public Sub Handle(message As ClientMessage.ReplayParkedMessage)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayParkedMessage}.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  id: Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(MonitoringMessage.GetPersistentSubscriptionStats)
+  nameWithType: PersistentSubscriptionService.Handle(MonitoringMessage.GetPersistentSubscriptionStats)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 714
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(MonitoringMessage.GetPersistentSubscriptionStats message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+    content.vb: Public Sub Handle(message As MonitoringMessage.GetPersistentSubscriptionStats)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  id: Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  nameWithType: PersistentSubscriptionService.Handle(MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 748
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(MonitoringMessage.GetStreamPersistentSubscriptionStats message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+    content.vb: Public Sub Handle(message As MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  id: Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(MonitoringMessage.GetAllPersistentSubscriptionStats)
+  nameWithType: PersistentSubscriptionService.Handle(MonitoringMessage.GetAllPersistentSubscriptionStats)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 771
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(MonitoringMessage.GetAllPersistentSubscriptionStats message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+    content.vb: Public Sub Handle(message As MonitoringMessage.GetAllPersistentSubscriptionStats)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  id: Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SubscriptionMessage.PersistentSubscriptionTimerTick)
+  nameWithType: PersistentSubscriptionService.Handle(SubscriptionMessage.PersistentSubscriptionTimerTick)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionService.cs
+    startLine: 786
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void Handle(SubscriptionMessage.PersistentSubscriptionTimerTick message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+    content.vb: Public Sub Handle(message As SubscriptionMessage.PersistentSubscriptionTimerTick)
+  overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick}.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.PersistentSubscription
+  commentId: N:EventStore.Core.Services.PersistentSubscription
+  isExternal: false
+  name: EventStore.Core.Services.PersistentSubscription
+  nameWithType: EventStore.Core.Services.PersistentSubscription
+  fullName: EventStore.Core.Services.PersistentSubscription
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShuttingDown>
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  name.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<TcpMessage.ConnectionClosed>
+  nameWithType: IHandle<TcpMessage.ConnectionClosed>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.TcpMessage.ConnectionClosed>
+  nameWithType.vb: IHandle(Of TcpMessage.ConnectionClosed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  name.vb: IHandle(Of TcpMessage.ConnectionClosed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeMaster>
+  nameWithType: IHandle<SystemMessage.BecomeMaster>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeMaster>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeMaster)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  name.vb: IHandle(Of SystemMessage.BecomeMaster)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeMaster
+    name: SystemMessage.BecomeMaster
+    nameWithType: SystemMessage.BecomeMaster
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeMaster
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeMaster
+    name: SystemMessage.BecomeMaster
+    nameWithType: SystemMessage.BecomeMaster
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeMaster
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SubscriptionMessage.PersistentSubscriptionTimerTick>
+  nameWithType: IHandle<SubscriptionMessage.PersistentSubscriptionTimerTick>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick>
+  nameWithType.vb: IHandle(Of SubscriptionMessage.PersistentSubscriptionTimerTick)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  name.vb: IHandle(Of SubscriptionMessage.PersistentSubscriptionTimerTick)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+    name: SubscriptionMessage.PersistentSubscriptionTimerTick
+    nameWithType: SubscriptionMessage.PersistentSubscriptionTimerTick
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+    name: SubscriptionMessage.PersistentSubscriptionTimerTick
+    nameWithType: SubscriptionMessage.PersistentSubscriptionTimerTick
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.ReplayAllParkedMessages>
+  nameWithType: IHandle<ClientMessage.ReplayAllParkedMessages>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages>
+  nameWithType.vb: IHandle(Of ClientMessage.ReplayAllParkedMessages)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  name.vb: IHandle(Of ClientMessage.ReplayAllParkedMessages)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+    name: ClientMessage.ReplayAllParkedMessages
+    nameWithType: ClientMessage.ReplayAllParkedMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+    name: ClientMessage.ReplayAllParkedMessages
+    nameWithType: ClientMessage.ReplayAllParkedMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayParkedMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayParkedMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.ReplayParkedMessage>
+  nameWithType: IHandle<ClientMessage.ReplayParkedMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReplayParkedMessage>
+  nameWithType.vb: IHandle(Of ClientMessage.ReplayParkedMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  name.vb: IHandle(Of ClientMessage.ReplayParkedMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+    name: ClientMessage.ReplayParkedMessage
+    nameWithType: ClientMessage.ReplayParkedMessage
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+    name: ClientMessage.ReplayParkedMessage
+    nameWithType: ClientMessage.ReplayParkedMessage
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.StateChangeMessage>
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  name.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.ConnectToPersistentSubscription>
+  nameWithType: IHandle<ClientMessage.ConnectToPersistentSubscription>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription>
+  nameWithType.vb: IHandle(Of ClientMessage.ConnectToPersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  name.vb: IHandle(Of ClientMessage.ConnectToPersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+    name: ClientMessage.ConnectToPersistentSubscription
+    nameWithType: ClientMessage.ConnectToPersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+    name: ClientMessage.ConnectToPersistentSubscription
+    nameWithType: ClientMessage.ConnectToPersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.EventCommitted>
+  nameWithType: IHandle<StorageMessage.EventCommitted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.EventCommitted>
+  nameWithType.vb: IHandle(Of StorageMessage.EventCommitted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.EventCommitted)
+  name.vb: IHandle(Of StorageMessage.EventCommitted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.UnsubscribeFromStream>
+  nameWithType: IHandle<ClientMessage.UnsubscribeFromStream>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream>
+  nameWithType.vb: IHandle(Of ClientMessage.UnsubscribeFromStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  name.vb: IHandle(Of ClientMessage.UnsubscribeFromStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.PersistentSubscriptionAckEvents>
+  nameWithType: IHandle<ClientMessage.PersistentSubscriptionAckEvents>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents>
+  nameWithType.vb: IHandle(Of ClientMessage.PersistentSubscriptionAckEvents)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  name.vb: IHandle(Of ClientMessage.PersistentSubscriptionAckEvents)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+    name: ClientMessage.PersistentSubscriptionAckEvents
+    nameWithType: ClientMessage.PersistentSubscriptionAckEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+    name: ClientMessage.PersistentSubscriptionAckEvents
+    nameWithType: ClientMessage.PersistentSubscriptionAckEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.PersistentSubscriptionNackEvents>
+  nameWithType: IHandle<ClientMessage.PersistentSubscriptionNackEvents>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents>
+  nameWithType.vb: IHandle(Of ClientMessage.PersistentSubscriptionNackEvents)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  name.vb: IHandle(Of ClientMessage.PersistentSubscriptionNackEvents)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+    name: ClientMessage.PersistentSubscriptionNackEvents
+    nameWithType: ClientMessage.PersistentSubscriptionNackEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+    name: ClientMessage.PersistentSubscriptionNackEvents
+    nameWithType: ClientMessage.PersistentSubscriptionNackEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.CreatePersistentSubscription>
+  nameWithType: IHandle<ClientMessage.CreatePersistentSubscription>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription>
+  nameWithType.vb: IHandle(Of ClientMessage.CreatePersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  name.vb: IHandle(Of ClientMessage.CreatePersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+    name: ClientMessage.CreatePersistentSubscription
+    nameWithType: ClientMessage.CreatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+    name: ClientMessage.CreatePersistentSubscription
+    nameWithType: ClientMessage.CreatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.UpdatePersistentSubscription>
+  nameWithType: IHandle<ClientMessage.UpdatePersistentSubscription>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription>
+  nameWithType.vb: IHandle(Of ClientMessage.UpdatePersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  name.vb: IHandle(Of ClientMessage.UpdatePersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+    name: ClientMessage.UpdatePersistentSubscription
+    nameWithType: ClientMessage.UpdatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+    name: ClientMessage.UpdatePersistentSubscription
+    nameWithType: ClientMessage.UpdatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.DeletePersistentSubscription>
+  nameWithType: IHandle<ClientMessage.DeletePersistentSubscription>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription>
+  nameWithType.vb: IHandle(Of ClientMessage.DeletePersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  name.vb: IHandle(Of ClientMessage.DeletePersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+    name: ClientMessage.DeletePersistentSubscription
+    nameWithType: ClientMessage.DeletePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+    name: ClientMessage.DeletePersistentSubscription
+    nameWithType: ClientMessage.DeletePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.ReadNextNPersistentMessages>
+  nameWithType: IHandle<ClientMessage.ReadNextNPersistentMessages>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages>
+  nameWithType.vb: IHandle(Of ClientMessage.ReadNextNPersistentMessages)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  name.vb: IHandle(Of ClientMessage.ReadNextNPersistentMessages)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+    name: ClientMessage.ReadNextNPersistentMessages
+    nameWithType: ClientMessage.ReadNextNPersistentMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+    name: ClientMessage.ReadNextNPersistentMessages
+    nameWithType: ClientMessage.ReadNextNPersistentMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<MonitoringMessage.GetAllPersistentSubscriptionStats>
+  nameWithType: IHandle<MonitoringMessage.GetAllPersistentSubscriptionStats>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats>
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetAllPersistentSubscriptionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  name.vb: IHandle(Of MonitoringMessage.GetAllPersistentSubscriptionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+    name: MonitoringMessage.GetAllPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetAllPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+    name: MonitoringMessage.GetAllPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetAllPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<MonitoringMessage.GetPersistentSubscriptionStats>
+  nameWithType: IHandle<MonitoringMessage.GetPersistentSubscriptionStats>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats>
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetPersistentSubscriptionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  name.vb: IHandle(Of MonitoringMessage.GetPersistentSubscriptionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+    name: MonitoringMessage.GetPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+    name: MonitoringMessage.GetPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<MonitoringMessage.GetStreamPersistentSubscriptionStats>
+  nameWithType: IHandle<MonitoringMessage.GetStreamPersistentSubscriptionStats>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats>
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  name.vb: IHandle(Of MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+    name: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+    name: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<PersistentSubscriptionService>()
+  nameWithType: ProtobufExtensions.Serialize<PersistentSubscriptionService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of PersistentSubscriptionService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService)()
+  name.vb: Serialize(Of PersistentSubscriptionService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<PersistentSubscriptionService>
+    nameWithType: ProtobufExtensions.Serialize<PersistentSubscriptionService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of PersistentSubscriptionService)
+    nameWithType: ProtobufExtensions.Serialize(Of PersistentSubscriptionService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<PersistentSubscriptionService>()
+  nameWithType: ProtobufExtensions.SerializeToArray<PersistentSubscriptionService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of PersistentSubscriptionService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService)()
+  name.vb: SerializeToArray(Of PersistentSubscriptionService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<PersistentSubscriptionService>
+    nameWithType: ProtobufExtensions.SerializeToArray<PersistentSubscriptionService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of PersistentSubscriptionService)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of PersistentSubscriptionService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty
+  isExternal: false
+  name: InitToEmpty
+  nameWithType: PersistentSubscriptionService.InitToEmpty
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.InitToEmpty
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: PersistentSubscriptionService.Handle
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionService.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage).Handle(SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.StateChangeMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  commentId: T:EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.StateChangeMessage
+  nameWithType: SystemMessage.StateChangeMessage
+  fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeMaster)
+  nameWithType: IHandle<SystemMessage.BecomeMaster>.Handle(SystemMessage.BecomeMaster)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeMaster>.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeMaster).Handle(SystemMessage.BecomeMaster)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeMaster).Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeMaster>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeMaster>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeMaster
+    name: SystemMessage.BecomeMaster
+    nameWithType: SystemMessage.BecomeMaster
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeMaster
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeMaster).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeMaster).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeMaster
+    name: SystemMessage.BecomeMaster
+    nameWithType: SystemMessage.BecomeMaster
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeMaster
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeMaster
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeMaster
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeMaster
+  nameWithType: SystemMessage.BecomeMaster
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeMaster
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown).Handle(SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShuttingDown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShuttingDown
+  nameWithType: SystemMessage.BecomeShuttingDown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.UnsubscribeFromStream)
+  nameWithType: IHandle<ClientMessage.UnsubscribeFromStream>.Handle(ClientMessage.UnsubscribeFromStream)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream>.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  nameWithType.vb: IHandle(Of ClientMessage.UnsubscribeFromStream).Handle(ClientMessage.UnsubscribeFromStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream).Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.UnsubscribeFromStream>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.UnsubscribeFromStream).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  commentId: T:EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.UnsubscribeFromStream
+  nameWithType: ClientMessage.UnsubscribeFromStream
+  fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.CreatePersistentSubscription)
+  nameWithType: IHandle<ClientMessage.CreatePersistentSubscription>.Handle(ClientMessage.CreatePersistentSubscription)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription>.Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  nameWithType.vb: IHandle(Of ClientMessage.CreatePersistentSubscription).Handle(ClientMessage.CreatePersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription).Handle(EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.CreatePersistentSubscription>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+    name: ClientMessage.CreatePersistentSubscription
+    nameWithType: ClientMessage.CreatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.CreatePersistentSubscription).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+    name: ClientMessage.CreatePersistentSubscription
+    nameWithType: ClientMessage.CreatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+  commentId: T:EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.CreatePersistentSubscription
+  nameWithType: ClientMessage.CreatePersistentSubscription
+  fullName: EventStore.Core.Messages.ClientMessage.CreatePersistentSubscription
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.UpdatePersistentSubscription)
+  nameWithType: IHandle<ClientMessage.UpdatePersistentSubscription>.Handle(ClientMessage.UpdatePersistentSubscription)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription>.Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  nameWithType.vb: IHandle(Of ClientMessage.UpdatePersistentSubscription).Handle(ClientMessage.UpdatePersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription).Handle(EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.UpdatePersistentSubscription>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+    name: ClientMessage.UpdatePersistentSubscription
+    nameWithType: ClientMessage.UpdatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.UpdatePersistentSubscription).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+    name: ClientMessage.UpdatePersistentSubscription
+    nameWithType: ClientMessage.UpdatePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+  commentId: T:EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.UpdatePersistentSubscription
+  nameWithType: ClientMessage.UpdatePersistentSubscription
+  fullName: EventStore.Core.Messages.ClientMessage.UpdatePersistentSubscription
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.DeletePersistentSubscription)
+  nameWithType: IHandle<ClientMessage.DeletePersistentSubscription>.Handle(ClientMessage.DeletePersistentSubscription)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription>.Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  nameWithType.vb: IHandle(Of ClientMessage.DeletePersistentSubscription).Handle(ClientMessage.DeletePersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription).Handle(EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.DeletePersistentSubscription>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+    name: ClientMessage.DeletePersistentSubscription
+    nameWithType: ClientMessage.DeletePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.DeletePersistentSubscription).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+    name: ClientMessage.DeletePersistentSubscription
+    nameWithType: ClientMessage.DeletePersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+  commentId: T:EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.DeletePersistentSubscription
+  nameWithType: ClientMessage.DeletePersistentSubscription
+  fullName: EventStore.Core.Messages.ClientMessage.DeletePersistentSubscription
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(TcpMessage.ConnectionClosed)
+  nameWithType: IHandle<TcpMessage.ConnectionClosed>.Handle(TcpMessage.ConnectionClosed)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.TcpMessage.ConnectionClosed>.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  nameWithType.vb: IHandle(Of TcpMessage.ConnectionClosed).Handle(TcpMessage.ConnectionClosed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.TcpMessage.ConnectionClosed).Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<TcpMessage.ConnectionClosed>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.TcpMessage.ConnectionClosed>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of TcpMessage.ConnectionClosed).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.TcpMessage.ConnectionClosed).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  commentId: T:EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: TcpMessage.ConnectionClosed
+  nameWithType: TcpMessage.ConnectionClosed
+  fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription}.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.ConnectToPersistentSubscription)
+  nameWithType: IHandle<ClientMessage.ConnectToPersistentSubscription>.Handle(ClientMessage.ConnectToPersistentSubscription)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription>.Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  nameWithType.vb: IHandle(Of ClientMessage.ConnectToPersistentSubscription).Handle(ClientMessage.ConnectToPersistentSubscription)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription).Handle(EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.ConnectToPersistentSubscription>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+    name: ClientMessage.ConnectToPersistentSubscription
+    nameWithType: ClientMessage.ConnectToPersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.ConnectToPersistentSubscription).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+    name: ClientMessage.ConnectToPersistentSubscription
+    nameWithType: ClientMessage.ConnectToPersistentSubscription
+    fullName: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+  commentId: T:EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ConnectToPersistentSubscription
+  nameWithType: ClientMessage.ConnectToPersistentSubscription
+  fullName: EventStore.Core.Messages.ClientMessage.ConnectToPersistentSubscription
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.EventCommitted)
+  nameWithType: IHandle<StorageMessage.EventCommitted>.Handle(StorageMessage.EventCommitted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.EventCommitted>.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  nameWithType.vb: IHandle(Of StorageMessage.EventCommitted).Handle(StorageMessage.EventCommitted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.EventCommitted).Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.EventCommitted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.EventCommitted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.EventCommitted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.EventCommitted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+  commentId: T:EventStore.Core.Messages.StorageMessage.EventCommitted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.EventCommitted
+  nameWithType: StorageMessage.EventCommitted
+  fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents}.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents}.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.PersistentSubscriptionAckEvents)
+  nameWithType: IHandle<ClientMessage.PersistentSubscriptionAckEvents>.Handle(ClientMessage.PersistentSubscriptionAckEvents)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents>.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  nameWithType.vb: IHandle(Of ClientMessage.PersistentSubscriptionAckEvents).Handle(ClientMessage.PersistentSubscriptionAckEvents)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents).Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.PersistentSubscriptionAckEvents>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+    name: ClientMessage.PersistentSubscriptionAckEvents
+    nameWithType: ClientMessage.PersistentSubscriptionAckEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.PersistentSubscriptionAckEvents).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+    name: ClientMessage.PersistentSubscriptionAckEvents
+    nameWithType: ClientMessage.PersistentSubscriptionAckEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+  commentId: T:EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.PersistentSubscriptionAckEvents
+  nameWithType: ClientMessage.PersistentSubscriptionAckEvents
+  fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionAckEvents
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents}.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents}.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.PersistentSubscriptionNackEvents)
+  nameWithType: IHandle<ClientMessage.PersistentSubscriptionNackEvents>.Handle(ClientMessage.PersistentSubscriptionNackEvents)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents>.Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  nameWithType.vb: IHandle(Of ClientMessage.PersistentSubscriptionNackEvents).Handle(ClientMessage.PersistentSubscriptionNackEvents)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents).Handle(EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.PersistentSubscriptionNackEvents>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+    name: ClientMessage.PersistentSubscriptionNackEvents
+    nameWithType: ClientMessage.PersistentSubscriptionNackEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.PersistentSubscriptionNackEvents).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+    name: ClientMessage.PersistentSubscriptionNackEvents
+    nameWithType: ClientMessage.PersistentSubscriptionNackEvents
+    fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+  commentId: T:EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.PersistentSubscriptionNackEvents
+  nameWithType: ClientMessage.PersistentSubscriptionNackEvents
+  fullName: EventStore.Core.Messages.ClientMessage.PersistentSubscriptionNackEvents
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages}.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages}.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.ReadNextNPersistentMessages)
+  nameWithType: IHandle<ClientMessage.ReadNextNPersistentMessages>.Handle(ClientMessage.ReadNextNPersistentMessages)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages>.Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  nameWithType.vb: IHandle(Of ClientMessage.ReadNextNPersistentMessages).Handle(ClientMessage.ReadNextNPersistentMessages)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages).Handle(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.ReadNextNPersistentMessages>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+    name: ClientMessage.ReadNextNPersistentMessages
+    nameWithType: ClientMessage.ReadNextNPersistentMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.ReadNextNPersistentMessages).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+    name: ClientMessage.ReadNextNPersistentMessages
+    nameWithType: ClientMessage.ReadNextNPersistentMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReadNextNPersistentMessages
+  nameWithType: ClientMessage.ReadNextNPersistentMessages
+  fullName: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages}.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages}.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.ReplayAllParkedMessages)
+  nameWithType: IHandle<ClientMessage.ReplayAllParkedMessages>.Handle(ClientMessage.ReplayAllParkedMessages)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages>.Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  nameWithType.vb: IHandle(Of ClientMessage.ReplayAllParkedMessages).Handle(ClientMessage.ReplayAllParkedMessages)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages).Handle(EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.ReplayAllParkedMessages>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+    name: ClientMessage.ReplayAllParkedMessages
+    nameWithType: ClientMessage.ReplayAllParkedMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.ReplayAllParkedMessages).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+    name: ClientMessage.ReplayAllParkedMessages
+    nameWithType: ClientMessage.ReplayAllParkedMessages
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReplayAllParkedMessages
+  nameWithType: ClientMessage.ReplayAllParkedMessages
+  fullName: EventStore.Core.Messages.ClientMessage.ReplayAllParkedMessages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayParkedMessage}.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayParkedMessage}.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReplayParkedMessage}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.ReplayParkedMessage)
+  nameWithType: IHandle<ClientMessage.ReplayParkedMessage>.Handle(ClientMessage.ReplayParkedMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReplayParkedMessage>.Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  nameWithType.vb: IHandle(Of ClientMessage.ReplayParkedMessage).Handle(ClientMessage.ReplayParkedMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReplayParkedMessage).Handle(EventStore.Core.Messages.ClientMessage.ReplayParkedMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.ReplayParkedMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReplayParkedMessage>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+    name: ClientMessage.ReplayParkedMessage
+    nameWithType: ClientMessage.ReplayParkedMessage
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.ReplayParkedMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.ReplayParkedMessage).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+    name: ClientMessage.ReplayParkedMessage
+    nameWithType: ClientMessage.ReplayParkedMessage
+    fullName: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+  commentId: T:EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.ReplayParkedMessage
+  nameWithType: ClientMessage.ReplayParkedMessage
+  fullName: EventStore.Core.Messages.ClientMessage.ReplayParkedMessage
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(MonitoringMessage.GetPersistentSubscriptionStats)
+  nameWithType: IHandle<MonitoringMessage.GetPersistentSubscriptionStats>.Handle(MonitoringMessage.GetPersistentSubscriptionStats)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats>.Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetPersistentSubscriptionStats).Handle(MonitoringMessage.GetPersistentSubscriptionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats).Handle(EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<MonitoringMessage.GetPersistentSubscriptionStats>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+    name: MonitoringMessage.GetPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of MonitoringMessage.GetPersistentSubscriptionStats).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+    name: MonitoringMessage.GetPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+  commentId: T:EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: MonitoringMessage.GetPersistentSubscriptionStats
+  nameWithType: MonitoringMessage.GetPersistentSubscriptionStats
+  fullName: EventStore.Core.Messages.MonitoringMessage.GetPersistentSubscriptionStats
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  nameWithType: IHandle<MonitoringMessage.GetStreamPersistentSubscriptionStats>.Handle(MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats>.Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetStreamPersistentSubscriptionStats).Handle(MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats).Handle(EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<MonitoringMessage.GetStreamPersistentSubscriptionStats>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+    name: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of MonitoringMessage.GetStreamPersistentSubscriptionStats).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+    name: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetStreamPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+  commentId: T:EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: MonitoringMessage.GetStreamPersistentSubscriptionStats
+  nameWithType: MonitoringMessage.GetStreamPersistentSubscriptionStats
+  fullName: EventStore.Core.Messages.MonitoringMessage.GetStreamPersistentSubscriptionStats
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats}.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(MonitoringMessage.GetAllPersistentSubscriptionStats)
+  nameWithType: IHandle<MonitoringMessage.GetAllPersistentSubscriptionStats>.Handle(MonitoringMessage.GetAllPersistentSubscriptionStats)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats>.Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  nameWithType.vb: IHandle(Of MonitoringMessage.GetAllPersistentSubscriptionStats).Handle(MonitoringMessage.GetAllPersistentSubscriptionStats)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats).Handle(EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<MonitoringMessage.GetAllPersistentSubscriptionStats>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+    name: MonitoringMessage.GetAllPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetAllPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of MonitoringMessage.GetAllPersistentSubscriptionStats).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+    name: MonitoringMessage.GetAllPersistentSubscriptionStats
+    nameWithType: MonitoringMessage.GetAllPersistentSubscriptionStats
+    fullName: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+  commentId: T:EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: MonitoringMessage.GetAllPersistentSubscriptionStats
+  nameWithType: MonitoringMessage.GetAllPersistentSubscriptionStats
+  fullName: EventStore.Core.Messages.MonitoringMessage.GetAllPersistentSubscriptionStats
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick}.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick}.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SubscriptionMessage.PersistentSubscriptionTimerTick)
+  nameWithType: IHandle<SubscriptionMessage.PersistentSubscriptionTimerTick>.Handle(SubscriptionMessage.PersistentSubscriptionTimerTick)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick>.Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  nameWithType.vb: IHandle(Of SubscriptionMessage.PersistentSubscriptionTimerTick).Handle(SubscriptionMessage.PersistentSubscriptionTimerTick)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick).Handle(EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SubscriptionMessage.PersistentSubscriptionTimerTick>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+    name: SubscriptionMessage.PersistentSubscriptionTimerTick
+    nameWithType: SubscriptionMessage.PersistentSubscriptionTimerTick
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SubscriptionMessage.PersistentSubscriptionTimerTick).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+    name: SubscriptionMessage.PersistentSubscriptionTimerTick
+    nameWithType: SubscriptionMessage.PersistentSubscriptionTimerTick
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+  commentId: T:EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SubscriptionMessage.PersistentSubscriptionTimerTick
+  nameWithType: SubscriptionMessage.PersistentSubscriptionTimerTick
+  fullName: EventStore.Core.Messages.SubscriptionMessage.PersistentSubscriptionTimerTick

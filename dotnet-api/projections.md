@@ -1,17 +1,16 @@
 ---
-title: "Projections Management"
-section: ".NET API"
-version: "4.0.2"
+outputFileName: index.html
 ---
 
-<!-- TODO: Moved, check -->
-The Event Store Client API includes helper methods that use the HTTP API to allow you to manage projections. This document will describe the methods found in the `ProjectionsManager` class. All methods in this class are asynchronous.
+# Projections Management
+
+The Event Store Client API includes helper methods that use the HTTP API to allow you to manage projections. This document describes the methods found in the `ProjectionsManager` class. All methods in this class are asynchronous.
 
 ## Methods
 
 ### Enable a Projection
 
-Enables an existing projection by its name. You must have access to a projection to enable it.
+Enables an existing projection by name. You must have access to a projection to enable it.
 
 ```csharp
 public Task EnableAsync(string name, UserCredentials userCredentials = null)
@@ -19,7 +18,7 @@ public Task EnableAsync(string name, UserCredentials userCredentials = null)
 
 ### Disable a Projection
 
-Disables an existing projection by its name. You must have access to a projection to disable it.
+Disables an existing projection by name. You must have access to a projection to disable it.
 
 ```csharp
 public Task DisableAsync(string name, UserCredentials userCredentials = null)
@@ -27,7 +26,7 @@ public Task DisableAsync(string name, UserCredentials userCredentials = null)
 
 ### Abort a Projection
 
-Aborts an existing projection by its name. You must have access to a projection to abort it.
+Aborts an existing projection by name. You must have access to a projection to abort it.
 
 ```csharp
 public Task AbortAsync(string name, UserCredentials userCredentials = null)
@@ -35,7 +34,7 @@ public Task AbortAsync(string name, UserCredentials userCredentials = null)
 
 ### Create a One-Time Projection
 
-Creates a projection that will run until the end of the log and then stop. The query parameter contains the javascript you want created as a one time projection.
+Creates a projection that runs until the end of the log and then stops. The query parameter contains the JavaScript you want created as a one time projection.
 
 ```csharp
 public Task CreateOneTimeAsync(string query, UserCredentials userCredentials = null)
@@ -43,7 +42,7 @@ public Task CreateOneTimeAsync(string query, UserCredentials userCredentials = n
 
 ### Create a Continuous Projection
 
-Creates a projection that will run until the end of the log and then continue running. The query parameter contains the javascript you want created as a one time projection. Continuous projections have explicit names and you can enable or disable them via this name.
+Creates a projection that runs until the end of the log and then continues running. The query parameter contains the JavaScript you want created as a one time projection. Continuous projections have explicit names and you can enable or disable them via this name.
 
 ```csharp
 public Task CreateContinuousAsync(string name, string query, UserCredentials userCredentials = null)
@@ -51,7 +50,7 @@ public Task CreateContinuousAsync(string name, string query, UserCredentials use
 
 ### List all Projections
 
-Returns a list of all the projections.
+Returns a list of all projections.
 
 ```csharp
 public Task<List<ProjectionDetails>> ListAllAsync(UserCredentials userCredentials = null)
@@ -65,7 +64,7 @@ Returns a list of all One-Time Projections.
 public Task<List<ProjectionDetails>> ListOneTimeAsync(UserCredentials userCredentials = null)
 ```
 
-### Get Statistics on Projection
+### Get Statistics on a Projection
 
 Returns the statistics associated with a named projection.
 
@@ -83,7 +82,7 @@ public Task DeleteAsync(string name, UserCredentials userCredentials = null)
 
 ### Get State
 
-Retrieves the state of the projection.
+Retrieves the state of a projection.
 
 ```csharp
 public Task<string> GetState(string name, UserCredentials userCredentials = null)

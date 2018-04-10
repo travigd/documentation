@@ -1,0 +1,988 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.Position
+  commentId: T:EventStore.ClientAPI.Position
+  id: Position
+  parent: EventStore.ClientAPI
+  children:
+  - EventStore.ClientAPI.Position.#ctor(System.Int64,System.Int64)
+  - EventStore.ClientAPI.Position.CommitPosition
+  - EventStore.ClientAPI.Position.End
+  - EventStore.ClientAPI.Position.Equals(EventStore.ClientAPI.Position)
+  - EventStore.ClientAPI.Position.Equals(System.Object)
+  - EventStore.ClientAPI.Position.GetHashCode
+  - EventStore.ClientAPI.Position.op_Equality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  - EventStore.ClientAPI.Position.op_GreaterThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  - EventStore.ClientAPI.Position.op_GreaterThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  - EventStore.ClientAPI.Position.op_Inequality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  - EventStore.ClientAPI.Position.op_LessThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  - EventStore.ClientAPI.Position.op_LessThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  - EventStore.ClientAPI.Position.PreparePosition
+  - EventStore.ClientAPI.Position.Start
+  - EventStore.ClientAPI.Position.ToString
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: Position
+  fullName: EventStore.ClientAPI.Position
+  type: Struct
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Position
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 8
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nA structure referring to a potential logical record position\nin the Event Store transaction file.\n"
+  example: []
+  syntax:
+    content: public struct Position
+    content.vb: Public Structure Position
+  extensionMethods:
+  - EventStore.ClientAPI.Position.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  - EventStore.ClientAPI.Position.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.ClientAPI.Position.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: EventStore.ClientAPI.Position.Start
+  commentId: F:EventStore.ClientAPI.Position.Start
+  id: Start
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: Start
+  nameWithType: Position.Start
+  fullName: EventStore.ClientAPI.Position.Start
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Start
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 13
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nPosition representing the start of the transaction file\n"
+  example: []
+  syntax:
+    content: public static readonly Position Start
+    return:
+      type: EventStore.ClientAPI.Position
+    content.vb: Public Shared ReadOnly Start As Position
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.ClientAPI.Position.End
+  commentId: F:EventStore.ClientAPI.Position.End
+  id: End
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: End
+  nameWithType: Position.End
+  fullName: EventStore.ClientAPI.Position.End
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: End
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 17
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nPosition representing the end of the transaction file\n"
+  example: []
+  syntax:
+    content: public static readonly Position End
+    return:
+      type: EventStore.ClientAPI.Position
+    content.vb: Public Shared ReadOnly End As Position
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.ClientAPI.Position.CommitPosition
+  commentId: F:EventStore.ClientAPI.Position.CommitPosition
+  id: CommitPosition
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: CommitPosition
+  nameWithType: Position.CommitPosition
+  fullName: EventStore.ClientAPI.Position.CommitPosition
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CommitPosition
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 22
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe commit position of the record\n"
+  example: []
+  syntax:
+    content: public readonly long CommitPosition
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly CommitPosition As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.Position.PreparePosition
+  commentId: F:EventStore.ClientAPI.Position.PreparePosition
+  id: PreparePosition
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: PreparePosition
+  nameWithType: Position.PreparePosition
+  fullName: EventStore.ClientAPI.Position.PreparePosition
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PreparePosition
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 26
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe prepare position of the record.\n"
+  example: []
+  syntax:
+    content: public readonly long PreparePosition
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly PreparePosition As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.Position.#ctor(System.Int64,System.Int64)
+  commentId: M:EventStore.ClientAPI.Position.#ctor(System.Int64,System.Int64)
+  id: '#ctor(System.Int64,System.Int64)'
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: Position(Int64, Int64)
+  nameWithType: Position.Position(Int64, Int64)
+  fullName: EventStore.ClientAPI.Position.Position(System.Int64, System.Int64)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 37
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nConstructs a position with the given commit and prepare positions.\nIt is not guaranteed that the position is actually the start of a\nrecord in the transaction file.\n\nThe commit position cannot be less than the prepare position.\n"
+  example: []
+  syntax:
+    content: public Position(long commitPosition, long preparePosition)
+    parameters:
+    - id: commitPosition
+      type: System.Int64
+      description: The commit position of the record.
+    - id: preparePosition
+      type: System.Int64
+      description: The prepare position of the record.
+    content.vb: Public Sub New(commitPosition As Long, preparePosition As Long)
+  overload: EventStore.ClientAPI.Position.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.Position.op_LessThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  commentId: M:EventStore.ClientAPI.Position.op_LessThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  id: op_LessThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: LessThan(Position, Position)
+  nameWithType: Position.LessThan(Position, Position)
+  fullName: EventStore.ClientAPI.Position.LessThan(EventStore.ClientAPI.Position, EventStore.ClientAPI.Position)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_LessThan
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 52
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCompares whether p1 &lt; p2.\n"
+  example: []
+  syntax:
+    content: public static bool operator <(Position p1, Position p2)
+    parameters:
+    - id: p1
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    - id: p2
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: True if p1 &lt; p2.
+    content.vb: Public Shared Operator <(p1 As Position, p2 As Position) As Boolean
+  overload: EventStore.ClientAPI.Position.op_LessThan*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.Position.op_GreaterThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  commentId: M:EventStore.ClientAPI.Position.op_GreaterThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  id: op_GreaterThan(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: GreaterThan(Position, Position)
+  nameWithType: Position.GreaterThan(Position, Position)
+  fullName: EventStore.ClientAPI.Position.GreaterThan(EventStore.ClientAPI.Position, EventStore.ClientAPI.Position)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_GreaterThan
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 64
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCompares whether p1 > p2.\n"
+  example: []
+  syntax:
+    content: public static bool operator>(Position p1, Position p2)
+    parameters:
+    - id: p1
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    - id: p2
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: True if p1 > p2.
+    content.vb: Public Shared Operator>(p1 As Position, p2 As Position) As Boolean
+  overload: EventStore.ClientAPI.Position.op_GreaterThan*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.Position.op_GreaterThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  commentId: M:EventStore.ClientAPI.Position.op_GreaterThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  id: op_GreaterThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: GreaterThanOrEqual(Position, Position)
+  nameWithType: Position.GreaterThanOrEqual(Position, Position)
+  fullName: EventStore.ClientAPI.Position.GreaterThanOrEqual(EventStore.ClientAPI.Position, EventStore.ClientAPI.Position)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_GreaterThanOrEqual
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 75
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCompares whether p1 >= p2.\n"
+  example: []
+  syntax:
+    content: public static bool operator >=(Position p1, Position p2)
+    parameters:
+    - id: p1
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    - id: p2
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: True if p1 >= p2.
+    content.vb: Public Shared Operator >=(p1 As Position, p2 As Position) As Boolean
+  overload: EventStore.ClientAPI.Position.op_GreaterThanOrEqual*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.Position.op_LessThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  commentId: M:EventStore.ClientAPI.Position.op_LessThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  id: op_LessThanOrEqual(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: LessThanOrEqual(Position, Position)
+  nameWithType: Position.LessThanOrEqual(Position, Position)
+  fullName: EventStore.ClientAPI.Position.LessThanOrEqual(EventStore.ClientAPI.Position, EventStore.ClientAPI.Position)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_LessThanOrEqual
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 86
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCompares whether p1 &lt;= p2.\n"
+  example: []
+  syntax:
+    content: public static bool operator <=(Position p1, Position p2)
+    parameters:
+    - id: p1
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    - id: p2
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: True if p1 &lt;= p2.
+    content.vb: Public Shared Operator <=(p1 As Position, p2 As Position) As Boolean
+  overload: EventStore.ClientAPI.Position.op_LessThanOrEqual*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.Position.op_Equality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  commentId: M:EventStore.ClientAPI.Position.op_Equality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  id: op_Equality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: Equality(Position, Position)
+  nameWithType: Position.Equality(Position, Position)
+  fullName: EventStore.ClientAPI.Position.Equality(EventStore.ClientAPI.Position, EventStore.ClientAPI.Position)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_Equality
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 97
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCompares p1 and p2 for equality.\n"
+  example: []
+  syntax:
+    content: public static bool operator ==(Position p1, Position p2)
+    parameters:
+    - id: p1
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    - id: p2
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: True if p1 is equal to p2.
+    content.vb: Public Shared Operator =(p1 As Position, p2 As Position) As Boolean
+  overload: EventStore.ClientAPI.Position.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.Position.op_Inequality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  commentId: M:EventStore.ClientAPI.Position.op_Inequality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  id: op_Inequality(EventStore.ClientAPI.Position,EventStore.ClientAPI.Position)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: Inequality(Position, Position)
+  nameWithType: Position.Inequality(Position, Position)
+  fullName: EventStore.ClientAPI.Position.Inequality(EventStore.ClientAPI.Position, EventStore.ClientAPI.Position)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_Inequality
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 108
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCompares p1 and p2 for equality.\n"
+  example: []
+  syntax:
+    content: public static bool operator !=(Position p1, Position p2)
+    parameters:
+    - id: p1
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    - id: p2
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: True if p1 is not equal to p2.
+    content.vb: Public Shared Operator <>(p1 As Position, p2 As Position) As Boolean
+  overload: EventStore.ClientAPI.Position.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.Position.Equals(System.Object)
+  commentId: M:EventStore.ClientAPI.Position.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Position.Equals(Object)
+  fullName: EventStore.ClientAPI.Position.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Equals
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 120
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nIndicates whether this instance and a specified object are equal.\n"
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: 'Another object to compare to. '
+    return:
+      type: System.Boolean
+      description: "\ntrue if <code data-dev-comment-type=\"paramref\" class=\"paramref\">obj</code> and this instance are the same type and represent the same value; otherwise, false.\n"
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overload: EventStore.ClientAPI.Position.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.ClientAPI.Position.Equals(EventStore.ClientAPI.Position)
+  commentId: M:EventStore.ClientAPI.Position.Equals(EventStore.ClientAPI.Position)
+  id: Equals(EventStore.ClientAPI.Position)
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: Equals(Position)
+  nameWithType: Position.Equals(Position)
+  fullName: EventStore.ClientAPI.Position.Equals(EventStore.ClientAPI.Position)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Equals
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 131
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCompares this instance of <xref href=\"EventStore.ClientAPI.Position\" data-throw-if-not-resolved=\"false\"></xref> for equality\nwith another instance.\n"
+  example: []
+  syntax:
+    content: public bool Equals(Position other)
+    parameters:
+    - id: other
+      type: EventStore.ClientAPI.Position
+      description: A <xref href="EventStore.ClientAPI.Position" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Boolean
+      description: True if this instance is equal to the other instance.
+    content.vb: Public Function Equals(other As Position) As Boolean
+  overload: EventStore.ClientAPI.Position.Equals*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.Position.GetHashCode
+  commentId: M:EventStore.ClientAPI.Position.GetHashCode
+  id: GetHashCode
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Position.GetHashCode()
+  fullName: EventStore.ClientAPI.Position.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetHashCode
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 143
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nReturns the hash code for this instance.\n"
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: "\nA 32-bit signed integer that is the hash code for this instance.\n"
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overload: EventStore.ClientAPI.Position.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.ClientAPI.Position.ToString
+  commentId: M:EventStore.ClientAPI.Position.ToString
+  id: ToString
+  parent: EventStore.ClientAPI.Position
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Position.ToString()
+  fullName: EventStore.ClientAPI.Position.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Position.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToString
+    path: ../EventStore/src/EventStore.ClientAPI/Position.cs
+    startLine: 158
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nReturns the fully qualified type name of this instance.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: "\nA <xref href=\"System.String\" data-throw-if-not-resolved=\"false\"></xref> containing a fully qualified type name.\n"
+    content.vb: Public Overrides Function ToString As String
+  overload: EventStore.ClientAPI.Position.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  isExternal: false
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: EventStore.ClientAPI.Position.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<Position>()
+  nameWithType: EnumExtensions.EnumValueName<Position>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.Position>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of Position)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.Position)()
+  name.vb: EnumValueName(Of Position)()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<Position>
+    nameWithType: EnumExtensions.EnumValueName<Position>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.Position>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of Position)
+    nameWithType: EnumExtensions.EnumValueName(Of Position)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.Position)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.Position.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<Position>()
+  nameWithType: ProtobufExtensions.Serialize<Position>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.Position>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of Position)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.Position)()
+  name.vb: Serialize(Of Position)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<Position>
+    nameWithType: ProtobufExtensions.Serialize<Position>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.Position>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of Position)
+    nameWithType: ProtobufExtensions.Serialize(Of Position)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.Position)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.Position.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<Position>()
+  nameWithType: ProtobufExtensions.SerializeToArray<Position>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.Position>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of Position)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.Position)()
+  name.vb: SerializeToArray(Of Position)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<Position>
+    nameWithType: ProtobufExtensions.SerializeToArray<Position>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.Position>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of Position)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of Position)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.Position)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  isExternal: false
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.ClientAPI.Position
+  commentId: T:EventStore.ClientAPI.Position
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: Position
+  nameWithType: Position
+  fullName: EventStore.ClientAPI.Position
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.ClientAPI.Position.#ctor*
+  commentId: Overload:EventStore.ClientAPI.Position.#ctor
+  isExternal: false
+  name: Position
+  nameWithType: Position.Position
+  fullName: EventStore.ClientAPI.Position.Position
+- uid: EventStore.ClientAPI.Position.op_LessThan*
+  commentId: Overload:EventStore.ClientAPI.Position.op_LessThan
+  isExternal: false
+  name: LessThan
+  nameWithType: Position.LessThan
+  fullName: EventStore.ClientAPI.Position.LessThan
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.ClientAPI.Position.op_GreaterThan*
+  commentId: Overload:EventStore.ClientAPI.Position.op_GreaterThan
+  isExternal: false
+  name: GreaterThan
+  nameWithType: Position.GreaterThan
+  fullName: EventStore.ClientAPI.Position.GreaterThan
+- uid: EventStore.ClientAPI.Position.op_GreaterThanOrEqual*
+  commentId: Overload:EventStore.ClientAPI.Position.op_GreaterThanOrEqual
+  isExternal: false
+  name: GreaterThanOrEqual
+  nameWithType: Position.GreaterThanOrEqual
+  fullName: EventStore.ClientAPI.Position.GreaterThanOrEqual
+- uid: EventStore.ClientAPI.Position.op_LessThanOrEqual*
+  commentId: Overload:EventStore.ClientAPI.Position.op_LessThanOrEqual
+  isExternal: false
+  name: LessThanOrEqual
+  nameWithType: Position.LessThanOrEqual
+  fullName: EventStore.ClientAPI.Position.LessThanOrEqual
+- uid: EventStore.ClientAPI.Position.op_Equality*
+  commentId: Overload:EventStore.ClientAPI.Position.op_Equality
+  isExternal: false
+  name: Equality
+  nameWithType: Position.Equality
+  fullName: EventStore.ClientAPI.Position.Equality
+- uid: EventStore.ClientAPI.Position.op_Inequality*
+  commentId: Overload:EventStore.ClientAPI.Position.op_Inequality
+  isExternal: false
+  name: Inequality
+  nameWithType: Position.Inequality
+  fullName: EventStore.ClientAPI.Position.Inequality
+- uid: EventStore.ClientAPI.Position.Equals*
+  commentId: Overload:EventStore.ClientAPI.Position.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: Position.Equals
+  fullName: EventStore.ClientAPI.Position.Equals
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.ClientAPI.Position.GetHashCode*
+  commentId: Overload:EventStore.ClientAPI.Position.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: Position.GetHashCode
+  fullName: EventStore.ClientAPI.Position.GetHashCode
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.ClientAPI.Position.ToString*
+  commentId: Overload:EventStore.ClientAPI.Position.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Position.ToString
+  fullName: EventStore.ClientAPI.Position.ToString

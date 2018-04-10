@@ -1,18 +1,16 @@
 ---
-title: "Writing to a Stream"
-section: ".NET API"
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Writing to a Stream
 
 You can use the client API to write one or more events to a stream atomically. You do this by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
 
-You can make an optimistic concurrency check during the write by specifying the version at which the stream is expected to be. Identical write operations are idempotent if the optimistic concurrency check is not disabled. You can find more information on optimistic concurrency and idempotence [here]({{site.baseurl}}/dotnet-api/optimistic-concurrency-and-idempotence).
+You can make an optimistic concurrency check during the write by specifying the version at which you expect the stream to be. Identical write operations are idempotent if the optimistic concurrency check is not disabled. You can find more information on optimistic concurrency and idempotence [here](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
 
 ## Methods
 
 ### Appending to a stream in a single write
-
-<!-- TODO: Explanations -->
 
 ```csharp
 Task<WriteResult> AppendToStreamAsync(string stream, long expectedVersion, IEnumerable<EventData> events)
@@ -26,8 +24,6 @@ Task<WriteResult> AppendToStreamAsync(string stream, long expectedVersion, param
 
 #### On `EventStoreConnection`
 
-<!-- TODO: Explanations -->
-
 ```csharp
 Task<EventStoreTransaction> StartTransactionAsync(string stream, long expectedVersion)
 ```
@@ -37,8 +33,6 @@ EventStoreTransaction ContinueTransaction(long transactionId)
 ```
 
 #### On `EventStoreTransaction`
-
-<!-- TODO: Explanations -->
 
 ```csharp
 Task WriteAsync(IEnumerable<EventData> events)
@@ -64,62 +58,22 @@ Event Store does not have any built-in serialisation, so the body and metadata f
 
 The members on `EventData` are:
 
-<table>
-    <thead>
-        <tr>
-            <th>Member</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>Guid EventId</code></td>
-            <td>A unique identifier representing this event. This is used internally for idempotency if you write the same event twice you should use the same identifier both times.</td>
-        </tr>
-        <tr>
-            <td><code>string Type</code></td>
-            <td>The name of the event type. This can be used later for pattern matching in projections, so should be a “friendly” name rather than a CLR type name, for example.</code></td>
-        </tr>
-        <tr>
-            <td><code>bool IsJson</code></td>
-            <td>If the data and metadata fields are serialized as JSON, this should be set to true. Setting this to `true` will cause the projections framework to attempt to deserialize the data and metadata later.</td>
-        </tr>
-        <tr>
-            <td><code>byte[] Data</code></td>
-            <td>The serialized data representing the event to be stored.</td>
-        </tr>
-        <tr>
-            <td><code>byte[] Metadata</code></td>
-            <td>The serialized data representing metadata about the event to be stored.</td>
-        </tr>
-    </tbody>
-</table>
+| Member            | Description                                                                                                                                                                                               |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Guid EventId`    | A unique identifier representing this event. Event Store uses this for idempotency if you write the same event twice you should use the same identifier both times.                                       |
+| `string Type`     | The name of the event type. You can use this for pattern matching in projections, so should be a "friendly" name rather than a CLR type name, for example.                                                |
+| `bool IsJson`     | If the data and metadata fields are serialized as JSON, you should set this to `true`. Setting this to `true` will cause the projections framework to attempt to deserialize the data and metadata later. |
+| `byte[] Data`     | The serialized data representing the event to be stored.                                                                                                                                                  |
+| `byte[] Metadata` | The serialized data representing metadata about the event to be stored.                                                                                                                                   |
 
-## Appending to a stream in a single write
+## Append to a stream in a single write
 
 The `AppendToStreamAsync` method writes events atomically to the end of a stream, working in an asynchronous manner.
 
 The parameters are:
 
-<table>
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>string stream</code></td>
-            <td>The name of the stream to which to append.</td>
-        </tr>
-        <tr>
-            <td><code>long expectedVersion</code></td>
-            <td>The version at which we currently expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See <a href="../optimistic-concurrency-and-idempotence">here</a> for a broader discussion of this.</td>
-        </tr>
-        <tr>
-            <td><code>IEnumerable&lt;EventData&gt; events</code></td>
-            <td>The events to append. There is also an overload of each method which takes the events as a `params` array.</td>
-        </tr>
-    </tbody>
-</table>
+| Parameter                       | Description                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `string stream`                 | The name of the stream to which to append.                                                                                                                                                                                                                                                                                                                                            |
+| `long expectedVersion`          | The version at which you expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](optimistic-concurrency-and-idempotence.md) for a broader discussion of this. |
+| `IEnumerable<EventData> events` | The events to append. There is also an overload of each method which takes the events as a `params` array.                                                                                                                                                                                                                                                                            |

@@ -1,17 +1,15 @@
 ---
-title: "Event Sourcing Basics"
-section: "Event Sourcing Basics"
-pinned: true
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Event Sourcing Basics
 
 ## What is an Event Store?
 
 Event Store is a database that supports the concept of Event Sourcing, which is an old idea that has recently become popular again
 
-<span class="note">
-If you are familiar with functional programming you may wish to jump to the [Event Store viewed as a functional database section]({{site.baseurl}}/event-sourcing-basics/event-store-as-a-functional-database).
-</span>
+> [!NOTE]
+> If you are familiar with functional programming you may wish to jump to the [Event Store viewed as a functional database section](event-store-as-a-functional-database.md).
 
 Production systems often rely on storing their current state to process transactions, but this has not always been the case. Before the general acceptance of relational database management systems (RDBMS) as the center of system architectures many did not store the current state. This was especially true in high performance, mission critical, and highly secure systems. If you look at the inner workings of an RDBMS you will find that most do not themselves work by managing current state.
 
@@ -70,7 +68,7 @@ These are the problems that led to the separation of the concepts of Commands an
 
 -   [DDD CQRS Video](https://www.youtube.com/watch?v=whCk1Q87_ZI)
 -   [Event Sourcing](http://martinfowler.com/eaaDev/EventSourcing.html)
--   [Getting Started]({{site.baseurl}}/introduction)
+-   [Getting Started](~/introduction/index.md)
 
 [1]: ../img/structural-model.png "A simplified structural model of an order"
 

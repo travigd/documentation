@@ -1,0 +1,703 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor
+  commentId: T:EventStore.Transport.Tcp.TcpConnectionMonitor
+  id: TcpConnectionMonitor
+  parent: EventStore.Transport.Tcp
+  children:
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.Default
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.Register(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  langs:
+  - csharp
+  - vb
+  name: TcpConnectionMonitor
+  nameWithType: TcpConnectionMonitor
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TcpConnectionMonitor
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: 'public class TcpConnectionMonitor : object'
+    content.vb: >-
+      Public Class TcpConnectionMonitor
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Transport.Tcp.TcpConnectionMonitor.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.Default
+  commentId: F:EventStore.Transport.Tcp.TcpConnectionMonitor.Default
+  id: Default
+  parent: EventStore.Transport.Tcp.TcpConnectionMonitor
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: TcpConnectionMonitor.Default
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.Default
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Default
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public static readonly TcpConnectionMonitor Default
+    return:
+      type: EventStore.Transport.Tcp.TcpConnectionMonitor
+    content.vb: Public Shared ReadOnly Default As TcpConnectionMonitor
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.Register(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionMonitor.Register(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  id: Register(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  parent: EventStore.Transport.Tcp.TcpConnectionMonitor
+  langs:
+  - csharp
+  - vb
+  name: Register(IMonitoredTcpConnection)
+  nameWithType: TcpConnectionMonitor.Register(IMonitoredTcpConnection)
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.Register(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Register
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public void Register(IMonitoredTcpConnection connection)
+    parameters:
+    - id: connection
+      type: EventStore.Transport.Tcp.IMonitoredTcpConnection
+    content.vb: Public Sub Register(connection As IMonitoredTcpConnection)
+  overload: EventStore.Transport.Tcp.TcpConnectionMonitor.Register*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  id: Unregister(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  parent: EventStore.Transport.Tcp.TcpConnectionMonitor
+  langs:
+  - csharp
+  - vb
+  name: Unregister(IMonitoredTcpConnection)
+  nameWithType: TcpConnectionMonitor.Unregister(IMonitoredTcpConnection)
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister(EventStore.Transport.Tcp.IMonitoredTcpConnection)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Unregister
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+    startLine: 37
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public void Unregister(IMonitoredTcpConnection connection)
+    parameters:
+    - id: connection
+      type: EventStore.Transport.Tcp.IMonitoredTcpConnection
+    content.vb: Public Sub Unregister(connection As IMonitoredTcpConnection)
+  overload: EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats
+  id: GetTcpStats
+  parent: EventStore.Transport.Tcp.TcpConnectionMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetTcpStats()
+  nameWithType: TcpConnectionMonitor.GetTcpStats()
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetTcpStats
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+    startLine: 43
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public TcpStats GetTcpStats()
+    return:
+      type: EventStore.Transport.Tcp.TcpStats
+    content.vb: Public Function GetTcpStats As TcpStats
+  overload: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats
+  id: GetTcpConnectionStats
+  parent: EventStore.Transport.Tcp.TcpConnectionMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetTcpConnectionStats()
+  nameWithType: TcpConnectionMonitor.GetTcpConnectionStats()
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetTcpConnectionStats
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public IMonitoredTcpConnection[] GetTcpConnectionStats()
+    return:
+      type: EventStore.Transport.Tcp.IMonitoredTcpConnection[]
+    content.vb: Public Function GetTcpConnectionStats As IMonitoredTcpConnection()
+  overload: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked
+  id: IsSendBlocked
+  parent: EventStore.Transport.Tcp.TcpConnectionMonitor
+  langs:
+  - csharp
+  - vb
+  name: IsSendBlocked()
+  nameWithType: TcpConnectionMonitor.IsSendBlocked()
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsSendBlocked
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionMonitor.cs
+    startLine: 200
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public bool IsSendBlocked()
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsSendBlocked As Boolean
+  overload: EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Transport.Tcp
+  commentId: N:EventStore.Transport.Tcp
+  isExternal: false
+  name: EventStore.Transport.Tcp
+  nameWithType: EventStore.Transport.Tcp
+  fullName: EventStore.Transport.Tcp
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TcpConnectionMonitor>()
+  nameWithType: ProtobufExtensions.Serialize<TcpConnectionMonitor>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Transport.Tcp.TcpConnectionMonitor>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TcpConnectionMonitor)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Transport.Tcp.TcpConnectionMonitor)()
+  name.vb: Serialize(Of TcpConnectionMonitor)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TcpConnectionMonitor>
+    nameWithType: ProtobufExtensions.Serialize<TcpConnectionMonitor>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Transport.Tcp.TcpConnectionMonitor>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TcpConnectionMonitor)
+    nameWithType: ProtobufExtensions.Serialize(Of TcpConnectionMonitor)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Transport.Tcp.TcpConnectionMonitor)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TcpConnectionMonitor>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TcpConnectionMonitor>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Transport.Tcp.TcpConnectionMonitor>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TcpConnectionMonitor)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Transport.Tcp.TcpConnectionMonitor)()
+  name.vb: SerializeToArray(Of TcpConnectionMonitor)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TcpConnectionMonitor>
+    nameWithType: ProtobufExtensions.SerializeToArray<TcpConnectionMonitor>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Transport.Tcp.TcpConnectionMonitor>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TcpConnectionMonitor)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TcpConnectionMonitor)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Transport.Tcp.TcpConnectionMonitor)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor
+  commentId: T:EventStore.Transport.Tcp.TcpConnectionMonitor
+  parent: EventStore.Transport.Tcp
+  isExternal: false
+  name: TcpConnectionMonitor
+  nameWithType: TcpConnectionMonitor
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.Register*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionMonitor.Register
+  isExternal: false
+  name: Register
+  nameWithType: TcpConnectionMonitor.Register
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.Register
+- uid: EventStore.Transport.Tcp.IMonitoredTcpConnection
+  commentId: T:EventStore.Transport.Tcp.IMonitoredTcpConnection
+  parent: EventStore.Transport.Tcp
+  isExternal: false
+  name: IMonitoredTcpConnection
+  nameWithType: IMonitoredTcpConnection
+  fullName: EventStore.Transport.Tcp.IMonitoredTcpConnection
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister
+  isExternal: false
+  name: Unregister
+  nameWithType: TcpConnectionMonitor.Unregister
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.Unregister
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats
+  isExternal: false
+  name: GetTcpStats
+  nameWithType: TcpConnectionMonitor.GetTcpStats
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpStats
+- uid: EventStore.Transport.Tcp.TcpStats
+  commentId: T:EventStore.Transport.Tcp.TcpStats
+  parent: EventStore.Transport.Tcp
+  isExternal: false
+  name: TcpStats
+  nameWithType: TcpStats
+  fullName: EventStore.Transport.Tcp.TcpStats
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats
+  isExternal: false
+  name: GetTcpConnectionStats
+  nameWithType: TcpConnectionMonitor.GetTcpConnectionStats
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.GetTcpConnectionStats
+- uid: EventStore.Transport.Tcp.IMonitoredTcpConnection[]
+  name: IMonitoredTcpConnection[]
+  nameWithType: IMonitoredTcpConnection[]
+  fullName: EventStore.Transport.Tcp.IMonitoredTcpConnection[]
+  nameWithType.vb: IMonitoredTcpConnection()
+  fullName.vb: EventStore.Transport.Tcp.IMonitoredTcpConnection()
+  name.vb: IMonitoredTcpConnection()
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.IMonitoredTcpConnection
+    name: IMonitoredTcpConnection
+    nameWithType: IMonitoredTcpConnection
+    fullName: EventStore.Transport.Tcp.IMonitoredTcpConnection
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.IMonitoredTcpConnection
+    name: IMonitoredTcpConnection
+    nameWithType: IMonitoredTcpConnection
+    fullName: EventStore.Transport.Tcp.IMonitoredTcpConnection
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked
+  isExternal: false
+  name: IsSendBlocked
+  nameWithType: TcpConnectionMonitor.IsSendBlocked
+  fullName: EventStore.Transport.Tcp.TcpConnectionMonitor.IsSendBlocked
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

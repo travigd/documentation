@@ -1,0 +1,2301 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl
+  commentId: T:EventStore.Transport.Tcp.TcpConnectionSsl
+  id: TcpConnectionSsl
+  parent: EventStore.Transport.Tcp
+  children:
+  - EventStore.Transport.Tcp.TcpConnectionSsl._clientConnectionName
+  - EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName
+  - EventStore.Transport.Tcp.TcpConnectionSsl.Close(System.String)
+  - EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionClosed
+  - EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId
+  - EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket(Guid,IPEndPoint,Socket,System.String,System.Boolean,System.Boolean)
+  - EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection(Guid,IPEndPoint,System.String,System.Boolean,EventStore.Transport.Tcp.TcpClientConnector,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
+  - EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket(Guid,IPEndPoint,Socket,X509Certificate,System.Boolean)
+  - EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  - EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  - EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize
+  - EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName(System.String)
+  - EventStore.Transport.Tcp.TcpConnectionSsl.ToString
+  - EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate(System.Object,X509Certificate,X509Chain,SslPolicyErrors)
+  langs:
+  - csharp
+  - vb
+  name: TcpConnectionSsl
+  nameWithType: TcpConnectionSsl
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TcpConnectionSsl
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: 'public class TcpConnectionSsl : TcpConnectionBase, IMonitoredTcpConnection, ITcpConnection'
+    content.vb: >-
+      Public Class TcpConnectionSsl
+          Inherits TcpConnectionBase
+          Implements IMonitoredTcpConnection, ITcpConnection
+  inheritance:
+  - System.Object
+  - EventStore.Transport.Tcp.TcpConnectionBase
+  implements:
+  - EventStore.Transport.Tcp.IMonitoredTcpConnection
+  - EventStore.Transport.Tcp.ITcpConnection
+  inheritedMembers:
+  - EventStore.Transport.Tcp.TcpConnectionBase.RemoteEndPoint
+  - EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint
+  - EventStore.Transport.Tcp.TcpConnectionBase.IsInitialized
+  - EventStore.Transport.Tcp.TcpConnectionBase.IsClosed
+  - EventStore.Transport.Tcp.TcpConnectionBase.InSend
+  - EventStore.Transport.Tcp.TcpConnectionBase.InReceive
+  - EventStore.Transport.Tcp.TcpConnectionBase.PendingSendBytes
+  - EventStore.Transport.Tcp.TcpConnectionBase.InSendBytes
+  - EventStore.Transport.Tcp.TcpConnectionBase.PendingReceivedBytes
+  - EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesSent
+  - EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesReceived
+  - EventStore.Transport.Tcp.TcpConnectionBase.SendCalls
+  - EventStore.Transport.Tcp.TcpConnectionBase.SendCallbacks
+  - EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCalls
+  - EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCallbacks
+  - EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForSend
+  - EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForReceive
+  - EventStore.Transport.Tcp.TcpConnectionBase.IsFaulted
+  - EventStore.Transport.Tcp.TcpConnectionBase.LastSendStarted
+  - EventStore.Transport.Tcp.TcpConnectionBase.LastReceiveStarted
+  - EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+  - EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled(System.Int32)
+  - EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting(System.Int32)
+  - EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted(System.Int32)
+  - EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting
+  - EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted(System.Int32)
+  - EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched(System.Int32)
+  - EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Transport.Tcp.TcpConnectionSsl.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Transport.Tcp.TcpConnectionSsl.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection(Guid,IPEndPoint,System.String,System.Boolean,EventStore.Transport.Tcp.TcpClientConnector,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection(Guid,IPEndPoint,System.String,System.Boolean,EventStore.Transport.Tcp.TcpClientConnector,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
+  id: CreateConnectingConnection(Guid,IPEndPoint,System.String,System.Boolean,EventStore.Transport.Tcp.TcpClientConnector,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: CreateConnectingConnection(Guid, IPEndPoint, String, Boolean, TcpClientConnector, TimeSpan, Action<ITcpConnection>, Action<ITcpConnection, SocketError>, Boolean)
+  nameWithType: TcpConnectionSsl.CreateConnectingConnection(Guid, IPEndPoint, String, Boolean, TcpClientConnector, TimeSpan, Action<ITcpConnection>, Action<ITcpConnection, SocketError>, Boolean)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection(Guid, IPEndPoint, System.String, System.Boolean, EventStore.Transport.Tcp.TcpClientConnector, TimeSpan, Action<EventStore.Transport.Tcp.ITcpConnection>, Action<EventStore.Transport.Tcp.ITcpConnection, SocketError>, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateConnectingConnection
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public static ITcpConnection CreateConnectingConnection(Guid connectionId, IPEndPoint remoteEndPoint, string targetHost, bool validateServer, TcpClientConnector connector, TimeSpan connectionTimeout, Action<ITcpConnection> onConnectionEstablished, Action<ITcpConnection, SocketError> onConnectionFailed, bool verbose)
+    parameters:
+    - id: connectionId
+      type: Guid
+    - id: remoteEndPoint
+      type: IPEndPoint
+    - id: targetHost
+      type: System.String
+    - id: validateServer
+      type: System.Boolean
+    - id: connector
+      type: EventStore.Transport.Tcp.TcpClientConnector
+    - id: connectionTimeout
+      type: TimeSpan
+    - id: onConnectionEstablished
+      type: Action{EventStore.Transport.Tcp.ITcpConnection}
+    - id: onConnectionFailed
+      type: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
+    - id: verbose
+      type: System.Boolean
+    return:
+      type: EventStore.Transport.Tcp.ITcpConnection
+    content.vb: Public Shared Function CreateConnectingConnection(connectionId As Guid, remoteEndPoint As IPEndPoint, targetHost As String, validateServer As Boolean, connector As TcpClientConnector, connectionTimeout As TimeSpan, onConnectionEstablished As Action(Of ITcpConnection), onConnectionFailed As Action(Of ITcpConnection, SocketError), verbose As Boolean) As ITcpConnection
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection*
+  nameWithType.vb: TcpConnectionSsl.CreateConnectingConnection(Guid, IPEndPoint, String, Boolean, TcpClientConnector, TimeSpan, Action(Of ITcpConnection), Action(Of ITcpConnection, SocketError), Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection(Guid, IPEndPoint, System.String, System.Boolean, EventStore.Transport.Tcp.TcpClientConnector, TimeSpan, Action(Of EventStore.Transport.Tcp.ITcpConnection), Action(Of EventStore.Transport.Tcp.ITcpConnection, SocketError), System.Boolean)
+  name.vb: CreateConnectingConnection(Guid, IPEndPoint, String, Boolean, TcpClientConnector, TimeSpan, Action(Of ITcpConnection), Action(Of ITcpConnection, SocketError), Boolean)
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket(Guid,IPEndPoint,Socket,System.String,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket(Guid,IPEndPoint,Socket,System.String,System.Boolean,System.Boolean)
+  id: CreateClientFromSocket(Guid,IPEndPoint,Socket,System.String,System.Boolean,System.Boolean)
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: CreateClientFromSocket(Guid, IPEndPoint, Socket, String, Boolean, Boolean)
+  nameWithType: TcpConnectionSsl.CreateClientFromSocket(Guid, IPEndPoint, Socket, String, Boolean, Boolean)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket(Guid, IPEndPoint, Socket, System.String, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateClientFromSocket
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 48
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public static ITcpConnection CreateClientFromSocket(Guid connectionId, IPEndPoint remoteEndPoint, Socket socket, string targetHost, bool validateServer, bool verbose)
+    parameters:
+    - id: connectionId
+      type: Guid
+    - id: remoteEndPoint
+      type: IPEndPoint
+    - id: socket
+      type: Socket
+    - id: targetHost
+      type: System.String
+    - id: validateServer
+      type: System.Boolean
+    - id: verbose
+      type: System.Boolean
+    return:
+      type: EventStore.Transport.Tcp.ITcpConnection
+    content.vb: Public Shared Function CreateClientFromSocket(connectionId As Guid, remoteEndPoint As IPEndPoint, socket As Socket, targetHost As String, validateServer As Boolean, verbose As Boolean) As ITcpConnection
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket(Guid,IPEndPoint,Socket,X509Certificate,System.Boolean)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket(Guid,IPEndPoint,Socket,X509Certificate,System.Boolean)
+  id: CreateServerFromSocket(Guid,IPEndPoint,Socket,X509Certificate,System.Boolean)
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: CreateServerFromSocket(Guid, IPEndPoint, Socket, X509Certificate, Boolean)
+  nameWithType: TcpConnectionSsl.CreateServerFromSocket(Guid, IPEndPoint, Socket, X509Certificate, Boolean)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket(Guid, IPEndPoint, Socket, X509Certificate, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateServerFromSocket
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 60
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public static ITcpConnection CreateServerFromSocket(Guid connectionId, IPEndPoint remoteEndPoint, Socket socket, X509Certificate certificate, bool verbose)
+    parameters:
+    - id: connectionId
+      type: Guid
+    - id: remoteEndPoint
+      type: IPEndPoint
+    - id: socket
+      type: Socket
+    - id: certificate
+      type: X509Certificate
+    - id: verbose
+      type: System.Boolean
+    return:
+      type: EventStore.Transport.Tcp.ITcpConnection
+    content.vb: Public Shared Function CreateServerFromSocket(connectionId As Guid, remoteEndPoint As IPEndPoint, socket As Socket, certificate As X509Certificate, verbose As Boolean) As ITcpConnection
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionClosed
+  commentId: E:EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionClosed
+  id: ConnectionClosed
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: ConnectionClosed
+  nameWithType: TcpConnectionSsl.ConnectionClosed
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionClosed
+  type: Event
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ConnectionClosed
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 72
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public event Action<ITcpConnection, SocketError> ConnectionClosed
+    return:
+      type: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
+    content.vb: Public Event ConnectionClosed As Action(Of ITcpConnection, SocketError)
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.ConnectionClosed
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId
+  id: ConnectionId
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: ConnectionId
+  nameWithType: TcpConnectionSsl.ConnectionId
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ConnectionId
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 73
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public Guid ConnectionId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property ConnectionId As Guid
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId*
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.ConnectionId
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize
+  id: SendQueueSize
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: SendQueueSize
+  nameWithType: TcpConnectionSsl.SendQueueSize
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SendQueueSize
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 74
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public int SendQueueSize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property SendQueueSize As Integer
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize*
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.SendQueueSize
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName
+  id: ClientConnectionName
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: ClientConnectionName
+  nameWithType: TcpConnectionSsl.ClientConnectionName
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ClientConnectionName
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 75
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public string ClientConnectionName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ClientConnectionName As String
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName*
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.ClientConnectionName
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl._clientConnectionName
+  commentId: F:EventStore.Transport.Tcp.TcpConnectionSsl._clientConnectionName
+  id: _clientConnectionName
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: _clientConnectionName
+  nameWithType: TcpConnectionSsl._clientConnectionName
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl._clientConnectionName
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: _clientConnectionName
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 79
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public string _clientConnectionName
+    return:
+      type: System.String
+    content.vb: Public _clientConnectionName As String
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate(System.Object,X509Certificate,X509Chain,SslPolicyErrors)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate(System.Object,X509Certificate,X509Chain,SslPolicyErrors)
+  id: ValidateServerCertificate(System.Object,X509Certificate,X509Chain,SslPolicyErrors)
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: ValidateServerCertificate(Object, X509Certificate, X509Chain, SslPolicyErrors)
+  nameWithType: TcpConnectionSsl.ValidateServerCertificate(Object, X509Certificate, X509Chain, SslPolicyErrors)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate(System.Object, X509Certificate, X509Chain, SslPolicyErrors)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ValidateServerCertificate
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 254
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public bool ValidateServerCertificate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+    parameters:
+    - id: sender
+      type: System.Object
+    - id: certificate
+      type: X509Certificate
+    - id: chain
+      type: X509Chain
+    - id: sslPolicyErrors
+      type: SslPolicyErrors
+    return:
+      type: System.Boolean
+    content.vb: Public Function ValidateServerCertificate(sender As Object, certificate As X509Certificate, chain As X509Chain, sslPolicyErrors As SslPolicyErrors) As Boolean
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  id: EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: EnqueueSend(IEnumerable<ArraySegment<Byte>>)
+  nameWithType: TcpConnectionSsl.EnqueueSend(IEnumerable<ArraySegment<Byte>>)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend(IEnumerable<ArraySegment<System.Byte>>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EnqueueSend
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 296
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public void EnqueueSend(IEnumerable<ArraySegment<byte>> data)
+    parameters:
+    - id: data
+      type: IEnumerable{ArraySegment{System.Byte}}
+    content.vb: Public Sub EnqueueSend(data As IEnumerable(Of ArraySegment(Of Byte)))
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend*
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  nameWithType.vb: TcpConnectionSsl.EnqueueSend(IEnumerable(Of ArraySegment(Of Byte)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend(IEnumerable(Of ArraySegment(Of System.Byte)))
+  name.vb: EnqueueSend(IEnumerable(Of ArraySegment(Of Byte)))
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  id: ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>)
+  nameWithType: TcpConnectionSsl.ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync(Action<EventStore.Transport.Tcp.ITcpConnection, IEnumerable<ArraySegment<System.Byte>>>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReceiveAsync
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 384
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public void ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<byte>>> callback)
+    parameters:
+    - id: callback
+      type: Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}}
+    content.vb: Public Sub ReceiveAsync(callback As Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync*
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  nameWithType.vb: TcpConnectionSsl.ReceiveAsync(Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync(Action(Of EventStore.Transport.Tcp.ITcpConnection, IEnumerable(Of ArraySegment(Of System.Byte))))
+  name.vb: ReceiveAsync(Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.Close(System.String)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.Close(System.String)
+  id: Close(System.String)
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: Close(String)
+  nameWithType: TcpConnectionSsl.Close(String)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.Close(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Close
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 510
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public void Close(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+    content.vb: Public Sub Close(reason As String)
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.Close*
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName(System.String)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName(System.String)
+  id: SetClientConnectionName(System.String)
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: SetClientConnectionName(String)
+  nameWithType: TcpConnectionSsl.SetClientConnectionName(String)
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SetClientConnectionName
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 546
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public void SetClientConnectionName(string clientConnectionName)
+    parameters:
+    - id: clientConnectionName
+      type: System.String
+    content.vb: Public Sub SetClientConnectionName(clientConnectionName As String)
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName*
+  implements:
+  - EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ToString
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionSsl.ToString
+  id: ToString
+  parent: EventStore.Transport.Tcp.TcpConnectionSsl
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: TcpConnectionSsl.ToString()
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToString
+    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionSsl.cs
+    startLine: 551
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: EventStore.Transport.Tcp.TcpConnectionSsl.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.Transport.Tcp
+  commentId: N:EventStore.Transport.Tcp
+  isExternal: false
+  name: EventStore.Transport.Tcp
+  nameWithType: EventStore.Transport.Tcp
+  fullName: EventStore.Transport.Tcp
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Transport.Tcp.TcpConnectionBase
+  commentId: T:EventStore.Transport.Tcp.TcpConnectionBase
+  parent: EventStore.Transport.Tcp
+  isExternal: false
+  name: TcpConnectionBase
+  nameWithType: TcpConnectionBase
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase
+- uid: EventStore.Transport.Tcp.IMonitoredTcpConnection
+  commentId: T:EventStore.Transport.Tcp.IMonitoredTcpConnection
+  parent: EventStore.Transport.Tcp
+  isExternal: false
+  name: IMonitoredTcpConnection
+  nameWithType: IMonitoredTcpConnection
+  fullName: EventStore.Transport.Tcp.IMonitoredTcpConnection
+- uid: EventStore.Transport.Tcp.ITcpConnection
+  commentId: T:EventStore.Transport.Tcp.ITcpConnection
+  parent: EventStore.Transport.Tcp
+  isExternal: false
+  name: ITcpConnection
+  nameWithType: ITcpConnection
+  fullName: EventStore.Transport.Tcp.ITcpConnection
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.RemoteEndPoint
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.RemoteEndPoint
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: RemoteEndPoint
+  nameWithType: TcpConnectionBase.RemoteEndPoint
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.RemoteEndPoint
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: LocalEndPoint
+  nameWithType: TcpConnectionBase.LocalEndPoint
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.IsInitialized
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.IsInitialized
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: IsInitialized
+  nameWithType: TcpConnectionBase.IsInitialized
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsInitialized
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.IsClosed
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.IsClosed
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: IsClosed
+  nameWithType: TcpConnectionBase.IsClosed
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsClosed
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.InSend
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.InSend
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: InSend
+  nameWithType: TcpConnectionBase.InSend
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.InSend
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.InReceive
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.InReceive
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: InReceive
+  nameWithType: TcpConnectionBase.InReceive
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.InReceive
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.PendingSendBytes
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.PendingSendBytes
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: PendingSendBytes
+  nameWithType: TcpConnectionBase.PendingSendBytes
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.PendingSendBytes
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.InSendBytes
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.InSendBytes
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: InSendBytes
+  nameWithType: TcpConnectionBase.InSendBytes
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.InSendBytes
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.PendingReceivedBytes
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.PendingReceivedBytes
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: PendingReceivedBytes
+  nameWithType: TcpConnectionBase.PendingReceivedBytes
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.PendingReceivedBytes
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesSent
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesSent
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: TotalBytesSent
+  nameWithType: TcpConnectionBase.TotalBytesSent
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesSent
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesReceived
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesReceived
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: TotalBytesReceived
+  nameWithType: TcpConnectionBase.TotalBytesReceived
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesReceived
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.SendCalls
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.SendCalls
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: SendCalls
+  nameWithType: TcpConnectionBase.SendCalls
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.SendCalls
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.SendCallbacks
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.SendCallbacks
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: SendCallbacks
+  nameWithType: TcpConnectionBase.SendCallbacks
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.SendCallbacks
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCalls
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCalls
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: ReceiveCalls
+  nameWithType: TcpConnectionBase.ReceiveCalls
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCalls
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCallbacks
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCallbacks
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: ReceiveCallbacks
+  nameWithType: TcpConnectionBase.ReceiveCallbacks
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCallbacks
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForSend
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForSend
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: IsReadyForSend
+  nameWithType: TcpConnectionBase.IsReadyForSend
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForSend
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForReceive
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForReceive
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: IsReadyForReceive
+  nameWithType: TcpConnectionBase.IsReadyForReceive
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForReceive
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.IsFaulted
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.IsFaulted
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: IsFaulted
+  nameWithType: TcpConnectionBase.IsFaulted
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsFaulted
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.LastSendStarted
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.LastSendStarted
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: LastSendStarted
+  nameWithType: TcpConnectionBase.LastSendStarted
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.LastSendStarted
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.LastReceiveStarted
+  commentId: P:EventStore.Transport.Tcp.TcpConnectionBase.LastReceiveStarted
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: LastReceiveStarted
+  nameWithType: TcpConnectionBase.LastReceiveStarted
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.LastReceiveStarted
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: true
+  name: InitConnectionBase(Socket)
+  nameWithType: TcpConnectionBase.InitConnectionBase(Socket)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+    name: InitConnectionBase
+    nameWithType: TcpConnectionBase.InitConnectionBase
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Socket
+    name: Socket
+    nameWithType: Socket
+    fullName: Socket
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+    name: InitConnectionBase
+    nameWithType: TcpConnectionBase.InitConnectionBase
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Socket
+    name: Socket
+    nameWithType: Socket
+    fullName: Socket
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled(System.Int32)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled(System.Int32)
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: true
+  name: NotifySendScheduled(Int32)
+  nameWithType: TcpConnectionBase.NotifySendScheduled(Int32)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled(System.Int32)
+    name: NotifySendScheduled
+    nameWithType: TcpConnectionBase.NotifySendScheduled
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled(System.Int32)
+    name: NotifySendScheduled
+    nameWithType: TcpConnectionBase.NotifySendScheduled
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting(System.Int32)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting(System.Int32)
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: true
+  name: NotifySendStarting(Int32)
+  nameWithType: TcpConnectionBase.NotifySendStarting(Int32)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting(System.Int32)
+    name: NotifySendStarting
+    nameWithType: TcpConnectionBase.NotifySendStarting
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting(System.Int32)
+    name: NotifySendStarting
+    nameWithType: TcpConnectionBase.NotifySendStarting
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted(System.Int32)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted(System.Int32)
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: true
+  name: NotifySendCompleted(Int32)
+  nameWithType: TcpConnectionBase.NotifySendCompleted(Int32)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted(System.Int32)
+    name: NotifySendCompleted
+    nameWithType: TcpConnectionBase.NotifySendCompleted
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted(System.Int32)
+    name: NotifySendCompleted
+    nameWithType: TcpConnectionBase.NotifySendCompleted
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: NotifyReceiveStarting()
+  nameWithType: TcpConnectionBase.NotifyReceiveStarting()
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting()
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting
+    name: NotifyReceiveStarting
+    nameWithType: TcpConnectionBase.NotifyReceiveStarting
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting
+    name: NotifyReceiveStarting
+    nameWithType: TcpConnectionBase.NotifyReceiveStarting
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted(System.Int32)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted(System.Int32)
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: true
+  name: NotifyReceiveCompleted(Int32)
+  nameWithType: TcpConnectionBase.NotifyReceiveCompleted(Int32)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted(System.Int32)
+    name: NotifyReceiveCompleted
+    nameWithType: TcpConnectionBase.NotifyReceiveCompleted
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted(System.Int32)
+    name: NotifyReceiveCompleted
+    nameWithType: TcpConnectionBase.NotifyReceiveCompleted
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched(System.Int32)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched(System.Int32)
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: true
+  name: NotifyReceiveDispatched(Int32)
+  nameWithType: TcpConnectionBase.NotifyReceiveDispatched(Int32)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched(System.Int32)
+    name: NotifyReceiveDispatched
+    nameWithType: TcpConnectionBase.NotifyReceiveDispatched
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched(System.Int32)
+    name: NotifyReceiveDispatched
+    nameWithType: TcpConnectionBase.NotifyReceiveDispatched
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed
+  parent: EventStore.Transport.Tcp.TcpConnectionBase
+  isExternal: false
+  name: NotifyClosed()
+  nameWithType: TcpConnectionBase.NotifyClosed()
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed()
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed
+    name: NotifyClosed
+    nameWithType: TcpConnectionBase.NotifyClosed
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed
+    name: NotifyClosed
+    nameWithType: TcpConnectionBase.NotifyClosed
+    fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TcpConnectionSsl>()
+  nameWithType: ProtobufExtensions.Serialize<TcpConnectionSsl>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Transport.Tcp.TcpConnectionSsl>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TcpConnectionSsl)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Transport.Tcp.TcpConnectionSsl)()
+  name.vb: Serialize(Of TcpConnectionSsl)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TcpConnectionSsl>
+    nameWithType: ProtobufExtensions.Serialize<TcpConnectionSsl>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Transport.Tcp.TcpConnectionSsl>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TcpConnectionSsl)
+    nameWithType: ProtobufExtensions.Serialize(Of TcpConnectionSsl)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Transport.Tcp.TcpConnectionSsl)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TcpConnectionSsl>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TcpConnectionSsl>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Transport.Tcp.TcpConnectionSsl>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TcpConnectionSsl)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Transport.Tcp.TcpConnectionSsl)()
+  name.vb: SerializeToArray(Of TcpConnectionSsl)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TcpConnectionSsl>
+    nameWithType: ProtobufExtensions.SerializeToArray<TcpConnectionSsl>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Transport.Tcp.TcpConnectionSsl>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TcpConnectionSsl)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TcpConnectionSsl)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Transport.Tcp.TcpConnectionSsl)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection
+  isExternal: false
+  name: CreateConnectingConnection
+  nameWithType: TcpConnectionSsl.CreateConnectingConnection
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.CreateConnectingConnection
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: IPEndPoint
+  isExternal: true
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: IPEndPoint
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Transport.Tcp.TcpClientConnector
+  commentId: T:EventStore.Transport.Tcp.TcpClientConnector
+  parent: EventStore.Transport.Tcp
+  isExternal: false
+  name: TcpClientConnector
+  nameWithType: TcpClientConnector
+  fullName: EventStore.Transport.Tcp.TcpClientConnector
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: Action{EventStore.Transport.Tcp.ITcpConnection}
+  commentId: '!:Action{EventStore.Transport.Tcp.ITcpConnection}'
+  definition: Action`1
+  name: Action<ITcpConnection>
+  nameWithType: Action<ITcpConnection>
+  fullName: Action<EventStore.Transport.Tcp.ITcpConnection>
+  nameWithType.vb: Action(Of ITcpConnection)
+  fullName.vb: Action(Of EventStore.Transport.Tcp.ITcpConnection)
+  name.vb: Action(Of ITcpConnection)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
+  commentId: '!:Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}'
+  definition: Action`2
+  name: Action<ITcpConnection, SocketError>
+  nameWithType: Action<ITcpConnection, SocketError>
+  fullName: Action<EventStore.Transport.Tcp.ITcpConnection, SocketError>
+  nameWithType.vb: Action(Of ITcpConnection, SocketError)
+  fullName.vb: Action(Of EventStore.Transport.Tcp.ITcpConnection, SocketError)
+  name.vb: Action(Of ITcpConnection, SocketError)
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SocketError
+    name: SocketError
+    nameWithType: SocketError
+    fullName: SocketError
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SocketError
+    name: SocketError
+    nameWithType: SocketError
+    fullName: SocketError
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`2
+  isExternal: true
+  name: Action<, >
+  nameWithType: Action<, >
+  fullName: Action<, >
+  nameWithType.vb: Action(Of , )
+  fullName.vb: Action(Of , )
+  name.vb: Action(Of , )
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket
+  isExternal: false
+  name: CreateClientFromSocket
+  nameWithType: TcpConnectionSsl.CreateClientFromSocket
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.CreateClientFromSocket
+- uid: Socket
+  isExternal: true
+  name: Socket
+  nameWithType: Socket
+  fullName: Socket
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket
+  isExternal: false
+  name: CreateServerFromSocket
+  nameWithType: TcpConnectionSsl.CreateServerFromSocket
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.CreateServerFromSocket
+- uid: X509Certificate
+  isExternal: true
+  name: X509Certificate
+  nameWithType: X509Certificate
+  fullName: X509Certificate
+- uid: EventStore.Transport.Tcp.ITcpConnection.ConnectionClosed
+  commentId: E:EventStore.Transport.Tcp.ITcpConnection.ConnectionClosed
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: false
+  name: ConnectionClosed
+  nameWithType: ITcpConnection.ConnectionClosed
+  fullName: EventStore.Transport.Tcp.ITcpConnection.ConnectionClosed
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId
+  isExternal: false
+  name: ConnectionId
+  nameWithType: TcpConnectionSsl.ConnectionId
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ConnectionId
+- uid: EventStore.Transport.Tcp.ITcpConnection.ConnectionId
+  commentId: P:EventStore.Transport.Tcp.ITcpConnection.ConnectionId
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: false
+  name: ConnectionId
+  nameWithType: ITcpConnection.ConnectionId
+  fullName: EventStore.Transport.Tcp.ITcpConnection.ConnectionId
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize
+  isExternal: false
+  name: SendQueueSize
+  nameWithType: TcpConnectionSsl.SendQueueSize
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.SendQueueSize
+- uid: EventStore.Transport.Tcp.ITcpConnection.SendQueueSize
+  commentId: P:EventStore.Transport.Tcp.ITcpConnection.SendQueueSize
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: false
+  name: SendQueueSize
+  nameWithType: ITcpConnection.SendQueueSize
+  fullName: EventStore.Transport.Tcp.ITcpConnection.SendQueueSize
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName
+  isExternal: false
+  name: ClientConnectionName
+  nameWithType: TcpConnectionSsl.ClientConnectionName
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ClientConnectionName
+- uid: EventStore.Transport.Tcp.ITcpConnection.ClientConnectionName
+  commentId: P:EventStore.Transport.Tcp.ITcpConnection.ClientConnectionName
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: false
+  name: ClientConnectionName
+  nameWithType: ITcpConnection.ClientConnectionName
+  fullName: EventStore.Transport.Tcp.ITcpConnection.ClientConnectionName
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate
+  isExternal: false
+  name: ValidateServerCertificate
+  nameWithType: TcpConnectionSsl.ValidateServerCertificate
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ValidateServerCertificate
+- uid: X509Chain
+  commentId: '!:X509Chain'
+  isExternal: true
+  name: X509Chain
+  nameWithType: X509Chain
+  fullName: X509Chain
+- uid: SslPolicyErrors
+  commentId: '!:SslPolicyErrors'
+  isExternal: true
+  name: SslPolicyErrors
+  nameWithType: SslPolicyErrors
+  fullName: SslPolicyErrors
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend
+  isExternal: false
+  name: EnqueueSend
+  nameWithType: TcpConnectionSsl.EnqueueSend
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.EnqueueSend
+- uid: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  commentId: M:EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: true
+  name: EnqueueSend(IEnumerable<ArraySegment<Byte>>)
+  nameWithType: ITcpConnection.EnqueueSend(IEnumerable<ArraySegment<Byte>>)
+  fullName: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable<ArraySegment<System.Byte>>)
+  nameWithType.vb: ITcpConnection.EnqueueSend(IEnumerable(Of ArraySegment(Of Byte)))
+  fullName.vb: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable(Of ArraySegment(Of System.Byte)))
+  name.vb: EnqueueSend(IEnumerable(Of ArraySegment(Of Byte)))
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+    name: EnqueueSend
+    nameWithType: ITcpConnection.EnqueueSend
+    fullName: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+    name: EnqueueSend
+    nameWithType: ITcpConnection.EnqueueSend
+    fullName: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable{ArraySegment{System.Byte}}
+  commentId: '!:IEnumerable{ArraySegment{System.Byte}}'
+  definition: IEnumerable`1
+  name: IEnumerable<ArraySegment<Byte>>
+  nameWithType: IEnumerable<ArraySegment<Byte>>
+  fullName: IEnumerable<ArraySegment<System.Byte>>
+  nameWithType.vb: IEnumerable(Of ArraySegment(Of Byte))
+  fullName.vb: IEnumerable(Of ArraySegment(Of System.Byte))
+  name.vb: IEnumerable(Of ArraySegment(Of Byte))
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync
+  isExternal: false
+  name: ReceiveAsync
+  nameWithType: TcpConnectionSsl.ReceiveAsync
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ReceiveAsync
+- uid: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  commentId: M:EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: true
+  name: ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>)
+  nameWithType: ITcpConnection.ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>)
+  fullName: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action<EventStore.Transport.Tcp.ITcpConnection, IEnumerable<ArraySegment<System.Byte>>>)
+  nameWithType.vb: ITcpConnection.ReceiveAsync(Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
+  fullName.vb: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action(Of EventStore.Transport.Tcp.ITcpConnection, IEnumerable(Of ArraySegment(Of System.Byte))))
+  name.vb: ReceiveAsync(Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+    name: ReceiveAsync
+    nameWithType: ITcpConnection.ReceiveAsync
+    fullName: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+    name: ReceiveAsync
+    nameWithType: ITcpConnection.ReceiveAsync
+    fullName: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}}
+  commentId: '!:Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}}'
+  definition: Action`2
+  name: Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>
+  nameWithType: Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>
+  fullName: Action<EventStore.Transport.Tcp.ITcpConnection, IEnumerable<ArraySegment<System.Byte>>>
+  nameWithType.vb: Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte)))
+  fullName.vb: Action(Of EventStore.Transport.Tcp.ITcpConnection, IEnumerable(Of ArraySegment(Of System.Byte)))
+  name.vb: Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte)))
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Transport.Tcp.ITcpConnection
+    name: ITcpConnection
+    nameWithType: ITcpConnection
+    fullName: EventStore.Transport.Tcp.ITcpConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.Close*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.Close
+  isExternal: false
+  name: Close
+  nameWithType: TcpConnectionSsl.Close
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.Close
+- uid: EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
+  commentId: M:EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: true
+  name: Close(String)
+  nameWithType: ITcpConnection.Close(String)
+  fullName: EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
+    name: Close
+    nameWithType: ITcpConnection.Close
+    fullName: EventStore.Transport.Tcp.ITcpConnection.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
+    name: Close
+    nameWithType: ITcpConnection.Close
+    fullName: EventStore.Transport.Tcp.ITcpConnection.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName
+  isExternal: false
+  name: SetClientConnectionName
+  nameWithType: TcpConnectionSsl.SetClientConnectionName
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.SetClientConnectionName
+- uid: EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
+  commentId: M:EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
+  parent: EventStore.Transport.Tcp.ITcpConnection
+  isExternal: true
+  name: SetClientConnectionName(String)
+  nameWithType: ITcpConnection.SetClientConnectionName(String)
+  fullName: EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
+  spec.csharp:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
+    name: SetClientConnectionName
+    nameWithType: ITcpConnection.SetClientConnectionName
+    fullName: EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
+    name: SetClientConnectionName
+    nameWithType: ITcpConnection.SetClientConnectionName
+    fullName: EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.TcpConnectionSsl.ToString*
+  commentId: Overload:EventStore.Transport.Tcp.TcpConnectionSsl.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: TcpConnectionSsl.ToString
+  fullName: EventStore.Transport.Tcp.TcpConnectionSsl.ToString

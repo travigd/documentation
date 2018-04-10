@@ -1,0 +1,1163 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  id: InMemoryCheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  children:
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor(System.Int64)
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor(System.String,System.Int64)
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flushed
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed(System.Int64)
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write(System.Int64)
+  langs:
+  - csharp
+  - vb
+  name: InMemoryCheckpoint
+  nameWithType: InMemoryCheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InMemoryCheckpoint
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: 'public class InMemoryCheckpoint : object, ICheckpoint, IDisposable'
+    content.vb: >-
+      Public Class InMemoryCheckpoint
+          Inherits Object
+          Implements ICheckpoint, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  - IDisposable
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name
+  commentId: P:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name
+  id: Name
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: InMemoryCheckpoint.Name
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Name
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor(System.Int64)
+  id: '#ctor(System.Int64)'
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: InMemoryCheckpoint(Int64)
+  nameWithType: InMemoryCheckpoint.InMemoryCheckpoint(Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.InMemoryCheckpoint(System.Int64)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public InMemoryCheckpoint(long initialValue)
+    parameters:
+    - id: initialValue
+      type: System.Int64
+    content.vb: Public Sub New(initialValue As Long)
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor
+  id: '#ctor'
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: InMemoryCheckpoint()
+  nameWithType: InMemoryCheckpoint.InMemoryCheckpoint()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.InMemoryCheckpoint()
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 15
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public InMemoryCheckpoint()
+    content.vb: Public Sub New
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor(System.String,System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor(System.String,System.Int64)
+  id: '#ctor(System.String,System.Int64)'
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: InMemoryCheckpoint(String, Int64)
+  nameWithType: InMemoryCheckpoint.InMemoryCheckpoint(String, Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.InMemoryCheckpoint(System.String, System.Int64)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public InMemoryCheckpoint(string name, long initValue = null)
+    parameters:
+    - id: name
+      type: System.String
+    - id: initValue
+      type: System.Int64
+    content.vb: Public Sub New(name As String, initValue As Long = Nothing)
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write(System.Int64)
+  id: Write(System.Int64)
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Write(Int64)
+  nameWithType: InMemoryCheckpoint.Write(Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Write
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Write(long checkpoint)
+    parameters:
+    - id: checkpoint
+      type: System.Int64
+    content.vb: Public Sub Write(checkpoint As Long)
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read
+  id: Read
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Read()
+  nameWithType: InMemoryCheckpoint.Read()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Read
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public long Read()
+    return:
+      type: System.Int64
+    content.vb: Public Function Read As Long
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed
+  id: ReadNonFlushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: ReadNonFlushed()
+  nameWithType: InMemoryCheckpoint.ReadNonFlushed()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadNonFlushed
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 34
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public long ReadNonFlushed()
+    return:
+      type: System.Int64
+    content.vb: Public Function ReadNonFlushed As Long
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush
+  id: Flush
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Flush()
+  nameWithType: InMemoryCheckpoint.Flush()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Flush
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 39
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Flush()
+    content.vb: Public Sub Flush
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flushed
+  commentId: E:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flushed
+  id: Flushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Flushed
+  nameWithType: InMemoryCheckpoint.Flushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flushed
+  type: Event
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Flushed
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 50
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public event Action<long> Flushed
+    return:
+      type: Action{System.Int64}
+    content.vb: Public Event Flushed As Action(Of Long)
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed(System.Int64)
+  id: OnFlushed(System.Int64)
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: OnFlushed(Int64)
+  nameWithType: InMemoryCheckpoint.OnFlushed(Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OnFlushed
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 52
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: protected virtual void OnFlushed(long obj)
+    parameters:
+    - id: obj
+      type: System.Int64
+    content.vb: Protected Overridable Sub OnFlushed(obj As Long)
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close
+  id: Close
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  nameWithType: InMemoryCheckpoint.Close()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Close
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 59
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Close()
+    content.vb: Public Sub Close
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close*
+  implements:
+  - EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose
+  id: Dispose
+  parent: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: InMemoryCheckpoint.Dispose()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/InMemoryCheckpoint.cs
+    startLine: 64
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.TransactionLog.Checkpoint
+  commentId: N:EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: EventStore.Core.TransactionLog.Checkpoint
+  nameWithType: EventStore.Core.TransactionLog.Checkpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  parent: EventStore.Core.TransactionLog.Checkpoint
+  isExternal: false
+  name: ICheckpoint
+  nameWithType: ICheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<InMemoryCheckpoint>()
+  nameWithType: ProtobufExtensions.Serialize<InMemoryCheckpoint>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of InMemoryCheckpoint)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint)()
+  name.vb: Serialize(Of InMemoryCheckpoint)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<InMemoryCheckpoint>
+    nameWithType: ProtobufExtensions.Serialize<InMemoryCheckpoint>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of InMemoryCheckpoint)
+    nameWithType: ProtobufExtensions.Serialize(Of InMemoryCheckpoint)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<InMemoryCheckpoint>()
+  nameWithType: ProtobufExtensions.SerializeToArray<InMemoryCheckpoint>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of InMemoryCheckpoint)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint)()
+  name.vb: SerializeToArray(Of InMemoryCheckpoint)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<InMemoryCheckpoint>
+    nameWithType: ProtobufExtensions.SerializeToArray<InMemoryCheckpoint>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of InMemoryCheckpoint)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of InMemoryCheckpoint)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name
+  isExternal: false
+  name: Name
+  nameWithType: InMemoryCheckpoint.Name
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Name
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+  commentId: P:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Name
+  nameWithType: ICheckpoint.Name
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Name
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.#ctor
+  isExternal: false
+  name: InMemoryCheckpoint
+  nameWithType: InMemoryCheckpoint.InMemoryCheckpoint
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.InMemoryCheckpoint
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write
+  isExternal: false
+  name: Write
+  nameWithType: InMemoryCheckpoint.Write
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Write
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: true
+  name: Write(Int64)
+  nameWithType: ICheckpoint.Write(Int64)
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+    name: Write
+    nameWithType: ICheckpoint.Write
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write(System.Int64)
+    name: Write
+    nameWithType: ICheckpoint.Write
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Write
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read
+  isExternal: false
+  name: Read
+  nameWithType: InMemoryCheckpoint.Read
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Read
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Read()
+  nameWithType: ICheckpoint.Read()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+    name: Read
+    nameWithType: ICheckpoint.Read
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+    name: Read
+    nameWithType: ICheckpoint.Read
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Read
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed
+  isExternal: false
+  name: ReadNonFlushed
+  nameWithType: InMemoryCheckpoint.ReadNonFlushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.ReadNonFlushed
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: ReadNonFlushed()
+  nameWithType: ICheckpoint.ReadNonFlushed()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+    name: ReadNonFlushed
+    nameWithType: ICheckpoint.ReadNonFlushed
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+    name: ReadNonFlushed
+    nameWithType: ICheckpoint.ReadNonFlushed
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.ReadNonFlushed
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush
+  isExternal: false
+  name: Flush
+  nameWithType: InMemoryCheckpoint.Flush
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Flush
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Flush()
+  nameWithType: ICheckpoint.Flush()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+    name: Flush
+    nameWithType: ICheckpoint.Flush
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+    name: Flush
+    nameWithType: ICheckpoint.Flush
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flush
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+  commentId: E:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Flushed
+  nameWithType: ICheckpoint.Flushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Flushed
+- uid: Action{System.Int64}
+  commentId: '!:Action{System.Int64}'
+  definition: Action`1
+  name: Action<Int64>
+  nameWithType: Action<Int64>
+  fullName: Action<System.Int64>
+  nameWithType.vb: Action(Of Int64)
+  fullName.vb: Action(Of System.Int64)
+  name.vb: Action(Of Int64)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed
+  isExternal: false
+  name: OnFlushed
+  nameWithType: InMemoryCheckpoint.OnFlushed
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.OnFlushed
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close
+  isExternal: false
+  name: Close
+  nameWithType: InMemoryCheckpoint.Close
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Close
+- uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  commentId: M:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  parent: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+  isExternal: false
+  name: Close()
+  nameWithType: ICheckpoint.Close()
+  fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close()
+  spec.csharp:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+    name: Close
+    nameWithType: ICheckpoint.Close
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+    name: Close
+    nameWithType: ICheckpoint.Close
+    fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint.Close
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose*
+  commentId: Overload:EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: InMemoryCheckpoint.Dispose
+  fullName: EventStore.Core.TransactionLog.Checkpoint.InMemoryCheckpoint.Dispose

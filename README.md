@@ -1,8 +1,27 @@
 # Event Store Documentation
 
-**This documentation is available at [http://docs.geteventstore.com](http://docs.geteventstore.com).** The website is hosted using [GitHub Pages](https://pages.github.com) from the `gh-pages` branch of this repository. Pages are built with [Jekyll](http://jekyllrb.com) using the [Redcarpet](https://github.com/vmg/redcarpet) complier.
+**This documentation is available at [https://eventstore.org/docs](https://eventstore.org/docs).** Pages are built with [DocFX](https://dotnet.github.io).
 
-What follows is documentation for how to use the Event Store documentation. If you’re planning to make updates or contributions then read on. Otherwise, head on over to the [website](http://docs.geteventstore.com).
+What follows is documentation for how to use and contribute to the Event Store documentation. If you’re planning to make updates or contributions then read on. Otherwise, head on over to the [website](https://eventstore.org/docs).
+
+## Contributing to Event Store Documentation
+
+Event Store consists of different components, and the documentation reflects this. Depending on what you want to contribute to, the process is different.
+
+### Conceptual Documentation
+
+This is the bulk of documentation, and where you mostly likely want to contribute to. It uses 'DocFX flavored Markdown'. It is similar to standard or GitHub Flavored Markdown, but adds features useful for documentation you can find details of [here](#).
+
+### API Spec
+<!-- TODO: Open API spec blah -->
+In additions to conceptual docs on the HTTP API, the documentation includes a [swagger spec file](#) that [DocFX renders to HTML](#) when building the site. Any contributions to that file are welcome, read the [Swagger xxx](#) for more details on the format of that file.
+
+### Code Documentation
+When DocFX builds the documentation site it parses xxx code comments and renders them as HTML. If you want to contribute to that documentation, then find instructions in the [code base reposity](#).
+
+### Documentation Theme
+Finally, if you would like to improve the theme for the documentation site, then you can find its repository [here](#).
+---
 
 ## Versioning
 
@@ -18,19 +37,13 @@ The Event Store documentation is available for many versions of Event Store and 
 
 The Event Store server uses [semantic versioning](http://semver.org). API versions are based on the major server version they support.
 
-## How to Contribute
 
-### Running Jekyll Locally
+### Running DocFX Locally
 
-GitHub Pages renders this documentation using Jekyll. You can generate the site locally and test your changes. Follow the instructions [here](https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll) to get Ruby and Bundler installed.
+You can generate the site locally and test your changes. Follow the instructions [here](#) to install DocFX and dependencies.
 
-Once installed, navigate to the root of the repository and run
-
-`bundle install`
-followed by
-`bundle exec jekyll serve`
-
-The compiled site builds into `/_site` and is hosted at `http://localhost:4000`.
+<!-- TODO: Why is there a subpath and how does it relate? -->
+The compiled site builds into `/docs` and is hosted at `http://localhost:8080/docs`.
 
 ### Small Edits
 
@@ -41,19 +54,8 @@ The compiled site builds into `/_site` and is hosted at `http://localhost:4000`.
 ### New Pages and Sections
 
 1. Create new pages and/or sections. Follow the [Conventions](#conventions) below.
-2. If you create a new section add an entry for it to the `top_level_sections` list in `_config.yml`. This list determines the order of sections in the navigation sidebar.
-3. Add any new sections to the table at the top of this README.
-4. Send a pull request!
-
-### Creating a New Version
-
-1. Duplicate the section’s latest version directory and rename it. For example, copy `/server/3.0.0/` to `/server/3.0.1/`.
-
-   > Pre-release documentation should have `-pre` after the version number, e.g. `/server/3.0.1-pre/`. Pre-release documentation will show up on the website but won’t be the default version. In pages’ front matter use `version: "3.0.1 (pre-release)"`.
-2. Update front matter in all `.md` files in the new directory to use the new version number.
-3. Make edits to files in the new version as appropriate. You may create or delete pages as necessary.
-4. Update the version table at the top of this README.
-5. Send a pull request!
+2. If you create a new section add an entry for it to the *toc.md* file. This file determines the order of sections in the navigation sidebar.
+3. Send a pull request!
 
 ## Conventions
 
@@ -72,30 +74,13 @@ For example:
 For example:
 
 ```
-http://docs.geteventstore.com/dotnet-api/3.0.0/writing-to-a-stream/index.html
+http://https://eventstore.org/docs/dotnet-api/3.0.0/writing-to-a-stream/index.html
 ```
-
-### Front Matter
-
-Every page written for Jekyll in markdown has front matter. This is metadata for the page. We specify a title for the page, the section it belongs to, and the version for that section. Title and section should be [title case](http://en.wiktionary.org/wiki/title_case). The version number should be in the format `X.X.X`.
-
-For example:
-```markdown
----
-title: "Writing to a Stream"
-section: ".NET API"
-version: "3.0.0"
----
-
-Lorem ipsum dolor sit amet…
-```
-
-For `index.md` pages you should also include `pinned: true`.
 
 ### Formatting and Typesetting
 
-The content of our documentation has many authors. These formatting guidelines will help maintain a consistent use of language throughout the docs.
+The content of our documentation has multiple authors. Formatting and style guidelines help maintain a consistent use of language throughout the docs.
 
-- **Acronyms and abbreviations** should always be set in uppercase (e.g. API, HTTP, JVM)
-- **Brand names** should have correct typesetting (e.g. cURL, Event Store, JavaScript, .NET)
+- **Acronyms and abbreviations**: Use uppercase (e.g. API, HTTP, JVM)
+- **Brand names**: Use correct typesetting (e.g. cURL, Event Store, JavaScript, .NET)
 - **Example code** should not have a line length of more than 80 characters

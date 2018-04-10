@@ -1,0 +1,248 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Standard.StreamDeletedHelper
+  commentId: T:EventStore.Projections.Core.Standard.StreamDeletedHelper
+  id: StreamDeletedHelper
+  parent: EventStore.Projections.Core.Standard
+  children:
+  - EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String,System.String,System.Byte[],System.String@)
+  - EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String,System.String,System.String,System.String@)
+  - EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent(EventStore.Projections.Core.Services.Processing.ResolvedEvent,System.String@)
+  langs:
+  - csharp
+  - vb
+  name: StreamDeletedHelper
+  nameWithType: StreamDeletedHelper
+  fullName: EventStore.Projections.Core.Standard.StreamDeletedHelper
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StreamDeletedHelper
+    path: ../EventStore/src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Standard
+  syntax:
+    content: 'public static class StreamDeletedHelper : object'
+    content.vb: >-
+      Public Module StreamDeletedHelper
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent(EventStore.Projections.Core.Services.Processing.ResolvedEvent,System.String@)
+  commentId: M:EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent(EventStore.Projections.Core.Services.Processing.ResolvedEvent,System.String@)
+  id: IsStreamDeletedEventOrLinkToStreamDeletedEvent(EventStore.Projections.Core.Services.Processing.ResolvedEvent,System.String@)
+  parent: EventStore.Projections.Core.Standard.StreamDeletedHelper
+  langs:
+  - csharp
+  - vb
+  name: IsStreamDeletedEventOrLinkToStreamDeletedEvent(ResolvedEvent, out String)
+  nameWithType: StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent(ResolvedEvent, out String)
+  fullName: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent(EventStore.Projections.Core.Services.Processing.ResolvedEvent, out System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsStreamDeletedEventOrLinkToStreamDeletedEvent
+    path: ../EventStore/src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Standard
+  syntax:
+    content: public static bool IsStreamDeletedEventOrLinkToStreamDeletedEvent(ResolvedEvent resolvedEvent, out string deletedPartitionStreamId)
+    parameters:
+    - id: resolvedEvent
+      type: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+    - id: deletedPartitionStreamId
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsStreamDeletedEventOrLinkToStreamDeletedEvent(resolvedEvent As ResolvedEvent, ByRef deletedPartitionStreamId As String) As Boolean
+  overload: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent*
+  nameWithType.vb: StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent(ResolvedEvent, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent(EventStore.Projections.Core.Services.Processing.ResolvedEvent, ByRef System.String)
+  name.vb: IsStreamDeletedEventOrLinkToStreamDeletedEvent(ResolvedEvent, ByRef String)
+- uid: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String,System.String,System.String,System.String@)
+  commentId: M:EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String,System.String,System.String,System.String@)
+  id: IsStreamDeletedEvent(System.String,System.String,System.String,System.String@)
+  parent: EventStore.Projections.Core.Standard.StreamDeletedHelper
+  langs:
+  - csharp
+  - vb
+  name: IsStreamDeletedEvent(String, String, String, out String)
+  nameWithType: StreamDeletedHelper.IsStreamDeletedEvent(String, String, String, out String)
+  fullName: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String, System.String, System.String, out System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsStreamDeletedEvent
+    path: ../EventStore/src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Standard
+  syntax:
+    content: public static bool IsStreamDeletedEvent(string streamOrMetaStreamId, string eventType, string eventData, out string deletedPartitionStreamId)
+    parameters:
+    - id: streamOrMetaStreamId
+      type: System.String
+    - id: eventType
+      type: System.String
+    - id: eventData
+      type: System.String
+    - id: deletedPartitionStreamId
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsStreamDeletedEvent(streamOrMetaStreamId As String, eventType As String, eventData As String, ByRef deletedPartitionStreamId As String) As Boolean
+  overload: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent*
+  nameWithType.vb: StreamDeletedHelper.IsStreamDeletedEvent(String, String, String, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String, System.String, System.String, ByRef System.String)
+  name.vb: IsStreamDeletedEvent(String, String, String, ByRef String)
+- uid: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String,System.String,System.Byte[],System.String@)
+  commentId: M:EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String,System.String,System.Byte[],System.String@)
+  id: IsStreamDeletedEvent(System.String,System.String,System.Byte[],System.String@)
+  parent: EventStore.Projections.Core.Standard.StreamDeletedHelper
+  langs:
+  - csharp
+  - vb
+  name: IsStreamDeletedEvent(String, String, Byte[], out String)
+  nameWithType: StreamDeletedHelper.IsStreamDeletedEvent(String, String, Byte[], out String)
+  fullName: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String, System.String, System.Byte[], out System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsStreamDeletedEvent
+    path: ../EventStore/src/EventStore.Projections.Core/Standard/StreamDeletedHelper.cs
+    startLine: 65
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Standard
+  syntax:
+    content: public static bool IsStreamDeletedEvent(string streamOrMetaStreamId, string eventType, byte[] eventData, out string deletedPartitionStreamId)
+    parameters:
+    - id: streamOrMetaStreamId
+      type: System.String
+    - id: eventType
+      type: System.String
+    - id: eventData
+      type: System.Byte[]
+    - id: deletedPartitionStreamId
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsStreamDeletedEvent(streamOrMetaStreamId As String, eventType As String, eventData As Byte(), ByRef deletedPartitionStreamId As String) As Boolean
+  overload: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent*
+  nameWithType.vb: StreamDeletedHelper.IsStreamDeletedEvent(String, String, Byte(), ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent(System.String, System.String, System.Byte(), ByRef System.String)
+  name.vb: IsStreamDeletedEvent(String, String, Byte(), ByRef String)
+references:
+- uid: EventStore.Projections.Core.Standard
+  commentId: N:EventStore.Projections.Core.Standard
+  isExternal: false
+  name: EventStore.Projections.Core.Standard
+  nameWithType: EventStore.Projections.Core.Standard
+  fullName: EventStore.Projections.Core.Standard
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent*
+  commentId: Overload:EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent
+  isExternal: false
+  name: IsStreamDeletedEventOrLinkToStreamDeletedEvent
+  nameWithType: StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent
+  fullName: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEventOrLinkToStreamDeletedEvent
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  commentId: T:EventStore.Projections.Core.Services.Processing.ResolvedEvent
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: ResolvedEvent
+  nameWithType: ResolvedEvent
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent*
+  commentId: Overload:EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent
+  isExternal: false
+  name: IsStreamDeletedEvent
+  nameWithType: StreamDeletedHelper.IsStreamDeletedEvent
+  fullName: EventStore.Projections.Core.Standard.StreamDeletedHelper.IsStreamDeletedEvent
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()

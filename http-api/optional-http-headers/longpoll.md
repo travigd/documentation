@@ -1,15 +1,14 @@
 ---
-title: "Optional HTTP Headers: LongPoll"
-section: "HTTP API"
-version: "4.0.2"
-exclude_from_sidebar: true
+outputFileName: index.html
 ---
+
+# Optional HTTP Headers: LongPoll
 
 You use the `ES-LongPoll` header to instruct the server that when on the head link of a stream and no data is available the server should wait a period of time to see if data becomes available.
 
-<span class="note--warning">
-Version 2.1 and higher support the `ES-LongPoll` header. Lower versions will ignore the header.
-</span>
+> [!Warning]
+> Version 2.1 and higher support the `ES-LongPoll` header. Lower versions will ignore the header.
+<!-- TODO: version 2.1 of what? -->
 
 You can use this to provide lower latency for Atom clients instead of client initiated polling. Instead of the client polling every say 5 seconds to get data from the feed the client would send up a request with `ES-LongPoll: 15`. This instructs the backend to wait for up to 15 seconds before returning with no result. The latency is therefore lowered from the poll interval to about 10ms from the time an event is written until the time the HTTP connection is notified.
 
@@ -17,13 +16,14 @@ You can see the use of the `ES-LongPoll` header in the following cURL command.
 
 First go to the head of the stream (in this case we are using the default chat of the chat sample).
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i http://127.0.0.1:2113/streams/chat-GeneralChat -H "Accept: application/json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -91,18 +91,19 @@ Keep-Alive: timeout=15,max=100
   ]
 }
 ```
-</div>
-</div>
+
+***
 
 Then grab the previous `rel` link `http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20` and try it. It returns an empty feed.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-3)
+
 ```bash
 curl -i http://127.0.0.1:2113/streams/chat-GeneralChat/1/forward/20 -H "Accept: application/json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-4)
+
 ```http
 HTTP/1.1 200 OK
 Access-Control-Allow-Methods: GET, OPTIONS
@@ -152,8 +153,8 @@ Keep-Alive: timeout=15,max=100
   "entries": []
 }
 ```
-</div>
-</div>
+
+***
 
 The entries section is empty (there is no further data that can be provided). Now try that URI with a long poll header.
 

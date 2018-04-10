@@ -1,0 +1,648 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured
+  commentId: T:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured
+  id: PartitionMeasured
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  children:
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.#ctor(Guid,Guid,Guid,System.String,System.Int64)
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size
+  langs:
+  - csharp
+  - vb
+  name: PartitionMeasured
+  nameWithType: PartitionMeasured
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PartitionMeasured
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+    startLine: 100
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  syntax:
+    content: 'public sealed class PartitionMeasured : PartitionProcessingResultBase'
+    content.vb: >-
+      Public NotInheritable Class PartitionMeasured
+          Inherits PartitionProcessingResultBase
+  inheritance:
+  - System.Object
+  - EventStore.Core.Messaging.Message
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  inheritedMembers:
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.Partition
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.SubscriptionId
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.WorkerId
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MasterProjectionId
+  - EventStore.Core.Messaging.Message.NextMsgId
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId
+  commentId: P:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId
+  id: MsgTypeId
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured
+  langs:
+  - csharp
+  - vb
+  name: MsgTypeId
+  nameWithType: PartitionMeasured.MsgTypeId
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MsgTypeId
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+    startLine: 104
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  syntax:
+    content: public override int MsgTypeId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property MsgTypeId As Integer
+  overridden: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MsgTypeId
+  overload: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.#ctor(Guid,Guid,Guid,System.String,System.Int64)
+  commentId: M:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.#ctor(Guid,Guid,Guid,System.String,System.Int64)
+  id: '#ctor(Guid,Guid,Guid,System.String,System.Int64)'
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured
+  langs:
+  - csharp
+  - vb
+  name: PartitionMeasured(Guid, Guid, Guid, String, Int64)
+  nameWithType: PartitionMeasured.PartitionMeasured(Guid, Guid, Guid, String, Int64)
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.PartitionMeasured(Guid, Guid, Guid, System.String, System.Int64)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+    startLine: 111
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  syntax:
+    content: public PartitionMeasured(Guid workerId, Guid masterProjectionId, Guid subscriptionId, string partition, long size)
+    parameters:
+    - id: workerId
+      type: Guid
+    - id: masterProjectionId
+      type: Guid
+    - id: subscriptionId
+      type: Guid
+    - id: partition
+      type: System.String
+    - id: size
+      type: System.Int64
+    content.vb: Public Sub New(workerId As Guid, masterProjectionId As Guid, subscriptionId As Guid, partition As String, size As Long)
+  overload: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size
+  commentId: P:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size
+  id: Size
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: PartitionMeasured.Size
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Size
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ParallelQueryProcessingMessages.cs
+    startLine: 123
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  syntax:
+    content: public long Size { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property Size As Long
+  overload: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  commentId: N:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  nameWithType: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Messaging.Message
+  commentId: T:EventStore.Core.Messaging.Message
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: Message
+  nameWithType: Message
+  fullName: EventStore.Core.Messaging.Message
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  commentId: T:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  isExternal: false
+  name: PartitionProcessingResultBase
+  nameWithType: PartitionProcessingResultBase
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.Partition
+  commentId: P:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.Partition
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  isExternal: false
+  name: Partition
+  nameWithType: PartitionProcessingResultBase.Partition
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.Partition
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.SubscriptionId
+  commentId: P:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.SubscriptionId
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  isExternal: false
+  name: SubscriptionId
+  nameWithType: PartitionProcessingResultBase.SubscriptionId
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.SubscriptionId
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.WorkerId
+  commentId: P:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.WorkerId
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  isExternal: false
+  name: WorkerId
+  nameWithType: PartitionProcessingResultBase.WorkerId
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.WorkerId
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MasterProjectionId
+  commentId: P:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MasterProjectionId
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  isExternal: false
+  name: MasterProjectionId
+  nameWithType: PartitionProcessingResultBase.MasterProjectionId
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MasterProjectionId
+- uid: EventStore.Core.Messaging.Message.NextMsgId
+  commentId: F:EventStore.Core.Messaging.Message.NextMsgId
+  parent: EventStore.Core.Messaging.Message
+  isExternal: false
+  name: NextMsgId
+  nameWithType: Message.NextMsgId
+  fullName: EventStore.Core.Messaging.Message.NextMsgId
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<PartitionMeasured>()
+  nameWithType: ProtobufExtensions.Serialize<PartitionMeasured>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of PartitionMeasured)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured)()
+  name.vb: Serialize(Of PartitionMeasured)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<PartitionMeasured>
+    nameWithType: ProtobufExtensions.Serialize<PartitionMeasured>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of PartitionMeasured)
+    nameWithType: ProtobufExtensions.Serialize(Of PartitionMeasured)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<PartitionMeasured>()
+  nameWithType: ProtobufExtensions.SerializeToArray<PartitionMeasured>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of PartitionMeasured)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured)()
+  name.vb: SerializeToArray(Of PartitionMeasured)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<PartitionMeasured>
+    nameWithType: ProtobufExtensions.SerializeToArray<PartitionMeasured>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of PartitionMeasured)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of PartitionMeasured)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MsgTypeId
+  commentId: P:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MsgTypeId
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  isExternal: false
+  name: MsgTypeId
+  nameWithType: PartitionProcessingResultBase.MsgTypeId
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase.MsgTypeId
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId
+  isExternal: false
+  name: MsgTypeId
+  nameWithType: PartitionMeasured.MsgTypeId
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.MsgTypeId
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.#ctor
+  isExternal: false
+  name: PartitionMeasured
+  nameWithType: PartitionMeasured.PartitionMeasured
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.PartitionMeasured
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size*
+  commentId: Overload:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size
+  isExternal: false
+  name: Size
+  nameWithType: PartitionMeasured.Size
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured.Size

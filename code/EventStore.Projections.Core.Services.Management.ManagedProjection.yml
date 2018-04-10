@@ -1,0 +1,2173 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection
+  commentId: T:EventStore.Projections.Core.Services.Management.ManagedProjection
+  id: ManagedProjection
+  parent: EventStore.Projections.Core.Services.Management
+  children:
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.#ctor(Guid,Guid,System.Int64,System.String,System.Boolean,EventStore.Common.Log.ILogger,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},EventStore.Core.Bus.IPublisher,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport},EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean,Guid,Guid)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Fault(System.String)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Id
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting(System.String)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew(EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState,EventStore.Core.Messaging.IEnvelope)
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.Mode
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs
+  langs:
+  - csharp
+  - vb
+  name: ManagedProjection
+  nameWithType: ManagedProjection
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ManagedProjection
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  summary: "\nmanaged projection controls start/stop/create/update/delete lifecycle of the projection. \n"
+  example: []
+  syntax:
+    content: 'public class ManagedProjection : IDisposable'
+    content.vb: >-
+      Public Class ManagedProjection
+          Inherits IDisposable
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Services.Management.ManagedProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.#ctor(Guid,Guid,System.Int64,System.String,System.Boolean,EventStore.Common.Log.ILogger,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},EventStore.Core.Bus.IPublisher,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport},EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean,Guid,Guid)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.#ctor(Guid,Guid,System.Int64,System.String,System.Boolean,EventStore.Common.Log.ILogger,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},EventStore.Core.Bus.IPublisher,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport},EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean,Guid,Guid)
+  id: '#ctor(Guid,Guid,System.Int64,System.String,System.Boolean,EventStore.Common.Log.ILogger,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},EventStore.Core.Bus.IPublisher,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport},EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport},EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean,Guid,Guid)'
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: ManagedProjection(Guid, Guid, Int64, String, Boolean, ILogger, RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted>, RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted>, RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted>, IPublisher, ITimeProvider, RequestResponseDispatcher<CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport>, RequestResponseDispatcher<CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport>, IODispatcher, TimeSpan, Boolean, Guid, Guid)
+  nameWithType: ManagedProjection.ManagedProjection(Guid, Guid, Int64, String, Boolean, ILogger, RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted>, RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted>, RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted>, IPublisher, ITimeProvider, RequestResponseDispatcher<CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport>, RequestResponseDispatcher<CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport>, IODispatcher, TimeSpan, Boolean, Guid, Guid)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.ManagedProjection(Guid, Guid, System.Int64, System.String, System.Boolean, EventStore.Common.Log.ILogger, EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.DeleteStream, EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted>, EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.WriteEvents, EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>, EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted>, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport>, EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport>, EventStore.Core.Helpers.IODispatcher, TimeSpan, System.Boolean, Guid, Guid)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 124
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public ManagedProjection(Guid workerId, Guid id, long projectionId, string name, bool enabledToRun, ILogger logger, RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted> streamDispatcher, RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted> writeDispatcher, RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted> readDispatcher, IPublisher output, ITimeProvider timeProvider, RequestResponseDispatcher<CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport> getStateDispatcher, RequestResponseDispatcher<CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport> getResultDispatcher, IODispatcher ioDispatcher, TimeSpan projectionQueryExpiry, bool isSlave = false, Guid slaveMasterWorkerId = null, Guid slaveMasterCorrelationId = null)
+    parameters:
+    - id: workerId
+      type: Guid
+    - id: id
+      type: Guid
+    - id: projectionId
+      type: System.Int64
+    - id: name
+      type: System.String
+    - id: enabledToRun
+      type: System.Boolean
+    - id: logger
+      type: EventStore.Common.Log.ILogger
+    - id: streamDispatcher
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+    - id: writeDispatcher
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+    - id: readDispatcher
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+    - id: output
+      type: EventStore.Core.Bus.IPublisher
+    - id: timeProvider
+      type: EventStore.Core.Services.TimerService.ITimeProvider
+    - id: getStateDispatcher
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport}
+    - id: getResultDispatcher
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport}
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: projectionQueryExpiry
+      type: TimeSpan
+    - id: isSlave
+      type: System.Boolean
+    - id: slaveMasterWorkerId
+      type: Guid
+    - id: slaveMasterCorrelationId
+      type: Guid
+    content.vb: Public Sub New(workerId As Guid, id As Guid, projectionId As Long, name As String, enabledToRun As Boolean, logger As ILogger, streamDispatcher As RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted), writeDispatcher As RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted), readDispatcher As RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted), output As IPublisher, timeProvider As ITimeProvider, getStateDispatcher As RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport), getResultDispatcher As RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport), ioDispatcher As IODispatcher, projectionQueryExpiry As TimeSpan, isSlave As Boolean = False, slaveMasterWorkerId As Guid = Nothing, slaveMasterCorrelationId As Guid = Nothing)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.#ctor*
+  nameWithType.vb: ManagedProjection.ManagedProjection(Guid, Guid, Int64, String, Boolean, ILogger, RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted), RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted), RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted), IPublisher, ITimeProvider, RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport), RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport), IODispatcher, TimeSpan, Boolean, Guid, Guid)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Management.ManagedProjection.ManagedProjection(Guid, Guid, System.Int64, System.String, System.Boolean, EventStore.Common.Log.ILogger, EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.DeleteStream, EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted), EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.WriteEvents, EventStore.Core.Messages.ClientMessage.WriteEventsCompleted), EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted), EventStore.Core.Bus.IPublisher, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport), EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport), EventStore.Core.Helpers.IODispatcher, TimeSpan, System.Boolean, Guid, Guid)
+  name.vb: ManagedProjection(Guid, Guid, Int64, String, Boolean, ILogger, RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted), RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted), RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted), IPublisher, ITimeProvider, RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport), RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport), IODispatcher, TimeSpan, Boolean, Guid, Guid)
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted
+  commentId: P:EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted
+  id: Deleted
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Deleted
+  nameWithType: ManagedProjection.Deleted
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Deleted
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 196
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public bool Deleted { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Deleted As Boolean
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting
+  commentId: P:EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting
+  id: Deleting
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Deleting
+  nameWithType: ManagedProjection.Deleting
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Deleting
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 202
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public bool Deleting { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Deleting As Boolean
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Id
+  commentId: P:EventStore.Projections.Core.Services.Management.ManagedProjection.Id
+  id: Id
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ManagedProjection.Id
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Id
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Id
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 208
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public Guid Id { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property Id As Guid
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Id*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Mode
+  commentId: P:EventStore.Projections.Core.Services.Management.ManagedProjection.Mode
+  id: Mode
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Mode
+  nameWithType: ManagedProjection.Mode
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Mode
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Mode
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 213
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public ProjectionMode Mode { get; }
+    parameters: []
+    return:
+      type: EventStore.Projections.Core.Services.ProjectionMode
+    content.vb: Public ReadOnly Property Mode As ProjectionMode
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Mode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs
+  commentId: P:EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs
+  id: RunAs
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: RunAs
+  nameWithType: ManagedProjection.RunAs
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RunAs
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 218
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public IPrincipal RunAs { get; }
+    parameters: []
+    return:
+      type: IPrincipal
+    content.vb: Public ReadOnly Property RunAs As IPrincipal
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose
+  id: Dispose
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ManagedProjection.Dispose()
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 274
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics
+  id: GetStatistics
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: GetStatistics()
+  nameWithType: ManagedProjection.GetStatistics()
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetStatistics
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 279
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public ProjectionStatistics GetStatistics()
+    return:
+      type: EventStore.Projections.Core.Services.ProjectionStatistics
+    content.vb: Public Function GetStatistics As ProjectionStatistics
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.GetState)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.GetState)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 315
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.GetState message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.GetState)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.GetResult)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.GetResult)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 334
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.GetResult message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.GetResult)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.GetQuery)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.GetQuery)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 353
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.GetQuery message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.GetQuery)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.UpdateQuery)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.UpdateQuery)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 376
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.UpdateQuery message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.UpdateQuery)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.Disable)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.Disable)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 387
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.Disable message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.Disable)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.Abort)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.Abort)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 396
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.Abort message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.Abort)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.Enable)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.Enable)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 405
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.Enable message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.Enable)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.SetRunAs)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.SetRunAs)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 424
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.SetRunAs message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.SetRunAs)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.Delete)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.Delete)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 434
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.Delete message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.Delete)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.GetConfig)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.GetConfig)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 464
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.GetConfig message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.GetConfig)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.UpdateConfig)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.UpdateConfig)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 477
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.UpdateConfig message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.UpdateConfig)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams
+  id: DeleteProjectionStreams
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: DeleteProjectionStreams()
+  nameWithType: ManagedProjection.DeleteProjectionStreams()
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: DeleteProjectionStreams
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 499
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void DeleteProjectionStreams()
+    content.vb: Public Sub DeleteProjectionStreams
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.Reset)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Command.Reset)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 540
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.Reset message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.Reset)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Internal.CleanupExpired)
+  nameWithType: ManagedProjection.Handle(ProjectionManagementMessage.Internal.CleanupExpired)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 551
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Internal.CleanupExpired message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Internal.CleanupExpired)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionStatusMessage.Started)
+  nameWithType: ManagedProjection.Handle(CoreProjectionStatusMessage.Started)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 572
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(CoreProjectionStatusMessage.Started message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started
+    content.vb: Public Sub Handle(message As CoreProjectionStatusMessage.Started)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionStatusMessage.Stopped)
+  nameWithType: ManagedProjection.Handle(CoreProjectionStatusMessage.Stopped)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 577
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(CoreProjectionStatusMessage.Stopped message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+    content.vb: Public Sub Handle(message As CoreProjectionStatusMessage.Stopped)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionStatusMessage.Faulted)
+  nameWithType: ManagedProjection.Handle(CoreProjectionStatusMessage.Faulted)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 587
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(CoreProjectionStatusMessage.Faulted message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted
+    content.vb: Public Sub Handle(message As CoreProjectionStatusMessage.Faulted)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionStatusMessage.Prepared)
+  nameWithType: ManagedProjection.Handle(CoreProjectionStatusMessage.Prepared)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 593
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(CoreProjectionStatusMessage.Prepared message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared
+    content.vb: Public Sub Handle(message As CoreProjectionStatusMessage.Prepared)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionStatusMessage.StatisticsReport)
+  nameWithType: ManagedProjection.Handle(CoreProjectionStatusMessage.StatisticsReport)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 598
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(CoreProjectionStatusMessage.StatisticsReport message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport
+    content.vb: Public Sub Handle(message As CoreProjectionStatusMessage.StatisticsReport)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew(EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState,EventStore.Core.Messaging.IEnvelope)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew(EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState,EventStore.Core.Messaging.IEnvelope)
+  id: InitializeNew(EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState,EventStore.Core.Messaging.IEnvelope)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: InitializeNew(ManagedProjection.PersistedState, IEnvelope)
+  nameWithType: ManagedProjection.InitializeNew(ManagedProjection.PersistedState, IEnvelope)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew(EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState, EventStore.Core.Messaging.IEnvelope)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InitializeNew
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 631
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void InitializeNew(ManagedProjection.PersistedState persistedState, IEnvelope replyEnvelope)
+    parameters:
+    - id: persistedState
+      type: EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState
+    - id: replyEnvelope
+      type: EventStore.Core.Messaging.IEnvelope
+    content.vb: Public Sub InitializeNew(persistedState As ManagedProjection.PersistedState, replyEnvelope As IEnvelope)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting(System.String)
+  id: InitializeExisting(System.String)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: InitializeExisting(String)
+  nameWithType: ManagedProjection.InitializeExisting(String)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InitializeExisting
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 640
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void InitializeExisting(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub InitializeExisting(name As String)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Fault(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.Fault(System.String)
+  id: Fault(System.String)
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: Fault(String)
+  nameWithType: ManagedProjection.Fault(String)
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Fault(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Fault
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 991
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Fault(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+    content.vb: Public Sub Fault(reason As String)
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.Fault*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped
+  commentId: M:EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped
+  id: PrepareOrWriteStartOrLoadStopped
+  parent: EventStore.Projections.Core.Services.Management.ManagedProjection
+  langs:
+  - csharp
+  - vb
+  name: PrepareOrWriteStartOrLoadStopped()
+  nameWithType: ManagedProjection.PrepareOrWriteStartOrLoadStopped()
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PrepareOrWriteStartOrLoadStopped
+    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ManagedProjection.cs
+    startLine: 1066
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void PrepareOrWriteStartOrLoadStopped()
+    content.vb: Public Sub PrepareOrWriteStartOrLoadStopped
+  overload: EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Management
+  commentId: N:EventStore.Projections.Core.Services.Management
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Management
+  nameWithType: EventStore.Projections.Core.Services.Management
+  fullName: EventStore.Projections.Core.Services.Management
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ManagedProjection>()
+  nameWithType: ProtobufExtensions.Serialize<ManagedProjection>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Management.ManagedProjection>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ManagedProjection)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Management.ManagedProjection)()
+  name.vb: Serialize(Of ManagedProjection)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ManagedProjection>
+    nameWithType: ProtobufExtensions.Serialize<ManagedProjection>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Services.Management.ManagedProjection>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ManagedProjection)
+    nameWithType: ProtobufExtensions.Serialize(Of ManagedProjection)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Services.Management.ManagedProjection)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ManagedProjection>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ManagedProjection>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Management.ManagedProjection>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ManagedProjection)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Management.ManagedProjection)()
+  name.vb: SerializeToArray(Of ManagedProjection)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ManagedProjection>
+    nameWithType: ProtobufExtensions.SerializeToArray<ManagedProjection>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Services.Management.ManagedProjection>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ManagedProjection)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ManagedProjection)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Services.Management.ManagedProjection)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.#ctor
+  isExternal: false
+  name: ManagedProjection
+  nameWithType: ManagedProjection.ManagedProjection
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.ManagedProjection
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Common.Log.ILogger
+  commentId: T:EventStore.Common.Log.ILogger
+  parent: EventStore.Common.Log
+  isExternal: false
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.Common.Log.ILogger
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted>
+  nameWithType: RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.DeleteStream, EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted>
+  nameWithType.vb: RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.DeleteStream, EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted)
+  name.vb: RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStream
+    name: ClientMessage.DeleteStream
+    nameWithType: ClientMessage.DeleteStream
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStream
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStream
+    name: ClientMessage.DeleteStream
+    nameWithType: ClientMessage.DeleteStream
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStream
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted>
+  nameWithType: RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.WriteEvents, EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>
+  nameWithType.vb: RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.WriteEvents, EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  name.vb: RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEvents
+    name: ClientMessage.WriteEvents
+    nameWithType: ClientMessage.WriteEvents
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEvents
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEvents
+    name: ClientMessage.WriteEvents
+    nameWithType: ClientMessage.WriteEvents
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEvents
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted>
+  nameWithType: RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted>
+  nameWithType.vb: RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted)
+  name.vb: RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+    name: ClientMessage.ReadStreamEventsBackward
+    nameWithType: ClientMessage.ReadStreamEventsBackward
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+    name: ClientMessage.ReadStreamEventsBackward
+    nameWithType: ClientMessage.ReadStreamEventsBackward
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Services.TimerService.ITimeProvider
+  commentId: T:EventStore.Core.Services.TimerService.ITimeProvider
+  parent: EventStore.Core.Services.TimerService
+  isExternal: false
+  name: ITimeProvider
+  nameWithType: ITimeProvider
+  fullName: EventStore.Core.Services.TimerService.ITimeProvider
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport>
+  nameWithType: RequestResponseDispatcher<CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport>
+  nameWithType.vb: RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport)
+  name.vb: RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetState, CoreProjectionStatusMessage.StateReport)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    name: CoreProjectionManagementMessage.GetState
+    nameWithType: CoreProjectionManagementMessage.GetState
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport
+    name: CoreProjectionStatusMessage.StateReport
+    nameWithType: CoreProjectionStatusMessage.StateReport
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    name: CoreProjectionManagementMessage.GetState
+    nameWithType: CoreProjectionManagementMessage.GetState
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport
+    name: CoreProjectionStatusMessage.StateReport
+    nameWithType: CoreProjectionStatusMessage.StateReport
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult,EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport>
+  nameWithType: RequestResponseDispatcher<CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport>
+  nameWithType.vb: RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult, EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport)
+  name.vb: RequestResponseDispatcher(Of CoreProjectionManagementMessage.GetResult, CoreProjectionStatusMessage.ResultReport)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    name: CoreProjectionManagementMessage.GetResult
+    nameWithType: CoreProjectionManagementMessage.GetResult
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport
+    name: CoreProjectionStatusMessage.ResultReport
+    nameWithType: CoreProjectionStatusMessage.ResultReport
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    name: CoreProjectionManagementMessage.GetResult
+    nameWithType: CoreProjectionManagementMessage.GetResult
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport
+    name: CoreProjectionStatusMessage.ResultReport
+    nameWithType: CoreProjectionStatusMessage.ResultReport
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Common.Log
+  commentId: N:EventStore.Common.Log
+  isExternal: false
+  name: EventStore.Common.Log
+  nameWithType: EventStore.Common.Log
+  fullName: EventStore.Common.Log
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher`2
+  isExternal: false
+  name: RequestResponseDispatcher<TRequest, TResponse>
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse)
+  name.vb: RequestResponseDispatcher(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  isExternal: false
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted
+  isExternal: false
+  name: Deleted
+  nameWithType: ManagedProjection.Deleted
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleted
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting
+  isExternal: false
+  name: Deleting
+  nameWithType: ManagedProjection.Deleting
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Deleting
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Id*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.Id
+  isExternal: false
+  name: Id
+  nameWithType: ManagedProjection.Id
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Id
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Mode*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.Mode
+  isExternal: false
+  name: Mode
+  nameWithType: ManagedProjection.Mode
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Mode
+- uid: EventStore.Projections.Core.Services.ProjectionMode
+  commentId: T:EventStore.Projections.Core.Services.ProjectionMode
+  parent: EventStore.Projections.Core.Services
+  isExternal: false
+  name: ProjectionMode
+  nameWithType: ProjectionMode
+  fullName: EventStore.Projections.Core.Services.ProjectionMode
+- uid: EventStore.Projections.Core.Services
+  commentId: N:EventStore.Projections.Core.Services
+  isExternal: false
+  name: EventStore.Projections.Core.Services
+  nameWithType: EventStore.Projections.Core.Services
+  fullName: EventStore.Projections.Core.Services
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs
+  isExternal: false
+  name: RunAs
+  nameWithType: ManagedProjection.RunAs
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.RunAs
+- uid: IPrincipal
+  isExternal: true
+  name: IPrincipal
+  nameWithType: IPrincipal
+  fullName: IPrincipal
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: ManagedProjection.Dispose
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Dispose
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics
+  isExternal: false
+  name: GetStatistics
+  nameWithType: ManagedProjection.GetStatistics
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.GetStatistics
+- uid: EventStore.Projections.Core.Services.ProjectionStatistics
+  commentId: T:EventStore.Projections.Core.Services.ProjectionStatistics
+  parent: EventStore.Projections.Core.Services
+  isExternal: false
+  name: ProjectionStatistics
+  nameWithType: ProjectionStatistics
+  fullName: EventStore.Projections.Core.Services.ProjectionStatistics
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: ManagedProjection.Handle
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Handle
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.GetState
+  nameWithType: ProjectionManagementMessage.Command.GetState
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.GetResult
+  nameWithType: ProjectionManagementMessage.Command.GetResult
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.GetQuery
+  nameWithType: ProjectionManagementMessage.Command.GetQuery
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.UpdateQuery
+  nameWithType: ProjectionManagementMessage.Command.UpdateQuery
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.Disable
+  nameWithType: ProjectionManagementMessage.Command.Disable
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.Abort
+  nameWithType: ProjectionManagementMessage.Command.Abort
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.Enable
+  nameWithType: ProjectionManagementMessage.Command.Enable
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.SetRunAs
+  nameWithType: ProjectionManagementMessage.Command.SetRunAs
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.Delete
+  nameWithType: ProjectionManagementMessage.Command.Delete
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.GetConfig
+  nameWithType: ProjectionManagementMessage.Command.GetConfig
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.UpdateConfig
+  nameWithType: ProjectionManagementMessage.Command.UpdateConfig
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams
+  isExternal: false
+  name: DeleteProjectionStreams
+  nameWithType: ManagedProjection.DeleteProjectionStreams
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.DeleteProjectionStreams
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Command.Reset
+  nameWithType: ProjectionManagementMessage.Command.Reset
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ProjectionManagementMessage.Internal.CleanupExpired
+  nameWithType: ProjectionManagementMessage.Internal.CleanupExpired
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionStatusMessage.Started
+  nameWithType: CoreProjectionStatusMessage.Started
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionStatusMessage.Stopped
+  nameWithType: CoreProjectionStatusMessage.Stopped
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionStatusMessage.Faulted
+  nameWithType: CoreProjectionStatusMessage.Faulted
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionStatusMessage.Prepared
+  nameWithType: CoreProjectionStatusMessage.Prepared
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionStatusMessage.StatisticsReport
+  nameWithType: CoreProjectionStatusMessage.StatisticsReport
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew
+  isExternal: false
+  name: InitializeNew
+  nameWithType: ManagedProjection.InitializeNew
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeNew
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState
+  commentId: T:EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState
+  parent: EventStore.Projections.Core.Services.Management
+  isExternal: false
+  name: ManagedProjection.PersistedState
+  nameWithType: ManagedProjection.PersistedState
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState
+- uid: EventStore.Core.Messaging.IEnvelope
+  commentId: T:EventStore.Core.Messaging.IEnvelope
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: IEnvelope
+  nameWithType: IEnvelope
+  fullName: EventStore.Core.Messaging.IEnvelope
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting
+  isExternal: false
+  name: InitializeExisting
+  nameWithType: ManagedProjection.InitializeExisting
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.InitializeExisting
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.Fault*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.Fault
+  isExternal: false
+  name: Fault
+  nameWithType: ManagedProjection.Fault
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.Fault
+- uid: EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped
+  isExternal: false
+  name: PrepareOrWriteStartOrLoadStopped
+  nameWithType: ManagedProjection.PrepareOrWriteStartOrLoadStopped
+  fullName: EventStore.Projections.Core.Services.Management.ManagedProjection.PrepareOrWriteStartOrLoadStopped

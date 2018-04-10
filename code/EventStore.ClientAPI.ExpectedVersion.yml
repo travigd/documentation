@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.ExpectedVersion
+  commentId: T:EventStore.ClientAPI.ExpectedVersion
+  id: ExpectedVersion
+  parent: EventStore.ClientAPI
+  children:
+  - EventStore.ClientAPI.ExpectedVersion.Any
+  - EventStore.ClientAPI.ExpectedVersion.EmptyStream
+  - EventStore.ClientAPI.ExpectedVersion.NoStream
+  - EventStore.ClientAPI.ExpectedVersion.StreamExists
+  langs:
+  - csharp
+  - vb
+  name: ExpectedVersion
+  nameWithType: ExpectedVersion
+  fullName: EventStore.ClientAPI.ExpectedVersion
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ExpectedVersion.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ExpectedVersion
+    path: ../EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
+    startLine: 22
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nConstants used for expected version control\n"
+  remarks: "\nThe use of expected version can be a bit tricky especially when discussing idempotency assurances given by the event store.\n\nThere are five possible values that can be used for the passing of an expected version.\n\nExpectedVersion.Any (-2) says that you should not conflict with anything.\nExpectedVersion.NoStream (-1) says that the stream should not exist when doing your write.\nExpectedVersion.EmptyStream (0) says the stream should exist but be empty when doing the write.\nExpectedVersion.StreamExists(-4) says the stream or a metadata stream should exist when doing your write.\n\nAny other value states that the last event written to the stream should have a sequence number matching your \nexpected value.\n\nThe Event Store will assure idempotency for all operations using any value in ExpectedVersion except for\nExpectedVersion.Any and ExpectedVersion.StreamExists. When using ExpectedVersion.Any or ExpectedVersion.StreamExists\nthe Event Store will do its best to assure idempotency but will not guarantee idempotency.\n"
+  example: []
+  syntax:
+    content: 'public static class ExpectedVersion : object'
+    content.vb: >-
+      Public Module ExpectedVersion
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.ClientAPI.ExpectedVersion.Any
+  commentId: F:EventStore.ClientAPI.ExpectedVersion.Any
+  id: Any
+  parent: EventStore.ClientAPI.ExpectedVersion
+  langs:
+  - csharp
+  - vb
+  name: Any
+  nameWithType: ExpectedVersion.Any
+  fullName: EventStore.ClientAPI.ExpectedVersion.Any
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ExpectedVersion.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Any
+    path: ../EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
+    startLine: 27
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThis write should not conflict with anything and should always succeed.\n"
+  example: []
+  syntax:
+    content: public const int Any = null
+    return:
+      type: System.Int32
+    content.vb: Public Const Any As Integer = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.ClientAPI.ExpectedVersion.NoStream
+  commentId: F:EventStore.ClientAPI.ExpectedVersion.NoStream
+  id: NoStream
+  parent: EventStore.ClientAPI.ExpectedVersion
+  langs:
+  - csharp
+  - vb
+  name: NoStream
+  nameWithType: ExpectedVersion.NoStream
+  fullName: EventStore.ClientAPI.ExpectedVersion.NoStream
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ExpectedVersion.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: NoStream
+    path: ../EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
+    startLine: 31
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe stream being written to should not yet exist. If it does exist treat that as a concurrency problem.\n"
+  example: []
+  syntax:
+    content: public const int NoStream = null
+    return:
+      type: System.Int32
+    content.vb: Public Const NoStream As Integer = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.ClientAPI.ExpectedVersion.EmptyStream
+  commentId: F:EventStore.ClientAPI.ExpectedVersion.EmptyStream
+  id: EmptyStream
+  parent: EventStore.ClientAPI.ExpectedVersion
+  langs:
+  - csharp
+  - vb
+  name: EmptyStream
+  nameWithType: ExpectedVersion.EmptyStream
+  fullName: EventStore.ClientAPI.ExpectedVersion.EmptyStream
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ExpectedVersion.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EmptyStream
+    path: ../EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
+    startLine: 35
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe stream should exist and should be empty. If it does not exist or is not empty treat that as a concurrency problem.\n"
+  example: []
+  syntax:
+    content: public const int EmptyStream = null
+    return:
+      type: System.Int32
+    content.vb: Public Const EmptyStream As Integer = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.ClientAPI.ExpectedVersion.StreamExists
+  commentId: F:EventStore.ClientAPI.ExpectedVersion.StreamExists
+  id: StreamExists
+  parent: EventStore.ClientAPI.ExpectedVersion
+  langs:
+  - csharp
+  - vb
+  name: StreamExists
+  nameWithType: ExpectedVersion.StreamExists
+  fullName: EventStore.ClientAPI.ExpectedVersion.StreamExists
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ExpectedVersion.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StreamExists
+    path: ../EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
+    startLine: 40
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe stream should exist. If it or a metadata stream does not exist treat that as a concurrency problem.\n"
+  example: []
+  syntax:
+    content: public const int StreamExists = null
+    return:
+      type: System.Int32
+    content.vb: Public Const StreamExists As Integer = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  isExternal: false
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

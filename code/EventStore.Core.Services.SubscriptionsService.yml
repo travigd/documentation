@@ -1,0 +1,1608 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.SubscriptionsService
+  commentId: T:EventStore.Core.Services.SubscriptionsService
+  id: SubscriptionsService
+  parent: EventStore.Core.Services
+  children:
+  - EventStore.Core.Services.SubscriptionsService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)
+  - EventStore.Core.Services.SubscriptionsService.AllStreamsSubscriptionId
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  - EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  langs:
+  - csharp
+  - vb
+  name: SubscriptionsService
+  nameWithType: SubscriptionsService
+  fullName: EventStore.Core.Services.SubscriptionsService
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscriptionsService
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: 'public class SubscriptionsService : object, IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<TcpMessage.ConnectionClosed>, IHandle<ClientMessage.SubscribeToStream>, IHandle<ClientMessage.UnsubscribeFromStream>, IHandle<SubscriptionMessage.PollStream>, IHandle<SubscriptionMessage.CheckPollTimeout>, IHandle<StorageMessage.EventCommitted>'
+    content.vb: >-
+      Public Class SubscriptionsService
+          Inherits Object
+          Implements IHandle(Of SystemMessage.SystemStart), IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of TcpMessage.ConnectionClosed), IHandle(Of ClientMessage.SubscribeToStream), IHandle(Of ClientMessage.UnsubscribeFromStream), IHandle(Of SubscriptionMessage.PollStream), IHandle(Of SubscriptionMessage.CheckPollTimeout), IHandle(Of StorageMessage.EventCommitted)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.SubscribeToStream}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PollStream}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Services.SubscriptionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.SubscriptionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.SubscriptionsService.AllStreamsSubscriptionId
+  commentId: F:EventStore.Core.Services.SubscriptionsService.AllStreamsSubscriptionId
+  id: AllStreamsSubscriptionId
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: AllStreamsSubscriptionId
+  nameWithType: SubscriptionsService.AllStreamsSubscriptionId
+  fullName: EventStore.Core.Services.SubscriptionsService.AllStreamsSubscriptionId
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AllStreamsSubscriptionId
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public const string AllStreamsSubscriptionId = null
+    return:
+      type: System.String
+    content.vb: Public Const AllStreamsSubscriptionId As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.Core.Services.SubscriptionsService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)'
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: SubscriptionsService(IPublisher, IQueuedHandler, IReadIndex)
+  nameWithType: SubscriptionsService.SubscriptionsService(IPublisher, IQueuedHandler, IReadIndex)
+  fullName: EventStore.Core.Services.SubscriptionsService.SubscriptionsService(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IQueuedHandler, EventStore.Core.Services.Storage.ReaderIndex.IReadIndex)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public SubscriptionsService(IPublisher bus, IQueuedHandler queuedHandler, IReadIndex readIndex)
+    parameters:
+    - id: bus
+      type: EventStore.Core.Bus.IPublisher
+    - id: queuedHandler
+      type: EventStore.Core.Bus.IQueuedHandler
+    - id: readIndex
+      type: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+    content.vb: Public Sub New(bus As IPublisher, queuedHandler As IQueuedHandler, readIndex As IReadIndex)
+  overload: EventStore.Core.Services.SubscriptionsService.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  id: Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.SystemStart)
+  nameWithType: SubscriptionsService.Handle(SystemMessage.SystemStart)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 61
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(SystemMessage.SystemStart message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.SystemStart
+    content.vb: Public Sub Handle(message As SystemMessage.SystemStart)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: SubscriptionsService.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 67
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShuttingDown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShuttingDown)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  id: Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(TcpMessage.ConnectionClosed)
+  nameWithType: SubscriptionsService.Handle(TcpMessage.ConnectionClosed)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 77
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(TcpMessage.ConnectionClosed message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    content.vb: Public Sub Handle(message As TcpMessage.ConnectionClosed)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  id: Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.SubscribeToStream)
+  nameWithType: SubscriptionsService.Handle(ClientMessage.SubscribeToStream)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 106
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ClientMessage.SubscribeToStream msg)
+    parameters:
+    - id: msg
+      type: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+    content.vb: Public Sub Handle(msg As ClientMessage.SubscribeToStream)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.SubscribeToStream}.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  id: Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.UnsubscribeFromStream)
+  nameWithType: SubscriptionsService.Handle(ClientMessage.UnsubscribeFromStream)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 128
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(ClientMessage.UnsubscribeFromStream message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    content.vb: Public Sub Handle(message As ClientMessage.UnsubscribeFromStream)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  id: Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SubscriptionMessage.PollStream)
+  nameWithType: SubscriptionsService.Handle(SubscriptionMessage.PollStream)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 179
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(SubscriptionMessage.PollStream message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SubscriptionMessage.PollStream
+    content.vb: Public Sub Handle(message As SubscriptionMessage.PollStream)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PollStream}.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  id: Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SubscriptionMessage.CheckPollTimeout)
+  nameWithType: SubscriptionsService.Handle(SubscriptionMessage.CheckPollTimeout)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 206
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(SubscriptionMessage.CheckPollTimeout message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+    content.vb: Public Sub Handle(message As SubscriptionMessage.CheckPollTimeout)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout}.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  commentId: M:EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  id: Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  parent: EventStore.Core.Services.SubscriptionsService
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.EventCommitted)
+  nameWithType: SubscriptionsService.Handle(StorageMessage.EventCommitted)
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/SubscriptionsService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/SubscriptionsService.cs
+    startLine: 260
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services
+  syntax:
+    content: public void Handle(StorageMessage.EventCommitted message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.EventCommitted
+    content.vb: Public Sub Handle(message As StorageMessage.EventCommitted)
+  overload: EventStore.Core.Services.SubscriptionsService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services
+  commentId: N:EventStore.Core.Services
+  isExternal: false
+  name: EventStore.Core.Services
+  nameWithType: EventStore.Core.Services
+  fullName: EventStore.Core.Services
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.SystemStart>
+  nameWithType: IHandle<SystemMessage.SystemStart>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemStart>
+  nameWithType.vb: IHandle(Of SystemMessage.SystemStart)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemStart)
+  name.vb: IHandle(Of SystemMessage.SystemStart)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShuttingDown>
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  name.vb: IHandle(Of SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<TcpMessage.ConnectionClosed>
+  nameWithType: IHandle<TcpMessage.ConnectionClosed>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.TcpMessage.ConnectionClosed>
+  nameWithType.vb: IHandle(Of TcpMessage.ConnectionClosed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  name.vb: IHandle(Of TcpMessage.ConnectionClosed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.SubscribeToStream}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.SubscribeToStream}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.SubscribeToStream>
+  nameWithType: IHandle<ClientMessage.SubscribeToStream>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.SubscribeToStream>
+  nameWithType.vb: IHandle(Of ClientMessage.SubscribeToStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  name.vb: IHandle(Of ClientMessage.SubscribeToStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+    name: ClientMessage.SubscribeToStream
+    nameWithType: ClientMessage.SubscribeToStream
+    fullName: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+    name: ClientMessage.SubscribeToStream
+    nameWithType: ClientMessage.SubscribeToStream
+    fullName: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.UnsubscribeFromStream>
+  nameWithType: IHandle<ClientMessage.UnsubscribeFromStream>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream>
+  nameWithType.vb: IHandle(Of ClientMessage.UnsubscribeFromStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  name.vb: IHandle(Of ClientMessage.UnsubscribeFromStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PollStream}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PollStream}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SubscriptionMessage.PollStream>
+  nameWithType: IHandle<SubscriptionMessage.PollStream>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.PollStream>
+  nameWithType.vb: IHandle(Of SubscriptionMessage.PollStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  name.vb: IHandle(Of SubscriptionMessage.PollStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PollStream
+    name: SubscriptionMessage.PollStream
+    nameWithType: SubscriptionMessage.PollStream
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PollStream
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PollStream
+    name: SubscriptionMessage.PollStream
+    nameWithType: SubscriptionMessage.PollStream
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PollStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SubscriptionMessage.CheckPollTimeout>
+  nameWithType: IHandle<SubscriptionMessage.CheckPollTimeout>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout>
+  nameWithType.vb: IHandle(Of SubscriptionMessage.CheckPollTimeout)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  name.vb: IHandle(Of SubscriptionMessage.CheckPollTimeout)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+    name: SubscriptionMessage.CheckPollTimeout
+    nameWithType: SubscriptionMessage.CheckPollTimeout
+    fullName: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+    name: SubscriptionMessage.CheckPollTimeout
+    nameWithType: SubscriptionMessage.CheckPollTimeout
+    fullName: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.EventCommitted>
+  nameWithType: IHandle<StorageMessage.EventCommitted>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.EventCommitted>
+  nameWithType.vb: IHandle(Of StorageMessage.EventCommitted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.EventCommitted)
+  name.vb: IHandle(Of StorageMessage.EventCommitted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.SubscriptionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<SubscriptionsService>()
+  nameWithType: ProtobufExtensions.Serialize<SubscriptionsService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.SubscriptionsService>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of SubscriptionsService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.SubscriptionsService)()
+  name.vb: Serialize(Of SubscriptionsService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<SubscriptionsService>
+    nameWithType: ProtobufExtensions.Serialize<SubscriptionsService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.SubscriptionsService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of SubscriptionsService)
+    nameWithType: ProtobufExtensions.Serialize(Of SubscriptionsService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.SubscriptionsService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.SubscriptionsService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<SubscriptionsService>()
+  nameWithType: ProtobufExtensions.SerializeToArray<SubscriptionsService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.SubscriptionsService>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of SubscriptionsService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.SubscriptionsService)()
+  name.vb: SerializeToArray(Of SubscriptionsService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<SubscriptionsService>
+    nameWithType: ProtobufExtensions.SerializeToArray<SubscriptionsService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.SubscriptionsService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of SubscriptionsService)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of SubscriptionsService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.SubscriptionsService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Services.SubscriptionsService.#ctor*
+  commentId: Overload:EventStore.Core.Services.SubscriptionsService.#ctor
+  isExternal: false
+  name: SubscriptionsService
+  nameWithType: SubscriptionsService.SubscriptionsService
+  fullName: EventStore.Core.Services.SubscriptionsService.SubscriptionsService
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Bus.IQueuedHandler
+  commentId: T:EventStore.Core.Bus.IQueuedHandler
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IQueuedHandler
+  nameWithType: IQueuedHandler
+  fullName: EventStore.Core.Bus.IQueuedHandler
+- uid: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+  parent: EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: IReadIndex
+  nameWithType: IReadIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+- uid: EventStore.Core.Services.Storage.ReaderIndex
+  commentId: N:EventStore.Core.Services.Storage.ReaderIndex
+  isExternal: false
+  name: EventStore.Core.Services.Storage.ReaderIndex
+  nameWithType: EventStore.Core.Services.Storage.ReaderIndex
+  fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: EventStore.Core.Services.SubscriptionsService.Handle*
+  commentId: Overload:EventStore.Core.Services.SubscriptionsService.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: SubscriptionsService.Handle
+  fullName: EventStore.Core.Services.SubscriptionsService.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.SystemStart)
+  nameWithType: IHandle<SystemMessage.SystemStart>.Handle(SystemMessage.SystemStart)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemStart>.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  nameWithType.vb: IHandle(Of SystemMessage.SystemStart).Handle(SystemMessage.SystemStart)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemStart).Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.SystemStart>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemStart>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.SystemStart).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.SystemStart).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.SystemStart
+    name: SystemMessage.SystemStart
+    nameWithType: SystemMessage.SystemStart
+    fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.SystemStart
+  commentId: T:EventStore.Core.Messages.SystemMessage.SystemStart
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.SystemStart
+  nameWithType: SystemMessage.SystemStart
+  fullName: EventStore.Core.Messages.SystemMessage.SystemStart
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShuttingDown)
+  nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle(SystemMessage.BecomeShuttingDown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShuttingDown).Handle(SystemMessage.BecomeShuttingDown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShuttingDown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShuttingDown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShuttingDown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShuttingDown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+    name: SystemMessage.BecomeShuttingDown
+    nameWithType: SystemMessage.BecomeShuttingDown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShuttingDown
+  nameWithType: SystemMessage.BecomeShuttingDown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.ConnectionClosed}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(TcpMessage.ConnectionClosed)
+  nameWithType: IHandle<TcpMessage.ConnectionClosed>.Handle(TcpMessage.ConnectionClosed)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.TcpMessage.ConnectionClosed>.Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  nameWithType.vb: IHandle(Of TcpMessage.ConnectionClosed).Handle(TcpMessage.ConnectionClosed)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.TcpMessage.ConnectionClosed).Handle(EventStore.Core.Messages.TcpMessage.ConnectionClosed)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<TcpMessage.ConnectionClosed>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.TcpMessage.ConnectionClosed>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of TcpMessage.ConnectionClosed).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.TcpMessage.ConnectionClosed).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+    name: TcpMessage.ConnectionClosed
+    nameWithType: TcpMessage.ConnectionClosed
+    fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  commentId: T:EventStore.Core.Messages.TcpMessage.ConnectionClosed
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: TcpMessage.ConnectionClosed
+  nameWithType: TcpMessage.ConnectionClosed
+  fullName: EventStore.Core.Messages.TcpMessage.ConnectionClosed
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.SubscribeToStream}.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.SubscribeToStream}.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.SubscribeToStream}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.SubscribeToStream)
+  nameWithType: IHandle<ClientMessage.SubscribeToStream>.Handle(ClientMessage.SubscribeToStream)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.SubscribeToStream>.Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  nameWithType.vb: IHandle(Of ClientMessage.SubscribeToStream).Handle(ClientMessage.SubscribeToStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.SubscribeToStream).Handle(EventStore.Core.Messages.ClientMessage.SubscribeToStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.SubscribeToStream>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.SubscribeToStream>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+    name: ClientMessage.SubscribeToStream
+    nameWithType: ClientMessage.SubscribeToStream
+    fullName: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.SubscribeToStream).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.SubscribeToStream).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+    name: ClientMessage.SubscribeToStream
+    nameWithType: ClientMessage.SubscribeToStream
+    fullName: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+  commentId: T:EventStore.Core.Messages.ClientMessage.SubscribeToStream
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.SubscribeToStream
+  nameWithType: ClientMessage.SubscribeToStream
+  fullName: EventStore.Core.Messages.ClientMessage.SubscribeToStream
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.UnsubscribeFromStream)
+  nameWithType: IHandle<ClientMessage.UnsubscribeFromStream>.Handle(ClientMessage.UnsubscribeFromStream)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream>.Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  nameWithType.vb: IHandle(Of ClientMessage.UnsubscribeFromStream).Handle(ClientMessage.UnsubscribeFromStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream).Handle(EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.UnsubscribeFromStream>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.UnsubscribeFromStream).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+    name: ClientMessage.UnsubscribeFromStream
+    nameWithType: ClientMessage.UnsubscribeFromStream
+    fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  commentId: T:EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: ClientMessage.UnsubscribeFromStream
+  nameWithType: ClientMessage.UnsubscribeFromStream
+  fullName: EventStore.Core.Messages.ClientMessage.UnsubscribeFromStream
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PollStream}.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PollStream}.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.PollStream}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SubscriptionMessage.PollStream)
+  nameWithType: IHandle<SubscriptionMessage.PollStream>.Handle(SubscriptionMessage.PollStream)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.PollStream>.Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  nameWithType.vb: IHandle(Of SubscriptionMessage.PollStream).Handle(SubscriptionMessage.PollStream)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.PollStream).Handle(EventStore.Core.Messages.SubscriptionMessage.PollStream)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SubscriptionMessage.PollStream>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.PollStream>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PollStream
+    name: SubscriptionMessage.PollStream
+    nameWithType: SubscriptionMessage.PollStream
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PollStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SubscriptionMessage.PollStream).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.PollStream).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SubscriptionMessage.PollStream
+    name: SubscriptionMessage.PollStream
+    nameWithType: SubscriptionMessage.PollStream
+    fullName: EventStore.Core.Messages.SubscriptionMessage.PollStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SubscriptionMessage.PollStream
+  commentId: T:EventStore.Core.Messages.SubscriptionMessage.PollStream
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SubscriptionMessage.PollStream
+  nameWithType: SubscriptionMessage.PollStream
+  fullName: EventStore.Core.Messages.SubscriptionMessage.PollStream
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout}.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout}.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SubscriptionMessage.CheckPollTimeout)
+  nameWithType: IHandle<SubscriptionMessage.CheckPollTimeout>.Handle(SubscriptionMessage.CheckPollTimeout)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout>.Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  nameWithType.vb: IHandle(Of SubscriptionMessage.CheckPollTimeout).Handle(SubscriptionMessage.CheckPollTimeout)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout).Handle(EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SubscriptionMessage.CheckPollTimeout>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+    name: SubscriptionMessage.CheckPollTimeout
+    nameWithType: SubscriptionMessage.CheckPollTimeout
+    fullName: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SubscriptionMessage.CheckPollTimeout).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+    name: SubscriptionMessage.CheckPollTimeout
+    nameWithType: SubscriptionMessage.CheckPollTimeout
+    fullName: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+  commentId: T:EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SubscriptionMessage.CheckPollTimeout
+  nameWithType: SubscriptionMessage.CheckPollTimeout
+  fullName: EventStore.Core.Messages.SubscriptionMessage.CheckPollTimeout
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.EventCommitted}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.EventCommitted)
+  nameWithType: IHandle<StorageMessage.EventCommitted>.Handle(StorageMessage.EventCommitted)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.EventCommitted>.Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  nameWithType.vb: IHandle(Of StorageMessage.EventCommitted).Handle(StorageMessage.EventCommitted)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.EventCommitted).Handle(EventStore.Core.Messages.StorageMessage.EventCommitted)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.EventCommitted>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.EventCommitted>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.EventCommitted).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.EventCommitted).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+    name: StorageMessage.EventCommitted
+    nameWithType: StorageMessage.EventCommitted
+    fullName: EventStore.Core.Messages.StorageMessage.EventCommitted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.EventCommitted
+  commentId: T:EventStore.Core.Messages.StorageMessage.EventCommitted
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: StorageMessage.EventCommitted
+  nameWithType: StorageMessage.EventCommitted
+  fullName: EventStore.Core.Messages.StorageMessage.EventCommitted

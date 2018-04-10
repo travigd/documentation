@@ -1,0 +1,4240 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  id: IODispatcher
+  parent: EventStore.Core.Helpers
+  children:
+  - EventStore.Core.Helpers.IODispatcher.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Messaging.IEnvelope)
+  - EventStore.Core.Helpers.IODispatcher.Awaker
+  - EventStore.Core.Helpers.IODispatcher.BackwardReader
+  - EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents(System.String,System.Int64,Lazy{EventStore.Core.Data.StreamMetadata},EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Core.Helpers.IODispatcher.Delay(TimeSpan,Action)
+  - EventStore.Core.Helpers.IODispatcher.DeleteStream(System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  - EventStore.Core.Helpers.IODispatcher.ForwardReader
+  - EventStore.Core.Helpers.IODispatcher.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  - EventStore.Core.Helpers.IODispatcher.QueueWriteEvents(Guid,System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Core.Helpers.IODispatcher.ReadBackward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},System.Nullable{Guid})
+  - EventStore.Core.Helpers.IODispatcher.ReadForward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted},System.Nullable{Guid})
+  - EventStore.Core.Helpers.IODispatcher.StreamDeleter
+  - EventStore.Core.Helpers.IODispatcher.SubscribeAwake(System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  - EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake(Guid)
+  - EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl(System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Core.Helpers.IODispatcher.WriteEvent(System.String,System.Int64,EventStore.Core.Data.Event,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Core.Helpers.IODispatcher.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Core.Helpers.IODispatcher.Writer
+  langs:
+  - csharp
+  - vb
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IODispatcher
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: 'public sealed class IODispatcher : object, IHandle<IODispatcherDelayedMessage>'
+    content.vb: >-
+      Public NotInheritable Class IODispatcher
+          Inherits Object
+          Implements IHandle(Of IODispatcherDelayedMessage)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Helpers.IODispatcherDelayedMessage}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Helpers.IODispatcher.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: EventStore.Core.Helpers.IODispatcher.ForwardReader
+  commentId: F:EventStore.Core.Helpers.IODispatcher.ForwardReader
+  id: ForwardReader
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: ForwardReader
+  nameWithType: IODispatcher.ForwardReader
+  fullName: EventStore.Core.Helpers.IODispatcher.ForwardReader
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ForwardReader
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public readonly RequestResponseDispatcher<ClientMessage.ReadStreamEventsForward, ClientMessage.ReadStreamEventsForwardCompleted> ForwardReader
+    return:
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
+    content.vb: Public ReadOnly ForwardReader As RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsForward, ClientMessage.ReadStreamEventsForwardCompleted)
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Helpers.IODispatcher.BackwardReader
+  commentId: F:EventStore.Core.Helpers.IODispatcher.BackwardReader
+  id: BackwardReader
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: BackwardReader
+  nameWithType: IODispatcher.BackwardReader
+  fullName: EventStore.Core.Helpers.IODispatcher.BackwardReader
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: BackwardReader
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public readonly RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted> BackwardReader
+    return:
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+    content.vb: Public ReadOnly BackwardReader As RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted)
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Helpers.IODispatcher.Writer
+  commentId: F:EventStore.Core.Helpers.IODispatcher.Writer
+  id: Writer
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: Writer
+  nameWithType: IODispatcher.Writer
+  fullName: EventStore.Core.Helpers.IODispatcher.Writer
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Writer
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public readonly RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted> Writer
+    return:
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+    content.vb: Public ReadOnly Writer As RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted)
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Helpers.IODispatcher.StreamDeleter
+  commentId: F:EventStore.Core.Helpers.IODispatcher.StreamDeleter
+  id: StreamDeleter
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: StreamDeleter
+  nameWithType: IODispatcher.StreamDeleter
+  fullName: EventStore.Core.Helpers.IODispatcher.StreamDeleter
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StreamDeleter
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public readonly RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted> StreamDeleter
+    return:
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+    content.vb: Public ReadOnly StreamDeleter As RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted)
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Helpers.IODispatcher.Awaker
+  commentId: F:EventStore.Core.Helpers.IODispatcher.Awaker
+  id: Awaker
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: Awaker
+  nameWithType: IODispatcher.Awaker
+  fullName: EventStore.Core.Helpers.IODispatcher.Awaker
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Awaker
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 34
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public readonly RequestResponseDispatcher<AwakeServiceMessage.SubscribeAwake, IODispatcherDelayedMessage> Awaker
+    return:
+      type: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake,EventStore.Core.Helpers.IODispatcherDelayedMessage}
+    content.vb: Public ReadOnly Awaker As RequestResponseDispatcher(Of AwakeServiceMessage.SubscribeAwake, IODispatcherDelayedMessage)
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Helpers.IODispatcher.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Messaging.IEnvelope)
+  commentId: M:EventStore.Core.Helpers.IODispatcher.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Messaging.IEnvelope)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Messaging.IEnvelope)'
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: IODispatcher(IPublisher, IEnvelope)
+  nameWithType: IODispatcher.IODispatcher(IPublisher, IEnvelope)
+  fullName: EventStore.Core.Helpers.IODispatcher.IODispatcher(EventStore.Core.Bus.IPublisher, EventStore.Core.Messaging.IEnvelope)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 36
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public IODispatcher(IPublisher publisher, IEnvelope envelope)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: envelope
+      type: EventStore.Core.Messaging.IEnvelope
+    content.vb: Public Sub New(publisher As IPublisher, envelope As IEnvelope)
+  overload: EventStore.Core.Helpers.IODispatcher.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Helpers.IODispatcher.ReadBackward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},System.Nullable{Guid})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.ReadBackward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},System.Nullable{Guid})
+  id: ReadBackward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted},System.Nullable{Guid})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: ReadBackward(String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsBackwardCompleted>, Nullable<Guid>)
+  nameWithType: IODispatcher.ReadBackward(String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsBackwardCompleted>, Nullable<Guid>)
+  fullName: EventStore.Core.Helpers.IODispatcher.ReadBackward(System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted>, System.Nullable<Guid>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadBackward
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 77
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public Guid ReadBackward(string streamId, long fromEventNumber, int maxCount, bool resolveLinks, IPrincipal principal, Action<ClientMessage.ReadStreamEventsBackwardCompleted> action, Guid? corrId = null)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: fromEventNumber
+      type: System.Int64
+    - id: maxCount
+      type: System.Int32
+    - id: resolveLinks
+      type: System.Boolean
+    - id: principal
+      type: IPrincipal
+    - id: action
+      type: Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+    - id: corrId
+      type: System.Nullable{Guid}
+    return:
+      type: Guid
+    content.vb: Public Function ReadBackward(streamId As String, fromEventNumber As Long, maxCount As Integer, resolveLinks As Boolean, principal As IPrincipal, action As Action(Of ClientMessage.ReadStreamEventsBackwardCompleted), corrId As Guid? = Nothing) As Guid
+  overload: EventStore.Core.Helpers.IODispatcher.ReadBackward*
+  nameWithType.vb: IODispatcher.ReadBackward(String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsBackwardCompleted), Nullable(Of Guid))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.ReadBackward(System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted), System.Nullable(Of Guid))
+  name.vb: ReadBackward(String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsBackwardCompleted), Nullable(Of Guid))
+- uid: EventStore.Core.Helpers.IODispatcher.ReadForward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted},System.Nullable{Guid})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.ReadForward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted},System.Nullable{Guid})
+  id: ReadForward(System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted},System.Nullable{Guid})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: ReadForward(String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsForwardCompleted>, Nullable<Guid>)
+  nameWithType: IODispatcher.ReadForward(String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsForwardCompleted>, Nullable<Guid>)
+  fullName: EventStore.Core.Helpers.IODispatcher.ReadForward(System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted>, System.Nullable<Guid>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadForward
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 104
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public Guid ReadForward(string streamId, long fromEventNumber, int maxCount, bool resolveLinks, IPrincipal principal, Action<ClientMessage.ReadStreamEventsForwardCompleted> action, Guid? corrId = null)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: fromEventNumber
+      type: System.Int64
+    - id: maxCount
+      type: System.Int32
+    - id: resolveLinks
+      type: System.Boolean
+    - id: principal
+      type: IPrincipal
+    - id: action
+      type: Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
+    - id: corrId
+      type: System.Nullable{Guid}
+    return:
+      type: Guid
+    content.vb: Public Function ReadForward(streamId As String, fromEventNumber As Long, maxCount As Integer, resolveLinks As Boolean, principal As IPrincipal, action As Action(Of ClientMessage.ReadStreamEventsForwardCompleted), corrId As Guid? = Nothing) As Guid
+  overload: EventStore.Core.Helpers.IODispatcher.ReadForward*
+  nameWithType.vb: IODispatcher.ReadForward(String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsForwardCompleted), Nullable(Of Guid))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.ReadForward(System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted), System.Nullable(Of Guid))
+  name.vb: ReadForward(String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsForwardCompleted), Nullable(Of Guid))
+- uid: EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents(System.String,System.Int64,Lazy{EventStore.Core.Data.StreamMetadata},EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents(System.String,System.Int64,Lazy{EventStore.Core.Data.StreamMetadata},EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  id: ConfigureStreamAndWriteEvents(System.String,System.Int64,Lazy{EventStore.Core.Data.StreamMetadata},EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: ConfigureStreamAndWriteEvents(String, Int64, Lazy<StreamMetadata>, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcher.ConfigureStreamAndWriteEvents(String, Int64, Lazy<StreamMetadata>, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents(System.String, System.Int64, Lazy<EventStore.Core.Data.StreamMetadata>, EventStore.Core.Data.Event[], IPrincipal, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ConfigureStreamAndWriteEvents
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 131
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public void ConfigureStreamAndWriteEvents(string streamId, long expectedVersion, Lazy<StreamMetadata> streamMetadata, Event[] events, IPrincipal principal, Action<ClientMessage.WriteEventsCompleted> action)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: streamMetadata
+      type: Lazy{EventStore.Core.Data.StreamMetadata}
+    - id: events
+      type: EventStore.Core.Data.Event[]
+    - id: principal
+      type: IPrincipal
+    - id: action
+      type: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+    content.vb: Public Sub ConfigureStreamAndWriteEvents(streamId As String, expectedVersion As Long, streamMetadata As Lazy(Of StreamMetadata), events As  Event (), principal As IPrincipal, action As Action(Of ClientMessage.WriteEventsCompleted))
+  overload: EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents*
+  nameWithType.vb: IODispatcher.ConfigureStreamAndWriteEvents(String, Int64, Lazy(Of StreamMetadata), Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents(System.String, System.Int64, Lazy(Of EventStore.Core.Data.StreamMetadata), EventStore.Core.Data.Event(), IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: ConfigureStreamAndWriteEvents(String, Int64, Lazy(Of StreamMetadata), Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+- uid: EventStore.Core.Helpers.IODispatcher.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  id: WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: WriteEvents(String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcher.WriteEvents(String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcher.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event[], IPrincipal, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteEvents
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 185
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public Guid WriteEvents(string streamId, long expectedVersion, Event[] events, IPrincipal principal, Action<ClientMessage.WriteEventsCompleted> action)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: events
+      type: EventStore.Core.Data.Event[]
+    - id: principal
+      type: IPrincipal
+    - id: action
+      type: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+    return:
+      type: Guid
+    content.vb: Public Function WriteEvents(streamId As String, expectedVersion As Long, events As  Event (), principal As IPrincipal, action As Action(Of ClientMessage.WriteEventsCompleted)) As Guid
+  overload: EventStore.Core.Helpers.IODispatcher.WriteEvents*
+  nameWithType.vb: IODispatcher.WriteEvents(String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event(), IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: WriteEvents(String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+- uid: EventStore.Core.Helpers.IODispatcher.QueueWriteEvents(Guid,System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.QueueWriteEvents(Guid,System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  id: QueueWriteEvents(Guid,System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: QueueWriteEvents(Guid, String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcher.QueueWriteEvents(Guid, String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcher.QueueWriteEvents(Guid, System.String, System.Int64, EventStore.Core.Data.Event[], IPrincipal, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: QueueWriteEvents
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 303
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public Guid QueueWriteEvents(Guid key, string streamId, long expectedVersion, Event[] events, IPrincipal principal, Action<ClientMessage.WriteEventsCompleted> action)
+    parameters:
+    - id: key
+      type: Guid
+    - id: streamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: events
+      type: EventStore.Core.Data.Event[]
+    - id: principal
+      type: IPrincipal
+    - id: action
+      type: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+    return:
+      type: Guid
+    content.vb: Public Function QueueWriteEvents(key As Guid, streamId As String, expectedVersion As Long, events As  Event (), principal As IPrincipal, action As Action(Of ClientMessage.WriteEventsCompleted)) As Guid
+  overload: EventStore.Core.Helpers.IODispatcher.QueueWriteEvents*
+  nameWithType.vb: IODispatcher.QueueWriteEvents(Guid, String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.QueueWriteEvents(Guid, System.String, System.Int64, EventStore.Core.Data.Event(), IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: QueueWriteEvents(Guid, String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+- uid: EventStore.Core.Helpers.IODispatcher.WriteEvent(System.String,System.Int64,EventStore.Core.Data.Event,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.WriteEvent(System.String,System.Int64,EventStore.Core.Data.Event,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  id: WriteEvent(System.String,System.Int64,EventStore.Core.Data.Event,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: WriteEvent(String, Int64, Event, IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcher.WriteEvent(String, Int64, Event, IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcher.WriteEvent(System.String, System.Int64, EventStore.Core.Data.Event, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteEvent
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 350
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public Guid WriteEvent(string streamId, long expectedVersion, Event event, IPrincipal principal, Action<ClientMessage.WriteEventsCompleted> action)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: event
+      type: EventStore.Core.Data.Event
+    - id: principal
+      type: IPrincipal
+    - id: action
+      type: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+    return:
+      type: Guid
+    content.vb: Public Function WriteEvent(streamId As String, expectedVersion As Long, event As  Event, principal As IPrincipal, action As Action(Of ClientMessage.WriteEventsCompleted)) As Guid
+  overload: EventStore.Core.Helpers.IODispatcher.WriteEvent*
+  nameWithType.vb: IODispatcher.WriteEvent(String, Int64, Event, IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.WriteEvent(System.String, System.Int64, EventStore.Core.Data.Event, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: WriteEvent(String, Int64, Event, IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
+- uid: EventStore.Core.Helpers.IODispatcher.DeleteStream(System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.DeleteStream(System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  id: DeleteStream(System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: DeleteStream(String, Int64, Boolean, IPrincipal, Action<ClientMessage.DeleteStreamCompleted>)
+  nameWithType: IODispatcher.DeleteStream(String, Int64, Boolean, IPrincipal, Action<ClientMessage.DeleteStreamCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcher.DeleteStream(System.String, System.Int64, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: DeleteStream
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 372
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public Guid DeleteStream(string streamId, long expectedVersion, bool hardDelete, IPrincipal principal, Action<ClientMessage.DeleteStreamCompleted> action)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: hardDelete
+      type: System.Boolean
+    - id: principal
+      type: IPrincipal
+    - id: action
+      type: Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+    return:
+      type: Guid
+    content.vb: Public Function DeleteStream(streamId As String, expectedVersion As Long, hardDelete As Boolean, principal As IPrincipal, action As Action(Of ClientMessage.DeleteStreamCompleted)) As Guid
+  overload: EventStore.Core.Helpers.IODispatcher.DeleteStream*
+  nameWithType.vb: IODispatcher.DeleteStream(String, Int64, Boolean, IPrincipal, Action(Of ClientMessage.DeleteStreamCompleted))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.DeleteStream(System.String, System.Int64, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted))
+  name.vb: DeleteStream(String, Int64, Boolean, IPrincipal, Action(Of ClientMessage.DeleteStreamCompleted))
+- uid: EventStore.Core.Helpers.IODispatcher.SubscribeAwake(System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.SubscribeAwake(System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  id: SubscribeAwake(System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: SubscribeAwake(String, TFPos, Action<IODispatcherDelayedMessage>, Nullable<Guid>)
+  nameWithType: IODispatcher.SubscribeAwake(String, TFPos, Action<IODispatcherDelayedMessage>, Nullable<Guid>)
+  fullName: EventStore.Core.Helpers.IODispatcher.SubscribeAwake(System.String, EventStore.Core.Data.TFPos, Action<EventStore.Core.Helpers.IODispatcherDelayedMessage>, System.Nullable<Guid>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscribeAwake
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 393
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public void SubscribeAwake(string streamId, TFPos from, Action<IODispatcherDelayedMessage> action, Guid? correlationId = null)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: from
+      type: EventStore.Core.Data.TFPos
+    - id: action
+      type: Action{EventStore.Core.Helpers.IODispatcherDelayedMessage}
+    - id: correlationId
+      type: System.Nullable{Guid}
+    content.vb: Public Sub SubscribeAwake(streamId As String, from As TFPos, action As Action(Of IODispatcherDelayedMessage), correlationId As Guid? = Nothing)
+  overload: EventStore.Core.Helpers.IODispatcher.SubscribeAwake*
+  nameWithType.vb: IODispatcher.SubscribeAwake(String, TFPos, Action(Of IODispatcherDelayedMessage), Nullable(Of Guid))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.SubscribeAwake(System.String, EventStore.Core.Data.TFPos, Action(Of EventStore.Core.Helpers.IODispatcherDelayedMessage), System.Nullable(Of Guid))
+  name.vb: SubscribeAwake(String, TFPos, Action(Of IODispatcherDelayedMessage), Nullable(Of Guid))
+- uid: EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake(Guid)
+  commentId: M:EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake(Guid)
+  id: UnsubscribeAwake(Guid)
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: UnsubscribeAwake(Guid)
+  nameWithType: IODispatcher.UnsubscribeAwake(Guid)
+  fullName: EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake(Guid)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: UnsubscribeAwake
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 410
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public void UnsubscribeAwake(Guid correlationId)
+    parameters:
+    - id: correlationId
+      type: Guid
+    content.vb: Public Sub UnsubscribeAwake(correlationId As Guid)
+  overload: EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl(System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl(System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  id: UpdateStreamAcl(System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: UpdateStreamAcl(String, Int64, IPrincipal, StreamMetadata, Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcher.UpdateStreamAcl(String, Int64, IPrincipal, StreamMetadata, Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl(System.String, System.Int64, IPrincipal, EventStore.Core.Data.StreamMetadata, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: UpdateStreamAcl
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 415
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public void UpdateStreamAcl(string streamId, long expectedVersion, IPrincipal principal, StreamMetadata metadata, Action<ClientMessage.WriteEventsCompleted> completed)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: principal
+      type: IPrincipal
+    - id: metadata
+      type: EventStore.Core.Data.StreamMetadata
+    - id: completed
+      type: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+    content.vb: Public Sub UpdateStreamAcl(streamId As String, expectedVersion As Long, principal As IPrincipal, metadata As StreamMetadata, completed As Action(Of ClientMessage.WriteEventsCompleted))
+  overload: EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl*
+  nameWithType.vb: IODispatcher.UpdateStreamAcl(String, Int64, IPrincipal, StreamMetadata, Action(Of ClientMessage.WriteEventsCompleted))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl(System.String, System.Int64, IPrincipal, EventStore.Core.Data.StreamMetadata, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: UpdateStreamAcl(String, Int64, IPrincipal, StreamMetadata, Action(Of ClientMessage.WriteEventsCompleted))
+- uid: EventStore.Core.Helpers.IODispatcher.Delay(TimeSpan,Action)
+  commentId: M:EventStore.Core.Helpers.IODispatcher.Delay(TimeSpan,Action)
+  id: Delay(TimeSpan,Action)
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: Delay(TimeSpan, Action)
+  nameWithType: IODispatcher.Delay(TimeSpan, Action)
+  fullName: EventStore.Core.Helpers.IODispatcher.Delay(TimeSpan, Action)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Delay
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 430
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public void Delay(TimeSpan delay, Action action)
+    parameters:
+    - id: delay
+      type: TimeSpan
+    - id: action
+      type: Action
+    content.vb: Public Sub Delay(delay As TimeSpan, action As Action)
+  overload: EventStore.Core.Helpers.IODispatcher.Delay*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Helpers.IODispatcher.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  commentId: M:EventStore.Core.Helpers.IODispatcher.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  id: Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  parent: EventStore.Core.Helpers.IODispatcher
+  langs:
+  - csharp
+  - vb
+  name: Handle(IODispatcherDelayedMessage)
+  nameWithType: IODispatcher.Handle(IODispatcherDelayedMessage)
+  fullName: EventStore.Core.Helpers.IODispatcher.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcher.cs
+    startLine: 439
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public void Handle(IODispatcherDelayedMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    content.vb: Public Sub Handle(message As IODispatcherDelayedMessage)
+  overload: EventStore.Core.Helpers.IODispatcher.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Helpers.IODispatcherDelayedMessage}.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  isExternal: false
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Helpers.IODispatcherDelayedMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Helpers.IODispatcherDelayedMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<IODispatcherDelayedMessage>
+  nameWithType: IHandle<IODispatcherDelayedMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Helpers.IODispatcherDelayedMessage>
+  nameWithType.vb: IHandle(Of IODispatcherDelayedMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  name.vb: IHandle(Of IODispatcherDelayedMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+  parent: EventStore.Core.Helpers.IODispatcherAsync
+  definition: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+  name: BeginReadForward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsForwardCompleted>)
+  nameWithType: IODispatcherAsync.BeginReadForward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsForwardCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginReadForward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsForwardCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted))
+  name.vb: BeginReadForward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsForwardCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+    name: BeginReadForward
+    nameWithType: IODispatcherAsync.BeginReadForward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+    name: BeginReadForward
+    nameWithType: IODispatcherAsync.BeginReadForward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+  parent: EventStore.Core.Helpers.IODispatcherAsync
+  definition: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+  name: BeginReadBackward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsBackwardCompleted>)
+  nameWithType: IODispatcherAsync.BeginReadBackward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsBackwardCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginReadBackward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsBackwardCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted))
+  name.vb: BeginReadBackward(IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsBackwardCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+    name: BeginReadBackward
+    nameWithType: IODispatcherAsync.BeginReadBackward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+    name: BeginReadBackward
+    nameWithType: IODispatcherAsync.BeginReadBackward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  parent: EventStore.Core.Helpers.IODispatcherAsync
+  definition: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  name: BeginWriteEvents(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event[], Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcherAsync.BeginWriteEvents(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event[], Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.Event[], Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginWriteEvents(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event(), Action(Of ClientMessage.WriteEventsCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.Event(), Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: BeginWriteEvents(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event(), Action(Of ClientMessage.WriteEventsCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginWriteEvents
+    nameWithType: IODispatcherAsync.BeginWriteEvents
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginWriteEvents
+    nameWithType: IODispatcherAsync.BeginWriteEvents
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  parent: EventStore.Core.Helpers.IODispatcherAsync
+  definition: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  name: BeginDeleteStream(IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action<ClientMessage.DeleteStreamCompleted>)
+  nameWithType: IODispatcherAsync.BeginDeleteStream(IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action<ClientMessage.DeleteStreamCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginDeleteStream(IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action(Of ClientMessage.DeleteStreamCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted))
+  name.vb: BeginDeleteStream(IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action(Of ClientMessage.DeleteStreamCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+    name: BeginDeleteStream
+    nameWithType: IODispatcherAsync.BeginDeleteStream
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+    name: BeginDeleteStream
+    nameWithType: IODispatcherAsync.BeginDeleteStream
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  parent: EventStore.Core.Helpers.IODispatcherAsync
+  definition: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  name: BeginSubscribeAwake(IODispatcherAsync.CancellationScope, String, TFPos, Action<IODispatcherDelayedMessage>, Nullable<Guid>)
+  nameWithType: IODispatcherAsync.BeginSubscribeAwake(IODispatcherAsync.CancellationScope, String, TFPos, Action<IODispatcherDelayedMessage>, Nullable<Guid>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, EventStore.Core.Data.TFPos, Action<EventStore.Core.Helpers.IODispatcherDelayedMessage>, System.Nullable<Guid>)
+  nameWithType.vb: IODispatcherAsync.BeginSubscribeAwake(IODispatcherAsync.CancellationScope, String, TFPos, Action(Of IODispatcherDelayedMessage), Nullable(Of Guid))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, EventStore.Core.Data.TFPos, Action(Of EventStore.Core.Helpers.IODispatcherDelayedMessage), System.Nullable(Of Guid))
+  name.vb: BeginSubscribeAwake(IODispatcherAsync.CancellationScope, String, TFPos, Action(Of IODispatcherDelayedMessage), Nullable(Of Guid))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+    name: BeginSubscribeAwake
+    nameWithType: IODispatcherAsync.BeginSubscribeAwake
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+    name: BeginSubscribeAwake
+    nameWithType: IODispatcherAsync.BeginSubscribeAwake
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  parent: EventStore.Core.Helpers.IODispatcherAsync
+  definition: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  name: BeginUpdateStreamAcl(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcherAsync.BeginUpdateStreamAcl(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.StreamMetadata, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginUpdateStreamAcl(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action(Of ClientMessage.WriteEventsCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.StreamMetadata, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: BeginUpdateStreamAcl(IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action(Of ClientMessage.WriteEventsCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginUpdateStreamAcl
+    nameWithType: IODispatcherAsync.BeginUpdateStreamAcl
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.StreamMetadata
+    name: StreamMetadata
+    nameWithType: StreamMetadata
+    fullName: EventStore.Core.Data.StreamMetadata
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginUpdateStreamAcl
+    nameWithType: IODispatcherAsync.BeginUpdateStreamAcl
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.StreamMetadata
+    name: StreamMetadata
+    nameWithType: StreamMetadata
+    fullName: EventStore.Core.Data.StreamMetadata
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+  parent: EventStore.Core.Helpers.IODispatcherAsync
+  definition: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+  name: BeginDelay(IODispatcherAsync.CancellationScope, TimeSpan, Action)
+  nameWithType: IODispatcherAsync.BeginDelay(IODispatcherAsync.CancellationScope, TimeSpan, Action)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, TimeSpan, Action)
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+    name: BeginDelay
+    nameWithType: IODispatcherAsync.BeginDelay
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+    name: BeginDelay
+    nameWithType: IODispatcherAsync.BeginDelay
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IODispatcher>()
+  nameWithType: ProtobufExtensions.Serialize<IODispatcher>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Helpers.IODispatcher>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IODispatcher)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Helpers.IODispatcher)()
+  name.vb: Serialize(Of IODispatcher)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IODispatcher>
+    nameWithType: ProtobufExtensions.Serialize<IODispatcher>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Helpers.IODispatcher>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IODispatcher)
+    nameWithType: ProtobufExtensions.Serialize(Of IODispatcher)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Helpers.IODispatcher)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IODispatcher>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IODispatcher>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Helpers.IODispatcher>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IODispatcher)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Helpers.IODispatcher)()
+  name.vb: SerializeToArray(Of IODispatcher)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IODispatcher>
+    nameWithType: ProtobufExtensions.SerializeToArray<IODispatcher>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Helpers.IODispatcher>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IODispatcher)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IODispatcher)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Helpers.IODispatcher)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+  isExternal: true
+  name: BeginReadForward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsForwardCompleted>)
+  nameWithType: IODispatcherAsync.BeginReadForward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsForwardCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginReadForward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsForwardCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted))
+  name.vb: BeginReadForward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsForwardCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+    name: BeginReadForward
+    nameWithType: IODispatcherAsync.BeginReadForward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted})
+    name: BeginReadForward
+    nameWithType: IODispatcherAsync.BeginReadForward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadForward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherAsync
+  commentId: T:EventStore.Core.Helpers.IODispatcherAsync
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcherAsync
+  nameWithType: IODispatcherAsync
+  fullName: EventStore.Core.Helpers.IODispatcherAsync
+- uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+  isExternal: true
+  name: BeginReadBackward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsBackwardCompleted>)
+  nameWithType: IODispatcherAsync.BeginReadBackward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action<ClientMessage.ReadStreamEventsBackwardCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginReadBackward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsBackwardCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Int32, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted))
+  name.vb: BeginReadBackward(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Int32, Boolean, IPrincipal, Action(Of ClientMessage.ReadStreamEventsBackwardCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+    name: BeginReadBackward
+    nameWithType: IODispatcherAsync.BeginReadBackward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Int32,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted})
+    name: BeginReadBackward
+    nameWithType: IODispatcherAsync.BeginReadBackward
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginReadBackward
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  isExternal: true
+  name: BeginWriteEvents(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event[], Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcherAsync.BeginWriteEvents(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event[], Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.Event[], Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginWriteEvents(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event(), Action(Of ClientMessage.WriteEventsCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.Event(), Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: BeginWriteEvents(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, Event(), Action(Of ClientMessage.WriteEventsCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginWriteEvents
+    nameWithType: IODispatcherAsync.BeginWriteEvents
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.Event[],Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginWriteEvents
+    nameWithType: IODispatcherAsync.BeginWriteEvents
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginWriteEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+  isExternal: true
+  name: BeginDeleteStream(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action<ClientMessage.DeleteStreamCompleted>)
+  nameWithType: IODispatcherAsync.BeginDeleteStream(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action<ClientMessage.DeleteStreamCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Boolean, IPrincipal, Action<EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginDeleteStream(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action(Of ClientMessage.DeleteStreamCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, System.Boolean, IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted))
+  name.vb: BeginDeleteStream(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, Boolean, IPrincipal, Action(Of ClientMessage.DeleteStreamCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+    name: BeginDeleteStream
+    nameWithType: IODispatcherAsync.BeginDeleteStream
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,System.Boolean,IPrincipal,Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted})
+    name: BeginDeleteStream
+    nameWithType: IODispatcherAsync.BeginDeleteStream
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDeleteStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+  isExternal: true
+  name: BeginSubscribeAwake(IODispatcher, IODispatcherAsync.CancellationScope, String, TFPos, Action<IODispatcherDelayedMessage>, Nullable<Guid>)
+  nameWithType: IODispatcherAsync.BeginSubscribeAwake(IODispatcher, IODispatcherAsync.CancellationScope, String, TFPos, Action<IODispatcherDelayedMessage>, Nullable<Guid>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, EventStore.Core.Data.TFPos, Action<EventStore.Core.Helpers.IODispatcherDelayedMessage>, System.Nullable<Guid>)
+  nameWithType.vb: IODispatcherAsync.BeginSubscribeAwake(IODispatcher, IODispatcherAsync.CancellationScope, String, TFPos, Action(Of IODispatcherDelayedMessage), Nullable(Of Guid))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, EventStore.Core.Data.TFPos, Action(Of EventStore.Core.Helpers.IODispatcherDelayedMessage), System.Nullable(Of Guid))
+  name.vb: BeginSubscribeAwake(IODispatcher, IODispatcherAsync.CancellationScope, String, TFPos, Action(Of IODispatcherDelayedMessage), Nullable(Of Guid))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+    name: BeginSubscribeAwake
+    nameWithType: IODispatcherAsync.BeginSubscribeAwake
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,EventStore.Core.Data.TFPos,Action{EventStore.Core.Helpers.IODispatcherDelayedMessage},System.Nullable{Guid})
+    name: BeginSubscribeAwake
+    nameWithType: IODispatcherAsync.BeginSubscribeAwake
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginSubscribeAwake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  isExternal: true
+  name: BeginUpdateStreamAcl(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action<ClientMessage.WriteEventsCompleted>)
+  nameWithType: IODispatcherAsync.BeginUpdateStreamAcl(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action<ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.StreamMetadata, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  nameWithType.vb: IODispatcherAsync.BeginUpdateStreamAcl(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action(Of ClientMessage.WriteEventsCompleted))
+  fullName.vb: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, System.String, System.Int64, IPrincipal, EventStore.Core.Data.StreamMetadata, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  name.vb: BeginUpdateStreamAcl(IODispatcher, IODispatcherAsync.CancellationScope, String, Int64, IPrincipal, StreamMetadata, Action(Of ClientMessage.WriteEventsCompleted))
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginUpdateStreamAcl
+    nameWithType: IODispatcherAsync.BeginUpdateStreamAcl
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.StreamMetadata
+    name: StreamMetadata
+    nameWithType: StreamMetadata
+    fullName: EventStore.Core.Data.StreamMetadata
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,System.String,System.Int64,IPrincipal,EventStore.Core.Data.StreamMetadata,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+    name: BeginUpdateStreamAcl
+    nameWithType: IODispatcherAsync.BeginUpdateStreamAcl
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginUpdateStreamAcl
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPrincipal
+    name: IPrincipal
+    nameWithType: IPrincipal
+    fullName: IPrincipal
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Data.StreamMetadata
+    name: StreamMetadata
+    nameWithType: StreamMetadata
+    fullName: EventStore.Core.Data.StreamMetadata
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+  commentId: M:EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+  isExternal: true
+  name: BeginDelay(IODispatcher, IODispatcherAsync.CancellationScope, TimeSpan, Action)
+  nameWithType: IODispatcherAsync.BeginDelay(IODispatcher, IODispatcherAsync.CancellationScope, TimeSpan, Action)
+  fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Helpers.IODispatcherAsync.CancellationScope, TimeSpan, Action)
+  spec.csharp:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+    name: BeginDelay
+    nameWithType: IODispatcherAsync.BeginDelay
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Helpers.IODispatcherAsync.CancellationScope,TimeSpan,Action)
+    name: BeginDelay
+    nameWithType: IODispatcherAsync.BeginDelay
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.BeginDelay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcher
+    name: IODispatcher
+    nameWithType: IODispatcher
+    fullName: EventStore.Core.Helpers.IODispatcher
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+    name: IODispatcherAsync.CancellationScope
+    nameWithType: IODispatcherAsync.CancellationScope
+    fullName: EventStore.Core.Helpers.IODispatcherAsync.CancellationScope
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<ClientMessage.ReadStreamEventsForward, ClientMessage.ReadStreamEventsForwardCompleted>
+  nameWithType: RequestResponseDispatcher<ClientMessage.ReadStreamEventsForward, ClientMessage.ReadStreamEventsForwardCompleted>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted>
+  nameWithType.vb: RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsForward, ClientMessage.ReadStreamEventsForwardCompleted)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+  name.vb: RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsForward, ClientMessage.ReadStreamEventsForwardCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward
+    name: ClientMessage.ReadStreamEventsForward
+    nameWithType: ClientMessage.ReadStreamEventsForward
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward
+    name: ClientMessage.ReadStreamEventsForward
+    nameWithType: ClientMessage.ReadStreamEventsForward
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher`2
+  isExternal: false
+  name: RequestResponseDispatcher<TRequest, TResponse>
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse)
+  name.vb: RequestResponseDispatcher(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward,EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted>
+  nameWithType: RequestResponseDispatcher<ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted>
+  nameWithType.vb: RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward, EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted)
+  name.vb: RequestResponseDispatcher(Of ClientMessage.ReadStreamEventsBackward, ClientMessage.ReadStreamEventsBackwardCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+    name: ClientMessage.ReadStreamEventsBackward
+    nameWithType: ClientMessage.ReadStreamEventsBackward
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+    name: ClientMessage.ReadStreamEventsBackward
+    nameWithType: ClientMessage.ReadStreamEventsBackward
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.WriteEvents,EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted>
+  nameWithType: RequestResponseDispatcher<ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.WriteEvents, EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>
+  nameWithType.vb: RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.WriteEvents, EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  name.vb: RequestResponseDispatcher(Of ClientMessage.WriteEvents, ClientMessage.WriteEventsCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEvents
+    name: ClientMessage.WriteEvents
+    nameWithType: ClientMessage.WriteEvents
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEvents
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEvents
+    name: ClientMessage.WriteEvents
+    nameWithType: ClientMessage.WriteEvents
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEvents
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Messages.ClientMessage.DeleteStream,EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted>
+  nameWithType: RequestResponseDispatcher<ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Messages.ClientMessage.DeleteStream, EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted>
+  nameWithType.vb: RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Messages.ClientMessage.DeleteStream, EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted)
+  name.vb: RequestResponseDispatcher(Of ClientMessage.DeleteStream, ClientMessage.DeleteStreamCompleted)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStream
+    name: ClientMessage.DeleteStream
+    nameWithType: ClientMessage.DeleteStream
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStream
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStream
+    name: ClientMessage.DeleteStream
+    nameWithType: ClientMessage.DeleteStream
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStream
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake,EventStore.Core.Helpers.IODispatcherDelayedMessage}
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher{EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake,EventStore.Core.Helpers.IODispatcherDelayedMessage}
+  parent: EventStore.Core.Messaging
+  definition: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  name: RequestResponseDispatcher<AwakeServiceMessage.SubscribeAwake, IODispatcherDelayedMessage>
+  nameWithType: RequestResponseDispatcher<AwakeServiceMessage.SubscribeAwake, IODispatcherDelayedMessage>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake, EventStore.Core.Helpers.IODispatcherDelayedMessage>
+  nameWithType.vb: RequestResponseDispatcher(Of AwakeServiceMessage.SubscribeAwake, IODispatcherDelayedMessage)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake, EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  name.vb: RequestResponseDispatcher(Of AwakeServiceMessage.SubscribeAwake, IODispatcherDelayedMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake
+    name: AwakeServiceMessage.SubscribeAwake
+    nameWithType: AwakeServiceMessage.SubscribeAwake
+    fullName: EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+    name: RequestResponseDispatcher
+    nameWithType: RequestResponseDispatcher
+    fullName: EventStore.Core.Messaging.RequestResponseDispatcher
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake
+    name: AwakeServiceMessage.SubscribeAwake
+    nameWithType: AwakeServiceMessage.SubscribeAwake
+    fullName: EventStore.Core.Services.AwakeReaderService.AwakeServiceMessage.SubscribeAwake
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.#ctor*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.#ctor
+  isExternal: false
+  name: IODispatcher
+  nameWithType: IODispatcher.IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher.IODispatcher
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Messaging.IEnvelope
+  commentId: T:EventStore.Core.Messaging.IEnvelope
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: IEnvelope
+  nameWithType: IEnvelope
+  fullName: EventStore.Core.Messaging.IEnvelope
+- uid: EventStore.Core.Helpers.IODispatcher.ReadBackward*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.ReadBackward
+  isExternal: false
+  name: ReadBackward
+  nameWithType: IODispatcher.ReadBackward
+  fullName: EventStore.Core.Helpers.IODispatcher.ReadBackward
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: IPrincipal
+  isExternal: true
+  name: IPrincipal
+  nameWithType: IPrincipal
+  fullName: IPrincipal
+- uid: Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}
+  commentId: '!:Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted}'
+  definition: Action`1
+  name: Action<ClientMessage.ReadStreamEventsBackwardCompleted>
+  nameWithType: Action<ClientMessage.ReadStreamEventsBackwardCompleted>
+  fullName: Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted>
+  nameWithType.vb: Action(Of ClientMessage.ReadStreamEventsBackwardCompleted)
+  fullName.vb: Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted)
+  name.vb: Action(Of ClientMessage.ReadStreamEventsBackwardCompleted)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+    name: ClientMessage.ReadStreamEventsBackwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsBackwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{Guid}
+  commentId: '!:System.Nullable{Guid}'
+  definition: System.Nullable`1
+  name: Nullable<Guid>
+  nameWithType: Nullable<Guid>
+  fullName: System.Nullable<Guid>
+  nameWithType.vb: Nullable(Of Guid)
+  fullName.vb: System.Nullable(Of Guid)
+  name.vb: Nullable(Of Guid)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.ReadForward*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.ReadForward
+  isExternal: false
+  name: ReadForward
+  nameWithType: IODispatcher.ReadForward
+  fullName: EventStore.Core.Helpers.IODispatcher.ReadForward
+- uid: Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
+  commentId: '!:Action{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}'
+  definition: Action`1
+  name: Action<ClientMessage.ReadStreamEventsForwardCompleted>
+  nameWithType: Action<ClientMessage.ReadStreamEventsForwardCompleted>
+  fullName: Action<EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted>
+  nameWithType.vb: Action(Of ClientMessage.ReadStreamEventsForwardCompleted)
+  fullName.vb: Action(Of EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+  name.vb: Action(Of ClientMessage.ReadStreamEventsForwardCompleted)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents
+  isExternal: false
+  name: ConfigureStreamAndWriteEvents
+  nameWithType: IODispatcher.ConfigureStreamAndWriteEvents
+  fullName: EventStore.Core.Helpers.IODispatcher.ConfigureStreamAndWriteEvents
+- uid: Lazy{EventStore.Core.Data.StreamMetadata}
+  commentId: '!:Lazy{EventStore.Core.Data.StreamMetadata}'
+  definition: Lazy`1
+  name: Lazy<StreamMetadata>
+  nameWithType: Lazy<StreamMetadata>
+  fullName: Lazy<EventStore.Core.Data.StreamMetadata>
+  nameWithType.vb: Lazy(Of StreamMetadata)
+  fullName.vb: Lazy(Of EventStore.Core.Data.StreamMetadata)
+  name.vb: Lazy(Of StreamMetadata)
+  spec.csharp:
+  - uid: Lazy`1
+    name: Lazy
+    nameWithType: Lazy
+    fullName: Lazy
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Data.StreamMetadata
+    name: StreamMetadata
+    nameWithType: StreamMetadata
+    fullName: EventStore.Core.Data.StreamMetadata
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Lazy`1
+    name: Lazy
+    nameWithType: Lazy
+    fullName: Lazy
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Data.StreamMetadata
+    name: StreamMetadata
+    nameWithType: StreamMetadata
+    fullName: EventStore.Core.Data.StreamMetadata
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data.Event[]
+  name: Event[]
+  nameWithType: Event[]
+  fullName: EventStore.Core.Data.Event[]
+  nameWithType.vb: Event()
+  fullName.vb: EventStore.Core.Data.Event()
+  name.vb: Event()
+  spec.csharp:
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Core.Data.Event
+    name: Event
+    nameWithType: Event
+    fullName: EventStore.Core.Data.Event
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  commentId: '!:Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}'
+  definition: Action`1
+  name: Action<ClientMessage.WriteEventsCompleted>
+  nameWithType: Action<ClientMessage.WriteEventsCompleted>
+  fullName: Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>
+  nameWithType.vb: Action(Of ClientMessage.WriteEventsCompleted)
+  fullName.vb: Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  name.vb: Action(Of ClientMessage.WriteEventsCompleted)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+    name: ClientMessage.WriteEventsCompleted
+    nameWithType: ClientMessage.WriteEventsCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.WriteEventsCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Lazy`1
+  commentId: '!:Lazy`1'
+  isExternal: true
+  name: Lazy<>
+  nameWithType: Lazy<>
+  fullName: Lazy<>
+  nameWithType.vb: Lazy(Of )
+  fullName.vb: Lazy(Of )
+  name.vb: Lazy(Of )
+  spec.csharp:
+  - uid: Lazy`1
+    name: Lazy
+    nameWithType: Lazy
+    fullName: Lazy
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Lazy`1
+    name: Lazy
+    nameWithType: Lazy
+    fullName: Lazy
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.WriteEvents*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.WriteEvents
+  isExternal: false
+  name: WriteEvents
+  nameWithType: IODispatcher.WriteEvents
+  fullName: EventStore.Core.Helpers.IODispatcher.WriteEvents
+- uid: EventStore.Core.Helpers.IODispatcher.QueueWriteEvents*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.QueueWriteEvents
+  isExternal: false
+  name: QueueWriteEvents
+  nameWithType: IODispatcher.QueueWriteEvents
+  fullName: EventStore.Core.Helpers.IODispatcher.QueueWriteEvents
+- uid: EventStore.Core.Helpers.IODispatcher.WriteEvent*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.WriteEvent
+  isExternal: false
+  name: WriteEvent
+  nameWithType: IODispatcher.WriteEvent
+  fullName: EventStore.Core.Helpers.IODispatcher.WriteEvent
+- uid: EventStore.Core.Data.Event
+  commentId: T:EventStore.Core.Data.Event
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: Event
+  nameWithType: Event
+  fullName: EventStore.Core.Data.Event
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  isExternal: false
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: EventStore.Core.Helpers.IODispatcher.DeleteStream*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.DeleteStream
+  isExternal: false
+  name: DeleteStream
+  nameWithType: IODispatcher.DeleteStream
+  fullName: EventStore.Core.Helpers.IODispatcher.DeleteStream
+- uid: Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+  commentId: '!:Action{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}'
+  definition: Action`1
+  name: Action<ClientMessage.DeleteStreamCompleted>
+  nameWithType: Action<ClientMessage.DeleteStreamCompleted>
+  fullName: Action<EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted>
+  nameWithType.vb: Action(Of ClientMessage.DeleteStreamCompleted)
+  fullName.vb: Action(Of EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted)
+  name.vb: Action(Of ClientMessage.DeleteStreamCompleted)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+    name: ClientMessage.DeleteStreamCompleted
+    nameWithType: ClientMessage.DeleteStreamCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.SubscribeAwake*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.SubscribeAwake
+  isExternal: false
+  name: SubscribeAwake
+  nameWithType: IODispatcher.SubscribeAwake
+  fullName: EventStore.Core.Helpers.IODispatcher.SubscribeAwake
+- uid: EventStore.Core.Data.TFPos
+  commentId: T:EventStore.Core.Data.TFPos
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: TFPos
+  nameWithType: TFPos
+  fullName: EventStore.Core.Data.TFPos
+- uid: Action{EventStore.Core.Helpers.IODispatcherDelayedMessage}
+  commentId: '!:Action{EventStore.Core.Helpers.IODispatcherDelayedMessage}'
+  definition: Action`1
+  name: Action<IODispatcherDelayedMessage>
+  nameWithType: Action<IODispatcherDelayedMessage>
+  fullName: Action<EventStore.Core.Helpers.IODispatcherDelayedMessage>
+  nameWithType.vb: Action(Of IODispatcherDelayedMessage)
+  fullName.vb: Action(Of EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  name.vb: Action(Of IODispatcherDelayedMessage)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake
+  isExternal: false
+  name: UnsubscribeAwake
+  nameWithType: IODispatcher.UnsubscribeAwake
+  fullName: EventStore.Core.Helpers.IODispatcher.UnsubscribeAwake
+- uid: EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl
+  isExternal: false
+  name: UpdateStreamAcl
+  nameWithType: IODispatcher.UpdateStreamAcl
+  fullName: EventStore.Core.Helpers.IODispatcher.UpdateStreamAcl
+- uid: EventStore.Core.Data.StreamMetadata
+  commentId: T:EventStore.Core.Data.StreamMetadata
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: StreamMetadata
+  nameWithType: StreamMetadata
+  fullName: EventStore.Core.Data.StreamMetadata
+- uid: EventStore.Core.Helpers.IODispatcher.Delay*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.Delay
+  isExternal: false
+  name: Delay
+  nameWithType: IODispatcher.Delay
+  fullName: EventStore.Core.Helpers.IODispatcher.Delay
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: Action
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: Action
+- uid: EventStore.Core.Helpers.IODispatcher.Handle*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcher.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: IODispatcher.Handle
+  fullName: EventStore.Core.Helpers.IODispatcher.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Helpers.IODispatcherDelayedMessage}.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Helpers.IODispatcherDelayedMessage}.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Helpers.IODispatcherDelayedMessage}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(IODispatcherDelayedMessage)
+  nameWithType: IHandle<IODispatcherDelayedMessage>.Handle(IODispatcherDelayedMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Helpers.IODispatcherDelayedMessage>.Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  nameWithType.vb: IHandle(Of IODispatcherDelayedMessage).Handle(IODispatcherDelayedMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Helpers.IODispatcherDelayedMessage).Handle(EventStore.Core.Helpers.IODispatcherDelayedMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<IODispatcherDelayedMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Helpers.IODispatcherDelayedMessage>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of IODispatcherDelayedMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Helpers.IODispatcherDelayedMessage).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+    name: IODispatcherDelayedMessage
+    nameWithType: IODispatcherDelayedMessage
+    fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  commentId: T:EventStore.Core.Helpers.IODispatcherDelayedMessage
+  parent: EventStore.Core.Helpers
+  isExternal: false
+  name: IODispatcherDelayedMessage
+  nameWithType: IODispatcherDelayedMessage
+  fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

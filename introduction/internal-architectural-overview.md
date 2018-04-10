@@ -1,16 +1,14 @@
 ---
-title: "Internal Architectural Overview"
-section: "Introduction"
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Internal Architectural Overview
 <!-- TODO: Not live why? -->
 <!-- TODO:  Overview image or intro? -->
 
 <!-- TODO:  Remove as much passive as possible -->
-
 ## Messaging
-
-The overall architecture style of Event Store is [SEDA (Staged Event Driven Architecture)](http://www.eecs.harvard.edu/~mdw/proj/seda/). Messages flow forward through queues internally (including the Transaction File which is also a queue). There are communication endpoints that flow forward through series of queues to be processed. All operations are purely asynchronous. The core processing is handled on a single thread reading requests off of a single concurrent queue.
+The overall architecture style of Event Store is [SEDA (Staged Event Driven Architecture)](https://en.wikipedia.org/wiki/Staged_event-driven_architecture). Messages flow forward through queues internally (including the Transaction File which is also a queue). There are communication endpoints that flow forward through series of queues to be processed. All operations are purely asynchronous. The core processing is handled on a single thread reading requests off of a single concurrent queue.
 
 Messages first flow through a state machine that represents the state of the node. As an example in a distributed scenario you are not always allowed to write (slaves will forward writes, not write themselves) or if you are still initializing you are not allowed to read. Each request is handled by a state machine that manages the lifecycle of that request including time outs and acknowledgements throughout the cluster.
 
@@ -62,10 +60,8 @@ As transactions are written to the transaction file, where an in-memory index is
 
 In experimenting with various data structures including redblack trees and B+ trees it turned out that the fine grained lock outperformed the others (a good example of how stupid code can often be faster than well thought out code).
 
-<!-- TODO:  To here -->
-
 When there are enough items in the in memory index, the index is flushed to disk (known as a 'PTable' or 'Persistent Table'). A PTable is a sorted group of index entries (remember that they are only 16 bytes each). A binary search across the PTables is used to search. The search function has been memoized by storing midpoints in memory (in the future ptables will likely be stored in unmanaged memory as well, but the performance on SSDs is acceptable with only midpoint caching). Mid point caching reduces the number of seeks from log(n) by the depth to which midpoints are filled and often all are in memory.
 
 When a PTable is written, a checksum is marked as to the last place in the transaction file the persistent tables cover to. If the system were to shut down, it must rebuild a memtable from that point forward on start up. With default settings the max is 1million items which takes about 3 seconds on most machines tested. You can change this value via the command line.
 
-PTables get merged into larger PTables over time. During this operation they are scavenged for items to be removed. The merging of N PTables to 1 larger PTable is a linear operation as they are all sorted. Oncve written to disk, PTables are immutable and have <!-- TODO:  What now? --> like tf chunks MD5 checksums. Unlike a failure in a TFChunk checksum, if a problem is found within the index it is simply rebuilt.
+PTables get merged into larger PTables over time. During this operation they are scavenged for items to be removed. The merging of N PTables to 1 larger PTable is a linear operation as they are all sorted. Oncve written to disk, PTables are immutable and have like tf chunks MD5 checksums. Unlike a failure in a TFChunk checksum, if a problem is found within the index it is simply rebuilt.

@@ -1,0 +1,526 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory
+  commentId: T:EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory
+  id: IPersistentSubscriptionConsumerStrategyFactory
+  parent: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  children:
+  - EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create(System.String,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber)
+  - EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+  langs:
+  - csharp
+  - vb
+  name: IPersistentSubscriptionConsumerStrategyFactory
+  nameWithType: IPersistentSubscriptionConsumerStrategyFactory
+  fullName: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory
+  type: Interface
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/ConsumerStrategy/IPersistentSubscriptionConsumerStrategyFactory.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IPersistentSubscriptionConsumerStrategyFactory
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/ConsumerStrategy/IPersistentSubscriptionConsumerStrategyFactory.cs
+    startLine: 4
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  syntax:
+    content: public interface IPersistentSubscriptionConsumerStrategyFactory
+    content.vb: Public Interface IPersistentSubscriptionConsumerStrategyFactory
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+  commentId: P:EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+  id: StrategyName
+  parent: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory
+  langs:
+  - csharp
+  - vb
+  name: StrategyName
+  nameWithType: IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+  fullName: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/ConsumerStrategy/IPersistentSubscriptionConsumerStrategyFactory.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StrategyName
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/ConsumerStrategy/IPersistentSubscriptionConsumerStrategyFactory.cs
+    startLine: 6
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  syntax:
+    content: string StrategyName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property StrategyName As String
+  overload: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create(System.String,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create(System.String,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber)
+  id: Create(System.String,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber)
+  parent: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(String, IPublisher, ISubscriber)
+  nameWithType: IPersistentSubscriptionConsumerStrategyFactory.Create(String, IPublisher, ISubscriber)
+  fullName: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create(System.String, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.ISubscriber)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/ConsumerStrategy/IPersistentSubscriptionConsumerStrategyFactory.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Create
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/ConsumerStrategy/IPersistentSubscriptionConsumerStrategyFactory.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  syntax:
+    content: IPersistentSubscriptionConsumerStrategy Create(string subscriptionId, IPublisher mainQueue, ISubscriber mainBus)
+    parameters:
+    - id: subscriptionId
+      type: System.String
+    - id: mainQueue
+      type: EventStore.Core.Bus.IPublisher
+    - id: mainBus
+      type: EventStore.Core.Bus.ISubscriber
+    return:
+      type: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategy
+    content.vb: Function Create(subscriptionId As String, mainQueue As IPublisher, mainBus As ISubscriber) As IPersistentSubscriptionConsumerStrategy
+  overload: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create*
+references:
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  commentId: N:EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  isExternal: false
+  name: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  nameWithType: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  fullName: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IPersistentSubscriptionConsumerStrategyFactory>()
+  nameWithType: ProtobufExtensions.Serialize<IPersistentSubscriptionConsumerStrategyFactory>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IPersistentSubscriptionConsumerStrategyFactory)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory)()
+  name.vb: Serialize(Of IPersistentSubscriptionConsumerStrategyFactory)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IPersistentSubscriptionConsumerStrategyFactory>
+    nameWithType: ProtobufExtensions.Serialize<IPersistentSubscriptionConsumerStrategyFactory>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IPersistentSubscriptionConsumerStrategyFactory)
+    nameWithType: ProtobufExtensions.Serialize(Of IPersistentSubscriptionConsumerStrategyFactory)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IPersistentSubscriptionConsumerStrategyFactory>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IPersistentSubscriptionConsumerStrategyFactory>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IPersistentSubscriptionConsumerStrategyFactory)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory)()
+  name.vb: SerializeToArray(Of IPersistentSubscriptionConsumerStrategyFactory)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IPersistentSubscriptionConsumerStrategyFactory>
+    nameWithType: ProtobufExtensions.SerializeToArray<IPersistentSubscriptionConsumerStrategyFactory>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IPersistentSubscriptionConsumerStrategyFactory)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IPersistentSubscriptionConsumerStrategyFactory)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+  isExternal: false
+  name: StrategyName
+  nameWithType: IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+  fullName: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.StrategyName
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create
+  isExternal: false
+  name: Create
+  nameWithType: IPersistentSubscriptionConsumerStrategyFactory.Create
+  fullName: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory.Create
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Bus.ISubscriber
+  commentId: T:EventStore.Core.Bus.ISubscriber
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: ISubscriber
+  nameWithType: ISubscriber
+  fullName: EventStore.Core.Bus.ISubscriber
+- uid: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategy
+  commentId: T:EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategy
+  parent: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy
+  isExternal: false
+  name: IPersistentSubscriptionConsumerStrategy
+  nameWithType: IPersistentSubscriptionConsumerStrategy
+  fullName: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategy
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus

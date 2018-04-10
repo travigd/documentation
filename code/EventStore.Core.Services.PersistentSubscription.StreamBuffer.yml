@@ -1,0 +1,1055 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  commentId: T:EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  id: StreamBuffer
+  parent: EventStore.Core.Services.PersistentSubscription
+  children:
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept(System.Int32)
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan
+  langs:
+  - csharp
+  - vb
+  name: StreamBuffer
+  nameWithType: StreamBuffer
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: StreamBuffer
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: 'public class StreamBuffer : object'
+    content.vb: >-
+      Public Class StreamBuffer
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount
+  commentId: P:EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount
+  id: LiveBufferCount
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: LiveBufferCount
+  nameWithType: StreamBuffer.LiveBufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LiveBufferCount
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public long LiveBufferCount { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property LiveBufferCount As Long
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount
+  commentId: P:EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount
+  id: BufferCount
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: BufferCount
+  nameWithType: StreamBuffer.BufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: BufferCount
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public int BufferCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property BufferCount As Integer
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount
+  commentId: P:EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount
+  id: RetryBufferCount
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: RetryBufferCount
+  nameWithType: StreamBuffer.RetryBufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RetryBufferCount
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public int RetryBufferCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property RetryBufferCount As Integer
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount
+  commentId: P:EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount
+  id: ReadBufferCount
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: ReadBufferCount
+  nameWithType: StreamBuffer.ReadBufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReadBufferCount
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public int ReadBufferCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ReadBufferCount As Integer
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live
+  commentId: P:EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live
+  id: Live
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: Live
+  nameWithType: StreamBuffer.Live
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Live
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public bool Live { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Live As Boolean
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept(System.Int32)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept(System.Int32)
+  id: CanAccept(System.Int32)
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: CanAccept(Int32)
+  nameWithType: StreamBuffer.CanAccept(Int32)
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CanAccept
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 22
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public bool CanAccept(int count)
+    parameters:
+    - id: count
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Function CanAccept(count As Integer) As Boolean
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)
+  id: '#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)'
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: StreamBuffer(Int32, Int32, Int32, Boolean)
+  nameWithType: StreamBuffer.StreamBuffer(Int32, Int32, Int32, Boolean)
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.StreamBuffer(System.Int32, System.Int32, System.Int32, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public StreamBuffer(int maxBufferSize, int maxLiveBufferSize, int initialSequence, bool startInHistory)
+    parameters:
+    - id: maxBufferSize
+      type: System.Int32
+    - id: maxLiveBufferSize
+      type: System.Int32
+    - id: initialSequence
+      type: System.Int32
+    - id: startInHistory
+      type: System.Boolean
+    content.vb: Public Sub New(maxBufferSize As Integer, maxLiveBufferSize As Integer, initialSequence As Integer, startInHistory As Boolean)
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  id: AddRetry(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: AddRetry(OutstandingMessage)
+  nameWithType: StreamBuffer.AddRetry(OutstandingMessage)
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AddRetry
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 52
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void AddRetry(OutstandingMessage ev)
+    parameters:
+    - id: ev
+      type: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
+    content.vb: Public Sub AddRetry(ev As OutstandingMessage)
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  id: AddLiveMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: AddLiveMessage(OutstandingMessage)
+  nameWithType: StreamBuffer.AddLiveMessage(OutstandingMessage)
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AddLiveMessage
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 74
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void AddLiveMessage(OutstandingMessage ev)
+    parameters:
+    - id: ev
+      type: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
+    content.vb: Public Sub AddLiveMessage(ev As OutstandingMessage)
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  id: AddReadMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: AddReadMessage(OutstandingMessage)
+  nameWithType: StreamBuffer.AddReadMessage(OutstandingMessage)
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AddReadMessage
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 86
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void AddReadMessage(OutstandingMessage ev)
+    parameters:
+    - id: ev
+      type: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
+    content.vb: Public Sub AddReadMessage(ev As OutstandingMessage)
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan
+  id: Scan
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: Scan()
+  nameWithType: StreamBuffer.Scan()
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Scan
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 111
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public IEnumerable<StreamBuffer.OutstandingMessagePointer> Scan()
+    return:
+      type: IEnumerable{EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer}
+    content.vb: Public Function Scan As IEnumerable(Of StreamBuffer.OutstandingMessagePointer)
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
+  id: MoveToLive
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: MoveToLive()
+  nameWithType: StreamBuffer.MoveToLive()
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MoveToLive
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 135
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public void MoveToLive()
+    content.vb: Public Sub MoveToLive
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry
+  id: GetLowestRetry
+  parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
+  langs:
+  - csharp
+  - vb
+  name: GetLowestRetry()
+  nameWithType: StreamBuffer.GetLowestRetry()
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetLowestRetry
+    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
+    startLine: 140
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.PersistentSubscription
+  syntax:
+    content: public long GetLowestRetry()
+    return:
+      type: System.Int64
+    content.vb: Public Function GetLowestRetry As Long
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.PersistentSubscription
+  commentId: N:EventStore.Core.Services.PersistentSubscription
+  isExternal: false
+  name: EventStore.Core.Services.PersistentSubscription
+  nameWithType: EventStore.Core.Services.PersistentSubscription
+  fullName: EventStore.Core.Services.PersistentSubscription
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<StreamBuffer>()
+  nameWithType: ProtobufExtensions.Serialize<StreamBuffer>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.PersistentSubscription.StreamBuffer>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of StreamBuffer)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.PersistentSubscription.StreamBuffer)()
+  name.vb: Serialize(Of StreamBuffer)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<StreamBuffer>
+    nameWithType: ProtobufExtensions.Serialize<StreamBuffer>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.PersistentSubscription.StreamBuffer>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of StreamBuffer)
+    nameWithType: ProtobufExtensions.Serialize(Of StreamBuffer)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.PersistentSubscription.StreamBuffer)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<StreamBuffer>()
+  nameWithType: ProtobufExtensions.SerializeToArray<StreamBuffer>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.PersistentSubscription.StreamBuffer>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of StreamBuffer)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.PersistentSubscription.StreamBuffer)()
+  name.vb: SerializeToArray(Of StreamBuffer)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<StreamBuffer>
+    nameWithType: ProtobufExtensions.SerializeToArray<StreamBuffer>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.PersistentSubscription.StreamBuffer>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of StreamBuffer)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of StreamBuffer)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.PersistentSubscription.StreamBuffer)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount
+  isExternal: false
+  name: LiveBufferCount
+  nameWithType: StreamBuffer.LiveBufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount
+  isExternal: false
+  name: BufferCount
+  nameWithType: StreamBuffer.BufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.BufferCount
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount
+  isExternal: false
+  name: RetryBufferCount
+  nameWithType: StreamBuffer.RetryBufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount
+  isExternal: false
+  name: ReadBufferCount
+  nameWithType: StreamBuffer.ReadBufferCount
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live
+  isExternal: false
+  name: Live
+  nameWithType: StreamBuffer.Live
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept
+  isExternal: false
+  name: CanAccept
+  nameWithType: StreamBuffer.CanAccept
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.CanAccept
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.#ctor*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.#ctor
+  isExternal: false
+  name: StreamBuffer
+  nameWithType: StreamBuffer.StreamBuffer
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.StreamBuffer
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry
+  isExternal: false
+  name: AddRetry
+  nameWithType: StreamBuffer.AddRetry
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddRetry
+- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
+  commentId: T:EventStore.Core.Services.PersistentSubscription.OutstandingMessage
+  parent: EventStore.Core.Services.PersistentSubscription
+  isExternal: false
+  name: OutstandingMessage
+  nameWithType: OutstandingMessage
+  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage
+  isExternal: false
+  name: AddLiveMessage
+  nameWithType: StreamBuffer.AddLiveMessage
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddLiveMessage
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage
+  isExternal: false
+  name: AddReadMessage
+  nameWithType: StreamBuffer.AddReadMessage
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.AddReadMessage
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan
+  isExternal: false
+  name: Scan
+  nameWithType: StreamBuffer.Scan
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan
+- uid: IEnumerable{EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer}
+  commentId: '!:IEnumerable{EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer}'
+  definition: IEnumerable`1
+  name: IEnumerable<StreamBuffer.OutstandingMessagePointer>
+  nameWithType: IEnumerable<StreamBuffer.OutstandingMessagePointer>
+  fullName: IEnumerable<EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer>
+  nameWithType.vb: IEnumerable(Of StreamBuffer.OutstandingMessagePointer)
+  fullName.vb: IEnumerable(Of EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer)
+  name.vb: IEnumerable(Of StreamBuffer.OutstandingMessagePointer)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer
+    name: StreamBuffer.OutstandingMessagePointer
+    nameWithType: StreamBuffer.OutstandingMessagePointer
+    fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer
+    name: StreamBuffer.OutstandingMessagePointer
+    nameWithType: StreamBuffer.OutstandingMessagePointer
+    fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.OutstandingMessagePointer
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
+  isExternal: false
+  name: MoveToLive
+  nameWithType: StreamBuffer.MoveToLive
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry
+  isExternal: false
+  name: GetLowestRetry
+  nameWithType: StreamBuffer.GetLowestRetry
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry

@@ -1,0 +1,983 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.ProjectionsSubsystem
+  commentId: T:EventStore.Projections.Core.ProjectionsSubsystem
+  id: ProjectionsSubsystem
+  parent: EventStore.Projections.Core
+  children:
+  - EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)
+  - EventStore.Projections.Core.ProjectionsSubsystem.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  - EventStore.Projections.Core.ProjectionsSubsystem.Register(EventStore.Core.StandardComponents)
+  - EventStore.Projections.Core.ProjectionsSubsystem.Start
+  - EventStore.Projections.Core.ProjectionsSubsystem.Stop
+  - EventStore.Projections.Core.ProjectionsSubsystem.VERSION
+  langs:
+  - csharp
+  - vb
+  name: ProjectionsSubsystem
+  nameWithType: ProjectionsSubsystem
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ProjectionsSubsystem
+    path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: 'public sealed class ProjectionsSubsystem : object, ISubsystem, IHandle<CoreProjectionStatusMessage.Stopped>'
+    content.vb: >-
+      Public NotInheritable Class ProjectionsSubsystem
+          Inherits Object
+          Implements ISubsystem, IHandle(Of CoreProjectionStatusMessage.Stopped)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.ISubsystem
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.ProjectionsSubsystem.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.ProjectionsSubsystem.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.VERSION
+  commentId: F:EventStore.Projections.Core.ProjectionsSubsystem.VERSION
+  id: VERSION
+  parent: EventStore.Projections.Core.ProjectionsSubsystem
+  langs:
+  - csharp
+  - vb
+  name: VERSION
+  nameWithType: ProjectionsSubsystem.VERSION
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.VERSION
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: VERSION
+    path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public const int VERSION = null
+    return:
+      type: System.Int32
+    content.vb: Public Const VERSION As Integer = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)
+  commentId: M:EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)
+  id: '#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)'
+  parent: EventStore.Projections.Core.ProjectionsSubsystem
+  langs:
+  - csharp
+  - vb
+  name: ProjectionsSubsystem(Int32, ProjectionType, Boolean, TimeSpan)
+  nameWithType: ProjectionsSubsystem.ProjectionsSubsystem(Int32, ProjectionType, Boolean, TimeSpan)
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.ProjectionsSubsystem(System.Int32, EventStore.Common.Options.ProjectionType, System.Boolean, TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public ProjectionsSubsystem(int projectionWorkerThreadCount, ProjectionType runProjections, bool startStandardProjections, TimeSpan projectionQueryExpiry)
+    parameters:
+    - id: projectionWorkerThreadCount
+      type: System.Int32
+    - id: runProjections
+      type: EventStore.Common.Options.ProjectionType
+    - id: startStandardProjections
+      type: System.Boolean
+    - id: projectionQueryExpiry
+      type: TimeSpan
+    content.vb: Public Sub New(projectionWorkerThreadCount As Integer, runProjections As ProjectionType, startStandardProjections As Boolean, projectionQueryExpiry As TimeSpan)
+  overload: EventStore.Projections.Core.ProjectionsSubsystem.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Register(EventStore.Core.StandardComponents)
+  commentId: M:EventStore.Projections.Core.ProjectionsSubsystem.Register(EventStore.Core.StandardComponents)
+  id: Register(EventStore.Core.StandardComponents)
+  parent: EventStore.Projections.Core.ProjectionsSubsystem
+  langs:
+  - csharp
+  - vb
+  name: Register(StandardComponents)
+  nameWithType: ProjectionsSubsystem.Register(StandardComponents)
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Register(EventStore.Core.StandardComponents)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Register
+    path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+    startLine: 41
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public void Register(StandardComponents standardComponents)
+    parameters:
+    - id: standardComponents
+      type: EventStore.Core.StandardComponents
+    content.vb: Public Sub Register(standardComponents As StandardComponents)
+  overload: EventStore.Projections.Core.ProjectionsSubsystem.Register*
+  implements:
+  - EventStore.Core.ISubsystem.Register(EventStore.Core.StandardComponents)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Start
+  commentId: M:EventStore.Projections.Core.ProjectionsSubsystem.Start
+  id: Start
+  parent: EventStore.Projections.Core.ProjectionsSubsystem
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: ProjectionsSubsystem.Start()
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Start()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Start
+    path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+    startLine: 72
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: EventStore.Projections.Core.ProjectionsSubsystem.Start*
+  implements:
+  - EventStore.Core.ISubsystem.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Stop
+  commentId: M:EventStore.Projections.Core.ProjectionsSubsystem.Stop
+  id: Stop
+  parent: EventStore.Projections.Core.ProjectionsSubsystem
+  langs:
+  - csharp
+  - vb
+  name: Stop()
+  nameWithType: ProjectionsSubsystem.Stop()
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Stop()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Stop
+    path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+    startLine: 84
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public void Stop()
+    content.vb: Public Sub Stop
+  overload: EventStore.Projections.Core.ProjectionsSubsystem.Stop*
+  implements:
+  - EventStore.Core.ISubsystem.Stop
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  commentId: M:EventStore.Projections.Core.ProjectionsSubsystem.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  parent: EventStore.Projections.Core.ProjectionsSubsystem
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionStatusMessage.Stopped)
+  nameWithType: ProjectionsSubsystem.Handle(CoreProjectionStatusMessage.Stopped)
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
+    startLine: 104
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public void Handle(CoreProjectionStatusMessage.Stopped message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+    content.vb: Public Sub Handle(message As CoreProjectionStatusMessage.Stopped)
+  overload: EventStore.Projections.Core.ProjectionsSubsystem.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped}.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core
+  commentId: N:EventStore.Projections.Core
+  isExternal: false
+  name: EventStore.Projections.Core
+  nameWithType: EventStore.Projections.Core
+  fullName: EventStore.Projections.Core
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.ISubsystem
+  commentId: T:EventStore.Core.ISubsystem
+  parent: EventStore.Core
+  isExternal: false
+  name: ISubsystem
+  nameWithType: ISubsystem
+  fullName: EventStore.Core.ISubsystem
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionStatusMessage.Stopped>
+  nameWithType: IHandle<CoreProjectionStatusMessage.Stopped>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped>
+  nameWithType.vb: IHandle(Of CoreProjectionStatusMessage.Stopped)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  name.vb: IHandle(Of CoreProjectionStatusMessage.Stopped)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+    name: CoreProjectionStatusMessage.Stopped
+    nameWithType: CoreProjectionStatusMessage.Stopped
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+    name: CoreProjectionStatusMessage.Stopped
+    nameWithType: CoreProjectionStatusMessage.Stopped
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ProjectionsSubsystem>()
+  nameWithType: ProtobufExtensions.Serialize<ProjectionsSubsystem>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.ProjectionsSubsystem>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ProjectionsSubsystem)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.ProjectionsSubsystem)()
+  name.vb: Serialize(Of ProjectionsSubsystem)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ProjectionsSubsystem>
+    nameWithType: ProtobufExtensions.Serialize<ProjectionsSubsystem>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.ProjectionsSubsystem>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ProjectionsSubsystem)
+    nameWithType: ProtobufExtensions.Serialize(Of ProjectionsSubsystem)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.ProjectionsSubsystem)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ProjectionsSubsystem>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ProjectionsSubsystem>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.ProjectionsSubsystem>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ProjectionsSubsystem)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.ProjectionsSubsystem)()
+  name.vb: SerializeToArray(Of ProjectionsSubsystem)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ProjectionsSubsystem>
+    nameWithType: ProtobufExtensions.SerializeToArray<ProjectionsSubsystem>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.ProjectionsSubsystem>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ProjectionsSubsystem)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ProjectionsSubsystem)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.ProjectionsSubsystem)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core
+  commentId: N:EventStore.Core
+  isExternal: false
+  name: EventStore.Core
+  nameWithType: EventStore.Core
+  fullName: EventStore.Core
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.#ctor*
+  commentId: Overload:EventStore.Projections.Core.ProjectionsSubsystem.#ctor
+  isExternal: false
+  name: ProjectionsSubsystem
+  nameWithType: ProjectionsSubsystem.ProjectionsSubsystem
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.ProjectionsSubsystem
+- uid: EventStore.Common.Options.ProjectionType
+  commentId: T:EventStore.Common.Options.ProjectionType
+  parent: EventStore.Common.Options
+  isExternal: false
+  name: ProjectionType
+  nameWithType: ProjectionType
+  fullName: EventStore.Common.Options.ProjectionType
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Common.Options
+  commentId: N:EventStore.Common.Options
+  isExternal: false
+  name: EventStore.Common.Options
+  nameWithType: EventStore.Common.Options
+  fullName: EventStore.Common.Options
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Register*
+  commentId: Overload:EventStore.Projections.Core.ProjectionsSubsystem.Register
+  isExternal: false
+  name: Register
+  nameWithType: ProjectionsSubsystem.Register
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Register
+- uid: EventStore.Core.ISubsystem.Register(EventStore.Core.StandardComponents)
+  commentId: M:EventStore.Core.ISubsystem.Register(EventStore.Core.StandardComponents)
+  parent: EventStore.Core.ISubsystem
+  isExternal: false
+  name: Register(StandardComponents)
+  nameWithType: ISubsystem.Register(StandardComponents)
+  fullName: EventStore.Core.ISubsystem.Register(EventStore.Core.StandardComponents)
+  spec.csharp:
+  - uid: EventStore.Core.ISubsystem.Register(EventStore.Core.StandardComponents)
+    name: Register
+    nameWithType: ISubsystem.Register
+    fullName: EventStore.Core.ISubsystem.Register
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.StandardComponents
+    name: StandardComponents
+    nameWithType: StandardComponents
+    fullName: EventStore.Core.StandardComponents
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.ISubsystem.Register(EventStore.Core.StandardComponents)
+    name: Register
+    nameWithType: ISubsystem.Register
+    fullName: EventStore.Core.ISubsystem.Register
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.StandardComponents
+    name: StandardComponents
+    nameWithType: StandardComponents
+    fullName: EventStore.Core.StandardComponents
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.StandardComponents
+  commentId: T:EventStore.Core.StandardComponents
+  parent: EventStore.Core
+  isExternal: false
+  name: StandardComponents
+  nameWithType: StandardComponents
+  fullName: EventStore.Core.StandardComponents
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Start*
+  commentId: Overload:EventStore.Projections.Core.ProjectionsSubsystem.Start
+  isExternal: false
+  name: Start
+  nameWithType: ProjectionsSubsystem.Start
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Start
+- uid: EventStore.Core.ISubsystem.Start
+  commentId: M:EventStore.Core.ISubsystem.Start
+  parent: EventStore.Core.ISubsystem
+  isExternal: false
+  name: Start()
+  nameWithType: ISubsystem.Start()
+  fullName: EventStore.Core.ISubsystem.Start()
+  spec.csharp:
+  - uid: EventStore.Core.ISubsystem.Start
+    name: Start
+    nameWithType: ISubsystem.Start
+    fullName: EventStore.Core.ISubsystem.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.ISubsystem.Start
+    name: Start
+    nameWithType: ISubsystem.Start
+    fullName: EventStore.Core.ISubsystem.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Stop*
+  commentId: Overload:EventStore.Projections.Core.ProjectionsSubsystem.Stop
+  isExternal: false
+  name: Stop
+  nameWithType: ProjectionsSubsystem.Stop
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Stop
+- uid: EventStore.Core.ISubsystem.Stop
+  commentId: M:EventStore.Core.ISubsystem.Stop
+  parent: EventStore.Core.ISubsystem
+  isExternal: false
+  name: Stop()
+  nameWithType: ISubsystem.Stop()
+  fullName: EventStore.Core.ISubsystem.Stop()
+  spec.csharp:
+  - uid: EventStore.Core.ISubsystem.Stop
+    name: Stop
+    nameWithType: ISubsystem.Stop
+    fullName: EventStore.Core.ISubsystem.Stop
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.ISubsystem.Stop
+    name: Stop
+    nameWithType: ISubsystem.Stop
+    fullName: EventStore.Core.ISubsystem.Stop
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.Handle*
+  commentId: Overload:EventStore.Projections.Core.ProjectionsSubsystem.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: ProjectionsSubsystem.Handle
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped}.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped}.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionStatusMessage.Stopped)
+  nameWithType: IHandle<CoreProjectionStatusMessage.Stopped>.Handle(CoreProjectionStatusMessage.Stopped)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped>.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  nameWithType.vb: IHandle(Of CoreProjectionStatusMessage.Stopped).Handle(CoreProjectionStatusMessage.Stopped)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped).Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionStatusMessage.Stopped>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+    name: CoreProjectionStatusMessage.Stopped
+    nameWithType: CoreProjectionStatusMessage.Stopped
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionStatusMessage.Stopped).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+    name: CoreProjectionStatusMessage.Stopped
+    nameWithType: CoreProjectionStatusMessage.Stopped
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: CoreProjectionStatusMessage.Stopped
+  nameWithType: CoreProjectionStatusMessage.Stopped
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages

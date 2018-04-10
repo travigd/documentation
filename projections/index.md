@@ -1,19 +1,13 @@
----
-title: "Overview"
-section: "Projections"
-version: "4.0.0"
-pinned: true
----
+# Overview
 
-# What are projections?
+## What are projections?
 
 Projections is a subsystem in Event Store that provides you with the ability to write new or link existing events to streams in a reactive manner.
 
-<span class="note">
-Projections require the event body to be in JSON.
-</span>
+> [!NOTE]
+> Projections require the event body to be in JSON.
 
-# When to use projections?
+## When to use projections?
 
 Projections are good at solving one specific query type, a category known as 'temporal correlation queries'. This query type happens more often than you may think in business systems and few systems can execute these queries well.
 
@@ -39,6 +33,6 @@ As an example in the medical example above the doctor could leave the query runn
 
 <!-- TODO: Is this supposed to be here? -->
 
-# Types of Projections
+## Types of Projections
 
 There are 2 types of projections, there are built in (system) projections which are written in C# and then there are javascript projections which you can create via the API or the admin UI.

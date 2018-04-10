@@ -1,9 +1,8 @@
 ---
-title: "Getting Started"
-section: "Projections"
-version: "4.0.2"
-pinned: true
+outputFileName: index.html
 ---
+
+# Getting Started
 
 You can create projections in one of 2 ways. You can supply them to Event Store directly via the HTTP API, or you can use the administration UI which provides a section for authoring projections.
 
@@ -21,11 +20,15 @@ Once you are logged into the administration UI, you should see a _projections_ t
 
 You can separately query the state of all the projections using the HTTP API.
 
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i http://localhost:2113/projections/any -H "accept:application/json" | grep -E 'effectiveName|status'
 ```
 
-The result of the request is a list of all the known projections and useful information about them.
+### [Response](#tab/tabid-2)
+
+The response is a list of all known projections and useful information about them.
 
 ```json
 "effectiveName": "$streams"
@@ -44,6 +47,8 @@ The result of the request is a list of all the known projections and useful info
 "status": "Stopped"
 "statusUrl": "http://localhost:2113/projection/$by_event_type"
 ```
+
+* * *
 
 ## Setup Sample Data
 
@@ -157,14 +162,17 @@ Contents:
 
 ```bash
 curl -i -d @"shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json" "http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164" -H "Content-Type:application/vnd.eventstore.events+json"
+
 curl -i -d @"shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json" "http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165" -H "Content-Type:application/vnd.eventstore.events+json"
+
 curl -i -d @"shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json" "http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166" -H "Content-Type:application/vnd.eventstore.events+json"
+
 curl -i -d @"shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json" "http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167" -H "Content-Type:application/vnd.eventstore.events+json"
 ```
 
 ## Writing your first projection
 
-Finally you can get to writing the projection itself, you can find the user defined projection's API [here](../user-defined-projections).
+Finally you can get to writing the projection itself, you can find the user defined projection's API [here](user-defined-projections.md).
 
 Start with a simple projection that will count the number of XBox One Ss that customers added to their shopping carts.
 
@@ -196,7 +204,7 @@ fromAll()
 
 You can create the projection by calling to the API and providing it with the definition of the projection. Here you make a decision on how to run the projection. You are declaring that you want the projection to start from the beginning and keep running into the future.
 
-You can find more information about how to interact with projections in the [API section](../api).
+You can find more information about how to interact with projections in the [API section](api.md).
 
 ```bash
 curl -i --data-binary "@xbox-one-s-counter.json" http://localhost:2113/projections/continuous?name=xbox-one-s-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
@@ -204,9 +212,13 @@ curl -i --data-binary "@xbox-one-s-counter.json" http://localhost:2113/projectio
 
 You should have received a '201 Created response' from Event Store, which means that the projection was created successfully. You can confirm that the projection is running by issuing a status request.
 
+### [Request](#tab/tabid-3)
+
 ```bash
 curl -i http://localhost:2113/projection/xbox-one-s-counter | grep status
 ```
+
+### [Response](#tab/tabid-4)
 
 The response should resemble the following.
 
@@ -215,13 +227,19 @@ The response should resemble the following.
 "statusUrl": "http://localhost:2113/projection/xbox-one-s-counter",
 ```
 
+* * *
+
 ## Querying for the state of the projection
 
-Now that the projection is running, you can query the state of the projection. You can query the state of the projection by issuing yet another request. For a projection that has a single state (more on this later), the request should resemble the following.
+Now the projection is running, you can query the state of the projection. You can query the state of the projection by issuing yet another request. For a projection that has a single state (more on this later), the request should resemble the following.
+
+### [Request](#tab/tabid-5)
 
 ```bash
 curl -i http://localhost:2113/projection/xbox-one-s-counter/state
 ```
+
+### [Response](#tab/tabid-6)
 
 Which should return the state (JSON by default).
 
@@ -230,6 +248,8 @@ Which should return the state (JSON by default).
   "count":3
 }
 ```
+
+* * *
 
 ## Writing to streams from Projections
 
@@ -265,9 +285,13 @@ curl -i -X PUT --data-binary "@xbox-one-s-counter-outputState.json" http://local
 
 You can now read the events in the result stream by issuing a read request.
 
+### [Request](#tab/tabid-7)
+
 ```bash
 curl -i http://localhost:2113/streams/%24projections-xbox-one-s-counter-result\?embed\=body -H "accept:application/json" -u admin:changeit | grep data
 ```
+
+### [Response](#tab/tabid-8)
 
 The response should resemble the following.
 
@@ -276,6 +300,8 @@ The response should resemble the following.
 "data": "{\"count\":2}",
 "data": "{\"count\":1}",
 ```
+
+* * *
 
 You can configure the name of the state stream via the projection options:
 
@@ -336,9 +362,13 @@ curl -i --data-binary "@shopping-cart-counter.json" http://localhost:2113/projec
 
 Querying for the state of the projection is different due to the way you have partitioned the projection. You have to specify the partition you are interested in and it's the name of the stream.
 
+### [Request](#tab/tabid-9)
+
 ```bash
 curl -i http://localhost:2113/projection/shopping-cart-item-counter/state?partition=shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164
 ```
+
+### [Response](#tab/tabid-10)
 
 Which returns the state (JSON by default).
 
@@ -347,3 +377,5 @@ Which returns the state (JSON by default).
   "count":2
 }
 ```
+
+* * *

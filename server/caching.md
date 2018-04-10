@@ -1,8 +1,8 @@
 ---
-title: "Caching"
-section: "Server"
-version: 4.0.2
+outputFileName: index.html
 ---
+
+# Caching
 
 As there are large differences between running Event Store in development and production, it's important to understand how caching works.
 

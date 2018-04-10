@@ -1,0 +1,809 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  commentId: T:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  id: IMessageFormatter`1
+  parent: EventStore.Transport.Tcp.Formatting
+  children:
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(EventStore.BufferManagement.BufferPool)
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.Byte[])
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArray(`0)
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArraySegment(`0)
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToBufferPool(`0)
+  langs:
+  - csharp
+  - vb
+  name: IMessageFormatter<T>
+  nameWithType: IMessageFormatter<T>
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>
+  type: Interface
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IMessageFormatter
+    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp.Formatting
+  syntax:
+    content: public interface IMessageFormatter<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IMessageFormatter(Of T)
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  nameWithType.vb: IMessageFormatter(Of T)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T)
+  name.vb: IMessageFormatter(Of T)
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToBufferPool(`0)
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToBufferPool(`0)
+  id: ToBufferPool(`0)
+  parent: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  langs:
+  - csharp
+  - vb
+  name: ToBufferPool(T)
+  nameWithType: IMessageFormatter<T>.ToBufferPool(T)
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.ToBufferPool(T)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToBufferPool
+    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp.Formatting
+  summary: "\nConverts the object to a <xref href=\"EventStore.BufferManagement.BufferPool\" data-throw-if-not-resolved=\"false\"></xref> representing a binary format of it.\n"
+  example: []
+  syntax:
+    content: BufferPool ToBufferPool(T message)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to convert.
+    return:
+      type: EventStore.BufferManagement.BufferPool
+      description: A <xref href="EventStore.BufferManagement.BufferPool" data-throw-if-not-resolved="false"></xref> containing the data representing the object.
+    content.vb: Function ToBufferPool(message As T) As BufferPool
+  overload: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToBufferPool*
+  nameWithType.vb: IMessageFormatter(Of T).ToBufferPool(T)
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).ToBufferPool(T)
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArraySegment(`0)
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArraySegment(`0)
+  id: ToArraySegment(`0)
+  parent: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  langs:
+  - csharp
+  - vb
+  name: ToArraySegment(T)
+  nameWithType: IMessageFormatter<T>.ToArraySegment(T)
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.ToArraySegment(T)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToArraySegment
+    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp.Formatting
+  summary: "\nConverts the object to a <see cref=\"!:ArraySegment&lt;Byte>\"></see> representing a binary format of it.\n"
+  example: []
+  syntax:
+    content: ArraySegment<byte> ToArraySegment(T message)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to convert.
+    return:
+      type: ArraySegment{System.Byte}
+      description: A <xref href="EventStore.BufferManagement.BufferPool" data-throw-if-not-resolved="false"></xref> containing the data representing the object.
+    content.vb: Function ToArraySegment(message As T) As ArraySegment(Of Byte)
+  overload: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArraySegment*
+  nameWithType.vb: IMessageFormatter(Of T).ToArraySegment(T)
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).ToArraySegment(T)
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArray(`0)
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArray(`0)
+  id: ToArray(`0)
+  parent: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  langs:
+  - csharp
+  - vb
+  name: ToArray(T)
+  nameWithType: IMessageFormatter<T>.ToArray(T)
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.ToArray(T)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToArray
+    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp.Formatting
+  summary: "\nConverts the object to a byte array representing a binary format of it.\n"
+  example: []
+  syntax:
+    content: byte[] ToArray(T message)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to convert.
+    return:
+      type: System.Byte[]
+      description: A <xref href="EventStore.BufferManagement.BufferPool" data-throw-if-not-resolved="false"></xref> containing the data representing the object.
+    content.vb: Function ToArray(message As T) As Byte()
+  overload: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArray*
+  nameWithType.vb: IMessageFormatter(Of T).ToArray(T)
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).ToArray(T)
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(EventStore.BufferManagement.BufferPool)
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(EventStore.BufferManagement.BufferPool)
+  id: From(EventStore.BufferManagement.BufferPool)
+  parent: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  langs:
+  - csharp
+  - vb
+  name: From(BufferPool)
+  nameWithType: IMessageFormatter<T>.From(BufferPool)
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From(EventStore.BufferManagement.BufferPool)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: From
+    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+    startLine: 33
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp.Formatting
+  summary: "\nTakes a <xref href=\"EventStore.BufferManagement.BufferPool\" data-throw-if-not-resolved=\"false\"></xref> and converts its contents to a message object\n"
+  example: []
+  syntax:
+    content: T From(BufferPool bufferPool)
+    parameters:
+    - id: bufferPool
+      type: EventStore.BufferManagement.BufferPool
+      description: The buffer pool.
+    return:
+      type: '{T}'
+      description: A message representing the data given
+    content.vb: Function From(bufferPool As BufferPool) As T
+  overload: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From*
+  nameWithType.vb: IMessageFormatter(Of T).From(BufferPool)
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From(EventStore.BufferManagement.BufferPool)
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  id: From(ArraySegment{System.Byte})
+  parent: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  langs:
+  - csharp
+  - vb
+  name: From(ArraySegment<Byte>)
+  nameWithType: IMessageFormatter<T>.From(ArraySegment<Byte>)
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From(ArraySegment<System.Byte>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: From
+    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+    startLine: 40
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp.Formatting
+  summary: "\nTakes an ArraySegment and converts its contents to a message object\n"
+  example: []
+  syntax:
+    content: T From(ArraySegment<byte> segment)
+    parameters:
+    - id: segment
+      type: ArraySegment{System.Byte}
+      description: The buffer pool.
+    return:
+      type: '{T}'
+      description: A message representing the data given
+    content.vb: Function From(segment As ArraySegment(Of Byte)) As T
+  overload: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From*
+  nameWithType.vb: IMessageFormatter(Of T).From(ArraySegment(Of Byte))
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From(ArraySegment(Of System.Byte))
+  name.vb: From(ArraySegment(Of Byte))
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.Byte[])
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.Byte[])
+  id: From(System.Byte[])
+  parent: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1
+  langs:
+  - csharp
+  - vb
+  name: From(Byte[])
+  nameWithType: IMessageFormatter<T>.From(Byte[])
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: From
+    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/IMessageFormatter.cs
+    startLine: 47
+  assemblies:
+  - EventStore.Transport.Tcp
+  namespace: EventStore.Transport.Tcp.Formatting
+  summary: "\nTakes an Array and converts its contents to a message object\n"
+  example: []
+  syntax:
+    content: T From(byte[] array)
+    parameters:
+    - id: array
+      type: System.Byte[]
+      description: The buffer pool.
+    return:
+      type: '{T}'
+      description: A message representing the data given
+    content.vb: Function From(array As Byte()) As T
+  overload: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From*
+  nameWithType.vb: IMessageFormatter(Of T).From(Byte())
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From(System.Byte())
+  name.vb: From(Byte())
+references:
+- uid: EventStore.Transport.Tcp.Formatting
+  commentId: N:EventStore.Transport.Tcp.Formatting
+  isExternal: false
+  name: EventStore.Transport.Tcp.Formatting
+  nameWithType: EventStore.Transport.Tcp.Formatting
+  fullName: EventStore.Transport.Tcp.Formatting
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IMessageFormatter<T>>()
+  nameWithType: ProtobufExtensions.Serialize<IMessageFormatter<T>>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IMessageFormatter(Of T))()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T))()
+  name.vb: Serialize(Of IMessageFormatter(Of T))()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IMessageFormatter<T>>
+    nameWithType: ProtobufExtensions.Serialize<IMessageFormatter<T>>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IMessageFormatter(Of T))
+    nameWithType: ProtobufExtensions.Serialize(Of IMessageFormatter(Of T))
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IMessageFormatter<T>>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IMessageFormatter<T>>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IMessageFormatter(Of T))()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T))()
+  name.vb: SerializeToArray(Of IMessageFormatter(Of T))()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IMessageFormatter<T>>
+    nameWithType: ProtobufExtensions.SerializeToArray<IMessageFormatter<T>>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IMessageFormatter(Of T))
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IMessageFormatter(Of T))
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.BufferManagement.BufferPool
+  commentId: T:EventStore.BufferManagement.BufferPool
+  parent: EventStore.BufferManagement
+  isExternal: false
+  name: BufferPool
+  nameWithType: BufferPool
+  fullName: EventStore.BufferManagement.BufferPool
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToBufferPool*
+  commentId: Overload:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToBufferPool
+  isExternal: false
+  name: ToBufferPool
+  nameWithType: IMessageFormatter<T>.ToBufferPool
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.ToBufferPool
+  nameWithType.vb: IMessageFormatter(Of T).ToBufferPool
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).ToBufferPool
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: EventStore.BufferManagement
+  commentId: N:EventStore.BufferManagement
+  isExternal: false
+  name: EventStore.BufferManagement
+  nameWithType: EventStore.BufferManagement
+  fullName: EventStore.BufferManagement
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArraySegment*
+  commentId: Overload:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArraySegment
+  isExternal: false
+  name: ToArraySegment
+  nameWithType: IMessageFormatter<T>.ToArraySegment
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.ToArraySegment
+  nameWithType.vb: IMessageFormatter(Of T).ToArraySegment
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).ToArraySegment
+- uid: ArraySegment{System.Byte}
+  commentId: '!:ArraySegment{System.Byte}'
+  definition: ArraySegment`1
+  name: ArraySegment<Byte>
+  nameWithType: ArraySegment<Byte>
+  fullName: ArraySegment<System.Byte>
+  nameWithType.vb: ArraySegment(Of Byte)
+  fullName.vb: ArraySegment(Of System.Byte)
+  name.vb: ArraySegment(Of Byte)
+  spec.csharp:
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArraySegment`1
+  isExternal: true
+  name: ArraySegment<>
+  nameWithType: ArraySegment<>
+  fullName: ArraySegment<>
+  nameWithType.vb: ArraySegment(Of )
+  fullName.vb: ArraySegment(Of )
+  name.vb: ArraySegment(Of )
+  spec.csharp:
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArray*
+  commentId: Overload:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.ToArray
+  isExternal: false
+  name: ToArray
+  nameWithType: IMessageFormatter<T>.ToArray
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.ToArray
+  nameWithType.vb: IMessageFormatter(Of T).ToArray
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).ToArray
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From*
+  commentId: Overload:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From
+  isExternal: false
+  name: From
+  nameWithType: IMessageFormatter<T>.From
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From
+  nameWithType.vb: IMessageFormatter(Of T).From
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From

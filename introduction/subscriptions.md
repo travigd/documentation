@@ -1,8 +1,8 @@
 ---
-title: "Types of Subscriptions"
-section: "Introduction"
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Types of Subscriptions
 
 When using the Event Store client APIs, clients can subscribe to a stream and be notified when new events are written to that stream. There are three types of subscription are available, all of which can be useful in different situations.
 
@@ -20,7 +20,8 @@ For example, if a starting point of 50 is specified when a stream has 100 events
 
 ## Persistent Subscriptions
 
-<span class="note">Persistent subscriptions exist in version 3.2.0 and above of Event Store.</span>
+> [!NOTE]
+> Persistent subscriptions exist in version 3.2.0 and above of Event Store.
 
 This subscriptions supports the "competing consumers" messaging pattern. The subscription state is stored server side in Event Store and allows for at-least-once delivery guarantees across multiple consumers on the same stream. They are useful when it is desirable to distribute messages to many workers.
 

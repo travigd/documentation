@@ -1,9 +1,8 @@
 ---
-title: "Debugging"
-section: "Projections"
-version: "4.0.2"
-pinned: true
+outputFileName: index.html
 ---
+
+# Debugging
 
 User projections you create in JavaScript have a bonus that debugging is easier via any browser that ships with debugging capabilities. The following screenshots show the use of Chrome, but we have tested debugging with all major browsers which includes Firefox, Microsoft Edge and Safari.
 

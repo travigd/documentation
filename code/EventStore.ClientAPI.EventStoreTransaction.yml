@@ -1,0 +1,862 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.EventStoreTransaction
+  commentId: T:EventStore.ClientAPI.EventStoreTransaction
+  id: EventStoreTransaction
+  parent: EventStore.ClientAPI
+  children:
+  - EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  - EventStore.ClientAPI.EventStoreTransaction.Dispose
+  - EventStore.ClientAPI.EventStoreTransaction.Rollback
+  - EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  - EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  - EventStore.ClientAPI.EventStoreTransaction.WriteAsync(IEnumerable{EventStore.ClientAPI.EventData})
+  langs:
+  - csharp
+  - vb
+  name: EventStoreTransaction
+  nameWithType: EventStoreTransaction
+  fullName: EventStore.ClientAPI.EventStoreTransaction
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreTransaction.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStoreTransaction
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 12
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nRepresents a multi-request transaction with the Event Store\n"
+  example: []
+  syntax:
+    content: 'public class EventStoreTransaction : IDisposable'
+    content.vb: >-
+      Public Class EventStoreTransaction
+          Inherits IDisposable
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.ClientAPI.EventStoreTransaction.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.ClientAPI.EventStoreTransaction.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  commentId: F:EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  id: TransactionId
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: TransactionId
+  nameWithType: EventStoreTransaction.TransactionId
+  fullName: EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreTransaction.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TransactionId
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 18
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe ID of the transaction. This can be used to recover\na transaction later.\n"
+  example: []
+  syntax:
+    content: public readonly long TransactionId
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly TransactionId As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  id: CommitAsync
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: CommitAsync()
+  nameWithType: EventStoreTransaction.CommitAsync()
+  fullName: EventStore.ClientAPI.EventStoreTransaction.CommitAsync()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreTransaction.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CommitAsync
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 44
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nAsynchronously commits this transaction\n"
+  example: []
+  syntax:
+    content: public Task<WriteResult> CommitAsync()
+    return:
+      type: Task{EventStore.ClientAPI.WriteResult}
+      description: A <see cref="!:Task"></see> that returns expected version for following write requests
+    content.vb: Public Function CommitAsync As Task(Of WriteResult)
+  overload: EventStore.ClientAPI.EventStoreTransaction.CommitAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  id: WriteAsync(EventStore.ClientAPI.EventData[])
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(EventData[])
+  nameWithType: EventStoreTransaction.WriteAsync(EventData[])
+  fullName: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreTransaction.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteAsync
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 57
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWrites to a transaction in the event store asynchronously\n"
+  example: []
+  syntax:
+    content: public Task WriteAsync(params EventData[] events)
+    parameters:
+    - id: events
+      type: EventStore.ClientAPI.EventData[]
+      description: The events to write
+    return:
+      type: Task
+      description: A <see cref="!:Task"></see> allowing the caller to control the async operation
+    content.vb: Public Function WriteAsync(ParamArray events As EventData()) As Task
+  overload: EventStore.ClientAPI.EventStoreTransaction.WriteAsync*
+  nameWithType.vb: EventStoreTransaction.WriteAsync(EventData())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData())
+  name.vb: WriteAsync(EventData())
+- uid: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(IEnumerable{EventStore.ClientAPI.EventData})
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.WriteAsync(IEnumerable{EventStore.ClientAPI.EventData})
+  id: WriteAsync(IEnumerable{EventStore.ClientAPI.EventData})
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(IEnumerable<EventData>)
+  nameWithType: EventStoreTransaction.WriteAsync(IEnumerable<EventData>)
+  fullName: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(IEnumerable<EventStore.ClientAPI.EventData>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreTransaction.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: WriteAsync
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 67
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWrites to a transaction in the event store asynchronously\n"
+  example: []
+  syntax:
+    content: public Task WriteAsync(IEnumerable<EventData> events)
+    parameters:
+    - id: events
+      type: IEnumerable{EventStore.ClientAPI.EventData}
+      description: The events to write
+    return:
+      type: Task
+      description: A <see cref="!:Task"></see> allowing the caller to control the async operation
+    content.vb: Public Function WriteAsync(events As IEnumerable(Of EventData)) As Task
+  overload: EventStore.ClientAPI.EventStoreTransaction.WriteAsync*
+  nameWithType.vb: EventStoreTransaction.WriteAsync(IEnumerable(Of EventData))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(IEnumerable(Of EventStore.ClientAPI.EventData))
+  name.vb: WriteAsync(IEnumerable(Of EventData))
+- uid: EventStore.ClientAPI.EventStoreTransaction.Rollback
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.Rollback
+  id: Rollback
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: Rollback()
+  nameWithType: EventStoreTransaction.Rollback()
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Rollback()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreTransaction.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Rollback
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 77
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nRollsback this transaction.\n"
+  example: []
+  syntax:
+    content: public void Rollback()
+    content.vb: Public Sub Rollback
+  overload: EventStore.ClientAPI.EventStoreTransaction.Rollback*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.EventStoreTransaction.Dispose
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.Dispose
+  id: Dispose
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: EventStoreTransaction.Dispose()
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreTransaction.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 86
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nDisposes this transaction rolling it back if not already committed\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.ClientAPI.EventStoreTransaction.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  isExternal: false
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.EventStoreTransaction.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<EventStoreTransaction>()
+  nameWithType: ProtobufExtensions.Serialize<EventStoreTransaction>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.EventStoreTransaction>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of EventStoreTransaction)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.EventStoreTransaction)()
+  name.vb: Serialize(Of EventStoreTransaction)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<EventStoreTransaction>
+    nameWithType: ProtobufExtensions.Serialize<EventStoreTransaction>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.EventStoreTransaction>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of EventStoreTransaction)
+    nameWithType: ProtobufExtensions.Serialize(Of EventStoreTransaction)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.EventStoreTransaction)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.EventStoreTransaction.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<EventStoreTransaction>()
+  nameWithType: ProtobufExtensions.SerializeToArray<EventStoreTransaction>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.EventStoreTransaction>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of EventStoreTransaction)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.EventStoreTransaction)()
+  name.vb: SerializeToArray(Of EventStoreTransaction)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<EventStoreTransaction>
+    nameWithType: ProtobufExtensions.SerializeToArray<EventStoreTransaction>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.EventStoreTransaction>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of EventStoreTransaction)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of EventStoreTransaction)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.EventStoreTransaction)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.ClientAPI.EventStoreTransaction.CommitAsync*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  isExternal: false
+  name: CommitAsync
+  nameWithType: EventStoreTransaction.CommitAsync
+  fullName: EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+- uid: Task{EventStore.ClientAPI.WriteResult}
+  commentId: '!:Task{EventStore.ClientAPI.WriteResult}'
+  definition: Task`1
+  name: Task<WriteResult>
+  nameWithType: Task<WriteResult>
+  fullName: Task<EventStore.ClientAPI.WriteResult>
+  nameWithType.vb: Task(Of WriteResult)
+  fullName.vb: Task(Of EventStore.ClientAPI.WriteResult)
+  name.vb: Task(Of WriteResult)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.WriteResult
+    name: WriteResult
+    nameWithType: WriteResult
+    fullName: EventStore.ClientAPI.WriteResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.WriteResult
+    name: WriteResult
+    nameWithType: WriteResult
+    fullName: EventStore.ClientAPI.WriteResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.EventStoreTransaction.WriteAsync*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.WriteAsync
+  isExternal: false
+  name: WriteAsync
+  nameWithType: EventStoreTransaction.WriteAsync
+  fullName: EventStore.ClientAPI.EventStoreTransaction.WriteAsync
+- uid: EventStore.ClientAPI.EventData[]
+  name: EventData[]
+  nameWithType: EventData[]
+  fullName: EventStore.ClientAPI.EventData[]
+  nameWithType.vb: EventData()
+  fullName.vb: EventStore.ClientAPI.EventData()
+  name.vb: EventData()
+  spec.csharp:
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
+- uid: IEnumerable{EventStore.ClientAPI.EventData}
+  commentId: '!:IEnumerable{EventStore.ClientAPI.EventData}'
+  definition: IEnumerable`1
+  name: IEnumerable<EventData>
+  nameWithType: IEnumerable<EventData>
+  fullName: IEnumerable<EventStore.ClientAPI.EventData>
+  nameWithType.vb: IEnumerable(Of EventData)
+  fullName.vb: IEnumerable(Of EventStore.ClientAPI.EventData)
+  name.vb: IEnumerable(Of EventData)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.EventStoreTransaction.Rollback*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.Rollback
+  isExternal: false
+  name: Rollback
+  nameWithType: EventStoreTransaction.Rollback
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Rollback
+- uid: EventStore.ClientAPI.EventStoreTransaction.Dispose*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: EventStoreTransaction.Dispose
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Dispose

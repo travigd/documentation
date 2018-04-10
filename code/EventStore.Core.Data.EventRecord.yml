@@ -1,0 +1,1344 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Data.EventRecord
+  commentId: T:EventStore.Core.Data.EventRecord
+  id: EventRecord
+  parent: EventStore.Core.Data
+  children:
+  - EventStore.Core.Data.EventRecord.#ctor(System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  - EventStore.Core.Data.EventRecord.#ctor(System.Int64,System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,DateTime,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[])
+  - EventStore.Core.Data.EventRecord.CorrelationId
+  - EventStore.Core.Data.EventRecord.Data
+  - EventStore.Core.Data.EventRecord.Equals(EventStore.Core.Data.EventRecord)
+  - EventStore.Core.Data.EventRecord.Equals(System.Object)
+  - EventStore.Core.Data.EventRecord.EventId
+  - EventStore.Core.Data.EventRecord.EventNumber
+  - EventStore.Core.Data.EventRecord.EventStreamId
+  - EventStore.Core.Data.EventRecord.EventType
+  - EventStore.Core.Data.EventRecord.ExpectedVersion
+  - EventStore.Core.Data.EventRecord.Flags
+  - EventStore.Core.Data.EventRecord.GetHashCode
+  - EventStore.Core.Data.EventRecord.IsJson
+  - EventStore.Core.Data.EventRecord.LogPosition
+  - EventStore.Core.Data.EventRecord.Metadata
+  - EventStore.Core.Data.EventRecord.op_Equality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  - EventStore.Core.Data.EventRecord.op_Inequality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  - EventStore.Core.Data.EventRecord.TimeStamp
+  - EventStore.Core.Data.EventRecord.ToString
+  - EventStore.Core.Data.EventRecord.TransactionOffset
+  - EventStore.Core.Data.EventRecord.TransactionPosition
+  langs:
+  - csharp
+  - vb
+  name: EventRecord
+  nameWithType: EventRecord
+  fullName: EventStore.Core.Data.EventRecord
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventRecord
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: 'public class EventRecord : IEquatable<EventRecord>'
+    content.vb: >-
+      Public Class EventRecord
+          Inherits IEquatable(Of EventRecord)
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Data.EventRecord.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Data.EventRecord.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Data.EventRecord.IsJson
+  commentId: P:EventStore.Core.Data.EventRecord.IsJson
+  id: IsJson
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: IsJson
+  nameWithType: EventRecord.IsJson
+  fullName: EventStore.Core.Data.EventRecord.IsJson
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsJson
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public bool IsJson { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsJson As Boolean
+  overload: EventStore.Core.Data.EventRecord.IsJson*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.EventNumber
+  commentId: F:EventStore.Core.Data.EventRecord.EventNumber
+  id: EventNumber
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: EventNumber
+  nameWithType: EventRecord.EventNumber
+  fullName: EventStore.Core.Data.EventRecord.EventNumber
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventNumber
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly long EventNumber
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly EventNumber As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.LogPosition
+  commentId: F:EventStore.Core.Data.EventRecord.LogPosition
+  id: LogPosition
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: LogPosition
+  nameWithType: EventRecord.LogPosition
+  fullName: EventStore.Core.Data.EventRecord.LogPosition
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LogPosition
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 15
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly long LogPosition
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly LogPosition As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.CorrelationId
+  commentId: F:EventStore.Core.Data.EventRecord.CorrelationId
+  id: CorrelationId
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: CorrelationId
+  nameWithType: EventRecord.CorrelationId
+  fullName: EventStore.Core.Data.EventRecord.CorrelationId
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CorrelationId
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly Guid CorrelationId
+    return:
+      type: Guid
+    content.vb: Public ReadOnly CorrelationId As Guid
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.EventId
+  commentId: F:EventStore.Core.Data.EventRecord.EventId
+  id: EventId
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: EventId
+  nameWithType: EventRecord.EventId
+  fullName: EventStore.Core.Data.EventRecord.EventId
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventId
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly Guid EventId
+    return:
+      type: Guid
+    content.vb: Public ReadOnly EventId As Guid
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.TransactionPosition
+  commentId: F:EventStore.Core.Data.EventRecord.TransactionPosition
+  id: TransactionPosition
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: TransactionPosition
+  nameWithType: EventRecord.TransactionPosition
+  fullName: EventStore.Core.Data.EventRecord.TransactionPosition
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TransactionPosition
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly long TransactionPosition
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly TransactionPosition As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.TransactionOffset
+  commentId: F:EventStore.Core.Data.EventRecord.TransactionOffset
+  id: TransactionOffset
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: TransactionOffset
+  nameWithType: EventRecord.TransactionOffset
+  fullName: EventStore.Core.Data.EventRecord.TransactionOffset
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TransactionOffset
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly int TransactionOffset
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly TransactionOffset As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.EventStreamId
+  commentId: F:EventStore.Core.Data.EventRecord.EventStreamId
+  id: EventStreamId
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: EventStreamId
+  nameWithType: EventRecord.EventStreamId
+  fullName: EventStore.Core.Data.EventRecord.EventStreamId
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStreamId
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly string EventStreamId
+    return:
+      type: System.String
+    content.vb: Public ReadOnly EventStreamId As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.ExpectedVersion
+  commentId: F:EventStore.Core.Data.EventRecord.ExpectedVersion
+  id: ExpectedVersion
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: ExpectedVersion
+  nameWithType: EventRecord.ExpectedVersion
+  fullName: EventStore.Core.Data.EventRecord.ExpectedVersion
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ExpectedVersion
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 21
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly long ExpectedVersion
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly ExpectedVersion As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.TimeStamp
+  commentId: F:EventStore.Core.Data.EventRecord.TimeStamp
+  id: TimeStamp
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: TimeStamp
+  nameWithType: EventRecord.TimeStamp
+  fullName: EventStore.Core.Data.EventRecord.TimeStamp
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TimeStamp
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 22
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly DateTime TimeStamp
+    return:
+      type: DateTime
+    content.vb: Public ReadOnly TimeStamp As DateTime
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.Flags
+  commentId: F:EventStore.Core.Data.EventRecord.Flags
+  id: Flags
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: Flags
+  nameWithType: EventRecord.Flags
+  fullName: EventStore.Core.Data.EventRecord.Flags
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Flags
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly PrepareFlags Flags
+    return:
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+    content.vb: Public ReadOnly Flags As PrepareFlags
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.EventType
+  commentId: F:EventStore.Core.Data.EventRecord.EventType
+  id: EventType
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: EventType
+  nameWithType: EventRecord.EventType
+  fullName: EventStore.Core.Data.EventRecord.EventType
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventType
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly string EventType
+    return:
+      type: System.String
+    content.vb: Public ReadOnly EventType As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.Data
+  commentId: F:EventStore.Core.Data.EventRecord.Data
+  id: Data
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: EventRecord.Data
+  fullName: EventStore.Core.Data.EventRecord.Data
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Data
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly byte[] Data
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Data As Byte()
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.Metadata
+  commentId: F:EventStore.Core.Data.EventRecord.Metadata
+  id: Metadata
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: Metadata
+  nameWithType: EventRecord.Metadata
+  fullName: EventStore.Core.Data.EventRecord.Metadata
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Metadata
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public readonly byte[] Metadata
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Metadata As Byte()
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Data.EventRecord.#ctor(System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  commentId: M:EventStore.Core.Data.EventRecord.#ctor(System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  id: '#ctor(System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)'
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: EventRecord(Int64, PrepareLogRecord)
+  nameWithType: EventRecord.EventRecord(Int64, PrepareLogRecord)
+  fullName: EventStore.Core.Data.EventRecord.EventRecord(System.Int64, EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public EventRecord(long eventNumber, PrepareLogRecord prepare)
+    parameters:
+    - id: eventNumber
+      type: System.Int64
+    - id: prepare
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+    content.vb: Public Sub New(eventNumber As Long, prepare As PrepareLogRecord)
+  overload: EventStore.Core.Data.EventRecord.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Data.EventRecord.#ctor(System.Int64,System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,DateTime,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[])
+  commentId: M:EventStore.Core.Data.EventRecord.#ctor(System.Int64,System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,DateTime,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[])
+  id: '#ctor(System.Int64,System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,DateTime,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[])'
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: EventRecord(Int64, Int64, Guid, Guid, Int64, Int32, String, Int64, DateTime, PrepareFlags, String, Byte[], Byte[])
+  nameWithType: EventRecord.EventRecord(Int64, Int64, Guid, Guid, Int64, Int32, String, Int64, DateTime, PrepareFlags, String, Byte[], Byte[])
+  fullName: EventStore.Core.Data.EventRecord.EventRecord(System.Int64, System.Int64, Guid, Guid, System.Int64, System.Int32, System.String, System.Int64, DateTime, EventStore.Core.TransactionLog.LogRecords.PrepareFlags, System.String, System.Byte[], System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 48
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public EventRecord(long eventNumber, long logPosition, Guid correlationId, Guid eventId, long transactionPosition, int transactionOffset, string eventStreamId, long expectedVersion, DateTime timeStamp, PrepareFlags flags, string eventType, byte[] data, byte[] metadata)
+    parameters:
+    - id: eventNumber
+      type: System.Int64
+    - id: logPosition
+      type: System.Int64
+    - id: correlationId
+      type: Guid
+    - id: eventId
+      type: Guid
+    - id: transactionPosition
+      type: System.Int64
+    - id: transactionOffset
+      type: System.Int32
+    - id: eventStreamId
+      type: System.String
+    - id: expectedVersion
+      type: System.Int64
+    - id: timeStamp
+      type: DateTime
+    - id: flags
+      type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+    - id: eventType
+      type: System.String
+    - id: data
+      type: System.Byte[]
+    - id: metadata
+      type: System.Byte[]
+    content.vb: Public Sub New(eventNumber As Long, logPosition As Long, correlationId As Guid, eventId As Guid, transactionPosition As Long, transactionOffset As Integer, eventStreamId As String, expectedVersion As Long, timeStamp As DateTime, flags As PrepareFlags, eventType As String, data As Byte(), metadata As Byte())
+  overload: EventStore.Core.Data.EventRecord.#ctor*
+  nameWithType.vb: EventRecord.EventRecord(Int64, Int64, Guid, Guid, Int64, Int32, String, Int64, DateTime, PrepareFlags, String, Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Data.EventRecord.EventRecord(System.Int64, System.Int64, Guid, Guid, System.Int64, System.Int32, System.String, System.Int64, DateTime, EventStore.Core.TransactionLog.LogRecords.PrepareFlags, System.String, System.Byte(), System.Byte())
+  name.vb: EventRecord(Int64, Int64, Guid, Guid, Int64, Int32, String, Int64, DateTime, PrepareFlags, String, Byte(), Byte())
+- uid: EventStore.Core.Data.EventRecord.Equals(EventStore.Core.Data.EventRecord)
+  commentId: M:EventStore.Core.Data.EventRecord.Equals(EventStore.Core.Data.EventRecord)
+  id: Equals(EventStore.Core.Data.EventRecord)
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: Equals(EventRecord)
+  nameWithType: EventRecord.Equals(EventRecord)
+  fullName: EventStore.Core.Data.EventRecord.Equals(EventStore.Core.Data.EventRecord)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Equals
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 86
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public bool Equals(EventRecord other)
+    parameters:
+    - id: other
+      type: EventStore.Core.Data.EventRecord
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As EventRecord) As Boolean
+  overload: EventStore.Core.Data.EventRecord.Equals*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Data.EventRecord.Equals(System.Object)
+  commentId: M:EventStore.Core.Data.EventRecord.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: EventRecord.Equals(Object)
+  fullName: EventStore.Core.Data.EventRecord.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Equals
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 105
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overload: EventStore.Core.Data.EventRecord.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Core.Data.EventRecord.GetHashCode
+  commentId: M:EventStore.Core.Data.EventRecord.GetHashCode
+  id: GetHashCode
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: EventRecord.GetHashCode()
+  fullName: EventStore.Core.Data.EventRecord.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetHashCode
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 113
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overload: EventStore.Core.Data.EventRecord.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Core.Data.EventRecord.op_Equality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  commentId: M:EventStore.Core.Data.EventRecord.op_Equality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  id: op_Equality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: Equality(EventRecord, EventRecord)
+  nameWithType: EventRecord.Equality(EventRecord, EventRecord)
+  fullName: EventStore.Core.Data.EventRecord.Equality(EventStore.Core.Data.EventRecord, EventStore.Core.Data.EventRecord)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_Equality
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 134
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator ==(EventRecord left, EventRecord right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.EventRecord
+    - id: right
+      type: EventStore.Core.Data.EventRecord
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As EventRecord, right As EventRecord) As Boolean
+  overload: EventStore.Core.Data.EventRecord.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.EventRecord.op_Inequality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  commentId: M:EventStore.Core.Data.EventRecord.op_Inequality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  id: op_Inequality(EventStore.Core.Data.EventRecord,EventStore.Core.Data.EventRecord)
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: Inequality(EventRecord, EventRecord)
+  nameWithType: EventRecord.Inequality(EventRecord, EventRecord)
+  fullName: EventStore.Core.Data.EventRecord.Inequality(EventStore.Core.Data.EventRecord, EventStore.Core.Data.EventRecord)
+  type: Operator
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: op_Inequality
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 139
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public static bool operator !=(EventRecord left, EventRecord right)
+    parameters:
+    - id: left
+      type: EventStore.Core.Data.EventRecord
+    - id: right
+      type: EventStore.Core.Data.EventRecord
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As EventRecord, right As EventRecord) As Boolean
+  overload: EventStore.Core.Data.EventRecord.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Data.EventRecord.ToString
+  commentId: M:EventStore.Core.Data.EventRecord.ToString
+  id: ToString
+  parent: EventStore.Core.Data.EventRecord
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: EventRecord.ToString()
+  fullName: EventStore.Core.Data.EventRecord.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Data/EventRecord.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ToString
+    path: ../EventStore/src/EventStore.Core/Data/EventRecord.cs
+    startLine: 144
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Data
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: EventStore.Core.Data.EventRecord.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  isExternal: false
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data.EventRecord.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<EventRecord>()
+  nameWithType: ProtobufExtensions.Serialize<EventRecord>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Data.EventRecord>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of EventRecord)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Data.EventRecord)()
+  name.vb: Serialize(Of EventRecord)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<EventRecord>
+    nameWithType: ProtobufExtensions.Serialize<EventRecord>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Data.EventRecord>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of EventRecord)
+    nameWithType: ProtobufExtensions.Serialize(Of EventRecord)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Data.EventRecord)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Data.EventRecord.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<EventRecord>()
+  nameWithType: ProtobufExtensions.SerializeToArray<EventRecord>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Data.EventRecord>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of EventRecord)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Data.EventRecord)()
+  name.vb: SerializeToArray(Of EventRecord)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<EventRecord>
+    nameWithType: ProtobufExtensions.SerializeToArray<EventRecord>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Data.EventRecord>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of EventRecord)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of EventRecord)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Data.EventRecord)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Data.EventRecord.IsJson*
+  commentId: Overload:EventStore.Core.Data.EventRecord.IsJson
+  isExternal: false
+  name: IsJson
+  nameWithType: EventRecord.IsJson
+  fullName: EventStore.Core.Data.EventRecord.IsJson
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime
+- uid: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: PrepareFlags
+  nameWithType: PrepareFlags
+  fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
+- uid: EventStore.Core.TransactionLog.LogRecords
+  commentId: N:EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: EventStore.Core.TransactionLog.LogRecords
+  nameWithType: EventStore.Core.TransactionLog.LogRecords
+  fullName: EventStore.Core.TransactionLog.LogRecords
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Core.Data.EventRecord.#ctor*
+  commentId: Overload:EventStore.Core.Data.EventRecord.#ctor
+  isExternal: false
+  name: EventRecord
+  nameWithType: EventRecord.EventRecord
+  fullName: EventStore.Core.Data.EventRecord.EventRecord
+- uid: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  commentId: T:EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+  parent: EventStore.Core.TransactionLog.LogRecords
+  isExternal: false
+  name: PrepareLogRecord
+  nameWithType: PrepareLogRecord
+  fullName: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
+- uid: EventStore.Core.Data.EventRecord.Equals*
+  commentId: Overload:EventStore.Core.Data.EventRecord.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: EventRecord.Equals
+  fullName: EventStore.Core.Data.EventRecord.Equals
+- uid: EventStore.Core.Data.EventRecord
+  commentId: T:EventStore.Core.Data.EventRecord
+  parent: EventStore.Core.Data
+  isExternal: false
+  name: EventRecord
+  nameWithType: EventRecord
+  fullName: EventStore.Core.Data.EventRecord
+- uid: EventStore.Core.Data.EventRecord.GetHashCode*
+  commentId: Overload:EventStore.Core.Data.EventRecord.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: EventRecord.GetHashCode
+  fullName: EventStore.Core.Data.EventRecord.GetHashCode
+- uid: EventStore.Core.Data.EventRecord.op_Equality*
+  commentId: Overload:EventStore.Core.Data.EventRecord.op_Equality
+  isExternal: false
+  name: Equality
+  nameWithType: EventRecord.Equality
+  fullName: EventStore.Core.Data.EventRecord.Equality
+- uid: EventStore.Core.Data.EventRecord.op_Inequality*
+  commentId: Overload:EventStore.Core.Data.EventRecord.op_Inequality
+  isExternal: false
+  name: Inequality
+  nameWithType: EventRecord.Inequality
+  fullName: EventStore.Core.Data.EventRecord.Inequality
+- uid: EventStore.Core.Data.EventRecord.ToString*
+  commentId: Overload:EventStore.Core.Data.EventRecord.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: EventRecord.ToString
+  fullName: EventStore.Core.Data.EventRecord.ToString

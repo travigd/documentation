@@ -1,17 +1,18 @@
 ---
-title: "Errors"
-section: "HTTP API"
-version: "4.0.2"
+outputFileName: index.html
 ---
 
-<!-- TODO: Is this really all errors? -->
+# Errors
 
-There are many error conditions that can be returned from the writing or reading of a stream. All of these can be identified by their status codes and should be relatively easy to diagnose.
+<!-- TODO: Is this really all errors? -->
+<!-- TODO: Replace by swagger? -->
+
+There are many error conditions that can return from the writing or reading of a stream. You can identify these by their status codes and should be easy to diagnose.
 
 ## Stream Never Created Get
 
 ```http
-ouro@ouroboros:~/src/EventStore.wiki$  curl -i -H "Accept:application/json" "http://127.0.0.1:2113/streams/anewstream"
+curl -i -H "Accept:application/json" "http://127.0.0.1:2113/streams/anewstream"
 HTTP/1.1 404 Not Found
 Access-Control-Allow-Methods: DELETE, GET, POST, OPTIONS
 Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER

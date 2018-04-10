@@ -1,0 +1,1665 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController
+  commentId: T:EventStore.Core.Services.Transport.Http.Controllers.GossipController
+  id: GossipController
+  parent: EventStore.Core.Services.Transport.Http.Controllers
+  children:
+  - EventStore.Core.Services.Transport.Http.Controllers.GossipController.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,TimeSpan)
+  - EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send(EventStore.Core.Messages.GossipMessage.SendGossip,IPEndPoint)
+  - EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  - EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  langs:
+  - csharp
+  - vb
+  name: GossipController
+  nameWithType: GossipController
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GossipController
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Controllers
+  syntax:
+    content: 'public class GossipController : CommunicationController, IHttpController, IHttpSender, ISender<GossipMessage.SendGossip>'
+    content.vb: >-
+      Public Class GossipController
+          Inherits CommunicationController
+          Implements IHttpController, IHttpSender, ISender(Of GossipMessage.SendGossip)
+  inheritance:
+  - System.Object
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  implements:
+  - EventStore.Core.Services.Transport.Http.IHttpController
+  - EventStore.Core.Services.Transport.Http.IHttpSender
+  - EventStore.Core.Services.Transport.Http.ISender{EventStore.Core.Messages.GossipMessage.SendGossip}
+  inheritedMembers:
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish(EventStore.Core.Messaging.Message)
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe(EventStore.Core.Services.Transport.Http.IHttpService)
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Func{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch,EventStore.Core.Services.Transport.Http.RequestParams},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch})
+  - EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Services.Transport.Http.Controllers.GossipController.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.Transport.Http.Controllers.GossipController.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,TimeSpan)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.GossipController.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,TimeSpan)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,TimeSpan)'
+  parent: EventStore.Core.Services.Transport.Http.Controllers.GossipController
+  langs:
+  - csharp
+  - vb
+  name: GossipController(IPublisher, IPublisher, TimeSpan)
+  nameWithType: GossipController.GossipController(IPublisher, IPublisher, TimeSpan)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.GossipController(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Controllers
+  syntax:
+    content: public GossipController(IPublisher publisher, IPublisher networkSendQueue, TimeSpan gossipTimeout)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: networkSendQueue
+      type: EventStore.Core.Bus.IPublisher
+    - id: gossipTimeout
+      type: TimeSpan
+    content.vb: Public Sub New(publisher As IPublisher, networkSendQueue As IPublisher, gossipTimeout As TimeSpan)
+  overload: EventStore.Core.Services.Transport.Http.Controllers.GossipController.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  id: SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.GossipController
+  langs:
+  - csharp
+  - vb
+  name: SubscribeCore(IHttpService)
+  nameWithType: GossipController.SubscribeCore(IHttpService)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscribeCore
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Controllers
+  syntax:
+    content: protected override void SubscribeCore(IHttpService service)
+    parameters:
+    - id: service
+      type: EventStore.Core.Services.Transport.Http.IHttpService
+    content.vb: Protected Overrides Sub SubscribeCore(service As IHttpService)
+  overridden: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  overload: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  id: SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.GossipController
+  langs:
+  - csharp
+  - vb
+  name: SubscribeSenders(HttpMessagePipe)
+  nameWithType: GossipController.SubscribeSenders(HttpMessagePipe)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SubscribeSenders
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+    startLine: 42
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Controllers
+  syntax:
+    content: public void SubscribeSenders(HttpMessagePipe pipe)
+    parameters:
+    - id: pipe
+      type: EventStore.Core.Services.Transport.Http.HttpMessagePipe
+    content.vb: Public Sub SubscribeSenders(pipe As HttpMessagePipe)
+  overload: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders*
+  implements:
+  - EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send(EventStore.Core.Messages.GossipMessage.SendGossip,IPEndPoint)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send(EventStore.Core.Messages.GossipMessage.SendGossip,IPEndPoint)
+  id: Send(EventStore.Core.Messages.GossipMessage.SendGossip,IPEndPoint)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.GossipController
+  langs:
+  - csharp
+  - vb
+  name: Send(GossipMessage.SendGossip, IPEndPoint)
+  nameWithType: GossipController.Send(GossipMessage.SendGossip, IPEndPoint)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send(EventStore.Core.Messages.GossipMessage.SendGossip, IPEndPoint)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Send
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/GossipController.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http.Controllers
+  syntax:
+    content: public void Send(GossipMessage.SendGossip message, IPEndPoint endPoint)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.GossipMessage.SendGossip
+    - id: endPoint
+      type: IPEndPoint
+    content.vb: Public Sub Send(message As GossipMessage.SendGossip, endPoint As IPEndPoint)
+  overload: EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send*
+  implements:
+  - EventStore.Core.Services.Transport.Http.ISender{EventStore.Core.Messages.GossipMessage.SendGossip}.Send(EventStore.Core.Messages.GossipMessage.SendGossip,IPEndPoint)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.Transport.Http.Controllers
+  commentId: N:EventStore.Core.Services.Transport.Http.Controllers
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Http.Controllers
+  nameWithType: EventStore.Core.Services.Transport.Http.Controllers
+  fullName: EventStore.Core.Services.Transport.Http.Controllers
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  commentId: T:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  parent: EventStore.Core.Services.Transport.Http.Controllers
+  isExternal: false
+  name: CommunicationController
+  nameWithType: CommunicationController
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+- uid: EventStore.Core.Services.Transport.Http.IHttpController
+  commentId: T:EventStore.Core.Services.Transport.Http.IHttpController
+  parent: EventStore.Core.Services.Transport.Http
+  isExternal: false
+  name: IHttpController
+  nameWithType: IHttpController
+  fullName: EventStore.Core.Services.Transport.Http.IHttpController
+- uid: EventStore.Core.Services.Transport.Http.IHttpSender
+  commentId: T:EventStore.Core.Services.Transport.Http.IHttpSender
+  parent: EventStore.Core.Services.Transport.Http
+  isExternal: false
+  name: IHttpSender
+  nameWithType: IHttpSender
+  fullName: EventStore.Core.Services.Transport.Http.IHttpSender
+- uid: EventStore.Core.Services.Transport.Http.ISender{EventStore.Core.Messages.GossipMessage.SendGossip}
+  commentId: T:EventStore.Core.Services.Transport.Http.ISender{EventStore.Core.Messages.GossipMessage.SendGossip}
+  parent: EventStore.Core.Services.Transport.Http
+  definition: EventStore.Core.Services.Transport.Http.ISender`1
+  name: ISender<GossipMessage.SendGossip>
+  nameWithType: ISender<GossipMessage.SendGossip>
+  fullName: EventStore.Core.Services.Transport.Http.ISender<EventStore.Core.Messages.GossipMessage.SendGossip>
+  nameWithType.vb: ISender(Of GossipMessage.SendGossip)
+  fullName.vb: EventStore.Core.Services.Transport.Http.ISender(Of EventStore.Core.Messages.GossipMessage.SendGossip)
+  name.vb: ISender(Of GossipMessage.SendGossip)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1
+    name: ISender
+    nameWithType: ISender
+    fullName: EventStore.Core.Services.Transport.Http.ISender
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.GossipMessage.SendGossip
+    name: GossipMessage.SendGossip
+    nameWithType: GossipMessage.SendGossip
+    fullName: EventStore.Core.Messages.GossipMessage.SendGossip
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1
+    name: ISender
+    nameWithType: ISender
+    fullName: EventStore.Core.Services.Transport.Http.ISender
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.GossipMessage.SendGossip
+    name: GossipMessage.SendGossip
+    nameWithType: GossipMessage.SendGossip
+    fullName: EventStore.Core.Messages.GossipMessage.SendGossip
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish(EventStore.Core.Messaging.Message)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish(EventStore.Core.Messaging.Message)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: false
+  name: Publish(Message)
+  nameWithType: CommunicationController.Publish(Message)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish(EventStore.Core.Messaging.Message)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish(EventStore.Core.Messaging.Message)
+    name: Publish
+    nameWithType: CommunicationController.Publish
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish(EventStore.Core.Messaging.Message)
+    name: Publish
+    nameWithType: CommunicationController.Publish
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Publish
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe(EventStore.Core.Services.Transport.Http.IHttpService)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe(EventStore.Core.Services.Transport.Http.IHttpService)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: false
+  name: Subscribe(IHttpService)
+  nameWithType: CommunicationController.Subscribe(IHttpService)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe(EventStore.Core.Services.Transport.Http.IHttpService)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe(EventStore.Core.Services.Transport.Http.IHttpService)
+    name: Subscribe
+    nameWithType: CommunicationController.Subscribe
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe(EventStore.Core.Services.Transport.Http.IHttpService)
+    name: Subscribe
+    nameWithType: CommunicationController.Subscribe
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Subscribe
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: true
+  name: SendBadRequest(HttpEntityManager, String)
+  nameWithType: CommunicationController.SendBadRequest(HttpEntityManager, String)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest(EventStore.Transport.Http.EntityManagement.HttpEntityManager, System.String)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+    name: SendBadRequest
+    nameWithType: CommunicationController.SendBadRequest
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+    name: SendBadRequest
+    nameWithType: CommunicationController.SendBadRequest
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendBadRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: false
+  name: SendTooBig(HttpEntityManager)
+  nameWithType: CommunicationController.SendTooBig(HttpEntityManager)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+    name: SendTooBig
+    nameWithType: CommunicationController.SendTooBig
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+    name: SendTooBig
+    nameWithType: CommunicationController.SendTooBig
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendTooBig
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: false
+  name: SendOk(HttpEntityManager)
+  nameWithType: CommunicationController.SendOk(HttpEntityManager)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+    name: SendOk
+    nameWithType: CommunicationController.SendOk
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk(EventStore.Transport.Http.EntityManagement.HttpEntityManager)
+    name: SendOk
+    nameWithType: CommunicationController.SendOk
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SendOk
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: true
+  name: Register(IHttpService, String, String, Action<HttpEntityManager, UriTemplateMatch>, ICodec[], ICodec[])
+  nameWithType: CommunicationController.Register(IHttpService, String, String, Action<HttpEntityManager, UriTemplateMatch>, ICodec[], ICodec[])
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register(EventStore.Core.Services.Transport.Http.IHttpService, System.String, System.String, Action<EventStore.Transport.Http.EntityManagement.HttpEntityManager, UriTemplateMatch>, EventStore.Transport.Http.ICodec[], EventStore.Transport.Http.ICodec[])
+  nameWithType.vb: CommunicationController.Register(IHttpService, String, String, Action(Of HttpEntityManager, UriTemplateMatch), ICodec(), ICodec())
+  fullName.vb: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register(EventStore.Core.Services.Transport.Http.IHttpService, System.String, System.String, Action(Of EventStore.Transport.Http.EntityManagement.HttpEntityManager, UriTemplateMatch), EventStore.Transport.Http.ICodec(), EventStore.Transport.Http.ICodec())
+  name.vb: Register(IHttpService, String, String, Action(Of HttpEntityManager, UriTemplateMatch), ICodec(), ICodec())
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+    name: Register
+    nameWithType: CommunicationController.Register
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: UriTemplateMatch
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+    name: Register
+    nameWithType: CommunicationController.Register
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.Register
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: UriTemplateMatch
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Func{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch,EventStore.Core.Services.Transport.Http.RequestParams},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Func{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch,EventStore.Core.Services.Transport.Http.RequestParams},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: true
+  name: RegisterCustom(IHttpService, String, String, Func<HttpEntityManager, UriTemplateMatch, RequestParams>, ICodec[], ICodec[])
+  nameWithType: CommunicationController.RegisterCustom(IHttpService, String, String, Func<HttpEntityManager, UriTemplateMatch, RequestParams>, ICodec[], ICodec[])
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom(EventStore.Core.Services.Transport.Http.IHttpService, System.String, System.String, Func<EventStore.Transport.Http.EntityManagement.HttpEntityManager, UriTemplateMatch, EventStore.Core.Services.Transport.Http.RequestParams>, EventStore.Transport.Http.ICodec[], EventStore.Transport.Http.ICodec[])
+  nameWithType.vb: CommunicationController.RegisterCustom(IHttpService, String, String, Func(Of HttpEntityManager, UriTemplateMatch, RequestParams), ICodec(), ICodec())
+  fullName.vb: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom(EventStore.Core.Services.Transport.Http.IHttpService, System.String, System.String, Func(Of EventStore.Transport.Http.EntityManagement.HttpEntityManager, UriTemplateMatch, EventStore.Core.Services.Transport.Http.RequestParams), EventStore.Transport.Http.ICodec(), EventStore.Transport.Http.ICodec())
+  name.vb: RegisterCustom(IHttpService, String, String, Func(Of HttpEntityManager, UriTemplateMatch, RequestParams), ICodec(), ICodec())
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Func{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch,EventStore.Core.Services.Transport.Http.RequestParams},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+    name: RegisterCustom
+    nameWithType: CommunicationController.RegisterCustom
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: UriTemplateMatch
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Services.Transport.Http.RequestParams
+    name: RequestParams
+    nameWithType: RequestParams
+    fullName: EventStore.Core.Services.Transport.Http.RequestParams
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Func{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch,EventStore.Core.Services.Transport.Http.RequestParams},EventStore.Transport.Http.ICodec[],EventStore.Transport.Http.ICodec[])
+    name: RegisterCustom
+    nameWithType: CommunicationController.RegisterCustom
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterCustom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: UriTemplateMatch
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Services.Transport.Http.RequestParams
+    name: RequestParams
+    nameWithType: RequestParams
+    fullName: EventStore.Core.Services.Transport.Http.RequestParams
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Transport.Http.ICodec
+    name: ICodec
+    nameWithType: ICodec
+    fullName: EventStore.Transport.Http.ICodec
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch})
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch})
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: true
+  name: RegisterUrlBased(IHttpService, String, String, Action<HttpEntityManager, UriTemplateMatch>)
+  nameWithType: CommunicationController.RegisterUrlBased(IHttpService, String, String, Action<HttpEntityManager, UriTemplateMatch>)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased(EventStore.Core.Services.Transport.Http.IHttpService, System.String, System.String, Action<EventStore.Transport.Http.EntityManagement.HttpEntityManager, UriTemplateMatch>)
+  nameWithType.vb: CommunicationController.RegisterUrlBased(IHttpService, String, String, Action(Of HttpEntityManager, UriTemplateMatch))
+  fullName.vb: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased(EventStore.Core.Services.Transport.Http.IHttpService, System.String, System.String, Action(Of EventStore.Transport.Http.EntityManagement.HttpEntityManager, UriTemplateMatch))
+  name.vb: RegisterUrlBased(IHttpService, String, String, Action(Of HttpEntityManager, UriTemplateMatch))
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch})
+    name: RegisterUrlBased
+    nameWithType: CommunicationController.RegisterUrlBased
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: UriTemplateMatch
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String,Action{EventStore.Transport.Http.EntityManagement.HttpEntityManager,UriTemplateMatch})
+    name: RegisterUrlBased
+    nameWithType: CommunicationController.RegisterUrlBased
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.RegisterUrlBased
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: UriTemplateMatch
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: true
+  name: MakeUrl(HttpEntityManager, String)
+  nameWithType: CommunicationController.MakeUrl(HttpEntityManager, String)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl(EventStore.Transport.Http.EntityManagement.HttpEntityManager, System.String)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+    name: MakeUrl
+    nameWithType: CommunicationController.MakeUrl
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String)
+    name: MakeUrl
+    nameWithType: CommunicationController.MakeUrl
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.MakeUrl
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+    name: HttpEntityManager
+    nameWithType: HttpEntityManager
+    fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<GossipController>()
+  nameWithType: ProtobufExtensions.Serialize<GossipController>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Transport.Http.Controllers.GossipController>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of GossipController)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Transport.Http.Controllers.GossipController)()
+  name.vb: Serialize(Of GossipController)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<GossipController>
+    nameWithType: ProtobufExtensions.Serialize<GossipController>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.Transport.Http.Controllers.GossipController>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of GossipController)
+    nameWithType: ProtobufExtensions.Serialize(Of GossipController)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.Transport.Http.Controllers.GossipController)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<GossipController>()
+  nameWithType: ProtobufExtensions.SerializeToArray<GossipController>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Transport.Http.Controllers.GossipController>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of GossipController)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Transport.Http.Controllers.GossipController)()
+  name.vb: SerializeToArray(Of GossipController)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<GossipController>
+    nameWithType: ProtobufExtensions.SerializeToArray<GossipController>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.Transport.Http.Controllers.GossipController>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of GossipController)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of GossipController)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.Transport.Http.Controllers.GossipController)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http
+  commentId: N:EventStore.Core.Services.Transport.Http
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Http
+  nameWithType: EventStore.Core.Services.Transport.Http
+  fullName: EventStore.Core.Services.Transport.Http
+- uid: EventStore.Core.Services.Transport.Http.ISender`1
+  commentId: T:EventStore.Core.Services.Transport.Http.ISender`1
+  isExternal: false
+  name: ISender<T>
+  nameWithType: ISender<T>
+  fullName: EventStore.Core.Services.Transport.Http.ISender<T>
+  nameWithType.vb: ISender(Of T)
+  fullName.vb: EventStore.Core.Services.Transport.Http.ISender(Of T)
+  name.vb: ISender(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1
+    name: ISender
+    nameWithType: ISender
+    fullName: EventStore.Core.Services.Transport.Http.ISender
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1
+    name: ISender
+    nameWithType: ISender
+    fullName: EventStore.Core.Services.Transport.Http.ISender
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.#ctor*
+  commentId: Overload:EventStore.Core.Services.Transport.Http.Controllers.GossipController.#ctor
+  isExternal: false
+  name: GossipController
+  nameWithType: GossipController.GossipController
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.GossipController
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  parent: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController
+  isExternal: false
+  name: SubscribeCore(IHttpService)
+  nameWithType: CommunicationController.SubscribeCore(IHttpService)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+    name: SubscribeCore
+    nameWithType: CommunicationController.SubscribeCore
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore(EventStore.Core.Services.Transport.Http.IHttpService)
+    name: SubscribeCore
+    nameWithType: CommunicationController.SubscribeCore
+    fullName: EventStore.Core.Services.Transport.Http.Controllers.CommunicationController.SubscribeCore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.IHttpService
+    name: IHttpService
+    nameWithType: IHttpService
+    fullName: EventStore.Core.Services.Transport.Http.IHttpService
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore*
+  commentId: Overload:EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore
+  isExternal: false
+  name: SubscribeCore
+  nameWithType: GossipController.SubscribeCore
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeCore
+- uid: EventStore.Core.Services.Transport.Http.IHttpService
+  commentId: T:EventStore.Core.Services.Transport.Http.IHttpService
+  parent: EventStore.Core.Services.Transport.Http
+  isExternal: false
+  name: IHttpService
+  nameWithType: IHttpService
+  fullName: EventStore.Core.Services.Transport.Http.IHttpService
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders*
+  commentId: Overload:EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders
+  isExternal: false
+  name: SubscribeSenders
+  nameWithType: GossipController.SubscribeSenders
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.SubscribeSenders
+- uid: EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  commentId: M:EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  parent: EventStore.Core.Services.Transport.Http.IHttpSender
+  isExternal: false
+  name: SubscribeSenders(HttpMessagePipe)
+  nameWithType: IHttpSender.SubscribeSenders(HttpMessagePipe)
+  fullName: EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+    name: SubscribeSenders
+    nameWithType: IHttpSender.SubscribeSenders
+    fullName: EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.HttpMessagePipe
+    name: HttpMessagePipe
+    nameWithType: HttpMessagePipe
+    fullName: EventStore.Core.Services.Transport.Http.HttpMessagePipe
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders(EventStore.Core.Services.Transport.Http.HttpMessagePipe)
+    name: SubscribeSenders
+    nameWithType: IHttpSender.SubscribeSenders
+    fullName: EventStore.Core.Services.Transport.Http.IHttpSender.SubscribeSenders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.Transport.Http.HttpMessagePipe
+    name: HttpMessagePipe
+    nameWithType: HttpMessagePipe
+    fullName: EventStore.Core.Services.Transport.Http.HttpMessagePipe
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Http.HttpMessagePipe
+  commentId: T:EventStore.Core.Services.Transport.Http.HttpMessagePipe
+  parent: EventStore.Core.Services.Transport.Http
+  isExternal: false
+  name: HttpMessagePipe
+  nameWithType: HttpMessagePipe
+  fullName: EventStore.Core.Services.Transport.Http.HttpMessagePipe
+- uid: EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send*
+  commentId: Overload:EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send
+  isExternal: false
+  name: Send
+  nameWithType: GossipController.Send
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.GossipController.Send
+- uid: EventStore.Core.Services.Transport.Http.ISender{EventStore.Core.Messages.GossipMessage.SendGossip}.Send(EventStore.Core.Messages.GossipMessage.SendGossip,IPEndPoint)
+  commentId: M:EventStore.Core.Services.Transport.Http.ISender{EventStore.Core.Messages.GossipMessage.SendGossip}.Send(EventStore.Core.Messages.GossipMessage.SendGossip,IPEndPoint)
+  parent: EventStore.Core.Services.Transport.Http.ISender{EventStore.Core.Messages.GossipMessage.SendGossip}
+  definition: EventStore.Core.Services.Transport.Http.ISender`1.Send(`0,IPEndPoint)
+  name: Send(GossipMessage.SendGossip, IPEndPoint)
+  nameWithType: ISender<GossipMessage.SendGossip>.Send(GossipMessage.SendGossip, IPEndPoint)
+  fullName: EventStore.Core.Services.Transport.Http.ISender<EventStore.Core.Messages.GossipMessage.SendGossip>.Send(EventStore.Core.Messages.GossipMessage.SendGossip, IPEndPoint)
+  nameWithType.vb: ISender(Of GossipMessage.SendGossip).Send(GossipMessage.SendGossip, IPEndPoint)
+  fullName.vb: EventStore.Core.Services.Transport.Http.ISender(Of EventStore.Core.Messages.GossipMessage.SendGossip).Send(EventStore.Core.Messages.GossipMessage.SendGossip, IPEndPoint)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1.Send(`0,IPEndPoint)
+    name: Send
+    nameWithType: ISender<GossipMessage.SendGossip>.Send
+    fullName: EventStore.Core.Services.Transport.Http.ISender<EventStore.Core.Messages.GossipMessage.SendGossip>.Send
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.GossipMessage.SendGossip
+    name: GossipMessage.SendGossip
+    nameWithType: GossipMessage.SendGossip
+    fullName: EventStore.Core.Messages.GossipMessage.SendGossip
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPEndPoint
+    name: IPEndPoint
+    nameWithType: IPEndPoint
+    fullName: IPEndPoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1.Send(`0,IPEndPoint)
+    name: Send
+    nameWithType: ISender(Of GossipMessage.SendGossip).Send
+    fullName: EventStore.Core.Services.Transport.Http.ISender(Of EventStore.Core.Messages.GossipMessage.SendGossip).Send
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.GossipMessage.SendGossip
+    name: GossipMessage.SendGossip
+    nameWithType: GossipMessage.SendGossip
+    fullName: EventStore.Core.Messages.GossipMessage.SendGossip
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPEndPoint
+    name: IPEndPoint
+    nameWithType: IPEndPoint
+    fullName: IPEndPoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.GossipMessage.SendGossip
+  commentId: T:EventStore.Core.Messages.GossipMessage.SendGossip
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: GossipMessage.SendGossip
+  nameWithType: GossipMessage.SendGossip
+  fullName: EventStore.Core.Messages.GossipMessage.SendGossip
+- uid: IPEndPoint
+  isExternal: true
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: IPEndPoint
+- uid: EventStore.Core.Services.Transport.Http.ISender`1.Send(`0,IPEndPoint)
+  commentId: M:EventStore.Core.Services.Transport.Http.ISender`1.Send(`0,IPEndPoint)
+  isExternal: true
+  name: Send(T, IPEndPoint)
+  nameWithType: ISender<T>.Send(T, IPEndPoint)
+  fullName: EventStore.Core.Services.Transport.Http.ISender<T>.Send(T, IPEndPoint)
+  nameWithType.vb: ISender(Of T).Send(T, IPEndPoint)
+  fullName.vb: EventStore.Core.Services.Transport.Http.ISender(Of T).Send(T, IPEndPoint)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1.Send(`0,IPEndPoint)
+    name: Send
+    nameWithType: ISender<T>.Send
+    fullName: EventStore.Core.Services.Transport.Http.ISender<T>.Send
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPEndPoint
+    name: IPEndPoint
+    nameWithType: IPEndPoint
+    fullName: IPEndPoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Http.ISender`1.Send(`0,IPEndPoint)
+    name: Send
+    nameWithType: ISender(Of T).Send
+    fullName: EventStore.Core.Services.Transport.Http.ISender(Of T).Send
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IPEndPoint
+    name: IPEndPoint
+    nameWithType: IPEndPoint
+    fullName: IPEndPoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages

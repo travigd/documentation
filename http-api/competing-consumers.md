@@ -1,18 +1,16 @@
 ---
-title: Competing Consumers
-section: HTTP API
-version: 4.0.2
+outputFileName: index.html
 ---
 
-This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see the [overview document]({{site.baseurl}}/introduction/competing-consumers).
+# Competing Consumers
+This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see the [overview document](~/introduction/competing-consumers.md).
 
-<span class="note">
-The Administration UI includes a <em>Competing Consumers</em> section where a user is able to create, update, delete and view subscriptions and their statuses.
-</span>
+> [!NOTE]
+> The Administration UI includes a <em>Competing Consumers</em> section where a user is able to create, update, delete and view subscriptions and their statuses.
 
 ## Creating a Persistent Subscription
 
-Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions]({{site.baseurl}}/server/access-control-lists).
+Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](~/server/users-and-access-control-lists.md).
 
 | URI                                           | Supported Content Types | Method |
 | --------------------------------------------- | ----------------------- | ------ |
@@ -20,16 +18,12 @@ Before interacting with a subscription group, you need to create one. You will r
 
 ### Query Parameters
 
-<!-- TODO: To move -->
-
 | Parameter           | Description                                   |
 | ------------------- | --------------------------------------------- |
 | `stream`            | The stream the persistent subscription is on. |
 | `subscription_name` | The name of the subscription group.           |
 
 Body
-
-<!-- TODO: Moved, check -->
 
 | Parameter                     | Description                                                                                        |
 | ----------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -39,7 +33,7 @@ Body
 | `checkPointAfterMilliseconds` | The amount of time the system should try to checkpoint after.                                      |
 | `liveBufferSize`              | The size of the live buffer (in memory) before resorting to paging.                                |
 | `readBatchSize`               | The size of the read batch when in paging mode.                                                    |
-| `bufferSize`    | The number of messages that should be buffered when in paging mode.                                |
+| `bufferSize`                  | The number of messages that should be buffered when in paging mode.                                |
 | `maxCheckPointCount`          | The maximum number of messages not checkpointed before forcing a checkpoint.                       |
 | `maxRetryCount`               | Sets the number of times a message should be retried before considered a bad message.              |
 | `maxSubscriberCount`          | Sets the maximum number of allowed subscribers.                                                    |
@@ -89,8 +83,6 @@ By default, reading a stream via a persistent subscription will return a single 
 
 ### Query Parameters
 
-<!-- TODO: To move -->
-
 | Parameter           | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
 | `stream`            | The stream the persistent subscription is on.                |
@@ -98,7 +90,7 @@ By default, reading a stream via a persistent subscription will return a single 
 | `count`             | How many events to return for the request.                   |
 | `embed`             | `None`, `Content`, `Rich`, `Body`, `PrettyBody`, `TryHarder` |
 
-Read [Reading Streams]({{site.baseurl}}/http-api/reading-streams) for information on the different embed levels.
+Read [Reading Streams](~/http-api/reading-streams.md) for information on the different embed levels.
 
 ### Response
 
@@ -190,7 +182,7 @@ For example:
 | `subscription_name` | The name of the subscription group.              |
 | `messageid`         | The id of the message that needs to be acked     |
 
-<!-- TODO: Has this been explained? -->
+<!-- Has this been explained? -->
 
 ### Nack multiple messages
 

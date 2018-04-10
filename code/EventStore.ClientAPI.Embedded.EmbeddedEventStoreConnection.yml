@@ -1,0 +1,190 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection
+  commentId: T:EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection
+  id: EmbeddedEventStoreConnection
+  parent: EventStore.ClientAPI.Embedded
+  children:
+  - EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode,EventStore.ClientAPI.ConnectionSettings,System.String)
+  - EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode,System.String)
+  langs:
+  - csharp
+  - vb
+  name: EmbeddedEventStoreConnection
+  nameWithType: EmbeddedEventStoreConnection
+  fullName: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.ClientAPI.Embedded/EmbeddedEventStoreConnection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EmbeddedEventStoreConnection
+    path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedEventStoreConnection.cs
+    startLine: 9
+  assemblies:
+  - EventStore.ClientAPI.Embedded
+  namespace: EventStore.ClientAPI.Embedded
+  summary: "\nContains factory methods to build a connection to an in-process EventStore\n"
+  example: []
+  syntax:
+    content: 'public static class EmbeddedEventStoreConnection : object'
+    content.vb: >-
+      Public Module EmbeddedEventStoreConnection
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode,System.String)
+  commentId: M:EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode,System.String)
+  id: Create(EventStore.Core.ClusterVNode,System.String)
+  parent: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection
+  langs:
+  - csharp
+  - vb
+  name: Create(ClusterVNode, String)
+  nameWithType: EmbeddedEventStoreConnection.Create(ClusterVNode, String)
+  fullName: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI.Embedded/EmbeddedEventStoreConnection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Create
+    path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedEventStoreConnection.cs
+    startLine: 22
+  assemblies:
+  - EventStore.ClientAPI.Embedded
+  namespace: EventStore.ClientAPI.Embedded
+  summary: "\nCreates a new embedded <xref href=\"EventStore.ClientAPI.IEventStoreConnection\" data-throw-if-not-resolved=\"false\"></xref> to single node with default connection settings\n"
+  example: []
+  syntax:
+    content: public static IEventStoreConnection Create(ClusterVNode eventStore, string connectionName = null)
+    parameters:
+    - id: eventStore
+      type: EventStore.Core.ClusterVNode
+      description: The <xref href="EventStore.Core.ClusterVNode" data-throw-if-not-resolved="false"></xref> to connect to. The node must already be running.
+    - id: connectionName
+      type: System.String
+      description: Optional name of connection (will be generated automatically, if not provided)
+    return:
+      type: EventStore.ClientAPI.IEventStoreConnection
+      description: ''
+    content.vb: Public Shared Function Create(eventStore As ClusterVNode, connectionName As String = Nothing) As IEventStoreConnection
+  overload: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode,EventStore.ClientAPI.ConnectionSettings,System.String)
+  commentId: M:EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode,EventStore.ClientAPI.ConnectionSettings,System.String)
+  id: Create(EventStore.Core.ClusterVNode,EventStore.ClientAPI.ConnectionSettings,System.String)
+  parent: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection
+  langs:
+  - csharp
+  - vb
+  name: Create(ClusterVNode, ConnectionSettings, String)
+  nameWithType: EmbeddedEventStoreConnection.Create(ClusterVNode, ConnectionSettings, String)
+  fullName: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create(EventStore.Core.ClusterVNode, EventStore.ClientAPI.ConnectionSettings, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI.Embedded/EmbeddedEventStoreConnection.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Create
+    path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedEventStoreConnection.cs
+    startLine: 34
+  assemblies:
+  - EventStore.ClientAPI.Embedded
+  namespace: EventStore.ClientAPI.Embedded
+  summary: "\nCreates a new embedded <xref href=\"EventStore.ClientAPI.IEventStoreConnection\" data-throw-if-not-resolved=\"false\"></xref> to single node using specific <xref href=\"EventStore.ClientAPI.ConnectionSettings\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: public static IEventStoreConnection Create(ClusterVNode eventStore, ConnectionSettings connectionSettings, string connectionName = null)
+    parameters:
+    - id: eventStore
+      type: EventStore.Core.ClusterVNode
+      description: The <xref href="EventStore.Core.ClusterVNode" data-throw-if-not-resolved="false"></xref> to connect to. The node must already be running.
+    - id: connectionSettings
+      type: EventStore.ClientAPI.ConnectionSettings
+      description: The <xref href="EventStore.ClientAPI.ConnectionSettings" data-throw-if-not-resolved="false"></xref> to apply to the new connection
+    - id: connectionName
+      type: System.String
+      description: Optional name of connection (will be generated automatically, if not provided)
+    return:
+      type: EventStore.ClientAPI.IEventStoreConnection
+      description: ''
+    content.vb: Public Shared Function Create(eventStore As ClusterVNode, connectionSettings As ConnectionSettings, connectionName As String = Nothing) As IEventStoreConnection
+  overload: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: EventStore.ClientAPI.Embedded
+  commentId: N:EventStore.ClientAPI.Embedded
+  isExternal: false
+  name: EventStore.ClientAPI.Embedded
+  nameWithType: EventStore.ClientAPI.Embedded
+  fullName: EventStore.ClientAPI.Embedded
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.ClientAPI.IEventStoreConnection
+  commentId: T:EventStore.ClientAPI.IEventStoreConnection
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: IEventStoreConnection
+  nameWithType: IEventStoreConnection
+  fullName: EventStore.ClientAPI.IEventStoreConnection
+- uid: EventStore.Core.ClusterVNode
+  commentId: T:EventStore.Core.ClusterVNode
+  parent: EventStore.Core
+  isExternal: false
+  name: ClusterVNode
+  nameWithType: ClusterVNode
+  fullName: EventStore.Core.ClusterVNode
+- uid: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create*
+  commentId: Overload:EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create
+  isExternal: false
+  name: Create
+  nameWithType: EmbeddedEventStoreConnection.Create
+  fullName: EventStore.ClientAPI.Embedded.EmbeddedEventStoreConnection.Create
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  isExternal: false
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: EventStore.Core
+  commentId: N:EventStore.Core
+  isExternal: false
+  name: EventStore.Core
+  nameWithType: EventStore.Core
+  fullName: EventStore.Core
+- uid: EventStore.ClientAPI.ConnectionSettings
+  commentId: T:EventStore.ClientAPI.ConnectionSettings
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: ConnectionSettings
+  nameWithType: ConnectionSettings
+  fullName: EventStore.ClientAPI.ConnectionSettings

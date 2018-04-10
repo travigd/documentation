@@ -1,8 +1,8 @@
 ---
-title: "Ports and networking"
-section: "Server"
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Ports and networking
 
 ## Single Node
 
@@ -18,7 +18,7 @@ When running in cluster mode the networking for Event Store is more complex. Clu
 
 The internal and external interfaces allow for separation of traffic. The internal network is where all cluster communications runs while the external interfaces is where all client communications runs. This allows for interesting setups such as putting internal communications on a different network than external client communications. You may wish to do this for many reasons including putting communications on separate NICs, locking down internal communications from a security perspective, or for security purposes. A good example of this might be when allowing clients over HTTP to talk directly to Event Store, you can move internal communications to a separate network to ensure the management interface and internal operations are not accessible from the outside.
 
-The external TCP and HTTP are similar to the HTTP and TCP ports of a single node deploy. Event Store runs Client requests over the HTTP API through the external HTTP port. You can run without the management API on the external interface (internal only). The external and the internal interfaces support the gossip protocol. You can control whether the admin interface is available on the external HTTP interface using the `admin-on-ext` [option]({{site.baseurl}}/server/command-line-arguments). You can control whether gossip is enable on external with the `gossip-on-ext` [option]({{site.baseurl}}/server/command-line-arguments) (though you normally want it).
+The external TCP and HTTP are similar to the HTTP and TCP ports of a single node deploy. Event Store runs Client requests over the HTTP API through the external HTTP port. You can run without the management API on the external interface (internal only). The external and the internal interfaces support the gossip protocol. You can control whether the admin interface is available on the external HTTP interface using the `admin-on-ext` [option](~/server/command-line-arguments.md). You can control whether gossip is enable on external with the `gossip-on-ext` [option](~/server/command-line-arguments.md) (though you normally want it).
 
 You configure the internal TCP and HTTP ports in the same way as the external. All internal communications for the cluster happen over these interfaces. Elections and internal gossip happen over HTTP. Replication and forwarding of client requests happens over the TCP channel.
 
@@ -32,11 +32,12 @@ Each heartbeat has two points of configuration. The first is the 'interval', thi
 
 Varying environments want drastically different values for these settings. While low numbers work well on a LAN they tend to not work well in the cloud. The defaults are likely fine on a LAN, in the cloud consider a setting of interval 5000ms and timeout 1000ms which should be fine for most installations.
 
-<span class="note--warning">If in question err on the side of higher numbers, it will add a small period of time to discover a dead client or node and is better than the alternative, which is false positives.</span>
+> [!TIP]
+> If in question err on the side of higher numbers, it will add a small period of time to discover a dead client or node and is better than the alternative, which is false positives.
 
 ## Advertise As
 
-There are times when due to NAT <!-- TODO: Which is? What I think it is --> or other reasons a node may not be bound to the address it is reachable from other nodes as. As an example the machine has an IP address of 192.168.1.13 but the node is visible to other nodes as 10.114.12.112.
+There are times when due to NAT or other reasons a node may not be bound to the address it is reachable from other nodes as. As an example the machine has an IP address of 192.168.1.13 but the node is visible to other nodes as 10.114.12.112.
 
 The option `advertise-as` allows you to tell the node that even though it is bound to a given address it should not gossip that address as its address. Instead it will use the address that you tell it to use. In the example above you would configure
 

@@ -1,0 +1,686 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Messaging.CallbackEnvelope
+  commentId: T:EventStore.Core.Messaging.CallbackEnvelope
+  id: CallbackEnvelope
+  parent: EventStore.Core.Messaging
+  children:
+  - EventStore.Core.Messaging.CallbackEnvelope.#ctor(Action{EventStore.Core.Messaging.Message})
+  - EventStore.Core.Messaging.CallbackEnvelope.ReplyWith``1(``0)
+  langs:
+  - csharp
+  - vb
+  name: CallbackEnvelope
+  nameWithType: CallbackEnvelope
+  fullName: EventStore.Core.Messaging.CallbackEnvelope
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/CallbackEnvelope.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CallbackEnvelope
+    path: ../EventStore/src/EventStore.Core/Messaging/CallbackEnvelope.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: 'public class CallbackEnvelope : object, IEnvelope'
+    content.vb: >-
+      Public Class CallbackEnvelope
+          Inherits Object
+          Implements IEnvelope
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Messaging.IEnvelope
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Messaging.CallbackEnvelope.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Messaging.CallbackEnvelope.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Messaging.CallbackEnvelope.#ctor(Action{EventStore.Core.Messaging.Message})
+  commentId: M:EventStore.Core.Messaging.CallbackEnvelope.#ctor(Action{EventStore.Core.Messaging.Message})
+  id: '#ctor(Action{EventStore.Core.Messaging.Message})'
+  parent: EventStore.Core.Messaging.CallbackEnvelope
+  langs:
+  - csharp
+  - vb
+  name: CallbackEnvelope(Action<Message>)
+  nameWithType: CallbackEnvelope.CallbackEnvelope(Action<Message>)
+  fullName: EventStore.Core.Messaging.CallbackEnvelope.CallbackEnvelope(Action<EventStore.Core.Messaging.Message>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/CallbackEnvelope.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Messaging/CallbackEnvelope.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: public CallbackEnvelope(Action<Message> callback)
+    parameters:
+    - id: callback
+      type: Action{EventStore.Core.Messaging.Message}
+    content.vb: Public Sub New(callback As Action(Of Message))
+  overload: EventStore.Core.Messaging.CallbackEnvelope.#ctor*
+  nameWithType.vb: CallbackEnvelope.CallbackEnvelope(Action(Of Message))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Messaging.CallbackEnvelope.CallbackEnvelope(Action(Of EventStore.Core.Messaging.Message))
+  name.vb: CallbackEnvelope(Action(Of Message))
+- uid: EventStore.Core.Messaging.CallbackEnvelope.ReplyWith``1(``0)
+  commentId: M:EventStore.Core.Messaging.CallbackEnvelope.ReplyWith``1(``0)
+  id: ReplyWith``1(``0)
+  parent: EventStore.Core.Messaging.CallbackEnvelope
+  langs:
+  - csharp
+  - vb
+  name: ReplyWith<T>(T)
+  nameWithType: CallbackEnvelope.ReplyWith<T>(T)
+  fullName: EventStore.Core.Messaging.CallbackEnvelope.ReplyWith<T>(T)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/CallbackEnvelope.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ReplyWith
+    path: ../EventStore/src/EventStore.Core/Messaging/CallbackEnvelope.cs
+    startLine: 15
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: 'public void ReplyWith<T>(T message)where T : Message'
+    parameters:
+    - id: message
+      type: '{T}'
+    typeParameters:
+    - id: T
+    content.vb: Public Sub ReplyWith(Of T As Message)(message As T)
+  overload: EventStore.Core.Messaging.CallbackEnvelope.ReplyWith*
+  implements:
+  - EventStore.Core.Messaging.IEnvelope.ReplyWith``1({T})
+  nameWithType.vb: CallbackEnvelope.ReplyWith(Of T)(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Messaging.CallbackEnvelope.ReplyWith(Of T)(T)
+  name.vb: ReplyWith(Of T)(T)
+references:
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Messaging.IEnvelope
+  commentId: T:EventStore.Core.Messaging.IEnvelope
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: IEnvelope
+  nameWithType: IEnvelope
+  fullName: EventStore.Core.Messaging.IEnvelope
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.CallbackEnvelope.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<CallbackEnvelope>()
+  nameWithType: ProtobufExtensions.Serialize<CallbackEnvelope>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Messaging.CallbackEnvelope>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of CallbackEnvelope)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Messaging.CallbackEnvelope)()
+  name.vb: Serialize(Of CallbackEnvelope)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<CallbackEnvelope>
+    nameWithType: ProtobufExtensions.Serialize<CallbackEnvelope>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Messaging.CallbackEnvelope>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of CallbackEnvelope)
+    nameWithType: ProtobufExtensions.Serialize(Of CallbackEnvelope)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Messaging.CallbackEnvelope)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.CallbackEnvelope.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<CallbackEnvelope>()
+  nameWithType: ProtobufExtensions.SerializeToArray<CallbackEnvelope>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Messaging.CallbackEnvelope>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of CallbackEnvelope)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Messaging.CallbackEnvelope)()
+  name.vb: SerializeToArray(Of CallbackEnvelope)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<CallbackEnvelope>
+    nameWithType: ProtobufExtensions.SerializeToArray<CallbackEnvelope>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Messaging.CallbackEnvelope>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of CallbackEnvelope)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of CallbackEnvelope)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Messaging.CallbackEnvelope)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Messaging.CallbackEnvelope.#ctor*
+  commentId: Overload:EventStore.Core.Messaging.CallbackEnvelope.#ctor
+  isExternal: false
+  name: CallbackEnvelope
+  nameWithType: CallbackEnvelope.CallbackEnvelope
+  fullName: EventStore.Core.Messaging.CallbackEnvelope.CallbackEnvelope
+- uid: Action{EventStore.Core.Messaging.Message}
+  commentId: '!:Action{EventStore.Core.Messaging.Message}'
+  definition: Action`1
+  name: Action<Message>
+  nameWithType: Action<Message>
+  fullName: Action<EventStore.Core.Messaging.Message>
+  nameWithType.vb: Action(Of Message)
+  fullName.vb: Action(Of EventStore.Core.Messaging.Message)
+  name.vb: Action(Of Message)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.CallbackEnvelope.ReplyWith*
+  commentId: Overload:EventStore.Core.Messaging.CallbackEnvelope.ReplyWith
+  isExternal: false
+  name: ReplyWith
+  nameWithType: CallbackEnvelope.ReplyWith
+  fullName: EventStore.Core.Messaging.CallbackEnvelope.ReplyWith
+- uid: EventStore.Core.Messaging.IEnvelope.ReplyWith``1({T})
+  commentId: M:EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+  parent: EventStore.Core.Messaging.IEnvelope
+  definition: EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+  name: ReplyWith<T>(T)
+  nameWithType: IEnvelope.ReplyWith<T>(T)
+  fullName: EventStore.Core.Messaging.IEnvelope.ReplyWith<T>(T)
+  nameWithType.vb: IEnvelope.ReplyWith(Of T)(T)
+  fullName.vb: EventStore.Core.Messaging.IEnvelope.ReplyWith(Of T)(T)
+  name.vb: ReplyWith(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+    name: ReplyWith<T>
+    nameWithType: IEnvelope.ReplyWith<T>
+    fullName: EventStore.Core.Messaging.IEnvelope.ReplyWith<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+    name: ReplyWith(Of T)
+    nameWithType: IEnvelope.ReplyWith(Of T)
+    fullName: EventStore.Core.Messaging.IEnvelope.ReplyWith(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+  commentId: M:EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+  isExternal: false
+  name: ReplyWith<T>(T)
+  nameWithType: IEnvelope.ReplyWith<T>(T)
+  fullName: EventStore.Core.Messaging.IEnvelope.ReplyWith<T>(T)
+  nameWithType.vb: IEnvelope.ReplyWith(Of T)(T)
+  fullName.vb: EventStore.Core.Messaging.IEnvelope.ReplyWith(Of T)(T)
+  name.vb: ReplyWith(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+    name: ReplyWith<T>
+    nameWithType: IEnvelope.ReplyWith<T>
+    fullName: EventStore.Core.Messaging.IEnvelope.ReplyWith<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Messaging.IEnvelope.ReplyWith``1(``0)
+    name: ReplyWith(Of T)
+    nameWithType: IEnvelope.ReplyWith(Of T)
+    fullName: EventStore.Core.Messaging.IEnvelope.ReplyWith(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T

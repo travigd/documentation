@@ -1,9 +1,8 @@
 ---
-title: "Optional HTTP Headers: Expected Version"
-section: "HTTP API"
-version: "4.0.2"
-exclude_from_sidebar: true
+outputFileName: index.html
 ---
+
+# Optional HTTP Headers: Expected Version
 
 When writing to a stream you often want to use `Expected Version` to allow for optimistic concurrency with a stream.
 
@@ -17,13 +16,14 @@ If the `ExpectedVersion` does not match the version of the stream, Event Store w
 
 In the following cURL command `ExpectedVersion` is not set (and it will append or create/append to the stream).
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-1)
+
 ```bash
 curl -i -d @event.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-2)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -36,18 +36,18 @@ Date: Thu, 27 Jun 2013 14:26:14 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+***
 
 The stream 'newstream' now has one event. If appending with an expected version of '3' this will not work.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-3)
+
 ```bash
 curl -i -d @event.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-ExpectedVersion: 3"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-4)
+
 ```http
 HTTP/1.1 400 Wrong expected EventNumber
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -60,18 +60,18 @@ Date: Thu, 27 Jun 2013 14:27:24 GMT
 Content-Length: 0
 Connection: close
 ```
-</div>
-</div>
+***
 
 You can see from the `ES-CurrentVersion` header above that the stream is at version zero. Appending with an expected version of zero will work. The expected version is always the version of the last event you know of in the stream.
 
-<div class="codetabs" markdown="1">
-<div data-lang="request" markdown="1">
+### [Request](#tab/tabid-5)
+
 ```bash
 curl -i -d @event.js "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-ExpectedVersion: 0"
 ```
-</div>
-<div data-lang="response" markdown="1">
+
+### [Response](#tab/tabid-6)
+
 ```http
 HTTP/1.1 201 Created
 Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
@@ -84,5 +84,4 @@ Date: Thu, 27 Jun 2013 14:47:10 GMT
 Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
-</div>
-</div>
+***

@@ -1,8 +1,8 @@
 ---
-title: Rebuilding Indexes
-section: Server
-version: 4.0.2
+outputFileName: index.html
 ---
+
+# Rebuilding Indexes
 
 As of version 3.9.0 all future indexes will use 64-bit hashes instead of 32-bit hashes. The system will automatically transition from 32-bit to 64-bit by writing all new indexes as 64-bit indexes during the merge process.
 

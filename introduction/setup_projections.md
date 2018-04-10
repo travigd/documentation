@@ -1,8 +1,8 @@
 ---
-title: "Setting up Projections"
-section: "Introduction"
-version: "4.0.2"
+outputFileName: index.html
 ---
+
+# Setting up Projections
 
 You enable projections with the command line argument `--run-projections=all`. For example:
 

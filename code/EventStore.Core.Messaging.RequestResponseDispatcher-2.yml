@@ -1,0 +1,1251 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  commentId: T:EventStore.Core.Messaging.RequestResponseDispatcher`2
+  id: RequestResponseDispatcher`2
+  parent: EventStore.Core.Messaging
+  children:
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(Guid)
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Envelope
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle(`1)
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Handle(`1)
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,Action{`1})
+  langs:
+  - csharp
+  - vb
+  name: RequestResponseDispatcher<TRequest, TResponse>
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: RequestResponseDispatcher
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: 'public sealed class RequestResponseDispatcher<TRequest, TResponse> : object, IHandle<TResponse> where TRequest : Message where TResponse : Message'
+    typeParameters:
+    - id: TRequest
+    - id: TResponse
+    content.vb: >-
+      Public NotInheritable Class RequestResponseDispatcher(Of TRequest As Message, TResponse As Message)
+          Inherits Object
+          Implements IHandle(Of TResponse)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{{TResponse}}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse)
+  name.vb: RequestResponseDispatcher(Of TRequest, TResponse)
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})
+  id: '#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})'
+  parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  langs:
+  - csharp
+  - vb
+  name: RequestResponseDispatcher(IPublisher, Func<TRequest, Guid>, Func<TResponse, Guid>, IEnvelope, Func<Guid, Message>)
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.RequestResponseDispatcher(IPublisher, Func<TRequest, Guid>, Func<TResponse, Guid>, IEnvelope, Func<Guid, Message>)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.RequestResponseDispatcher(EventStore.Core.Bus.IPublisher, Func<TRequest, Guid>, Func<TResponse, Guid>, EventStore.Core.Messaging.IEnvelope, Func<Guid, EventStore.Core.Messaging.Message>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: public RequestResponseDispatcher(IPublisher publisher, Func<TRequest, Guid> getRequestCorrelationId, Func<TResponse, Guid> getResponseCorrelationId, IEnvelope defaultReplyEnvelope, Func<Guid, Message> cancelMessageFactory = null)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: getRequestCorrelationId
+      type: Func{{TRequest},Guid}
+    - id: getResponseCorrelationId
+      type: Func{{TResponse},Guid}
+    - id: defaultReplyEnvelope
+      type: EventStore.Core.Messaging.IEnvelope
+    - id: cancelMessageFactory
+      type: Func{Guid,EventStore.Core.Messaging.Message}
+    content.vb: Public Sub New(publisher As IPublisher, getRequestCorrelationId As Func(Of TRequest, Guid), getResponseCorrelationId As Func(Of TResponse, Guid), defaultReplyEnvelope As IEnvelope, cancelMessageFactory As Func(Of Guid, Message) = Nothing)
+  overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor*
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).RequestResponseDispatcher(IPublisher, Func(Of TRequest, Guid), Func(Of TResponse, Guid), IEnvelope, Func(Of Guid, Message))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).RequestResponseDispatcher(EventStore.Core.Bus.IPublisher, Func(Of TRequest, Guid), Func(Of TResponse, Guid), EventStore.Core.Messaging.IEnvelope, Func(Of Guid, EventStore.Core.Messaging.Message))
+  name.vb: RequestResponseDispatcher(IPublisher, Func(Of TRequest, Guid), Func(Of TResponse, Guid), IEnvelope, Func(Of Guid, Message))
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,Action{`1})
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,Action{`1})
+  id: Publish(`0,Action{`1})
+  parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  langs:
+  - csharp
+  - vb
+  name: Publish(TRequest, Action<TResponse>)
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Publish(TRequest, Action<TResponse>)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Publish(TRequest, Action<TResponse>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Publish
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 33
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: public Guid Publish(TRequest request, Action<TResponse> action)
+    parameters:
+    - id: request
+      type: '{TRequest}'
+    - id: action
+      type: Action{{TResponse}}
+    return:
+      type: Guid
+    content.vb: Public Function Publish(request As TRequest, action As Action(Of TResponse)) As Guid
+  overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish*
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Publish(TRequest, Action(Of TResponse))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Publish(TRequest, Action(Of TResponse))
+  name.vb: Publish(TRequest, Action(Of TResponse))
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle(`1)
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle(`1)
+  id: EventStore#Core#Bus#IHandle{TResponse}#Handle(`1)
+  isEii: true
+  parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  langs:
+  - csharp
+  - vb
+  name: IHandle<TResponse>.Handle(TResponse)
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.IHandle<TResponse>.Handle(TResponse)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.EventStore.Core.Bus.IHandle<TResponse>.Handle(TResponse)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStore.Core.Bus.IHandle<TResponse>.Handle
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: void IHandle<TResponse>.Handle(TResponse message)
+    parameters:
+    - id: message
+      type: '{TResponse}'
+    content.vb: Sub EventStore.Core.Bus.IHandle<TResponse>.Handle(message As TResponse) Implements IHandle(Of TResponse).Handle
+  overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{{TResponse}}.Handle({TResponse})
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).EventStore.Core.Bus.IHandle<TResponse>.Handle(TResponse)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).EventStore.Core.Bus.IHandle<TResponse>.Handle(TResponse)
+  name.vb: EventStore.Core.Bus.IHandle<TResponse>.Handle(TResponse)
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Handle(`1)
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.Handle(`1)
+  id: Handle(`1)
+  parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  langs:
+  - csharp
+  - vb
+  name: Handle(TResponse)
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Handle(TResponse)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Handle(TResponse)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: public bool Handle(TResponse message)
+    parameters:
+    - id: message
+      type: '{TResponse}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Handle(message As TResponse) As Boolean
+  overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.Handle*
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Handle(TResponse)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Handle(TResponse)
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Envelope
+  commentId: P:EventStore.Core.Messaging.RequestResponseDispatcher`2.Envelope
+  id: Envelope
+  parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  langs:
+  - csharp
+  - vb
+  name: Envelope
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Envelope
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Envelope
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Envelope
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 81
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: public IEnvelope Envelope { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Messaging.IEnvelope
+    content.vb: Public ReadOnly Property Envelope As IEnvelope
+  overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.Envelope*
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Envelope
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Envelope
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(Guid)
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(Guid)
+  id: Cancel(Guid)
+  parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  langs:
+  - csharp
+  - vb
+  name: Cancel(Guid)
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Cancel(Guid)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Cancel(Guid)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Cancel
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 86
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: public void Cancel(Guid requestId)
+    parameters:
+    - id: requestId
+      type: Guid
+    content.vb: Public Sub Cancel(requestId As Guid)
+  overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel*
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Cancel(Guid)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Cancel(Guid)
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll
+  id: CancelAll
+  parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
+  langs:
+  - csharp
+  - vb
+  name: CancelAll()
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.CancelAll()
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.CancelAll()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CancelAll
+    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    startLine: 94
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messaging
+  syntax:
+    content: public void CancelAll()
+    content.vb: Public Sub CancelAll
+  overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll*
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).CancelAll()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).CancelAll()
+references:
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{{TResponse}}
+  commentId: T:EventStore.Core.Bus.IHandle{`1}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<TResponse>
+  nameWithType: IHandle<TResponse>
+  fullName: EventStore.Core.Bus.IHandle<TResponse>
+  nameWithType.vb: IHandle(Of TResponse)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of TResponse)
+  name.vb: IHandle(Of TResponse)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<RequestResponseDispatcher<TRequest, TResponse>>()
+  nameWithType: ProtobufExtensions.Serialize<RequestResponseDispatcher<TRequest, TResponse>>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of RequestResponseDispatcher(Of TRequest, TResponse))()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse))()
+  name.vb: Serialize(Of RequestResponseDispatcher(Of TRequest, TResponse))()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<RequestResponseDispatcher<TRequest, TResponse>>
+    nameWithType: ProtobufExtensions.Serialize<RequestResponseDispatcher<TRequest, TResponse>>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of RequestResponseDispatcher(Of TRequest, TResponse))
+    nameWithType: ProtobufExtensions.Serialize(Of RequestResponseDispatcher(Of TRequest, TResponse))
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<RequestResponseDispatcher<TRequest, TResponse>>()
+  nameWithType: ProtobufExtensions.SerializeToArray<RequestResponseDispatcher<TRequest, TResponse>>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of RequestResponseDispatcher(Of TRequest, TResponse))()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse))()
+  name.vb: SerializeToArray(Of RequestResponseDispatcher(Of TRequest, TResponse))()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<RequestResponseDispatcher<TRequest, TResponse>>
+    nameWithType: ProtobufExtensions.SerializeToArray<RequestResponseDispatcher<TRequest, TResponse>>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of RequestResponseDispatcher(Of TRequest, TResponse))
+    nameWithType: ProtobufExtensions.SerializeToArray(Of RequestResponseDispatcher(Of TRequest, TResponse))
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor*
+  commentId: Overload:EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor
+  isExternal: false
+  name: RequestResponseDispatcher
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.RequestResponseDispatcher
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.RequestResponseDispatcher
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).RequestResponseDispatcher
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).RequestResponseDispatcher
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  isExternal: false
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: Func{{TRequest},Guid}
+  commentId: '!:Func{`0,Guid}'
+  definition: Func`2
+  name: Func<TRequest, Guid>
+  nameWithType: Func<TRequest, Guid>
+  fullName: Func<TRequest, Guid>
+  nameWithType.vb: Func(Of TRequest, Guid)
+  fullName.vb: Func(Of TRequest, Guid)
+  name.vb: Func(Of TRequest, Guid)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func{{TResponse},Guid}
+  commentId: '!:Func{`1,Guid}'
+  definition: Func`2
+  name: Func<TResponse, Guid>
+  nameWithType: Func<TResponse, Guid>
+  fullName: Func<TResponse, Guid>
+  nameWithType.vb: Func(Of TResponse, Guid)
+  fullName.vb: Func(Of TResponse, Guid)
+  name.vb: Func(Of TResponse, Guid)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.IEnvelope
+  commentId: T:EventStore.Core.Messaging.IEnvelope
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: IEnvelope
+  nameWithType: IEnvelope
+  fullName: EventStore.Core.Messaging.IEnvelope
+- uid: Func{Guid,EventStore.Core.Messaging.Message}
+  commentId: '!:Func{Guid,EventStore.Core.Messaging.Message}'
+  definition: Func`2
+  name: Func<Guid, Message>
+  nameWithType: Func<Guid, Message>
+  fullName: Func<Guid, EventStore.Core.Messaging.Message>
+  nameWithType.vb: Func(Of Guid, Message)
+  fullName.vb: Func(Of Guid, EventStore.Core.Messaging.Message)
+  name.vb: Func(Of Guid, Message)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Messaging.Message
+    name: Message
+    nameWithType: Message
+    fullName: EventStore.Core.Messaging.Message
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func`2
+  isExternal: true
+  name: Func<, >
+  nameWithType: Func<, >
+  fullName: Func<, >
+  nameWithType.vb: Func(Of , )
+  fullName.vb: Func(Of , )
+  name.vb: Func(Of , )
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish*
+  commentId: Overload:EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish
+  isExternal: false
+  name: Publish
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Publish
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Publish
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Publish
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Publish
+- uid: '{TRequest}'
+  commentId: '!:TRequest'
+  definition: TRequest
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: Action{{TResponse}}
+  commentId: '!:Action{`1}'
+  definition: Action`1
+  name: Action<TResponse>
+  nameWithType: Action<TResponse>
+  fullName: Action<TResponse>
+  nameWithType.vb: Action(Of TResponse)
+  fullName.vb: Action(Of TResponse)
+  name.vb: Action(Of TResponse)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: TRequest
+  commentId: '!:TRequest'
+  isExternal: false
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle*
+  commentId: Overload:EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle
+  isExternal: false
+  name: IHandle<TResponse>.Handle
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.IHandle<TResponse>.Handle
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.EventStore.Core.Bus.IHandle<TResponse>.Handle
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).EventStore.Core.Bus.IHandle<TResponse>.Handle
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).EventStore.Core.Bus.IHandle<TResponse>.Handle
+  name.vb: EventStore.Core.Bus.IHandle<TResponse>.Handle
+- uid: EventStore.Core.Bus.IHandle{{TResponse}}.Handle({TResponse})
+  commentId: M:EventStore.Core.Bus.IHandle{`1}.Handle(`1)
+  parent: EventStore.Core.Bus.IHandle{{TResponse}}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(TResponse)
+  nameWithType: IHandle<TResponse>.Handle(TResponse)
+  fullName: EventStore.Core.Bus.IHandle<TResponse>.Handle(TResponse)
+  nameWithType.vb: IHandle(Of TResponse).Handle(TResponse)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of TResponse).Handle(TResponse)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<TResponse>.Handle
+    fullName: EventStore.Core.Bus.IHandle<TResponse>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of TResponse).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of TResponse).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TResponse}'
+  commentId: '!:TResponse'
+  definition: TResponse
+  name: TResponse
+  nameWithType: TResponse
+  fullName: TResponse
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TResponse
+  isExternal: false
+  name: TResponse
+  nameWithType: TResponse
+  fullName: TResponse
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Handle*
+  commentId: Overload:EventStore.Core.Messaging.RequestResponseDispatcher`2.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Handle
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Handle
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Handle
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Handle
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Envelope*
+  commentId: Overload:EventStore.Core.Messaging.RequestResponseDispatcher`2.Envelope
+  isExternal: false
+  name: Envelope
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Envelope
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Envelope
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Envelope
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Envelope
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel*
+  commentId: Overload:EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel
+  isExternal: false
+  name: Cancel
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Cancel
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Cancel
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Cancel
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Cancel
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll*
+  commentId: Overload:EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll
+  isExternal: false
+  name: CancelAll
+  nameWithType: RequestResponseDispatcher<TRequest, TResponse>.CancelAll
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.CancelAll
+  nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).CancelAll
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).CancelAll

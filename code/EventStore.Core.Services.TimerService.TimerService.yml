@@ -1,0 +1,846 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Services.TimerService.TimerService
+  commentId: T:EventStore.Core.Services.TimerService.TimerService
+  id: TimerService
+  parent: EventStore.Core.Services.TimerService
+  children:
+  - EventStore.Core.Services.TimerService.TimerService.#ctor(EventStore.Core.Services.TimerService.IScheduler)
+  - EventStore.Core.Services.TimerService.TimerService.Dispose
+  - EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  - EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  langs:
+  - csharp
+  - vb
+  name: TimerService
+  nameWithType: TimerService
+  fullName: EventStore.Core.Services.TimerService.TimerService
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Services/TimerService/TimerService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: TimerService
+    path: ../EventStore/src/EventStore.Core/Services/TimerService/TimerService.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.TimerService
+  summary: "\nTimer service uses scheduler that is expected to be already running \nwhen it is passed to constructor and stopped on the disposal. This is done to\nmake sure that we can handle timeouts and callbacks any time\n(even during system shutdowns and initialization)\n"
+  example: []
+  syntax:
+    content: 'public class TimerService : IDisposable, IHandle<SystemMessage.BecomeShutdown>, IHandle<TimerMessage.Schedule>'
+    content.vb: >-
+      Public Class TimerService
+          Inherits IDisposable
+          Implements IHandle(Of SystemMessage.BecomeShutdown), IHandle(Of TimerMessage.Schedule)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Services.TimerService.TimerMessage.Schedule}
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Services.TimerService.TimerService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Services.TimerService.TimerService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Services.TimerService.TimerService.#ctor(EventStore.Core.Services.TimerService.IScheduler)
+  commentId: M:EventStore.Core.Services.TimerService.TimerService.#ctor(EventStore.Core.Services.TimerService.IScheduler)
+  id: '#ctor(EventStore.Core.Services.TimerService.IScheduler)'
+  parent: EventStore.Core.Services.TimerService.TimerService
+  langs:
+  - csharp
+  - vb
+  name: TimerService(IScheduler)
+  nameWithType: TimerService.TimerService(IScheduler)
+  fullName: EventStore.Core.Services.TimerService.TimerService.TimerService(EventStore.Core.Services.TimerService.IScheduler)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Services/TimerService/TimerService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Services/TimerService/TimerService.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.TimerService
+  syntax:
+    content: public TimerService(IScheduler scheduler)
+    parameters:
+    - id: scheduler
+      type: EventStore.Core.Services.TimerService.IScheduler
+    content.vb: Public Sub New(scheduler As IScheduler)
+  overload: EventStore.Core.Services.TimerService.TimerService.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  commentId: M:EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  id: Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  parent: EventStore.Core.Services.TimerService.TimerService
+  langs:
+  - csharp
+  - vb
+  name: Handle(SystemMessage.BecomeShutdown)
+  nameWithType: TimerService.Handle(SystemMessage.BecomeShutdown)
+  fullName: EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/TimerService/TimerService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/TimerService/TimerService.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.TimerService
+  syntax:
+    content: public void Handle(SystemMessage.BecomeShutdown message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    content.vb: Public Sub Handle(message As SystemMessage.BecomeShutdown)
+  overload: EventStore.Core.Services.TimerService.TimerService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  commentId: M:EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  id: Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  parent: EventStore.Core.Services.TimerService.TimerService
+  langs:
+  - csharp
+  - vb
+  name: Handle(TimerMessage.Schedule)
+  nameWithType: TimerService.Handle(TimerMessage.Schedule)
+  fullName: EventStore.Core.Services.TimerService.TimerService.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/TimerService/TimerService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/TimerService/TimerService.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.TimerService
+  syntax:
+    content: public void Handle(TimerMessage.Schedule message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+    content.vb: Public Sub Handle(message As TimerMessage.Schedule)
+  overload: EventStore.Core.Services.TimerService.TimerService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Services.TimerService.TimerMessage.Schedule}.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Services.TimerService.TimerService.Dispose
+  commentId: M:EventStore.Core.Services.TimerService.TimerService.Dispose
+  id: Dispose
+  parent: EventStore.Core.Services.TimerService.TimerService
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TimerService.Dispose()
+  fullName: EventStore.Core.Services.TimerService.TimerService.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/TimerService/TimerService.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Core/Services/TimerService/TimerService.cs
+    startLine: 39
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.TimerService
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.Core.Services.TimerService.TimerService.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  isExternal: false
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.BecomeShutdown>
+  nameWithType: IHandle<SystemMessage.BecomeShutdown>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShutdown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  name.vb: IHandle(Of SystemMessage.BecomeShutdown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Services.TimerService.TimerMessage.Schedule}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Services.TimerService.TimerMessage.Schedule}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<TimerMessage.Schedule>
+  nameWithType: IHandle<TimerMessage.Schedule>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Services.TimerService.TimerMessage.Schedule>
+  nameWithType.vb: IHandle(Of TimerMessage.Schedule)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  name.vb: IHandle(Of TimerMessage.Schedule)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+    name: TimerMessage.Schedule
+    nameWithType: TimerMessage.Schedule
+    fullName: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+    name: TimerMessage.Schedule
+    nameWithType: TimerMessage.Schedule
+    fullName: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.TimerService.TimerService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<TimerService>()
+  nameWithType: ProtobufExtensions.Serialize<TimerService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.TimerService.TimerService>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of TimerService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.TimerService.TimerService)()
+  name.vb: Serialize(Of TimerService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<TimerService>
+    nameWithType: ProtobufExtensions.Serialize<TimerService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Services.TimerService.TimerService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of TimerService)
+    nameWithType: ProtobufExtensions.Serialize(Of TimerService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Services.TimerService.TimerService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.TimerService.TimerService.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<TimerService>()
+  nameWithType: ProtobufExtensions.SerializeToArray<TimerService>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.TimerService.TimerService>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of TimerService)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.TimerService.TimerService)()
+  name.vb: SerializeToArray(Of TimerService)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<TimerService>
+    nameWithType: ProtobufExtensions.SerializeToArray<TimerService>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Services.TimerService.TimerService>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of TimerService)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of TimerService)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Services.TimerService.TimerService)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  isExternal: false
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  isExternal: false
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Services.TimerService.TimerService.#ctor*
+  commentId: Overload:EventStore.Core.Services.TimerService.TimerService.#ctor
+  isExternal: false
+  name: TimerService
+  nameWithType: TimerService.TimerService
+  fullName: EventStore.Core.Services.TimerService.TimerService.TimerService
+- uid: EventStore.Core.Services.TimerService.IScheduler
+  commentId: T:EventStore.Core.Services.TimerService.IScheduler
+  parent: EventStore.Core.Services.TimerService
+  isExternal: false
+  name: IScheduler
+  nameWithType: IScheduler
+  fullName: EventStore.Core.Services.TimerService.IScheduler
+- uid: EventStore.Core.Services.TimerService.TimerService.Handle*
+  commentId: Overload:EventStore.Core.Services.TimerService.TimerService.Handle
+  isExternal: false
+  name: Handle
+  nameWithType: TimerService.Handle
+  fullName: EventStore.Core.Services.TimerService.TimerService.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(SystemMessage.BecomeShutdown)
+  nameWithType: IHandle<SystemMessage.BecomeShutdown>.Handle(SystemMessage.BecomeShutdown)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  nameWithType.vb: IHandle(Of SystemMessage.BecomeShutdown).Handle(SystemMessage.BecomeShutdown)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown).Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<SystemMessage.BecomeShutdown>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.BecomeShutdown>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of SystemMessage.BecomeShutdown).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.BecomeShutdown).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+    name: SystemMessage.BecomeShutdown
+    nameWithType: SystemMessage.BecomeShutdown
+    fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  commentId: T:EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  parent: EventStore.Core.Messages
+  isExternal: false
+  name: SystemMessage.BecomeShutdown
+  nameWithType: SystemMessage.BecomeShutdown
+  fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  isExternal: false
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Services.TimerService.TimerMessage.Schedule}.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Services.TimerService.TimerMessage.Schedule}.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Services.TimerService.TimerMessage.Schedule}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(TimerMessage.Schedule)
+  nameWithType: IHandle<TimerMessage.Schedule>.Handle(TimerMessage.Schedule)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Services.TimerService.TimerMessage.Schedule>.Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  nameWithType.vb: IHandle(Of TimerMessage.Schedule).Handle(TimerMessage.Schedule)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Services.TimerService.TimerMessage.Schedule).Handle(EventStore.Core.Services.TimerService.TimerMessage.Schedule)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<TimerMessage.Schedule>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Services.TimerService.TimerMessage.Schedule>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+    name: TimerMessage.Schedule
+    nameWithType: TimerMessage.Schedule
+    fullName: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of TimerMessage.Schedule).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Services.TimerService.TimerMessage.Schedule).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+    name: TimerMessage.Schedule
+    nameWithType: TimerMessage.Schedule
+    fullName: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+  commentId: T:EventStore.Core.Services.TimerService.TimerMessage.Schedule
+  parent: EventStore.Core.Services.TimerService
+  isExternal: false
+  name: TimerMessage.Schedule
+  nameWithType: TimerMessage.Schedule
+  fullName: EventStore.Core.Services.TimerService.TimerMessage.Schedule
+- uid: EventStore.Core.Services.TimerService.TimerService.Dispose*
+  commentId: Overload:EventStore.Core.Services.TimerService.TimerService.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: TimerService.Dispose
+  fullName: EventStore.Core.Services.TimerService.TimerService.Dispose

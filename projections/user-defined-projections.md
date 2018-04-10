@@ -1,9 +1,8 @@
 ---
-title: "User Defined Projections"
-section: "Projections"
-version: "4.0.2"
-pinned: true
+outputFileName: index.html
 ---
+
+# User Defined Projections
 
 User defined projections are written in JavaScript (ECMASCRIPT 6).
 
@@ -36,9 +35,9 @@ fromStream('account-1') //selector
 .outputState() //transformation
 ```
 
-# Projections API
+## Projections API
 
-# Options
+### Options
 
 <table>
     <thead>
@@ -86,7 +85,7 @@ fromStream('account-1') //selector
 	</tbody>
 </table>
 
-# Selectors
+## Selectors
 
 <table>
     <thead>
@@ -160,7 +159,7 @@ fromStream('account-1') //selector
 	</tbody>
 </table>
 
-# Filters/Transformations
+## Filters/Transformations
 
 <table>
     <thead>
@@ -246,7 +245,7 @@ fromStream('account-1') //selector
 	</tbody>
 </table>
 
-# Handlers
+## Handlers
 
 Each handler is provided with the current state of the projection as well as the event that triggered the handler.
 The event provided through the handler contains the following properties.
@@ -307,7 +306,7 @@ The event provided through the handler contains the following properties.
 	</tbody>
 </table>
 
-# Functions
+## Functions
 
 <table>
     <thead>

@@ -1,9 +1,8 @@
 ---
-title: "API"
-section: "Projections"
-version: "4.0.2"
-pinned: true
+outputFileName: index.html
 ---
+
+# API
 
 <table>
     <thead>

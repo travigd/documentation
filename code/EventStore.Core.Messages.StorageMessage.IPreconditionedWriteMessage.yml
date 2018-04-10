@@ -1,0 +1,600 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage
+  commentId: T:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage
+  id: StorageMessage.IPreconditionedWriteMessage
+  parent: EventStore.Core.Messages
+  children:
+  - EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId
+  - EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope
+  - EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId
+  - EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+  langs:
+  - csharp
+  - vb
+  name: StorageMessage.IPreconditionedWriteMessage
+  nameWithType: StorageMessage.IPreconditionedWriteMessage
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage
+  type: Interface
+  source:
+    remote:
+      path: src/EventStore.Core/Messages/StorageMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IPreconditionedWriteMessage
+    path: ../EventStore/src/EventStore.Core/Messages/StorageMessage.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messages
+  syntax:
+    content: public interface IPreconditionedWriteMessage
+    content.vb: Public Interface IPreconditionedWriteMessage
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId
+  commentId: P:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId
+  id: CorrelationId
+  parent: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage
+  langs:
+  - csharp
+  - vb
+  name: CorrelationId
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.CorrelationId
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Messages/StorageMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CorrelationId
+    path: ../EventStore/src/EventStore.Core/Messages/StorageMessage.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messages
+  syntax:
+    content: Guid CorrelationId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: ReadOnly Property CorrelationId As Guid
+  overload: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope
+  commentId: P:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope
+  id: Envelope
+  parent: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage
+  langs:
+  - csharp
+  - vb
+  name: Envelope
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.Envelope
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Messages/StorageMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Envelope
+    path: ../EventStore/src/EventStore.Core/Messages/StorageMessage.cs
+    startLine: 15
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messages
+  syntax:
+    content: IEnvelope Envelope { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Messaging.IEnvelope
+    content.vb: ReadOnly Property Envelope As IEnvelope
+  overload: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId
+  commentId: P:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId
+  id: EventStreamId
+  parent: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage
+  langs:
+  - csharp
+  - vb
+  name: EventStreamId
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.EventStreamId
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Messages/StorageMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventStreamId
+    path: ../EventStore/src/EventStore.Core/Messages/StorageMessage.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messages
+  syntax:
+    content: string EventStreamId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property EventStreamId As String
+  overload: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+  commentId: P:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+  id: ExpectedVersion
+  parent: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage
+  langs:
+  - csharp
+  - vb
+  name: ExpectedVersion
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Messages/StorageMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ExpectedVersion
+    path: ../EventStore/src/EventStore.Core/Messages/StorageMessage.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messages
+  syntax:
+    content: long ExpectedVersion { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: ReadOnly Property ExpectedVersion As Long
+  overload: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: EventStore.Core.Messages
+  commentId: N:EventStore.Core.Messages
+  isExternal: false
+  name: EventStore.Core.Messages
+  nameWithType: EventStore.Core.Messages
+  fullName: EventStore.Core.Messages
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<StorageMessage.IPreconditionedWriteMessage>()
+  nameWithType: ProtobufExtensions.Serialize<StorageMessage.IPreconditionedWriteMessage>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of StorageMessage.IPreconditionedWriteMessage)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage)()
+  name.vb: Serialize(Of StorageMessage.IPreconditionedWriteMessage)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<StorageMessage.IPreconditionedWriteMessage>
+    nameWithType: ProtobufExtensions.Serialize<StorageMessage.IPreconditionedWriteMessage>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of StorageMessage.IPreconditionedWriteMessage)
+    nameWithType: ProtobufExtensions.Serialize(Of StorageMessage.IPreconditionedWriteMessage)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<StorageMessage.IPreconditionedWriteMessage>()
+  nameWithType: ProtobufExtensions.SerializeToArray<StorageMessage.IPreconditionedWriteMessage>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of StorageMessage.IPreconditionedWriteMessage)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage)()
+  name.vb: SerializeToArray(Of StorageMessage.IPreconditionedWriteMessage)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<StorageMessage.IPreconditionedWriteMessage>
+    nameWithType: ProtobufExtensions.SerializeToArray<StorageMessage.IPreconditionedWriteMessage>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of StorageMessage.IPreconditionedWriteMessage)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of StorageMessage.IPreconditionedWriteMessage)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId*
+  commentId: Overload:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId
+  isExternal: false
+  name: CorrelationId
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.CorrelationId
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.CorrelationId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope*
+  commentId: Overload:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope
+  isExternal: false
+  name: Envelope
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.Envelope
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.Envelope
+- uid: EventStore.Core.Messaging.IEnvelope
+  commentId: T:EventStore.Core.Messaging.IEnvelope
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: IEnvelope
+  nameWithType: IEnvelope
+  fullName: EventStore.Core.Messaging.IEnvelope
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId*
+  commentId: Overload:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId
+  isExternal: false
+  name: EventStreamId
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.EventStreamId
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.EventStreamId
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion*
+  commentId: Overload:EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+  isExternal: false
+  name: ExpectedVersion
+  nameWithType: StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+  fullName: EventStore.Core.Messages.StorageMessage.IPreconditionedWriteMessage.ExpectedVersion
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64

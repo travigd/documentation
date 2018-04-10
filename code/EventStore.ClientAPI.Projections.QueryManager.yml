@@ -1,0 +1,662 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.Projections.QueryManager
+  commentId: T:EventStore.ClientAPI.Projections.QueryManager
+  id: QueryManager
+  parent: EventStore.ClientAPI.Projections
+  children:
+  - EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan,TimeSpan)
+  - EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+  langs:
+  - csharp
+  - vb
+  name: QueryManager
+  nameWithType: QueryManager
+  fullName: EventStore.ClientAPI.Projections.QueryManager
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Projections/QueryManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: QueryManager
+    path: ../EventStore/src/EventStore.ClientAPI/Projections/QueryManager.cs
+    startLine: 14
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.Projections
+  summary: "\nAPI for executinmg queries in the Event Store through C# code. Communicates\nwith the Event Store over the RESTful API.\n"
+  example: []
+  syntax:
+    content: 'public class QueryManager : object'
+    content.vb: >-
+      Public Class QueryManager
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.ClientAPI.Projections.QueryManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.ClientAPI.Projections.QueryManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan,TimeSpan)
+  commentId: M:EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan,TimeSpan)
+  id: '#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan,TimeSpan)'
+  parent: EventStore.ClientAPI.Projections.QueryManager
+  langs:
+  - csharp
+  - vb
+  name: QueryManager(ILogger, IPEndPoint, TimeSpan, TimeSpan)
+  nameWithType: QueryManager.QueryManager(ILogger, IPEndPoint, TimeSpan, TimeSpan)
+  fullName: EventStore.ClientAPI.Projections.QueryManager.QueryManager(EventStore.ClientAPI.ILogger, IPEndPoint, TimeSpan, TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Projections/QueryManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.ClientAPI/Projections/QueryManager.cs
+    startLine: 26
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.Projections
+  summary: "\nCreates a new instance of <xref href=\"EventStore.ClientAPI.Projections.QueryManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public QueryManager(ILogger log, IPEndPoint httpEndPoint, TimeSpan projectionOperationTimeout, TimeSpan queryTimeout)
+    parameters:
+    - id: log
+      type: EventStore.ClientAPI.ILogger
+      description: An instance of <xref href="EventStore.ClientAPI.ILogger" data-throw-if-not-resolved="false"></xref> to use for logging.
+    - id: httpEndPoint
+      type: IPEndPoint
+      description: HTTP endpoint of an Event Store server.
+    - id: projectionOperationTimeout
+      type: TimeSpan
+      description: Timeout of projection API operations
+    - id: queryTimeout
+      type: TimeSpan
+      description: Timeout of query execution
+    content.vb: Public Sub New(log As ILogger, httpEndPoint As IPEndPoint, projectionOperationTimeout As TimeSpan, queryTimeout As TimeSpan)
+  overload: EventStore.ClientAPI.Projections.QueryManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.Projections.QueryManager
+  langs:
+  - csharp
+  - vb
+  name: ExecuteAsync(String, String, TimeSpan, TimeSpan, UserCredentials)
+  nameWithType: QueryManager.ExecuteAsync(String, String, TimeSpan, TimeSpan, UserCredentials)
+  fullName: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String, System.String, TimeSpan, TimeSpan, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/Projections/QueryManager.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ExecuteAsync
+    path: ../EventStore/src/EventStore.ClientAPI/Projections/QueryManager.cs
+    startLine: 44
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.Projections
+  summary: "\nAsynchronously executes a query.\n"
+  remarks: "\nCreates a new transient projection and polls its status until it is Completed.\n"
+  example: []
+  syntax:
+    content: public Task<string> ExecuteAsync(string name, string query, TimeSpan initialPollingDelay, TimeSpan maximumPollingDelay, UserCredentials userCredentials = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: A name for the query.
+    - id: query
+      type: System.String
+      description: The JavaScript source code for the query.
+    - id: initialPollingDelay
+      type: TimeSpan
+      description: Initial time to wait between polling for projection status.
+    - id: maximumPollingDelay
+      type: TimeSpan
+      description: Maximum time to wait between polling for projection status.
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for a user with permission to create a query.
+    return:
+      type: Task{System.String}
+      description: String of JSON containing query result.
+    content.vb: Public Function ExecuteAsync(name As String, query As String, initialPollingDelay As TimeSpan, maximumPollingDelay As TimeSpan, userCredentials As UserCredentials = Nothing) As Task(Of String)
+  overload: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.ClientAPI.Projections
+  commentId: N:EventStore.ClientAPI.Projections
+  isExternal: false
+  name: EventStore.ClientAPI.Projections
+  nameWithType: EventStore.ClientAPI.Projections
+  fullName: EventStore.ClientAPI.Projections
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.Projections.QueryManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<QueryManager>()
+  nameWithType: ProtobufExtensions.Serialize<QueryManager>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.Projections.QueryManager>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of QueryManager)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.Projections.QueryManager)()
+  name.vb: Serialize(Of QueryManager)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<QueryManager>
+    nameWithType: ProtobufExtensions.Serialize<QueryManager>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.Projections.QueryManager>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of QueryManager)
+    nameWithType: ProtobufExtensions.Serialize(Of QueryManager)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.Projections.QueryManager)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.Projections.QueryManager.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<QueryManager>()
+  nameWithType: ProtobufExtensions.SerializeToArray<QueryManager>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.Projections.QueryManager>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of QueryManager)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.Projections.QueryManager)()
+  name.vb: SerializeToArray(Of QueryManager)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<QueryManager>
+    nameWithType: ProtobufExtensions.SerializeToArray<QueryManager>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.Projections.QueryManager>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of QueryManager)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of QueryManager)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.Projections.QueryManager)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.ClientAPI.Projections.QueryManager
+  commentId: T:EventStore.ClientAPI.Projections.QueryManager
+  isExternal: false
+  name: QueryManager
+  nameWithType: QueryManager
+  fullName: EventStore.ClientAPI.Projections.QueryManager
+- uid: EventStore.ClientAPI.ILogger
+  commentId: T:EventStore.ClientAPI.ILogger
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.ClientAPI.ILogger
+- uid: EventStore.ClientAPI.Projections.QueryManager.#ctor*
+  commentId: Overload:EventStore.ClientAPI.Projections.QueryManager.#ctor
+  isExternal: false
+  name: QueryManager
+  nameWithType: QueryManager.QueryManager
+  fullName: EventStore.ClientAPI.Projections.QueryManager.QueryManager
+- uid: IPEndPoint
+  isExternal: true
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: IPEndPoint
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  isExternal: false
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync*
+  commentId: Overload:EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync
+  isExternal: false
+  name: ExecuteAsync
+  nameWithType: QueryManager.ExecuteAsync
+  fullName: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.ClientAPI.SystemData.UserCredentials
+  commentId: T:EventStore.ClientAPI.SystemData.UserCredentials
+  parent: EventStore.ClientAPI.SystemData
+  isExternal: false
+  name: UserCredentials
+  nameWithType: UserCredentials
+  fullName: EventStore.ClientAPI.SystemData.UserCredentials
+- uid: Task{System.String}
+  commentId: '!:Task{System.String}'
+  definition: Task`1
+  name: Task<String>
+  nameWithType: Task<String>
+  fullName: Task<System.String>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: Task(Of System.String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.SystemData
+  commentId: N:EventStore.ClientAPI.SystemData
+  isExternal: false
+  name: EventStore.ClientAPI.SystemData
+  nameWithType: EventStore.ClientAPI.SystemData
+  fullName: EventStore.ClientAPI.SystemData
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

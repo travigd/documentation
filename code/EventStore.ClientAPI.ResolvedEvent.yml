@@ -1,0 +1,676 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.ResolvedEvent
+  commentId: T:EventStore.ClientAPI.ResolvedEvent
+  id: ResolvedEvent
+  parent: EventStore.ClientAPI
+  children:
+  - EventStore.ClientAPI.ResolvedEvent.Event
+  - EventStore.ClientAPI.ResolvedEvent.IsResolved
+  - EventStore.ClientAPI.ResolvedEvent.Link
+  - EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+  - EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber
+  - EventStore.ClientAPI.ResolvedEvent.OriginalPosition
+  - EventStore.ClientAPI.ResolvedEvent.OriginalStreamId
+  langs:
+  - csharp
+  - vb
+  name: ResolvedEvent
+  nameWithType: ResolvedEvent
+  fullName: EventStore.ClientAPI.ResolvedEvent
+  type: Struct
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: ResolvedEvent
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 8
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nA structure representing a single event or an resolved link event.\n"
+  example: []
+  syntax:
+    content: 'public struct ResolvedEvent : IResolvedEvent'
+    content.vb: >-
+      Public Structure ResolvedEvent
+          Implements IResolvedEvent
+  extensionMethods:
+  - EventStore.ClientAPI.ResolvedEvent.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  - EventStore.ClientAPI.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.ClientAPI.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: EventStore.ClientAPI.ResolvedEvent.Event
+  commentId: F:EventStore.ClientAPI.ResolvedEvent.Event
+  id: Event
+  parent: EventStore.ClientAPI.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: Event
+  nameWithType: ResolvedEvent.Event
+  fullName: EventStore.ClientAPI.ResolvedEvent.Event
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Event
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 14
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe event, or the resolved link event if this <xref href=\"EventStore.ClientAPI.ResolvedEvent\" data-throw-if-not-resolved=\"false\"></xref> is\na link event.\n"
+  example: []
+  syntax:
+    content: public readonly RecordedEvent Event
+    return:
+      type: EventStore.ClientAPI.RecordedEvent
+    content.vb: Public ReadOnly Event As RecordedEvent
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ResolvedEvent.Link
+  commentId: F:EventStore.ClientAPI.ResolvedEvent.Link
+  id: Link
+  parent: EventStore.ClientAPI.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: Link
+  nameWithType: ResolvedEvent.Link
+  fullName: EventStore.ClientAPI.ResolvedEvent.Link
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Link
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 19
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe link event if this <xref href=\"EventStore.ClientAPI.ResolvedEvent\" data-throw-if-not-resolved=\"false\"></xref> is a link event.\n"
+  example: []
+  syntax:
+    content: public readonly RecordedEvent Link
+    return:
+      type: EventStore.ClientAPI.RecordedEvent
+    content.vb: Public ReadOnly Link As RecordedEvent
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+  commentId: P:EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+  id: OriginalEvent
+  parent: EventStore.ClientAPI.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: OriginalEvent
+  nameWithType: ResolvedEvent.OriginalEvent
+  fullName: EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OriginalEvent
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 28
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nReturns the event that was read or which triggered the subscription.\n\nIf this <xref href=\"EventStore.ClientAPI.ResolvedEvent\" data-throw-if-not-resolved=\"false\"></xref> represents a link event, the Link\nwill be the <xref href=\"EventStore.ClientAPI.ResolvedEvent.OriginalEvent\" data-throw-if-not-resolved=\"false\"></xref>, otherwise it will be the\nevent.\n"
+  example: []
+  syntax:
+    content: public RecordedEvent OriginalEvent { get; }
+    parameters: []
+    return:
+      type: EventStore.ClientAPI.RecordedEvent
+    content.vb: Public ReadOnly Property OriginalEvent As RecordedEvent
+  overload: EventStore.ClientAPI.ResolvedEvent.OriginalEvent*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ResolvedEvent.IsResolved
+  commentId: P:EventStore.ClientAPI.ResolvedEvent.IsResolved
+  id: IsResolved
+  parent: EventStore.ClientAPI.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: IsResolved
+  nameWithType: ResolvedEvent.IsResolved
+  fullName: EventStore.ClientAPI.ResolvedEvent.IsResolved
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IsResolved
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 34
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nIndicates whether this <xref href=\"EventStore.ClientAPI.ResolvedEvent\" data-throw-if-not-resolved=\"false\"></xref> is a resolved link\nevent.\n"
+  example: []
+  syntax:
+    content: public bool IsResolved { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsResolved As Boolean
+  overload: EventStore.ClientAPI.ResolvedEvent.IsResolved*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalPosition
+  commentId: F:EventStore.ClientAPI.ResolvedEvent.OriginalPosition
+  id: OriginalPosition
+  parent: EventStore.ClientAPI.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: OriginalPosition
+  nameWithType: ResolvedEvent.OriginalPosition
+  fullName: EventStore.ClientAPI.ResolvedEvent.OriginalPosition
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OriginalPosition
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 39
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe logical position of the <xref href=\"EventStore.ClientAPI.ResolvedEvent.OriginalEvent\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public readonly Position? OriginalPosition
+    return:
+      type: System.Nullable{EventStore.ClientAPI.Position}
+    content.vb: Public ReadOnly OriginalPosition As Position?
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalStreamId
+  commentId: P:EventStore.ClientAPI.ResolvedEvent.OriginalStreamId
+  id: OriginalStreamId
+  parent: EventStore.ClientAPI.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: OriginalStreamId
+  nameWithType: ResolvedEvent.OriginalStreamId
+  fullName: EventStore.ClientAPI.ResolvedEvent.OriginalStreamId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OriginalStreamId
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 44
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe stream name of the <xref href=\"EventStore.ClientAPI.ResolvedEvent.OriginalEvent\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public string OriginalStreamId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property OriginalStreamId As String
+  overload: EventStore.ClientAPI.ResolvedEvent.OriginalStreamId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber
+  commentId: P:EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber
+  id: OriginalEventNumber
+  parent: EventStore.ClientAPI.ResolvedEvent
+  langs:
+  - csharp
+  - vb
+  name: OriginalEventNumber
+  nameWithType: ResolvedEvent.OriginalEventNumber
+  fullName: EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ResolvedEvent.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: OriginalEventNumber
+    path: ../EventStore/src/EventStore.ClientAPI/ResolvedEvent.cs
+    startLine: 49
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe event number in the stream of the <xref href=\"EventStore.ClientAPI.ResolvedEvent.OriginalEvent\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public long OriginalEventNumber { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property OriginalEventNumber As Long
+  overload: EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  isExternal: false
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: EventStore.ClientAPI.ResolvedEvent.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<ResolvedEvent>()
+  nameWithType: EnumExtensions.EnumValueName<ResolvedEvent>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.ResolvedEvent>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of ResolvedEvent)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.ResolvedEvent)()
+  name.vb: EnumValueName(Of ResolvedEvent)()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<ResolvedEvent>
+    nameWithType: EnumExtensions.EnumValueName<ResolvedEvent>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.ResolvedEvent>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of ResolvedEvent)
+    nameWithType: EnumExtensions.EnumValueName(Of ResolvedEvent)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.ResolvedEvent)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ResolvedEvent>()
+  nameWithType: ProtobufExtensions.Serialize<ResolvedEvent>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.ResolvedEvent>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ResolvedEvent)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.ResolvedEvent)()
+  name.vb: Serialize(Of ResolvedEvent)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ResolvedEvent>
+    nameWithType: ProtobufExtensions.Serialize<ResolvedEvent>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.ResolvedEvent>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ResolvedEvent)
+    nameWithType: ProtobufExtensions.Serialize(Of ResolvedEvent)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.ResolvedEvent)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.ResolvedEvent.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ResolvedEvent>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ResolvedEvent>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.ResolvedEvent>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ResolvedEvent)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.ResolvedEvent)()
+  name.vb: SerializeToArray(Of ResolvedEvent)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ResolvedEvent>
+    nameWithType: ProtobufExtensions.SerializeToArray<ResolvedEvent>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.ResolvedEvent>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ResolvedEvent)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ResolvedEvent)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.ResolvedEvent)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  isExternal: false
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  isExternal: false
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.ClientAPI.ResolvedEvent
+  commentId: T:EventStore.ClientAPI.ResolvedEvent
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: ResolvedEvent
+  nameWithType: ResolvedEvent
+  fullName: EventStore.ClientAPI.ResolvedEvent
+- uid: EventStore.ClientAPI.RecordedEvent
+  commentId: T:EventStore.ClientAPI.RecordedEvent
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: RecordedEvent
+  nameWithType: RecordedEvent
+  fullName: EventStore.ClientAPI.RecordedEvent
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+  commentId: P:EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalEvent*
+  commentId: Overload:EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+  isExternal: false
+  name: OriginalEvent
+  nameWithType: ResolvedEvent.OriginalEvent
+  fullName: EventStore.ClientAPI.ResolvedEvent.OriginalEvent
+- uid: EventStore.ClientAPI.ResolvedEvent.IsResolved*
+  commentId: Overload:EventStore.ClientAPI.ResolvedEvent.IsResolved
+  isExternal: false
+  name: IsResolved
+  nameWithType: ResolvedEvent.IsResolved
+  fullName: EventStore.ClientAPI.ResolvedEvent.IsResolved
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Nullable{EventStore.ClientAPI.Position}
+  commentId: '!:System.Nullable{EventStore.ClientAPI.Position}'
+  definition: System.Nullable`1
+  name: Nullable<Position>
+  nameWithType: Nullable<Position>
+  fullName: System.Nullable<EventStore.ClientAPI.Position>
+  nameWithType.vb: Nullable(Of Position)
+  fullName.vb: System.Nullable(Of EventStore.ClientAPI.Position)
+  name.vb: Nullable(Of Position)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.Position
+    name: Position
+    nameWithType: Position
+    fullName: EventStore.ClientAPI.Position
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.Position
+    name: Position
+    nameWithType: Position
+    fullName: EventStore.ClientAPI.Position
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalStreamId*
+  commentId: Overload:EventStore.ClientAPI.ResolvedEvent.OriginalStreamId
+  isExternal: false
+  name: OriginalStreamId
+  nameWithType: ResolvedEvent.OriginalStreamId
+  fullName: EventStore.ClientAPI.ResolvedEvent.OriginalStreamId
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber*
+  commentId: Overload:EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber
+  isExternal: false
+  name: OriginalEventNumber
+  nameWithType: ResolvedEvent.OriginalEventNumber
+  fullName: EventStore.ClientAPI.ResolvedEvent.OriginalEventNumber
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64

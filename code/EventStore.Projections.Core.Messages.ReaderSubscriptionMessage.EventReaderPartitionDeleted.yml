@@ -1,0 +1,989 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  id: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  parent: EventStore.Projections.Core.Messages
+  children:
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.#ctor(Guid,System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int64},EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Object)
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+  langs:
+  - csharp
+  - vb
+  name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: EventReaderPartitionDeleted
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 122
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: 'public class EventReaderPartitionDeleted : ReaderSubscriptionMessage.SubscriptionMessage'
+    content.vb: >-
+      Public Class EventReaderPartitionDeleted
+          Inherits ReaderSubscriptionMessage.SubscriptionMessage
+  inheritance:
+  - System.Object
+  - EventStore.Core.Messaging.Message
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+  inheritedMembers:
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.CorrelationId
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.PreTagged
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.Source
+  - EventStore.Core.Messaging.Message.NextMsgId
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+  id: MsgTypeId
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: MsgTypeId
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: MsgTypeId
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 126
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public override int MsgTypeId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property MsgTypeId As Integer
+  overridden: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.MsgTypeId
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.#ctor(Guid,System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int64},EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Object)
+  commentId: M:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.#ctor(Guid,System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int64},EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Object)
+  id: '#ctor(Guid,System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int64},EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Object)'
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: EventReaderPartitionDeleted(Guid, String, Nullable<Int64>, Nullable<TFPos>, Nullable<TFPos>, String, Nullable<Int64>, CheckpointTag, Object)
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventReaderPartitionDeleted(Guid, String, Nullable<Int64>, Nullable<TFPos>, Nullable<TFPos>, String, Nullable<Int64>, CheckpointTag, Object)
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventReaderPartitionDeleted(Guid, System.String, System.Nullable<System.Int64>, System.Nullable<EventStore.Core.Data.TFPos>, System.Nullable<EventStore.Core.Data.TFPos>, System.String, System.Nullable<System.Int64>, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Object)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 138
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public EventReaderPartitionDeleted(Guid correlationId, string partition, long ? lastEventNumber, TFPos? deleteLinkOrEventPosition, TFPos? deleteEventOrLinkTargetPosition, string positionStreamId, long ? positionEventNumber, CheckpointTag preTagged = null, object source = null)
+    parameters:
+    - id: correlationId
+      type: Guid
+    - id: partition
+      type: System.String
+    - id: lastEventNumber
+      type: System.Nullable{System.Int64}
+    - id: deleteLinkOrEventPosition
+      type: System.Nullable{EventStore.Core.Data.TFPos}
+    - id: deleteEventOrLinkTargetPosition
+      type: System.Nullable{EventStore.Core.Data.TFPos}
+    - id: positionStreamId
+      type: System.String
+    - id: positionEventNumber
+      type: System.Nullable{System.Int64}
+    - id: preTagged
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: source
+      type: System.Object
+    content.vb: Public Sub New(correlationId As Guid, partition As String, lastEventNumber As Long?, deleteLinkOrEventPosition As TFPos?, deleteEventOrLinkTargetPosition As TFPos?, positionStreamId As String, positionEventNumber As Long?, preTagged As CheckpointTag = Nothing, source As Object = Nothing)
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.#ctor*
+  nameWithType.vb: ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventReaderPartitionDeleted(Guid, String, Nullable(Of Int64), Nullable(Of TFPos), Nullable(Of TFPos), String, Nullable(Of Int64), CheckpointTag, Object)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventReaderPartitionDeleted(Guid, System.String, System.Nullable(Of System.Int64), System.Nullable(Of EventStore.Core.Data.TFPos), System.Nullable(Of EventStore.Core.Data.TFPos), System.String, System.Nullable(Of System.Int64), EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Object)
+  name.vb: EventReaderPartitionDeleted(Guid, String, Nullable(Of Int64), Nullable(Of TFPos), Nullable(Of TFPos), String, Nullable(Of Int64), CheckpointTag, Object)
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+  id: Partition
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: Partition
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Partition
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 152
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public string Partition { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Partition As String
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+  id: LastEventNumber
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: LastEventNumber
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: LastEventNumber
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 157
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public long ? LastEventNumber { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public ReadOnly Property LastEventNumber As Long?
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+  id: DeleteEventOrLinkTargetPosition
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: DeleteEventOrLinkTargetPosition
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: DeleteEventOrLinkTargetPosition
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 162
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public TFPos? DeleteEventOrLinkTargetPosition { get; }
+    parameters: []
+    return:
+      type: System.Nullable{EventStore.Core.Data.TFPos}
+    content.vb: Public ReadOnly Property DeleteEventOrLinkTargetPosition As TFPos?
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+  id: PositionStreamId
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: PositionStreamId
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PositionStreamId
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 167
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public string PositionStreamId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property PositionStreamId As String
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+  id: PositionEventNumber
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: PositionEventNumber
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PositionEventNumber
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 172
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public long ? PositionEventNumber { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public ReadOnly Property PositionEventNumber As Long?
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition
+  id: DeleteLinkOrEventPosition
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  langs:
+  - csharp
+  - vb
+  name: DeleteLinkOrEventPosition
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: DeleteLinkOrEventPosition
+    path: ../EventStore/src/EventStore.Projections.Core/Messages/ReaderSubscriptionMessage.cs
+    startLine: 177
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public TFPos? DeleteLinkOrEventPosition { get; }
+    parameters: []
+    return:
+      type: System.Nullable{EventStore.Core.Data.TFPos}
+    content.vb: Public ReadOnly Property DeleteLinkOrEventPosition As TFPos?
+  overload: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  isExternal: false
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Messaging.Message
+  commentId: T:EventStore.Core.Messaging.Message
+  parent: EventStore.Core.Messaging
+  isExternal: false
+  name: Message
+  nameWithType: Message
+  fullName: EventStore.Core.Messaging.Message
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+  parent: EventStore.Projections.Core.Messages
+  isExternal: false
+  name: ReaderSubscriptionMessage.SubscriptionMessage
+  nameWithType: ReaderSubscriptionMessage.SubscriptionMessage
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.CorrelationId
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.CorrelationId
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+  isExternal: false
+  name: CorrelationId
+  nameWithType: ReaderSubscriptionMessage.SubscriptionMessage.CorrelationId
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.CorrelationId
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.PreTagged
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.PreTagged
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+  isExternal: false
+  name: PreTagged
+  nameWithType: ReaderSubscriptionMessage.SubscriptionMessage.PreTagged
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.PreTagged
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.Source
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.Source
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+  isExternal: false
+  name: Source
+  nameWithType: ReaderSubscriptionMessage.SubscriptionMessage.Source
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.Source
+- uid: EventStore.Core.Messaging.Message.NextMsgId
+  commentId: F:EventStore.Core.Messaging.Message.NextMsgId
+  parent: EventStore.Core.Messaging.Message
+  isExternal: false
+  name: NextMsgId
+  nameWithType: Message.NextMsgId
+  fullName: EventStore.Core.Messaging.Message.NextMsgId
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<ReaderSubscriptionMessage.EventReaderPartitionDeleted>()
+  nameWithType: ProtobufExtensions.Serialize<ReaderSubscriptionMessage.EventReaderPartitionDeleted>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)()
+  name.vb: Serialize(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+    nameWithType: ProtobufExtensions.Serialize<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+    nameWithType: ProtobufExtensions.Serialize(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<ReaderSubscriptionMessage.EventReaderPartitionDeleted>()
+  nameWithType: ProtobufExtensions.SerializeToArray<ReaderSubscriptionMessage.EventReaderPartitionDeleted>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)()
+  name.vb: SerializeToArray(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+    nameWithType: ProtobufExtensions.SerializeToArray<ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messaging
+  commentId: N:EventStore.Core.Messaging
+  isExternal: false
+  name: EventStore.Core.Messaging
+  nameWithType: EventStore.Core.Messaging
+  fullName: EventStore.Core.Messaging
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.MsgTypeId
+  commentId: P:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.MsgTypeId
+  parent: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+  isExternal: false
+  name: MsgTypeId
+  nameWithType: ReaderSubscriptionMessage.SubscriptionMessage.MsgTypeId
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage.MsgTypeId
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+  isExternal: false
+  name: MsgTypeId
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.MsgTypeId
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.#ctor
+  isExternal: false
+  name: EventReaderPartitionDeleted
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventReaderPartitionDeleted
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.EventReaderPartitionDeleted
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Nullable{System.Int64}
+  commentId: '!:System.Nullable{System.Int64}'
+  definition: System.Nullable`1
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
+  fullName: System.Nullable<System.Int64>
+  nameWithType.vb: Nullable(Of Int64)
+  fullName.vb: System.Nullable(Of System.Int64)
+  name.vb: Nullable(Of Int64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{EventStore.Core.Data.TFPos}
+  commentId: '!:System.Nullable{EventStore.Core.Data.TFPos}'
+  definition: System.Nullable`1
+  name: Nullable<TFPos>
+  nameWithType: Nullable<TFPos>
+  fullName: System.Nullable<EventStore.Core.Data.TFPos>
+  nameWithType.vb: Nullable(Of TFPos)
+  fullName.vb: System.Nullable(Of EventStore.Core.Data.TFPos)
+  name.vb: Nullable(Of TFPos)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+  isExternal: false
+  name: Partition
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.Partition
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+  isExternal: false
+  name: LastEventNumber
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.LastEventNumber
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+  isExternal: false
+  name: DeleteEventOrLinkTargetPosition
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteEventOrLinkTargetPosition
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+  isExternal: false
+  name: PositionStreamId
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionStreamId
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+  isExternal: false
+  name: PositionEventNumber
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.PositionEventNumber
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition
+  isExternal: false
+  name: DeleteLinkOrEventPosition
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted.DeleteLinkOrEventPosition

@@ -1,0 +1,1432 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Core.Index.IndexMap
+  commentId: T:EventStore.Core.Index.IndexMap
+  id: IndexMap
+  parent: EventStore.Core.Index
+  children:
+  - EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  - EventStore.Core.Index.IndexMap.CommitCheckpoint
+  - EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
+  - EventStore.Core.Index.IndexMap.Dispose(TimeSpan)
+  - EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
+  - EventStore.Core.Index.IndexMap.GetAllFilenames
+  - EventStore.Core.Index.IndexMap.IndexMapVersion
+  - EventStore.Core.Index.IndexMap.InOrder
+  - EventStore.Core.Index.IndexMap.InReverseOrder
+  - EventStore.Core.Index.IndexMap.PrepareCheckpoint
+  - EventStore.Core.Index.IndexMap.SaveToFile(System.String)
+  - EventStore.Core.Index.IndexMap.Version
+  langs:
+  - csharp
+  - vb
+  name: IndexMap
+  nameWithType: IndexMap
+  fullName: EventStore.Core.Index.IndexMap
+  type: Class
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IndexMap
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: 'public class IndexMap : object'
+    content.vb: >-
+      Public Class IndexMap
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Index.IndexMap.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.Core.Index.IndexMap.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Core.Index.IndexMap.IndexMapVersion
+  commentId: F:EventStore.Core.Index.IndexMap.IndexMapVersion
+  id: IndexMapVersion
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: IndexMapVersion
+  nameWithType: IndexMap.IndexMapVersion
+  fullName: EventStore.Core.Index.IndexMap.IndexMapVersion
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: IndexMapVersion
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public const int IndexMapVersion = null
+    return:
+      type: System.Int32
+    content.vb: Public Const IndexMapVersion As Integer = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.Core.Index.IndexMap.Version
+  commentId: F:EventStore.Core.Index.IndexMap.Version
+  id: Version
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: IndexMap.Version
+  fullName: EventStore.Core.Index.IndexMap.Version
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Version
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public readonly int Version
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Version As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Index.IndexMap.PrepareCheckpoint
+  commentId: F:EventStore.Core.Index.IndexMap.PrepareCheckpoint
+  id: PrepareCheckpoint
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: PrepareCheckpoint
+  nameWithType: IndexMap.PrepareCheckpoint
+  fullName: EventStore.Core.Index.IndexMap.PrepareCheckpoint
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: PrepareCheckpoint
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public readonly long PrepareCheckpoint
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly PrepareCheckpoint As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Index.IndexMap.CommitCheckpoint
+  commentId: F:EventStore.Core.Index.IndexMap.CommitCheckpoint
+  id: CommitCheckpoint
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: CommitCheckpoint
+  nameWithType: IndexMap.CommitCheckpoint
+  fullName: EventStore.Core.Index.IndexMap.CommitCheckpoint
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CommitCheckpoint
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 21
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public readonly long CommitCheckpoint
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly CommitCheckpoint As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Index.IndexMap.InOrder
+  commentId: M:EventStore.Core.Index.IndexMap.InOrder
+  id: InOrder
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: InOrder()
+  nameWithType: IndexMap.InOrder()
+  fullName: EventStore.Core.Index.IndexMap.InOrder()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InOrder
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 70
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public IEnumerable<PTable> InOrder()
+    return:
+      type: IEnumerable{EventStore.Core.Index.PTable}
+    content.vb: Public Function InOrder As IEnumerable(Of PTable)
+  overload: EventStore.Core.Index.IndexMap.InOrder*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Index.IndexMap.InReverseOrder
+  commentId: M:EventStore.Core.Index.IndexMap.InReverseOrder
+  id: InReverseOrder
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: InReverseOrder()
+  nameWithType: IndexMap.InReverseOrder()
+  fullName: EventStore.Core.Index.IndexMap.InReverseOrder()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: InReverseOrder
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 84
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public IEnumerable<PTable> InReverseOrder()
+    return:
+      type: IEnumerable{EventStore.Core.Index.PTable}
+    content.vb: Public Function InReverseOrder As IEnumerable(Of PTable)
+  overload: EventStore.Core.Index.IndexMap.InReverseOrder*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Index.IndexMap.GetAllFilenames
+  commentId: M:EventStore.Core.Index.IndexMap.GetAllFilenames
+  id: GetAllFilenames
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: GetAllFilenames()
+  nameWithType: IndexMap.GetAllFilenames()
+  fullName: EventStore.Core.Index.IndexMap.GetAllFilenames()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: GetAllFilenames
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 98
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public IEnumerable<string> GetAllFilenames()
+    return:
+      type: IEnumerable{System.String}
+    content.vb: Public Function GetAllFilenames As IEnumerable(Of String)
+  overload: EventStore.Core.Index.IndexMap.GetAllFilenames*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
+  commentId: M:EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
+  id: CreateEmpty(System.Int32)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: CreateEmpty(Int32)
+  nameWithType: IndexMap.CreateEmpty(Int32)
+  fullName: EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: CreateEmpty
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 105
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public static IndexMap CreateEmpty(int maxTablesPerLevel = 4)
+    parameters:
+    - id: maxTablesPerLevel
+      type: System.Int32
+    return:
+      type: EventStore.Core.Index.IndexMap
+    content.vb: Public Shared Function CreateEmpty(maxTablesPerLevel As Integer = 4) As IndexMap
+  overload: EventStore.Core.Index.IndexMap.CreateEmpty*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
+  id: FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: FromFile(String, Int32, Boolean, Int32, Boolean)
+  nameWithType: IndexMap.FromFile(String, Int32, Boolean, Int32, Boolean)
+  fullName: EventStore.Core.Index.IndexMap.FromFile(System.String, System.Int32, System.Boolean, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: FromFile
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 110
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public static IndexMap FromFile(string filename, int maxTablesPerLevel = 4, bool loadPTables = true, int cacheDepth = 16, bool skipIndexVerify = false)
+    parameters:
+    - id: filename
+      type: System.String
+    - id: maxTablesPerLevel
+      type: System.Int32
+    - id: loadPTables
+      type: System.Boolean
+    - id: cacheDepth
+      type: System.Int32
+    - id: skipIndexVerify
+      type: System.Boolean
+    return:
+      type: EventStore.Core.Index.IndexMap
+    content.vb: Public Shared Function FromFile(filename As String, maxTablesPerLevel As Integer = 4, loadPTables As Boolean = True, cacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As IndexMap
+  overload: EventStore.Core.Index.IndexMap.FromFile*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.Core.Index.IndexMap.SaveToFile(System.String)
+  commentId: M:EventStore.Core.Index.IndexMap.SaveToFile(System.String)
+  id: SaveToFile(System.String)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: SaveToFile(String)
+  nameWithType: IndexMap.SaveToFile(String)
+  fullName: EventStore.Core.Index.IndexMap.SaveToFile(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: SaveToFile
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 258
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public void SaveToFile(string filename)
+    parameters:
+    - id: filename
+      type: System.String
+    content.vb: Public Sub SaveToFile(filename As String)
+  overload: EventStore.Core.Index.IndexMap.SaveToFile*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  id: AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: AddPTable(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  nameWithType: IndexMap.AddPTable(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  fullName: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func<System.String, System.UInt64, System.UInt64>, Func<EventStore.Core.Index.IndexEntry, System.Boolean>, Func<EventStore.Core.Index.IndexEntry, Tuple<System.String, System.Boolean>>, EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: AddPTable
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 313
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public MergeResult AddPTable(PTable tableToAdd, long prepareCheckpoint, long commitCheckpoint, Func<string, ulong, ulong> upgradeHash, Func<IndexEntry, bool> existsAt, Func<IndexEntry, Tuple<string, bool>> recordExistsAt, IIndexFilenameProvider filenameProvider, byte version, int indexCacheDepth = 16, bool skipIndexVerify = false)
+    parameters:
+    - id: tableToAdd
+      type: EventStore.Core.Index.PTable
+    - id: prepareCheckpoint
+      type: System.Int64
+    - id: commitCheckpoint
+      type: System.Int64
+    - id: upgradeHash
+      type: Func{System.String,System.UInt64,System.UInt64}
+    - id: existsAt
+      type: Func{EventStore.Core.Index.IndexEntry,System.Boolean}
+    - id: recordExistsAt
+      type: Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}}
+    - id: filenameProvider
+      type: EventStore.Core.Index.IIndexFilenameProvider
+    - id: version
+      type: System.Byte
+    - id: indexCacheDepth
+      type: System.Int32
+    - id: skipIndexVerify
+      type: System.Boolean
+    return:
+      type: EventStore.Core.Index.MergeResult
+    content.vb: Public Function AddPTable(tableToAdd As PTable, prepareCheckpoint As Long, commitCheckpoint As Long, upgradeHash As Func(Of String, ULong, ULong), existsAt As Func(Of IndexEntry, Boolean), recordExistsAt As Func(Of IndexEntry, Tuple(Of String, Boolean)), filenameProvider As IIndexFilenameProvider, version As Byte, indexCacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As MergeResult
+  overload: EventStore.Core.Index.IndexMap.AddPTable*
+  nameWithType.vb: IndexMap.AddPTable(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func(Of System.String, System.UInt64, System.UInt64), Func(Of EventStore.Core.Index.IndexEntry, System.Boolean), Func(Of EventStore.Core.Index.IndexEntry, Tuple(Of System.String, System.Boolean)), EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  name.vb: AddPTable(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+- uid: EventStore.Core.Index.IndexMap.Dispose(TimeSpan)
+  commentId: M:EventStore.Core.Index.IndexMap.Dispose(TimeSpan)
+  id: Dispose(TimeSpan)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: Dispose(TimeSpan)
+  nameWithType: IndexMap.Dispose(TimeSpan)
+  fullName: EventStore.Core.Index.IndexMap.Dispose(TimeSpan)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: docs
+      repo: https://github.com/ChrisChinchilla/EventStore.git
+    id: Dispose
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 349
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public void Dispose(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type: TimeSpan
+    content.vb: Public Sub Dispose(timeout As TimeSpan)
+  overload: EventStore.Core.Index.IndexMap.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Core.Index
+  commentId: N:EventStore.Core.Index
+  isExternal: false
+  name: EventStore.Core.Index
+  nameWithType: EventStore.Core.Index
+  fullName: EventStore.Core.Index
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Index.IndexMap.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IndexMap>()
+  nameWithType: ProtobufExtensions.Serialize<IndexMap>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Index.IndexMap>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IndexMap)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Index.IndexMap)()
+  name.vb: Serialize(Of IndexMap)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IndexMap>
+    nameWithType: ProtobufExtensions.Serialize<IndexMap>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.Core.Index.IndexMap>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IndexMap)
+    nameWithType: ProtobufExtensions.Serialize(Of IndexMap)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.Core.Index.IndexMap)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Index.IndexMap.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IndexMap>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IndexMap>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Index.IndexMap>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IndexMap)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Index.IndexMap)()
+  name.vb: SerializeToArray(Of IndexMap)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IndexMap>
+    nameWithType: ProtobufExtensions.SerializeToArray<IndexMap>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.Core.Index.IndexMap>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IndexMap)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IndexMap)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.Core.Index.IndexMap)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  isExternal: false
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  isExternal: false
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  isExternal: false
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  isExternal: false
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
+- uid: EventStore.Core.Services.Transport.Tcp
+  commentId: N:EventStore.Core.Services.Transport.Tcp
+  isExternal: false
+  name: EventStore.Core.Services.Transport.Tcp
+  nameWithType: EventStore.Core.Services.Transport.Tcp
+  fullName: EventStore.Core.Services.Transport.Tcp
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Core.Index.IndexMap.InOrder*
+  commentId: Overload:EventStore.Core.Index.IndexMap.InOrder
+  isExternal: false
+  name: InOrder
+  nameWithType: IndexMap.InOrder
+  fullName: EventStore.Core.Index.IndexMap.InOrder
+- uid: IEnumerable{EventStore.Core.Index.PTable}
+  commentId: '!:IEnumerable{EventStore.Core.Index.PTable}'
+  definition: IEnumerable`1
+  name: IEnumerable<PTable>
+  nameWithType: IEnumerable<PTable>
+  fullName: IEnumerable<EventStore.Core.Index.PTable>
+  nameWithType.vb: IEnumerable(Of PTable)
+  fullName.vb: IEnumerable(Of EventStore.Core.Index.PTable)
+  name.vb: IEnumerable(Of PTable)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Index.PTable
+    name: PTable
+    nameWithType: PTable
+    fullName: EventStore.Core.Index.PTable
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Index.PTable
+    name: PTable
+    nameWithType: PTable
+    fullName: EventStore.Core.Index.PTable
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Index.IndexMap.InReverseOrder*
+  commentId: Overload:EventStore.Core.Index.IndexMap.InReverseOrder
+  isExternal: false
+  name: InReverseOrder
+  nameWithType: IndexMap.InReverseOrder
+  fullName: EventStore.Core.Index.IndexMap.InReverseOrder
+- uid: EventStore.Core.Index.IndexMap.GetAllFilenames*
+  commentId: Overload:EventStore.Core.Index.IndexMap.GetAllFilenames
+  isExternal: false
+  name: GetAllFilenames
+  nameWithType: IndexMap.GetAllFilenames
+  fullName: EventStore.Core.Index.IndexMap.GetAllFilenames
+- uid: IEnumerable{System.String}
+  commentId: '!:IEnumerable{System.String}'
+  definition: IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Index.IndexMap.CreateEmpty*
+  commentId: Overload:EventStore.Core.Index.IndexMap.CreateEmpty
+  isExternal: false
+  name: CreateEmpty
+  nameWithType: IndexMap.CreateEmpty
+  fullName: EventStore.Core.Index.IndexMap.CreateEmpty
+- uid: EventStore.Core.Index.IndexMap
+  commentId: T:EventStore.Core.Index.IndexMap
+  parent: EventStore.Core.Index
+  isExternal: false
+  name: IndexMap
+  nameWithType: IndexMap
+  fullName: EventStore.Core.Index.IndexMap
+- uid: EventStore.Core.Index.IndexMap.FromFile*
+  commentId: Overload:EventStore.Core.Index.IndexMap.FromFile
+  isExternal: false
+  name: FromFile
+  nameWithType: IndexMap.FromFile
+  fullName: EventStore.Core.Index.IndexMap.FromFile
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Index.IndexMap.SaveToFile*
+  commentId: Overload:EventStore.Core.Index.IndexMap.SaveToFile
+  isExternal: false
+  name: SaveToFile
+  nameWithType: IndexMap.SaveToFile
+  fullName: EventStore.Core.Index.IndexMap.SaveToFile
+- uid: EventStore.Core.Index.IndexMap.AddPTable*
+  commentId: Overload:EventStore.Core.Index.IndexMap.AddPTable
+  isExternal: false
+  name: AddPTable
+  nameWithType: IndexMap.AddPTable
+  fullName: EventStore.Core.Index.IndexMap.AddPTable
+- uid: EventStore.Core.Index.PTable
+  commentId: T:EventStore.Core.Index.PTable
+  parent: EventStore.Core.Index
+  isExternal: false
+  name: PTable
+  nameWithType: PTable
+  fullName: EventStore.Core.Index.PTable
+- uid: Func{System.String,System.UInt64,System.UInt64}
+  commentId: '!:Func{System.String,System.UInt64,System.UInt64}'
+  definition: Func`3
+  name: Func<String, UInt64, UInt64>
+  nameWithType: Func<String, UInt64, UInt64>
+  fullName: Func<System.String, System.UInt64, System.UInt64>
+  nameWithType.vb: Func(Of String, UInt64, UInt64)
+  fullName.vb: Func(Of System.String, System.UInt64, System.UInt64)
+  name.vb: Func(Of String, UInt64, UInt64)
+  spec.csharp:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func{EventStore.Core.Index.IndexEntry,System.Boolean}
+  commentId: '!:Func{EventStore.Core.Index.IndexEntry,System.Boolean}'
+  definition: Func`2
+  name: Func<IndexEntry, Boolean>
+  nameWithType: Func<IndexEntry, Boolean>
+  fullName: Func<EventStore.Core.Index.IndexEntry, System.Boolean>
+  nameWithType.vb: Func(Of IndexEntry, Boolean)
+  fullName.vb: Func(Of EventStore.Core.Index.IndexEntry, System.Boolean)
+  name.vb: Func(Of IndexEntry, Boolean)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Index.IndexEntry
+    name: IndexEntry
+    nameWithType: IndexEntry
+    fullName: EventStore.Core.Index.IndexEntry
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Index.IndexEntry
+    name: IndexEntry
+    nameWithType: IndexEntry
+    fullName: EventStore.Core.Index.IndexEntry
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}}
+  commentId: '!:Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}}'
+  definition: Func`2
+  name: Func<IndexEntry, Tuple<String, Boolean>>
+  nameWithType: Func<IndexEntry, Tuple<String, Boolean>>
+  fullName: Func<EventStore.Core.Index.IndexEntry, Tuple<System.String, System.Boolean>>
+  nameWithType.vb: Func(Of IndexEntry, Tuple(Of String, Boolean))
+  fullName.vb: Func(Of EventStore.Core.Index.IndexEntry, Tuple(Of System.String, System.Boolean))
+  name.vb: Func(Of IndexEntry, Tuple(Of String, Boolean))
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Index.IndexEntry
+    name: IndexEntry
+    nameWithType: IndexEntry
+    fullName: EventStore.Core.Index.IndexEntry
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Tuple`2
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Index.IndexEntry
+    name: IndexEntry
+    nameWithType: IndexEntry
+    fullName: EventStore.Core.Index.IndexEntry
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Tuple`2
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Index.IIndexFilenameProvider
+  commentId: T:EventStore.Core.Index.IIndexFilenameProvider
+  parent: EventStore.Core.Index
+  isExternal: false
+  name: IIndexFilenameProvider
+  nameWithType: IIndexFilenameProvider
+  fullName: EventStore.Core.Index.IIndexFilenameProvider
+- uid: System.Byte
+  isExternal: true
+  name: Byte
+  nameWithType: Byte
+  fullName: System.Byte
+- uid: EventStore.Core.Index.MergeResult
+  commentId: T:EventStore.Core.Index.MergeResult
+  parent: EventStore.Core.Index
+  isExternal: false
+  name: MergeResult
+  nameWithType: MergeResult
+  fullName: EventStore.Core.Index.MergeResult
+- uid: Func`3
+  isExternal: true
+  name: Func<, , >
+  nameWithType: Func<, , >
+  fullName: Func<, , >
+  nameWithType.vb: Func(Of , , )
+  fullName.vb: Func(Of , , )
+  name.vb: Func(Of , , )
+  spec.csharp:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`3
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func`2
+  isExternal: true
+  name: Func<, >
+  nameWithType: Func<, >
+  fullName: Func<, >
+  nameWithType.vb: Func(Of , )
+  fullName.vb: Func(Of , )
+  name.vb: Func(Of , )
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Index.IndexMap.Dispose*
+  commentId: Overload:EventStore.Core.Index.IndexMap.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: IndexMap.Dispose
+  fullName: EventStore.Core.Index.IndexMap.Dispose
+- uid: TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: TimeSpan

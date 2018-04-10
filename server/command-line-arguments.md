@@ -1,9 +1,8 @@
 ---
-title: "Command Line Arguments"
-section: "Server"
-version: "4.0.2"
+outputFileName: index.html
 ---
 
+# Command Line Arguments
 Event Store supports many configuration options. There are three distinct ways to set any parameter, all with their own advantages and disadvantages.
 
 -   Via command line
@@ -37,9 +36,8 @@ IntHttpPort: 2111
 ---
 ```
 
-<span class="note">
-You need to use the three dashes and spacing in your YAML file.
-</span>
+> [!NOTE]
+> You need to use the three dashes and spacing in your YAML file.
 
 Files can be better for large installations as you can centrally distribute and manage them, or generate them by a configuration management system such as Puppet.
 
@@ -79,9 +77,8 @@ PREPARE TIMEOUT MS:       2000 (<DEFAULT>)
 COMMIT TIMEOUT MS:        2000 (<DEFAULT>)
 ```
 
-<span class="note">
-User projections are not enabled by default, but the projections engine is used internally for account management. If you want to run user projections, you have to start Event Store using the `--run-projections=all` command line parameter.
-</span>
+> [!NOTE]
+> User projections are not enabled by default, but the projections engine is used internally for account management. If you want to run user projections, you have to start Event Store using the `--run-projections=all` command line parameter.
 
 Event Store supports the following parameters:
 
@@ -91,7 +88,7 @@ Event Store supports the following parameters:
 | --------------------------------------------------------------------- | ---------------------------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
 | -Help<br/>--help=VALUE<br/>                                           | HELP                                           | Help                     | Show help. (Default: False)                                                                                       |
 | -Version<br/>--version=VALUE<br/>                                     | VERSION                                        | Version                  | Show version. (Default: False)                                                                                    |
-| -Log<br/>--log=VALUE<br/>                                             | LOG                                            | Log                      | Path where to keep log files. (Default: [See default directories](../default-directories))                        |
+| -Log<br/>--log=VALUE<br/>                                             | LOG                                            | Log                      | Path where to keep log files. (Default: [See default directories](default-directories.md)                        |
 | -Config<br/>--config=VALUE<br/>                                       | CONFIG                                         | Config                   | Configuration files.                                                                                              |
 | -Defines<br/>--defines=VALUE<br/>                                     | DEFINES                                        | Defines                  | Run-time conditionals. (Default: n/a)                                                                             |
 | -WhatIf<br/>--what-if=VALUE<br/>                                      | WHAT_IF                                        | WhatIf                   | Print effective configuration to console and then exit. (Default: False)                                          |
@@ -150,7 +147,7 @@ Event Store supports the following parameters:
 | -ChunksCacheSize<br/>--chunks-cache-size=VALUE<br/>                     | CHUNKS_CACHE_SIZE                              | ChunksCacheSize          | The amount of unmanaged memory to use for caching chunks. (Default: 536871424)                                 |
 | -MaxMemTableSize<br/>--max-mem-table-size=VALUE<br/>                    | MAX_MEM_TABLE_SIZE                             | MaxMemTableSize          | Adjusts the maximum size of a mem table. (Default: 1000000)                                                    |
 | -HashCollisionReadLimit<br/>--hash-collision-read-limit=VALUE<br/>      | HASH_COLLISION_READ_LIMIT                      | HashCollisionReadLimit   | The number of events to read per candidate in the case of a hash collision (Default: 100)                      |
-| -Db<br/>--db=VALUE<br/>                                                 | DB                                             | Db                       | The path the db should be loaded/saved to. (Default: [See default directories](../default-directories))        |
+| -Db<br/>--db=VALUE<br/>                                                 | DB                                             | Db                       | The path the db should be loaded/saved to. (Default: [See default directories](default-directories.md))        |
 | -Index<br/>--index=VALUE<br/>                                           | INDEX                                          | Index                    | The path the index should be loaded/saved to.                                                                  |
 | -MemDb<br/>--mem-db=VALUE<br/>                                          | MEM_DB                                         | MemDb                    | Keep everything in memory, no directories or files are created. (Default: False)                               |
 | -SkipDbVerify<br/>--skip-db-verify=VALUE<br/>                           | SKIP_DB_VERIFY                                 | SkipDbVerify             | Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False)  |
