@@ -50,11 +50,11 @@ Task<StreamMetadataResult> GetStreamMetadataAsync(string stream, UserCredentials
 
 This returns a `StreamMetadataResult`. The fields on this result are:
 
-| Member                    | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `string Stream`           | The name of the stream                                 |
-| `bool IsStreamDeleted`    | `true` is the stream is deleted, `false` otherwise.        |
-| `int MetastreamVersion`   | The version of the metastream format                   |
+| Member                    | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| `string Stream`           | The name of the stream                                   |
+| `bool IsStreamDeleted`    | `true` is the stream is deleted, `false` otherwise.      |
+| `long MetastreamVersion`  | The version of the metastream format                     |
 | `StreamMetadata Metadata` | A `StreamMetadata` object representing the metadata JSON |
 
 You can then access the `StreamMetadata` via the `StreamMetadata` object. It contains typed fields for well known stream metadata entries.
@@ -97,18 +97,18 @@ Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamV
 
 The `StreamMetadata` passed above has a builder that you can access via the `StreamMetadata.Create()` method. The options available on the builder are:
 
-| Method                                        | Description                                                                                                                                                                                        |
-| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `SetMaxCount(int count)`                      | Sets the maximum count of events in the stream.                                                                                                                                                    |
-| `SetMaxAge(TimeSpan age)`                     | Sets the maximum age of events in the stream.                                                                                                                                                      |
-| `SetTruncateBefore(int seq)`                  | Sets the event number from which previous events can be scavenged.\<                                                                                                                               |
-| `SetCacheControl(TimeSpan cacheControl)`      | The amount of time the stream head is cachable.                                                                                                                                          |
-| `SetReadRoles(string[] roles)`                | Sets the roles allowed to read the underlying stream.                                                                                                                                     |
-| `SetWriteRoles(string[] roles)`               | Sets the roles allowed to write to the underlying stream.                                                                                                                                 |
-| `SetDeleteRoles(string[] roles)`              | Sets the roles allowed to delete the underlying stream.                                                                                                                                   |
-| `SetMetadataReadRoles(string[] roles)`        | Sets the roles allowed to read the metadata stream.                                                                                                                                       |
+| Method                                        | Description                                                                                                                                                                            |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SetMaxCount(int count)`                      | Sets the maximum count of events in the stream.                                                                                                                                        |
+| `SetMaxAge(TimeSpan age)`                     | Sets the maximum age of events in the stream.                                                                                                                                          |
+| `SetTruncateBefore(int seq)`                  | Sets the event number from which previous events can be scavenged.\<                                                                                                                   |
+| `SetCacheControl(TimeSpan cacheControl)`      | The amount of time the stream head is cachable.                                                                                                                                        |
+| `SetReadRoles(string[] roles)`                | Sets the roles allowed to read the underlying stream.                                                                                                                                  |
+| `SetWriteRoles(string[] roles)`               | Sets the roles allowed to write to the underlying stream.                                                                                                                              |
+| `SetDeleteRoles(string[] roles)`              | Sets the roles allowed to delete the underlying stream.                                                                                                                                |
+| `SetMetadataReadRoles(string[] roles)`        | Sets the roles allowed to read the metadata stream.                                                                                                                                    |
 | `SetMetadataWriteRoles(string[] roles)`       | Sets the roles allowed to write the metadata stream. Be careful with this privilege as it gives all the privileges for a stream as that use can assign themselves any other privilege. |
-| `SetCustomMetadata(string key, string value)` | The SetCustomMetadata method and overloads allow the setting of arbitrary custom fields into the stream metadata.                                                                                  |
+| `SetCustomMetadata(string key, string value)` | The SetCustomMetadata method and overloads allow the setting of arbitrary custom fields into the stream metadata.                                                                      |
 
 You can add user-specified metadata via the `SetCustomMetadata` overloads. Some examples of good uses of user-specified metadata are:
 

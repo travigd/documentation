@@ -8,7 +8,7 @@ You should look at reliability from a holistic perspective. Even though Event St
 
 Many consumer grade disks (and SSDs especially) lie about durability to appear faster. This is fine until you have a power outage and lose information. By default on a client installation Windows enables disk caching. <!-- TODO: Why is this relevant? RAM out of control, I think was also mentioned elsewhere? -->
 
-These issues do not just affect Event Store. Other vendors and projects have created tests to check whether you may be losing data. We recommend running one of [these such tests](http://highperfpostgres.com/disk-plug-pull-testing) against your production environment.
+These issues do not just affect Event Store. Other vendors and projects have created tests to check whether you may be losing data. We recommend running one of [these such tests](http://archive.li/WTeAE) against your production environment.
 
 You can look at the state of your drives on Linux by using the following command:
 
