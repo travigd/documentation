@@ -111,7 +111,7 @@
 
 ## [Stream Metadata](http-api/stream-metadata.md)
 
-## [Optional HTTP Headers](http-api/optional-http-headers.md)
+## [Optional HTTP Headers](http-api/optional-http-headers/index.md)
 
 ## [Security](http-api/security.md)
 
