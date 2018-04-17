@@ -6,6 +6,7 @@ items:
   parent: EventStore.Core.DataStructures
   children:
   - EventStore.Core.DataStructures.LRUCache`2.#ctor(System.Int32)
+  - EventStore.Core.DataStructures.LRUCache`2.#ctor(System.Int32,Func{System.Object,System.Boolean},Func{System.Object,System.Boolean})
   - EventStore.Core.DataStructures.LRUCache`2.Put(`0,`1)
   - EventStore.Core.DataStructures.LRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
   - EventStore.Core.DataStructures.LRUCache`2.Remove(`0)
@@ -20,8 +21,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/DataStructures/LRUCache.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LRUCache
     path: ../EventStore/src/EventStore.Core/DataStructures/LRUCache.cs
     startLine: 6
@@ -70,8 +71,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/DataStructures/LRUCache.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/DataStructures/LRUCache.cs
     startLine: 21
@@ -91,6 +92,46 @@ items:
   modifiers.vb:
   - Public
   fullName.vb: EventStore.Core.DataStructures.LRUCache(Of TKey, TValue).LRUCache(System.Int32)
+- uid: EventStore.Core.DataStructures.LRUCache`2.#ctor(System.Int32,Func{System.Object,System.Boolean},Func{System.Object,System.Boolean})
+  commentId: M:EventStore.Core.DataStructures.LRUCache`2.#ctor(System.Int32,Func{System.Object,System.Boolean},Func{System.Object,System.Boolean})
+  id: '#ctor(System.Int32,Func{System.Object,System.Boolean},Func{System.Object,System.Boolean})'
+  parent: EventStore.Core.DataStructures.LRUCache`2
+  langs:
+  - csharp
+  - vb
+  name: LRUCache(Int32, Func<Object, Boolean>, Func<Object, Boolean>)
+  nameWithType: LRUCache<TKey, TValue>.LRUCache(Int32, Func<Object, Boolean>, Func<Object, Boolean>)
+  fullName: EventStore.Core.DataStructures.LRUCache<TKey, TValue>.LRUCache(System.Int32, Func<System.Object, System.Boolean>, Func<System.Object, System.Boolean>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/DataStructures/LRUCache.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/DataStructures/LRUCache.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.DataStructures
+  syntax:
+    content: public LRUCache(int maxCount, Func<object, bool> onPut, Func<object, bool> onRemove)
+    parameters:
+    - id: maxCount
+      type: System.Int32
+    - id: onPut
+      type: Func{System.Object,System.Boolean}
+    - id: onRemove
+      type: Func{System.Object,System.Boolean}
+    content.vb: Public Sub New(maxCount As Integer, onPut As Func(Of Object, Boolean), onRemove As Func(Of Object, Boolean))
+  overload: EventStore.Core.DataStructures.LRUCache`2.#ctor*
+  nameWithType.vb: LRUCache(Of TKey, TValue).LRUCache(Int32, Func(Of Object, Boolean), Func(Of Object, Boolean))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.DataStructures.LRUCache(Of TKey, TValue).LRUCache(System.Int32, Func(Of System.Object, System.Boolean), Func(Of System.Object, System.Boolean))
+  name.vb: LRUCache(Int32, Func(Of Object, Boolean), Func(Of Object, Boolean))
 - uid: EventStore.Core.DataStructures.LRUCache`2.TryGet(`0,`1@)
   commentId: M:EventStore.Core.DataStructures.LRUCache`2.TryGet(`0,`1@)
   id: TryGet(`0,`1@)
@@ -105,11 +146,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/DataStructures/LRUCache.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryGet
     path: ../EventStore/src/EventStore.Core/DataStructures/LRUCache.cs
-    startLine: 27
+    startLine: 35
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.DataStructures
@@ -147,11 +188,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/DataStructures/LRUCache.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Put
     path: ../EventStore/src/EventStore.Core/DataStructures/LRUCache.cs
-    startLine: 45
+    startLine: 53
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.DataStructures
@@ -188,11 +229,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/DataStructures/LRUCache.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Remove
     path: ../EventStore/src/EventStore.Core/DataStructures/LRUCache.cs
-    startLine: 70
+    startLine: 85
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.DataStructures
@@ -223,11 +264,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/DataStructures/LRUCache.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Put
     path: ../EventStore/src/EventStore.Core/DataStructures/LRUCache.cs
-    startLine: 83
+    startLine: 101
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.DataStructures
@@ -746,6 +787,115 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: Func{System.Object,System.Boolean}
+  commentId: '!:Func{System.Object,System.Boolean}'
+  definition: Func`2
+  name: Func<Object, Boolean>
+  nameWithType: Func<Object, Boolean>
+  fullName: Func<System.Object, System.Boolean>
+  nameWithType.vb: Func(Of Object, Boolean)
+  fullName.vb: Func(Of System.Object, System.Boolean)
+  name.vb: Func(Of Object, Boolean)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func`2
+  isExternal: true
+  name: Func<, >
+  nameWithType: Func<, >
+  fullName: Func<, >
+  nameWithType.vb: Func(Of , )
+  fullName.vb: Func(Of , )
+  name.vb: Func(Of , )
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.DataStructures.LRUCache`2.TryGet*
   commentId: Overload:EventStore.Core.DataStructures.LRUCache`2.TryGet
   isExternal: false

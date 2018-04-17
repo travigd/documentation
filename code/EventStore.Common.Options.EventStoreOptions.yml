@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EventStoreOptions
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 10
@@ -60,8 +60,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Parse
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 14
@@ -69,7 +69,9 @@ items:
   - EventStore.Common
   namespace: EventStore.Common.Options
   syntax:
-    content: 'public static TOptions Parse<TOptions>(string[] args, string environmentPrefix, string defaultConfigLocation = null)where TOptions : class, IOptions, new ()'
+    content: >-
+      public static TOptions Parse<TOptions>(string[] args, string environmentPrefix, string defaultConfigLocation = null)
+          where TOptions : class, IOptions, new()
     parameters:
     - id: args
       type: System.String[]
@@ -106,8 +108,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Parse
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 61
@@ -115,7 +117,9 @@ items:
   - EventStore.Common
   namespace: EventStore.Common.Options
   syntax:
-    content: 'public static TOptions Parse<TOptions>(string configFile, string sectionName = "")where TOptions : class, new ()'
+    content: >-
+      public static TOptions Parse<TOptions>(string configFile, string sectionName = "")
+          where TOptions : class, new()
     parameters:
     - id: configFile
       type: System.String
@@ -150,8 +154,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GetUsage
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 66
@@ -189,8 +193,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DumpOptions
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 71

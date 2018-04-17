@@ -6,11 +6,12 @@ items:
   parent: EventStore.Transport.Http.EntityManagement
   children:
   - EventStore.Transport.Http.EntityManagement.HttpEntity.#ctor(HttpListenerRequest,HttpListenerResponse,IPrincipal,System.Boolean,IPAddress,System.Int32)
-  - EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32)
+  - EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32,System.Boolean)
   - EventStore.Transport.Http.EntityManagement.HttpEntity.CreateManager
   - EventStore.Transport.Http.EntityManagement.HttpEntity.CreateManager(EventStore.Transport.Http.ICodec,EventStore.Transport.Http.ICodec,System.String[],Action{EventStore.Transport.Http.EntityManagement.HttpEntity})
   - EventStore.Transport.Http.EntityManagement.HttpEntity.Request
   - EventStore.Transport.Http.EntityManagement.HttpEntity.RequestedUrl
+  - EventStore.Transport.Http.EntityManagement.HttpEntity.ResponseUrl
   - EventStore.Transport.Http.EntityManagement.HttpEntity.SetUser(IPrincipal)
   - EventStore.Transport.Http.EntityManagement.HttpEntity.Test(IPrincipal)
   - EventStore.Transport.Http.EntityManagement.HttpEntity.User
@@ -24,8 +25,8 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HttpEntity
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
     startLine: 10
@@ -65,8 +66,8 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RequestedUrl
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
     startLine: 13
@@ -78,6 +79,39 @@ items:
     return:
       type: Uri
     content.vb: Public ReadOnly RequestedUrl As Uri
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Transport.Http.EntityManagement.HttpEntity.ResponseUrl
+  commentId: F:EventStore.Transport.Http.EntityManagement.HttpEntity.ResponseUrl
+  id: ResponseUrl
+  parent: EventStore.Transport.Http.EntityManagement.HttpEntity
+  langs:
+  - csharp
+  - vb
+  name: ResponseUrl
+  nameWithType: HttpEntity.ResponseUrl
+  fullName: EventStore.Transport.Http.EntityManagement.HttpEntity.ResponseUrl
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: ResponseUrl
+    path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Transport.Http
+  namespace: EventStore.Transport.Http.EntityManagement
+  syntax:
+    content: public readonly Uri ResponseUrl
+    return:
+      type: Uri
+    content.vb: Public ReadOnly ResponseUrl As Uri
   modifiers.csharp:
   - public
   - readonly
@@ -98,11 +132,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Request
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -131,11 +165,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: User
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -164,11 +198,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -193,30 +227,30 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32)
-  commentId: M:EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32)
-  id: BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32)
+- uid: EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32,System.Boolean)
+  commentId: M:EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32,System.Boolean)
+  id: BuildRequestedUrl(Uri,NameValueCollection,IPAddress,System.Int32,System.Boolean)
   parent: EventStore.Transport.Http.EntityManagement.HttpEntity
   langs:
   - csharp
   - vb
-  name: BuildRequestedUrl(Uri, NameValueCollection, IPAddress, Int32)
-  nameWithType: HttpEntity.BuildRequestedUrl(Uri, NameValueCollection, IPAddress, Int32)
-  fullName: EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri, NameValueCollection, IPAddress, System.Int32)
+  name: BuildRequestedUrl(Uri, NameValueCollection, IPAddress, Int32, Boolean)
+  nameWithType: HttpEntity.BuildRequestedUrl(Uri, NameValueCollection, IPAddress, Int32, Boolean)
+  fullName: EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl(Uri, NameValueCollection, IPAddress, System.Int32, System.Boolean)
   type: Method
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: BuildRequestedUrl
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 31
+    startLine: 33
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
   syntax:
-    content: public static Uri BuildRequestedUrl(Uri requestUrl, NameValueCollection requestHeaders, IPAddress advertiseAsAddress, int advertiseAsPort)
+    content: public static Uri BuildRequestedUrl(Uri requestUrl, NameValueCollection requestHeaders, IPAddress advertiseAsAddress, int advertiseAsPort, bool overridePath = false)
     parameters:
     - id: requestUrl
       type: Uri
@@ -226,9 +260,11 @@ items:
       type: IPAddress
     - id: advertiseAsPort
       type: System.Int32
+    - id: overridePath
+      type: System.Boolean
     return:
       type: Uri
-    content.vb: Public Shared Function BuildRequestedUrl(requestUrl As Uri, requestHeaders As NameValueCollection, advertiseAsAddress As IPAddress, advertiseAsPort As Integer) As Uri
+    content.vb: Public Shared Function BuildRequestedUrl(requestUrl As Uri, requestHeaders As NameValueCollection, advertiseAsAddress As IPAddress, advertiseAsPort As Integer, overridePath As Boolean = False) As Uri
   overload: EventStore.Transport.Http.EntityManagement.HttpEntity.BuildRequestedUrl*
   modifiers.csharp:
   - public
@@ -250,11 +286,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CreateManager
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 103
+    startLine: 113
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -294,11 +330,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CreateManager
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 109
+    startLine: 119
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -326,11 +362,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetUser
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 114
+    startLine: 124
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -361,11 +397,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Test
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntity.cs
-    startLine: 119
+    startLine: 129
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement

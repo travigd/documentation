@@ -12,7 +12,7 @@ items:
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Handle(CoreProjectionProcessingMessage.EmittedStreamWriteCompleted)
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Initialize
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
-  - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
   langs:
   - csharp
   - vb
@@ -23,11 +23,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MultiStreamMultiOutputCheckpointManager
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -113,11 +113,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -170,11 +170,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Initialize
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -189,35 +189,37 @@ items:
   modifiers.vb:
   - Public
   - Overrides
-- uid: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  commentId: M:EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  id: Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+- uid: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
+  commentId: M:EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
+  id: Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
   parent: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager
   langs:
   - csharp
   - vb
-  name: Start(CheckpointTag)
-  nameWithType: MultiStreamMultiOutputCheckpointManager.Start(CheckpointTag)
-  fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  name: Start(CheckpointTag, PartitionState)
+  nameWithType: MultiStreamMultiOutputCheckpointManager.Start(CheckpointTag, PartitionState)
+  fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.PartitionState)
   type: Method
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Start
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public override void Start(CheckpointTag checkpointTag)
+    content: public override void Start(CheckpointTag checkpointTag, PartitionState rootPartitionState)
     parameters:
     - id: checkpointTag
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
-    content.vb: Public Overrides Sub Start(checkpointTag As CheckpointTag)
-  overridden: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+    - id: rootPartitionState
+      type: EventStore.Projections.Core.Services.Processing.PartitionState
+    content.vb: Public Overrides Sub Start(checkpointTag As CheckpointTag, rootPartitionState As PartitionState)
+  overridden: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
   overload: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start*
   modifiers.csharp:
   - public
@@ -239,11 +241,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RecordEventOrder
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 51
+    startLine: 52
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -279,11 +281,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GetStatistics
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 82
+    startLine: 83
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -315,11 +317,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: BeginLoadPrerecordedEvents
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 94
+    startLine: 95
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -351,11 +353,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 234
+    startLine: 247
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -386,11 +388,11 @@ items:
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-    startLine: 241
+    startLine: 254
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -2406,15 +2408,15 @@ references:
   name: Initialize
   nameWithType: MultiStreamMultiOutputCheckpointManager.Initialize
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Initialize
-- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
   parent: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager
   isExternal: false
-  name: Start(CheckpointTag)
-  nameWithType: CoreProjectionCheckpointManager.Start(CheckpointTag)
-  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  name: Start(CheckpointTag, PartitionState)
+  nameWithType: CoreProjectionCheckpointManager.Start(CheckpointTag, PartitionState)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.PartitionState)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
     name: Start
     nameWithType: CoreProjectionCheckpointManager.Start
     fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start
@@ -2425,11 +2427,18 @@ references:
     name: CheckpointTag
     nameWithType: CheckpointTag
     fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.PartitionState
+    name: PartitionState
+    nameWithType: PartitionState
+    fullName: EventStore.Projections.Core.Services.Processing.PartitionState
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
     name: Start
     nameWithType: CoreProjectionCheckpointManager.Start
     fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Start
@@ -2440,6 +2449,13 @@ references:
     name: CheckpointTag
     nameWithType: CheckpointTag
     fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.PartitionState
+    name: PartitionState
+    nameWithType: PartitionState
+    fullName: EventStore.Projections.Core.Services.Processing.PartitionState
   - name: )
     nameWithType: )
     fullName: )
@@ -2456,6 +2472,13 @@ references:
   name: CheckpointTag
   nameWithType: CheckpointTag
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: EventStore.Projections.Core.Services.Processing.PartitionState
+  commentId: T:EventStore.Projections.Core.Services.Processing.PartitionState
+  parent: EventStore.Projections.Core.Services.Processing
+  isExternal: false
+  name: PartitionState
+  nameWithType: PartitionState
+  fullName: EventStore.Projections.Core.Services.Processing.PartitionState
 - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
   commentId: M:EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
   parent: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager

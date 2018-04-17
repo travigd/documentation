@@ -22,9 +22,10 @@ items:
   - EventStore.ClientAPI.ConnectionSettings.MaxQueueSize
   - EventStore.ClientAPI.ConnectionSettings.MaxReconnections
   - EventStore.ClientAPI.ConnectionSettings.MaxRetries
+  - EventStore.ClientAPI.ConnectionSettings.NodePreference
   - EventStore.ClientAPI.ConnectionSettings.OperationTimeout
   - EventStore.ClientAPI.ConnectionSettings.OperationTimeoutCheckPeriod
-  - EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
+  - EventStore.ClientAPI.ConnectionSettings.QueueTimeout
   - EventStore.ClientAPI.ConnectionSettings.ReconnectionDelay
   - EventStore.ClientAPI.ConnectionSettings.RequireMaster
   - EventStore.ClientAPI.ConnectionSettings.TargetHost
@@ -41,8 +42,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ConnectionSettings
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 12
@@ -86,8 +87,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Default
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 19
@@ -125,8 +126,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 25
@@ -162,8 +163,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Log
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 33
@@ -197,8 +198,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: VerboseLogging
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 37
@@ -232,8 +233,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxQueueSize
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 41
@@ -267,8 +268,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxConcurrentItems
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 45
@@ -302,8 +303,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxRetries
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 49
@@ -337,8 +338,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxReconnections
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 53
@@ -372,8 +373,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RequireMaster
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 57
@@ -407,8 +408,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReconnectionDelay
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
     startLine: 61
@@ -422,6 +423,41 @@ items:
     return:
       type: TimeSpan
     content.vb: Public ReadOnly ReconnectionDelay As TimeSpan
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.ConnectionSettings.QueueTimeout
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.QueueTimeout
+  id: QueueTimeout
+  parent: EventStore.ClientAPI.ConnectionSettings
+  langs:
+  - csharp
+  - vb
+  name: QueueTimeout
+  nameWithType: ConnectionSettings.QueueTimeout
+  fullName: EventStore.ClientAPI.ConnectionSettings.QueueTimeout
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettings.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: QueueTimeout
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
+    startLine: 65
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe amount of time a request for an operation is permitted to be queued awaiting transmission to the server.\n"
+  example: []
+  syntax:
+    content: public readonly TimeSpan QueueTimeout
+    return:
+      type: TimeSpan
+    content.vb: Public ReadOnly QueueTimeout As TimeSpan
   modifiers.csharp:
   - public
   - readonly
@@ -442,11 +478,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: OperationTimeout
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 65
+    startLine: 69
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -477,11 +513,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: OperationTimeoutCheckPeriod
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 69
+    startLine: 73
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -512,11 +548,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DefaultUserCredentials
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 73
+    startLine: 77
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -547,11 +583,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UseSslConnection
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 77
+    startLine: 81
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -582,11 +618,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TargetHost
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 81
+    startLine: 85
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -617,11 +653,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ValidateServer
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 85
+    startLine: 89
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -652,11 +688,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: FailOnNoServerResponse
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 90
+    startLine: 94
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -687,11 +723,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HeartbeatInterval
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 94
+    startLine: 98
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -722,11 +758,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HeartbeatTimeout
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 98
+    startLine: 102
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -757,11 +793,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClusterDns
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 103
+    startLine: 107
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -792,11 +828,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxDiscoverAttempts
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 107
+    startLine: 111
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -827,11 +863,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ExternalGossipPort
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 111
+    startLine: 115
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -862,11 +898,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipSeeds
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 116
+    startLine: 120
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -897,11 +933,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipTimeout
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 121
+    startLine: 125
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -918,35 +954,35 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
-  commentId: F:EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
-  id: PreferRandomNode
+- uid: EventStore.ClientAPI.ConnectionSettings.NodePreference
+  commentId: F:EventStore.ClientAPI.ConnectionSettings.NodePreference
+  id: NodePreference
   parent: EventStore.ClientAPI.ConnectionSettings
   langs:
   - csharp
   - vb
-  name: PreferRandomNode
-  nameWithType: ConnectionSettings.PreferRandomNode
-  fullName: EventStore.ClientAPI.ConnectionSettings.PreferRandomNode
+  name: NodePreference
+  nameWithType: ConnectionSettings.NodePreference
+  fullName: EventStore.ClientAPI.ConnectionSettings.NodePreference
   type: Field
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
-    id: PreferRandomNode
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: NodePreference
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 126
+    startLine: 130
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
   summary: "\nWhether to randomly choose a node that&apos;s alive from the known nodes. \n"
   example: []
   syntax:
-    content: public readonly bool PreferRandomNode
+    content: public readonly NodePreference NodePreference
     return:
-      type: System.Boolean
-    content.vb: Public ReadOnly PreferRandomNode As Boolean
+      type: EventStore.ClientAPI.NodePreference
+    content.vb: Public ReadOnly NodePreference As NodePreference
   modifiers.csharp:
   - public
   - readonly
@@ -967,11 +1003,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClientConnectionTimeout
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettings.cs
-    startLine: 131
+    startLine: 135
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1469,3 +1505,10 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
+- uid: EventStore.ClientAPI.NodePreference
+  commentId: T:EventStore.ClientAPI.NodePreference
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: NodePreference
+  nameWithType: NodePreference
+  fullName: EventStore.ClientAPI.NodePreference

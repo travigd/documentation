@@ -11,7 +11,7 @@ items:
   - EventStore.ClientAPI.ClusterSettings.GossipSeeds
   - EventStore.ClientAPI.ClusterSettings.GossipTimeout
   - EventStore.ClientAPI.ClusterSettings.MaxDiscoverAttempts
-  - EventStore.ClientAPI.ClusterSettings.PreferRandomNode
+  - EventStore.ClientAPI.ClusterSettings.NodePreference
   langs:
   - csharp
   - vb
@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClusterSettings
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 8
@@ -67,8 +67,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 14
@@ -104,8 +104,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClusterDns
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 22
@@ -139,8 +139,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxDiscoverAttempts
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 26
@@ -174,8 +174,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ExternalGossipPort
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 30
@@ -209,8 +209,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipSeeds
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 35
@@ -244,8 +244,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipTimeout
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 40
@@ -263,23 +263,23 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.ClientAPI.ClusterSettings.PreferRandomNode
-  commentId: F:EventStore.ClientAPI.ClusterSettings.PreferRandomNode
-  id: PreferRandomNode
+- uid: EventStore.ClientAPI.ClusterSettings.NodePreference
+  commentId: F:EventStore.ClientAPI.ClusterSettings.NodePreference
+  id: NodePreference
   parent: EventStore.ClientAPI.ClusterSettings
   langs:
   - csharp
   - vb
-  name: PreferRandomNode
-  nameWithType: ClusterSettings.PreferRandomNode
-  fullName: EventStore.ClientAPI.ClusterSettings.PreferRandomNode
+  name: NodePreference
+  nameWithType: ClusterSettings.NodePreference
+  fullName: EventStore.ClientAPI.ClusterSettings.NodePreference
   type: Field
   source:
     remote:
       path: src/EventStore.ClientAPI/ClusterSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
-    id: PreferRandomNode
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: NodePreference
     path: ../EventStore/src/EventStore.ClientAPI/ClusterSettings.cs
     startLine: 45
   assemblies:
@@ -288,10 +288,10 @@ items:
   summary: "\nPrefer a randomly selected node. \n"
   example: []
   syntax:
-    content: public bool PreferRandomNode
+    content: public NodePreference NodePreference
     return:
-      type: System.Boolean
-    content.vb: Public PreferRandomNode As Boolean
+      type: EventStore.ClientAPI.NodePreference
+    content.vb: Public NodePreference As NodePreference
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -731,8 +731,10 @@ references:
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: TimeSpan
-- uid: System.Boolean
-  isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
+- uid: EventStore.ClientAPI.NodePreference
+  commentId: T:EventStore.ClientAPI.NodePreference
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: NodePreference
+  nameWithType: NodePreference
+  fullName: EventStore.ClientAPI.NodePreference

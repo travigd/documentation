@@ -5,7 +5,7 @@ items:
   id: TFChunkReader
   parent: EventStore.Core.TransactionLog.Chunks
   children:
-  - EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64)
+  - EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64,System.Boolean)
   - EventStore.Core.TransactionLog.Chunks.TFChunkReader.CurrentPosition
   - EventStore.Core.TransactionLog.Chunks.TFChunkReader.ExistsAt(System.Int64)
   - EventStore.Core.TransactionLog.Chunks.TFChunkReader.MaxRetries
@@ -23,8 +23,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TFChunkReader
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 8
@@ -67,8 +67,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxRetries
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 13
@@ -100,8 +100,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CurrentPosition
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 15
@@ -121,30 +121,30 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64)
-  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64)
-  id: '#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64)'
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64,System.Boolean)
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64,System.Boolean)
+  id: '#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int64,System.Boolean)'
   parent: EventStore.Core.TransactionLog.Chunks.TFChunkReader
   langs:
   - csharp
   - vb
-  name: TFChunkReader(TFChunkDb, ICheckpoint, Int64)
-  nameWithType: TFChunkReader.TFChunkReader(TFChunkDb, ICheckpoint, Int64)
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.TFChunkReader(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int64)
+  name: TFChunkReader(TFChunkDb, ICheckpoint, Int64, Boolean)
+  nameWithType: TFChunkReader.TFChunkReader(TFChunkDb, ICheckpoint, Int64, Boolean)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.TFChunkReader(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int64, System.Boolean)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: public TFChunkReader(TFChunkDb db, ICheckpoint writerCheckpoint, long initialPosition = null)
+    content: public TFChunkReader(TFChunkDb db, ICheckpoint writerCheckpoint, long initialPosition = null, bool optimizeReadSideCache = false)
     parameters:
     - id: db
       type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
@@ -152,7 +152,9 @@ items:
       type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
     - id: initialPosition
       type: System.Int64
-    content.vb: Public Sub New(db As TFChunkDb, writerCheckpoint As ICheckpoint, initialPosition As Long = Nothing)
+    - id: optimizeReadSideCache
+      type: System.Boolean
+    content.vb: Public Sub New(db As TFChunkDb, writerCheckpoint As ICheckpoint, initialPosition As Long = Nothing, optimizeReadSideCache As Boolean = False)
   overload: EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor*
   modifiers.csharp:
   - public
@@ -172,11 +174,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Reposition
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-    startLine: 32
+    startLine: 38
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -207,11 +209,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadNext
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-    startLine: 37
+    startLine: 43
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -241,11 +243,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadPrev
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-    startLine: 82
+    startLine: 88
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -275,11 +277,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadAt
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-    startLine: 138
+    startLine: 144
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -312,11 +314,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ExistsAt
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-    startLine: 163
+    startLine: 169
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -761,6 +763,11 @@ references:
   name: ICheckpoint
   nameWithType: ICheckpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: EventStore.Core.TransactionLog.Checkpoint
   commentId: N:EventStore.Core.TransactionLog.Checkpoint
   isExternal: false
@@ -986,8 +993,3 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Boolean
-  isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean

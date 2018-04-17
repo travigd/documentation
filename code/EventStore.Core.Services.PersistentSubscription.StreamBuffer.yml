@@ -14,10 +14,10 @@ items:
   - EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry
   - EventStore.Core.Services.PersistentSubscription.StreamBuffer.Live
   - EventStore.Core.Services.PersistentSubscription.StreamBuffer.LiveBufferCount
-  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
   - EventStore.Core.Services.PersistentSubscription.StreamBuffer.ReadBufferCount
   - EventStore.Core.Services.PersistentSubscription.StreamBuffer.RetryBufferCount
   - EventStore.Core.Services.PersistentSubscription.StreamBuffer.Scan
+  - EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive
   langs:
   - csharp
   - vb
@@ -28,8 +28,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: StreamBuffer
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 7
@@ -69,8 +69,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LiveBufferCount
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 16
@@ -104,8 +104,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: BufferCount
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 17
@@ -139,8 +139,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RetryBufferCount
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 18
@@ -174,8 +174,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReadBufferCount
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 19
@@ -209,8 +209,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Live
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 20
@@ -244,8 +244,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CanAccept
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 22
@@ -279,8 +279,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 27
@@ -318,8 +318,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddRetry
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 52
@@ -351,8 +351,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddLiveMessage
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 74
@@ -384,8 +384,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddReadMessage
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 86
@@ -417,8 +417,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Scan
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 111
@@ -435,32 +435,34 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
-  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
-  id: MoveToLive
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive
+  commentId: M:EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive
+  id: TryMoveToLive
   parent: EventStore.Core.Services.PersistentSubscription.StreamBuffer
   langs:
   - csharp
   - vb
-  name: MoveToLive()
-  nameWithType: StreamBuffer.MoveToLive()
-  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive()
+  name: TryMoveToLive()
+  nameWithType: StreamBuffer.TryMoveToLive()
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive()
   type: Method
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
-    id: MoveToLive
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: TryMoveToLive
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
     startLine: 135
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: public void MoveToLive()
-    content.vb: Public Sub MoveToLive
-  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive*
+    content: public bool TryMoveToLive()
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryMoveToLive As Boolean
+  overload: EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -479,11 +481,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GetLowestRetry
     path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/StreamBuffer.cs
-    startLine: 140
+    startLine: 144
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -1041,12 +1043,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive*
-  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
+- uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive*
+  commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive
   isExternal: false
-  name: MoveToLive
-  nameWithType: StreamBuffer.MoveToLive
-  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.MoveToLive
+  name: TryMoveToLive
+  nameWithType: StreamBuffer.TryMoveToLive
+  fullName: EventStore.Core.Services.PersistentSubscription.StreamBuffer.TryMoveToLive
 - uid: EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry*
   commentId: Overload:EventStore.Core.Services.PersistentSubscription.StreamBuffer.GetLowestRetry
   isExternal: false

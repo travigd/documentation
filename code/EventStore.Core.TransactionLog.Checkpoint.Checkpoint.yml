@@ -7,6 +7,7 @@ items:
   children:
   - EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Chaser
   - EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Epoch
+  - EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Replication
   - EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Truncate
   - EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Writer
   langs:
@@ -19,8 +20,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Checkpoint
     path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
     startLine: 2
@@ -55,8 +56,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Writer
     path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
     startLine: 4
@@ -88,8 +89,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Chaser
     path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
     startLine: 5
@@ -121,8 +122,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Epoch
     path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
     startLine: 6
@@ -154,8 +155,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Truncate
     path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
     startLine: 7
@@ -167,6 +168,39 @@ items:
     return:
       type: System.String
     content.vb: Public Const Truncate As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Replication
+  commentId: F:EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Replication
+  id: Replication
+  parent: EventStore.Core.TransactionLog.Checkpoint.Checkpoint
+  langs:
+  - csharp
+  - vb
+  name: Replication
+  nameWithType: Checkpoint.Replication
+  fullName: EventStore.Core.TransactionLog.Checkpoint.Checkpoint.Replication
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: Replication
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Checkpoint/Checkpoint.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Checkpoint
+  syntax:
+    content: public const string Replication = null
+    return:
+      type: System.String
+    content.vb: Public Const Replication As String = Nothing
   modifiers.csharp:
   - public
   - const

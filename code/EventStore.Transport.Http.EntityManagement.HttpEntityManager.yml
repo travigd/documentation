@@ -18,6 +18,7 @@ items:
   - EventStore.Transport.Http.EntityManagement.HttpEntityManager.RequestCodec
   - EventStore.Transport.Http.EntityManagement.HttpEntityManager.RequestedUrl
   - EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseCodec
+  - EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl
   - EventStore.Transport.Http.EntityManagement.HttpEntityManager.TimeStamp
   - EventStore.Transport.Http.EntityManagement.HttpEntityManager.User
   langs:
@@ -30,8 +31,8 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HttpEntityManager
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
     startLine: 17
@@ -79,8 +80,8 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AsyncState
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
     startLine: 21
@@ -114,8 +115,8 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HttpEntity
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
     startLine: 22
@@ -147,8 +148,8 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IsProcessing
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
     startLine: 24
@@ -182,11 +183,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TimeStamp
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -215,11 +216,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RequestCodec
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 70
+    startLine: 72
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -250,11 +251,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ResponseCodec
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 71
+    startLine: 73
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -265,6 +266,41 @@ items:
       type: EventStore.Transport.Http.ICodec
     content.vb: Public ReadOnly Property ResponseCodec As ICodec
   overload: EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseCodec*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl
+  commentId: P:EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl
+  id: ResponseUrl
+  parent: EventStore.Transport.Http.EntityManagement.HttpEntityManager
+  langs:
+  - csharp
+  - vb
+  name: ResponseUrl
+  nameWithType: HttpEntityManager.ResponseUrl
+  fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: ResponseUrl
+    path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
+    startLine: 74
+  assemblies:
+  - EventStore.Transport.Http
+  namespace: EventStore.Transport.Http.EntityManagement
+  syntax:
+    content: public Uri ResponseUrl { get; }
+    parameters: []
+    return:
+      type: Uri
+    content.vb: Public ReadOnly Property ResponseUrl As Uri
+  overload: EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl*
   modifiers.csharp:
   - public
   - get
@@ -285,11 +321,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RequestedUrl
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 72
+    startLine: 75
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -320,11 +356,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: User
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 73
+    startLine: 76
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -355,11 +391,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReadRequestAsync
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 199
+    startLine: 202
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -393,11 +429,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: BeginReply
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 211
+    startLine: 214
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -439,11 +475,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ContinueReply
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 234
+    startLine: 237
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -479,11 +515,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EndReply
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 250
+    startLine: 253
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -509,11 +545,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Reply
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 255
+    startLine: 258
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -557,11 +593,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ForwardReply
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 282
+    startLine: 285
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -595,11 +631,11 @@ items:
   source:
     remote:
       path: src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CompressResponse
     path: ../EventStore/src/EventStore.Transport.Http/EntityManagement/HttpEntityManager.cs
-    startLine: 463
+    startLine: 466
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http.EntityManagement
@@ -3080,17 +3116,23 @@ references:
   name: ResponseCodec
   nameWithType: HttpEntityManager.ResponseCodec
   fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseCodec
+- uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl*
+  commentId: Overload:EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl
+  isExternal: false
+  name: ResponseUrl
+  nameWithType: HttpEntityManager.ResponseUrl
+  fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager.ResponseUrl
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
 - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager.RequestedUrl*
   commentId: Overload:EventStore.Transport.Http.EntityManagement.HttpEntityManager.RequestedUrl
   isExternal: false
   name: RequestedUrl
   nameWithType: HttpEntityManager.RequestedUrl
   fullName: EventStore.Transport.Http.EntityManagement.HttpEntityManager.RequestedUrl
-- uid: Uri
-  isExternal: true
-  name: Uri
-  nameWithType: Uri
-  fullName: Uri
 - uid: EventStore.Transport.Http.EntityManagement.HttpEntityManager.User*
   commentId: Overload:EventStore.Transport.Http.EntityManagement.HttpEntityManager.User
   isExternal: false
