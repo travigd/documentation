@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SendToHttpEnvelope
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-    startLine: 45
+    startLine: 49
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
@@ -61,11 +61,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-    startLine: 52
+    startLine: 56
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
@@ -103,16 +103,18 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReplyWith
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-    startLine: 68
+    startLine: 72
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
   syntax:
-    content: 'public void ReplyWith<T>(T message)where T : Message'
+    content: >-
+      public void ReplyWith<T>(T message)
+          where T : Message
     parameters:
     - id: message
       type: '{T}'

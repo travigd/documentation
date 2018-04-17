@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MessageForwardingProxy
     path: ../EventStore/src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
     startLine: 8
@@ -59,8 +59,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Register
     path: ../EventStore/src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
     startLine: 13
@@ -100,8 +100,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryForwardReply
     path: ../EventStore/src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
     startLine: 26
@@ -109,7 +109,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.VNode
   syntax:
-    content: 'public bool TryForwardReply<TMessage>(Guid correlationId, TMessage originalMessage, Func<Guid, TMessage, TMessage> getForwardMessage)where TMessage : Message'
+    content: >-
+      public bool TryForwardReply<TMessage>(Guid correlationId, TMessage originalMessage, Func<Guid, TMessage, TMessage> getForwardMessage)
+          where TMessage : Message
     parameters:
     - id: correlationId
       type: Guid
@@ -144,8 +146,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TimeoutForwardings
     path: ../EventStore/src/EventStore.Core/Services/VNode/MessageForwardingProxy.cs
     startLine: 38

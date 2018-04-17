@@ -59,6 +59,7 @@ items:
   - EventStore.Core.VNodeBuilder._maxMemtableSize
   - EventStore.Core.VNodeBuilder._minFlushDelay
   - EventStore.Core.VNodeBuilder._nodePriority
+  - EventStore.Core.VNodeBuilder._optimizeIndexMerge
   - EventStore.Core.VNodeBuilder._prepareAckCount
   - EventStore.Core.VNodeBuilder._prepareTimeout
   - EventStore.Core.VNodeBuilder._projectionsQueryExpiry
@@ -146,6 +147,7 @@ items:
   - EventStore.Core.VNodeBuilder.WithHashCollisionReadLimitOf(System.Int32)
   - EventStore.Core.VNodeBuilder.WithIndexBitnessVersion(System.Byte)
   - EventStore.Core.VNodeBuilder.WithIndexCacheDepth(System.Int32)
+  - EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
   - EventStore.Core.VNodeBuilder.WithIndexPath(System.String)
   - EventStore.Core.VNodeBuilder.WithIndexVerification(System.Boolean)
   - EventStore.Core.VNodeBuilder.WithInternalHeartbeatInterval(TimeSpan)
@@ -183,8 +185,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: VNodeBuilder
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 27
@@ -231,8 +233,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _log
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 30
@@ -262,8 +264,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _chunkSize
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 32
@@ -293,8 +295,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _dbPath
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 33
@@ -324,8 +326,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _chunksCacheSize
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 34
@@ -355,8 +357,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _cachedChunks
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 35
@@ -386,8 +388,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _inMemoryDb
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 36
@@ -417,8 +419,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _startStandardProjections
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 37
@@ -448,8 +450,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _disableHTTPCaching
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 38
@@ -479,8 +481,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _logHttpRequests
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 39
@@ -510,8 +512,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _enableHistograms
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 40
@@ -541,8 +543,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _internalTcp
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 42
@@ -572,8 +574,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _internalSecureTcp
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 43
@@ -603,8 +605,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _externalTcp
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 44
@@ -634,8 +636,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _externalSecureTcp
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 45
@@ -665,8 +667,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _internalHttp
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 46
@@ -696,8 +698,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _externalHttp
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 47
@@ -727,8 +729,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _intHttpPrefixes
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 49
@@ -758,8 +760,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _extHttpPrefixes
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 50
@@ -789,8 +791,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _addInterfacePrefixes
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 51
@@ -820,8 +822,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _enableTrustedAuth
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 52
@@ -851,8 +853,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _certificate
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 53
@@ -882,8 +884,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _workerThreads
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 54
@@ -913,8 +915,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _discoverViaDns
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 56
@@ -944,8 +946,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _clusterDns
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 57
@@ -975,8 +977,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _gossipSeeds
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 58
@@ -1006,8 +1008,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _minFlushDelay
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 60
@@ -1037,8 +1039,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _clusterNodeCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 62
@@ -1068,8 +1070,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _prepareAckCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 63
@@ -1099,8 +1101,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _commitAckCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 64
@@ -1130,8 +1132,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _prepareTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 65
@@ -1161,8 +1163,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _commitTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 66
@@ -1192,8 +1194,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _nodePriority
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 68
@@ -1223,8 +1225,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _useSsl
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 70
@@ -1254,8 +1256,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _disableInsecureTCP
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 71
@@ -1285,8 +1287,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _sslTargetHost
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 72
@@ -1316,8 +1318,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _sslValidateServer
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 73
@@ -1347,8 +1349,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _statsPeriod
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 75
@@ -1378,8 +1380,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _statsStorage
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 76
@@ -1409,8 +1411,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _authenticationProviderFactory
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 78
@@ -1440,8 +1442,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _disableScavengeMerging
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 79
@@ -1471,8 +1473,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _scavengeHistoryMaxAge
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 80
@@ -1502,8 +1504,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _adminOnPublic
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 81
@@ -1533,8 +1535,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _statsOnPublic
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 82
@@ -1564,8 +1566,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _gossipOnPublic
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 83
@@ -1595,8 +1597,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _gossipInterval
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 84
@@ -1626,8 +1628,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _gossipAllowedTimeDifference
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 85
@@ -1657,8 +1659,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _gossipTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 86
@@ -1688,8 +1690,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _gossipAdvertiseInfo
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 87
@@ -1719,8 +1721,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _intTcpHeartbeatTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 89
@@ -1750,8 +1752,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _intTcpHeartbeatInterval
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 90
@@ -1781,8 +1783,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _extTcpHeartbeatTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 91
@@ -1812,8 +1814,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _extTcpHeartbeatInterval
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 92
@@ -1843,8 +1845,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _connectionPendingSendBytesThreshold
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 93
@@ -1874,8 +1876,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _skipVerifyDbHashes
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 95
@@ -1905,8 +1907,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _maxMemtableSize
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 96
@@ -1936,8 +1938,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _hashCollisionReadLimit
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 97
@@ -1967,8 +1969,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _subsystems
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 98
@@ -1998,8 +2000,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _clusterGossipPort
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 99
@@ -2029,8 +2031,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _readerThreadsCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 100
@@ -2060,8 +2062,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _unbuffered
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 101
@@ -2091,8 +2093,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _writethrough
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 102
@@ -2122,8 +2124,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _chunkInitialReaderCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 103
@@ -2153,8 +2155,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _index
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 105
@@ -2184,8 +2186,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _skipIndexVerify
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 106
@@ -2215,8 +2217,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _indexCacheDepth
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
     startLine: 107
@@ -2228,6 +2230,37 @@ items:
     return:
       type: System.Int32
     content.vb: Protected _indexCacheDepth As Integer
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Core.VNodeBuilder._optimizeIndexMerge
+  commentId: F:EventStore.Core.VNodeBuilder._optimizeIndexMerge
+  id: _optimizeIndexMerge
+  parent: EventStore.Core.VNodeBuilder
+  langs:
+  - csharp
+  - vb
+  name: _optimizeIndexMerge
+  nameWithType: VNodeBuilder._optimizeIndexMerge
+  fullName: EventStore.Core.VNodeBuilder._optimizeIndexMerge
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/VNodeBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: _optimizeIndexMerge
+    path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
+    startLine: 108
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  syntax:
+    content: protected bool _optimizeIndexMerge
+    return:
+      type: System.Boolean
+    content.vb: Protected _optimizeIndexMerge As Boolean
   modifiers.csharp:
   - protected
   modifiers.vb:
@@ -2246,11 +2279,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _unsafeIgnoreHardDelete
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 108
+    startLine: 110
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2277,11 +2310,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _unsafeDisableFlushToDisk
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 109
+    startLine: 111
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2308,11 +2341,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _betterOrdering
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 110
+    startLine: 112
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2339,11 +2372,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _projectionType
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 111
+    startLine: 113
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2370,11 +2403,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _projectionsThreads
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 112
+    startLine: 114
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2401,11 +2434,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _projectionsQueryExpiry
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 113
+    startLine: 115
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2432,11 +2465,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _db
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 115
+    startLine: 117
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2463,11 +2496,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _vNodeSettings
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 116
+    startLine: 118
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2494,11 +2527,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _dbConfig
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 117
+    startLine: 119
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2525,11 +2558,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _indexBitnessVersion
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 126
+    startLine: 128
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2556,11 +2589,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _alwaysKeepScavenged
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 127
+    startLine: 129
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2587,11 +2620,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: _skipIndexScanOnReads
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 128
+    startLine: 130
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2618,11 +2651,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 133
+    startLine: 135
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2648,11 +2681,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithSingleNodeSettings
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 219
+    startLine: 222
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2680,11 +2713,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithClusterNodeSettings
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 227
+    startLine: 230
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2715,11 +2748,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: StartStandardProjections
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 240
+    startLine: 243
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2750,11 +2783,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DisableHTTPCaching
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 250
+    startLine: 253
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2785,11 +2818,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RunProjections
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 262
+    startLine: 265
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2827,11 +2860,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithProjectionQueryExpirationOf
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 274
+    startLine: 277
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2866,11 +2899,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddCustomSubsystem
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 286
+    startLine: 289
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2905,11 +2938,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RunInMemory
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 296
+    startLine: 299
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2940,11 +2973,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RunOnDisk
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 308
+    startLine: 311
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -2979,11 +3012,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: OnDefaultEndpoints
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 319
+    startLine: 322
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3014,15 +3047,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseInternalIPAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 332
+    startLine: 335
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the Internal IP that would be advertised \n"
+  summary: "\nSets up the Internal IP that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseInternalIPAs(IPAddress intIpAdvertiseAs)
@@ -3052,15 +3085,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseExternalIPAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 342
+    startLine: 345
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the External IP that would be advertised \n"
+  summary: "\nSets up the External IP that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseExternalIPAs(IPAddress extIpAdvertiseAs)
@@ -3090,15 +3123,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseInternalHttpPortAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 352
+    startLine: 355
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the Internal Http Port that would be advertised \n"
+  summary: "\nSets up the Internal Http Port that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseInternalHttpPortAs(int intHttpPortAdvertiseAs)
@@ -3128,11 +3161,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HavingReaderThreads
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 363
+    startLine: 366
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3166,15 +3199,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseExternalHttpPortAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 375
+    startLine: 378
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the External Http Port that would be advertised \n"
+  summary: "\nSets up the External Http Port that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseExternalHttpPortAs(int extHttpPortAdvertiseAs)
@@ -3204,15 +3237,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseInternalSecureTCPPortAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 385
+    startLine: 388
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the Internal Secure TCP Port that would be advertised \n"
+  summary: "\nSets up the Internal Secure TCP Port that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseInternalSecureTCPPortAs(int intSecureTcpPortAdvertiseAs)
@@ -3242,15 +3275,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseExternalSecureTCPPortAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 395
+    startLine: 398
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the External Secure TCP Port that would be advertised \n"
+  summary: "\nSets up the External Secure TCP Port that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseExternalSecureTCPPortAs(int extSecureTcpPortAdvertiseAs)
@@ -3280,15 +3313,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseInternalTCPPortAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 405
+    startLine: 408
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the Internal TCP Port that would be advertised \n"
+  summary: "\nSets up the Internal TCP Port that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseInternalTCPPortAs(int intTcpPortAdvertiseAs)
@@ -3318,11 +3351,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipAsSingleNode
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 415
+    startLine: 418
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3353,15 +3386,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdvertiseExternalTCPPortAs
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 426
+    startLine: 429
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets up the External TCP Port that would be advertised \n"
+  summary: "\nSets up the External TCP Port that would be advertised\n"
   example: []
   syntax:
     content: public VNodeBuilder AdvertiseExternalTCPPortAs(int extTcpPortAdvertiseAs)
@@ -3391,11 +3424,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithClusterGossipPort
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 438
+    startLine: 441
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3430,11 +3463,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithInternalHttpOn
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 449
+    startLine: 452
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3469,11 +3502,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithExternalHttpOn
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 460
+    startLine: 463
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3508,11 +3541,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithInternalTcpOn
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 471
+    startLine: 474
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3547,11 +3580,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithInternalSecureTcpOn
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 482
+    startLine: 485
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3586,11 +3619,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithExternalTcpOn
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 493
+    startLine: 496
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3625,11 +3658,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithExternalSecureTcpOn
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 504
+    startLine: 507
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3664,11 +3697,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableSsl
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 514
+    startLine: 517
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3699,11 +3732,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DisableInsecureTCP
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 524
+    startLine: 527
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3734,15 +3767,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithSslTargetHost
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 535
+    startLine: 538
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets the target host of the server&apos;s SSL certificate. \n"
+  summary: "\nSets the target host of the server&apos;s SSL certificate.\n"
   example: []
   syntax:
     content: public VNodeBuilder WithSslTargetHost(string targetHost)
@@ -3773,15 +3806,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ValidateSslServer
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 545
+    startLine: 548
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets whether to validate that the server&apos;s certificate is trusted.  \n"
+  summary: "\nSets whether to validate that the server&apos;s certificate is trusted.\n"
   example: []
   syntax:
     content: public VNodeBuilder ValidateSslServer()
@@ -3808,11 +3841,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithGossipSeeds
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 556
+    startLine: 559
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3850,11 +3883,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaximumMemoryTableSizeOf
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 569
+    startLine: 572
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3889,11 +3922,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithHashCollisionReadLimitOf
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 580
+    startLine: 583
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3928,11 +3961,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DoNotVerifyDbHashes
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 591
+    startLine: 594
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3963,11 +3996,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: NoGossipOnPublicInterface
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 601
+    startLine: 604
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -3998,11 +4031,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: NoAdminOnPublicInterface
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 611
+    startLine: 614
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4033,11 +4066,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: NoStatsOnPublicInterface
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 621
+    startLine: 624
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4068,11 +4101,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: VerifyDbHashes
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 631
+    startLine: 634
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4103,11 +4136,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithClusterDnsName
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 642
+    startLine: 645
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4142,11 +4175,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DisableDnsDiscovery
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 654
+    startLine: 657
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4177,11 +4210,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithWorkerThreads
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 665
+    startLine: 668
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4216,11 +4249,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddInternalHttpPrefix
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 676
+    startLine: 679
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4255,11 +4288,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddExternalHttpPrefix
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 687
+    startLine: 690
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4294,15 +4327,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DontAddInterfacePrefixes
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 697
+    startLine: 700
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nDon&apos;t add the interface prefixes (e.g. If the External IP is set to the Loopback address, we&apos;ll add http://localhost:2113/ as a prefix) \n"
+  summary: "\nDon&apos;t add the interface prefixes (e.g. If the External IP is set to the Loopback address, we&apos;ll add http://localhost:2113/ as a prefix)\n"
   example: []
   syntax:
     content: public VNodeBuilder DontAddInterfacePrefixes()
@@ -4329,11 +4362,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithServerCertificateFromFile
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 709
+    startLine: 712
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4371,11 +4404,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithInternalHeartbeatInterval
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 722
+    startLine: 725
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4410,11 +4443,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithExternalHeartbeatInterval
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 733
+    startLine: 736
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4449,11 +4482,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithInternalHeartbeatTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 744
+    startLine: 747
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4488,11 +4521,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithExternalHeartbeatTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 755
+    startLine: 758
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4527,11 +4560,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithConnectionPendingSendBytesThreshold
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 766
+    startLine: 769
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4566,11 +4599,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithGossipInterval
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 777
+    startLine: 780
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4605,11 +4638,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithGossipAllowedTimeDifference
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 788
+    startLine: 791
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4644,11 +4677,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithGossipTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 799
+    startLine: 802
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4683,15 +4716,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithMinFlushDelay
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 810
+    startLine: 813
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets the minimum flush delay \n"
+  summary: "\nSets the minimum flush delay\n"
   example: []
   syntax:
     content: public VNodeBuilder WithMinFlushDelay(TimeSpan minFlushDelay)
@@ -4722,15 +4755,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithPrepareTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 821
+    startLine: 824
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets the prepare timeout \n"
+  summary: "\nSets the prepare timeout\n"
   example: []
   syntax:
     content: public VNodeBuilder WithPrepareTimeout(TimeSpan prepareTimeout)
@@ -4761,15 +4794,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithCommitTimeout
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 832
+    startLine: 835
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets the commit timeout \n"
+  summary: "\nSets the commit timeout\n"
   example: []
   syntax:
     content: public VNodeBuilder WithCommitTimeout(TimeSpan commitTimeout)
@@ -4800,11 +4833,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithStatsPeriod
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 843
+    startLine: 846
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4839,11 +4872,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithStatsStorage
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 854
+    startLine: 857
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4878,15 +4911,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithPrepareCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 866
+    startLine: 869
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets the number of nodes which must acknowledge prepares. \nThe minimum allowed value is one greater than half the cluster size.\n"
+  summary: "\nSets the number of nodes which must acknowledge prepares.\nThe minimum allowed value is one greater than half the cluster size.\n"
   example: []
   syntax:
     content: public VNodeBuilder WithPrepareCount(int prepareCount)
@@ -4917,15 +4950,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithCommitCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 878
+    startLine: 881
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nSets the number of nodes which must acknowledge commits before acknowledging to a client.  \nThe minimum allowed value is one greater than half the cluster size.\n"
+  summary: "\nSets the number of nodes which must acknowledge commits before acknowledging to a client.\nThe minimum allowed value is one greater than half the cluster size.\n"
   example: []
   syntax:
     content: public VNodeBuilder WithCommitCount(int commitCount)
@@ -4956,11 +4989,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithNodePriority
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 889
+    startLine: 892
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -4995,15 +5028,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DisableScavengeMerging
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 899
+    startLine: 902
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nDisables the merging of chunks when scavenge is running \n"
+  summary: "\nDisables the merging of chunks when scavenge is running\n"
   example: []
   syntax:
     content: public VNodeBuilder DisableScavengeMerging()
@@ -5030,11 +5063,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithScavengeHistoryMaxAge
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 910
+    startLine: 913
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5069,11 +5102,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithIndexPath
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 921
+    startLine: 924
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5108,11 +5141,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableLoggingOfHttpRequests
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 931
+    startLine: 934
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5143,11 +5176,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableHistograms
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 941
+    startLine: 944
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5178,22 +5211,22 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithIndexVerification
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 952
+    startLine: 955
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nVerifies the index integrity using the specified method on startup\n"
+  summary: "\nSkips verification of indexes on startup\n"
   example: []
   syntax:
     content: public VNodeBuilder WithIndexVerification(bool skipIndexVerify)
     parameters:
     - id: skipIndexVerify
       type: System.Boolean
-      description: The index verification method
+      description: Skips verification of indexes on startup
     return:
       type: EventStore.Core.VNodeBuilder
       description: A <xref href="EventStore.Core.VNodeBuilder" data-throw-if-not-resolved="false"></xref> with the options set
@@ -5217,11 +5250,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithIndexCacheDepth
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 963
+    startLine: 966
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5242,6 +5275,45 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+  commentId: M:EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+  id: WithIndexMergeOptimization(System.Boolean)
+  parent: EventStore.Core.VNodeBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithIndexMergeOptimization(Boolean)
+  nameWithType: VNodeBuilder.WithIndexMergeOptimization(Boolean)
+  fullName: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/VNodeBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: WithIndexMergeOptimization
+    path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
+    startLine: 977
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core
+  summary: "\nOptimizes index merges\n"
+  example: []
+  syntax:
+    content: public VNodeBuilder WithIndexMergeOptimization(bool optimizeIndexMerge)
+    parameters:
+    - id: optimizeIndexMerge
+      type: System.Boolean
+      description: Optimizes index merges
+    return:
+      type: EventStore.Core.VNodeBuilder
+      description: A <xref href="EventStore.Core.VNodeBuilder" data-throw-if-not-resolved="false"></xref> with the options set
+    content.vb: Public Function WithIndexMergeOptimization(optimizeIndexMerge As Boolean) As VNodeBuilder
+  overload: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete
   commentId: M:EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete
   id: WithUnsafeIgnoreHardDelete
@@ -5256,11 +5328,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithUnsafeIgnoreHardDelete
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 973
+    startLine: 987
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5291,11 +5363,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithUnsafeDisableFlushToDisk
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 983
+    startLine: 997
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5326,11 +5398,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithBetterOrdering
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 993
+    startLine: 1007
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5361,11 +5433,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableTrustedAuth
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1003
+    startLine: 1017
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5396,11 +5468,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithAuthenticationProvider
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1014
+    startLine: 1028
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5435,11 +5507,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableUnbuffered
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1024
+    startLine: 1038
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5470,11 +5542,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableWriteThrough
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1034
+    startLine: 1048
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5505,11 +5577,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithChunkInitialReaderCount
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1045
+    startLine: 1059
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5544,11 +5616,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithServerCertificate
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1056
+    startLine: 1070
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5583,11 +5655,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithServerCertificateFromStore
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1070
+    startLine: 1084
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5631,11 +5703,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithServerCertificateFromStore
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1084
+    startLine: 1098
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5676,11 +5748,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithTfChunkSize
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1137
+    startLine: 1151
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5715,11 +5787,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithTfChunksCacheSize
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1149
+    startLine: 1163
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5754,15 +5826,15 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithTfCachedChunks
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1162
+    startLine: 1176
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
-  summary: "\nThe number of chunks to cache in unmanaged memory.        \n"
+  summary: "\nThe number of chunks to cache in unmanaged memory.\n"
   example: []
   syntax:
     content: public VNodeBuilder WithTfCachedChunks(int cachedChunks)
@@ -5793,11 +5865,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithIndexBitnessVersion
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1174
+    startLine: 1188
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5832,11 +5904,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AlwaysKeepScavenged
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1184
+    startLine: 1198
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5867,11 +5939,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SkipIndexScanOnReads
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1194
+    startLine: 1208
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5902,11 +5974,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetUpProjectionsIfNeeded
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1294
+    startLine: 1308
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5934,11 +6006,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: op_Implicit
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1301
+    startLine: 1315
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -5978,11 +6050,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Build
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1312
+    startLine: 1326
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -6023,11 +6095,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/VNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RunProjections
     path: ../EventStore/src/EventStore.Core/VNodeBuilder.cs
-    startLine: 1521
+    startLine: 1538
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -7202,6 +7274,12 @@ references:
   name: WithIndexCacheDepth
   nameWithType: VNodeBuilder.WithIndexCacheDepth
   fullName: EventStore.Core.VNodeBuilder.WithIndexCacheDepth
+- uid: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization*
+  commentId: Overload:EventStore.Core.VNodeBuilder.WithIndexMergeOptimization
+  isExternal: false
+  name: WithIndexMergeOptimization
+  nameWithType: VNodeBuilder.WithIndexMergeOptimization
+  fullName: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization
 - uid: EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete*
   commentId: Overload:EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete
   isExternal: false

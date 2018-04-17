@@ -19,6 +19,7 @@ items:
   - EventStore.ClientAPI.ConnectionSettingsBuilder.PerformOnAnyNode
   - EventStore.ClientAPI.ConnectionSettingsBuilder.PerformOnMasterOnly
   - EventStore.ClientAPI.ConnectionSettingsBuilder.PreferRandomNode
+  - EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetClusterDns(System.String)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetClusterGossipPort(System.Int32)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetDefaultUserCredentials(EventStore.ClientAPI.SystemData.UserCredentials)
@@ -29,6 +30,7 @@ items:
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetHeartbeatTimeout(TimeSpan)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetMaxDiscoverAttempts(System.Int32)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetOperationTimeoutTo(TimeSpan)
+  - EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo(TimeSpan)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetReconnectionDelayTo(TimeSpan)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetTimeoutCheckPeriodTo(TimeSpan)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.UseConsoleLogger
@@ -47,8 +49,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ConnectionSettingsBuilder
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
     startLine: 12
@@ -90,11 +92,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UseCustomLogger
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 54
+    startLine: 55
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -129,11 +131,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UseConsoleLogger
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -163,11 +165,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UseDebugLogger
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 74
+    startLine: 75
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -197,11 +199,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UseFileLogger
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 84
+    startLine: 85
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -234,11 +236,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableVerboseLogging
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 94
+    startLine: 95
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -269,11 +271,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LimitOperationsQueueTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 105
+    startLine: 106
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -308,11 +310,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LimitConcurrentOperationsTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 118
+    startLine: 119
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -347,11 +349,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LimitAttemptsForOperationTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 131
+    startLine: 132
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -386,11 +388,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LimitRetriesForOperationTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 144
+    startLine: 145
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -425,11 +427,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: KeepRetrying
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 156
+    startLine: 157
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -460,11 +462,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LimitReconnectionsTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 167
+    startLine: 168
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -499,11 +501,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: KeepReconnecting
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 179
+    startLine: 180
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -534,11 +536,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PerformOnMasterOnly
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 189
+    startLine: 190
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -569,11 +571,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PerformOnAnyNode
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 199
+    startLine: 200
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -604,11 +606,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetReconnectionDelayTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 210
+    startLine: 211
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -629,6 +631,45 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo(TimeSpan)
+  commentId: M:EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo(TimeSpan)
+  id: SetQueueTimeoutTo(TimeSpan)
+  parent: EventStore.ClientAPI.ConnectionSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: SetQueueTimeoutTo(TimeSpan)
+  nameWithType: ConnectionSettingsBuilder.SetQueueTimeoutTo(TimeSpan)
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo(TimeSpan)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: SetQueueTimeoutTo
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
+    startLine: 222
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nSets the maximum permitted time a request may be queued awaiting transmission; if exceeded an <xref href=\"EventStore.ClientAPI.Exceptions.OperationExpiredException\" data-throw-if-not-resolved=\"false\"></xref> is thrown.\n"
+  example: []
+  syntax:
+    content: public ConnectionSettingsBuilder SetQueueTimeoutTo(TimeSpan queueTimeout)
+    parameters:
+    - id: queueTimeout
+      type: TimeSpan
+      description: ''
+    return:
+      type: EventStore.ClientAPI.ConnectionSettingsBuilder
+      description: ''
+    content.vb: Public Function SetQueueTimeoutTo(queueTimeout As TimeSpan) As ConnectionSettingsBuilder
+  overload: EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: EventStore.ClientAPI.ConnectionSettingsBuilder.SetOperationTimeoutTo(TimeSpan)
   commentId: M:EventStore.ClientAPI.ConnectionSettingsBuilder.SetOperationTimeoutTo(TimeSpan)
   id: SetOperationTimeoutTo(TimeSpan)
@@ -643,11 +684,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetOperationTimeoutTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 221
+    startLine: 233
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -682,11 +723,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetTimeoutCheckPeriodTo
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 232
+    startLine: 244
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -721,11 +762,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetDefaultUserCredentials
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 244
+    startLine: 256
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -760,11 +801,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UseSslConnection
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 256
+    startLine: 268
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -802,11 +843,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: FailOnNoServerResponse
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 269
+    startLine: 281
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -837,11 +878,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetHeartbeatInterval
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 280
+    startLine: 292
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -876,11 +917,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetHeartbeatTimeout
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 291
+    startLine: 303
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -915,11 +956,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WithConnectionTimeoutOf
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 302
+    startLine: 314
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -954,11 +995,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetClusterDns
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 314
+    startLine: 326
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -993,11 +1034,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetMaxDiscoverAttempts
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 327
+    startLine: 339
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1032,11 +1073,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetGossipTimeout
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 340
+    startLine: 352
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1071,11 +1112,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PreferRandomNode
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 350
+    startLine: 362
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1088,6 +1129,41 @@ items:
       description: A <xref href="EventStore.ClientAPI.DnsClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
     content.vb: Public Function PreferRandomNode As ConnectionSettingsBuilder
   overload: EventStore.ClientAPI.ConnectionSettingsBuilder.PreferRandomNode*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode
+  commentId: M:EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode
+  id: PreferSlaveNode
+  parent: EventStore.ClientAPI.ConnectionSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: PreferSlaveNode()
+  nameWithType: ConnectionSettingsBuilder.PreferSlaveNode()
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: PreferSlaveNode
+    path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
+    startLine: 372
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to prioritize choosing a slave node that&apos;s alive from the known nodes. \n"
+  example: []
+  syntax:
+    content: public ConnectionSettingsBuilder PreferSlaveNode()
+    return:
+      type: EventStore.ClientAPI.ConnectionSettingsBuilder
+      description: A <xref href="EventStore.ClientAPI.DnsClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
+    content.vb: Public Function PreferSlaveNode As ConnectionSettingsBuilder
+  overload: EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1106,11 +1182,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetClusterGossipPort
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 370
+    startLine: 392
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1145,11 +1221,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetGossipSeedEndPoints
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 391
+    startLine: 413
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1187,11 +1263,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetGossipSeedEndPoints
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 407
+    startLine: 429
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1229,11 +1305,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: op_Implicit
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 422
+    startLine: 444
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1273,11 +1349,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Build
     path: ../EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 431
+    startLine: 453
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1795,6 +1871,18 @@ references:
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: TimeSpan
+- uid: EventStore.ClientAPI.Exceptions.OperationExpiredException
+  commentId: T:EventStore.ClientAPI.Exceptions.OperationExpiredException
+  isExternal: false
+  name: OperationExpiredException
+  nameWithType: OperationExpiredException
+  fullName: EventStore.ClientAPI.Exceptions.OperationExpiredException
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo*
+  commentId: Overload:EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo
+  isExternal: false
+  name: SetQueueTimeoutTo
+  nameWithType: ConnectionSettingsBuilder.SetQueueTimeoutTo
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.SetQueueTimeoutTo
 - uid: EventStore.ClientAPI.ConnectionSettingsBuilder.SetOperationTimeoutTo*
   commentId: Overload:EventStore.ClientAPI.ConnectionSettingsBuilder.SetOperationTimeoutTo
   isExternal: false
@@ -1892,6 +1980,12 @@ references:
   name: PreferRandomNode
   nameWithType: ConnectionSettingsBuilder.PreferRandomNode
   fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.PreferRandomNode
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode*
+  commentId: Overload:EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode
+  isExternal: false
+  name: PreferSlaveNode
+  nameWithType: ConnectionSettingsBuilder.PreferSlaveNode
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.PreferSlaveNode
 - uid: EventStore.ClientAPI.ConnectionSettingsBuilder.SetClusterGossipPort*
   commentId: Overload:EventStore.ClientAPI.ConnectionSettingsBuilder.SetClusterGossipPort
   isExternal: false

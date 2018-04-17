@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/HostName.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HostName
     path: ../EventStore/src/EventStore.Common/Utils/HostName.cs
     startLine: 5
@@ -57,8 +57,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/HostName.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Combine
     path: ../EventStore/src/EventStore.Common/Utils/HostName.cs
     startLine: 7
@@ -66,9 +66,9 @@ items:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public static string Combine(Uri requestedUrl, string relativeUri, params object[] arg)
+    content: public static string Combine(Uri responseUrl, string relativeUri, params object[] arg)
     parameters:
-    - id: requestedUrl
+    - id: responseUrl
       type: Uri
     - id: relativeUri
       type: System.String
@@ -76,7 +76,7 @@ items:
       type: System.Object[]
     return:
       type: System.String
-    content.vb: Public Shared Function Combine(requestedUrl As Uri, relativeUri As String, ParamArray arg As Object()) As String
+    content.vb: Public Shared Function Combine(responseUrl As Uri, relativeUri As String, ParamArray arg As Object()) As String
   overload: EventStore.Common.Utils.HostName.Combine*
   nameWithType.vb: HostName.Combine(Uri, String, Object())
   modifiers.csharp:

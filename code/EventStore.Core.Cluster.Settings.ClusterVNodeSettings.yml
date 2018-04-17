@@ -5,7 +5,7 @@ items:
   id: ClusterVNodeSettings
   parent: EventStore.Core.Cluster.Settings
   children:
-  - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)
+  - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,System.Boolean,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.AdditionalConsumerStrategies
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.AdminOnPublic
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.AlwaysKeepScavenged
@@ -46,6 +46,7 @@ items:
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.MinFlushDelay
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.NodeInfo
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.NodePriority
+  - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.OptimizeIndexMerge
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.PrepareAckCount
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.PrepareTimeout
   - EventStore.Core.Cluster.Settings.ClusterVNodeSettings.ReaderThreadsCount
@@ -73,8 +74,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClusterVNodeSettings
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 13
@@ -114,8 +115,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: NodeInfo
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 15
@@ -147,8 +148,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipAdvertiseInfo
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 16
@@ -180,8 +181,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IntHttpPrefixes
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 17
@@ -213,8 +214,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ExtHttpPrefixes
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 18
@@ -246,8 +247,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableTrustedAuth
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 19
@@ -279,8 +280,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Certificate
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 20
@@ -312,8 +313,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WorkerThreads
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 21
@@ -345,8 +346,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: StartStandardProjections
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 22
@@ -378,8 +379,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DisableHTTPCaching
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 23
@@ -411,8 +412,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LogHttpRequests
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 24
@@ -444,8 +445,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DiscoverViaDns
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 26
@@ -477,8 +478,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClusterDns
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 27
@@ -510,8 +511,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipSeeds
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 28
@@ -543,8 +544,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnableHistograms
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 29
@@ -576,8 +577,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MinFlushDelay
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 30
@@ -609,8 +610,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClusterNodeCount
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 32
@@ -642,8 +643,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PrepareAckCount
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 33
@@ -675,8 +676,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CommitAckCount
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 34
@@ -708,8 +709,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PrepareTimeout
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 35
@@ -741,8 +742,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CommitTimeout
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 36
@@ -774,8 +775,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: NodePriority
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 38
@@ -807,8 +808,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UseSsl
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 40
@@ -840,8 +841,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DisableInsecureTCP
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 41
@@ -873,8 +874,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SslTargetHost
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 42
@@ -906,8 +907,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SslValidateServer
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 43
@@ -939,8 +940,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: StatsPeriod
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 45
@@ -972,8 +973,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: StatsStorage
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 46
@@ -1005,8 +1006,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AuthenticationProviderFactory
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 48
@@ -1038,8 +1039,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DisableScavengeMerging
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 49
@@ -1071,8 +1072,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ScavengeHistoryMaxAge
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 50
@@ -1104,8 +1105,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdminOnPublic
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 51
@@ -1135,8 +1136,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: StatsOnPublic
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 52
@@ -1166,8 +1167,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipOnPublic
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 53
@@ -1197,8 +1198,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipInterval
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 54
@@ -1230,8 +1231,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipAllowedTimeDifference
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 55
@@ -1263,8 +1264,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipTimeout
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 56
@@ -1296,8 +1297,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IntTcpHeartbeatTimeout
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 57
@@ -1329,8 +1330,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IntTcpHeartbeatInterval
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 58
@@ -1362,8 +1363,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ExtTcpHeartbeatTimeout
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 59
@@ -1395,8 +1396,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ExtTcpHeartbeatInterval
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 60
@@ -1428,8 +1429,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ConnectionPendingSendBytesThreshold
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 61
@@ -1461,8 +1462,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UnsafeIgnoreHardDeletes
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 62
@@ -1494,8 +1495,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: VerifyDbHash
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 63
@@ -1527,8 +1528,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MaxMemtableEntryCount
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 64
@@ -1560,8 +1561,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HashCollisionReadLimit
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 65
@@ -1593,8 +1594,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SkipIndexVerify
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 66
@@ -1626,8 +1627,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IndexCacheDepth
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 67
@@ -1659,8 +1660,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IndexBitnessVersion
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
     startLine: 68
@@ -1672,6 +1673,39 @@ items:
     return:
       type: System.Byte
     content.vb: Public ReadOnly IndexBitnessVersion As Byte
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.OptimizeIndexMerge
+  commentId: F:EventStore.Core.Cluster.Settings.ClusterVNodeSettings.OptimizeIndexMerge
+  id: OptimizeIndexMerge
+  parent: EventStore.Core.Cluster.Settings.ClusterVNodeSettings
+  langs:
+  - csharp
+  - vb
+  name: OptimizeIndexMerge
+  nameWithType: ClusterVNodeSettings.OptimizeIndexMerge
+  fullName: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.OptimizeIndexMerge
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: OptimizeIndexMerge
+    path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
+    startLine: 69
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Cluster.Settings
+  syntax:
+    content: public readonly bool OptimizeIndexMerge
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly OptimizeIndexMerge As Boolean
   modifiers.csharp:
   - public
   - readonly
@@ -1692,11 +1726,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ChunkInitialReaderCount
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1725,11 +1759,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: BetterOrdering
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 71
+    startLine: 72
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1758,11 +1792,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Index
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 72
+    startLine: 73
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1791,11 +1825,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReaderThreadsCount
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 73
+    startLine: 74
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1824,11 +1858,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AdditionalConsumerStrategies
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 74
+    startLine: 75
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1857,11 +1891,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AlwaysKeepScavenged
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1890,11 +1924,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SkipIndexScanOnReads
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 76
+    startLine: 77
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1923,11 +1957,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipOnSingleNode
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 78
+    startLine: 79
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
@@ -1942,30 +1976,30 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)
-  commentId: M:EventStore.Core.Cluster.Settings.ClusterVNodeSettings.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)
-  id: '#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)'
+- uid: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,System.Boolean,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.Cluster.Settings.ClusterVNodeSettings.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,System.Boolean,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)
+  id: '#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,EventStore.Core.Data.GossipAdvertiseInfo,System.String[],System.String[],System.Boolean,X509Certificate2,System.Int32,System.Boolean,System.String,IPEndPoint[],TimeSpan,System.Int32,System.Int32,System.Int32,TimeSpan,TimeSpan,System.Boolean,System.Boolean,System.String,System.Boolean,TimeSpan,EventStore.Core.Services.Monitoring.StatsStorage,System.Int32,EventStore.Core.Authentication.IAuthenticationProviderFactory,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,TimeSpan,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32,System.Byte,System.Boolean,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[],System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)'
   parent: EventStore.Core.Cluster.Settings.ClusterVNodeSettings
   langs:
   - csharp
   - vb
-  name: ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String[], String[], Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint[], TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, IPersistentSubscriptionConsumerStrategyFactory[], Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
-  nameWithType: ClusterVNodeSettings.ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String[], String[], Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint[], TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, IPersistentSubscriptionConsumerStrategyFactory[], Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
-  fullName: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.ClusterVNodeSettings(Guid, System.Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, EventStore.Core.Data.GossipAdvertiseInfo, System.String[], System.String[], System.Boolean, X509Certificate2, System.Int32, System.Boolean, System.String, IPEndPoint[], TimeSpan, System.Int32, System.Int32, System.Int32, TimeSpan, TimeSpan, System.Boolean, System.Boolean, System.String, System.Boolean, TimeSpan, EventStore.Core.Services.Monitoring.StatsStorage, System.Int32, EventStore.Core.Authentication.IAuthenticationProviderFactory, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, System.Boolean, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32, System.String, System.Boolean, System.Boolean, System.Int32, System.Byte, EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[], System.Boolean, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean)
+  name: ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String[], String[], Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint[], TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, Boolean, IPersistentSubscriptionConsumerStrategyFactory[], Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
+  nameWithType: ClusterVNodeSettings.ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String[], String[], Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint[], TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, Boolean, IPersistentSubscriptionConsumerStrategyFactory[], Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
+  fullName: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.ClusterVNodeSettings(Guid, System.Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, EventStore.Core.Data.GossipAdvertiseInfo, System.String[], System.String[], System.Boolean, X509Certificate2, System.Int32, System.Boolean, System.String, IPEndPoint[], TimeSpan, System.Int32, System.Int32, System.Int32, TimeSpan, TimeSpan, System.Boolean, System.Boolean, System.String, System.Boolean, TimeSpan, EventStore.Core.Services.Monitoring.StatsStorage, System.Int32, EventStore.Core.Authentication.IAuthenticationProviderFactory, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, System.Boolean, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32, System.String, System.Boolean, System.Boolean, System.Int32, System.Byte, System.Boolean, EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[], System.Boolean, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 80
+    startLine: 81
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings
   syntax:
-    content: public ClusterVNodeSettings(Guid instanceId, int debugIndex, IPEndPoint internalTcpEndPoint, IPEndPoint internalSecureTcpEndPoint, IPEndPoint externalTcpEndPoint, IPEndPoint externalSecureTcpEndPoint, IPEndPoint internalHttpEndPoint, IPEndPoint externalHttpEndPoint, GossipAdvertiseInfo gossipAdvertiseInfo, string[] intHttpPrefixes, string[] extHttpPrefixes, bool enableTrustedAuth, X509Certificate2 certificate, int workerThreads, bool discoverViaDns, string clusterDns, IPEndPoint[] gossipSeeds, TimeSpan minFlushDelay, int clusterNodeCount, int prepareAckCount, int commitAckCount, TimeSpan prepareTimeout, TimeSpan commitTimeout, bool useSsl, bool disableInsecureTCP, string sslTargetHost, bool sslValidateServer, TimeSpan statsPeriod, StatsStorage statsStorage, int nodePriority, IAuthenticationProviderFactory authenticationProviderFactory, bool disableScavengeMerging, int scavengeHistoryMaxAge, bool adminOnPublic, bool statsOnPublic, bool gossipOnPublic, TimeSpan gossipInterval, TimeSpan gossipAllowedTimeDifference, TimeSpan gossipTimeout, TimeSpan intTcpHeartbeatTimeout, TimeSpan intTcpHeartbeatInterval, TimeSpan extTcpHeartbeatTimeout, TimeSpan extTcpHeartbeatInterval, bool verifyDbHash, int maxMemtableEntryCount, int hashCollisionReadLimit, bool startStandardProjections, bool disableHTTPCaching, bool logHttpRequests, int connectionPendingSendBytesThreshold, int chunkInitialReaderCount, string index = null, bool enableHistograms = false, bool skipIndexVerify = false, int indexCacheDepth = 16, byte indexBitnessVersion = null, IPersistentSubscriptionConsumerStrategyFactory[] additionalConsumerStrategies = null, bool unsafeIgnoreHardDeletes = false, bool betterOrdering = false, int readerThreadsCount = 4, bool alwaysKeepScavenged = false, bool gossipOnSingleNode = false, bool skipIndexScanOnReads = false)
+    content: public ClusterVNodeSettings(Guid instanceId, int debugIndex, IPEndPoint internalTcpEndPoint, IPEndPoint internalSecureTcpEndPoint, IPEndPoint externalTcpEndPoint, IPEndPoint externalSecureTcpEndPoint, IPEndPoint internalHttpEndPoint, IPEndPoint externalHttpEndPoint, GossipAdvertiseInfo gossipAdvertiseInfo, string[] intHttpPrefixes, string[] extHttpPrefixes, bool enableTrustedAuth, X509Certificate2 certificate, int workerThreads, bool discoverViaDns, string clusterDns, IPEndPoint[] gossipSeeds, TimeSpan minFlushDelay, int clusterNodeCount, int prepareAckCount, int commitAckCount, TimeSpan prepareTimeout, TimeSpan commitTimeout, bool useSsl, bool disableInsecureTCP, string sslTargetHost, bool sslValidateServer, TimeSpan statsPeriod, StatsStorage statsStorage, int nodePriority, IAuthenticationProviderFactory authenticationProviderFactory, bool disableScavengeMerging, int scavengeHistoryMaxAge, bool adminOnPublic, bool statsOnPublic, bool gossipOnPublic, TimeSpan gossipInterval, TimeSpan gossipAllowedTimeDifference, TimeSpan gossipTimeout, TimeSpan intTcpHeartbeatTimeout, TimeSpan intTcpHeartbeatInterval, TimeSpan extTcpHeartbeatTimeout, TimeSpan extTcpHeartbeatInterval, bool verifyDbHash, int maxMemtableEntryCount, int hashCollisionReadLimit, bool startStandardProjections, bool disableHTTPCaching, bool logHttpRequests, int connectionPendingSendBytesThreshold, int chunkInitialReaderCount, string index = null, bool enableHistograms = false, bool skipIndexVerify = false, int indexCacheDepth = 16, byte indexBitnessVersion = null, bool optimizeIndexMerge = false, IPersistentSubscriptionConsumerStrategyFactory[] additionalConsumerStrategies = null, bool unsafeIgnoreHardDeletes = false, bool betterOrdering = false, int readerThreadsCount = 4, bool alwaysKeepScavenged = false, bool gossipOnSingleNode = false, bool skipIndexScanOnReads = false)
     parameters:
     - id: instanceId
       type: Guid
@@ -2079,6 +2113,8 @@ items:
       type: System.Int32
     - id: indexBitnessVersion
       type: System.Byte
+    - id: optimizeIndexMerge
+      type: System.Boolean
     - id: additionalConsumerStrategies
       type: EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[]
     - id: unsafeIgnoreHardDeletes
@@ -2093,15 +2129,15 @@ items:
       type: System.Boolean
     - id: skipIndexScanOnReads
       type: System.Boolean
-    content.vb: Public Sub New(instanceId As Guid, debugIndex As Integer, internalTcpEndPoint As IPEndPoint, internalSecureTcpEndPoint As IPEndPoint, externalTcpEndPoint As IPEndPoint, externalSecureTcpEndPoint As IPEndPoint, internalHttpEndPoint As IPEndPoint, externalHttpEndPoint As IPEndPoint, gossipAdvertiseInfo As GossipAdvertiseInfo, intHttpPrefixes As String(), extHttpPrefixes As String(), enableTrustedAuth As Boolean, certificate As X509Certificate2, workerThreads As Integer, discoverViaDns As Boolean, clusterDns As String, gossipSeeds As IPEndPoint(), minFlushDelay As TimeSpan, clusterNodeCount As Integer, prepareAckCount As Integer, commitAckCount As Integer, prepareTimeout As TimeSpan, commitTimeout As TimeSpan, useSsl As Boolean, disableInsecureTCP As Boolean, sslTargetHost As String, sslValidateServer As Boolean, statsPeriod As TimeSpan, statsStorage As StatsStorage, nodePriority As Integer, authenticationProviderFactory As IAuthenticationProviderFactory, disableScavengeMerging As Boolean, scavengeHistoryMaxAge As Integer, adminOnPublic As Boolean, statsOnPublic As Boolean, gossipOnPublic As Boolean, gossipInterval As TimeSpan, gossipAllowedTimeDifference As TimeSpan, gossipTimeout As TimeSpan, intTcpHeartbeatTimeout As TimeSpan, intTcpHeartbeatInterval As TimeSpan, extTcpHeartbeatTimeout As TimeSpan, extTcpHeartbeatInterval As TimeSpan, verifyDbHash As Boolean, maxMemtableEntryCount As Integer, hashCollisionReadLimit As Integer, startStandardProjections As Boolean, disableHTTPCaching As Boolean, logHttpRequests As Boolean, connectionPendingSendBytesThreshold As Integer, chunkInitialReaderCount As Integer, index As String = Nothing, enableHistograms As Boolean = False, skipIndexVerify As Boolean = False, indexCacheDepth As Integer = 16, indexBitnessVersion As Byte = Nothing, additionalConsumerStrategies As IPersistentSubscriptionConsumerStrategyFactory() = Nothing, unsafeIgnoreHardDeletes As Boolean = False, betterOrdering As Boolean = False, readerThreadsCount As Integer = 4, alwaysKeepScavenged As Boolean = False, gossipOnSingleNode As Boolean = False, skipIndexScanOnReads As Boolean = False)
+    content.vb: Public Sub New(instanceId As Guid, debugIndex As Integer, internalTcpEndPoint As IPEndPoint, internalSecureTcpEndPoint As IPEndPoint, externalTcpEndPoint As IPEndPoint, externalSecureTcpEndPoint As IPEndPoint, internalHttpEndPoint As IPEndPoint, externalHttpEndPoint As IPEndPoint, gossipAdvertiseInfo As GossipAdvertiseInfo, intHttpPrefixes As String(), extHttpPrefixes As String(), enableTrustedAuth As Boolean, certificate As X509Certificate2, workerThreads As Integer, discoverViaDns As Boolean, clusterDns As String, gossipSeeds As IPEndPoint(), minFlushDelay As TimeSpan, clusterNodeCount As Integer, prepareAckCount As Integer, commitAckCount As Integer, prepareTimeout As TimeSpan, commitTimeout As TimeSpan, useSsl As Boolean, disableInsecureTCP As Boolean, sslTargetHost As String, sslValidateServer As Boolean, statsPeriod As TimeSpan, statsStorage As StatsStorage, nodePriority As Integer, authenticationProviderFactory As IAuthenticationProviderFactory, disableScavengeMerging As Boolean, scavengeHistoryMaxAge As Integer, adminOnPublic As Boolean, statsOnPublic As Boolean, gossipOnPublic As Boolean, gossipInterval As TimeSpan, gossipAllowedTimeDifference As TimeSpan, gossipTimeout As TimeSpan, intTcpHeartbeatTimeout As TimeSpan, intTcpHeartbeatInterval As TimeSpan, extTcpHeartbeatTimeout As TimeSpan, extTcpHeartbeatInterval As TimeSpan, verifyDbHash As Boolean, maxMemtableEntryCount As Integer, hashCollisionReadLimit As Integer, startStandardProjections As Boolean, disableHTTPCaching As Boolean, logHttpRequests As Boolean, connectionPendingSendBytesThreshold As Integer, chunkInitialReaderCount As Integer, index As String = Nothing, enableHistograms As Boolean = False, skipIndexVerify As Boolean = False, indexCacheDepth As Integer = 16, indexBitnessVersion As Byte = Nothing, optimizeIndexMerge As Boolean = False, additionalConsumerStrategies As IPersistentSubscriptionConsumerStrategyFactory() = Nothing, unsafeIgnoreHardDeletes As Boolean = False, betterOrdering As Boolean = False, readerThreadsCount As Integer = 4, alwaysKeepScavenged As Boolean = False, gossipOnSingleNode As Boolean = False, skipIndexScanOnReads As Boolean = False)
   overload: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.#ctor*
-  nameWithType.vb: ClusterVNodeSettings.ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String(), String(), Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint(), TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, IPersistentSubscriptionConsumerStrategyFactory(), Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
+  nameWithType.vb: ClusterVNodeSettings.ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String(), String(), Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint(), TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, Boolean, IPersistentSubscriptionConsumerStrategyFactory(), Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.ClusterVNodeSettings(Guid, System.Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, EventStore.Core.Data.GossipAdvertiseInfo, System.String(), System.String(), System.Boolean, X509Certificate2, System.Int32, System.Boolean, System.String, IPEndPoint(), TimeSpan, System.Int32, System.Int32, System.Int32, TimeSpan, TimeSpan, System.Boolean, System.Boolean, System.String, System.Boolean, TimeSpan, EventStore.Core.Services.Monitoring.StatsStorage, System.Int32, EventStore.Core.Authentication.IAuthenticationProviderFactory, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, System.Boolean, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32, System.String, System.Boolean, System.Boolean, System.Int32, System.Byte, EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory(), System.Boolean, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean)
-  name.vb: ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String(), String(), Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint(), TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, IPersistentSubscriptionConsumerStrategyFactory(), Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
+  fullName.vb: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.ClusterVNodeSettings(Guid, System.Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, EventStore.Core.Data.GossipAdvertiseInfo, System.String(), System.String(), System.Boolean, X509Certificate2, System.Int32, System.Boolean, System.String, IPEndPoint(), TimeSpan, System.Int32, System.Int32, System.Int32, TimeSpan, TimeSpan, System.Boolean, System.Boolean, System.String, System.Boolean, TimeSpan, EventStore.Core.Services.Monitoring.StatsStorage, System.Int32, EventStore.Core.Authentication.IAuthenticationProviderFactory, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, System.Boolean, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32, System.String, System.Boolean, System.Boolean, System.Int32, System.Byte, System.Boolean, EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory(), System.Boolean, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean)
+  name.vb: ClusterVNodeSettings(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, GossipAdvertiseInfo, String(), String(), Boolean, X509Certificate2, Int32, Boolean, String, IPEndPoint(), TimeSpan, Int32, Int32, Int32, TimeSpan, TimeSpan, Boolean, Boolean, String, Boolean, TimeSpan, StatsStorage, Int32, IAuthenticationProviderFactory, Boolean, Int32, Boolean, Boolean, Boolean, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, TimeSpan, Boolean, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32, String, Boolean, Boolean, Int32, Byte, Boolean, IPersistentSubscriptionConsumerStrategyFactory(), Boolean, Boolean, Int32, Boolean, Boolean, Boolean)
 - uid: EventStore.Core.Cluster.Settings.ClusterVNodeSettings.ToString
   commentId: M:EventStore.Core.Cluster.Settings.ClusterVNodeSettings.ToString
   id: ToString
@@ -2116,11 +2152,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ToString
     path: ../EventStore/src/EventStore.Core/Cluster/Settings/ClusterVNodeSettings.cs
-    startLine: 235
+    startLine: 238
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster.Settings

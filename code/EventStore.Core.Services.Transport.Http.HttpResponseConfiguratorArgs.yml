@@ -5,10 +5,11 @@ items:
   id: HttpResponseConfiguratorArgs
   parent: EventStore.Core.Services.Transport.Http
   children:
-  - EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.#ctor(Uri,EventStore.Transport.Http.ICodec)
+  - EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.#ctor(Uri,Uri,EventStore.Transport.Http.ICodec)
   - EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.op_Implicit(EventStore.Transport.Http.EntityManagement.HttpEntityManager)~EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs
   - EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.RequestedUrl
   - EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.ResponseCodec
+  - EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.ResponseUrl
   langs:
   - csharp
   - vb
@@ -19,8 +20,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HttpResponseConfiguratorArgs
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
     startLine: 11
@@ -46,6 +47,39 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.ResponseUrl
+  commentId: F:EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.ResponseUrl
+  id: ResponseUrl
+  parent: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs
+  langs:
+  - csharp
+  - vb
+  name: ResponseUrl
+  nameWithType: HttpResponseConfiguratorArgs.ResponseUrl
+  fullName: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.ResponseUrl
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: ResponseUrl
+    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Transport.Http
+  syntax:
+    content: public readonly Uri ResponseUrl
+    return:
+      type: Uri
+    content.vb: Public ReadOnly ResponseUrl As Uri
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.RequestedUrl
   commentId: F:EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.RequestedUrl
   id: RequestedUrl
@@ -60,11 +94,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RequestedUrl
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
@@ -93,11 +127,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ResponseCodec
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
@@ -112,36 +146,38 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.#ctor(Uri,EventStore.Transport.Http.ICodec)
-  commentId: M:EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.#ctor(Uri,EventStore.Transport.Http.ICodec)
-  id: '#ctor(Uri,EventStore.Transport.Http.ICodec)'
+- uid: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.#ctor(Uri,Uri,EventStore.Transport.Http.ICodec)
+  commentId: M:EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.#ctor(Uri,Uri,EventStore.Transport.Http.ICodec)
+  id: '#ctor(Uri,Uri,EventStore.Transport.Http.ICodec)'
   parent: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs
   langs:
   - csharp
   - vb
-  name: HttpResponseConfiguratorArgs(Uri, ICodec)
-  nameWithType: HttpResponseConfiguratorArgs.HttpResponseConfiguratorArgs(Uri, ICodec)
-  fullName: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.HttpResponseConfiguratorArgs(Uri, EventStore.Transport.Http.ICodec)
+  name: HttpResponseConfiguratorArgs(Uri, Uri, ICodec)
+  nameWithType: HttpResponseConfiguratorArgs.HttpResponseConfiguratorArgs(Uri, Uri, ICodec)
+  fullName: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.HttpResponseConfiguratorArgs(Uri, Uri, EventStore.Transport.Http.ICodec)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
   syntax:
-    content: public HttpResponseConfiguratorArgs(Uri requestedUrl, ICodec responseCodec)
+    content: public HttpResponseConfiguratorArgs(Uri responseUrl, Uri requestedUrl, ICodec responseCodec)
     parameters:
+    - id: responseUrl
+      type: Uri
     - id: requestedUrl
       type: Uri
     - id: responseCodec
       type: EventStore.Transport.Http.ICodec
-    content.vb: Public Sub New(requestedUrl As Uri, responseCodec As ICodec)
+    content.vb: Public Sub New(responseUrl As Uri, requestedUrl As Uri, responseCodec As ICodec)
   overload: EventStore.Core.Services.Transport.Http.HttpResponseConfiguratorArgs.#ctor*
   modifiers.csharp:
   - public
@@ -161,11 +197,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: op_Implicit
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/SendToHttpEnvelope.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http

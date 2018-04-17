@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Bus/HandleExtensions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HandleExtensions
     path: ../EventStore/src/EventStore.Core/Bus/HandleExtensions.cs
     startLine: 4
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Bus/HandleExtensions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WidenFrom
     path: ../EventStore/src/EventStore.Core/Bus/HandleExtensions.cs
     startLine: 6
@@ -63,7 +63,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: 'public static IHandle<TInput> WidenFrom<TInput, TOutput>(this IHandle<TOutput> handler)where TInput : TOutput where TOutput : Message'
+    content: >-
+      public static IHandle<TInput> WidenFrom<TInput, TOutput>(this IHandle<TOutput> handler)
+          where TInput : TOutput where TOutput : Message
     parameters:
     - id: handler
       type: EventStore.Core.Bus.IHandle{{TOutput}}
@@ -101,8 +103,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Bus/HandleExtensions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: NarrowTo
     path: ../EventStore/src/EventStore.Core/Bus/HandleExtensions.cs
     startLine: 13
@@ -110,7 +112,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: 'public static IHandle<TInput> NarrowTo<TInput, TOutput>(this IHandle<TOutput> handler)where TInput : Message where TOutput : TInput'
+    content: >-
+      public static IHandle<TInput> NarrowTo<TInput, TOutput>(this IHandle<TOutput> handler)
+          where TInput : Message where TOutput : TInput
     parameters:
     - id: handler
       type: EventStore.Core.Bus.IHandle{{TOutput}}

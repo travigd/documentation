@@ -6,8 +6,10 @@ items:
   parent: EventStore.Core.Helpers
   children:
   - EventStore.Core.Helpers.IODispatcherDelayedMessage.#ctor(Guid,Action)
+  - EventStore.Core.Helpers.IODispatcherDelayedMessage.#ctor(Guid,Action,System.Nullable{Guid})
   - EventStore.Core.Helpers.IODispatcherDelayedMessage.Action
   - EventStore.Core.Helpers.IODispatcherDelayedMessage.CorrelationId
+  - EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId
   - EventStore.Core.Helpers.IODispatcherDelayedMessage.MsgTypeId
   langs:
   - csharp
@@ -19,8 +21,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IODispatcherDelayedMessage
     path: ../EventStore/src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
     startLine: 5
@@ -65,8 +67,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MsgTypeId
     path: ../EventStore/src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
     startLine: 8
@@ -103,11 +105,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Helpers
@@ -124,6 +126,46 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.Core.Helpers.IODispatcherDelayedMessage.#ctor(Guid,Action,System.Nullable{Guid})
+  commentId: M:EventStore.Core.Helpers.IODispatcherDelayedMessage.#ctor(Guid,Action,System.Nullable{Guid})
+  id: '#ctor(Guid,Action,System.Nullable{Guid})'
+  parent: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  langs:
+  - csharp
+  - vb
+  name: IODispatcherDelayedMessage(Guid, Action, Nullable<Guid>)
+  nameWithType: IODispatcherDelayedMessage.IODispatcherDelayedMessage(Guid, Action, Nullable<Guid>)
+  fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage.IODispatcherDelayedMessage(Guid, Action, System.Nullable<Guid>)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public IODispatcherDelayedMessage(Guid correlationId, Action action, Guid? messageCorrelationId)
+    parameters:
+    - id: correlationId
+      type: Guid
+    - id: action
+      type: Action
+    - id: messageCorrelationId
+      type: System.Nullable{Guid}
+    content.vb: Public Sub New(correlationId As Guid, action As Action, messageCorrelationId As Guid?)
+  overload: EventStore.Core.Helpers.IODispatcherDelayedMessage.#ctor*
+  nameWithType.vb: IODispatcherDelayedMessage.IODispatcherDelayedMessage(Guid, Action, Nullable(Of Guid))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Helpers.IODispatcherDelayedMessage.IODispatcherDelayedMessage(Guid, Action, System.Nullable(Of Guid))
+  name.vb: IODispatcherDelayedMessage(Guid, Action, Nullable(Of Guid))
 - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage.Action
   commentId: P:EventStore.Core.Helpers.IODispatcherDelayedMessage.Action
   id: Action
@@ -138,11 +180,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Action
     path: ../EventStore/src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-    startLine: 19
+    startLine: 27
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Helpers
@@ -173,11 +215,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CorrelationId
     path: ../EventStore/src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
-    startLine: 24
+    startLine: 32
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Helpers
@@ -188,6 +230,41 @@ items:
       type: Guid
     content.vb: Public ReadOnly Property CorrelationId As Guid
   overload: EventStore.Core.Helpers.IODispatcherDelayedMessage.CorrelationId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId
+  commentId: P:EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId
+  id: MessageCorrelationId
+  parent: EventStore.Core.Helpers.IODispatcherDelayedMessage
+  langs:
+  - csharp
+  - vb
+  name: MessageCorrelationId
+  nameWithType: IODispatcherDelayedMessage.MessageCorrelationId
+  fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: MessageCorrelationId
+    path: ../EventStore/src/EventStore.Core/Helpers/IODispatcherDelayedMessage.cs
+    startLine: 37
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Helpers
+  syntax:
+    content: public Guid? MessageCorrelationId { get; }
+    parameters: []
+    return:
+      type: System.Nullable{Guid}
+    content.vb: Public ReadOnly Property MessageCorrelationId As Guid?
+  overload: EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId*
   modifiers.csharp:
   - public
   - get
@@ -625,6 +702,87 @@ references:
   name: Action
   nameWithType: Action
   fullName: Action
+- uid: System.Nullable{Guid}
+  commentId: '!:System.Nullable{Guid}'
+  definition: System.Nullable`1
+  name: Nullable<Guid>
+  nameWithType: Nullable<Guid>
+  fullName: System.Nullable<Guid>
+  nameWithType.vb: Nullable(Of Guid)
+  fullName.vb: System.Nullable(Of Guid)
+  name.vb: Nullable(Of Guid)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Helpers.IODispatcherDelayedMessage.Action*
   commentId: Overload:EventStore.Core.Helpers.IODispatcherDelayedMessage.Action
   isExternal: false
@@ -637,3 +795,9 @@ references:
   name: CorrelationId
   nameWithType: IODispatcherDelayedMessage.CorrelationId
   fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage.CorrelationId
+- uid: EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId*
+  commentId: Overload:EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId
+  isExternal: false
+  name: MessageCorrelationId
+  nameWithType: IODispatcherDelayedMessage.MessageCorrelationId
+  fullName: EventStore.Core.Helpers.IODispatcherDelayedMessage.MessageCorrelationId

@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Messaging/CallbackEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CallbackEnvelope
     path: ../EventStore/src/EventStore.Core/Messaging/CallbackEnvelope.cs
     startLine: 5
@@ -61,8 +61,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Messaging/CallbackEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Messaging/CallbackEnvelope.cs
     startLine: 9
@@ -97,8 +97,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Messaging/CallbackEnvelope.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReplyWith
     path: ../EventStore/src/EventStore.Core/Messaging/CallbackEnvelope.cs
     startLine: 15
@@ -106,7 +106,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Messaging
   syntax:
-    content: 'public void ReplyWith<T>(T message)where T : Message'
+    content: >-
+      public void ReplyWith<T>(T message)
+          where T : Message
     parameters:
     - id: message
       type: '{T}'

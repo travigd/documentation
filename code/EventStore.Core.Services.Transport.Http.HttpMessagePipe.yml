@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: HttpMessagePipe
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 8
@@ -58,8 +58,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RegisterSender
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 12
@@ -67,7 +67,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
   syntax:
-    content: 'public void RegisterSender<T>(ISender<T> sender)where T : Message'
+    content: >-
+      public void RegisterSender<T>(ISender<T> sender)
+          where T : Message
     parameters:
     - id: sender
       type: EventStore.Core.Services.Transport.Http.ISender{{T}}
@@ -96,8 +98,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Push
     path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 18

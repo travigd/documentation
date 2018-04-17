@@ -79,12 +79,18 @@
     name: GossipSeed
   - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
     name: GossipSeedClusterSettingsBuilder
+  - uid: EventStore.ClientAPI.IEndPointDiscoverer
+    name: IEndPointDiscoverer
   - uid: EventStore.ClientAPI.IEventStoreConnection
     name: IEventStoreConnection
   - uid: EventStore.ClientAPI.IEventStoreConnectionExtensions
     name: IEventStoreConnectionExtensions
   - uid: EventStore.ClientAPI.ILogger
     name: ILogger
+  - uid: EventStore.ClientAPI.NodeEndPoints
+    name: NodeEndPoints
+  - uid: EventStore.ClientAPI.NodePreference
+    name: NodePreference
   - uid: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
     name: PersistentSubscriptionNakEventAction
   - uid: EventStore.ClientAPI.PersistentSubscriptionSettings
@@ -174,6 +180,8 @@
     name: NoResultException
   - uid: EventStore.ClientAPI.Exceptions.NotAuthenticatedException
     name: NotAuthenticatedException
+  - uid: EventStore.ClientAPI.Exceptions.OperationExpiredException
+    name: OperationExpiredException
   - uid: EventStore.ClientAPI.Exceptions.OperationTimedOutException
     name: OperationTimedOutException
   - uid: EventStore.ClientAPI.Exceptions.ProjectionCommandConflictException
@@ -489,6 +497,8 @@
 - uid: EventStore.Core.DataStructures
   name: EventStore.Core.DataStructures
   items:
+  - uid: EventStore.Core.DataStructures.BloomFilter
+    name: BloomFilter
   - uid: EventStore.Core.DataStructures.BoundedQueue`1
     name: BoundedQueue<T>
     name.vb: BoundedQueue(Of T)
@@ -1791,6 +1801,8 @@
     name: TFChunkManager
   - uid: EventStore.Core.TransactionLog.Chunks.TFChunkReader
     name: TFChunkReader
+  - uid: EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
+    name: TFChunkReaderExistsAtOptimizer
   - uid: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
     name: TFChunkScavenger
   - uid: EventStore.Core.TransactionLog.Chunks.TFChunkWriter

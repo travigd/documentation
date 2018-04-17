@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RagsExtensions
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 116
@@ -56,8 +56,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Cleanup
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 118
@@ -100,8 +100,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: FixNames
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 122
@@ -109,7 +109,9 @@ items:
   - EventStore.Common
   namespace: EventStore.Common.Options
   syntax:
-    content: 'public static IEnumerable<OptionSource> FixNames<TOptions>(this IEnumerable<OptionSource> optionSources)where TOptions : class'
+    content: >-
+      public static IEnumerable<OptionSource> FixNames<TOptions>(this IEnumerable<OptionSource> optionSources)
+          where TOptions : class
     parameters:
     - id: optionSources
       type: IEnumerable{OptionSource}
@@ -146,8 +148,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnsureExistence
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 133
@@ -155,7 +157,9 @@ items:
   - EventStore.Common
   namespace: EventStore.Common.Options
   syntax:
-    content: 'public static IEnumerable<OptionSource> EnsureExistence<TOptions>(this IEnumerable<OptionSource> optionSources)where TOptions : class'
+    content: >-
+      public static IEnumerable<OptionSource> EnsureExistence<TOptions>(this IEnumerable<OptionSource> optionSources)
+          where TOptions : class
     parameters:
     - id: optionSources
       type: IEnumerable{OptionSource}
@@ -192,8 +196,8 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EnsureCorrectType
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
     startLine: 145
@@ -201,7 +205,9 @@ items:
   - EventStore.Common
   namespace: EventStore.Common.Options
   syntax:
-    content: 'public static IEnumerable<OptionSource> EnsureCorrectType<TOptions>(this IEnumerable<OptionSource> optionSources)where TOptions : class, new ()'
+    content: >-
+      public static IEnumerable<OptionSource> EnsureCorrectType<TOptions>(this IEnumerable<OptionSource> optionSources)
+          where TOptions : class, new()
     parameters:
     - id: optionSources
       type: IEnumerable{OptionSource}

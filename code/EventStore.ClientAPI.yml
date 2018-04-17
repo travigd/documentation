@@ -36,9 +36,12 @@ items:
   - EventStore.ClientAPI.ExpectedVersion
   - EventStore.ClientAPI.GossipSeed
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
+  - EventStore.ClientAPI.IEndPointDiscoverer
   - EventStore.ClientAPI.IEventStoreConnection
   - EventStore.ClientAPI.IEventStoreConnectionExtensions
   - EventStore.ClientAPI.ILogger
+  - EventStore.ClientAPI.NodeEndPoints
+  - EventStore.ClientAPI.NodePreference
   - EventStore.ClientAPI.PersistentSubscriptionNakEventAction
   - EventStore.ClientAPI.PersistentSubscriptionSettings
   - EventStore.ClientAPI.PersistentSubscriptionSettingsBuilder
@@ -125,12 +128,25 @@ references:
   name: IEventStoreConnectionExtensions
   nameWithType: IEventStoreConnectionExtensions
   fullName: EventStore.ClientAPI.IEventStoreConnectionExtensions
+- uid: EventStore.ClientAPI.NodeEndPoints
+  commentId: T:EventStore.ClientAPI.NodeEndPoints
+  isExternal: false
+  name: NodeEndPoints
+  nameWithType: NodeEndPoints
+  fullName: EventStore.ClientAPI.NodeEndPoints
 - uid: EventStore.ClientAPI.GossipSeed
   commentId: T:EventStore.ClientAPI.GossipSeed
   isExternal: false
   name: GossipSeed
   nameWithType: GossipSeed
   fullName: EventStore.ClientAPI.GossipSeed
+- uid: EventStore.ClientAPI.NodePreference
+  commentId: T:EventStore.ClientAPI.NodePreference
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: NodePreference
+  nameWithType: NodePreference
+  fullName: EventStore.ClientAPI.NodePreference
 - uid: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
   commentId: T:EventStore.ClientAPI.PersistentSubscriptionNakEventAction
   parent: EventStore.ClientAPI
@@ -288,6 +304,13 @@ references:
   name: CatchUpSubscriptionSettings
   nameWithType: CatchUpSubscriptionSettings
   fullName: EventStore.ClientAPI.CatchUpSubscriptionSettings
+- uid: EventStore.ClientAPI.IEndPointDiscoverer
+  commentId: T:EventStore.ClientAPI.IEndPointDiscoverer
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: IEndPointDiscoverer
+  nameWithType: IEndPointDiscoverer
+  fullName: EventStore.ClientAPI.IEndPointDiscoverer
 - uid: EventStore.ClientAPI.IEventStoreConnection
   commentId: T:EventStore.ClientAPI.IEventStoreConnection
   parent: EventStore.ClientAPI

@@ -6,8 +6,10 @@ items:
   parent: EventStore.ClientAPI
   children:
   - EventStore.ClientAPI.DnsClusterSettingsBuilder.Build
+  - EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering
   - EventStore.ClientAPI.DnsClusterSettingsBuilder.op_Implicit(EventStore.ClientAPI.DnsClusterSettingsBuilder)~EventStore.ClientAPI.ClusterSettings
   - EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferRandomNode
+  - EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode
   - EventStore.ClientAPI.DnsClusterSettingsBuilder.SetClusterDns(System.String)
   - EventStore.ClientAPI.DnsClusterSettingsBuilder.SetClusterGossipPort(System.Int32)
   - EventStore.ClientAPI.DnsClusterSettingsBuilder.SetGossipTimeout(TimeSpan)
@@ -22,8 +24,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: DnsClusterSettingsBuilder
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
     startLine: 10
@@ -65,8 +67,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetClusterDns
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
     startLine: 24
@@ -104,8 +106,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetMaxDiscoverAttempts
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
     startLine: 37
@@ -143,8 +145,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetGossipTimeout
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
     startLine: 50
@@ -168,6 +170,41 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering
+  commentId: M:EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering
+  id: KeepDiscovering
+  parent: EventStore.ClientAPI.DnsClusterSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: KeepDiscovering()
+  nameWithType: DnsClusterSettingsBuilder.KeepDiscovering()
+  fullName: EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: KeepDiscovering
+    path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
+    startLine: 61
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nAllows infinite nodes discovery attempts.\n"
+  example: []
+  syntax:
+    content: public DnsClusterSettingsBuilder KeepDiscovering()
+    return:
+      type: EventStore.ClientAPI.DnsClusterSettingsBuilder
+      description: ''
+    content.vb: Public Function KeepDiscovering As DnsClusterSettingsBuilder
+  overload: EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferRandomNode
   commentId: M:EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferRandomNode
   id: PreferRandomNode
@@ -182,11 +219,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PreferRandomNode
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-    startLine: 60
+    startLine: 71
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -199,6 +236,41 @@ items:
       description: A <xref href="EventStore.ClientAPI.DnsClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
     content.vb: Public Function PreferRandomNode As DnsClusterSettingsBuilder
   overload: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferRandomNode*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode
+  commentId: M:EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode
+  id: PreferSlaveNode
+  parent: EventStore.ClientAPI.DnsClusterSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: PreferSlaveNode()
+  nameWithType: DnsClusterSettingsBuilder.PreferSlaveNode()
+  fullName: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: PreferSlaveNode
+    path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
+    startLine: 81
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to prioritize choosing a slave node that&apos;s alive from the known nodes. \n"
+  example: []
+  syntax:
+    content: public DnsClusterSettingsBuilder PreferSlaveNode()
+    return:
+      type: EventStore.ClientAPI.DnsClusterSettingsBuilder
+      description: A <xref href="EventStore.ClientAPI.DnsClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
+    content.vb: Public Function PreferSlaveNode As DnsClusterSettingsBuilder
+  overload: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -217,11 +289,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetClusterGossipPort
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-    startLine: 80
+    startLine: 101
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -256,11 +328,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: op_Implicit
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-    startLine: 92
+    startLine: 113
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -300,11 +372,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Build
     path: ../EventStore/src/EventStore.ClientAPI/DnsClusterSettingsBuilder.cs
-    startLine: 100
+    startLine: 121
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -744,12 +816,24 @@ references:
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: TimeSpan
+- uid: EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering*
+  commentId: Overload:EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering
+  isExternal: false
+  name: KeepDiscovering
+  nameWithType: DnsClusterSettingsBuilder.KeepDiscovering
+  fullName: EventStore.ClientAPI.DnsClusterSettingsBuilder.KeepDiscovering
 - uid: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferRandomNode*
   commentId: Overload:EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferRandomNode
   isExternal: false
   name: PreferRandomNode
   nameWithType: DnsClusterSettingsBuilder.PreferRandomNode
   fullName: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferRandomNode
+- uid: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode*
+  commentId: Overload:EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode
+  isExternal: false
+  name: PreferSlaveNode
+  nameWithType: DnsClusterSettingsBuilder.PreferSlaveNode
+  fullName: EventStore.ClientAPI.DnsClusterSettingsBuilder.PreferSlaveNode
 - uid: EventStore.ClientAPI.DnsClusterSettingsBuilder.SetClusterGossipPort*
   commentId: Overload:EventStore.ClientAPI.DnsClusterSettingsBuilder.SetClusterGossipPort
   isExternal: false

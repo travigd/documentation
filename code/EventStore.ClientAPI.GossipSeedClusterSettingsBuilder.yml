@@ -6,8 +6,10 @@ items:
   parent: EventStore.ClientAPI
   children:
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.Build
+  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.op_Implicit(EventStore.ClientAPI.GossipSeedClusterSettingsBuilder)~EventStore.ClientAPI.ClusterSettings
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferRandomNode
+  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint[])
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(TimeSpan)
@@ -22,8 +24,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GossipSeedClusterSettingsBuilder
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
     startLine: 10
@@ -65,8 +67,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetGossipSeedEndPoints
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
     startLine: 29
@@ -107,8 +109,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetGossipSeedEndPoints
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
     startLine: 45
@@ -135,6 +137,41 @@ items:
   - Public
   fullName.vb: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed())
   name.vb: SetGossipSeedEndPoints(GossipSeed())
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering
+  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering
+  id: KeepDiscovering
+  parent: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: KeepDiscovering()
+  nameWithType: GossipSeedClusterSettingsBuilder.KeepDiscovering()
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: KeepDiscovering
+    path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
+    startLine: 57
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nAllows infinite nodes discovery attempts.\n"
+  example: []
+  syntax:
+    content: public GossipSeedClusterSettingsBuilder KeepDiscovering()
+    return:
+      type: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
+      description: ''
+    content.vb: Public Function KeepDiscovering As GossipSeedClusterSettingsBuilder
+  overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts(System.Int32)
   commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts(System.Int32)
   id: SetMaxDiscoverAttempts(System.Int32)
@@ -149,11 +186,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetMaxDiscoverAttempts
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 59
+    startLine: 69
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -188,11 +225,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetGossipTimeout
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 72
+    startLine: 82
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -227,11 +264,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PreferRandomNode
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 82
+    startLine: 92
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -244,6 +281,41 @@ items:
       description: A <xref href="EventStore.ClientAPI.DnsClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
     content.vb: Public Function PreferRandomNode As GossipSeedClusterSettingsBuilder
   overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferRandomNode*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode
+  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode
+  id: PreferSlaveNode
+  parent: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: PreferSlaveNode()
+  nameWithType: GossipSeedClusterSettingsBuilder.PreferSlaveNode()
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: PreferSlaveNode
+    path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
+    startLine: 102
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhether to prioritize choosing a slave node that&apos;s alive from the known nodes. \n"
+  example: []
+  syntax:
+    content: public GossipSeedClusterSettingsBuilder PreferSlaveNode()
+    return:
+      type: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
+      description: A <xref href="EventStore.ClientAPI.DnsClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
+    content.vb: Public Function PreferSlaveNode As GossipSeedClusterSettingsBuilder
+  overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -262,11 +334,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: op_Implicit
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 93
+    startLine: 113
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -306,11 +378,11 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Build
     path: ../EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -784,6 +856,12 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering*
+  commentId: Overload:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering
+  isExternal: false
+  name: KeepDiscovering
+  nameWithType: GossipSeedClusterSettingsBuilder.KeepDiscovering
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering
 - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts*
   commentId: Overload:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts
   isExternal: false
@@ -819,6 +897,12 @@ references:
   name: PreferRandomNode
   nameWithType: GossipSeedClusterSettingsBuilder.PreferRandomNode
   fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferRandomNode
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode*
+  commentId: Overload:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode
+  isExternal: false
+  name: PreferSlaveNode
+  nameWithType: GossipSeedClusterSettingsBuilder.PreferSlaveNode
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode
 - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.op_Implicit*
   commentId: Overload:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.op_Implicit
   isExternal: false

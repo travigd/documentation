@@ -24,8 +24,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TcpDispatcher
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 8
@@ -72,8 +72,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 15
@@ -102,8 +102,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddWrapper
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 26
@@ -111,7 +111,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: 'protected void AddWrapper<T>(Func<T, TcpPackage> wrapper, ClientVersion version)where T : Message'
+    content: >-
+      protected void AddWrapper<T>(Func<T, TcpPackage> wrapper, ClientVersion version)
+          where T : Message
     parameters:
     - id: wrapper
       type: Func{{T},EventStore.Core.Services.Transport.Tcp.TcpPackage}
@@ -142,8 +144,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddUnwrapper
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 31
@@ -151,7 +153,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: 'protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, T> unwrapper, ClientVersion version)where T : Message'
+    content: >-
+      protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, T> unwrapper, ClientVersion version)
+          where T : Message
     parameters:
     - id: command
       type: EventStore.Core.Services.Transport.Tcp.TcpCommand
@@ -184,8 +188,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddUnwrapper
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 36
@@ -193,7 +197,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: 'protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, TcpConnectionManager, T> unwrapper, ClientVersion version)where T : Message'
+    content: >-
+      protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, TcpConnectionManager, T> unwrapper, ClientVersion version)
+          where T : Message
     parameters:
     - id: command
       type: EventStore.Core.Services.Transport.Tcp.TcpCommand
@@ -226,8 +232,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddUnwrapper
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 41
@@ -235,7 +241,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: 'protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, IPrincipal, T> unwrapper, ClientVersion version)where T : Message'
+    content: >-
+      protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, IPrincipal, T> unwrapper, ClientVersion version)
+          where T : Message
     parameters:
     - id: command
       type: EventStore.Core.Services.Transport.Tcp.TcpCommand
@@ -268,8 +276,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddUnwrapper
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 46
@@ -277,7 +285,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: 'protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, IPrincipal, string, string, T> unwrapper, ClientVersion version)where T : Message'
+    content: >-
+      protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, IPrincipal, string, string, T> unwrapper, ClientVersion version)
+          where T : Message
     parameters:
     - id: command
       type: EventStore.Core.Services.Transport.Tcp.TcpCommand
@@ -310,8 +320,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AddUnwrapper
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 51
@@ -319,7 +329,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: 'protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, IPrincipal, string, string, TcpConnectionManager, T> unwrapper, ClientVersion version)where T : Message'
+    content: >-
+      protected void AddUnwrapper<T>(TcpCommand command, Func<TcpPackage, IEnvelope, IPrincipal, string, string, TcpConnectionManager, T> unwrapper, ClientVersion version)
+          where T : Message
     parameters:
     - id: command
       type: EventStore.Core.Services.Transport.Tcp.TcpCommand
@@ -352,8 +364,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WrapMessage
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 59
@@ -391,8 +403,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UnwrapPackage
     path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpDispatcher.cs
     startLine: 79

@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Bus/ISubscriber.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ISubscriber
     path: ../EventStore/src/EventStore.Core/Bus/ISubscriber.cs
     startLine: 5
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Bus/ISubscriber.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Subscribe
     path: ../EventStore/src/EventStore.Core/Bus/ISubscriber.cs
     startLine: 7
@@ -63,7 +63,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: 'void Subscribe<T>(IHandle<T> handler)where T : Message'
+    content: >-
+      void Subscribe<T>(IHandle<T> handler)
+          where T : Message
     parameters:
     - id: handler
       type: EventStore.Core.Bus.IHandle{{T}}
@@ -88,8 +90,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Bus/ISubscriber.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Unsubscribe
     path: ../EventStore/src/EventStore.Core/Bus/ISubscriber.cs
     startLine: 8
@@ -97,7 +99,9 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: 'void Unsubscribe<T>(IHandle<T> handler)where T : Message'
+    content: >-
+      void Unsubscribe<T>(IHandle<T> handler)
+          where T : Message
     parameters:
     - id: handler
       type: EventStore.Core.Bus.IHandle{{T}}

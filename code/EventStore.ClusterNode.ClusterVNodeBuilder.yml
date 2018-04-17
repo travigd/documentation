@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ClusterVNodeBuilder
     path: ../EventStore/src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
     startLine: 9
@@ -103,6 +103,7 @@ items:
   - EventStore.Core.VNodeBuilder._index
   - EventStore.Core.VNodeBuilder._skipIndexVerify
   - EventStore.Core.VNodeBuilder._indexCacheDepth
+  - EventStore.Core.VNodeBuilder._optimizeIndexMerge
   - EventStore.Core.VNodeBuilder._unsafeIgnoreHardDelete
   - EventStore.Core.VNodeBuilder._unsafeDisableFlushToDisk
   - EventStore.Core.VNodeBuilder._betterOrdering
@@ -184,6 +185,7 @@ items:
   - EventStore.Core.VNodeBuilder.EnableHistograms
   - EventStore.Core.VNodeBuilder.WithIndexVerification(System.Boolean)
   - EventStore.Core.VNodeBuilder.WithIndexCacheDepth(System.Int32)
+  - EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
   - EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete
   - EventStore.Core.VNodeBuilder.WithUnsafeDisableFlushToDisk
   - EventStore.Core.VNodeBuilder.WithBetterOrdering
@@ -229,8 +231,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
     startLine: 11
@@ -259,8 +261,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AsSingleNode
     path: ../EventStore/src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
     startLine: 19
@@ -296,8 +298,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AsClusterMember
     path: ../EventStore/src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
     startLine: 29
@@ -336,8 +338,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: SetUpProjectionsIfNeeded
     path: ../EventStore/src/EventStore.ClusterNode/ClusterVNodeBuilder.cs
     startLine: 35
@@ -836,6 +838,13 @@ references:
   name: _indexCacheDepth
   nameWithType: VNodeBuilder._indexCacheDepth
   fullName: EventStore.Core.VNodeBuilder._indexCacheDepth
+- uid: EventStore.Core.VNodeBuilder._optimizeIndexMerge
+  commentId: F:EventStore.Core.VNodeBuilder._optimizeIndexMerge
+  parent: EventStore.Core.VNodeBuilder
+  isExternal: false
+  name: _optimizeIndexMerge
+  nameWithType: VNodeBuilder._optimizeIndexMerge
+  fullName: EventStore.Core.VNodeBuilder._optimizeIndexMerge
 - uid: EventStore.Core.VNodeBuilder._unsafeIgnoreHardDelete
   commentId: F:EventStore.Core.VNodeBuilder._unsafeIgnoreHardDelete
   parent: EventStore.Core.VNodeBuilder
@@ -3452,6 +3461,45 @@ references:
     name: Int32
     nameWithType: Int32
     fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+  commentId: M:EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+  parent: EventStore.Core.VNodeBuilder
+  isExternal: true
+  name: WithIndexMergeOptimization(Boolean)
+  nameWithType: VNodeBuilder.WithIndexMergeOptimization(Boolean)
+  fullName: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+  spec.csharp:
+  - uid: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+    name: WithIndexMergeOptimization
+    nameWithType: VNodeBuilder.WithIndexMergeOptimization
+    fullName: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization(System.Boolean)
+    name: WithIndexMergeOptimization
+    nameWithType: VNodeBuilder.WithIndexMergeOptimization
+    fullName: EventStore.Core.VNodeBuilder.WithIndexMergeOptimization
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
     isExternal: true
   - name: )
     nameWithType: )

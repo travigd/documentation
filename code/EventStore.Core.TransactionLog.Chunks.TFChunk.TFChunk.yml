@@ -15,13 +15,14 @@ items:
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CreateNew(System.String,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CreateWithHeader(System.String,EventStore.Core.TransactionLog.Chunks.ChunkHeader,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CurrentChunkVersion
+  - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Dispose
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ExistsAt(System.Int64)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FileName
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FileSize
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Finalize
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Flush
-  - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32)
+  - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32,System.Boolean)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromOngoingFile(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.GetAlignedSize(System.Int32)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.IsCached
@@ -29,6 +30,7 @@ items:
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.LogicalDataSize
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.MarkForDeletion
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.MidpointsDepth
+  - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.PhysicalDataSize
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.RawWriterPosition
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ReadBufferSize
@@ -55,8 +57,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TFChunk
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 21
@@ -96,8 +98,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CurrentChunkVersion
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 28
@@ -129,8 +131,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WriteBufferSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 29
@@ -162,8 +164,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReadBufferSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 30
@@ -195,8 +197,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IsReadOnly
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 34
@@ -230,8 +232,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: IsCached
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 35
@@ -265,8 +267,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: LogicalDataSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 38
@@ -300,8 +302,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: PhysicalDataSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 40
@@ -335,8 +337,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: FileName
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 42
@@ -370,8 +372,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: FileSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 43
@@ -405,8 +407,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ChunkHeader
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 45
@@ -440,8 +442,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ChunkFooter
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 46
@@ -475,8 +477,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MidpointsDepth
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 47
@@ -508,8 +510,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: RawWriterPosition
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 49
@@ -543,8 +545,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Finalize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 114
@@ -559,22 +561,22 @@ items:
   - protected
   modifiers.vb:
   - Protected
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32)
-  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32)
-  id: FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32)
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32,System.Boolean)
+  id: FromCompletedFile(System.String,System.Boolean,System.Boolean,System.Int32,System.Boolean)
   parent: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
   langs:
   - csharp
   - vb
-  name: FromCompletedFile(String, Boolean, Boolean, Int32)
-  nameWithType: TFChunk.FromCompletedFile(String, Boolean, Boolean, Int32)
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String, System.Boolean, System.Boolean, System.Int32)
+  name: FromCompletedFile(String, Boolean, Boolean, Int32, Boolean)
+  nameWithType: TFChunk.FromCompletedFile(String, Boolean, Boolean, Int32, Boolean)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String, System.Boolean, System.Boolean, System.Int32, System.Boolean)
   type: Method
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: FromCompletedFile
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 119
@@ -582,7 +584,7 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
   syntax:
-    content: public static TFChunk FromCompletedFile(string filename, bool verifyHash, bool unbufferedRead, int initialReaderCount)
+    content: public static TFChunk FromCompletedFile(string filename, bool verifyHash, bool unbufferedRead, int initialReaderCount, bool optimizeReadSideCache = false)
     parameters:
     - id: filename
       type: System.String
@@ -592,9 +594,11 @@ items:
       type: System.Boolean
     - id: initialReaderCount
       type: System.Int32
+    - id: optimizeReadSideCache
+      type: System.Boolean
     return:
       type: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
-    content.vb: Public Shared Function FromCompletedFile(filename As String, verifyHash As Boolean, unbufferedRead As Boolean, initialReaderCount As Integer) As TFChunk
+    content.vb: Public Shared Function FromCompletedFile(filename As String, verifyHash As Boolean, unbufferedRead As Boolean, initialReaderCount As Integer, optimizeReadSideCache As Boolean = False) As TFChunk
   overload: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile*
   modifiers.csharp:
   - public
@@ -616,8 +620,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: FromOngoingFile
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 135
@@ -663,8 +667,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CreateNew
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 156
@@ -716,8 +720,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CreateWithHeader
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 171
@@ -765,8 +769,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: VerifyFileHash
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 511
@@ -795,8 +799,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CacheInMemory
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 594
@@ -825,8 +829,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: UnCacheFromMemory
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 693
@@ -855,8 +859,8 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ExistsAt
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 715
@@ -876,6 +880,66 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt
+  id: OptimizeExistsAt
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
+  langs:
+  - csharp
+  - vb
+  name: OptimizeExistsAt()
+  nameWithType: TFChunk.OptimizeExistsAt()
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: OptimizeExistsAt
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    startLine: 720
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
+  syntax:
+    content: public void OptimizeExistsAt()
+    content.vb: Public Sub OptimizeExistsAt
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt
+  id: DeOptimizeExistsAt
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
+  langs:
+  - csharp
+  - vb
+  name: DeOptimizeExistsAt()
+  nameWithType: TFChunk.DeOptimizeExistsAt()
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: DeOptimizeExistsAt
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    startLine: 726
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
+  syntax:
+    content: public void DeOptimizeExistsAt()
+    content.vb: Public Sub DeOptimizeExistsAt
+  overload: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadAt(System.Int64)
   commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadAt(System.Int64)
   id: TryReadAt(System.Int64)
@@ -890,11 +954,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadAt
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 720
+    startLine: 732
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -925,11 +989,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadFirst
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 725
+    startLine: 737
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -957,11 +1021,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadClosestForward
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 730
+    startLine: 742
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -992,11 +1056,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadLast
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 735
+    startLine: 747
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1024,11 +1088,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryReadClosestBackward
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 740
+    startLine: 752
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1059,11 +1123,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryAppend
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 745
+    startLine: 757
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1094,11 +1158,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: TryAppendRawData
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 781
+    startLine: 793
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1132,11 +1196,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Flush
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 805
+    startLine: 817
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1162,11 +1226,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Complete
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 814
+    startLine: 826
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1192,11 +1256,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CompleteScavenge
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 821
+    startLine: 833
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1228,11 +1292,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: CompleteRaw
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 843
+    startLine: 855
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1258,11 +1322,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Dispose
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 952
+    startLine: 964
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1288,11 +1352,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: MarkForDeletion
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 959
+    startLine: 971
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1318,11 +1382,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: GetAlignedSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 1002
+    startLine: 1014
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1355,11 +1419,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: WaitForDestroy
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 1037
+    startLine: 1049
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1388,11 +1452,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: AcquireReader
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 1095
+    startLine: 1107
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1420,11 +1484,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ReleaseReader
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 1120
+    startLine: 1132
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -1453,11 +1517,11 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: ToString
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-    startLine: 1129
+    startLine: 1141
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
@@ -2010,6 +2074,18 @@ references:
   name: ExistsAt
   nameWithType: TFChunk.ExistsAt
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ExistsAt
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt
+  isExternal: false
+  name: OptimizeExistsAt
+  nameWithType: TFChunk.OptimizeExistsAt
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt*
+  commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt
+  isExternal: false
+  name: DeOptimizeExistsAt
+  nameWithType: TFChunk.DeOptimizeExistsAt
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadAt*
   commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadAt
   isExternal: false

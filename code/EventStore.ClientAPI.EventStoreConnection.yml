@@ -6,6 +6,7 @@ items:
   parent: EventStore.ClientAPI
   children:
   - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,EventStore.ClientAPI.ClusterSettings,System.String)
+  - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,EventStore.ClientAPI.IEndPointDiscoverer,System.String)
   - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,IPEndPoint,System.String)
   - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.String)
   - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,Uri,System.String)
@@ -23,8 +24,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: EventStoreConnection
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 13
@@ -61,8 +62,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 21
@@ -105,8 +106,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 32
@@ -149,8 +150,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 44
@@ -196,8 +197,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 65
@@ -240,8 +241,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 80
@@ -288,8 +289,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 190
@@ -332,8 +333,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 202
@@ -379,8 +380,8 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/EventStoreConnection.cs
-      branch: docs
-      repo: https://github.com/ChrisChinchilla/EventStore.git
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
     startLine: 217
@@ -405,6 +406,53 @@ items:
       type: EventStore.ClientAPI.IEventStoreConnection
       description: a new <xref href="EventStore.ClientAPI.IEventStoreConnection" data-throw-if-not-resolved="false"></xref>
     content.vb: Public Shared Function Create(connectionSettings As ConnectionSettings, clusterSettings As ClusterSettings, connectionName As String = Nothing) As IEventStoreConnection
+  overload: EventStore.ClientAPI.EventStoreConnection.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,EventStore.ClientAPI.IEndPointDiscoverer,System.String)
+  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,EventStore.ClientAPI.IEndPointDiscoverer,System.String)
+  id: Create(EventStore.ClientAPI.ConnectionSettings,EventStore.ClientAPI.IEndPointDiscoverer,System.String)
+  parent: EventStore.ClientAPI.EventStoreConnection
+  langs:
+  - csharp
+  - vb
+  name: Create(ConnectionSettings, IEndPointDiscoverer, String)
+  nameWithType: EventStoreConnection.Create(ConnectionSettings, IEndPointDiscoverer, String)
+  fullName: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings, EventStore.ClientAPI.IEndPointDiscoverer, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClientAPI/EventStoreConnection.cs
+      branch: release-v4.1.1
+      repo: https://github.com/EventStore/EventStore.git
+    id: Create
+    path: ../EventStore/src/EventStore.ClientAPI/EventStoreConnection.cs
+    startLine: 240
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nCreates a new <xref href=\"EventStore.ClientAPI.IEventStoreConnection\" data-throw-if-not-resolved=\"false\"></xref> using specific <xref href=\"EventStore.ClientAPI.ConnectionSettings\" data-throw-if-not-resolved=\"false\"></xref> and a custom-defined <xref href=\"EventStore.ClientAPI.IEndPointDiscoverer\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: public static IEventStoreConnection Create(ConnectionSettings connectionSettings, IEndPointDiscoverer endPointDiscoverer, string connectionName = null)
+    parameters:
+    - id: connectionSettings
+      type: EventStore.ClientAPI.ConnectionSettings
+      description: The <xref href="EventStore.ClientAPI.ConnectionSettings" data-throw-if-not-resolved="false"></xref> to apply to the new connection
+    - id: endPointDiscoverer
+      type: EventStore.ClientAPI.IEndPointDiscoverer
+      description: The custom-defined <xref href="EventStore.ClientAPI.IEndPointDiscoverer" data-throw-if-not-resolved="false"></xref> to use for node discovery
+    - id: connectionName
+      type: System.String
+      description: Optional name of connection (will be generated automatically, if not provided)
+    return:
+      type: EventStore.ClientAPI.IEventStoreConnection
+      description: a new <xref href="EventStore.ClientAPI.IEventStoreConnection" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function Create(connectionSettings As ConnectionSettings, endPointDiscoverer As IEndPointDiscoverer, connectionName As String = Nothing) As IEventStoreConnection
   overload: EventStore.ClientAPI.EventStoreConnection.Create*
   modifiers.csharp:
   - public
@@ -473,3 +521,10 @@ references:
   name: ClusterSettings
   nameWithType: ClusterSettings
   fullName: EventStore.ClientAPI.ClusterSettings
+- uid: EventStore.ClientAPI.IEndPointDiscoverer
+  commentId: T:EventStore.ClientAPI.IEndPointDiscoverer
+  parent: EventStore.ClientAPI
+  isExternal: false
+  name: IEndPointDiscoverer
+  nameWithType: IEndPointDiscoverer
+  fullName: EventStore.ClientAPI.IEndPointDiscoverer
