@@ -213,9 +213,9 @@ For example:
 
 ## Getting information for all subscriptions
 
-| URI              | Supported Content Types | Method |
-| ---------------- | ----------------------- | ------ |
-| `/subscriptions` | `application/json`      | GET    |
+| URI              | Method |
+| ---------------- | ------ |
+| `/subscriptions` | GET    |
 
 ### Response
 
