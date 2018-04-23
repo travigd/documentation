@@ -53,7 +53,7 @@ The most common mechanism for a slot becoming open would be that client A(or B) 
 
 ## Parked Messages
 
-One option that can return a "not acknowledged" is that the message is not be able to be processed on retries and should be parked (this is also known as a dead letter queue). Messages can also be parked due to them being retried more than a certain number of times.
+One option that can return a "not acknowledged" is that the message is unable to be processed on retries and should be parked (this is also known as a dead letter queue). Messages can also be parked due to them being retried more than a certain number of times.
 
 For every subscription group there is another stream known as the "parked message queue". You can replay the parked message queue at any point to the subscription group either via the UI or via the restful interface for competing consumers. For more information please see version specific information<!-- how can this be more useful -->. It is important in a production environment to monitor the count of parked messages as these represent messages that were **not** delivered to the subscriber group as there were failures.
 
