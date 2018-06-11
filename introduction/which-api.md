@@ -28,6 +28,7 @@ A low level protocol is offered in the form of an asynchronous TCP protocol that
 -   [Python](https://github.com/madedotcom/atomicpuppy)
 -   [Java8](https://github.com/msemys/esjc)
 -   [Maven plugin](https://github.com/fuinorg/event-store-maven-plugin)
+-   [Go](https://github.com/jdextraze/go-gesclient)
 
 ## HTTP
 
