@@ -1,16 +1,12 @@
 ---
 outputFileName: index.html
+sinceVersion: 2.0.1
 ---
 
----
-uid: eventstore.org/Event Store HTTP API/4.0.2/deleteStream
----
 # Deleting a Stream
 
 To delete a stream over the Atom interface, issue a `DELETE` request to the resource.
 
-> [!NOTE]
-> The documentation here applies to versions after 2.0.1. Prior to 2.0.1 only hard deletes were available and the system uses that behavior.
 
 By default when you delete a stream it is soft deleted. This means you can recreate it later if you want to by setting the `$tb` metadata section as the client API does <!-- TODO: Link? -->. If you try to `GET` a soft deleted stream you will receive a 404 response:
 

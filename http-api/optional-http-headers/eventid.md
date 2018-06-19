@@ -1,12 +1,9 @@
 ---
 outputFileName: index.html
+sinceVersion: 3.0.0
 ---
 
 # Optional HTTP Headers: EventID
-
-> [!NOTE]
-> This event is only available in version 3.0.0 or higher of Event Store.
-
 
 When writing to a stream and not using the `application/vnd.eventstore.events+json/+xml` media type it is necessary that you specify an event ID with the event that you are posting. This is not required with the custom media type as it is also specified within the format itself (there is `EventId` on each entry in the format). `EventId` is used for idempotency within Event Store.
 

@@ -1,11 +1,9 @@
 ---
 outputFileName: index.html
+sinceVersion: 3.0.0
 ---
 
 # Optional HTTP Headers: EventType
-
-> [!NOTE]
-> This event is only available in version 3.0.0 or higher of Event Store.
 
 When writing to a stream and not using the `application/vnd.eventstore.events+json/+xml` media type it is necessary that you specify an event type with the event that you are posting. This is not required with the custom media type as it is also specified within the format itself.
 

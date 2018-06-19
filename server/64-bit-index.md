@@ -1,10 +1,11 @@
 ---
 outputFileName: index.html
+sinceVersion: 3.9.0
 ---
 
 # Rebuilding Indexes
 
-As of version 3.9.0 all future indexes will use 64-bit hashes instead of 32-bit hashes. The system will automatically transition from 32-bit to 64-bit by writing all new indexes as 64-bit indexes during the merge process.
+As of version 3.9.0 all future indexes use 64-bit hashes instead of 32-bit hashes. The system automatically transitions from 32-bit to 64-bit by writing all new indexes as 64-bit indexes during the merge process.
 
 If you prefer to use only 64-bit indexes immediately you can force this. For a small database, delete the _index_ <!-- TODO: Which is where?--> folder and let it rebuild (this might take a while)
 
