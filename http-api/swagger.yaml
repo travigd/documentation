@@ -9,9 +9,72 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 host: eventstore.org
+securityDefinitions:
+  basicAuth:
+    type: basic
 schemes:
   - https
 paths:
+  /admin/shutdown:
+    post:
+      description: Issues a shut down command to a node.
+      summary: Shutdown a node
+      tags:
+      - Admin
+      operationId: Shutdown a node
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: OK
+      security:
+        - basicAuth: []
+  /admin/scavenge:
+    post:
+      description: Scavenge reclaims disk space by rewriting database chunks, minus the events to delete, and then deleting the old chunks.
+      summary: Scavenge a node
+      tags:
+      - Admin
+      operationId: Scavenge a node
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: OK
+      security:
+        - basicAuth: []
+  /info:
+    get:
+      description: Returns information about node.
+      summary: Get info for node
+      tags:
+      - Info
+      operationId: Get info for node
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: OK
+      security:
+        - basicAuth: []
+  /info/options:
+    get:
+      description: Returns configuration details about node.
+      summary: Get configuration for node
+      tags:
+      - Info
+      operationId: Get configuration for node
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: OK
+      security:
+        - basicAuth: []
   '/streams/{stream}':
     get:
       summary: Reads a stream
@@ -1839,6 +1902,14 @@ definitions:
       readRole: readRole
       metaReadRole: metaReadRole
 tags:
+  - name: Admin
+    description: Endpoints for Admin operations
+    externalDocs:
+      url: 'http://docs.my-api.com/pet-operations.htm'
+  - name: Info
+    description: Endpoints for Info operations
+    externalDocs:
+      url: 'http://docs.my-api.com/pet-operations.htm'
   - name: Streams
     description: Endpoints for Stream operations
     externalDocs:
