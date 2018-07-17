@@ -12,7 +12,7 @@
     <title>Step 1 - Install, run, and write your first event | Event Store </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Step 1 - Install, run, and write your first event | Event Store ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.37.0.0">
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
     
     <link rel="shortcut icon" href="../assets/favicon.ico">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../styles/main.css">
       <link rel="stylesheet" href="../styles/main12.css">
         <link rel="stylesheet" href="../styles/print.css" media="print">
-              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
               <style media="print">
                   pre {
                       white-space: pre-wrap;
@@ -91,9 +91,11 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="step-1---install-run-and-write-your-first-event">Step 1 - Install, run, and write your first event</h1>
 
-<p>This getting started guide shows you how to get started with Event Store using the Atom publishing protocol as the primary interface. This first step covers installation and running Event Store, and writing your first event.</p>
-<div class="NOTE"><h5>Note</h5><p>The described is for development and evaluation of Event Store. It does not describe a production setup.</p>
+<p>This getting started guide shows you how to get started with Event Store using the Atom publishing protocol as the primary interface. </p>
+<div class="NOTE"><h5>Note</h5><p>The described is for development and evaluation of Event Store. It does not describe a production setup. The HTTP examples use cURL, but you can read Atom feeds with a wide variety of applications and languages.</p>
 </div>
+<p>This first step covers installation and running Event Store, and writing your first event.</p>
+<h2 id="install-event-store-server">Install Event Store Server</h2>
 <div class="tabGroup" id="tabgroup_dfgfloIX5I">
 <ul role="tablist">
 <li role="presentation">
@@ -131,7 +133,7 @@
 </code></pre><p>When you install the Event Store package, the service is not started by default. This is to allow you to change configuration, located at <em>/etc/eventstore/eventstore.conf</em> and to prevent creating a default database.</p>
 <p>In all other cases you can run the Event Store binary or use our <em>run-node.sh</em> shell script which exports the environment variable <code>LD_LIBRARY_PATH</code> to include the installation path of Event Store, which is necessary if you are planning to use projections.</p>
 <pre><code class="lang-bash">./run-node.sh --db ./ESData
-</code></pre><div class="NOTE"><h5>Note</h5><p>We recommend that when using Linux you set the &#39;open file limit&#39; to a high number. The precise value depends on your usecase, but at minimum, between <code>30,000</code> and <code>60,000</code>.</p>
+</code></pre><div class="NOTE"><h5>Note</h5><p>We recommend that when using Linux you set the &#39;open file limit&#39; to a high number. The precise value depends on your use case, but at least between <code>30,000</code> and <code>60,000</code>.</p>
 </div>
 </section>
 <section id="tabpanel_dfgfloIX5I_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
@@ -139,51 +141,67 @@
 <pre><code class="lang-bash">docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
 </code></pre></section>
 </div>
-<p>Event Store should now be running, and you can open <a href="http://127.0.0.1:2113/">http://127.0.0.1:2113/</a> to see the admin web interface. The console ask for a username and password. The defaults are <code>admin:changeit</code>.</p>
+<div class="NEXT"><h5>NEXT</h5><p>Read the <a href="../server/index.html">server</a> section of our documentation for more details on setting up and running the Event Store server.</p>
+</div>
+<h2 id="interacting-with-an-event-store-server">Interacting with an Event Store Server</h2>
+<p>There are three ways to interact with Event Store:</p>
+<ol>
+<li>With the admin web interface (more details link).</li>
+<li><a href="../http-api/index.html">With the HTTP API</a>.</li>
+<li>With a Client API, our documentation covers the <a href="../dotnet-api/index.html">.NET API</a>, but <a href="which-api-sdk/index.html">others</a> are available.</li>
+</ol>
+<p>To use a client API you need to install it first, <a href="https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/">install the .NET Core client API</a> using your preferred method, add it to your project and require it in your code.</p>
+<pre><code class="lang-shell">dotnet add package EventStore.Client
+</code></pre><pre><code class="lang-csharp">using EventStore.ClientAPI;
+</code></pre><h2 id="connecting-to-event-store">Connecting to Event Store</h2>
+<p>If you want to use the admin web interface or the HTTP API, then you use port <code>2113</code>, for example <a href="http://127.0.0.1:2113/">http://127.0.0.1:2113/</a> in your web browser, or <code>curl -i http://127.0.0.1:2113</code> for the HTTP API.</p>
+<div class="TIP"><h5>Tip</h5><p>The default username and password is <code>admin:changeit</code></p>
+</div>
 <p><img src="../images/es-web-admin-dashboard.png" alt="The Web Admin Dashboard"></p>
+<p>If you want to use the .NET API, then you use port <code>1113</code> and create a connection, giving it a name:</p>
+<pre><code class="lang-csharp" name="getting-started-connection">var conn = EventStoreConnection.Create(new Uri(&quot;tcp://admin:changeit@localhost:1113&quot;),
+    &quot;InputFromFileConsoleApp&quot;);
+</code></pre><div class="NEXT"><h5>NEXT</h5><p>In this example we used the <a href="#EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)"><code>EventStoreConnection.Create()</code></a> overloaded method but <a href="#EventStore.ClientAPI.EventStoreConnection">others are available</a>.</p>
+</div>
 <h2 id="writing-events-to-an-event-stream">Writing Events to an Event Stream</h2>
-<p>Event Store operates on a concept of Event Streams, and the first operation we look at in this guide is how to write to a stream. If you are Event Sourcing a domain model, a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, so create as many as you need.</p>
+<p>Event Store operates on a concept of Event Streams, and the first operation we look at is how to write to a stream. If you are Event Sourcing a domain model, a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, so create as many as you need.</p>
+<p>If you post to a stream that doesn’t exist, Event Store creates it before adding the events.</p>
 <p>To begin, open a text editor, copy and paste the following event definition, and save it as <em>event.json</em>.</p>
 <pre><code class="lang-json" name="getting-started-write-event-json" title="The contents of event.json">[
   {
     &quot;eventId&quot;: &quot;fbf4a1a1-b4a3-4dfe-a01f-ec52c34e16e4&quot;,
     &quot;eventType&quot;: &quot;event-type&quot;,
     &quot;data&quot;: {
-
       &quot;a&quot;: &quot;1&quot;
     }
   }
 ]
-</code></pre><p>To write the event to a stream, issue the following cURL command.</p>
+</code></pre><p>You can write events using the admin web interface by clicking the <em>Stream Browser</em> tab, the <em>Add Event</em> button, filling in the form with relevant values and clicking the <em>Add</em> button at the bottom of the page.</p>
+<p><img src="../images/getting-started-add-event.gif" alt="Creating an event with the web admin interface"></p>
 <div class="tabGroup" id="tabgroup_dfgfloIX5I-1">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_dfgfloIX5I-1_tabid-4" role="tab" aria-controls="tabpanel_dfgfloIX5I-1_tabid-4" data-tab="tabid-4" tabindex="0" aria-selected="true">Request</a>
+<a href="#tabpanel_dfgfloIX5I-1_tabid-4" role="tab" aria-controls="tabpanel_dfgfloIX5I-1_tabid-4" data-tab="tabid-4" tabindex="0" aria-selected="true">HTTP API</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_dfgfloIX5I-1_tabid-5" role="tab" aria-controls="tabpanel_dfgfloIX5I-1_tabid-5" data-tab="tabid-5" tabindex="-1">Response</a>
+<a href="#tabpanel_dfgfloIX5I-1_tabid-5" role="tab" aria-controls="tabpanel_dfgfloIX5I-1_tabid-5" data-tab="tabid-5" tabindex="-1">.NET API</a>
 </li>
 </ul>
 <section id="tabpanel_dfgfloIX5I-1_tabid-4" role="tabpanel" data-tab="tabid-4">
+<p>To use the HTTP API, use the following cURL command, passing the name of the stream and the events to write:</p>
 <pre><code class="lang-bash" name="getting-started-write-event-request">curl -i -d &quot;@event.json&quot; &quot;http://127.0.0.1:2113/streams/newstream&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;
-</code></pre></section>
+</code></pre><div class="NEXT"><h5>NEXT</h5><p><a href="../http-api/creating-a-stream/index.html">Read this guide</a> for more information on how to write events with the HTTP API.</p>
+</div>
+<div class="NOTE"><h5>Note</h5><p>You can also post events to the HTTP API as XML, by changing the <code>Content-Type</code> header to <code>XML</code>.</p>
+</div>
+</section>
 <section id="tabpanel_dfgfloIX5I-1_tabid-5" role="tabpanel" data-tab="tabid-5" aria-hidden="true" hidden="hidden">
-<pre><code class="lang-http" name="getting-started-write-event-response">HTTP/1.1 201 Created
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
-Access-Control-Allow-Origin: *
-Location: http://127.0.0.1:2113/streams/newstream/0
-Content-Type: text/plain; charset: utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Fri, 28 Jun 2013 12:17:59 GMT
-Content-Length: 0
-Keep-Alive: timeout=15,max=100
-</code></pre></section>
+<p>To use the .NET API, use the following method, passing the name of the stream, the version, and the events to write:</p>
+<pre><code class="lang-csharp" name="getting-started-write-event-request">conn.AppendToStreamAsync(streamName, ExpectedVersion.Any, eventData).Wait();
+</code></pre><div class="NEXT"><h5>NEXT</h5><p><a href="../http-api/writing-to-a-stream/index.html">Read this guide</a> for more information on how to write events with the .NET API. We don&#39;t cover version checking in this guide, but you can read more in <a href="../dotnet-api/optimistic-concurrency-and-idempotence/index.html">the optimistic concurrency guide</a>.</p>
 </div>
-<div class="NOTE"><h5>Note</h5><p>You can also post events as XML, by changing the <code>Content-Type</code> header to <code>XML</code>.</p>
+</section>
 </div>
-<p><img src="../images/es-web-admin-stream-browser.png" alt="The Web Admin Dashboard"></p>
-<p>Click the <em>Stream Browser</em> tab in the admin web interface after running this command and you see the stream you created. If you post to a stream that doesn’t exist, Event Store creates it. Click a stream to see an HTML representation of it.</p>
 <h2 id="next-step">Next Step</h2>
 <p>In this first part of our getting started guide you learned how to install and run Event Store and write your first event. The next part covers reading events from a stream.</p>
 <ul>

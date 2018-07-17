@@ -12,7 +12,7 @@
     <title>Optional HTTP Headers: LongPoll | Event Store </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Optional HTTP Headers: LongPoll | Event Store ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.37.0.0">
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
     
     <link rel="shortcut icon" href="../../../assets/favicon.ico">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../../styles/main.css">
       <link rel="stylesheet" href="../../../styles/main12.css">
         <link rel="stylesheet" href="../../../styles/print.css" media="print">
-              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
               <style media="print">
                   pre {
                       white-space: pre-wrap;
@@ -92,9 +92,6 @@
 <h1 id="optional-http-headers-longpoll">Optional HTTP Headers: LongPoll</h1>
 
 <p>You use the <code>ES-LongPoll</code> header to instruct the server that when on the head link of a stream and no data is available the server should wait a period of time to see if data becomes available.</p>
-<div class="WARNING"><h5>Warning</h5><p>Version 2.1 and higher support the <code>ES-LongPoll</code> header. Lower versions will ignore the header.</p>
-<!-- TODO: version 2.1 of what? -->
-</div>
 <p>You can use this to provide lower latency for Atom clients instead of client initiated polling. Instead of the client polling every say 5 seconds to get data from the feed the client would send up a request with <code>ES-LongPoll: 15</code>. This instructs the backend to wait for up to 15 seconds before returning with no result. The latency is therefore lowered from the poll interval to about 10ms from the time an event is written until the time the HTTP connection is notified.</p>
 <p>You can see the use of the <code>ES-LongPoll</code> header in the following cURL command.</p>
 <p>First go to the head of the stream (in this case we are using the default chat of the chat sample).</p>
@@ -251,6 +248,7 @@ Keep-Alive: timeout=15,max=100
             <div class="sideaffix">
             <!-- TODO: Refactor into partial -->
             <div class="sinceversion">
+            <b>Since version:</b> 2.1.0
             </div>
               <div class="contribution">
                 <ul class="nav">

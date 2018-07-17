@@ -12,7 +12,7 @@
     <title>Step 3 - Projections | Event Store </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Step 3 - Projections | Event Store ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.37.0.0">
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
     
     <link rel="shortcut icon" href="../../assets/favicon.ico">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../styles/main.css">
       <link rel="stylesheet" href="../../styles/main12.css">
         <link rel="stylesheet" href="../../styles/print.css" media="print">
-              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
               <style media="print">
                   pre {
                       white-space: pre-wrap;
@@ -91,10 +91,10 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="step-3---projections">Step 3 - Projections</h1>
 
-<p>This getting started guide shows you how to get started with Event Store using the Atom publishing protocol as the primary interface. This second step covers projections, used to give you continuous queries of your data.</p>
-<p>When running a projection you can choose whether the query should run and give you all results present or whether the query should continue running into the future finding new results as they happen and updating its result set.</p>
-<div class="NOTE"><h5>Note</h5><p>The described is for development and evaluation of Event Store. It does not describe a production setup.</p>
+<p>This getting started guide shows you how to get started with Event Store using the Atom publishing protocol as the primary interface. </p>
+<div class="NOTE"><h5>Note</h5><p>The described is for development and evaluation of Event Store. It does not describe a production setup. The HTTP examples use cURL, but you can read Atom feeds with a wide variety of applications and languages.</p>
 </div>
+<p>When running a projection you can choose whether the query should run and give you all results present or whether the query should continue running into the future finding new results as they happen and updating its result set.</p>
 <h2 id="setting-up-projections">Setting up Projections</h2>
 <p>You enable projections with the command line argument <code>--run-projections</code>. For example, the command below enables all projection modes (system and user defined):</p>
 <div class="TIP"><h5>Tip</h5><p><a href="../../server/command-line-arguments/index.html#projections-options">Read this guide</a> for all the possible parameter values.</p>
@@ -166,12 +166,22 @@
 <h2 id="add-sample-data">Add Sample Data</h2>
 <p>Download the following files that contain sample data used throughout this step of the getting started guide.</p>
 <ul>
-<li><a href="../../code-snippets/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json</a></li>
-<li><a href="../../code-snippets/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json</a></li>
-<li><a href="../../code-snippets/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json</a></li>
-<li><a href="../../code-snippets/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json</a></li>
+<li><a href="../../code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json</a></li>
+<li><a href="../../code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json</a></li>
+<li><a href="../../code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json</a></li>
+<li><a href="../../code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json">shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json</a></li>
 </ul>
-<p>Add the sample data to streams:</p>
+<p>Add the sample data to four different streams:</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-2_tabid-http-api" role="tab" aria-controls="tabpanel_-zRZHSVchy-2_tabid-http-api" data-tab="tabid-http-api" tabindex="0" aria-selected="true">HTTP API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-2_tabid-net-api" role="tab" aria-controls="tabpanel_-zRZHSVchy-2_tabid-net-api" data-tab="tabid-net-api" tabindex="-1">.NET API</a>
+</li>
+</ul>
+<section id="tabpanel_-zRZHSVchy-2_tabid-http-api" role="tabpanel" data-tab="tabid-http-api">
 <pre><code class="lang-bash" name="getting-started-projections-add-sample-data">curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json&quot; &quot;http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;
 
 curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json&quot; &quot;http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;
@@ -179,13 +189,24 @@ curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json&quot; &
 curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json&quot; &quot;http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;
 
 curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json&quot; &quot;http://127.0.0.1:2113/streams/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167&quot; -H &quot;Content-Type:application/vnd.eventstore.events+json&quot;
-</code></pre><h2 id="writing-your-first-projection">Writing your first projection</h2>
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-2_tabid-net-api" role="tabpanel" data-tab="tabid-net-api" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-add-sample-data">foreach (string f in Directory.GetFiles(&quot;../&quot;, &quot;shoppingCart-*&quot;))
+{
+    var streamName = Path.GetFileNameWithoutExtension(f);
+    conn.AppendToStreamAsync(streamName, ExpectedVersion.Any, eventData).Wait();
+}
+</code></pre></section>
+</div>
+<div class="NOTE"><h5>Note</h5><p>While it&#39;s not the fastest method, you can also use the web admin interface for creating the streams, and all the tasks in this step, as we saw in <a href="../index.html">step 1</a>.</p>
+</div>
+<h2 id="writing-your-first-projection">Writing your first projection</h2>
 <div class="TIP"><h5>Tip</h5><p><a href="../../projections/user-defined-projections/index.html">Read this guide</a> to find out more about the user defined projection&#39;s API.</p>
 </div>
 <p>The projection counts the number of &#39;XBox One S&#39;s that customers added to their shopping carts.</p>
-<p>A Projection starts with a selector, in this case <code>fromAll()</code>. Another possibility is <code>fromCategory({category}</code> which this guide discusses later, but for now, <code>fromAll</code> should do.</p>
-<p>The second part of a projection is a set of filters. There is a special filter called <code>$init</code> that sets up initial state. You want to start a counter from 0 and each time an <code>ItemAdded</code> event is observed for an &#39;Xbox One S&#39;, increment the counter.</p>
-<p>Here is the projection so far:</p>
+<p>A Projection starts with a selector, in this case <code>fromAll()</code>. Another possibility is <code>fromCategory({category}</code> which this step discusses later, but for now, <code>fromAll</code> should do.</p>
+<p>The second part of a projection is a set of filters. There is a special filter called <code>$init</code> that sets up initial state. You want to start a counter from 0 and each time Event Store observes an <code>ItemAdded</code> event for an &#39;Xbox One S&#39;, increment the counter.</p>
+<p>Here is the projection, you can download it as a file <a href="../../code-examples/getting-started/xbox-one-s-counter.json">here</a>:</p>
 <pre><code class="lang-json" name="getting-started-projections-projection">fromAll()
 .when({
     $init: function(){
@@ -199,44 +220,53 @@ curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json&quot; &
         }
     }
 })
-</code></pre><p>Create the projection by calling the projection API and providing it with the definition of the projection. Here you decide how to run the projection, declaring that you want the projection to start from the beginning and keep running.</p>
-<pre><code class="lang-bash" name="getting-started-projections-create-projection">curl -i --data-binary &quot;@xbox-one-s-counter.json&quot; http://localhost:2113/projections/continuous?name=xbox-one-s-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
-</code></pre><div class="TIP"><h5>Tip</h5><p>You can find more information about how to interact with projections in the <a href="../../projections/api/index.html">API section</a>.</p>
-</div>
-<p>You should have received a &#39;201 Created response&#39; which means that Event Store created the projection successfully. You can confirm that the projection is running by issuing a status request.</p>
-<div class="tabGroup" id="tabgroup_-zRZHSVchy-2">
-<ul role="tablist">
-<li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-2_tabid-6" role="tab" aria-controls="tabpanel_-zRZHSVchy-2_tabid-6" data-tab="tabid-6" tabindex="0" aria-selected="true">Request</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-2_tabid-7" role="tab" aria-controls="tabpanel_-zRZHSVchy-2_tabid-7" data-tab="tabid-7" tabindex="-1">Response</a>
-</li>
-</ul>
-<section id="tabpanel_-zRZHSVchy-2_tabid-6" role="tabpanel" data-tab="tabid-6">
-<pre><code class="lang-bash" name="getting-started-projections-confirm-projection-request">curl -i http://localhost:2113/projection/xbox-one-s-counter | grep status
-</code></pre></section>
-<section id="tabpanel_-zRZHSVchy-2_tabid-7" role="tabpanel" data-tab="tabid-7" aria-hidden="true" hidden="hidden">
-<pre><code class="lang-json" name="getting-started-projections-confirm-projection-response">&quot;status&quot;: &quot;Running&quot;,
-&quot;statusUrl&quot;: &quot;http://localhost:2113/projection/xbox-one-s-counter&quot;,
-</code></pre></section>
-</div>
-<h2 id="querying-for-the-state-of-the-projection">Querying for the state of the projection</h2>
-<p>Now the projection is running, you can query the state of the projection. As this projection has a single state, query it with the following request:</p>
+</code></pre><p>You create a projection by calling the projection API and providing it with the definition of the projection. Here you decide how to run the projection, declaring that you want the projection to start from the beginning and keep running. You can create a projection using the web admin interface by opening the <em>Projections</em> tab, clicking the <em>New Projection</em> button and filling in the details of your projection.</p>
+<!-- TODO: IMAGE -->
+<p>And to use the HTTP or .NET API:</p>
 <div class="tabGroup" id="tabgroup_-zRZHSVchy-3">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-3_tabid-8" role="tab" aria-controls="tabpanel_-zRZHSVchy-3_tabid-8" data-tab="tabid-8" tabindex="0" aria-selected="true">Request</a>
+<a href="#tabpanel_-zRZHSVchy-3_tabid-create-proj-bash" role="tab" aria-controls="tabpanel_-zRZHSVchy-3_tabid-create-proj-bash" data-tab="tabid-create-proj-bash" tabindex="0" aria-selected="true">HTTP API</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-3_tabid-9" role="tab" aria-controls="tabpanel_-zRZHSVchy-3_tabid-9" data-tab="tabid-9" tabindex="-1">Response</a>
+<a href="#tabpanel_-zRZHSVchy-3_tabid-create-proj-net" role="tab" aria-controls="tabpanel_-zRZHSVchy-3_tabid-create-proj-net" data-tab="tabid-create-proj-net" tabindex="-1">.NET API</a>
 </li>
 </ul>
-<section id="tabpanel_-zRZHSVchy-3_tabid-8" role="tabpanel" data-tab="tabid-8">
+<section id="tabpanel_-zRZHSVchy-3_tabid-create-proj-bash" role="tabpanel" data-tab="tabid-create-proj-bash">
+<pre><code class="lang-bash" name="getting-started-projections-create-projection">curl -i --data-binary &quot;@xbox-one-s-counter.json&quot; http://localhost:2113/projections/continuous?name=xbox-one-s-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
+</code></pre><div class="NEXT"><h5>NEXT</h5><p><a href="../../projections/api/index.html">Read here</a> for more information on creating projections with the HTTP API and the parameters available, or <a href="../../projections/index.html">our projections section</a> for details on projection syntax.</p>
+</div>
+</section>
+<section id="tabpanel_-zRZHSVchy-3_tabid-create-proj-net" role="tabpanel" data-tab="tabid-create-proj-net" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-create-projection-dotnet">public static readonly ProjectionsManager Projection = new ProjectionsManager(new ConsoleLogger(),
+    new IPEndPoint(IPAddress.Parse(&quot;127.0.0.1&quot;), 2113), TimeSpan.FromMilliseconds(5000));
+projection.CreateContinuousAsync(&quot;xbox-one-s-counter&quot;, countItemsProjection, adminCredentials).Wait();
+</code></pre><div class="NEXT"><h5>NEXT</h5><p><a href="../../dotnet-api/projections/index.html">Read here</a> for more information on creating projections with the .NET API and the parameters available, or <a href="../../projections/index.html">our projections section</a> for details on projection syntax.</p>
+</div>
+</section>
+</div>
+<h2 id="querying-for-the-state-of-the-projection">Querying for the state of the projection</h2>
+<p>Now the projection is running, you can query the state of the projection. As this projection has a single state, query it with the following request:</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-4_tabid-8" role="tab" aria-controls="tabpanel_-zRZHSVchy-4_tabid-8" data-tab="tabid-8" tabindex="0" aria-selected="true">HTTP API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-4_tabid-get-state-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-4_tabid-get-state-dotnet" data-tab="tabid-get-state-dotnet" tabindex="-1">.NET API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-4_tabid-9" role="tab" aria-controls="tabpanel_-zRZHSVchy-4_tabid-9" data-tab="tabid-9" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_-zRZHSVchy-4_tabid-8" role="tabpanel" data-tab="tabid-8">
 <pre><code class="lang-bash" name="getting-started-projections-query-state-request">curl -i http://localhost:2113/projection/xbox-one-s-counter/state
 </code></pre></section>
-<section id="tabpanel_-zRZHSVchy-3_tabid-9" role="tabpanel" data-tab="tabid-9" aria-hidden="true" hidden="hidden">
-<p>Which returns the state (JSON by default).</p>
+<section id="tabpanel_-zRZHSVchy-4_tabid-get-state-dotnet" role="tabpanel" data-tab="tabid-get-state-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-add-sample-data">var projectionState = projection.GetStateAsync(&quot;xbox-one-s-counter&quot;, Globals.AdminCredentials);
+Console.WriteLine(projectionState.Result);
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-4_tabid-9" role="tabpanel" data-tab="tabid-9" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-json" name="getting-started-projections-query-state-response">{
     &quot;count&quot;: 3
 }
@@ -245,27 +275,53 @@ curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json&quot; &
 <h2 id="writing-to-streams-from-projections">Writing to Streams from Projections</h2>
 <p>The above gives you the correct result, but requires you to poll for the state of a projection. What if you wanted Event Store to notify you about state updates via subscriptions?</p>
 <h3 id="output-state">Output State</h3>
-<p>You need to update the projection to output the state to a stream by calling the <code>outputState()</code> method on the projection which by default produces a <code>$projections-{projection-name}-result</code> stream.</p>
-<p>Download the following file that contains the update to the projection:</p>
-<ul>
-<li><a href="../../code-snippets/getting-started/xbox-one-s-counter-outputState.json">getting-started-projections-output-state</a></li>
-</ul>
-<p>To update the projection, issue the following request:</p>
-<pre><code class="lang-bash" name="getting-started-projections-output-state-update">curl -i -X PUT --data-binary @&quot;xbox-one-s-counter-outputState.json&quot; http://localhost:2113/projection/xbox-one-s-counter/query?emit=yes -u admin:changeit
-</code></pre><p>Then reset the projection you created above:</p>
-<div class="tabGroup" id="tabgroup_-zRZHSVchy-4">
+<p>Update the projection to output the state to a stream by calling the <code>outputState()</code> method on the projection which by default produces a <code>$projections-{projection-name}-result</code> stream.</p>
+<p>Below is the updated projection, you can download it as a file <a href="../../code-examples/getting-started/xbox-one-s-counter-outputState.json">here</a>:</p>
+<pre><code class="lang-json" name="getting-started-projections-output-state">fromAll()
+.when({
+    $init: function(){
+        return {
+            count: 0
+        }
+    },
+    ItemAdded: function(s,e){
+        if(e.body.Description.indexOf(&quot;Xbox One S&quot;) &gt;= 0){
+            s.count += 1;
+        }
+    }
+}).outputState()
+</code></pre><p>To update the projection, edit the projection definition in the web admin UI, or issue the following request:</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-5">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-4_tabid-10" role="tab" aria-controls="tabpanel_-zRZHSVchy-4_tabid-10" data-tab="tabid-10" tabindex="0" aria-selected="true">Request</a>
+<a href="#tabpanel_-zRZHSVchy-5_tabid-update-proj-http" role="tab" aria-controls="tabpanel_-zRZHSVchy-5_tabid-update-proj-http" data-tab="tabid-update-proj-http" tabindex="0" aria-selected="true">HTTP API</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-4_tabid-11" role="tab" aria-controls="tabpanel_-zRZHSVchy-4_tabid-11" data-tab="tabid-11" tabindex="-1">Response</a>
+<a href="#tabpanel_-zRZHSVchy-5_tabid-update-proj-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-5_tabid-update-proj-dotnet" data-tab="tabid-update-proj-dotnet" tabindex="-1">.NET API</a>
 </li>
 </ul>
-<section id="tabpanel_-zRZHSVchy-4_tabid-10" role="tabpanel" data-tab="tabid-10">
+<section id="tabpanel_-zRZHSVchy-5_tabid-update-proj-http" role="tabpanel" data-tab="tabid-update-proj-http">
+<pre><code class="lang-bash" name="getting-started-projections-output-state-update">curl -i -X PUT --data-binary @&quot;xbox-one-s-counter-outputState.json&quot; http://localhost:2113/projection/xbox-one-s-counter/query?emit=yes -u admin:changeit
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-5_tabid-update-proj-dotnet" role="tabpanel" data-tab="tabid-update-proj-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-update">projection.UpdateQueryAsync(&quot;xbox-one-s-counter&quot;, countItemsProjectionUpdate, adminCredentials).Wait();
+</code></pre></section>
+</div>
+<p>Then reset the projection you created above:</p>
+<!-- TODO: And .NET? -->
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-6_tabid-10" role="tab" aria-controls="tabpanel_-zRZHSVchy-6_tabid-10" data-tab="tabid-10" tabindex="0" aria-selected="true">Request</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-6_tabid-11" role="tab" aria-controls="tabpanel_-zRZHSVchy-6_tabid-11" data-tab="tabid-11" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_-zRZHSVchy-6_tabid-10" role="tabpanel" data-tab="tabid-10">
 <pre><code class="lang-bash" name="getting-started-projections-reset-request">curl -i -X POST &quot;http://localhost:2113/projection/xbox-one-s-counter/command/reset&quot; -H &quot;accept:application/json&quot; -H &quot;Content-Length:0&quot; -u admin:changeit
 </code></pre></section>
-<section id="tabpanel_-zRZHSVchy-4_tabid-11" role="tabpanel" data-tab="tabid-11" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_-zRZHSVchy-6_tabid-11" role="tabpanel" data-tab="tabid-11" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-json" name="getting-started-projections-reset-response">{
     &quot;msgTypeId&quot;: 293,
     &quot;name&quot;: &quot;xbox-one-s-counter&quot;
@@ -273,38 +329,109 @@ curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json&quot; &
 </code></pre></section>
 </div>
 <p>You can now read the events in the result stream by issuing a read request.</p>
-<div class="tabGroup" id="tabgroup_-zRZHSVchy-5">
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-7">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-5_tabid-12" role="tab" aria-controls="tabpanel_-zRZHSVchy-5_tabid-12" data-tab="tabid-12" tabindex="0" aria-selected="true">Request</a>
+<a href="#tabpanel_-zRZHSVchy-7_tabid-read-stream-http" role="tab" aria-controls="tabpanel_-zRZHSVchy-7_tabid-read-stream-http" data-tab="tabid-read-stream-http" tabindex="0" aria-selected="true">HTTP API</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-5_tabid-13" role="tab" aria-controls="tabpanel_-zRZHSVchy-5_tabid-13" data-tab="tabid-13" tabindex="-1">Response</a>
+<a href="#tabpanel_-zRZHSVchy-7_tabid-read-stream-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-7_tabid-read-stream-dotnet" data-tab="tabid-read-stream-dotnet" tabindex="-1">.NET API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-7_tabid-13" role="tab" aria-controls="tabpanel_-zRZHSVchy-7_tabid-13" data-tab="tabid-13" tabindex="-1">Response</a>
 </li>
 </ul>
-<section id="tabpanel_-zRZHSVchy-5_tabid-12" role="tabpanel" data-tab="tabid-12">
+<section id="tabpanel_-zRZHSVchy-7_tabid-read-stream-http" role="tabpanel" data-tab="tabid-read-stream-http">
 <pre><code class="lang-bash" name="getting-started-projections-read-projection-events-request">curl -i &quot;http://localhost:2113/streams/\$projections-xbox-one-s-counter-result?embed=body&quot; -H &quot;accept:application/json&quot; -u admin:changeit | grep data
 </code></pre></section>
-<section id="tabpanel_-zRZHSVchy-5_tabid-13" role="tabpanel" data-tab="tabid-13" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_-zRZHSVchy-7_tabid-read-stream-dotnet" role="tabpanel" data-tab="tabid-read-stream-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-state">var readEvents = conn.ReadStreamEventsForwardAsync(&quot;$projections-xbox-one-s-counter-result&quot;, 0, 10, true)
+    .Result;
+foreach (var evt in readEvents.Events)
+    Console.WriteLine(Encoding.UTF8.GetString(evt.Event.Data));
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-7_tabid-13" role="tabpanel" data-tab="tabid-13" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-json" name="getting-started-projections-read-projection-events-response">&quot;data&quot;: &quot;{\&quot;count\&quot;:3}&quot;,
 &quot;data&quot;: &quot;{\&quot;count\&quot;:2}&quot;,
 &quot;data&quot;: &quot;{\&quot;count\&quot;:1}&quot;,
 </code></pre></section>
 </div>
 <h2 id="configure-projection-properties">Configure Projection Properties</h2>
-<p>You can configure properties of the projection by updating values of the <code>options</code> object. For example, to change the name of the results stream:</p>
-<!-- Can not find reference ~/code-snippets/getting-started/update-projections-options.json -->
-<p>Then send the update to the projection:</p>
+<p>You can configure properties of the projection by updating values of the <code>options</code> object. For example, the following projection changes the name of the results stream, you can download it as a file <a href="../../code-examples/getting-started/update-projection-options.json">here</a>:</p>
+<pre><code class="lang-json" name="getting-started-projections-update-options">options({
+  resultStreamName: &quot;xboxes&quot;
+})
+fromAll()
+.when({
+    $init: function(){
+        return {
+            count: 0
+        }
+    },
+    ItemAdded: function(s,e){
+        if(e.body.Description.indexOf(&quot;Xbox One S&quot;) &gt;= 0){
+            s.count += 1;
+        }
+    }
+}).outputState()
+</code></pre><p>Then send the update to the projection:</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-8">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-8_tabid-update-proj-config-http" role="tab" aria-controls="tabpanel_-zRZHSVchy-8_tabid-update-proj-config-http" data-tab="tabid-update-proj-config-http" tabindex="0" aria-selected="true">HTTP API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-8_tabid-update-proj-config-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-8_tabid-update-proj-config-dotnet" data-tab="tabid-update-proj-config-dotnet" tabindex="-1">.NET API</a>
+</li>
+</ul>
+<section id="tabpanel_-zRZHSVchy-8_tabid-update-proj-config-http" role="tabpanel" data-tab="tabid-update-proj-config-http">
 <pre><code class="lang-bash" name="getting-started-projections-config-update-request">curl -i -X PUT -d &quot;@update-projection-options.json&quot; http://localhost:2113/projection/xbox-one-s-counter/query?emit=yes -u admin:changeit
-</code></pre><p>Now you can read the result as above, but use the new stream name:</p>
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-8_tabid-update-proj-config-dotnet" role="tabpanel" data-tab="tabid-update-proj-config-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-config-update">projection.UpdateQueryAsync(&quot;xbox-one-s-counter&quot;, optionsProjectionOptionsUpdate,adminCredentials).Wait();
+</code></pre></section>
+</div>
+<div class="TIP"><h5>Tip</h5><p>You can find all the options available in the <a href="../../projections/user-defined-projections/index.html">user defined projections guide</a>.</p>
+</div>
+<p>Now you can read the result as above, but use the new stream name:</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-9">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-9_tabid-read-projection-events-renamed-http" role="tab" aria-controls="tabpanel_-zRZHSVchy-9_tabid-read-projection-events-renamed-http" data-tab="tabid-read-projection-events-renamed-http" tabindex="0" aria-selected="true">HTTP API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-9_tabid-read-projection-events-renamed-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-9_tabid-read-projection-events-renamed-dotnet" data-tab="tabid-read-projection-events-renamed-dotnet" tabindex="-1">.NET API</a>
+</li>
+</ul>
+<section id="tabpanel_-zRZHSVchy-9_tabid-read-projection-events-renamed-http" role="tabpanel" data-tab="tabid-read-projection-events-renamed-http">
 <pre><code class="lang-bash" name="getting-started-projections-read-projection-events-renamed-request">curl -i &quot;http://localhost:2113/streams/xboxes?embed=body&quot; -H &quot;accept:application/json&quot; -u admin:changeit | grep data
-</code></pre><div class="TIP"><h5>Tip</h5><p>You can find all the options available in the <a href="../../projections/user-defined-projections/index.html">user defined projections guide</a>.</p>
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-9_tabid-read-projection-events-renamed-dotnet" role="tabpanel" data-tab="tabid-read-projection-events-renamed-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-state">readEvents = conn.ReadStreamEventsForwardAsync(&quot;xboxes&quot;, 0, 10, true).Result;
+foreach (var evt in readEvents.Events)
+    Console.WriteLine(Encoding.UTF8.GetString(evt.Event.Data));
+</code></pre></section>
 </div>
 <h2 id="the-number-of-items-per-shopping-cart">The Number of items per shopping cart</h2>
-<p>The example so far relied on a global state for the projection, but what if you wanted a count of the number of items in the shopping cart per shopping cart.</p>
+<p>The example in this step so far relied on a global state for the projection, but what if you wanted a count of the number of items in the shopping cart per shopping cart.</p>
 <p>Event Store has a built in <code>$by_category</code> projection that lets you select events from a particular list of streams. Enable this projection with the following command.</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-10">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-10_tabid-enablebycategory-http" role="tab" aria-controls="tabpanel_-zRZHSVchy-10_tabid-enablebycategory-http" data-tab="tabid-enablebycategory-http" tabindex="0" aria-selected="true">HTTP API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-10_tabid-enablebycategory-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-10_tabid-enablebycategory-dotnet" data-tab="tabid-enablebycategory-dotnet" tabindex="-1">.NET API</a>
+</li>
+</ul>
+<section id="tabpanel_-zRZHSVchy-10_tabid-enablebycategory-http" role="tabpanel" data-tab="tabid-enablebycategory-http">
 <pre><code class="lang-bash" name="getting-started-projections-enable-by-category-request">curl -i -d{} http://localhost:2113/projection/%24by_category/command/enable -u admin:changeit
-</code></pre><p>The projection links events from existing streams to new streams by splitting the stream name by a separator. You can configure the projection to specify the position of where to split the stream <code>id</code> and provide your own separator.</p>
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-10_tabid-enablebycategory-dotnet" role="tabpanel" data-tab="tabid-enablebycategory-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-enable">projection.EnableAsync(&quot;$by_category&quot;, adminCredentials).Wait();
+</code></pre></section>
+</div>
+<p>The projection links events from existing streams to new streams by splitting the stream name by a separator. You can configure the projection to specify the position of where to split the stream <code>id</code> and provide your own separator.</p>
 <p>By default the category splits the stream <code>id</code> by a dash. The category is the first string.</p>
 <table>
 <thead>
@@ -329,27 +456,58 @@ curl -i -d &quot;@shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json&quot; &
 </tbody>
 </table>
 <p>You want to define a projection that produces a count per stream for a category, but the state needs to be per stream. To do so, use <code>$by_category</code> and it&#39;s <code>fromCategory</code> API method.</p>
-<p>Download the following file that contains the projection:</p>
-<ul>
-<li><a href="../../code-snippets/getting-started/shopping-cart-counter.json">getting-started-projections-count-per-stream</a></li>
-</ul>
-<p>Create the projection with the following HTTP request:</p>
-<pre><code class="lang-bash" name="getting-started-projections-count-per-stream">curl -i --data-binary &quot;@shopping-cart-counter.json&quot; http://localhost:2113/projections/continuous?name=shopping-cart-item-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
-</code></pre><h4 id="querying-for-the-state-of-the-projection-by-partition">Querying for the state of the projection by partition</h4>
-<p>Querying for the state of the projection is different due to the partitioning of the projection. You have to specify the partition and the name of the stream.</p>
-<div class="tabGroup" id="tabgroup_-zRZHSVchy-6">
+<p>Below is the projection, you can download the file <a href="../../code-examples/getting-started/shopping-cart-counter.json">here</a>:</p>
+<pre><code class="lang-json" name="getting-started-projections-count-per-stream">fromCategory(&#39;shoppingCart&#39;)
+.foreachStream()
+.when({
+    $init: function(){
+        return {
+            count: 0
+        }
+    },
+    ItemAdded: function(s,e){
+        s.count += 1;
+    }
+})
+</code></pre><p>Create the projection with the following request:</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-11">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-6_tabid-14" role="tab" aria-controls="tabpanel_-zRZHSVchy-6_tabid-14" data-tab="tabid-14" tabindex="0" aria-selected="true">Request</a>
+<a href="#tabpanel_-zRZHSVchy-11_tabid-projections-count-per-stream-http" role="tab" aria-controls="tabpanel_-zRZHSVchy-11_tabid-projections-count-per-stream-http" data-tab="tabid-projections-count-per-stream-http" tabindex="0" aria-selected="true">HTTP API</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_-zRZHSVchy-6_tabid-15" role="tab" aria-controls="tabpanel_-zRZHSVchy-6_tabid-15" data-tab="tabid-15" tabindex="-1">Response</a>
+<a href="#tabpanel_-zRZHSVchy-11_tabid-projections-count-per-stream-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-11_tabid-projections-count-per-stream-dotnet" data-tab="tabid-projections-count-per-stream-dotnet" tabindex="-1">.NET API</a>
 </li>
 </ul>
-<section id="tabpanel_-zRZHSVchy-6_tabid-14" role="tabpanel" data-tab="tabid-14">
+<section id="tabpanel_-zRZHSVchy-11_tabid-projections-count-per-stream-http" role="tabpanel" data-tab="tabid-projections-count-per-stream-http">
+<pre><code class="lang-bash" name="getting-started-projections-count-per-stream">curl -i --data-binary &quot;@shopping-cart-counter.json&quot; http://localhost:2113/projections/continuous?name=shopping-cart-item-counter%26type=js%26enabled=true%26emit=true%26trackemittedstreams=true -u admin:changeit
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-11_tabid-projections-count-per-stream-dotnet" role="tabpanel" data-tab="tabid-projections-count-per-stream-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-count-per-stream">projection.CreateContinuousAsync(&quot;shopping-cart-item-counter&quot;, itemCounterProjection, true, adminCredentials).Wait();
+</code></pre></section>
+</div>
+<h4 id="querying-for-the-state-of-the-projection-by-partition">Querying for the state of the projection by partition</h4>
+<p>Querying for the state of the projection is different due to the partitioning of the projection. You have to specify the partition and the name of the stream.</p>
+<div class="tabGroup" id="tabgroup_-zRZHSVchy-12">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-12_tabid-read-partition-http" role="tab" aria-controls="tabpanel_-zRZHSVchy-12_tabid-read-partition-http" data-tab="tabid-read-partition-http" tabindex="0" aria-selected="true">HTTP API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-12_tabid-read-partition-dotnet" role="tab" aria-controls="tabpanel_-zRZHSVchy-12_tabid-read-partition-dotnet" data-tab="tabid-read-partition-dotnet" tabindex="-1">.NET API</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_-zRZHSVchy-12_tabid-15" role="tab" aria-controls="tabpanel_-zRZHSVchy-12_tabid-15" data-tab="tabid-15" tabindex="-1">Response</a>
+</li>
+</ul>
+<section id="tabpanel_-zRZHSVchy-12_tabid-read-partition-http" role="tabpanel" data-tab="tabid-read-partition-http">
 <pre><code class="lang-bash" name="getting-started-projections-read-state-partition-request">curl -i http://localhost:2113/projection/shopping-cart-item-counter/state?partition=shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164
 </code></pre></section>
-<section id="tabpanel_-zRZHSVchy-6_tabid-15" role="tabpanel" data-tab="tabid-15" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_-zRZHSVchy-12_tabid-read-partition-dotnet" role="tabpanel" data-tab="tabid-read-partition-dotnet" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-csharp" name="getting-started-projections-read-state-partition-request">var projectionState = projection.GetPartitionStateAsync(&quot;shopping-cart-item-counter&quot;, &quot;shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164&quot;, adminCredentials);
+Console.WriteLine(projectionState.Result);
+</code></pre></section>
+<section id="tabpanel_-zRZHSVchy-12_tabid-15" role="tabpanel" data-tab="tabid-15" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-json" name="getting-started-projections-read-state-partition-response">{
     &quot;count&quot;: 2
 }

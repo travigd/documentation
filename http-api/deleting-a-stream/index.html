@@ -12,7 +12,7 @@
     <title>Deleting a Stream | Event Store </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Deleting a Stream | Event Store ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.37.0.0">
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
     
     <link rel="shortcut icon" href="../../assets/favicon.ico">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../styles/main.css">
       <link rel="stylesheet" href="../../styles/main12.css">
         <link rel="stylesheet" href="../../styles/print.css" media="print">
-              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
               <style media="print">
                   pre {
                       white-space: pre-wrap;
@@ -89,11 +89,9 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
+<h1 id="deleting-a-stream">Deleting a Stream</h1>
 
-<yamlheader start="5" end="7">uid: eventstore.org/Event Store HTTP API/4.0.2/deleteStream</yamlheader><h1 id="deleting-a-stream">Deleting a Stream</h1>
 <p>To delete a stream over the Atom interface, issue a <code>DELETE</code> request to the resource.</p>
-<div class="NOTE"><h5>Note</h5><p>The documentation here applies to versions after 2.0.1. Prior to 2.0.1 only hard deletes were available and the system uses that behavior.</p>
-</div>
 <p>By default when you delete a stream it is soft deleted. This means you can recreate it later if you want to by setting the <code>$tb</code> metadata section as the client API does <!-- TODO: Link? -->. If you try to <code>GET</code> a soft deleted stream you will receive a 404 response:</p>
 <div class="tabGroup" id="tabgroup_NkqkHTcIhB">
 <ul role="tablist">
@@ -360,6 +358,7 @@ Date: Thu, 13 Mar 2014 21:19:33 GMT
             <div class="sideaffix">
             <!-- TODO: Refactor into partial -->
             <div class="sinceversion">
+            <b>Since version:</b> 2.0.1
             </div>
               <div class="contribution">
                 <ul class="nav">

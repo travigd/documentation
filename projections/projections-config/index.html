@@ -12,7 +12,7 @@
     <title>Config | Event Store </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Config | Event Store ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.37.0.0">
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
     
     <link rel="shortcut icon" href="../../assets/favicon.ico">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../styles/main.css">
       <link rel="stylesheet" href="../../styles/main12.css">
         <link rel="stylesheet" href="../../styles/print.css" media="print">
-              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
               <style media="print">
                   pre {
                       white-space: pre-wrap;
@@ -91,7 +91,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="config">Config</h1>
 
-<p>Event Store version 4.0.2, included a new set of options for fine-tuning projections. By changing these settings, you can lessen the amount of pressure projections put on an Event Store node or improve projection performance. You can change these settings on a case-by-case basis, and monitor potential improvements.</p>
+<p>By changing these settings, you can lessen the amount of pressure projections put on an Event Store node or improve projection performance. You can change these settings on a case-by-case basis, and monitor potential improvements.</p>
 <h2 id="emit-options">Emit options</h2>
 <p>These options control how projections write events.</p>
 <p>In busy systems, projections can put a lot of extra pressure on the master node. This is especially true for Event Store servers that also have persistent subscriptions running, which only the master node can process. If you are seeing a lot of commit timeouts and slow writes from your projections and other clients, then these are the settings that you should start with.</p>
@@ -149,6 +149,7 @@ Pausing the projection stops the projection from reading, allowing it to finish 
             <div class="sideaffix">
             <!-- TODO: Refactor into partial -->
             <div class="sinceversion">
+            <b>Since version:</b> 4.0.2
             </div>
               <div class="contribution">
                 <ul class="nav">

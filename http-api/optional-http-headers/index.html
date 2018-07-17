@@ -9,10 +9,10 @@
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//code.jquery.com">
     <link rel="preconnect" href="//www.googletagmanager.com">
-    <title>Optional HTTP Headers | Event Store </title>
+    <title>HTTP API: Optional HTTP Headers | Event Store </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Optional HTTP Headers | Event Store ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="title" content="HTTP API: Optional HTTP Headers | Event Store ">
+    <meta name="generator" content="docfx 2.37.0.0">
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
     
     <link rel="shortcut icon" href="../../assets/favicon.ico">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../styles/main.css">
       <link rel="stylesheet" href="../../styles/main12.css">
         <link rel="stylesheet" href="../../styles/print.css" media="print">
-              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
               <style media="print">
                   pre {
                       white-space: pre-wrap;
@@ -89,54 +89,23 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="optional-http-headers">Optional HTTP Headers</h1>
+<h1 id="http-api-optional-http-headers">HTTP API: Optional HTTP Headers</h1>
 
-<!-- TODO: Can Swagger replace this? And sub files -->
 <p>Event Store supports the use of custom HTTP headers for requests.</p>
-<p>The headers were previously in the form <code>X-ES-ExpectedVersion</code> but have been changed to <code>ES-ExpectedVersion</code> in compliance with <a href="http://tools.ietf.org/html/rfc6648">RFC-6648</a>.</p>
+<div class="NOTE"><h5>Note</h5><p> The headers were previously in the form <code>X-ES-ExpectedVersion</code> but have changed to <code>ES-ExpectedVersion</code> in compliance with RFC-6648 <a href="http://tools.ietf.org/html/rfc6648">http://tools.ietf.org/html/rfc6648</a>.</p>
+</div>
 <p>The headers supported are:</p>
-<table>
-<thead>
-<tr>
-<th>Header</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="expected-version/index.html">ES-ExpectedVersion</a></td>
-<td>The expected version of the stream (allows optimistic concurrency)</td>
-</tr>
-<tr>
-<td><a href="resolve-linkto/index.html">ES-ResolveLinkTo</a></td>
-<td>Whether or not to resolve linkTos in stream</td>
-</tr>
-<tr>
-<td><a href="requires-master/index.html">ES-RequiresMaster</a></td>
-<td>Whether this operation needs to be run on the master node</td>
-</tr>
-<tr>
-<td><a href="trusted-intermediary/index.html">ES-TrustedAuth</a></td>
-<td>Allows a trusted intermediary to handle authentication</td>
-</tr>
-<tr>
-<td><a href="longpoll/index.html">ES-LongPoll</a></td>
-<td>Instructs the server to do a long poll operation on a stream read</td>
-</tr>
-<tr>
-<td><a href="harddelete/index.html">ES-HardDelete</a></td>
-<td>Instructs the server to hard delete the stream when deleting as opposed to the default soft delete</td>
-</tr>
-<tr>
-<td><a href="eventtype/index.html">ES-EventType</a></td>
-<td>Instructs the server the event type associated to a posted body</td>
-</tr>
-<tr>
-<td><a href="eventid/index.html">ES-EventId</a></td>
-<td>Instructs the server the event id associated to a posted body</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><a href="expected-version/index.html">ES-ExpectedVersion</a> The expected version of the stream (allows optimistic concurrency)</li>
+<li><a href="resolve-linkto/index.html">ES-ResolveLinkTo</a> Whether to resolve <code>linkTo</code>s in stream</li>
+<li><a href="requires-master/index.html">ES-RequiresMaster</a> Whether this operation needs to be run on the master node</li>
+<li><a href="trusted-intermediary/index.html">ES-TrustedAuth</a> Allows a trusted intermediary to handle authentication</li>
+<li><a href="longpoll/index.html">ES-LongPoll</a> Instructs the server to do a long poll operation on a stream read</li>
+<li><a href="harddelete/index.html">ES-HardDelete</a> Instructs the server to hard delete the stream when deleting as opposed to the default soft delete</li>
+<li><a href="eventtype/index.html">ES-EventType</a> Instructs the server the event type associated to a posted body</li>
+<li><a href="eventid/index.html">ES-EventId</a> Instructs the server the event id associated to a posted body
+<img src="https://gaproxy-1.apphb.com/UA-40176181-1/Wiki/Optional-Http-Headers" alt="Google analytics pixel"></li>
+</ul>
 </article>
           </div>
           
@@ -148,7 +117,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/EventStore/docs.geteventstore.com/blob/getting-started-rework/http-api/optional-http-headers.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/EventStore/docs.geteventstore.com/blob/getting-started-rework/http-api/optional-http-headers/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

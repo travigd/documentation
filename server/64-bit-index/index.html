@@ -12,7 +12,7 @@
     <title>Rebuilding Indexes | Event Store </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Rebuilding Indexes | Event Store ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.37.0.0">
   <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
     
     <link rel="shortcut icon" href="../../assets/favicon.ico">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../styles/main.css">
       <link rel="stylesheet" href="../../styles/main12.css">
         <link rel="stylesheet" href="../../styles/print.css" media="print">
-              <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic|Source+Code+Pro:400,700">
               <style media="print">
                   pre {
                       white-space: pre-wrap;
@@ -91,7 +91,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="rebuilding-indexes">Rebuilding Indexes</h1>
 
-<p>As of version 3.9.0 all future indexes will use 64-bit hashes instead of 32-bit hashes. The system will automatically transition from 32-bit to 64-bit by writing all new indexes as 64-bit indexes during the merge process.</p>
+<p>As of version 3.9.0 all future indexes use 64-bit hashes instead of 32-bit hashes. The system automatically transitions from 32-bit to 64-bit by writing all new indexes as 64-bit indexes during the merge process.</p>
 <p>If you prefer to use only 64-bit indexes immediately you can force this. For a small database, delete the <em>index</em> <!-- TODO: Which is where?--> folder and let it rebuild (this might take a while)</p>
 <p>If you have a large database, remote storage, etc and cannot lose downtime, you can do this operation offline on another node with the following steps:</p>
 <ol>
@@ -111,6 +111,7 @@
             <div class="sideaffix">
             <!-- TODO: Refactor into partial -->
             <div class="sinceversion">
+            <b>Since version:</b> 3.9.0
             </div>
               <div class="contribution">
                 <ul class="nav">
