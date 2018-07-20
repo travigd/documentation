@@ -6,6 +6,7 @@ items:
   parent: EventStore.Core.Exceptions
   children:
   - EventStore.Core.Exceptions.CorruptDatabaseException.#ctor(Exception)
+  - EventStore.Core.Exceptions.CorruptDatabaseException.#ctor(System.String,Exception)
   langs:
   - csharp
   - vb
@@ -16,7 +17,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Exceptions/CorruptDatabaseException.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: CorruptDatabaseException
     path: ../EventStore/src/EventStore.Core/Exceptions/CorruptDatabaseException.cs
@@ -57,7 +58,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Exceptions/CorruptDatabaseException.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Exceptions/CorruptDatabaseException.cs
@@ -76,10 +77,44 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.Core.Exceptions.CorruptDatabaseException.#ctor(System.String,Exception)
+  commentId: M:EventStore.Core.Exceptions.CorruptDatabaseException.#ctor(System.String,Exception)
+  id: '#ctor(System.String,Exception)'
+  parent: EventStore.Core.Exceptions.CorruptDatabaseException
+  langs:
+  - csharp
+  - vb
+  name: CorruptDatabaseException(String, Exception)
+  nameWithType: CorruptDatabaseException.CorruptDatabaseException(String, Exception)
+  fullName: EventStore.Core.Exceptions.CorruptDatabaseException.CorruptDatabaseException(System.String, Exception)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/Exceptions/CorruptDatabaseException.cs
+      branch: master
+      repo: https://github.com/EventStore/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/Exceptions/CorruptDatabaseException.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Exceptions
+  syntax:
+    content: public CorruptDatabaseException(string message, Exception inner)
+    parameters:
+    - id: message
+      type: System.String
+    - id: inner
+      type: Exception
+    content.vb: Public Sub New(message As String, inner As Exception)
+  overload: EventStore.Core.Exceptions.CorruptDatabaseException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: EventStore.Core.Exceptions
   commentId: N:EventStore.Core.Exceptions
-  isExternal: false
   name: EventStore.Core.Exceptions
   nameWithType: EventStore.Core.Exceptions
   fullName: EventStore.Core.Exceptions
@@ -280,7 +315,6 @@ references:
 - uid: EventStore.Common.Utils.Json
   commentId: T:EventStore.Common.Utils.Json
   parent: EventStore.Common.Utils
-  isExternal: false
   name: Json
   nameWithType: Json
   fullName: EventStore.Common.Utils.Json
@@ -362,7 +396,6 @@ references:
     fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  isExternal: false
   name: Serialize<T>(T)
   nameWithType: ProtobufExtensions.Serialize<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
@@ -400,13 +433,11 @@ references:
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   parent: EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: ProtobufExtensions
   nameWithType: ProtobufExtensions
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  isExternal: false
   name: SerializeToArray<T>(T)
   nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
@@ -443,19 +474,16 @@ references:
     fullName: )
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
-  isExternal: false
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
 - uid: EventStore.Core.Exceptions.CorruptDatabaseException.#ctor*
   commentId: Overload:EventStore.Core.Exceptions.CorruptDatabaseException.#ctor
-  isExternal: false
   name: CorruptDatabaseException
   nameWithType: CorruptDatabaseException.CorruptDatabaseException
   fullName: EventStore.Core.Exceptions.CorruptDatabaseException.CorruptDatabaseException
@@ -464,3 +492,8 @@ references:
   name: Exception
   nameWithType: Exception
   fullName: Exception
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

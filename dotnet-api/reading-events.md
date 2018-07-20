@@ -55,7 +55,7 @@ The reading methods for individual streams each return a `StreamEventsSlice`, wh
 | `long LastEventNumber`        | The sequence number of the last event in the stream                                                                                         |
 | `long NextEventNumber`        | The sequence number from which the next read should be performed to continue reading the stream                                             |
 | `bool IsEndOfStream`          | Whether this slice contained the end of the stream at the time it was created                                                               |
-| `ResolvedEvent[] Events`      | An array of the events read. See the description of how to interpret a [Resolved Events](#ResolvedEvent) below for more information on this |
+| `ResolvedEvent[] Events`      | An array of the events read. See the description of how to interpret a [Resolved Events](#resolvedevent) below for more information on this |
 
 ## ResolvedEvent
 

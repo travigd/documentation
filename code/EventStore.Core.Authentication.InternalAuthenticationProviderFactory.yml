@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Authentication/InternalAuthenticationProviderFactory.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: InternalAuthenticationProviderFactory
     path: ../EventStore/src/EventStore.Core/Authentication/InternalAuthenticationProviderFactory.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Authentication/InternalAuthenticationProviderFactory.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: BuildAuthenticationProvider
     path: ../EventStore/src/EventStore.Core/Authentication/InternalAuthenticationProviderFactory.cs
@@ -107,7 +107,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/Authentication/InternalAuthenticationProviderFactory.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: RegisterHttpControllers
     path: ../EventStore/src/EventStore.Core/Authentication/InternalAuthenticationProviderFactory.cs
@@ -139,7 +139,6 @@ items:
 references:
 - uid: EventStore.Core.Authentication
   commentId: N:EventStore.Core.Authentication
-  isExternal: false
   name: EventStore.Core.Authentication
   nameWithType: EventStore.Core.Authentication
   fullName: EventStore.Core.Authentication
@@ -151,7 +150,6 @@ references:
 - uid: EventStore.Core.Authentication.IAuthenticationProviderFactory
   commentId: T:EventStore.Core.Authentication.IAuthenticationProviderFactory
   parent: EventStore.Core.Authentication
-  isExternal: false
   name: IAuthenticationProviderFactory
   nameWithType: IAuthenticationProviderFactory
   fullName: EventStore.Core.Authentication.IAuthenticationProviderFactory
@@ -347,7 +345,6 @@ references:
 - uid: EventStore.Common.Utils.Json
   commentId: T:EventStore.Common.Utils.Json
   parent: EventStore.Common.Utils
-  isExternal: false
   name: Json
   nameWithType: Json
   fullName: EventStore.Common.Utils.Json
@@ -429,7 +426,6 @@ references:
     fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  isExternal: false
   name: Serialize<T>(T)
   nameWithType: ProtobufExtensions.Serialize<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
@@ -467,13 +463,11 @@ references:
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   parent: EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: ProtobufExtensions
   nameWithType: ProtobufExtensions
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  isExternal: false
   name: SerializeToArray<T>(T)
   nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
@@ -510,26 +504,22 @@ references:
     fullName: )
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
-  isExternal: false
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
 - uid: EventStore.Core.Authentication.InternalAuthenticationProviderFactory.BuildAuthenticationProvider*
   commentId: Overload:EventStore.Core.Authentication.InternalAuthenticationProviderFactory.BuildAuthenticationProvider
-  isExternal: false
   name: BuildAuthenticationProvider
   nameWithType: InternalAuthenticationProviderFactory.BuildAuthenticationProvider
   fullName: EventStore.Core.Authentication.InternalAuthenticationProviderFactory.BuildAuthenticationProvider
 - uid: EventStore.Core.Authentication.IAuthenticationProviderFactory.BuildAuthenticationProvider(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.InMemoryBus[])
   commentId: M:EventStore.Core.Authentication.IAuthenticationProviderFactory.BuildAuthenticationProvider(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.InMemoryBus[])
   parent: EventStore.Core.Authentication.IAuthenticationProviderFactory
-  isExternal: false
   name: BuildAuthenticationProvider(IPublisher, ISubscriber, IPublisher, InMemoryBus[])
   nameWithType: IAuthenticationProviderFactory.BuildAuthenticationProvider(IPublisher, ISubscriber, IPublisher, InMemoryBus[])
   fullName: EventStore.Core.Authentication.IAuthenticationProviderFactory.BuildAuthenticationProvider(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.ISubscriber, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.InMemoryBus[])
@@ -617,18 +607,17 @@ references:
 - uid: EventStore.Core.Bus.IPublisher
   commentId: T:EventStore.Core.Bus.IPublisher
   parent: EventStore.Core.Bus
-  isExternal: false
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
 - uid: EventStore.Core.Bus.ISubscriber
   commentId: T:EventStore.Core.Bus.ISubscriber
   parent: EventStore.Core.Bus
-  isExternal: false
   name: ISubscriber
   nameWithType: ISubscriber
   fullName: EventStore.Core.Bus.ISubscriber
 - uid: EventStore.Core.Bus.InMemoryBus[]
+  isExternal: true
   name: InMemoryBus[]
   nameWithType: InMemoryBus[]
   fullName: EventStore.Core.Bus.InMemoryBus[]
@@ -654,26 +643,22 @@ references:
 - uid: EventStore.Core.Authentication.IAuthenticationProvider
   commentId: T:EventStore.Core.Authentication.IAuthenticationProvider
   parent: EventStore.Core.Authentication
-  isExternal: false
   name: IAuthenticationProvider
   nameWithType: IAuthenticationProvider
   fullName: EventStore.Core.Authentication.IAuthenticationProvider
 - uid: EventStore.Core.Bus
   commentId: N:EventStore.Core.Bus
-  isExternal: false
   name: EventStore.Core.Bus
   nameWithType: EventStore.Core.Bus
   fullName: EventStore.Core.Bus
 - uid: EventStore.Core.Authentication.InternalAuthenticationProviderFactory.RegisterHttpControllers*
   commentId: Overload:EventStore.Core.Authentication.InternalAuthenticationProviderFactory.RegisterHttpControllers
-  isExternal: false
   name: RegisterHttpControllers
   nameWithType: InternalAuthenticationProviderFactory.RegisterHttpControllers
   fullName: EventStore.Core.Authentication.InternalAuthenticationProviderFactory.RegisterHttpControllers
 - uid: EventStore.Core.Authentication.IAuthenticationProviderFactory.RegisterHttpControllers(EventStore.Core.Services.Transport.Http.HttpService,EventStore.Core.Services.Transport.Http.HttpService,EventStore.Core.Services.HttpSendService,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher)
   commentId: M:EventStore.Core.Authentication.IAuthenticationProviderFactory.RegisterHttpControllers(EventStore.Core.Services.Transport.Http.HttpService,EventStore.Core.Services.Transport.Http.HttpService,EventStore.Core.Services.HttpSendService,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher)
   parent: EventStore.Core.Authentication.IAuthenticationProviderFactory
-  isExternal: false
   name: RegisterHttpControllers(HttpService, HttpService, HttpSendService, IPublisher, IPublisher)
   nameWithType: IAuthenticationProviderFactory.RegisterHttpControllers(HttpService, HttpService, HttpSendService, IPublisher, IPublisher)
   fullName: EventStore.Core.Authentication.IAuthenticationProviderFactory.RegisterHttpControllers(EventStore.Core.Services.Transport.Http.HttpService, EventStore.Core.Services.Transport.Http.HttpService, EventStore.Core.Services.HttpSendService, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher)
@@ -766,26 +751,22 @@ references:
 - uid: EventStore.Core.Services.Transport.Http.HttpService
   commentId: T:EventStore.Core.Services.Transport.Http.HttpService
   parent: EventStore.Core.Services.Transport.Http
-  isExternal: false
   name: HttpService
   nameWithType: HttpService
   fullName: EventStore.Core.Services.Transport.Http.HttpService
 - uid: EventStore.Core.Services.HttpSendService
   commentId: T:EventStore.Core.Services.HttpSendService
   parent: EventStore.Core.Services
-  isExternal: false
   name: HttpSendService
   nameWithType: HttpSendService
   fullName: EventStore.Core.Services.HttpSendService
 - uid: EventStore.Core.Services.Transport.Http
   commentId: N:EventStore.Core.Services.Transport.Http
-  isExternal: false
   name: EventStore.Core.Services.Transport.Http
   nameWithType: EventStore.Core.Services.Transport.Http
   fullName: EventStore.Core.Services.Transport.Http
 - uid: EventStore.Core.Services
   commentId: N:EventStore.Core.Services
-  isExternal: false
   name: EventStore.Core.Services
   nameWithType: EventStore.Core.Services
   fullName: EventStore.Core.Services

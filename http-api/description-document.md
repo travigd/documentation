@@ -5,7 +5,7 @@ outputFileName: index.html
 # Description Document
 ## What is it?
 
-With the addition of [Competing Consumers](~/introduction/competing-consumers.md) which is essentially another way of reading streams, the need arose to expose these different methods to consumers.
+With the addition of [Competing Consumers](~/getting-started/competing-consumers.md) which is essentially another way of reading streams, the need arose to expose these different methods to consumers.
 
 The introduction of the description document has some benefits
 

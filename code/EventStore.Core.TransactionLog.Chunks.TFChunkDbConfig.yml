@@ -5,7 +5,7 @@ items:
   id: TFChunkDbConfig
   parent: EventStore.Core.TransactionLog.Chunks
   children:
-  - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.ChaserCheckpoint
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.ChunkSize
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.EpochCheckpoint
@@ -15,6 +15,7 @@ items:
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.MaxChunksCacheSize
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.OptimizeReadSideCache
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.Path
+  - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.ReduceFileCachePressure
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.ReplicationCheckpoint
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.TruncateCheckpoint
   - EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.Unbuffered
@@ -30,7 +31,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: TFChunkDbConfig
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -71,7 +72,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Path
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -104,7 +105,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ChunkSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -137,7 +138,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: MaxChunksCacheSize
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -170,7 +171,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: WriterCheckpoint
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -203,7 +204,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ChaserCheckpoint
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -236,7 +237,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: EpochCheckpoint
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -269,7 +270,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: TruncateCheckpoint
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -302,7 +303,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ReplicationCheckpoint
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -335,7 +336,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: FileNamingStrategy
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -368,7 +369,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: InMemDb
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -401,7 +402,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Unbuffered
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -434,7 +435,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: WriteThrough
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -467,7 +468,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: InitialReaderCount
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -500,7 +501,7 @@ items:
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: OptimizeReadSideCache
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
@@ -519,30 +520,63 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  id: '#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)'
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.ReduceFileCachePressure
+  commentId: F:EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.ReduceFileCachePressure
+  id: ReduceFileCachePressure
   parent: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
   langs:
   - csharp
   - vb
-  name: TFChunkDbConfig(String, IFileNamingStrategy, Int32, Int64, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, Int32, Boolean, Boolean, Boolean, Boolean)
-  nameWithType: TFChunkDbConfig.TFChunkDbConfig(String, IFileNamingStrategy, Int32, Int64, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, Int32, Boolean, Boolean, Boolean, Boolean)
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.TFChunkDbConfig(System.String, EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy, System.Int32, System.Int64, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Boolean)
-  type: Constructor
+  name: ReduceFileCachePressure
+  nameWithType: TFChunkDbConfig.ReduceFileCachePressure
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.ReduceFileCachePressure
+  type: Field
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
-    id: .ctor
+    id: ReduceFileCachePressure
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: public TFChunkDbConfig(string path, IFileNamingStrategy fileNamingStrategy, int chunkSize, long maxChunksCacheSize, ICheckpoint writerCheckpoint, ICheckpoint chaserCheckpoint, ICheckpoint epochCheckpoint, ICheckpoint truncateCheckpoint, ICheckpoint replicationCheckpoint, int initialReaderCount, bool inMemDb = false, bool unbuffered = false, bool writethrough = false, bool optimizeReadSideCache = false)
+    content: public readonly bool ReduceFileCachePressure
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly ReduceFileCachePressure As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  id: '#ctor(System.String,EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy,System.Int32,System.Int64,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)'
+  parent: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+  langs:
+  - csharp
+  - vb
+  name: TFChunkDbConfig(String, IFileNamingStrategy, Int32, Int64, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, Int32, Boolean, Boolean, Boolean, Boolean, Boolean)
+  nameWithType: TFChunkDbConfig.TFChunkDbConfig(String, IFileNamingStrategy, Int32, Int64, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, ICheckpoint, Int32, Boolean, Boolean, Boolean, Boolean, Boolean)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.TFChunkDbConfig(System.String, EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy, System.Int32, System.Int64, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
+      branch: master
+      repo: https://github.com/EventStore/EventStore.git
+    id: .ctor
+    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDbConfig.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.TransactionLog.Chunks
+  syntax:
+    content: public TFChunkDbConfig(string path, IFileNamingStrategy fileNamingStrategy, int chunkSize, long maxChunksCacheSize, ICheckpoint writerCheckpoint, ICheckpoint chaserCheckpoint, ICheckpoint epochCheckpoint, ICheckpoint truncateCheckpoint, ICheckpoint replicationCheckpoint, int initialReaderCount, bool inMemDb = false, bool unbuffered = false, bool writethrough = false, bool optimizeReadSideCache = false, bool reduceFileCachePressure = false)
     parameters:
     - id: path
       type: System.String
@@ -572,7 +606,9 @@ items:
       type: System.Boolean
     - id: optimizeReadSideCache
       type: System.Boolean
-    content.vb: Public Sub New(path As String, fileNamingStrategy As IFileNamingStrategy, chunkSize As Integer, maxChunksCacheSize As Long, writerCheckpoint As ICheckpoint, chaserCheckpoint As ICheckpoint, epochCheckpoint As ICheckpoint, truncateCheckpoint As ICheckpoint, replicationCheckpoint As ICheckpoint, initialReaderCount As Integer, inMemDb As Boolean = False, unbuffered As Boolean = False, writethrough As Boolean = False, optimizeReadSideCache As Boolean = False)
+    - id: reduceFileCachePressure
+      type: System.Boolean
+    content.vb: Public Sub New(path As String, fileNamingStrategy As IFileNamingStrategy, chunkSize As Integer, maxChunksCacheSize As Long, writerCheckpoint As ICheckpoint, chaserCheckpoint As ICheckpoint, epochCheckpoint As ICheckpoint, truncateCheckpoint As ICheckpoint, replicationCheckpoint As ICheckpoint, initialReaderCount As Integer, inMemDb As Boolean = False, unbuffered As Boolean = False, writethrough As Boolean = False, optimizeReadSideCache As Boolean = False, reduceFileCachePressure As Boolean = False)
   overload: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor*
   modifiers.csharp:
   - public
@@ -581,7 +617,6 @@ items:
 references:
 - uid: EventStore.Core.TransactionLog.Chunks
   commentId: N:EventStore.Core.TransactionLog.Chunks
-  isExternal: false
   name: EventStore.Core.TransactionLog.Chunks
   nameWithType: EventStore.Core.TransactionLog.Chunks
   fullName: EventStore.Core.TransactionLog.Chunks
@@ -782,7 +817,6 @@ references:
 - uid: EventStore.Common.Utils.Json
   commentId: T:EventStore.Common.Utils.Json
   parent: EventStore.Common.Utils
-  isExternal: false
   name: Json
   nameWithType: Json
   fullName: EventStore.Common.Utils.Json
@@ -864,7 +898,6 @@ references:
     fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  isExternal: false
   name: Serialize<T>(T)
   nameWithType: ProtobufExtensions.Serialize<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
@@ -902,13 +935,11 @@ references:
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   parent: EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: ProtobufExtensions
   nameWithType: ProtobufExtensions
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  isExternal: false
   name: SerializeToArray<T>(T)
   nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
@@ -945,13 +976,11 @@ references:
     fullName: )
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
-  isExternal: false
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
@@ -973,26 +1002,22 @@ references:
 - uid: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
   commentId: T:EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
   parent: EventStore.Core.TransactionLog.Checkpoint
-  isExternal: false
   name: ICheckpoint
   nameWithType: ICheckpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
 - uid: EventStore.Core.TransactionLog.Checkpoint
   commentId: N:EventStore.Core.TransactionLog.Checkpoint
-  isExternal: false
   name: EventStore.Core.TransactionLog.Checkpoint
   nameWithType: EventStore.Core.TransactionLog.Checkpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint
 - uid: EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy
   commentId: T:EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy
   parent: EventStore.Core.TransactionLog.FileNamingStrategy
-  isExternal: false
   name: IFileNamingStrategy
   nameWithType: IFileNamingStrategy
   fullName: EventStore.Core.TransactionLog.FileNamingStrategy.IFileNamingStrategy
 - uid: EventStore.Core.TransactionLog.FileNamingStrategy
   commentId: N:EventStore.Core.TransactionLog.FileNamingStrategy
-  isExternal: false
   name: EventStore.Core.TransactionLog.FileNamingStrategy
   nameWithType: EventStore.Core.TransactionLog.FileNamingStrategy
   fullName: EventStore.Core.TransactionLog.FileNamingStrategy
@@ -1003,7 +1028,6 @@ references:
   fullName: System.Boolean
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor*
   commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.#ctor
-  isExternal: false
   name: TFChunkDbConfig
   nameWithType: TFChunkDbConfig.TFChunkDbConfig
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig.TFChunkDbConfig

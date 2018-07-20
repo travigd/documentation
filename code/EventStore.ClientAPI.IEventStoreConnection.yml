@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: IEventStoreConnection
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -74,6 +74,8 @@ items:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  - EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   - EventStore.ClientAPI.IEventStoreConnection.EventStore.ClientAPI.IEventStoreConnectionExtensions.SubscribeToStreamAsync(System.String,System.Boolean,Action{EventStore.ClientAPI.EventStoreSubscription,EventStore.ClientAPI.ResolvedEvent},Action{EventStore.ClientAPI.EventStoreSubscription,EventStore.ClientAPI.SubscriptionDropReason,Exception},EventStore.ClientAPI.SystemData.UserCredentials)
   - EventStore.ClientAPI.IEventStoreConnection.EventStore.ClientAPI.IEventStoreConnectionExtensions.SubscribeToStreamFrom(System.String,System.Nullable{System.Int64},System.Boolean,Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.ResolvedEvent},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.SubscriptionDropReason,Exception},EventStore.ClientAPI.SystemData.UserCredentials,System.Int32,System.String)
   - EventStore.ClientAPI.IEventStoreConnection.EventStore.ClientAPI.IEventStoreConnectionExtensions.SubscribeToStreamFrom(System.String,System.Nullable{System.Int64},EventStore.ClientAPI.CatchUpSubscriptionSettings,Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.ResolvedEvent},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.SubscriptionDropReason,Exception},EventStore.ClientAPI.SystemData.UserCredentials)
@@ -84,8 +86,6 @@ items:
   - EventStore.ClientAPI.IEventStoreConnection.EventStore.ClientAPI.IEventStoreConnectionExtensions.ConnectToPersistentSubscriptionAsync(System.String,System.String,Func{EventStore.ClientAPI.EventStorePersistentSubscriptionBase,EventStore.ClientAPI.ResolvedEvent,Task},Action{EventStore.ClientAPI.EventStorePersistentSubscriptionBase,EventStore.ClientAPI.SubscriptionDropReason,Exception},EventStore.ClientAPI.SystemData.UserCredentials,System.Int32,System.Boolean)
   - EventStore.ClientAPI.IEventStoreConnection.EventStore.ClientAPI.IEventStoreConnectionExtensions.SubscribeToAllFrom(System.Nullable{EventStore.ClientAPI.Position},System.Boolean,Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.ResolvedEvent},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.SubscriptionDropReason,Exception},EventStore.ClientAPI.SystemData.UserCredentials,System.Int32,System.String)
   - EventStore.ClientAPI.IEventStoreConnection.EventStore.ClientAPI.IEventStoreConnectionExtensions.SubscribeToAllFrom(System.Nullable{EventStore.ClientAPI.Position},EventStore.ClientAPI.CatchUpSubscriptionSettings,Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.ResolvedEvent},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription},Action{EventStore.ClientAPI.EventStoreCatchUpSubscription,EventStore.ClientAPI.SubscriptionDropReason,Exception},EventStore.ClientAPI.SystemData.UserCredentials)
-  - EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
-  - EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
   - public
   - interface
@@ -106,7 +106,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ConnectionName
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ConnectAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -172,7 +172,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Close
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -200,7 +200,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: DeleteStreamAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -241,7 +241,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: DeleteStreamAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -285,7 +285,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: AppendToStreamAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -330,7 +330,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: AppendToStreamAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -378,7 +378,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: AppendToStreamAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -426,7 +426,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ConditionalAppendToStreamAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -474,7 +474,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: StartTransactionAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -516,7 +516,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ContinueTransaction
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -555,7 +555,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ReadEventAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -599,7 +599,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ReadStreamEventsForwardAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -646,7 +646,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ReadStreamEventsBackwardAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -693,7 +693,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ReadAllEventsForwardAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -737,7 +737,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ReadAllEventsBackwardAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -781,7 +781,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SubscribeToStreamAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -831,7 +831,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SubscribeToStreamFrom
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -908,7 +908,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SubscribeToStreamFrom
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -979,7 +979,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SubscribeToAllAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1026,7 +1026,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ConnectToPersistentSubscription
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1095,7 +1095,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ConnectToPersistentSubscriptionAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1164,7 +1164,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SubscribeToAllFrom
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1238,7 +1238,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SubscribeToAllFrom
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1306,7 +1306,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: UpdatePersistentSubscriptionAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1350,7 +1350,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: CreatePersistentSubscriptionAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1394,7 +1394,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: DeletePersistentSubscriptionAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1435,7 +1435,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SetStreamMetadataAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1479,7 +1479,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SetStreamMetadataAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1526,7 +1526,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: GetStreamMetadataAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1564,7 +1564,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: GetStreamMetadataAsRawBytesAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1602,7 +1602,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SetSystemSettingsAsync
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1640,7 +1640,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Connected
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1669,7 +1669,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Disconnected
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1698,7 +1698,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Reconnecting
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1727,7 +1727,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Closed
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1756,7 +1756,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ErrorOccurred
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1785,7 +1785,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: AuthenticationFailed
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1814,7 +1814,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI/IEventStoreConnection.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Settings
     path: ../EventStore/src/EventStore.ClientAPI/IEventStoreConnection.cs
@@ -1839,19 +1839,16 @@ references:
 - uid: EventStore.ClientAPI.IEventStoreConnection
   commentId: T:EventStore.ClientAPI.IEventStoreConnection
   parent: EventStore.ClientAPI
-  isExternal: false
   name: IEventStoreConnection
   nameWithType: IEventStoreConnection
   fullName: EventStore.ClientAPI.IEventStoreConnection
 - uid: EventStore.ClientAPI.EventStoreConnection
   commentId: T:EventStore.ClientAPI.EventStoreConnection
-  isExternal: false
   name: EventStoreConnection
   nameWithType: EventStoreConnection
   fullName: EventStore.ClientAPI.EventStoreConnection
 - uid: EventStore.ClientAPI
   commentId: N:EventStore.ClientAPI
-  isExternal: false
   name: EventStore.ClientAPI
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
@@ -1936,6 +1933,70 @@ references:
     name: ToCanonicalJson
     nameWithType: Json.ToCanonicalJson
     fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<IEventStoreConnection>()
+  nameWithType: ProtobufExtensions.Serialize<IEventStoreConnection>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.IEventStoreConnection>()
+  nameWithType.vb: ProtobufExtensions.Serialize(Of IEventStoreConnection)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.IEventStoreConnection)()
+  name.vb: Serialize(Of IEventStoreConnection)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize<IEventStoreConnection>
+    nameWithType: ProtobufExtensions.Serialize<IEventStoreConnection>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.IEventStoreConnection>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
+    name: Serialize(Of IEventStoreConnection)
+    nameWithType: ProtobufExtensions.Serialize(Of IEventStoreConnection)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.IEventStoreConnection)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<IEventStoreConnection>()
+  nameWithType: ProtobufExtensions.SerializeToArray<IEventStoreConnection>()
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.IEventStoreConnection>()
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IEventStoreConnection)()
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.IEventStoreConnection)()
+  name.vb: SerializeToArray(Of IEventStoreConnection)()
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray<IEventStoreConnection>
+    nameWithType: ProtobufExtensions.SerializeToArray<IEventStoreConnection>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.IEventStoreConnection>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+    name: SerializeToArray(Of IEventStoreConnection)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of IEventStoreConnection)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.IEventStoreConnection)
   - name: (
     nameWithType: (
     fullName: (
@@ -4286,70 +4347,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
-  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
-  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  name: Serialize<IEventStoreConnection>()
-  nameWithType: ProtobufExtensions.Serialize<IEventStoreConnection>()
-  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.IEventStoreConnection>()
-  nameWithType.vb: ProtobufExtensions.Serialize(Of IEventStoreConnection)()
-  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.IEventStoreConnection)()
-  name.vb: Serialize(Of IEventStoreConnection)()
-  spec.csharp:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
-    name: Serialize<IEventStoreConnection>
-    nameWithType: ProtobufExtensions.Serialize<IEventStoreConnection>
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<EventStore.ClientAPI.IEventStoreConnection>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
-    name: Serialize(Of IEventStoreConnection)
-    nameWithType: ProtobufExtensions.Serialize(Of IEventStoreConnection)
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of EventStore.ClientAPI.IEventStoreConnection)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.ClientAPI.IEventStoreConnection.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
-  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  parent: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
-  definition: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  name: SerializeToArray<IEventStoreConnection>()
-  nameWithType: ProtobufExtensions.SerializeToArray<IEventStoreConnection>()
-  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.IEventStoreConnection>()
-  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of IEventStoreConnection)()
-  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.IEventStoreConnection)()
-  name.vb: SerializeToArray(Of IEventStoreConnection)()
-  spec.csharp:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
-    name: SerializeToArray<IEventStoreConnection>
-    nameWithType: ProtobufExtensions.SerializeToArray<IEventStoreConnection>
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<EventStore.ClientAPI.IEventStoreConnection>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
-    name: SerializeToArray(Of IEventStoreConnection)
-    nameWithType: ProtobufExtensions.SerializeToArray(Of IEventStoreConnection)
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of EventStore.ClientAPI.IEventStoreConnection)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -4391,7 +4388,6 @@ references:
 - uid: EventStore.Common.Utils.Json
   commentId: T:EventStore.Common.Utils.Json
   parent: EventStore.Common.Utils
-  isExternal: false
   name: Json
   nameWithType: Json
   fullName: EventStore.Common.Utils.Json
@@ -4468,6 +4464,84 @@ references:
     nameWithType: Object
     fullName: System.Object
     isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+  name: Serialize<T>(T)
+  nameWithType: ProtobufExtensions.Serialize<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
+  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
+  name.vb: Serialize(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize<T>
+    nameWithType: ProtobufExtensions.Serialize<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
+    name: Serialize(Of T)
+    nameWithType: ProtobufExtensions.Serialize(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+  parent: EventStore.Core.Services.Transport.Tcp
+  name: ProtobufExtensions
+  nameWithType: ProtobufExtensions
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
+- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+  name: SerializeToArray<T>(T)
+  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
+  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
+  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
+  name.vb: SerializeToArray(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray<T>
+    nameWithType: ProtobufExtensions.SerializeToArray<T>
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
+    name: SerializeToArray(Of T)
+    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
+    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -4675,7 +4749,6 @@ references:
 - uid: EventStore.ClientAPI.IEventStoreConnectionExtensions
   commentId: T:EventStore.ClientAPI.IEventStoreConnectionExtensions
   parent: EventStore.ClientAPI
-  isExternal: false
   name: IEventStoreConnectionExtensions
   nameWithType: IEventStoreConnectionExtensions
   fullName: EventStore.ClientAPI.IEventStoreConnectionExtensions
@@ -6952,102 +7025,18 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  isExternal: false
-  name: Serialize<T>(T)
-  nameWithType: ProtobufExtensions.Serialize<T>(T)
-  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
-  nameWithType.vb: ProtobufExtensions.Serialize(Of T)(T)
-  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)(T)
-  name.vb: Serialize(Of T)(T)
-  spec.csharp:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-    name: Serialize<T>
-    nameWithType: ProtobufExtensions.Serialize<T>
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-    name: Serialize(Of T)
-    nameWithType: ProtobufExtensions.Serialize(Of T)
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
-  commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
-  parent: EventStore.Core.Services.Transport.Tcp
-  isExternal: false
-  name: ProtobufExtensions
-  nameWithType: ProtobufExtensions
-  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
-- uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  isExternal: false
-  name: SerializeToArray<T>(T)
-  nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
-  fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
-  nameWithType.vb: ProtobufExtensions.SerializeToArray(Of T)(T)
-  fullName.vb: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)(T)
-  name.vb: SerializeToArray(Of T)(T)
-  spec.csharp:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-    name: SerializeToArray<T>
-    nameWithType: ProtobufExtensions.SerializeToArray<T>
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-    name: SerializeToArray(Of T)
-    nameWithType: ProtobufExtensions.SerializeToArray(Of T)
-    fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray(Of T)
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
-  isExternal: false
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
 - uid: EventStore.ClientAPI.IEventStoreConnection.ConnectionName*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ConnectionName
-  isExternal: false
   name: ConnectionName
   nameWithType: IEventStoreConnection.ConnectionName
   fullName: EventStore.ClientAPI.IEventStoreConnection.ConnectionName
@@ -7058,7 +7047,6 @@ references:
   fullName: System.String
 - uid: EventStore.ClientAPI.IEventStoreConnection.ConnectAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ConnectAsync
-  isExternal: false
   name: ConnectAsync
   nameWithType: IEventStoreConnection.ConnectAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ConnectAsync
@@ -7069,19 +7057,16 @@ references:
   fullName: Task
 - uid: EventStore.ClientAPI.IEventStoreConnection.Close*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.Close
-  isExternal: false
   name: Close
   nameWithType: IEventStoreConnection.Close
   fullName: EventStore.ClientAPI.IEventStoreConnection.Close
 - uid: EventStore.ClientAPI.ExpectedVersion
   commentId: T:EventStore.ClientAPI.ExpectedVersion
-  isExternal: false
   name: ExpectedVersion
   nameWithType: ExpectedVersion
   fullName: EventStore.ClientAPI.ExpectedVersion
 - uid: EventStore.ClientAPI.IEventStoreConnection.DeleteStreamAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.DeleteStreamAsync
-  isExternal: false
   name: DeleteStreamAsync
   nameWithType: IEventStoreConnection.DeleteStreamAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.DeleteStreamAsync
@@ -7093,7 +7078,6 @@ references:
 - uid: EventStore.ClientAPI.SystemData.UserCredentials
   commentId: T:EventStore.ClientAPI.SystemData.UserCredentials
   parent: EventStore.ClientAPI.SystemData
-  isExternal: false
   name: UserCredentials
   nameWithType: UserCredentials
   fullName: EventStore.ClientAPI.SystemData.UserCredentials
@@ -7140,7 +7124,6 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.SystemData
   commentId: N:EventStore.ClientAPI.SystemData
-  isExternal: false
   name: EventStore.ClientAPI.SystemData
   nameWithType: EventStore.ClientAPI.SystemData
   fullName: EventStore.ClientAPI.SystemData
@@ -7189,11 +7172,11 @@ references:
   fullName: System.Boolean
 - uid: EventStore.ClientAPI.IEventStoreConnection.AppendToStreamAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.AppendToStreamAsync
-  isExternal: false
   name: AppendToStreamAsync
   nameWithType: IEventStoreConnection.AppendToStreamAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.AppendToStreamAsync
 - uid: EventStore.ClientAPI.EventData[]
+  isExternal: true
   name: EventData[]
   nameWithType: EventData[]
   fullName: EventStore.ClientAPI.EventData[]
@@ -7338,7 +7321,6 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.ConditionalAppendToStreamAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ConditionalAppendToStreamAsync
-  isExternal: false
   name: ConditionalAppendToStreamAsync
   nameWithType: IEventStoreConnection.ConditionalAppendToStreamAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ConditionalAppendToStreamAsync
@@ -7386,13 +7368,11 @@ references:
 - uid: EventStore.ClientAPI.EventStoreTransaction
   commentId: T:EventStore.ClientAPI.EventStoreTransaction
   parent: EventStore.ClientAPI
-  isExternal: false
   name: EventStoreTransaction
   nameWithType: EventStoreTransaction
   fullName: EventStore.ClientAPI.EventStoreTransaction
 - uid: EventStore.ClientAPI.IEventStoreConnection.StartTransactionAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.StartTransactionAsync
-  isExternal: false
   name: StartTransactionAsync
   nameWithType: IEventStoreConnection.StartTransactionAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.StartTransactionAsync
@@ -7439,19 +7419,16 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.ContinueTransaction*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ContinueTransaction
-  isExternal: false
   name: ContinueTransaction
   nameWithType: IEventStoreConnection.ContinueTransaction
   fullName: EventStore.ClientAPI.IEventStoreConnection.ContinueTransaction
 - uid: EventStore.ClientAPI.StreamPosition
   commentId: T:EventStore.ClientAPI.StreamPosition
-  isExternal: false
   name: StreamPosition
   nameWithType: StreamPosition
   fullName: EventStore.ClientAPI.StreamPosition
 - uid: EventStore.ClientAPI.IEventStoreConnection.ReadEventAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ReadEventAsync
-  isExternal: false
   name: ReadEventAsync
   nameWithType: IEventStoreConnection.ReadEventAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ReadEventAsync
@@ -7498,7 +7475,6 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.ReadStreamEventsForwardAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ReadStreamEventsForwardAsync
-  isExternal: false
   name: ReadStreamEventsForwardAsync
   nameWithType: IEventStoreConnection.ReadStreamEventsForwardAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ReadStreamEventsForwardAsync
@@ -7550,20 +7526,17 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.ReadStreamEventsBackwardAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ReadStreamEventsBackwardAsync
-  isExternal: false
   name: ReadStreamEventsBackwardAsync
   nameWithType: IEventStoreConnection.ReadStreamEventsBackwardAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ReadStreamEventsBackwardAsync
 - uid: EventStore.ClientAPI.IEventStoreConnection.ReadAllEventsForwardAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ReadAllEventsForwardAsync
-  isExternal: false
   name: ReadAllEventsForwardAsync
   nameWithType: IEventStoreConnection.ReadAllEventsForwardAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ReadAllEventsForwardAsync
 - uid: EventStore.ClientAPI.Position
   commentId: T:EventStore.ClientAPI.Position
   parent: EventStore.ClientAPI
-  isExternal: false
   name: Position
   nameWithType: Position
   fullName: EventStore.ClientAPI.Position
@@ -7610,13 +7583,11 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.ReadAllEventsBackwardAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ReadAllEventsBackwardAsync
-  isExternal: false
   name: ReadAllEventsBackwardAsync
   nameWithType: IEventStoreConnection.ReadAllEventsBackwardAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ReadAllEventsBackwardAsync
 - uid: EventStore.ClientAPI.IEventStoreConnection.SubscribeToStreamAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.SubscribeToStreamAsync
-  isExternal: false
   name: SubscribeToStreamAsync
   nameWithType: IEventStoreConnection.SubscribeToStreamAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.SubscribeToStreamAsync
@@ -7930,24 +7901,23 @@ references:
 - uid: EventStore.ClientAPI.EventStoreCatchUpSubscription
   commentId: T:EventStore.ClientAPI.EventStoreCatchUpSubscription
   parent: EventStore.ClientAPI
-  isExternal: false
   name: EventStoreCatchUpSubscription
   nameWithType: EventStoreCatchUpSubscription
   fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription
 - uid: EventStore.ClientAPI.StreamCheckpoint.StreamStart
   commentId: F:EventStore.ClientAPI.StreamCheckpoint.StreamStart
+  isExternal: true
 - uid: EventStore.ClientAPI.StreamPosition.Start
   commentId: F:EventStore.ClientAPI.StreamPosition.Start
+  isExternal: true
 - uid: EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
   commentId: T:EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
   parent: EventStore.ClientAPI
-  isExternal: false
   name: EventStoreStreamCatchUpSubscription
   nameWithType: EventStoreStreamCatchUpSubscription
   fullName: EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
 - uid: EventStore.ClientAPI.IEventStoreConnection.SubscribeToStreamFrom*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.SubscribeToStreamFrom
-  isExternal: false
   name: SubscribeToStreamFrom
   nameWithType: IEventStoreConnection.SubscribeToStreamFrom
   fullName: EventStore.ClientAPI.IEventStoreConnection.SubscribeToStreamFrom
@@ -8256,26 +8226,22 @@ references:
 - uid: EventStore.ClientAPI.CatchUpSubscriptionSettings
   commentId: T:EventStore.ClientAPI.CatchUpSubscriptionSettings
   parent: EventStore.ClientAPI
-  isExternal: false
   name: CatchUpSubscriptionSettings
   nameWithType: CatchUpSubscriptionSettings
   fullName: EventStore.ClientAPI.CatchUpSubscriptionSettings
 - uid: EventStore.ClientAPI.IEventStoreConnection.SubscribeToAllAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.SubscribeToAllAsync
-  isExternal: false
   name: SubscribeToAllAsync
   nameWithType: IEventStoreConnection.SubscribeToAllAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.SubscribeToAllAsync
 - uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
   commentId: T:EventStore.ClientAPI.EventStorePersistentSubscriptionBase
   parent: EventStore.ClientAPI
-  isExternal: false
   name: EventStorePersistentSubscriptionBase
   nameWithType: EventStorePersistentSubscriptionBase
   fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
 - uid: EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscription*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscription
-  isExternal: false
   name: ConnectToPersistentSubscription
   nameWithType: IEventStoreConnection.ConnectToPersistentSubscription
   fullName: EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscription
@@ -8535,7 +8501,6 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscriptionAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscriptionAsync
-  isExternal: false
   name: ConnectToPersistentSubscriptionAsync
   nameWithType: IEventStoreConnection.ConnectToPersistentSubscriptionAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscriptionAsync
@@ -8582,18 +8547,18 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.AllCheckpoint.AllStart
   commentId: F:EventStore.ClientAPI.AllCheckpoint.AllStart
+  isExternal: true
 - uid: EventStore.ClientAPI.Position.Start
   commentId: F:EventStore.ClientAPI.Position.Start
+  isExternal: true
 - uid: EventStore.ClientAPI.EventStoreAllCatchUpSubscription
   commentId: T:EventStore.ClientAPI.EventStoreAllCatchUpSubscription
   parent: EventStore.ClientAPI
-  isExternal: false
   name: EventStoreAllCatchUpSubscription
   nameWithType: EventStoreAllCatchUpSubscription
   fullName: EventStore.ClientAPI.EventStoreAllCatchUpSubscription
 - uid: EventStore.ClientAPI.IEventStoreConnection.SubscribeToAllFrom*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.SubscribeToAllFrom
-  isExternal: false
   name: SubscribeToAllFrom
   nameWithType: IEventStoreConnection.SubscribeToAllFrom
   fullName: EventStore.ClientAPI.IEventStoreConnection.SubscribeToAllFrom
@@ -8641,42 +8606,37 @@ references:
 - uid: EventStore.ClientAPI.PersistentSubscriptionSettings
   commentId: T:EventStore.ClientAPI.PersistentSubscriptionSettings
   parent: EventStore.ClientAPI
-  isExternal: false
   name: PersistentSubscriptionSettings
   nameWithType: PersistentSubscriptionSettings
   fullName: EventStore.ClientAPI.PersistentSubscriptionSettings
 - uid: EventStore.ClientAPI.IEventStoreConnection.UpdatePersistentSubscriptionAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.UpdatePersistentSubscriptionAsync
-  isExternal: false
   name: UpdatePersistentSubscriptionAsync
   nameWithType: IEventStoreConnection.UpdatePersistentSubscriptionAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.UpdatePersistentSubscriptionAsync
 - uid: EventStore.ClientAPI.IEventStoreConnection.CreatePersistentSubscriptionAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.CreatePersistentSubscriptionAsync
-  isExternal: false
   name: CreatePersistentSubscriptionAsync
   nameWithType: IEventStoreConnection.CreatePersistentSubscriptionAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.CreatePersistentSubscriptionAsync
 - uid: EventStore.ClientAPI.IEventStoreConnection.DeletePersistentSubscriptionAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.DeletePersistentSubscriptionAsync
-  isExternal: false
   name: DeletePersistentSubscriptionAsync
   nameWithType: IEventStoreConnection.DeletePersistentSubscriptionAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.DeletePersistentSubscriptionAsync
 - uid: EventStore.ClientAPI.StreamMetadata
   commentId: T:EventStore.ClientAPI.StreamMetadata
   parent: EventStore.ClientAPI
-  isExternal: false
   name: StreamMetadata
   nameWithType: StreamMetadata
   fullName: EventStore.ClientAPI.StreamMetadata
 - uid: EventStore.ClientAPI.IEventStoreConnection.SetStreamMetadataAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.SetStreamMetadataAsync
-  isExternal: false
   name: SetStreamMetadataAsync
   nameWithType: IEventStoreConnection.SetStreamMetadataAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.SetStreamMetadataAsync
 - uid: System.Byte[]
+  isExternal: true
   name: Byte[]
   nameWithType: Byte[]
   fullName: System.Byte[]
@@ -8703,7 +8663,6 @@ references:
     fullName: ()
 - uid: EventStore.ClientAPI.IEventStoreConnection.GetStreamMetadataAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.GetStreamMetadataAsync
-  isExternal: false
   name: GetStreamMetadataAsync
   nameWithType: IEventStoreConnection.GetStreamMetadataAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.GetStreamMetadataAsync
@@ -8750,7 +8709,6 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.GetStreamMetadataAsRawBytesAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.GetStreamMetadataAsRawBytesAsync
-  isExternal: false
   name: GetStreamMetadataAsRawBytesAsync
   nameWithType: IEventStoreConnection.GetStreamMetadataAsRawBytesAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.GetStreamMetadataAsRawBytesAsync
@@ -8798,13 +8756,11 @@ references:
 - uid: EventStore.ClientAPI.SystemSettings
   commentId: T:EventStore.ClientAPI.SystemSettings
   parent: EventStore.ClientAPI
-  isExternal: false
   name: SystemSettings
   nameWithType: SystemSettings
   fullName: EventStore.ClientAPI.SystemSettings
 - uid: EventStore.ClientAPI.IEventStoreConnection.SetSystemSettingsAsync*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.SetSystemSettingsAsync
-  isExternal: false
   name: SetSystemSettingsAsync
   nameWithType: IEventStoreConnection.SetSystemSettingsAsync
   fullName: EventStore.ClientAPI.IEventStoreConnection.SetSystemSettingsAsync
@@ -8889,6 +8845,7 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.IEventStoreConnection.Close
   commentId: M:EventStore.ClientAPI.IEventStoreConnection.Close
+  isExternal: true
 - uid: EventHandler{EventStore.ClientAPI.ClientReconnectingEventArgs}
   commentId: '!:EventHandler{EventStore.ClientAPI.ClientReconnectingEventArgs}'
   definition: EventHandler`1
@@ -9056,13 +9013,11 @@ references:
 - uid: EventStore.ClientAPI.ConnectionSettings
   commentId: T:EventStore.ClientAPI.ConnectionSettings
   parent: EventStore.ClientAPI
-  isExternal: false
   name: ConnectionSettings
   nameWithType: ConnectionSettings
   fullName: EventStore.ClientAPI.ConnectionSettings
 - uid: EventStore.ClientAPI.IEventStoreConnection.Settings*
   commentId: Overload:EventStore.ClientAPI.IEventStoreConnection.Settings
-  isExternal: false
   name: Settings
   nameWithType: IEventStoreConnection.Settings
   fullName: EventStore.ClientAPI.IEventStoreConnection.Settings

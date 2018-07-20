@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: EmbeddedVNodeBuilder
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
@@ -202,6 +202,7 @@ items:
   - EventStore.Core.VNodeBuilder.WithIndexBitnessVersion(System.Byte)
   - EventStore.Core.VNodeBuilder.AlwaysKeepScavenged
   - EventStore.Core.VNodeBuilder.SkipIndexScanOnReads
+  - EventStore.Core.VNodeBuilder.ReduceFileCachePressure
   - EventStore.Core.VNodeBuilder.Build(EventStore.Common.Options.IOptions,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[])
   - EventStore.Core.VNodeBuilder.RunProjections(EventStore.ClientAPI.Embedded.ProjectionsMode,System.Int32)
   extensionMethods:
@@ -230,7 +231,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: AsSingleNode
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
@@ -267,7 +268,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: AsClusterMember
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
@@ -307,7 +308,7 @@ items:
   source:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: SetUpProjectionsIfNeeded
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
@@ -332,13 +333,11 @@ references:
 - uid: EventStore.Core.ClusterVNode
   commentId: T:EventStore.Core.ClusterVNode
   parent: EventStore.Core
-  isExternal: false
   name: ClusterVNode
   nameWithType: ClusterVNode
   fullName: EventStore.Core.ClusterVNode
 - uid: EventStore.ClientAPI.Embedded
   commentId: N:EventStore.ClientAPI.Embedded
-  isExternal: false
   name: EventStore.ClientAPI.Embedded
   nameWithType: EventStore.ClientAPI.Embedded
   fullName: EventStore.ClientAPI.Embedded
@@ -350,560 +349,480 @@ references:
 - uid: EventStore.Core.VNodeBuilder
   commentId: T:EventStore.Core.VNodeBuilder
   parent: EventStore.Core
-  isExternal: false
   name: VNodeBuilder
   nameWithType: VNodeBuilder
   fullName: EventStore.Core.VNodeBuilder
 - uid: EventStore.Core.VNodeBuilder._log
   commentId: F:EventStore.Core.VNodeBuilder._log
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _log
   nameWithType: VNodeBuilder._log
   fullName: EventStore.Core.VNodeBuilder._log
 - uid: EventStore.Core.VNodeBuilder._chunkSize
   commentId: F:EventStore.Core.VNodeBuilder._chunkSize
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _chunkSize
   nameWithType: VNodeBuilder._chunkSize
   fullName: EventStore.Core.VNodeBuilder._chunkSize
 - uid: EventStore.Core.VNodeBuilder._dbPath
   commentId: F:EventStore.Core.VNodeBuilder._dbPath
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _dbPath
   nameWithType: VNodeBuilder._dbPath
   fullName: EventStore.Core.VNodeBuilder._dbPath
 - uid: EventStore.Core.VNodeBuilder._chunksCacheSize
   commentId: F:EventStore.Core.VNodeBuilder._chunksCacheSize
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _chunksCacheSize
   nameWithType: VNodeBuilder._chunksCacheSize
   fullName: EventStore.Core.VNodeBuilder._chunksCacheSize
 - uid: EventStore.Core.VNodeBuilder._cachedChunks
   commentId: F:EventStore.Core.VNodeBuilder._cachedChunks
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _cachedChunks
   nameWithType: VNodeBuilder._cachedChunks
   fullName: EventStore.Core.VNodeBuilder._cachedChunks
 - uid: EventStore.Core.VNodeBuilder._inMemoryDb
   commentId: F:EventStore.Core.VNodeBuilder._inMemoryDb
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _inMemoryDb
   nameWithType: VNodeBuilder._inMemoryDb
   fullName: EventStore.Core.VNodeBuilder._inMemoryDb
 - uid: EventStore.Core.VNodeBuilder._startStandardProjections
   commentId: F:EventStore.Core.VNodeBuilder._startStandardProjections
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _startStandardProjections
   nameWithType: VNodeBuilder._startStandardProjections
   fullName: EventStore.Core.VNodeBuilder._startStandardProjections
 - uid: EventStore.Core.VNodeBuilder._disableHTTPCaching
   commentId: F:EventStore.Core.VNodeBuilder._disableHTTPCaching
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _disableHTTPCaching
   nameWithType: VNodeBuilder._disableHTTPCaching
   fullName: EventStore.Core.VNodeBuilder._disableHTTPCaching
 - uid: EventStore.Core.VNodeBuilder._logHttpRequests
   commentId: F:EventStore.Core.VNodeBuilder._logHttpRequests
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _logHttpRequests
   nameWithType: VNodeBuilder._logHttpRequests
   fullName: EventStore.Core.VNodeBuilder._logHttpRequests
 - uid: EventStore.Core.VNodeBuilder._enableHistograms
   commentId: F:EventStore.Core.VNodeBuilder._enableHistograms
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _enableHistograms
   nameWithType: VNodeBuilder._enableHistograms
   fullName: EventStore.Core.VNodeBuilder._enableHistograms
 - uid: EventStore.Core.VNodeBuilder._internalTcp
   commentId: F:EventStore.Core.VNodeBuilder._internalTcp
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _internalTcp
   nameWithType: VNodeBuilder._internalTcp
   fullName: EventStore.Core.VNodeBuilder._internalTcp
 - uid: EventStore.Core.VNodeBuilder._internalSecureTcp
   commentId: F:EventStore.Core.VNodeBuilder._internalSecureTcp
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _internalSecureTcp
   nameWithType: VNodeBuilder._internalSecureTcp
   fullName: EventStore.Core.VNodeBuilder._internalSecureTcp
 - uid: EventStore.Core.VNodeBuilder._externalTcp
   commentId: F:EventStore.Core.VNodeBuilder._externalTcp
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _externalTcp
   nameWithType: VNodeBuilder._externalTcp
   fullName: EventStore.Core.VNodeBuilder._externalTcp
 - uid: EventStore.Core.VNodeBuilder._externalSecureTcp
   commentId: F:EventStore.Core.VNodeBuilder._externalSecureTcp
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _externalSecureTcp
   nameWithType: VNodeBuilder._externalSecureTcp
   fullName: EventStore.Core.VNodeBuilder._externalSecureTcp
 - uid: EventStore.Core.VNodeBuilder._internalHttp
   commentId: F:EventStore.Core.VNodeBuilder._internalHttp
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _internalHttp
   nameWithType: VNodeBuilder._internalHttp
   fullName: EventStore.Core.VNodeBuilder._internalHttp
 - uid: EventStore.Core.VNodeBuilder._externalHttp
   commentId: F:EventStore.Core.VNodeBuilder._externalHttp
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _externalHttp
   nameWithType: VNodeBuilder._externalHttp
   fullName: EventStore.Core.VNodeBuilder._externalHttp
 - uid: EventStore.Core.VNodeBuilder._intHttpPrefixes
   commentId: F:EventStore.Core.VNodeBuilder._intHttpPrefixes
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _intHttpPrefixes
   nameWithType: VNodeBuilder._intHttpPrefixes
   fullName: EventStore.Core.VNodeBuilder._intHttpPrefixes
 - uid: EventStore.Core.VNodeBuilder._extHttpPrefixes
   commentId: F:EventStore.Core.VNodeBuilder._extHttpPrefixes
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _extHttpPrefixes
   nameWithType: VNodeBuilder._extHttpPrefixes
   fullName: EventStore.Core.VNodeBuilder._extHttpPrefixes
 - uid: EventStore.Core.VNodeBuilder._addInterfacePrefixes
   commentId: F:EventStore.Core.VNodeBuilder._addInterfacePrefixes
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _addInterfacePrefixes
   nameWithType: VNodeBuilder._addInterfacePrefixes
   fullName: EventStore.Core.VNodeBuilder._addInterfacePrefixes
 - uid: EventStore.Core.VNodeBuilder._enableTrustedAuth
   commentId: F:EventStore.Core.VNodeBuilder._enableTrustedAuth
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _enableTrustedAuth
   nameWithType: VNodeBuilder._enableTrustedAuth
   fullName: EventStore.Core.VNodeBuilder._enableTrustedAuth
 - uid: EventStore.Core.VNodeBuilder._certificate
   commentId: F:EventStore.Core.VNodeBuilder._certificate
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _certificate
   nameWithType: VNodeBuilder._certificate
   fullName: EventStore.Core.VNodeBuilder._certificate
 - uid: EventStore.Core.VNodeBuilder._workerThreads
   commentId: F:EventStore.Core.VNodeBuilder._workerThreads
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _workerThreads
   nameWithType: VNodeBuilder._workerThreads
   fullName: EventStore.Core.VNodeBuilder._workerThreads
 - uid: EventStore.Core.VNodeBuilder._discoverViaDns
   commentId: F:EventStore.Core.VNodeBuilder._discoverViaDns
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _discoverViaDns
   nameWithType: VNodeBuilder._discoverViaDns
   fullName: EventStore.Core.VNodeBuilder._discoverViaDns
 - uid: EventStore.Core.VNodeBuilder._clusterDns
   commentId: F:EventStore.Core.VNodeBuilder._clusterDns
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _clusterDns
   nameWithType: VNodeBuilder._clusterDns
   fullName: EventStore.Core.VNodeBuilder._clusterDns
 - uid: EventStore.Core.VNodeBuilder._gossipSeeds
   commentId: F:EventStore.Core.VNodeBuilder._gossipSeeds
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _gossipSeeds
   nameWithType: VNodeBuilder._gossipSeeds
   fullName: EventStore.Core.VNodeBuilder._gossipSeeds
 - uid: EventStore.Core.VNodeBuilder._minFlushDelay
   commentId: F:EventStore.Core.VNodeBuilder._minFlushDelay
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _minFlushDelay
   nameWithType: VNodeBuilder._minFlushDelay
   fullName: EventStore.Core.VNodeBuilder._minFlushDelay
 - uid: EventStore.Core.VNodeBuilder._clusterNodeCount
   commentId: F:EventStore.Core.VNodeBuilder._clusterNodeCount
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _clusterNodeCount
   nameWithType: VNodeBuilder._clusterNodeCount
   fullName: EventStore.Core.VNodeBuilder._clusterNodeCount
 - uid: EventStore.Core.VNodeBuilder._prepareAckCount
   commentId: F:EventStore.Core.VNodeBuilder._prepareAckCount
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _prepareAckCount
   nameWithType: VNodeBuilder._prepareAckCount
   fullName: EventStore.Core.VNodeBuilder._prepareAckCount
 - uid: EventStore.Core.VNodeBuilder._commitAckCount
   commentId: F:EventStore.Core.VNodeBuilder._commitAckCount
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _commitAckCount
   nameWithType: VNodeBuilder._commitAckCount
   fullName: EventStore.Core.VNodeBuilder._commitAckCount
 - uid: EventStore.Core.VNodeBuilder._prepareTimeout
   commentId: F:EventStore.Core.VNodeBuilder._prepareTimeout
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _prepareTimeout
   nameWithType: VNodeBuilder._prepareTimeout
   fullName: EventStore.Core.VNodeBuilder._prepareTimeout
 - uid: EventStore.Core.VNodeBuilder._commitTimeout
   commentId: F:EventStore.Core.VNodeBuilder._commitTimeout
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _commitTimeout
   nameWithType: VNodeBuilder._commitTimeout
   fullName: EventStore.Core.VNodeBuilder._commitTimeout
 - uid: EventStore.Core.VNodeBuilder._nodePriority
   commentId: F:EventStore.Core.VNodeBuilder._nodePriority
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _nodePriority
   nameWithType: VNodeBuilder._nodePriority
   fullName: EventStore.Core.VNodeBuilder._nodePriority
 - uid: EventStore.Core.VNodeBuilder._useSsl
   commentId: F:EventStore.Core.VNodeBuilder._useSsl
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _useSsl
   nameWithType: VNodeBuilder._useSsl
   fullName: EventStore.Core.VNodeBuilder._useSsl
 - uid: EventStore.Core.VNodeBuilder._disableInsecureTCP
   commentId: F:EventStore.Core.VNodeBuilder._disableInsecureTCP
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _disableInsecureTCP
   nameWithType: VNodeBuilder._disableInsecureTCP
   fullName: EventStore.Core.VNodeBuilder._disableInsecureTCP
 - uid: EventStore.Core.VNodeBuilder._sslTargetHost
   commentId: F:EventStore.Core.VNodeBuilder._sslTargetHost
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _sslTargetHost
   nameWithType: VNodeBuilder._sslTargetHost
   fullName: EventStore.Core.VNodeBuilder._sslTargetHost
 - uid: EventStore.Core.VNodeBuilder._sslValidateServer
   commentId: F:EventStore.Core.VNodeBuilder._sslValidateServer
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _sslValidateServer
   nameWithType: VNodeBuilder._sslValidateServer
   fullName: EventStore.Core.VNodeBuilder._sslValidateServer
 - uid: EventStore.Core.VNodeBuilder._statsPeriod
   commentId: F:EventStore.Core.VNodeBuilder._statsPeriod
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _statsPeriod
   nameWithType: VNodeBuilder._statsPeriod
   fullName: EventStore.Core.VNodeBuilder._statsPeriod
 - uid: EventStore.Core.VNodeBuilder._statsStorage
   commentId: F:EventStore.Core.VNodeBuilder._statsStorage
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _statsStorage
   nameWithType: VNodeBuilder._statsStorage
   fullName: EventStore.Core.VNodeBuilder._statsStorage
 - uid: EventStore.Core.VNodeBuilder._authenticationProviderFactory
   commentId: F:EventStore.Core.VNodeBuilder._authenticationProviderFactory
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _authenticationProviderFactory
   nameWithType: VNodeBuilder._authenticationProviderFactory
   fullName: EventStore.Core.VNodeBuilder._authenticationProviderFactory
 - uid: EventStore.Core.VNodeBuilder._disableScavengeMerging
   commentId: F:EventStore.Core.VNodeBuilder._disableScavengeMerging
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _disableScavengeMerging
   nameWithType: VNodeBuilder._disableScavengeMerging
   fullName: EventStore.Core.VNodeBuilder._disableScavengeMerging
 - uid: EventStore.Core.VNodeBuilder._scavengeHistoryMaxAge
   commentId: F:EventStore.Core.VNodeBuilder._scavengeHistoryMaxAge
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _scavengeHistoryMaxAge
   nameWithType: VNodeBuilder._scavengeHistoryMaxAge
   fullName: EventStore.Core.VNodeBuilder._scavengeHistoryMaxAge
 - uid: EventStore.Core.VNodeBuilder._adminOnPublic
   commentId: F:EventStore.Core.VNodeBuilder._adminOnPublic
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _adminOnPublic
   nameWithType: VNodeBuilder._adminOnPublic
   fullName: EventStore.Core.VNodeBuilder._adminOnPublic
 - uid: EventStore.Core.VNodeBuilder._statsOnPublic
   commentId: F:EventStore.Core.VNodeBuilder._statsOnPublic
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _statsOnPublic
   nameWithType: VNodeBuilder._statsOnPublic
   fullName: EventStore.Core.VNodeBuilder._statsOnPublic
 - uid: EventStore.Core.VNodeBuilder._gossipOnPublic
   commentId: F:EventStore.Core.VNodeBuilder._gossipOnPublic
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _gossipOnPublic
   nameWithType: VNodeBuilder._gossipOnPublic
   fullName: EventStore.Core.VNodeBuilder._gossipOnPublic
 - uid: EventStore.Core.VNodeBuilder._gossipInterval
   commentId: F:EventStore.Core.VNodeBuilder._gossipInterval
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _gossipInterval
   nameWithType: VNodeBuilder._gossipInterval
   fullName: EventStore.Core.VNodeBuilder._gossipInterval
 - uid: EventStore.Core.VNodeBuilder._gossipAllowedTimeDifference
   commentId: F:EventStore.Core.VNodeBuilder._gossipAllowedTimeDifference
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _gossipAllowedTimeDifference
   nameWithType: VNodeBuilder._gossipAllowedTimeDifference
   fullName: EventStore.Core.VNodeBuilder._gossipAllowedTimeDifference
 - uid: EventStore.Core.VNodeBuilder._gossipTimeout
   commentId: F:EventStore.Core.VNodeBuilder._gossipTimeout
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _gossipTimeout
   nameWithType: VNodeBuilder._gossipTimeout
   fullName: EventStore.Core.VNodeBuilder._gossipTimeout
 - uid: EventStore.Core.VNodeBuilder._gossipAdvertiseInfo
   commentId: F:EventStore.Core.VNodeBuilder._gossipAdvertiseInfo
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _gossipAdvertiseInfo
   nameWithType: VNodeBuilder._gossipAdvertiseInfo
   fullName: EventStore.Core.VNodeBuilder._gossipAdvertiseInfo
 - uid: EventStore.Core.VNodeBuilder._intTcpHeartbeatTimeout
   commentId: F:EventStore.Core.VNodeBuilder._intTcpHeartbeatTimeout
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _intTcpHeartbeatTimeout
   nameWithType: VNodeBuilder._intTcpHeartbeatTimeout
   fullName: EventStore.Core.VNodeBuilder._intTcpHeartbeatTimeout
 - uid: EventStore.Core.VNodeBuilder._intTcpHeartbeatInterval
   commentId: F:EventStore.Core.VNodeBuilder._intTcpHeartbeatInterval
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _intTcpHeartbeatInterval
   nameWithType: VNodeBuilder._intTcpHeartbeatInterval
   fullName: EventStore.Core.VNodeBuilder._intTcpHeartbeatInterval
 - uid: EventStore.Core.VNodeBuilder._extTcpHeartbeatTimeout
   commentId: F:EventStore.Core.VNodeBuilder._extTcpHeartbeatTimeout
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _extTcpHeartbeatTimeout
   nameWithType: VNodeBuilder._extTcpHeartbeatTimeout
   fullName: EventStore.Core.VNodeBuilder._extTcpHeartbeatTimeout
 - uid: EventStore.Core.VNodeBuilder._extTcpHeartbeatInterval
   commentId: F:EventStore.Core.VNodeBuilder._extTcpHeartbeatInterval
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _extTcpHeartbeatInterval
   nameWithType: VNodeBuilder._extTcpHeartbeatInterval
   fullName: EventStore.Core.VNodeBuilder._extTcpHeartbeatInterval
 - uid: EventStore.Core.VNodeBuilder._connectionPendingSendBytesThreshold
   commentId: F:EventStore.Core.VNodeBuilder._connectionPendingSendBytesThreshold
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _connectionPendingSendBytesThreshold
   nameWithType: VNodeBuilder._connectionPendingSendBytesThreshold
   fullName: EventStore.Core.VNodeBuilder._connectionPendingSendBytesThreshold
 - uid: EventStore.Core.VNodeBuilder._skipVerifyDbHashes
   commentId: F:EventStore.Core.VNodeBuilder._skipVerifyDbHashes
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _skipVerifyDbHashes
   nameWithType: VNodeBuilder._skipVerifyDbHashes
   fullName: EventStore.Core.VNodeBuilder._skipVerifyDbHashes
 - uid: EventStore.Core.VNodeBuilder._maxMemtableSize
   commentId: F:EventStore.Core.VNodeBuilder._maxMemtableSize
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _maxMemtableSize
   nameWithType: VNodeBuilder._maxMemtableSize
   fullName: EventStore.Core.VNodeBuilder._maxMemtableSize
 - uid: EventStore.Core.VNodeBuilder._hashCollisionReadLimit
   commentId: F:EventStore.Core.VNodeBuilder._hashCollisionReadLimit
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _hashCollisionReadLimit
   nameWithType: VNodeBuilder._hashCollisionReadLimit
   fullName: EventStore.Core.VNodeBuilder._hashCollisionReadLimit
 - uid: EventStore.Core.VNodeBuilder._subsystems
   commentId: F:EventStore.Core.VNodeBuilder._subsystems
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _subsystems
   nameWithType: VNodeBuilder._subsystems
   fullName: EventStore.Core.VNodeBuilder._subsystems
 - uid: EventStore.Core.VNodeBuilder._clusterGossipPort
   commentId: F:EventStore.Core.VNodeBuilder._clusterGossipPort
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _clusterGossipPort
   nameWithType: VNodeBuilder._clusterGossipPort
   fullName: EventStore.Core.VNodeBuilder._clusterGossipPort
 - uid: EventStore.Core.VNodeBuilder._readerThreadsCount
   commentId: F:EventStore.Core.VNodeBuilder._readerThreadsCount
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _readerThreadsCount
   nameWithType: VNodeBuilder._readerThreadsCount
   fullName: EventStore.Core.VNodeBuilder._readerThreadsCount
 - uid: EventStore.Core.VNodeBuilder._unbuffered
   commentId: F:EventStore.Core.VNodeBuilder._unbuffered
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _unbuffered
   nameWithType: VNodeBuilder._unbuffered
   fullName: EventStore.Core.VNodeBuilder._unbuffered
 - uid: EventStore.Core.VNodeBuilder._writethrough
   commentId: F:EventStore.Core.VNodeBuilder._writethrough
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _writethrough
   nameWithType: VNodeBuilder._writethrough
   fullName: EventStore.Core.VNodeBuilder._writethrough
 - uid: EventStore.Core.VNodeBuilder._chunkInitialReaderCount
   commentId: F:EventStore.Core.VNodeBuilder._chunkInitialReaderCount
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _chunkInitialReaderCount
   nameWithType: VNodeBuilder._chunkInitialReaderCount
   fullName: EventStore.Core.VNodeBuilder._chunkInitialReaderCount
 - uid: EventStore.Core.VNodeBuilder._index
   commentId: F:EventStore.Core.VNodeBuilder._index
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _index
   nameWithType: VNodeBuilder._index
   fullName: EventStore.Core.VNodeBuilder._index
 - uid: EventStore.Core.VNodeBuilder._skipIndexVerify
   commentId: F:EventStore.Core.VNodeBuilder._skipIndexVerify
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _skipIndexVerify
   nameWithType: VNodeBuilder._skipIndexVerify
   fullName: EventStore.Core.VNodeBuilder._skipIndexVerify
 - uid: EventStore.Core.VNodeBuilder._indexCacheDepth
   commentId: F:EventStore.Core.VNodeBuilder._indexCacheDepth
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _indexCacheDepth
   nameWithType: VNodeBuilder._indexCacheDepth
   fullName: EventStore.Core.VNodeBuilder._indexCacheDepth
 - uid: EventStore.Core.VNodeBuilder._optimizeIndexMerge
   commentId: F:EventStore.Core.VNodeBuilder._optimizeIndexMerge
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _optimizeIndexMerge
   nameWithType: VNodeBuilder._optimizeIndexMerge
   fullName: EventStore.Core.VNodeBuilder._optimizeIndexMerge
 - uid: EventStore.Core.VNodeBuilder._unsafeIgnoreHardDelete
   commentId: F:EventStore.Core.VNodeBuilder._unsafeIgnoreHardDelete
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _unsafeIgnoreHardDelete
   nameWithType: VNodeBuilder._unsafeIgnoreHardDelete
   fullName: EventStore.Core.VNodeBuilder._unsafeIgnoreHardDelete
 - uid: EventStore.Core.VNodeBuilder._unsafeDisableFlushToDisk
   commentId: F:EventStore.Core.VNodeBuilder._unsafeDisableFlushToDisk
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _unsafeDisableFlushToDisk
   nameWithType: VNodeBuilder._unsafeDisableFlushToDisk
   fullName: EventStore.Core.VNodeBuilder._unsafeDisableFlushToDisk
 - uid: EventStore.Core.VNodeBuilder._betterOrdering
   commentId: F:EventStore.Core.VNodeBuilder._betterOrdering
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _betterOrdering
   nameWithType: VNodeBuilder._betterOrdering
   fullName: EventStore.Core.VNodeBuilder._betterOrdering
 - uid: EventStore.Core.VNodeBuilder._projectionType
   commentId: F:EventStore.Core.VNodeBuilder._projectionType
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _projectionType
   nameWithType: VNodeBuilder._projectionType
   fullName: EventStore.Core.VNodeBuilder._projectionType
 - uid: EventStore.Core.VNodeBuilder._projectionsThreads
   commentId: F:EventStore.Core.VNodeBuilder._projectionsThreads
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _projectionsThreads
   nameWithType: VNodeBuilder._projectionsThreads
   fullName: EventStore.Core.VNodeBuilder._projectionsThreads
 - uid: EventStore.Core.VNodeBuilder._projectionsQueryExpiry
   commentId: F:EventStore.Core.VNodeBuilder._projectionsQueryExpiry
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _projectionsQueryExpiry
   nameWithType: VNodeBuilder._projectionsQueryExpiry
   fullName: EventStore.Core.VNodeBuilder._projectionsQueryExpiry
 - uid: EventStore.Core.VNodeBuilder._db
   commentId: F:EventStore.Core.VNodeBuilder._db
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _db
   nameWithType: VNodeBuilder._db
   fullName: EventStore.Core.VNodeBuilder._db
 - uid: EventStore.Core.VNodeBuilder._vNodeSettings
   commentId: F:EventStore.Core.VNodeBuilder._vNodeSettings
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _vNodeSettings
   nameWithType: VNodeBuilder._vNodeSettings
   fullName: EventStore.Core.VNodeBuilder._vNodeSettings
 - uid: EventStore.Core.VNodeBuilder._dbConfig
   commentId: F:EventStore.Core.VNodeBuilder._dbConfig
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _dbConfig
   nameWithType: VNodeBuilder._dbConfig
   fullName: EventStore.Core.VNodeBuilder._dbConfig
 - uid: EventStore.Core.VNodeBuilder._indexBitnessVersion
   commentId: F:EventStore.Core.VNodeBuilder._indexBitnessVersion
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _indexBitnessVersion
   nameWithType: VNodeBuilder._indexBitnessVersion
   fullName: EventStore.Core.VNodeBuilder._indexBitnessVersion
 - uid: EventStore.Core.VNodeBuilder._alwaysKeepScavenged
   commentId: F:EventStore.Core.VNodeBuilder._alwaysKeepScavenged
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _alwaysKeepScavenged
   nameWithType: VNodeBuilder._alwaysKeepScavenged
   fullName: EventStore.Core.VNodeBuilder._alwaysKeepScavenged
 - uid: EventStore.Core.VNodeBuilder._skipIndexScanOnReads
   commentId: F:EventStore.Core.VNodeBuilder._skipIndexScanOnReads
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: _skipIndexScanOnReads
   nameWithType: VNodeBuilder._skipIndexScanOnReads
   fullName: EventStore.Core.VNodeBuilder._skipIndexScanOnReads
 - uid: EventStore.Core.VNodeBuilder.WithSingleNodeSettings
   commentId: M:EventStore.Core.VNodeBuilder.WithSingleNodeSettings
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: WithSingleNodeSettings()
   nameWithType: VNodeBuilder.WithSingleNodeSettings()
   fullName: EventStore.Core.VNodeBuilder.WithSingleNodeSettings()
@@ -971,7 +890,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.StartStandardProjections
   commentId: M:EventStore.Core.VNodeBuilder.StartStandardProjections
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: StartStandardProjections()
   nameWithType: VNodeBuilder.StartStandardProjections()
   fullName: EventStore.Core.VNodeBuilder.StartStandardProjections()
@@ -1000,7 +918,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.DisableHTTPCaching
   commentId: M:EventStore.Core.VNodeBuilder.DisableHTTPCaching
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: DisableHTTPCaching()
   nameWithType: VNodeBuilder.DisableHTTPCaching()
   fullName: EventStore.Core.VNodeBuilder.DisableHTTPCaching()
@@ -1121,7 +1038,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.AddCustomSubsystem(EventStore.Core.ISubsystem)
   commentId: M:EventStore.Core.VNodeBuilder.AddCustomSubsystem(EventStore.Core.ISubsystem)
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: AddCustomSubsystem(ISubsystem)
   nameWithType: VNodeBuilder.AddCustomSubsystem(ISubsystem)
   fullName: EventStore.Core.VNodeBuilder.AddCustomSubsystem(EventStore.Core.ISubsystem)
@@ -1158,7 +1074,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.RunInMemory
   commentId: M:EventStore.Core.VNodeBuilder.RunInMemory
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: RunInMemory()
   nameWithType: VNodeBuilder.RunInMemory()
   fullName: EventStore.Core.VNodeBuilder.RunInMemory()
@@ -1226,7 +1141,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.OnDefaultEndpoints
   commentId: M:EventStore.Core.VNodeBuilder.OnDefaultEndpoints
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: OnDefaultEndpoints()
   nameWithType: VNodeBuilder.OnDefaultEndpoints()
   fullName: EventStore.Core.VNodeBuilder.OnDefaultEndpoints()
@@ -1567,7 +1481,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.GossipAsSingleNode
   commentId: M:EventStore.Core.VNodeBuilder.GossipAsSingleNode
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: GossipAsSingleNode()
   nameWithType: VNodeBuilder.GossipAsSingleNode()
   fullName: EventStore.Core.VNodeBuilder.GossipAsSingleNode()
@@ -1908,7 +1821,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.EnableSsl
   commentId: M:EventStore.Core.VNodeBuilder.EnableSsl
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: EnableSsl()
   nameWithType: VNodeBuilder.EnableSsl()
   fullName: EventStore.Core.VNodeBuilder.EnableSsl()
@@ -1937,7 +1849,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.DisableInsecureTCP
   commentId: M:EventStore.Core.VNodeBuilder.DisableInsecureTCP
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: DisableInsecureTCP()
   nameWithType: VNodeBuilder.DisableInsecureTCP()
   fullName: EventStore.Core.VNodeBuilder.DisableInsecureTCP()
@@ -2005,7 +1916,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.ValidateSslServer
   commentId: M:EventStore.Core.VNodeBuilder.ValidateSslServer
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: ValidateSslServer()
   nameWithType: VNodeBuilder.ValidateSslServer()
   fullName: EventStore.Core.VNodeBuilder.ValidateSslServer()
@@ -2160,7 +2070,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.DoNotVerifyDbHashes
   commentId: M:EventStore.Core.VNodeBuilder.DoNotVerifyDbHashes
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: DoNotVerifyDbHashes()
   nameWithType: VNodeBuilder.DoNotVerifyDbHashes()
   fullName: EventStore.Core.VNodeBuilder.DoNotVerifyDbHashes()
@@ -2189,7 +2098,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.NoGossipOnPublicInterface
   commentId: M:EventStore.Core.VNodeBuilder.NoGossipOnPublicInterface
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: NoGossipOnPublicInterface()
   nameWithType: VNodeBuilder.NoGossipOnPublicInterface()
   fullName: EventStore.Core.VNodeBuilder.NoGossipOnPublicInterface()
@@ -2218,7 +2126,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.NoAdminOnPublicInterface
   commentId: M:EventStore.Core.VNodeBuilder.NoAdminOnPublicInterface
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: NoAdminOnPublicInterface()
   nameWithType: VNodeBuilder.NoAdminOnPublicInterface()
   fullName: EventStore.Core.VNodeBuilder.NoAdminOnPublicInterface()
@@ -2247,7 +2154,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.NoStatsOnPublicInterface
   commentId: M:EventStore.Core.VNodeBuilder.NoStatsOnPublicInterface
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: NoStatsOnPublicInterface()
   nameWithType: VNodeBuilder.NoStatsOnPublicInterface()
   fullName: EventStore.Core.VNodeBuilder.NoStatsOnPublicInterface()
@@ -2276,7 +2182,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.VerifyDbHashes
   commentId: M:EventStore.Core.VNodeBuilder.VerifyDbHashes
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: VerifyDbHashes()
   nameWithType: VNodeBuilder.VerifyDbHashes()
   fullName: EventStore.Core.VNodeBuilder.VerifyDbHashes()
@@ -2344,7 +2249,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.DisableDnsDiscovery
   commentId: M:EventStore.Core.VNodeBuilder.DisableDnsDiscovery
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: DisableDnsDiscovery()
   nameWithType: VNodeBuilder.DisableDnsDiscovery()
   fullName: EventStore.Core.VNodeBuilder.DisableDnsDiscovery()
@@ -2490,7 +2394,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.DontAddInterfacePrefixes
   commentId: M:EventStore.Core.VNodeBuilder.DontAddInterfacePrefixes
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: DontAddInterfacePrefixes()
   nameWithType: VNodeBuilder.DontAddInterfacePrefixes()
   fullName: EventStore.Core.VNodeBuilder.DontAddInterfacePrefixes()
@@ -3042,7 +2945,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.WithStatsStorage(EventStore.Core.Services.Monitoring.StatsStorage)
   commentId: M:EventStore.Core.VNodeBuilder.WithStatsStorage(EventStore.Core.Services.Monitoring.StatsStorage)
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: WithStatsStorage(StatsStorage)
   nameWithType: VNodeBuilder.WithStatsStorage(StatsStorage)
   fullName: EventStore.Core.VNodeBuilder.WithStatsStorage(EventStore.Core.Services.Monitoring.StatsStorage)
@@ -3196,7 +3098,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.DisableScavengeMerging
   commentId: M:EventStore.Core.VNodeBuilder.DisableScavengeMerging
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: DisableScavengeMerging()
   nameWithType: VNodeBuilder.DisableScavengeMerging()
   fullName: EventStore.Core.VNodeBuilder.DisableScavengeMerging()
@@ -3303,7 +3204,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.EnableLoggingOfHttpRequests
   commentId: M:EventStore.Core.VNodeBuilder.EnableLoggingOfHttpRequests
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: EnableLoggingOfHttpRequests()
   nameWithType: VNodeBuilder.EnableLoggingOfHttpRequests()
   fullName: EventStore.Core.VNodeBuilder.EnableLoggingOfHttpRequests()
@@ -3332,7 +3232,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.EnableHistograms
   commentId: M:EventStore.Core.VNodeBuilder.EnableHistograms
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: EnableHistograms()
   nameWithType: VNodeBuilder.EnableHistograms()
   fullName: EventStore.Core.VNodeBuilder.EnableHistograms()
@@ -3478,7 +3377,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete
   commentId: M:EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: WithUnsafeIgnoreHardDelete()
   nameWithType: VNodeBuilder.WithUnsafeIgnoreHardDelete()
   fullName: EventStore.Core.VNodeBuilder.WithUnsafeIgnoreHardDelete()
@@ -3507,7 +3405,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.WithUnsafeDisableFlushToDisk
   commentId: M:EventStore.Core.VNodeBuilder.WithUnsafeDisableFlushToDisk
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: WithUnsafeDisableFlushToDisk()
   nameWithType: VNodeBuilder.WithUnsafeDisableFlushToDisk()
   fullName: EventStore.Core.VNodeBuilder.WithUnsafeDisableFlushToDisk()
@@ -3536,7 +3433,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.WithBetterOrdering
   commentId: M:EventStore.Core.VNodeBuilder.WithBetterOrdering
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: WithBetterOrdering()
   nameWithType: VNodeBuilder.WithBetterOrdering()
   fullName: EventStore.Core.VNodeBuilder.WithBetterOrdering()
@@ -3565,7 +3461,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.EnableTrustedAuth
   commentId: M:EventStore.Core.VNodeBuilder.EnableTrustedAuth
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: EnableTrustedAuth()
   nameWithType: VNodeBuilder.EnableTrustedAuth()
   fullName: EventStore.Core.VNodeBuilder.EnableTrustedAuth()
@@ -3594,7 +3489,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.WithAuthenticationProvider(EventStore.Core.Authentication.IAuthenticationProviderFactory)
   commentId: M:EventStore.Core.VNodeBuilder.WithAuthenticationProvider(EventStore.Core.Authentication.IAuthenticationProviderFactory)
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: WithAuthenticationProvider(IAuthenticationProviderFactory)
   nameWithType: VNodeBuilder.WithAuthenticationProvider(IAuthenticationProviderFactory)
   fullName: EventStore.Core.VNodeBuilder.WithAuthenticationProvider(EventStore.Core.Authentication.IAuthenticationProviderFactory)
@@ -3631,7 +3525,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.EnableUnbuffered
   commentId: M:EventStore.Core.VNodeBuilder.EnableUnbuffered
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: EnableUnbuffered()
   nameWithType: VNodeBuilder.EnableUnbuffered()
   fullName: EventStore.Core.VNodeBuilder.EnableUnbuffered()
@@ -3660,7 +3553,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.EnableWriteThrough
   commentId: M:EventStore.Core.VNodeBuilder.EnableWriteThrough
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: EnableWriteThrough()
   nameWithType: VNodeBuilder.EnableWriteThrough()
   fullName: EventStore.Core.VNodeBuilder.EnableWriteThrough()
@@ -4081,7 +3973,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.AlwaysKeepScavenged
   commentId: M:EventStore.Core.VNodeBuilder.AlwaysKeepScavenged
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: AlwaysKeepScavenged()
   nameWithType: VNodeBuilder.AlwaysKeepScavenged()
   fullName: EventStore.Core.VNodeBuilder.AlwaysKeepScavenged()
@@ -4110,7 +4001,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.SkipIndexScanOnReads
   commentId: M:EventStore.Core.VNodeBuilder.SkipIndexScanOnReads
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: SkipIndexScanOnReads()
   nameWithType: VNodeBuilder.SkipIndexScanOnReads()
   fullName: EventStore.Core.VNodeBuilder.SkipIndexScanOnReads()
@@ -4136,10 +4026,37 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.VNodeBuilder.ReduceFileCachePressure
+  commentId: M:EventStore.Core.VNodeBuilder.ReduceFileCachePressure
+  parent: EventStore.Core.VNodeBuilder
+  name: ReduceFileCachePressure()
+  nameWithType: VNodeBuilder.ReduceFileCachePressure()
+  fullName: EventStore.Core.VNodeBuilder.ReduceFileCachePressure()
+  spec.csharp:
+  - uid: EventStore.Core.VNodeBuilder.ReduceFileCachePressure
+    name: ReduceFileCachePressure
+    nameWithType: VNodeBuilder.ReduceFileCachePressure
+    fullName: EventStore.Core.VNodeBuilder.ReduceFileCachePressure
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.VNodeBuilder.ReduceFileCachePressure
+    name: ReduceFileCachePressure
+    nameWithType: VNodeBuilder.ReduceFileCachePressure
+    fullName: EventStore.Core.VNodeBuilder.ReduceFileCachePressure
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.VNodeBuilder.Build(EventStore.Common.Options.IOptions,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[])
   commentId: M:EventStore.Core.VNodeBuilder.Build(EventStore.Common.Options.IOptions,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[])
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: Build(IOptions, IPersistentSubscriptionConsumerStrategyFactory[])
   nameWithType: VNodeBuilder.Build(IOptions, IPersistentSubscriptionConsumerStrategyFactory[])
   fullName: EventStore.Core.VNodeBuilder.Build(EventStore.Common.Options.IOptions, EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[])
@@ -4402,7 +4319,6 @@ references:
     fullName: )
 - uid: EventStore.Core
   commentId: N:EventStore.Core
-  isExternal: false
   name: EventStore.Core
   nameWithType: EventStore.Core
   fullName: EventStore.Core
@@ -4447,7 +4363,6 @@ references:
 - uid: EventStore.Common.Utils.Json
   commentId: T:EventStore.Common.Utils.Json
   parent: EventStore.Common.Utils
-  isExternal: false
   name: Json
   nameWithType: Json
   fullName: EventStore.Common.Utils.Json
@@ -4529,7 +4444,6 @@ references:
     fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
-  isExternal: false
   name: Serialize<T>(T)
   nameWithType: ProtobufExtensions.Serialize<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize<T>(T)
@@ -4567,13 +4481,11 @@ references:
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   commentId: T:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
   parent: EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: ProtobufExtensions
   nameWithType: ProtobufExtensions
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1(``0)
-  isExternal: false
   name: SerializeToArray<T>(T)
   nameWithType: ProtobufExtensions.SerializeToArray<T>(T)
   fullName: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray<T>(T)
@@ -4610,32 +4522,27 @@ references:
     fullName: )
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
-  isExternal: false
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
 - uid: EventStore.Core.Services.Transport.Tcp
   commentId: N:EventStore.Core.Services.Transport.Tcp
-  isExternal: false
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
 - uid: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.AsSingleNode*
   commentId: Overload:EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.AsSingleNode
-  isExternal: false
   name: AsSingleNode
   nameWithType: EmbeddedVNodeBuilder.AsSingleNode
   fullName: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.AsSingleNode
 - uid: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder
   commentId: T:EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder
   parent: EventStore.ClientAPI.Embedded
-  isExternal: false
   name: EmbeddedVNodeBuilder
   nameWithType: EmbeddedVNodeBuilder
   fullName: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder
 - uid: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.AsClusterMember*
   commentId: Overload:EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.AsClusterMember
-  isExternal: false
   name: AsClusterMember
   nameWithType: EmbeddedVNodeBuilder.AsClusterMember
   fullName: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.AsClusterMember
@@ -4647,7 +4554,6 @@ references:
 - uid: EventStore.Core.VNodeBuilder.SetUpProjectionsIfNeeded
   commentId: M:EventStore.Core.VNodeBuilder.SetUpProjectionsIfNeeded
   parent: EventStore.Core.VNodeBuilder
-  isExternal: false
   name: SetUpProjectionsIfNeeded()
   nameWithType: VNodeBuilder.SetUpProjectionsIfNeeded()
   fullName: EventStore.Core.VNodeBuilder.SetUpProjectionsIfNeeded()
@@ -4675,7 +4581,6 @@ references:
     fullName: )
 - uid: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.SetUpProjectionsIfNeeded*
   commentId: Overload:EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.SetUpProjectionsIfNeeded
-  isExternal: false
   name: SetUpProjectionsIfNeeded
   nameWithType: EmbeddedVNodeBuilder.SetUpProjectionsIfNeeded
   fullName: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.SetUpProjectionsIfNeeded

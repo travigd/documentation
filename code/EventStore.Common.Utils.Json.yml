@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: Json
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: JsonSettings
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ToJsonBytes
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ToJson
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ToCanonicalJson
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -220,7 +220,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ParseJson
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -266,7 +266,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ParseJson
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -311,7 +311,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: DeserializeObject
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -352,7 +352,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: DeserializeObject
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -397,7 +397,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: ToXmlDocument
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -442,7 +442,7 @@ items:
   source:
     remote:
       path: src/EventStore.Common/Utils/Json.cs
-      branch: release-v4.1.1
+      branch: master
       repo: https://github.com/EventStore/EventStore.git
     id: IsValidJson
     path: ../EventStore/src/EventStore.Common/Utils/Json.cs
@@ -474,7 +474,6 @@ items:
 references:
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
-  isExternal: false
   name: EventStore.Common.Utils
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
@@ -490,11 +489,11 @@ references:
   fullName: JsonSerializerSettings
 - uid: EventStore.Common.Utils.Json.ToJsonBytes*
   commentId: Overload:EventStore.Common.Utils.Json.ToJsonBytes
-  isExternal: false
   name: ToJsonBytes
   nameWithType: Json.ToJsonBytes
   fullName: EventStore.Common.Utils.Json.ToJsonBytes
 - uid: System.Byte[]
+  isExternal: true
   name: Byte[]
   nameWithType: Byte[]
   fullName: System.Byte[]
@@ -521,7 +520,6 @@ references:
     fullName: ()
 - uid: EventStore.Common.Utils.Json.ToJson*
   commentId: Overload:EventStore.Common.Utils.Json.ToJson
-  isExternal: false
   name: ToJson
   nameWithType: Json.ToJson
   fullName: EventStore.Common.Utils.Json.ToJson
@@ -532,13 +530,11 @@ references:
   fullName: System.String
 - uid: EventStore.Common.Utils.Json.ToCanonicalJson*
   commentId: Overload:EventStore.Common.Utils.Json.ToCanonicalJson
-  isExternal: false
   name: ToCanonicalJson
   nameWithType: Json.ToCanonicalJson
   fullName: EventStore.Common.Utils.Json.ToCanonicalJson
 - uid: EventStore.Common.Utils.Json.ParseJson*
   commentId: Overload:EventStore.Common.Utils.Json.ParseJson
-  isExternal: false
   name: ParseJson
   nameWithType: Json.ParseJson
   fullName: EventStore.Common.Utils.Json.ParseJson
@@ -549,13 +545,11 @@ references:
   nameWithType: T
   fullName: T
 - uid: T
-  isExternal: false
   name: T
   nameWithType: T
   fullName: T
 - uid: EventStore.Common.Utils.Json.DeserializeObject*
   commentId: Overload:EventStore.Common.Utils.Json.DeserializeObject
-  isExternal: false
   name: DeserializeObject
   nameWithType: Json.DeserializeObject
   fullName: EventStore.Common.Utils.Json.DeserializeObject
@@ -570,6 +564,7 @@ references:
   nameWithType: Type
   fullName: Type
 - uid: JsonConverter[]
+  isExternal: true
   name: JsonConverter[]
   nameWithType: JsonConverter[]
   fullName: JsonConverter[]
@@ -596,7 +591,6 @@ references:
     fullName: ()
 - uid: EventStore.Common.Utils.Json.ToXmlDocument*
   commentId: Overload:EventStore.Common.Utils.Json.ToXmlDocument
-  isExternal: false
   name: ToXmlDocument
   nameWithType: Json.ToXmlDocument
   fullName: EventStore.Common.Utils.Json.ToXmlDocument
@@ -613,7 +607,6 @@ references:
   fullName: XmlDocument
 - uid: EventStore.Common.Utils.Json.IsValidJson*
   commentId: Overload:EventStore.Common.Utils.Json.IsValidJson
-  isExternal: false
   name: IsValidJson
   nameWithType: Json.IsValidJson
   fullName: EventStore.Common.Utils.Json.IsValidJson
