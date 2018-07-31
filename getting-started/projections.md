@@ -104,7 +104,7 @@ Add the sample data to four different streams:
 
 The projection counts the number of 'XBox One S's that customers added to their shopping carts.
 
-A Projection starts with a selector, in this case `fromAll()`. Another possibility is `fromCategory({category}` which this step discusses later, but for now, `fromAll` should do.
+A Projection starts with a selector, in this case `fromAll()`. Another possibility is `fromCategory({category})` which this step discusses later, but for now, `fromAll` should do.
 
 The second part of a projection is a set of filters. There is a special filter called `$init` that sets up an initial state. You want to start a counter from 0 and each time Event Store observes an `ItemAdded` event for an 'Xbox One S,' increment the counter.
 
