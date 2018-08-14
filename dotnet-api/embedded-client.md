@@ -120,23 +120,23 @@ The following options are available when building an Embedded Node.
 
 ### Database options
 
-| Method                                                 | Description                                                                                    |                                                        |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| `RunInMemory()`                                        | Sets the builder to run in memory                                                              |                                                        |
-| `RunOnDisk(string path)`                               | Sets the builder to write database files to the specified path                                 |                                                        |
-| `MaximumMemoryTableSizeOf(int size)`                   | Sets the maximum size a memtable is allowed to reach (in count) before moved to be a ptable    |                                                        |
-| `DoNotVerifyDbHashes()`                                | Marks that the existing database files should not be checked for checksums on startup.         |                                                        |
-| `VerifyDbHashes()`                                     | Marks that the existing database files should be checked for checksums on startup.             |                                                        |
-| `WithMinFlushDelay(TimeSpan minFlushDelay)`            | Sets the minimum flush delay                                                                   |                                                        |
-| `DisableScavengeMerging()`                             | Disables the merging of chunks when scavenge is running                                        |                                                        |
-| `WithScavengeHistoryMaxAge(int scavengeHistoryMaxAge)` | The number of days to keep scavenge history (Default: 30)                                      |                                                        |
-| `WithIndexPath(string indexPath)`                      | Sets the path the index should be loaded or saved to                                           |                                                        |
-| `WithIndexCacheDepth(int indexCacheDepth)`             | Sets the depth to cache for the mid point cache in index                                       |                                                        |
-| `WithUnsafeIgnoreHardDelete()`                         | Disables Hard Deletes (UNSAFE: use to remove hard deletes)                                     |                                                        |
-| `WithUnsafeDisableFlushToDisk()`                       | Disables Hard Deletes (UNSAFE: use to remove hard deletes)                                     |                                                        |
-| `WithBetterOrdering()`                                 | Enable queue affinity on reads during write process to try to get better ordering.             |                                                        |
-| `WithTfChunkSize(int chunkSize)`                       | Sets the transaction file chunk size. Default is `WithTfChunksCacheSize(long chunksCacheSize)` | Sets the transaction file chunk cache size. Default is |
-| `WithTfCachedChunks(int cachedChunks)`                 | The number of chunks to cache in unmanaged memory.                                             |                                                        |
+| Method                                                 | Description                                                                                    |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `RunInMemory()`                                        | Sets the builder to run in memory                                                              |
+| `RunOnDisk(string path)`                               | Sets the builder to write database files to the specified path                                 |
+| `MaximumMemoryTableSizeOf(int size)`                   | Sets the maximum size a memtable is allowed to reach (in count) before moved to be a ptable    |
+| `DoNotVerifyDbHashes()`                                | Marks that the existing database files should not be checked for checksums on startup.         |
+| `VerifyDbHashes()`                                     | Marks that the existing database files should be checked for checksums on startup.             |
+| `WithMinFlushDelay(TimeSpan minFlushDelay)`            | Sets the minimum flush delay                                                                   |
+| `DisableScavengeMerging()`                             | Disables the merging of chunks when scavenge is running                                        |
+| `WithScavengeHistoryMaxAge(int scavengeHistoryMaxAge)` | The number of days to keep scavenge history (Default: 30)                                      |
+| `WithIndexPath(string indexPath)`                      | Sets the path the index should be loaded or saved to                                           |
+| `WithIndexCacheDepth(int indexCacheDepth)`             | Sets the depth to cache for the mid point cache in index                                       |
+| `WithUnsafeIgnoreHardDelete()`                         | Disables Hard Deletes (UNSAFE: use to remove hard deletes)                                     |
+| `WithUnsafeDisableFlushToDisk()`                       | Disables Hard Deletes (UNSAFE: use to remove hard deletes)                                     |
+| `WithBetterOrdering()`                                 | Enable queue affinity on reads during write process to try to get better ordering.             |
+| `WithTfChunkSize(int chunkSize)`                       | Sets the transaction file chunk size. Default is `TFConsts.ChunkSize`                          |
+| `WithTfCachedChunks(int cachedChunks)`                 | The number of chunks to cache in unmanaged memory. Default is `TFConsts.ChunksCacheSize`       |
 
 ### Interface options
 
