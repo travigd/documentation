@@ -9,7 +9,7 @@
           ]
         }
       ],
-      "dest": "code",
+      "dest": "dotnet-api/code",
       "filter": "filterConfig.yml"
     }
   ],
@@ -33,9 +33,16 @@
       {
         "files": [
           "index.md",
-          "code/**.yml",
           "toc.yml"
         ]
+      },
+      {
+        "files": [
+          "**/*.yml",
+          "toc.yml"
+        ],
+        "src": "dotnet-api/code",
+        "dest": "dotnet-api/code"
       },
       {
         "files": "64-bit-index.md",
