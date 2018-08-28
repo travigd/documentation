@@ -1,19 +1,20 @@
 ---
 outputFileName: index.html
+commercial: true
 ---
 
 # Optional HTTP Headers: Requires Master
 
-When running in a clustered environment there are times when you only want an operation to happen on the current leader node. A client could get information in an eventually consistent fashion by communicating with the servers (the TCP client included with the multi-node version does this).
+When running in a clustered environment there are times when you only want an operation to happen on the current leader node. A client can fetch information in an eventually consistent fashion by communicating with the servers. The TCP client included with the multi-node version does this.
 
-Over HTTP the `RequiresMaster` header tells the node that it is not allowed to serve in the case of a read or forward the request in the case of a write. If the node is the master everything will work as normal, if it is not it will respond with a 307 temporary redirect to the master.
+Over HTTP the `RequiresMaster` header tells the node that it is not allowed to serve a read or forward a write request. If the node is the leader everything works as normal, if it isn't it responds with a `307` temporary redirect to the leader.
 
 Run the below on the master:
 
 ### [Request](#tab/tabid-1)
 
 ```bash
-curl -i "http://127.0.0.1:32004/streams/stream" -H "ES-RequireMaster: True"
+curl -i "http://127.0.0.1:32004/streams/newstream" -H "ES-RequireMaster: True"
 ```
 
 ### [Response](#tab/tabid-2)
@@ -92,7 +93,7 @@ Run the following on any other node:
 ### [Request](#tab/tabid-3)
 
 ```bash
-curl -i "http://127.0.0.1:31004/streams/stream" -H "ES-RequireMaster: True"
+curl -i "http://127.0.0.1:31004/streams/newstream" -H "ES-RequireMaster: True"
 ```
 
 ### [Response](#tab/tabid-4)

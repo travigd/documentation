@@ -130,8 +130,8 @@ To use the HTTP API, use the following cURL command, passing the name of the str
 [!code-bash[getting-started-write-event-request](~/code-examples/getting-started/write-event.sh?start=1&end=1)]
 
 > [!NEXT]
-> [Read this guide](~/http-api/creating-a-stream.md) for more information on how to write events with the HTTP API.
->
+> [Read this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the HTTP API.
+
 > [!NOTE]
 > You can also post events to the HTTP API as XML, by changing the `Content-Type` header to `XML`.
 
@@ -141,7 +141,8 @@ To use the .NET API, use the following method, passing the name of the stream, t
 
 [!code-csharp[getting-started-write-event-request](~/code-examples/getting-started/docs-example-csharp/Program.cs?range=95)]
 
-> [!NEXT][read this guide](~/http-api/writing-to-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
+> [!NEXT]
+> [Read this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
 
 * * *
 
@@ -149,4 +150,4 @@ To use the .NET API, use the following method, passing the name of the stream, t
 
 In this first part of our getting started guide you learned how to install and run Event Store and write your first event. The next part covers reading events from a stream.
 
-- [Step 2 - Read events from a stream and subscribe to changes](~/getting-started/reading-subscribing-events.md)
+-   [Step 2 - Read events from a stream and subscribe to changes](~/getting-started/reading-subscribing-events.md)

@@ -4,7 +4,7 @@ outputFileName: index.html
 
 # Overview
 
-Event Store provides a native interface of AtomPub over HTTP. AtomPub is a RESTful protocol that can reuse many existing components, for example reverse proxies and a client’s native HTTP caching. Since events stored in Event Store are entirely immutable, cache expiration can be infinite. Event Store leverages content type negotiation and you can access appropriately serialised events can as JSON or XML according to the request headers.
+Event Store provides a native interface of AtomPub over HTTP. AtomPub is a RESTful protocol that can reuse many existing components, for example reverse proxies and a client's native HTTP caching. Since events stored in Event Store are immutable, cache expiration can be infinite. Event Store leverages content type negotiation and you can access appropriately serialised events can as JSON or XML according to the request headers.
 
 ## Compatibility with AtomPub
 
@@ -12,7 +12,7 @@ Event Store is fully compatible with the [1.0 version of the Atom Protocol](http
 
 ### Existing Implementations
 
-Many environments have already implemented the AtomPub protocol, that simplifies the process.
+Many environments have already implemented the AtomPub protocol, which simplifies the process.
 
 | Library     | Description                                                       |
 | ----------- | ----------------------------------------------------------------- |
@@ -27,11 +27,11 @@ Many environments have already implemented the AtomPub protocol, that simplifies
 | Objective-C | <https://geekli.st/darvin/repos/MWFeedParser>                     |
 
 > [!NOTE]
-> The above list are not officially supported by Event Store, if you know of any others [then please let us know](https://eventstore.org/contact/).
+> These are not officially supported by Event Store.
 
 ### Content Types
 
-The preferred way of determining which content type responses Event Store serves is to set the `Accept` header on the request. As some clients do not deal well with HTTP headers when caching, appending a format parameter to the URL is also supported, e.g. `?format=xml`.
+The preferred way of determining which content type responses Event Store serves is to set the `Accept` header on the request. As some clients do not deal well with HTTP headers when caching, appending a format parameter to the URL is also supported, e.g., `?format=xml`.
 
 The accepted content types for POST requests are:
 
@@ -49,5 +49,4 @@ The accepted content types for GET requests are:
 -   `application/vnd.eventstore.atom+json`
 -   `text/xml`
 -   `text/html`
-
-There will be additions in the future for protobufs and bson.
+- `application/vnd.eventstore.streamdesc+json`

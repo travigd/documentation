@@ -4,14 +4,16 @@ outputFileName: index.html
 
 # Competing Consumers
 
-This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see the [overview document](~/getting-started/competing-consumers.md).
+This document explains how to use HTTP API for setting up and consuming competing consumer subscription groups. For an overview on competing consumers and how they relate to other subscription types please see our [getting started guide](~/getting-started/reading-subscribing-events.md).
 
 > [!NOTE]
-> The Administration UI includes a <em>Competing Consumers</em> section where a user is able to create, update, delete and view subscriptions and their statuses.
+> The Administration UI includes a _Competing Consumers_ section where you are able to create, update, delete and view subscriptions and their statuses.
 
 ## Creating a Persistent Subscription
 
-Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](~/server/users-and-access-control-lists.md).
+Before interacting with a subscription group, you need to create one. You receive an error if you try to create a subscription group more than once. This requires [admin permissions](~/http-api/security.md).
+
+<!-- TODO: File inclusion for the below? -->
 
 | URI                                           | Supported Content Types | Method |
 | --------------------------------------------- | ----------------------- | ------ |
@@ -44,7 +46,7 @@ Body
 
 ## Updating a Persistent Subscription
 
-You can edit the settings of an existing subscription while it is running. This will drop the current subscribers and will reset the subscription internally. This requires admin permissions.
+You can edit the settings of an existing subscription while it is running. This drops the current subscribers and resets the subscription internally. This requires admin permissions.
 
 | URI                                           | Supported Content Types | Method |
 | --------------------------------------------- | ----------------------- | ------ |
@@ -76,7 +78,7 @@ _Same parameters as "Creating a Persistent Subscription"_
 
 ## Reading a stream via a Persistent Subscription
 
-By default, reading a stream via a persistent subscription will return a single event per request and will not embed the event properties as part of the response.
+By default, reading a stream via a persistent subscription returns a single event per request and does not embed the event properties as part of the response.
 
 | URI                                                                                                                                                                  | Supported Content Types                                                                      | Method |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------ |
@@ -144,7 +146,7 @@ Read [Reading Streams](~/http-api/reading-streams.md) for information on the dif
 
 ## Acknowledgements
 
-Clients must acknowledge (or not acknowledge) messages in the competing consumer model. If the client fails to respond in the given timeout period, the message will be retried. You should use the `rel` links in the feed for acknowledgements not bookmark URIs as they are subject to change in future versions.
+Clients must acknowledge (or not acknowledge) messages in the competing consumer model. If the client fails to respond in the given timeout period, the message is retried. You should use the `rel` links in the feed for acknowledgements not bookmark URIs as they are subject to change in future versions.
 
 For example:
 
@@ -347,3 +349,7 @@ For example:
   "connections": []
 }
 ```
+
+<!-- TODO: Is this better as a general subscriptions page? -->
+<!-- TODO: Somehow get this better integrated with API docs -->
+<!-- TODO: Still to do -->

@@ -7,7 +7,7 @@ outputFileName: index.html
 Event Store supports the use of custom HTTP headers for requests.
 
 > [!NOTE]
->  The headers were previously in the form `X-ES-ExpectedVersion` but have changed to `ES-ExpectedVersion` in compliance with RFC-6648 <http://tools.ietf.org/html/rfc6648>.
+> The headers were previously in the form `X-ES-ExpectedVersion` but have changed to `ES-ExpectedVersion` in compliance with RFC-6648 <http://tools.ietf.org/html/rfc6648>.
 
 The headers supported are:
 

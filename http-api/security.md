@@ -4,82 +4,55 @@ outputFileName: index.html
 
 # Security
 
-Event Store supports security over HTTP. This guide is an introduction to how security is implemented.
-
-<!-- TODO: Where can you read more? -->
+Event Store supports basic authentication for HTTP API calls, and access control lists (ACL).
 
 ## Authentication
 
-Event Store supports authentication over basic authentication to internal users. You create these users with the RESTful API or the admin console. Once you have configured users, you can use standard basic authentication on requests.
+### Creating users
 
-> [!NOTE]
-> You can also use the trusted intermediary header to provide for externalized authentication that can allow you to integrate almost any authentication system with Event Store. Read more about it [the trusted intermediary header here](optional-http-headers/trusted-intermediary.md).
+Event Store supports basic HTTP authentication to internal users. You create these users with the RESTful API or the admin console. You need to use the credentials of the default user in the request, which has the user name of `admin`, and the password of `changeit`.
 
-As an example if you were to use the default admin user `admin:changeit`, you would include this in you request:
+![Create a user with the admin UI](~/images/http-api-create-user.png)
 
 ### [Request](#tab/tabid-1)
 
-```bash
-curl -i 'http://127.0.0.1:2113/streams/$all' -u admin:changeit
-```
+[!code-bash[http-api-create-user-request](~/code-examples/http-api/new-user.sh?start=1&end=1)]
 
 ### [Response](#tab/tabid-2)
 
-```http
-HTTP/1.1 200 OK
-Access-Control-Allow-Methods: POST, DELETE, GET, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
-Access-Control-Allow-Origin: *
-Cache-Control: max-age=0, no-cache, must-revalidate
-Vary: Accept
-ETag: "28334346;248368668"
-Content-Type: application/vnd.eventstore.atom+json; charset: utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Thu, 04 Jul 2013 00:13:59 GMT
-Content-Length: 12212
-Keep-Alive: timeout=15,max=100
-```
+[!code-json[http-api-create-user-response](~/code-examples/http-api/new-user.sh?range=3-)]
 
 * * *
 
-If you were to use the wrong user or no user where one is required, you would receive a `401 Unauthorized` response.
+Once you have added users, you can use their details with requests.
+
+> [!NOTE]
+> You can also use the 'trusted intermediary' header for externalized authentication that allows you to integrate almost any authentication system with Event Store. Read more about [the trusted intermediary header](optional-http-headers/trusted-intermediary.md).
+
+If you were to use the wrong user or no user when a request requires one, you receive a `401 Unauthorized` response.
 
 ### [Request](#tab/tabid-3)
 
-```bash
-curl -i 'http://127.0.0.1:2113/streams/$all' -u admin:password
-```
+[!code-bash[http-api-incorrect-user-request](~/code-examples/http-api/incorrect-user.sh?start=1&end=1)]
 
 ### [Response](#tab/tabid-4)
 
-```http
-HTTP/1.1 401 Unauthorized
-Access-Control-Allow-Methods: POST, DELETE, GET, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
-Access-Control-Allow-Origin: *
-WWW-Authenticate: Basic realm="ES"
-Content-Type: text/plain; charset: utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Thu, 04 Jul 2013 00:20:34 GMT
-Content-Length: 0
-Keep-Alive: timeout=15,max=100
-```
+[!code-json[http-api-incorrect-user-response](~/code-examples/http-api/incorrect-user.sh?range=3-)]
 
 * * *
 
-As you pass the username and password as part of the request it's not recommended that you run Event Store over HTTP, you should enable SSL to encrypt the user information. You can find instructions on how to accomplish this in [Windows](~/server/setting_up_ssl.md) and [Linux](~/server/setting_up_ssl_linux.md). If you are running the clustered version you can also setup SSL for the replication protocol <!-- TODO: Does this need further explanation? -->.
+As you pass the username and password in the request we recommend you run Event Store over HTTP, and enable SSL to encrypt the user information. You can find instructions on how to do this with [Windows](~/server/setting_up_ssl.md) and [Linux](~/server/setting_up_ssl_linux.md). If you are running the clustered version you can also setup SSL for the replication protocol.
+
+<!-- TODO: Does this need further explanation? Any more details anywhere? -->
 
 ## Access Control Lists
 
-Along with authentication, Event Store supports per stream configuration of Access Control Lists (ACL). To configure the ACL of a stream you should go to its head and look for the metadata relationship link to obtain the metadata for the stream.
+Alongside authentication, Event Store supports per stream configuration of Access Control Lists (ACL). To configure the ACL of a stream go to its head and look for the `metadata` relationship link to fetch the metadata for the stream.
 
-```json
-{
-  "uri": "http://127.0.0.1:2113/streams/%24all/metadata",
-  "relation": "metadata"
-}
-```
+To set access control lists over HTTP you can post to the metadata stream as [with setting any other metadata](~/http-api/stream-metadata.md). You can also set Access Control Lists for a stream in the admin UI.
 
-To set access control lists over HTTP you can post to the metadata stream as with setting any other metadata. You can also set Access Control Lists for a stream in the web UI.
+![Setting ACL with the admin UI](~/images/http-api-create-user.png)
 
-For more information on the structure of how Access Control Lists work please read [Access Control Lists](~/server/users-and-access-control-lists.md).
+For more information on the structure of Access Control Lists read [Access Control Lists](~/server/users-and-access-control-lists.md).
+
+<!-- TODO: Merge ACL here? -->

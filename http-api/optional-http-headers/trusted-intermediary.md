@@ -4,14 +4,17 @@ outputFileName: index.html
 
 # Optional HTTP Headers: Trusted Intermediary
 
-The trusted intermediary header relates to supporting a common security architecture. There are thousands of possible methods for handling authentication and it is impossible for us to support them all. The general idea behind the header is that you can configure a trusted intermediary to handle the authentication instead of Event Store.
+The trusted intermediary header helps Event Store support a common security architecture. There are thousands of possible methods for handling authentication and it is impossible for us to support them all. The header allows you to configure a trusted intermediary to handle the authentication instead of Event Store. A sample configuration is to enable OAuth2 with the following steps:
 
-A sample configuration of this might be to enable OAuth2. First configure Event Store to run on the local loopback. Next configure nginx to handle OAuth2 authentication. After authenticating the user, nginx would rewrite the request and forward it to the loopback to the Event Store that would actually serve the request.
+- Configure Event Store to run on the local loopback.
+- Configure nginx to handle OAuth2 authentication. 
+- After authenticating the user, nginx rewrites the request and forwards it to the loopback to the Event Store that serves the request.
+
+The header has the form of `{user}; group, group1` and the Event Store ACLs use the information to handle security.
 
 ```http
 ES-TrustedAuth: "root; admin, other"
 ```
 
-The header has the form of "{user}; group, group1". This information will then be used with the internal Event Store ACLs to handle security.
-
-It is important to note that this feature is **DISABLED** by default. You must specifically opt into this feature by running the Event Store with the Enable Trusted Intermediary command/config option.
+> [!NOTE]
+> This feature is **DISABLED** by default. You must specifically opt into this feature by running Event Store with the Enable Trusted Intermediary [configuration](~/dotnet-api/embedded-client.md) or [command line option](~/server/command-line-arguments.md).

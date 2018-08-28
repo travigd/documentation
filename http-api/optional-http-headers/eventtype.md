@@ -5,86 +5,30 @@ sinceVersion: 3.0.0
 
 # Optional HTTP Headers: EventType
 
-When writing to a stream and not using the `application/vnd.eventstore.events+json/+xml` media type it is necessary that you specify an event type with the event that you are posting. This is not required with the custom media type as it is also specified within the format itself.
+When you write to a stream and don't the `application/vnd.eventstore.events+json/+xml` media type you must specify an event type with the event that you are posting. This isn't required with the custom media type as it's specified within the format itself.
 
-You can use the `ES-EventType` header as follows.
+You use the `ES-EventType` header as follows.
 
 ### [Request](#tab/tabid-1)
 
-```bash
-curl -i -d @event.json "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/json" -H "ES-EventType: SomeEvent" -H "ES-EventId: C322E299-CB73-4B47-97C5-5054F920746E"
-```
+[!code-bash[http-api-write-event-request](~/code-examples/http-api/write-event.sh?start=1&end=1)]
 
 ### [Response](#tab/tabid-2)
 
-```http
-HTTP/1.1 201 Created
-Access-Control-Allow-Methods: POST, DELETE, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
-Location: http://127.0.0.1:2113/streams/newstream/1
-Content-Type: text/plain; charset=utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Mon, 21 Apr 2014 21:26:48 GMT
-Content-Length: 0
-Keep-Alive: timeout=15,max=100
-```
+[!code-json[http-api-write-event-response](~/code-examples/http-api/write-event.sh?range=3-)]
 
-***
+* * *
 
-If you now view the event in the UI or through cURL it will have the `EventType` of `SomeEvent` associated with it.
+If you view the event in the UI or with cURL it has the `EventType` of `SomeEvent`:
+
+<!-- TODO: Does this make sense? If I can't use the custom medi type -->
 
 ### [Request](#tab/tabid-3)
 
-```bash
-curl http://127.0.0.1:2113/streams/newstream/1
-```
+[!code-bash[http-api-read-event-request](~/code-examples/http-api/read-event.sh?start=1&end=1)]
 
-### [Reponse](#tab/tabid-4)
+### [Response](#tab/tabid-4)
 
-```http
-HTTP/1.1 200 OK
-Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Location, ES-Position
-Cache-Control: max-age=31536000, public
-Vary: Accept
-Content-Type: application/vnd.eventstore.atom+json; charset=utf-8
-Server: Mono-HTTPAPI/1.0
-Date: Mon, 21 Apr 2014 21:29:27 GMT
-Content-Length: 585
-Keep-Alive: timeout=15,max=100
+[!code-json[http-api-read-event-response](~/code-examples/http-api/read-event.sh?range=16-)]
 
-{
-  "title": "1@newstream",
-  "id": "http://127.0.0.1:2113/streams/newstream/1",
-  "updated": "2014-04-21T18:26:48.731192Z",
-  "author": {
-    "name": "EventStore"
-  },
-  "summary": "SomeEvent",
-  "content": {
-    "eventStreamId": "newstream",
-    "eventNumber": 1,
-    "eventType": "SomeEvent",
-    "data": {
-      "something": "has data"
-    },
-    "metadata": ""
-  },
-  "links": [
-    {
-      "uri": "http://127.0.0.1:2113/streams/newstream/1",
-      "relation": "edit"
-    },
-    {
-      "uri": "http://127.0.0.1:2113/streams/newstream/1",
-      "relation": "alternate"
-    }
-  ]
-}
-```
-
-***
+* * *

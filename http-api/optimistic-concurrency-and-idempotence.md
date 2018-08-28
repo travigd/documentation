@@ -1,7 +1,6 @@
 ---
 outputFileName: index.html
 ---
-
 # Optimistic Concurrency & Idempotence
 
 ## Idempotency
@@ -164,3 +163,5 @@ Keep-Alive: timeout=15,max=100
 ```
 
 * * *
+
+<!-- TODO: Still to do -->

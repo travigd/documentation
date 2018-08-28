@@ -43,6 +43,8 @@ paths:
       responses:
         200:
           description: OK
+        401:
+          description: Unauthorized  
       security:
         - basicAuth: []
   /info:
@@ -58,6 +60,8 @@ paths:
       responses:
         200:
           description: OK
+        401:
+          description: Unauthorized  
       security:
         - basicAuth: []
   /info/options:
@@ -73,6 +77,8 @@ paths:
       responses:
         200:
           description: OK
+        401:
+          description: Unauthorized    
       security:
         - basicAuth: []
   '/streams/{stream}':
@@ -108,31 +114,37 @@ paths:
         '404':
           description: Not found
     post:
-      summary: Create a stream
+      summary: Write to a stream
       tags:
         - Streams
-      description: Create a new stream.
-      operationId: Create a stream
+      description: Write to a stream.
+      operationId: Write to a stream
       produces:
         - application/json
         - application/xml
       parameters:
         - name: stream
           in: path
-          description: The name of the new stream
+          description: The name of the stream
           required: true
           type: string
         - in: body
-          name: streamItem
-          description: Stream to create
-          required: false
+          name: stream data
+          description: Stream events to create
+          required: true
           schema:
-            $ref: '#/definitions/StreamItem'
+            $ref: '#/definitions/streamData'
+        - $ref: '#/parameters/ES-ExpectedVersion'
+        - $ref: '#/parameters/ES-EventType'
+        - $ref: '#/parameters/ES-EventId'
+        - $ref: '#/parameters/ES-RequiresMaster'
       responses:
         '201':
           description: New stream created
         '307':
           description: Temporary Redirect
+        '400':
+          description: Write request body invalid  
     delete:
       summary: Deletes a stream
       tags:
@@ -864,6 +876,8 @@ paths:
       summary: Create a User
       description: Create a new user.
       operationId: Create a user
+      security:
+        - BasicAuth: [] 
       produces:
         - application/json
         - application/xml
@@ -877,6 +891,8 @@ paths:
       responses:
         '201':
           description: New user created
+        401:
+          description: Unauthorized      
         '400':
           description: Bad request
   '/users/{login}':
@@ -1656,11 +1672,60 @@ paths:
           description: OK
         '404':
           description: Not found
+parameters:
+  ES-ExpectedVersion:
+    name: ES-ExpectedVersion
+    in: header
+    required: false
+    type: integer
+    description: Expected stream version
+  ES-ResolveLinkTo:
+    name: ES-ResolveLinkTo
+    in: header
+    required: false
+    type: boolean
+    description: Wether to resolve `linkTos` in a stream
+  ES-RequiresMaster:
+    name: ES-RequiresMaster
+    in: header
+    required: false
+    type: boolean
+    description: Wether to run on a master node
+  ES-TrustedAuth:
+    name: ES-TrustedAuth
+    in: header
+    required: false
+    type: string
+    description: Allows a trusted intermediary to handle authentication
+  ES-LongPoll:
+    name: ES-LongPoll
+    in: header
+    required: false
+    type: integer
+    description: Long poll operation on a stream read 
+  ES-HardDelete:
+    name: ES-HardDelete
+    in: header
+    required: false
+    type: boolean
+    description: Hard delete the stream when deleting
+  ES-EventType:
+    name: ES-EventType
+    in: header
+    required: false
+    type: string
+    description: The event type associated to a posted body           
+  ES-EventId:
+    name: ES-EventId
+    in: header
+    required: false
+    type: integer
+    description: Event ID associated to a posted body           
 definitions:
   UserItem:
     type: object
     properties:
-      'LoginName:':
+      LoginName:
         type: string
         description: The new users login name.
       FullName:
@@ -1717,6 +1782,14 @@ definitions:
     example:
       CurrentPassword: anOldSecurePassword
       NewPassword: aNewSecurePassword
+  streamData:
+    type: object
+    required:
+      - body
+    properties:
+      body:
+        type: object
+        description: Event data    
   StreamItem:
     type: object
     properties:

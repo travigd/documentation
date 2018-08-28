@@ -71,5 +71,5 @@ Most platforms have good existing tooling for Atom including feed readers. None 
 
 Congratulations! You've reached the end of our getting started guide, what's next?
 
--   **Want to use the .NET client?** [Find more here](~/dotnet-api).
--   **Want to use the HTTP API?** [Find out more here](~/http-api).s
+-   **Want to use the .NET client?** [Find more here](~/dotnet-api/index.md).
+-   **Want to use the HTTP API?** [Find out more here](~/http-api/index.md).
