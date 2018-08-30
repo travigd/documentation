@@ -81,17 +81,43 @@ There are three ways to interact with Event Store:
 
 1.  With the admin web interface (more details link).
 2.  [With the HTTP API](~/http-api/index.md).
-3.  With a Client API, our documentation covers the [.NET API](~/dotnet-api/index.md), but [others](~/getting-started/which-api-sdk.md) are available.
+3.  With a Client API, which you need to install first. Our documentation covers the [.NET Core client API](~/dotnet-api/index.md) and the [JVM client](https://github.com/EventStore/EventStore.JVM) but [others](~/getting-started/which-api-sdk.md) are available.
 
-To use a client API you need to install it first, [install the .NET Core client API](https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/) using your preferred method, add it to your project and require it in your code.
+### [.NET Client](#tab/tabid-dotnet-client)
+
+[Install the .NET Core client API](https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/) using your preferred method, add it to your project:
 
 ```shell
 dotnet add package EventStore.Client
 ```
 
+And require it in your code:
+
 ```csharp
 using EventStore.ClientAPI;
 ```
+
+### [JVM Client](#tab/tabid-jvm-client)
+
+[Add the JVM client](https://github.com/EventStore/EventStore.JVM#setup) using Maven:
+
+<!-- TODO: What defines this version? -->
+
+```xml
+<dependency>
+    <groupId>com.geteventstore</groupId>
+    <artifactId>eventstore-client_2.12</artifactId>
+    <version>5.0.8</version>
+</dependency>
+```
+
+And require it in your code:
+
+```java
+import eventstore.*;
+```
+
+* * *
 
 ## Connecting to Event Store
 
@@ -102,30 +128,49 @@ If you want to use the admin web interface or the HTTP API, then you use port `2
 
 ![The Web Admin Dashboard](~/images/es-web-admin-dashboard.png)
 
-If you want to use the .NET API, then you use port `1113` and create a connection, giving it a name:
+To use a client API, you use port `1113` and create a connection:
+
+### [.NET Client](#tab/tabid-dotnet-client-connect)
+
+When using the .NET client, you also need to give the connection a name.
 
 [!code-csharp[getting-started-connection](~/code-examples/getting-started/docs-example-csharp/Program.cs?start=32&end=33)]
 
 > [!NEXT]
 > In this example we used the [`EventStoreConnection.Create()`](#EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)) overloaded method but [others are available](#EventStore.ClientAPI.EventStoreConnection).
 
+### [JVM Client](#tab/tabid-jvm-client-connect)
+
+```java
+final Settings settings = new SettingsBuilder()
+    .address(new InetSocketAddress("127.0.0.1", 1113))
+    .defaultCredentials("admin", "changeit")
+    .build();
+final ActorRef connection = system.actorOf(ConnectionActor.getProps(settings));
+```
+
+> [!NOTE]
+> For our JVM examples we use [akka](https://akka.io), a toolkit for building highly concurrent and distributed JVM applications.
+
+***
+
 ## Writing Events to an Event Stream
 
 Event Store operates on a concept of Event Streams, and the first operation we look at is how to write to a stream. If you are Event Sourcing a domain model, a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, so create as many as you need.
 
-If you post to a stream that doesn’t exist, Event Store creates it before adding the events.
-
-To begin, open a text editor, copy and paste the following event definition, and save it as _event.json_.
-
-[!code-json[getting-started-write-event-json](~/code-examples/getting-started/event.json "The contents of event.json")]
+If you post to a stream that doesn't exist, Event Store creates it before adding the events.
 
 You can write events using the admin web interface by clicking the _Stream Browser_ tab, the _Add Event_ button, filling in the form with relevant values and clicking the _Add_ button at the bottom of the page.
 
 ![Creating an event with the web admin interface](~/images/getting-started-add-event.gif)
 
+Open a text editor, copy and paste the following event definition, and save it as _event.json_.
+
+[!code-json[getting-started-write-event-json](~/code-examples/getting-started/event.json "The contents of event.json")]
+
 ### [HTTP API](#tab/tabid-4)
 
-To use the HTTP API, use the following cURL command, passing the name of the stream and the events to write:
+Use the following cURL command, passing the name of the stream and the events to write:
 
 [!code-bash[getting-started-write-event-request](~/code-examples/getting-started/write-event.sh?start=1&end=1)]
 
@@ -143,6 +188,29 @@ To use the .NET API, use the following method, passing the name of the stream, t
 
 > [!NEXT]
 > [Read this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
+
+### [JVM client](#tab/tabid-6)
+
+To use the .NET API, use the following method, passing the name of the stream, the version, and the events to write:
+
+```java
+final ActorRef writeResult = system.actorOf(Props.create(WriteResult.class));
+
+final EventData event = new EventDataBuilder("event-type")
+        .eventId(UUID.randomUUID())
+        .jsonData("{\"a\": \"1\"}")
+        .build();
+
+final WriteEvents writeEvents = new WriteEventsBuilder("newstream")
+        .addEvent(event)
+        .expectAnyVersion()
+        .build();
+
+connection.tell(writeEvents, writeResult);
+```
+
+> [!NEXT]
+> What can go here?
 
 * * *
 
