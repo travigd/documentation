@@ -135,8 +135,8 @@ The following options are available when building an Embedded Node.
 | `WithUnsafeIgnoreHardDelete()`                         | Disables Hard Deletes (UNSAFE: use to remove hard deletes)                                     |
 | `WithUnsafeDisableFlushToDisk()`                       | Disables Hard Deletes (UNSAFE: use to remove hard deletes)                                     |
 | `WithBetterOrdering()`                                 | Enable queue affinity on reads during write process to try to get better ordering.             |
-| `WithTfChunkSize(int chunkSize)`                       | Sets the transaction file chunk size. Default is `TFConsts.ChunkSize`                          |
-| `WithTfCachedChunks(int cachedChunks)`                 | The number of chunks to cache in unmanaged memory. Default is `TFConsts.ChunksCacheSize`       |
+| `WithTfChunkSize(int chunkSize)`                       | Sets the transaction file chunk size. Default is `TFConsts.ChunkSize` (256MB).                          |
+| `WithTfCachedChunks(int cachedChunks)`                 | The number of chunks to cache in unmanaged memory. Default is `TFConsts.ChunksCacheSize`.       |
 
 ### Interface options
 
