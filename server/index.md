@@ -43,7 +43,7 @@ There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-
 netsh http show urlacl
 ```
 
-Look for an entry on the port you’re trying to use (`2113` unless you’ve specified a custom port). It will probably look something like: `http://+:2113`. Then issue:
+Look for an entry on the port you’re trying to use (`2113` unless you’ve specified a custom port). It will probably look something like: `http://+:2113/`. Then issue:
 
 ```posh
 netsh http delete urlacl <the entry you just found>
@@ -52,7 +52,7 @@ netsh http delete urlacl <the entry you just found>
 For example:
 
 ```posh
-netsh http delete urlacl http://+:2113
+netsh http delete urlacl http://+:2113/
 ```
 
 This should resolve the issue.
