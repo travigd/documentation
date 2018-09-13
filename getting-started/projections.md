@@ -92,7 +92,7 @@ Add the sample data to four different streams:
 
 [!code-csharp[getting-started-projections-add-sample-data](~/code-examples/dotnet-client/Program.cs?range=142-144,147-148)]
 
-### [JVM API](#tab/tabid-jvm-api)
+### [JVM Client](#tab/tabid-jvm-api)
 
 [!code-java[getting-started-write-multiple](~/code-examples/jvm-client/WriteMultipleEventsExample.java?start=41&end=74)]
 
