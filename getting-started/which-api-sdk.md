@@ -12,8 +12,6 @@ Event Store offers a low-level protocol in the form of an asynchronous TCP proto
 
 ### Event Store Supported Clients
 
-<!-- TODO: We should add JVM examples -->
-
 -   [.net Client](http://www.nuget.org/packages/EventStore.Client)
 -   [JVM Client](https://github.com/EventStore/EventStore.JVM)
 

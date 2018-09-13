@@ -27,12 +27,22 @@ Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc42
 
 * * *
 
+### [.NET Client API](#tab/tabid-dotnet-client)
+
 To use the .NET API, use the following method passing the stream name, the start point in the stream, the number of events to read and whether to follow links to the event data:
 
-[!code-csharp[getting-started-read-stream-request](~/code-examples/getting-started/docs-example-csharp/Program.cs?range=104-106)]
+[!code-csharp[getting-started-read-stream-request](~/code-examples/dotnet-client/Program.cs?range=104-106)]
 
 > [!NEXT]
 > [Read this guide](~/dotnet-api/reading-events.md) for more information on how to read events with the .NET API.
+
+### [JVM Client](#tab/tabid-jvm-client)
+
+To use the JVM client, use the following method passing the stream name, the start point in the stream, and whether to follow links to the event data:
+
+[!code-java[getting-started-read](~/code-examples/jvm-client/ReadEventExample.java?start=21&end=29)]
+
+***
 
 ## Read a Single Event
 
@@ -51,13 +61,23 @@ The feed has a single item inside of it, the one you posted in [part 1](~/gettin
 
 * * *
 
-To use the .NET API, use the following method passing the stream name, the event you want to read and if you want to also return the event data:
+### [.NET Client API](#tab/tabid-dotnet-read-event)
 
-[!code-csharp[getting-started-read-stream-request](~/code-examples/getting-started/docs-example-csharp/Program.cs?start=108&end=109)]
+To use the .NET API, use the following method passing the stream name, the event you want to read and wether to return the event data:
+
+[!code-csharp[getting-started-read-stream-request](~/code-examples/dotnet-client/Program.cs?start=108&end=109)]
+
+### [Java Client](#tab/tabid-jvm-read-event)
+
+To use the Java client, use the following method passing the stream name, the event you want to read and if you want to also return the event data:
+
+[!code-java[getting-started-read](~/code-examples/jvm-client/ReadEventExample.java?start=21&end=29)]
+
+***
 
 ## Paginating through Events
 
-For longer feeds of events than this example, you need to paginate through the feed, reading a certain number of events at a time. For the HTTP API [you paginate](~/http-api/reading-streams.md#feed-paging) through the feed using _previous_ and _next_ links within the stream. For the .NET API, [you use a read method](~/dotnet-api/reading-events.md#example-read-an-entire-stream-forwards-from-start-to-end) to loop through events a certain number at a time.
+For longer feeds of events than this example, you need to paginate through the feed, reading a certain number of events at a time. For the HTTP API [you paginate](~/http-api/reading-streams.md#feed-paging) through the feed using _previous_ and _next_ links within the stream. For the .NET API (and JVM client), [you use a read method](~/dotnet-api/reading-events.md#example-read-an-entire-stream-forwards-from-start-to-end) to loop through events a certain number at a time.
 
 ## Subscribing to Receive Stream Updates
 
@@ -73,10 +93,14 @@ You can create subscriptions and watch events as they arrive under the _Persiste
 
 ### [.NET API](#tab/tabid-create-sub-dotnet)
 
-[!code-csharp[getting-started-read-stream-request](~/code-examples/getting-started/docs-example-csharp/Program.cs?range=119-133)]
+[!code-csharp[getting-started-read-stream-request](~/code-examples/dotnet-client/Program.cs?range=119-133)]
 
 > [!NEXT]
 > Find more details on the parameters used in the example above, read the API documentation for [`PersistentSubscriptionSettings`](xref:EventStore.ClientAPI.PersistentSubscriptionSettings), [`CreatePersistentSubscriptionAsync`](xref:EventStore.ClientAPI.IEventStoreConnection.CreatePersistentSubscriptionAsync*) and [`ConnectToPersistentSubscription`](xref:EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscriptionAsync*)
+
+### [Java Client API](#tab/tabid-create-sub-java)
+
+[!code-java[getting-started-read](~/code-examples/jvm-client/SubscriptionExample.java?start=15&end=35)]
 
 * * *
 
