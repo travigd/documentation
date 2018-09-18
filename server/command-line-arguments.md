@@ -3,27 +3,30 @@ outputFileName: index.html
 ---
 
 # Command Line Arguments
+
 Event Store supports many configuration options. There are three distinct ways to set any parameter, all with their own advantages and disadvantages.
 
--   Via command line
--   Environment variables
--   YAML files.
+1. The command line
+2. Environment variables
+3. YAML files
 
-## Command Line
+## Command line
 
-To pass a configuration value over the command line you add the configuration to the line executing Event Store e.g.
+To pass a configuration value over the command line you add the configuration to the line executing Event Store, for example:
 
 ```powershell
 EventStore.ClusterNode.exe --log ~/logs
 ```
 
-While command line arguments tend to be useful in development scenarios, they are often not the preferred way to handle configuration in a production system.
+While command line arguments are useful during development, they are not the preferred way to handle configuration in a production system.
 
 ## Environment Variables
 
-You can set all arguments can also as environment variables. This mechanism is often used in UNIX based systems.
+You can set all arguments can also as environment variables. This mechanism is often used in UNIX based systems. For example:
 
-<!-- TODO: Example? -->
+```bash
+log=~/logs
+```
 
 ## YAML Files
 
@@ -31,7 +34,7 @@ The last way you can set arguments is to put them into one or more configuration
 
 ```yaml
 ---
-Log: "/home/Ouro/logs"
+Log: "~/logs"
 IntHttpPort: 2111
 ---
 ```
@@ -39,56 +42,23 @@ IntHttpPort: 2111
 > [!NOTE]
 > You need to use the three dashes and spacing in your YAML file.
 
-Files can be better for large installations as you can centrally distribute and manage them, or generate them by a configuration management system such as Puppet.
+YAML files are better for large installations as you can centrally distribute and manage them, or generate them from a configuration management system.
 
-The order of precedence between the multiple configuration sources is also important as you could feasibly set them in multiple ways. The command line is the highest priority followed by environment variables. Files are the lowest precedence and are processed in the order given on the command line. When starting Event Store the major parameters are listed in the log (including what set them).
+## Order of precedence
 
-```text
-ES VERSION:               1.0.3 (dev/5488fa34228e283bad985966b700e1fc48a0780a, Tue, 2 Jul 2013 12:39:02 +0300)
-OS:                       Linux (Unix 3.2.0.27)
-RUNTIME:                  3.0.10 (master/1166156 Tue Apr 23 14:56:42 EEST 2013) (EventStore build) (64-bit)
-GC:                       2 GENERATIONS
-LOGS:                     /home/greg/foo
+The order of precedence between multiple configuration sources is important as you can set them in multiple ways. The command line is the highest priority followed by environment variables. Files are the lowest precedence and are processed in the order given on the command line. When starting Event Store it lists the major parameters in the log (including what set them).
 
-SHOW HELP:                False (<DEFAULT>)
-SHOW VERSION:             False (<DEFAULT>)
-LOGS DIR:                 /home/greg/foo (--logsdir from command line)
-CONFIGS:                  <empty> (<DEFAULT>)
-DEFINES:                  <empty> (<DEFAULT>)
-IP:                       127.0.0.1 (<DEFAULT>)
-TCP PORT:                 1113 (<DEFAULT>)
-SECURE TCP PORT:          0 (<DEFAULT>)
-HTTP PORT:                2113 (<DEFAULT>)
-STATS PERIOD SEC:         30 (<DEFAULT>)
-CACHED CHUNKS:            -1 (<DEFAULT>)
-CHUNKS CACHE SIZE:        536871424 (<DEFAULT>)
-DB PATH:                  /tmp/foo (--db from command line)
-SKIP DB VERIFY:           False (<DEFAULT>)
-RUN PROJECTIONS:          True (<DEFAULT>)
-PROJECTION THREADS:       3 (<DEFAULT>)
-WORKER THREADS:           5 (<DEFAULT>)
-HTTP PREFIXES:            <empty> (<DEFAULT>)
-ENABLE TRUSTED AUTH:      False (<DEFAULT>)
-CERTIFICATE STORE:        <empty> (<DEFAULT>)
-CERTIFICATE NAME:         <empty> (<DEFAULT>)
-CERTIFICATE FILE:         <empty> (<DEFAULT>)
-CERTIFICATE PASSWORD:     <empty> (<DEFAULT>)
-PREPARE TIMEOUT MS:       2000 (<DEFAULT>)
-COMMIT TIMEOUT MS:        2000 (<DEFAULT>)
-```
+## Parameter list
 
-> [!NOTE]
-> User projections are not enabled by default, but the projections engine is used internally for account management. If you want to run user projections, you have to start Event Store using the `--run-projections=all` command line parameter.
-
-Event Store supports the following parameters:
+Event Store supports the following parameters.
 
 ### Application Options
 
-| Parameter                                                             | Environment _(all prefixed with EVENTSTORE\_)_ | Yaml                     | Description                                                                                                       |
+| Command line parameter                                                             | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                     | Description                                                                                                       |
 | --------------------------------------------------------------------- | ---------------------------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
 | -Help<br/>--help=VALUE<br/>                                           | HELP                                           | Help                     | Show help. (Default: False)                                                                                       |
 | -Version<br/>--version=VALUE<br/>                                     | VERSION                                        | Version                  | Show version. (Default: False)                                                                                    |
-| -Log<br/>--log=VALUE<br/>                                             | LOG                                            | Log                      | Path where to keep log files. (Default: [See default directories](default-directories.md)                        |
+| -Log<br/>--log=VALUE<br/>                                             | LOG                                            | Log                      | Path where to keep log files. (Default: [See default directories](~/server/default-directories.md)                        |
 | -Config<br/>--config=VALUE<br/>                                       | CONFIG                                         | Config                   | Configuration files.                                                                                              |
 | -Defines<br/>--defines=VALUE<br/>                                     | DEFINES                                        | Defines                  | Run-time conditionals. (Default: n/a)                                                                             |
 | -WhatIf<br/>--what-if=VALUE<br/>                                      | WHAT_IF                                        | WhatIf                   | Print effective configuration to console and then exit. (Default: False)                                          |
@@ -99,18 +69,18 @@ Event Store supports the following parameters:
 | -StatsPeriodSec<br/>--stats-period-sec=VALUE<br/>                     | STATS_PERIOD_SEC                               | StatsPeriodSec           | The number of seconds between statistics gathers. (Default: 30)                                                   |
 | -WorkerThreads<br/>--worker-threads=VALUE<br/>                        | WORKER_THREADS                                 | WorkerThreads            | The number of threads to use for pool of worker services. (Default: 5)                                            |
 | -EnableHistograms<br/>--enable-histograms=VALUE<br/>                  | ENABLE_HISTOGRAMS                              | EnableHistograms         | Enables the tracking of various histograms in the backend, typically only used for debugging etc (Default: False) |
-| -LogHttpRequests<br/>--log-http-requests=VALUE<br/>                   | LOG_HTTP_REQUESTS                              | LogHttpRequests          | Log Http Requests and Responses before processing them. (Default: False)                                          |
+| -LogHttpRequests<br/>--log-http-requests=VALUE<br/>                   | LOG_HTTP_REQUESTS                              | LogHttpRequests          | Log HTTP Requests and Responses before processing them. (Default: False)                                          |
 
 ### Authentication Options
 
-| Parameter                                                    | Environment _(all prefixed with EVENTSTORE\_)_ | Yaml                 | Description                                                                      |
+| Command line parameter                                                             | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                     | Description                                                                                                       |
 | ------------------------------------------------------------ | ---------------------------------------------- | -------------------- | -------------------------------------------------------------------------------- |
 | -AuthenticationType<br/>--authentication-type=VALUE<br/>     | AUTHENTICATION_TYPE                            | AuthenticationType   | The type of authentication to use. (Default: internal)                           |
 | -AuthenticationConfig<br/>--authentication-config=VALUE<br/> | AUTHENTICATION_CONFIG                          | AuthenticationConfig | Path to the configuration file for authentication configuration (if applicable). |
 
 ### Certificate Options
 
-| Parameter                                                             | Environment _(all prefixed with EVENTSTORE\_)_ | Yaml                     | Description                             |
+| Command line parameter                                                             | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                     | Description                                                                                                       |
 | --------------------------------------------------------------------- | ---------------------------------------------- | ------------------------ | --------------------------------------- |
 | -CertificateStoreLocation<br/>--certificate-store-location=VALUE<br/> | CERTIFICATE_STORE_LOCATION                     | CertificateStoreLocation | The certificate store location name.    |
 | -CertificateStoreName<br/>--certificate-store-name=VALUE<br/>         | CERTIFICATE_STORE_NAME                         | CertificateStoreName     | The certificate store name.             |
@@ -121,7 +91,7 @@ Event Store supports the following parameters:
 
 ### Cluster Options
 
-| Parameter                                                                | Environment _(all prefixed with EVENTSTORE\_)_ | Yaml                      | Description                                                                                             |
+| Command line parameter                                                             | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                     | Description                                                                                                       |
 | ------------------------------------------------------------------------ | ---------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------- |
 | -ClusterSize<br/>--cluster-size=VALUE<br/>                               | CLUSTER_SIZE                                   | ClusterSize               | The number of nodes in the cluster. (Default: 1)                                                        |
 | -NodePriority<br/>--node-priority=VALUE<br/>                             | NODE_PRIORITY                                  | NodePriority              | The node priority used during master election (Default: 0)                                              |
@@ -137,7 +107,7 @@ Event Store supports the following parameters:
 
 ### Database Options
 
-| Parameter                                                               | Environment _(all prefixed with EVENTSTORE\_)_ | Yaml                     | Description                                                                                                    |
+| Command line parameter                                                             | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                     | Description                                                                                                       |
 | ----------------------------------------------------------------------- | ---------------------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | -MinFlushDelayMs<br/>--min-flush-delay-ms=VALUE<br/>                    | MIN_FLUSH_DELAY_MS                             | MinFlushDelayMs          | The minimum flush delay in milliseconds. (Default: 2)                                                          |
 | -DisableScavengeMerging<br/>--disable-scavenge-merging=VALUE<br/>       | DISABLE_SCAVENGE_MERGING                       | DisableScavengeMerging   | Disables the merging of chunks when scavenge is running (Default: False)                                       |
@@ -147,7 +117,7 @@ Event Store supports the following parameters:
 | -ChunksCacheSize<br/>--chunks-cache-size=VALUE<br/>                     | CHUNKS_CACHE_SIZE                              | ChunksCacheSize          | The amount of unmanaged memory to use for caching chunks in bytes. (Default: 536871424)                                 |
 | -MaxMemTableSize<br/>--max-mem-table-size=VALUE<br/>                    | MAX_MEM_TABLE_SIZE                             | MaxMemTableSize          | Adjusts the maximum size of a mem table. (Default: 1000000)                                                    |
 | -HashCollisionReadLimit<br/>--hash-collision-read-limit=VALUE<br/>      | HASH_COLLISION_READ_LIMIT                      | HashCollisionReadLimit   | The number of events to read per candidate in the case of a hash collision (Default: 100)                      |
-| -Db<br/>--db=VALUE<br/>                                                 | DB                                             | Db                       | The path the db should be loaded/saved to. (Default: [See default directories](default-directories.md))        |
+| -Db<br/>--db=VALUE<br/>                                                 | DB                                             | Db                       | The path the db should be loaded/saved to. (Default: [See default directories](~/server/default-directories.md))        |
 | -Index<br/>--index=VALUE<br/>                                           | INDEX                                          | Index                    | The path the index should be loaded/saved to.                                                                  |
 | -MemDb<br/>--mem-db=VALUE<br/>                                          | MEM_DB                                         | MemDb                    | Keep everything in memory, no directories or files are created. (Default: False)                               |
 | -SkipDbVerify<br/>--skip-db-verify=VALUE<br/>                           | SKIP_DB_VERIFY                                 | SkipDbVerify             | Bypasses the checking of file hashes of database during startup (allows for faster startup). (Default: False)  |
@@ -163,7 +133,7 @@ Event Store supports the following parameters:
 
 ### Interface Options
 
-| Parameter                                                                                     | Environment _(all prefixed with EVENTSTORE\_)_ | Yaml                                | Description                                                                                                            |
+| Command line parameter                                                             | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                     | Description                                                                                                       |
 | --------------------------------------------------------------------------------------------- | ---------------------------------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | -IntIp<br/>--int-ip=VALUE<br/>                                                                | INT_IP                                         | IntIp                               | Internal IP Address. (Default: 127.0.0.1)                                                                              |
 | -ExtIp<br/>--ext-ip=VALUE<br/>                                                                | EXT_IP                                         | ExtIp                               | External IP Address. (Default: 127.0.0.1)                                                                              |
@@ -201,7 +171,7 @@ Event Store supports the following parameters:
 
 ### Projections Options
 
-| Parameter                                              | Environment _(all prefixed with EVENTSTORE\_)_ | Yaml              | Description                                                                                                                                      |
+| Command line parameter                                                             | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                     | Description                                                                                                       |
 | ------------------------------------------------------ | ---------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | -RunProjections<br/>--run-projections=VALUE<br/>       | RUN_PROJECTIONS                                | RunProjections    | Enables the running of projections. System runs built-in projections, All runs user projections. (Default: None) Possible Values:None,System,All |
 | -ProjectionThreads<br/>--projection-threads=VALUE<br/> | PROJECTION_THREADS                             | ProjectionThreads | The number of threads to use for projections. (Default: 3)                                                                                       |
