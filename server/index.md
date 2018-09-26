@@ -4,38 +4,13 @@ outputFileName: index.html
 
 # Running Event Store
 
-Event Store runs as a server, that clients can connect either over HTTP or using one of the client APIs. You can run both the open source and commercial versions, as either a single node, or a highly available cluster of nodes.
+Event Store runs as a server that clients can connect to either [over HTTP](~/http-api/index.md) or using [one of the client APIs](~/getting-started/which-api-sdk.md). You can run both the open source and commercial versions as either a single node or a highly available cluster of nodes.
 
-The [open source version of Event Store](https://eventstore.org/downloads) is distributed as a console application. There are separate distributions for Windows on .NET and Linux/macOS on Mono.
+We distribute an [open source version of Event Store](https://eventstore.org/downloads) as a console application. There are separate distributions for Windows on .NET and Linux/macOS on Mono.
 
-## Running the Open Source version
+[!include[<Getting Started Install and run>](~/partials/_install-run.md)]
 
-> [!WARNING]
-> Unless passed a database option, Event Store will write to a new database created in the system’s temporary files path each time it is started. For more information on Command Line Arguments read [this guide](command-line-arguments.md).
-
-### On Windows and .NET
-
-<!-- TODO: Duplication, turn other into partial and reuse -->
-
-A typical command line for running Event Store server on Windows is:
-
-```posh
-EventStore.ClusterNode.Exe --db .\ESData
-```
-
-#### Setting up HTTP Permissions
-
-Event Store has an HTTP interface and the identity which you want to run Event Store with must have permission to listen to incoming HTTP requests, as detailed [here](http://msdn.microsoft.com/en-us/library/ms733768.aspx).
-
-To configure an account with permission to listen for incoming HTTP requests, you execute the following in PowerShell, or the Command Prompt, running as administrator (replace `DOMAIN\username` with the actual account details, and the port number if you are not using the default port).
-
-```posh
-netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
-```
-
-<!-- TODO: Is this still true and can it be handled better? -->
-
-#### If you receive 503 errors from the web UI
+## Solving 503 errors from the web admin UI
 
 There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-a-httplistener-http-503-error) with the .NET `HTTPListener` class (which Event Store uses) and bad URL ACL registrations which can cause servers to return 503 errors for every request. If you see this, you can issue the following commands:
 
@@ -43,7 +18,7 @@ There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-
 netsh http show urlacl
 ```
 
-Look for an entry on the port you’re trying to use (`2113` unless you’ve specified a custom port). It will probably look something like: `http://+:2113/`. Then issue:
+Look for an entry on the port you're trying to use (`2113` unless you've specified a custom port), then issue:
 
 ```posh
 netsh http delete urlacl <the entry you just found>
@@ -55,20 +30,16 @@ For example:
 netsh http delete urlacl http://+:2113/
 ```
 
-This should resolve the issue.
+These steps should resolve the issue.
 
-### On Linux/macOS
+## Shutting down an Event Store node
 
-A typical command line for running Event Store server on Linux/macOS is:
+Event Store is designed to be safe by default, and it is expected that it will be shut down using `kill -9`. It is also possible to initiate a shutdown via the web admin UI, by clicking on the _Shutdown Server_ button located on the _Admin_ page. This may be useful if you do not have console access to the node or need to script initiating a shutdown.
 
-```bash
-./run-node.sh --db ./ESData
-```
+## Securing Event Store
 
-Although you can run Event Store binary directly, a `run-node` we provide a shell script which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of Event Store. This is necessary if you are planning to use projections.
+To secure Event Store, you can bind the server to the localhost interface and install a reverse proxy such as [nginx](http://nginx.org) or [Varnish](https://www.varnish-cache.org) on the public IP. Read [this guide](~/server/setting-up-varnish-in-linux.md) for an example of setting up Event Store with Varnish.
 
-Event Store builds for both Linux and macOS have the Mono runtime bundled in, this means that you do not need Mono installed locally to run Event Store.
+The reverse proxy is your public interface. Internally it handles the authentication and route requests to Event Store. Event Store is only accessible through the localhost adapter and is not exposed publicly. The locally running reverse proxy is allowed to cache responses, and because of this, reverse proxies are more performant than calling Event Store directly.
 
-### Shutting down an Event Store node
-
-Event Store is designed to be safe by default and it is expected that it will be shut down using `kill -9`. However, it is also possible to initiate a shutdown via the web UI, by clicking on the _Shutdown Server_ button located on the _Admin_ page. This may be useful if you do not have console access to the node, or need to script initiating a shutdown.
+Even if you use a reverse proxy, you can support external authentication from Event Store itself. You do this by enabling the [ES-TrustedAuth](~/http-api/optional-http-headers/trusted-intermediary.md) trusted intermediary option in your configuration. This allows the intermediary to write a header with the user information that Event Store uses.

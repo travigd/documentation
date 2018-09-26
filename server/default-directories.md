@@ -4,12 +4,12 @@ outputFileName: index.html
 
 # Default Directories
 
-The default directories used by Event Store vary by platform to best fit with the expectations of users in each case.
+The default directories used by Event Store vary by platform to fit with the common practices each platform.
 
-> [!WARNING]
+> [!NOTE]
 > Paths beginning with "." are relative to the directory in which _eventstored_ or _EventStore.ClusterNode.exe_ are located. Absolute paths are as written.
 
-### Linux
+## Linux
 
 -   **Application:** _/usr/bin_ (when installed via Debian package)
 -   **Content:** _/usr/share/eventstore_
@@ -21,7 +21,7 @@ The default directories used by Event Store vary by platform to best fit with th
 -   **Projections:** _./projections_ _then_ _{Content}/projections_
 -   **Prelude:** _./Prelude_ _then_ _{Content}/Prelude_
 
-### All other OSes (Includes Windows/macOS)
+## Windows and macOS
 
 -   **Content:** _./_
 -   **Configuration:** _./_

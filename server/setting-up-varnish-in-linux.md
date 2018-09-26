@@ -4,26 +4,23 @@ outputFileName: index.html
 
 # Setting up Varnish in Linux
 
-This document provides a brief guide on how to install Event Store with the varnish reverse proxy in a Linux environment. For more information on how to properly configure varnish for your requirements, read the [Varnish documentation](https://www.varnish-cache.org/trac/wiki/Introduction).
+> [!NOTE]
+> This guide uses the latest Ubuntu LTS (18.04)
 
-You use a reverse proxy to limit access to Event Store without breaking HTTP caching (authenticate to the proxy not to Event Store itself). Since Event Store runs HTTP only on the loopback adapter, users must enter through the reverse proxy to reach Event Store. [Ben Clark’s Gist](https://gist.github.com/benclark/2695148) contains a more configured varnish configuration that includes basic authentication as well as some other niceties such as adding headers for hits/misses).
+You use a reverse proxy to limit access to Event Store without breaking HTTP caching (authenticate to the proxy not to Event Store itself). Since Event Store runs HTTP only on the loopback adapter, users must enter through the reverse proxy to reach Event Store. This document provides a brief guide on how to install Event Store with the varnish reverse proxy in a Linux environment. For more information on how to properly configure varnish for your requirements, read the [Varnish documentation](https://www.varnish-cache.org/trac/wiki/Introduction).
 
-The first thing that we will need to do is to install varnish
+[Ben Clark's Gist](https://gist.github.com/benclark/2695148) contains a varnish configuration that includes basic authentication as well as some other niceties such as adding headers for hits/misses.
+
+## Install Varnish
 
 ```bash
-sudo curl http://repo.varnish-cache.org/debian/GPG-key.txt | sudo apt-key add -
-echo "deb http://repo.varnish-cache.org/ubuntu/ precise varnish-3.0" | sudo tee -a /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install varnish
 ```
 
-Next configure varnish.
+## Configure Varnish
 
-```bash
-sudo vi /etc/default/varnish
-```
-
-Edit the section that looks like:
+Open _/etc/default/varnish_ and edit the section that looks like the below to the port with the port you want to run on:
 
 ```bash
 DAEMON_OPTS="-a :80 \
@@ -33,13 +30,7 @@ DAEMON_OPTS="-a :80 \
              -s malloc,256m"
 ```
 
-Replace the port with the port you want to run on:
-
-```bash
-sudo vi /etc/varnish/default.vcl
-```
-
-Set it to:
+Open _/etc/varnish/default.vcl_ and edit the `backend` section to match Event Store:
 
 ```bash
 backend default {
@@ -48,4 +39,4 @@ backend default {
 }
 ```
 
-Finally use `sudo service varnish restart` to restart varnish and Event Store should berunning with a reverse proxy. If you want to check out the status of varnish you can check with `varnishstat` from the command line.
+Finally use `sudo service varnish restart` to restart varnish and Event Store should be running with a reverse proxy in front of it. If you want to check the status of varnish, use `varnishstat`.

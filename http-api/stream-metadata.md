@@ -41,7 +41,7 @@ Once you have the URI of the metadata stream, a issue `GET` request to retrieve 
 ### [Request](#tab/tabid-3)
 
 ```bash
-curl -i http://127.0.0.1:2113/streams/$users/metadata --user admin:changeit
+curl -i http://127.0.0.1:2113/streams/%24users/metadata --user admin:changeit
 ```
 
 ### [Response](#tab/tabid-4)
