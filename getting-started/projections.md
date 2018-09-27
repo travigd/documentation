@@ -29,7 +29,7 @@ EventStore.ClusterNode.exe --run-projections=none
 
 ### [Linux](#tab/tabid-2)
 
-Add `EVENTSTORE_RUN_PROJECTIONS=All` and `EVENTSTORE_START_STANDARD_PROJECTIONS=true` to your environment variables, or a configuration file and start Event Store:
+Add `EVENTSTORE_RUN_PROJECTIONS=All` and `EVENTSTORE_START_STANDARD_PROJECTIONS=true` to your environment variables, or the _/etc/eventstore/eventstore.conf_ configuration file and start Event Store:
 
 ```bash
 sudo systemctl start eventstore

@@ -4,7 +4,7 @@ outputFileName: index.html
 
 # Competing Consumers
 
-This document explains how to use .NET API for setting up and consuming competing consumer subscription groups. For an overview of competing consumers and how they relate to other subscription types, please see the [overview document](~/getting-started/competing-consumers.md).
+This document explains how to use .NET API for setting up and consuming competing consumer subscription groups. For an overview of competing consumers and how they relate to other subscription types, please see the [overview document](~/getting-started/projections.md).
 
 > [!NOTE]
 > The Administration UI includes a _Competing Consumers_ section where a user can create, update, delete and view subscriptions and their statuses.

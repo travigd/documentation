@@ -30,7 +30,7 @@ log=~/logs
 
 ## YAML Files
 
-The last way you can set arguments is to put them into one or more configuration files. To tell Event Store to use a configuration file you pass the files on the command line with `--config=filename`. The basic format of the YAML configuration file is as follows:
+The last way you can set arguments is to put them into one or more configuration files. To tell Event Store to use a different configuration file, you pass the file path on the command line with `--config=filename`, or use the `CONFIG` enivornment variable. The basic format of the YAML configuration file is as follows:
 
 ```yaml
 ---
