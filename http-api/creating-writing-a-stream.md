@@ -121,9 +121,6 @@ To append events, issue a `POST` request to the same resource again and edit the
 
 ## Data-only events
 
-> [!VERSION]
-> 3.7.0 and later.
-
 Version 3.7.0 of Event Store added support for the `application/octet-stream` content type to support data-only binary events. When creating these events, you need to provide the `ES-EventType` and `ES-EventId` headers and cannot have metadata associated with the event. In the example below `SGVsbG8gV29ybGQ=` is the data you `POST` to the stream:
 
 ### [Request](#tab/tabid-13)
@@ -138,9 +135,9 @@ Version 3.7.0 of Event Store added support for the `application/octet-stream` co
 
 ## Expected version header
 
-The expected version header represents the version of the stream you expect. 
+The expected version header represents the version of the stream you expect.
 
-For example if you write to a stream at version 1, then you expect it to be at version 1 next time you write. This can allow for optimistic locking when multiple applications are reading/writing to streams. 
+For example if you write to a stream at version 1, then you expect it to be at version 1 next time you write. This can allow for optimistic locking when multiple applications are reading/writing to streams.
 
 If your expected version is not the current version you receive an HTTP status code of 400.
 
