@@ -44,7 +44,7 @@ paths:
         200:
           description: OK
         401:
-          description: Unauthorized  
+          description: Unauthorized
       security:
         - basicAuth: []
   /info:
@@ -61,7 +61,7 @@ paths:
         200:
           description: OK
         401:
-          description: Unauthorized  
+          description: Unauthorized
       security:
         - basicAuth: []
   /info/options:
@@ -78,7 +78,7 @@ paths:
         200:
           description: OK
         401:
-          description: Unauthorized    
+          description: Unauthorized
       security:
         - basicAuth: []
   '/streams/{stream}':
@@ -144,7 +144,7 @@ paths:
         '307':
           description: Temporary Redirect
         '400':
-          description: Write request body invalid  
+          description: Write request body invalid
     delete:
       summary: Deletes a stream
       tags:
@@ -877,7 +877,7 @@ paths:
       description: Create a new user.
       operationId: Create a user
       security:
-        - BasicAuth: [] 
+        - basicAuth: []
       produces:
         - application/json
         - application/xml
@@ -892,7 +892,7 @@ paths:
         '201':
           description: New user created
         401:
-          description: Unauthorized      
+          description: Unauthorized
         '400':
           description: Bad request
   '/users/{login}':
@@ -1672,6 +1672,35 @@ paths:
           description: OK
         '404':
           description: Not found
+  /gossip:
+    get:
+      tags:
+        - Gossip
+      summary: Return Gossip details for cluster
+      description: Return Gossip details for nodes in cluster.
+      operationId: Return Gossip details
+      produces:
+        - application/json
+        - application/xml
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not found
+    post:
+      tags:
+        - Gossip
+      summary: Update Gossip details for cluster
+      description: Update Gossip details for nodes in a cluster.
+      operationId: Update Gossip details
+      produces:
+        - application/json
+        - application/xml
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not found
 parameters:
   ES-ExpectedVersion:
     name: ES-ExpectedVersion
@@ -1702,7 +1731,7 @@ parameters:
     in: header
     required: false
     type: integer
-    description: Long poll operation on a stream read 
+    description: Long poll operation on a stream read
   ES-HardDelete:
     name: ES-HardDelete
     in: header
@@ -1714,13 +1743,13 @@ parameters:
     in: header
     required: false
     type: string
-    description: The event type associated to a posted body           
+    description: The event type associated to a posted body
   ES-EventId:
     name: ES-EventId
     in: header
     required: false
     type: integer
-    description: Event ID associated to a posted body           
+    description: Event ID associated to a posted body
 definitions:
   UserItem:
     type: object
@@ -1789,7 +1818,7 @@ definitions:
     properties:
       body:
         type: object
-        description: Event data    
+        description: Event data
   StreamItem:
     type: object
     properties:
