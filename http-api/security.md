@@ -41,7 +41,7 @@ If you were to use the wrong user or no user when a request requires one, you re
 
 * * *
 
-As you pass the username and password in the request we recommend you run Event Store over HTTP, and enable SSL to encrypt the user information. You can find instructions on how to do this with [Windows](~/server/setting_up_ssl.md) and [Linux](~/server/setting_up_ssl_linux.md). If you are running the clustered version you can also setup SSL for the replication protocol.
+As you pass the username and password in the request we recommend you run Event Store over HTTP, and enable SSL to encrypt the user information. [Read this guide for instructions](~/server/setting-up-ssl.md). If you are running the clustered version you can also setup SSL for the replication protocol.
 
 <!-- TODO: Does this need further explanation? Any more details anywhere? -->
 
