@@ -116,11 +116,11 @@ To use the .NET API, use the following method, passing the name of the stream, t
 > [!NEXT]
 > [Read this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
 
-### [JVM client](#tab/tabid-6)
+### [JVM Client](#tab/tabid-6)
 
-To use the .NET API, use the following method, passing the name of the stream, the version, and the events to write:
+To use the JVM Client, use the following method, passing the name of the stream, the version, and the events to write:
 
-[!code-java[getting-started-connection](~/code-examples/jvm-client//WriteEventExample.java?start=23&end=36)]
+[!code-java[getting-started-connection](~/code-examples/jvm-client/WriteEventExample.java?start=23&end=36)]
 
 * * *
 

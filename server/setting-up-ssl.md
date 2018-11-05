@@ -45,7 +45,7 @@ ExtSecureTcpPort: 1115
 
 Connect to Event Store:
 
-## [.NET API](#tab/tabid-8)
+### [.NET API](#tab/tabid-6)
 
 ```csharp
 var settings = ConnectionSettings.Create().UseSslConnection("eventstore.org", true);
@@ -56,7 +56,7 @@ using (var conn = EventStoreConnection.Create(settings, new IPEndPoint(IPAddress
 }
 ```
 
-## [HTTP API](#tab/tabid-9)
+### [HTTP API](#tab/tabid-7)
 
 ```bash
 curl -vk --cert <PATH_TO_CERT> --key <PATH_TO_KEY> -i -d "@event.json" "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"
@@ -114,7 +114,7 @@ ExtSecureTcpPort: 1115
 
 Connect to Event Store:
 
-## [.NET API](#tab/tabid-8)
+### [.NET API](#tab/tabid-8)
 
 ```csharp
 var settings = ConnectionSettings.Create().UseSslConnection("eventstore.org", true);
@@ -125,7 +125,7 @@ using (var conn = EventStoreConnection.Create(settings, new IPEndPoint(IPAddress
 }
 ```
 
-## [HTTP API](#tab/tabid-9)
+### [HTTP API](#tab/tabid-9)
 
 ```bash
 curl -vk --cert <PATH_TO_CERT> --key <PATH_TO_KEY> -i -d "@event.json" "http://127.0.0.1:2113/streams/newstream" -H "Content-Type:application/vnd.eventstore.events+json"

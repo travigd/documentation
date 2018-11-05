@@ -182,11 +182,13 @@ To update the projection, edit the projection definition in the web admin UI, or
 
 Then reset the projection you created above:
 
-<!-- TODO: And .NET? -->
-
-### [Request](#tab/tabid-10)
+### [HTTP API](#tab/tabid-reset-http)
 
 [!code-bash[getting-started-projections-reset-request](~/code-examples/getting-started/reset-projection.sh)]
+
+### [.NET API](#tab/tabid-reset-dotnet)
+
+[!code-csharp[getting-started-projections-reset](~/code-examples/getting-started/dotnet-client/Program.cs?range=193-193)]
 
 ### [Response](#tab/tabid-11)
 
@@ -202,7 +204,7 @@ You can now read the events in the result stream by issuing a read request.
 
 ### [.NET API](#tab/tabid-read-stream-dotnet)
 
-[!code-csharp[getting-started-projections-state](~/code-examples/dotnet-client/Program.cs?range=194-197)]
+[!code-csharp[getting-started-projections-state](~/code-examples/getting-started/dotnet-client/Program.cs?range=195-198)]
 
 ### [Response](#tab/tabid-13)
 
@@ -224,7 +226,7 @@ Then send the update to the projection:
 
 ### [.NET API](#tab/tabid-update-proj-config-dotnet)
 
-[!code-csharp[getting-started-projections-config-update](~/code-examples/dotnet-client/Program.cs?range=219)]
+[!code-csharp[getting-started-projections-config-update](~/code-examples/getting-started/dotnet-client/Program.cs?range=218)]
 
 * * *
 
@@ -239,7 +241,7 @@ Now you can read the result as above, but use the new stream name:
 
 ### [.NET API](#tab/tabid-read-projection-events-renamed-dotnet)
 
-[!code-csharp[getting-started-projections-state](~/code-examples/dotnet-client/Program.cs?range=221-223)]
+[!code-csharp[getting-started-projections-state](~/code-examples/getting-started/dotnet-client/Program.cs?range=220-223)]
 
 * * *
 
@@ -255,7 +257,7 @@ Event Store has a built-in `$by_category` projection that lets you select events
 
 ### [.NET API](#tab/tabid-enablebycategory-dotnet)
 
-[!code-csharp[getting-started-projections-enable](~/code-examples/dotnet-client/Program.cs?range=232)]
+[!code-csharp[getting-started-projections-enable](~/code-examples/getting-started/dotnet-client/Program.cs?range=231)]
 
 * * *
 
@@ -283,7 +285,7 @@ Create the projection with the following request:
 
 ### [.NET API](#tab/tabid-projections-count-per-stream-dotnet)
 
-[!code-csharp[getting-started-projections-count-per-stream](~/code-examples/dotnet-client/Program.cs?range=249)]
+[!code-csharp[getting-started-projections-count-per-stream](~/code-examples/getting-started/dotnet-client/Program.cs?range=248)]
 
 * * *
 
@@ -297,7 +299,7 @@ Querying for the state of the projection is different due to the partitioning of
 
 ### [.NET API](#tab/tabid-read-partition-dotnet)
 
-[!code-csharp[getting-started-projections-read-state-partition-request](~/code-examples/dotnet-client/Program.cs?range=251-252)]
+[!code-csharp[getting-started-projections-read-state-partition-request](~/code-examples/getting-started/dotnet-client/Program.cs?range=250-251)]
 
 ### [Response](#tab/tabid-15)
 

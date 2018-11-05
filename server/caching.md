@@ -10,7 +10,7 @@ Most of the URIs that Event Store emits are immutable (including the UI and Atom
 
 An Atom feed has a URI that represents an event, e.g., `/streams/foo/0`, representing 'event 0'. The data for event 0 never changes. If this stream is open to public reads then the URI is set to be 'cachable' for long periods of time.
 
-You can see a similar example in reading a feed. If a stream has 50 events in it, the feed page `20/forward/10` never changse, it will always be events 20-30. Internally Event Store controls serving the right URIs by using `rel` links with feeds (for example `prev`/`next`).
+You can see a similar example in reading a feed. If a stream has 50 events in it, the feed page `20/forward/10` never changes, it will always be events 20-30. Internally Event Store controls serving the right URIs by using `rel` links with feeds (for example `prev`/`next`).
 
 This caching behaviour is great for performance in a production environment and we recommended you use it, but in a developer environment it can become confusing.
 
