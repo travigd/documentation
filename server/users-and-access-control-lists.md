@@ -49,7 +49,7 @@ You can update these fields with either a single string or an array of strings r
 
 ### Example
 
-The ACL below would give `reader` read and write permission on the stream, while `reader` would have read permission on the stream. Only users in the `$admins` group would be able to delete the stream or read and write the metadata.
+The ACL below would give `writer` read and write permission on the stream, while `reader` would have read permission on the stream. Only users in the `$admins` group would be able to delete the stream or read and write the metadata.
 
 ### [HTTP API](#tab/tabid-http)
 
