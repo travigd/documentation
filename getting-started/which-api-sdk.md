@@ -29,6 +29,7 @@ Event Store offers a low-level protocol in the form of an asynchronous TCP proto
 -   [Python](https://github.com/madedotcom/atomicpuppy)
 -   [Java 8](https://github.com/msemys/esjc)
 -   [Maven plugin](https://github.com/fuinorg/event-store-maven-plugin)
+-   [Rust](https://gitlab.com/YoEight/eventstore-rs)
 
 ## HTTP
 
