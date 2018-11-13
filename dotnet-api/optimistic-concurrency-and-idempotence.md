@@ -18,8 +18,6 @@ The .NET API has constants which you can use to represent certain conditions:
 
 If the optimistic concurrency check fails during writing, a `WrongExpectedVersionException` is thrown.
 
-<!--  TODO: Is this a real word?-->
-
 ## Idempotence
 
 If identical write operations occur, Event Store treats them in a way which makes it idempotent. If a write is treated in this manner, Event Store acknowledges it as successful, but duplicate events are not written. The idempotence check is based on the `EventId` and `stream`. It is possible to reuse an `EventId` across streams whilst maintaining idempotence.
