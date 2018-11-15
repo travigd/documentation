@@ -39,7 +39,11 @@ paths:
       operationId: Scavenge a node
       produces:
       - application/json
-      parameters: []
+      parameters:
+        - name: startFromChunk
+          in: path
+          description: Starting chunk ID of scavenge
+          type: integer
       responses:
         200:
           description: OK

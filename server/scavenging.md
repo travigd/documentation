@@ -21,6 +21,9 @@ You can start a scavenge by issuing an empty `POST` to the HTTP API with the cre
 
 [!code-bash[server-scavenge-request](~/code-examples/server/scavenge.sh?start=1&end=1)]
 
+> [!TIP]
+> You can specify the chunk to start a scavenge from by using the `?startFromChunk=<CHUNK_ID>"` parameter.
+
 ### [Response](#tab/tabid-9)
 
 [!code-http[server-scavenge-response](~/code-examples/server/scavenge.sh?range=3-)]
@@ -28,6 +31,8 @@ You can start a scavenge by issuing an empty `POST` to the HTTP API with the cre
 * * *
 
 You can also start scavenges from the _Admin_ page in the Admin UI.
+
+<!-- TODO: Scavenge with .NET API? -->
 
 > [!TIP]
 > Each node in a cluster has its own independent database. As such, when you run a scavenge, you need to issue a scavenge request to each node.
