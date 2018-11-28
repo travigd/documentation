@@ -14,8 +14,7 @@ High availability Event Store allows you to run more than one node as a cluster.
 
 This document covers setting up Event Store with manager nodes and database nodes.
 
-> [!TIP]
-> When setting up a cluster, you generally want an odd number of nodes as Event Store uses a quorum based algorithm to handle high availability.
+[!include[<Node number>](~/partials/_cluster-size.md)]
 
 ## Manager Nodes
 
