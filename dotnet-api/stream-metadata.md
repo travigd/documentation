@@ -82,10 +82,8 @@ This returns a `RawStreamMetadataResult`. The fields on this result are:
 | `long MetastreamVersion` | The version of the metastream (see [Expected Version](optimistic-concurrency-and-idempotence.md)) |
 | `byte[] Metadata`        | The raw data of the metadata JSON                                                                 |
 
-<!-- TODO: what does security mean? -->
-
 > [!NOTE]
-> If you have security enabled, reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
+> If you enabled [enabled security](~/dot-net/connecting-to-server.md#security), reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
 
 ## Writing Metadata
 

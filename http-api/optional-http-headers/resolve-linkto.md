@@ -30,5 +30,3 @@ You can see the differences in behaviour in the following cURL commands.
 [!code-json[http-api-resolve-links-false-response](~/code-examples/http-api/resolve-links-false.sh?range=3-)]
 
 * * *
-
-<!-- TODO: Looks the same to me -->

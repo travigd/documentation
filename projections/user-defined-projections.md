@@ -4,22 +4,20 @@ outputFileName: index.html
 
 # User Defined Projections
 
-User defined projections are written in JavaScript (ECMASCRIPT 6).
+<!-- TODO: Again refactor to shopping cart? -->
 
-Example projection:
-
-<!-- TODO: Which does what? Counts number myeventtype in account-1 stream, and the transformBy does something… Map state to something else, setting it to 10 -->
+You write user defined projections in JavaScript. For example, the `my_demo_projection_result` projection below counts the number of `myEventType` events from the `account-1` stream. It then uses the `transformBy` function to change the final state:
 
 ```JavaScript
-options({ //option
+options({
 	resultStreamName: "my_demo_projection_result",
 	$includeLinks: false,
 	reorderEvents: false,
 	processingLag: 0
 })
 
-fromStream('account-1') //selector
-.when({ //filter
+fromStream('account-1')
+.when({
 	$init:function(){
 		return {
 			count: 0
@@ -29,13 +27,15 @@ fromStream('account-1') //selector
 		state.count += 1;
 	}
 })
-.transformBy(function(state){ //transformation
+.transformBy(function(state){
 	state.count = 10;
 })
-.outputState() //transformation
+.outputState()
 ```
 
-## Projections API
+<!-- TODO: Show example output, see above comment -->
+
+## User Defined Projections API
 
 ### Options
 
@@ -49,36 +49,36 @@ fromStream('account-1') //selector
     </thead>
     <tbody>
         <tr>
-            <td><code>resultStreamName</code></td>
-            <td>Overrides the default resulting stream name for the outputState() transformation, which is $projections-{projection-name}-result.</td>
+            <td><code>`resultStreamName`</code></td>
+            <td>Overrides the default resulting stream name for the `outputState()` transformation, which is `$projections-{projection-name}-result`.</td>
             <td>
             </td>
         </tr>
         <tr>
-            <td><code>$includeLinks</code></td>
+            <td><code>`$includeLinks`</code></td>
             <td>Configures the projection to include/exclude link to events.</td>
             <td>
-                <b>Default: </b>false
+                <b>Default: </b>`false`
             </td>
         </tr>
          <tr>
-            <td><code>processingLag</code></td>
-            <td>When reorderEvents is turned on, this value is used to compare the total milliseconds between the first and last events in the buffer and if the value is equal or greater, the events in the buffer will be processed. The buffer is an ordered list of events.
+            <td><code>`processingLag`</code></td>
+            <td>When `reorderEvents` is enabled, this value is used to compare the total milliseconds between the first and last events in the buffer and if the value is equal or greater, the events in the buffer are processed. The buffer is an ordered list of events.
             </td>
 			<td>
-                <b>Default: </b>500ms
+                <b>Default: </b>`500ms`
                 <p>
-	                Only valid for fromStreams() selector
+	                Only valid for `fromStreams()` selector
                 </p>
             </td>
         </tr>
         <tr>
-            <td><code>reorderEvents</code></td>
+            <td><code>`reorderEvents`</code></td>
             <td>Process events by storing a buffer of events ordered by their prepare position</td>
 			<td>
-                <b>Default: </b>false
+                <b>Default: </b>`false`
                 <p>
-	                Only valid for fromStreams() selector
+	                Only valid for `fromStreams()` selector
                 </p>
             </td>
         </tr>
@@ -97,62 +97,62 @@ fromStream('account-1') //selector
     </thead>
     <tbody>
         <tr>
-            <td><code>fromAll()</code></td>
-            <td>Selects events from the $all stream.</td>
+            <td><code>`fromAll()`</code></td>
+            <td>Selects events from the `$all` stream.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>partitionBy</li>
-	            	<li>when</li>
-	            	<li>foreachStream</li>
-	            	<li>outputState</li>
+	            	<li>`partitionBy`</li>
+	            	<li>`when`</li>
+	            	<li>`foreachStream`</li>
+	            	<li>`outputState`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>fromCategory({category})</code></td>
+            <td><code>`fromCategory({category})`</code></td>
             <td>Selects events from the `$ce-{category}` stream.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>partitionBy</li>
-	            	<li>when</li>
-	            	<li>foreachStream</li>
-	            	<li>outputState</li>
+	            	<li>`partitionBy`</li>
+	            	<li>`when`</li>
+	            	<li>`foreachStream`</li>
+	            	<li>`outputState`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>fromStream({streamId})</code></td>
+            <td><code>`fromStream({streamId})`</code></td>
             <td>Selects events from the {streamId} stream.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>partitionBy</li>
-	            	<li>when</li>
-	            	<li>outputState</li>
+	            	<li>`partitionBy`</li>
+	            	<li>`when`</li>
+	            	<li>`outputState`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>fromStreams([]streams)</code></td>
+            <td><code>`fromStreams([]streams)`</code></td>
             <td>Selects events from the streams supplied.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>partitionBy</li>
-	            	<li>when</li>
-	            	<li>outputState</li>
+	            	<li>`partitionBy`</li>
+	            	<li>`when`</li>
+	            	<li>`outputState`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>fromStreamsMatching(function filter)</code></td>
-            <td>Selects events from the $all stream that returns true for the given filter.</td>
+            <td><code>`fromStreamsMatching(function filter)`</code></td>
+            <td>Selects events from the `$all` stream that returns true for the given filter.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>when</li>
+	            	<li>`when`</li>
             	</ul>
             </td>
         </tr>
@@ -171,74 +171,74 @@ fromStream('account-1') //selector
     </thead>
     <tbody>
         <tr>
-            <td><code>when(handlers)</code></td>
-            <td>Allows only the given events of a particular to pass through.</td>
+            <td><code>`when(handlers)`</code></td>
+            <td>Allows only the given events of a particular to pass through the projection.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>$defines_state_transform</li>
-	            	<li>transformBy</li>
-	            	<li>filterBy</li>
-	            	<li>outputTo</li>
-	            	<li>outputState</li>
+	            	<li>`$defines_state_transform`</li>
+	            	<li>`transformBy`</li>
+	            	<li>`filterBy`</li>
+	            	<li>`outputTo`</li>
+	            	<li>`outputState`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>foreachStream()</code></td>
+            <td><code>`foreachStream()`</code></td>
             <td>Partitions the state for each of the streams provided.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>when</li>
+	            	<li>`when`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>outputState()</code></td>
-            <td>If the projection maintains state, setting this option will produce a stream called $projections-{projection-name}-result with the state as the event body.</td>
+            <td><code>`outputState()`</code></td>
+            <td>If the projection maintains state, setting this option produces a stream called `$projections-{projection-name}-result` with the state as the event body.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>transformBy</li>
-	            	<li>filterBy</li>
-	            	<li>outputTo</li>
+	            	<li>`transformBy`</li>
+	            	<li>`filterBy`</li>
+	            	<li>`outputTo`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>partitionBy(function(event))</code></td>
+            <td><code>`partitionBy(function(event))`</code></td>
             <td>Partitions a projection by the partition returned from the handler.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>when</li>
+	            	<li>`when`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>transformBy(function(state))</code></td>
+            <td><code>`transformBy(function(state))`</code></td>
             <td>Provides the ability to transform the state of a projection by the provided handler.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>transformBy</li>
-	            	<li>filterBy</li>
-	            	<li>outputState</li>
-	            	<li>outputTo</li>
+	            	<li>`transformBy`</li>
+	            	<li>`filterBy`</li>
+	            	<li>`outputState`</li>
+	            	<li>`outputTo`</li>
             	</ul>
             </td>
         </tr>
         <tr>
-            <td><code>filterBy(function(state))</code></td>
-            <td>Causes projection results to be `null` for any `state` that returns a falsey value from the given predicate.</td>
+            <td><code>`filterBy(function(state))`</code></td>
+            <td>Causes projection results to be `null` for any `state` that returns a `false` value from the given predicate.</td>
             <td>
             	<b>Provides</b>
             	<ul>
-	            	<li>transformBy</li>
-	            	<li>filterBy</li>
-	            	<li>outputState</li>
-	            	<li>outputTo</li>
+	            	<li>`transformBy`</li>
+	            	<li>`filterBy`</li>
+	            	<li>`outputState`</li>
+	            	<li>`outputTo`</li>
             	</ul>
             </td>
         </tr>
@@ -247,18 +247,17 @@ fromStream('account-1') //selector
 
 ## Handlers
 
-Each handler is provided with the current state of the projection as well as the event that triggered the handler.
-The event provided through the handler contains the following properties.
+Each handler is provided with the current state of the projection as well as the event that triggered the handler. The event provided through the handler contains the following properties.
 
--   isJson:true/false
--   data:{}
--   body:{}
--   bodyRaw: string
--   sequenceNumber: integer
--   metadataRaw: {}
--   linkMetadataRaw: string
--   partition: string
-- eventType: string
+-   `isJson`: true/false
+-   `data`: {}
+-   `body`: s{}
+-   `bodyRaw`: string
+-   `sequenceNumber`: integer
+-   `metadataRaw`: {}
+-   `linkMetadataRaw`: string
+-   `partition`: string
+- `eventType`: string
 
 <table>
     <thead>
@@ -272,34 +271,34 @@ The event provided through the handler contains the following properties.
          <tr>
             <td><code>{event-type}</code></td>
             <td>
-                When using fromAll() and 2 or more event type handlers are specified and the $by_event_type projection is enabled and running, the projection will start as a fromStreams('$et-event-type-foo', `$et-event-type-bar`) until the projection has caught up and then will move over to reading from the transaction log (i.e. from $all).
+                When using `fromAll()` and 2 or more event type handlers are specified and the `$by_event_type` projection is enabled and running, the projection starts as a `fromStreams($et-event-type-foo, $et-event-type-bar)` until the projection has caught up and moves to reading from the transaction log (i.e. from `$all`).
             </td>
             <td>
             </td>
         </tr>
         <tr>
-            <td><code>$init</code></td>
+            <td><code>`$init`</code></td>
             <td>Provide the initialization for a projection.</td>
             <td>
             	Commonly used to setup the initial state for a projection.
             </td>
         </tr>
         <tr>
-            <td><code>$initShared</code></td>
+            <td><code>`$initShared`</code></td>
             <td>Provide the initialization for a projection where the projection is possibly partitioned.</td>
             <td>
             </td>
         </tr>
         <tr>
-            <td><code>$any</code></td>
-            <td>Event type pattern match that will match any event type.</td>
+            <td><code>`$any`</code></td>
+            <td>Event type pattern match that match any event type.</td>
             <td>
             	Commonly used when the user is interested in any event type from the selector.
             </td>
         </tr>
         <tr>
-            <td><code>$deleted</code></td>
-            <td>Will be called upon the deletion of a stream.</td>
+            <td><code>`$deleted`</code></td>
+            <td>Called upon the deletion of a stream.</td>
             <td>
                 Can only be used with `foreachStream`
             </td>
@@ -319,13 +318,13 @@ The event provided through the handler contains the following properties.
     </thead>
     <tbody>
          <tr>
-            <td><code>emit(streamId, eventName, eventBody, metadata)</code></td>
+            <td><code>`emit(streamId, eventName, eventBody, metadata)`</code></td>
             <td>Writes an event to the designated stream</td>
             <td>
             </td>
         </tr>
         <tr>
-            <td><code>linkTo(streamId, event, metadata)</code></td>
+            <td><code>`linkTo(streamId, event, metadata)`</code></td>
             <td>Writes a link to event to the designated stream</td>
             <td>
             </td>
