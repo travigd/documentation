@@ -42,9 +42,10 @@ You can also start scavenges from the _Admin_ page in the Admin UI.
 This depends on the following:
 
 -   How often you delete streams.
--   Depending on how you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
+-   How you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
 
-<!-- TODO: Advice here would be good -->
+> [!TIP]
+> Read the [.NET API](~/dotnet-api/stream-metadata.md) or [HTTP API](~/http-api/stream-metadata.md) docs for more details on setting metadata.
 
 ## Scavenging while Event Store is online
 

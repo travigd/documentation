@@ -50,9 +50,7 @@ A typical deployment topology consists of three physical machines, each running 
 
 ## Cluster gossip
 
-Event Store uses a quorum-based replication model. When working normally, a cluster has one database node known as a _master_, and the remaining nodes are _slaves_. The master node is responsible for coordinating writes while it is the master. Database nodes use a consensus algorithm to determine which database node should be master and which should be slaves. Event Store bases the decision as to which node should be the master on a number of factors (some of which are configurable).
-
-<!-- TODO: And the details of above? -->
+Event Store uses a quorum-based replication model. When working normally, a cluster has one database node known as a _master_, and the remaining nodes are _slaves_. The master node is responsible for coordinating writes while it is the master. Database nodes use a consensus algorithm to determine which database node should be master and which should be slaves. Event Store bases the decision as to which node should be the master on a number of factors ([some of which are configurable](~/server/command-line-arguments.md#cluster-options)).
 
 For database nodes to have this information available to them, the nodes gossip with other nodes in the cluster. Gossip runs over the internal (and optionally the external) HTTP interfaces of database nodes, and over both internal and external interfaces of manager nodes.
 
@@ -193,9 +191,7 @@ For the first node in the example cluster, the watchdog configuration file reads
 
 With configuration files for each node written, you can now deploy Event Store and the configuration. Although it's possible to use relative paths when writing configuration files, it's preferable to use absolute paths to reduce the potential for confusion.
 
-<!-- TODO: Dynamic parameter -->
-
-In this example, Event Store is deployed on each node in \_c:\\EventStore-HA-v3.0.1\_, and the configuration files for that node are deployed into \_C:\\EventStore-Config\_. No installation process is necessary, you unzip the packaged distribution into your preferred location.
+In this example, Event Store is deployed on each node in \_c:\\EventStore-HA-v\_, and the configuration files for that node are deployed into \_C:\\EventStore-Config\_. No installation process is necessary, you unzip the packaged distribution into your preferred location.
 
 ### Adding HTTP ACL entries for HTTP servers (Windows-Specific)
 
@@ -225,13 +221,10 @@ You can install manager nodes as a Windows service so they can start on boot rat
 
 #### Installing the service
 
-<!-- TODO: Check this -->
-<!-- TODO: Dynamic variable -->
-
 To install the manager node on machine 1, use the following command:
 
 ```powershell
-C:\EventStore-HA-v3.0.1\> EventStore.WindowsManager.exe install -InstanceName es-cluster1 -ManagerConfig C:\EventStore-Config\manager.yaml
+C:\EventStore-HA-v\> EventStore.WindowsManager.exe install -InstanceName es-cluster1 -ManagerConfig C:\EventStore-Config\manager.yaml
 ```
 
 The service is then visible in the services list, with a description of "Event Store Manager (es-cluster1)".
@@ -240,10 +233,8 @@ The service is then visible in the services list, with a description of "Event S
 
 To uninstall the manager node service, use the following command (where the instance name matches the name used during installation).
 
-<!-- TODO: Dynamic variable -->
-
 ```powershell
-C:\EventStore-HA-v3.0.1\> EventStore.WindowsManager.exe uninstall -InstanceName es-cluster1
+C:\EventStore-HA-v\> EventStore.WindowsManager.exe uninstall -InstanceName es-cluster1
 ```
 
 #### Manually starting and stopping the service

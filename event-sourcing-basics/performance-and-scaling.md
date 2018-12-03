@@ -14,9 +14,9 @@ One problem with horizontal partitioning with an RDMS is that it is necessary to
 
 When dealing with a stereotypical system utilizing an RDMS it can be complex to figure out what has changed within the aggregate. Many tools have been built to help alleviate the pain that arises from this task but is the need for a tool a sign of a bigger problem?
 
-Most Object-relational mapping (ORM) tools figure out the changes that occurred within a graph <!-- TODO: Again, is it clear what this is? -->. They do this by maintaining two copies of a given graph. The first held in memory and the second for applications to interact with. When it's time to save, the database logic traverses the graph that the code has interacted with and uses the copy of the original graph to determine what has changed while the graph was in use by the code. These changes are then saved to the data storage system.
+Most Object-relational mapping (ORM) tools figure out the changes that occurred within a graph. They do this by maintaining two copies of a given graph. The first held in memory and the second for applications to interact with. When it's time to save, the database logic traverses the graph that the code has interacted with and uses the copy of the original graph to determine what has changed while the graph was in use by the code. These changes are then saved to the data storage system.
 
-In a system that is Domain Event centric, the aggregates are themselves tracking strong events as to what has changed within them. There is no complex process for comparing to another copy of a graph. Instead simply ask the aggregate for its changes. The operation to ask for changes is far more efficient than having to figure out what has changed.
+In a system that is Domain Event centric, the aggregates are themselves tracking strong events as to what has changed within them. There is no complex process for comparing to another copy of a graph. Instead ask the aggregate for its changes. The operation to ask for changes is far more efficient than having to figure out what has changed.
 
 ## Loading Objects
 

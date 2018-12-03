@@ -2,81 +2,86 @@
 outputFileName: index.html
 ---
 
+<!-- TODO: retrofit to shopping cart examples? -->
+
 # System Projections
 
 Event Store ships with 4 built in projections.
 
 -   By Category (`$by_category`)
 -   By Event Type (`$by_event_type`)
+- By Correlation ID (`$by_correlation_id`)
 -   Stream by Category (`$stream_by_category`)
 -   Streams (`$streams`)
 
-> [!NOTE]
-> When you start Event Store from a fresh database, these projections are present but disabled and querying their statuses you will see that they are `Stopped`. You can enable a projection by issuing an HTTP request to _http://{event-store-ip}:{ext-http-port}/projection/{projection-name}/command/enable_. The status of the projection will switch from `Stopped` to `Running`.
+## Enabling System Projections
 
+When you start Event Store from a fresh database, these projections are present but disabled and querying their statuses returns `Stopped`. You can enable a projection by issuing a request which switches the status of the projection from `Stopped` to `Running`.
+
+### [HTTP API](#tab/tabid-5)
+
+```bash
+curl -i -X POST "http://{event-store-ip}:{ext-http-port}/projection/{projection-name}/command/enable" -H "accept:application/json" -H "Content-Length:0" -u admin:changeit
+```
+
+### [.NET Client](#tab/tabid-6)
+
+<!-- TODO: Is there a .NET equivelant? -->
+
+* * *
 
 ## By Category
 
-This projection links existing events from streams to a new stream with a `$ce-` prefix (a category) by splitting a stream `id` by a configurable separator.
+The `$by_category` (_http://127.0.0.1:2113/projection/$by_category_) projection links existing events from streams to a new stream with a `$ce-` prefix (a category) by splitting a stream `id` by a configurable separator.
 
-<!-- TODO: This is a little confusing, what is it? -->
-
-``$by_category\`
-
-```bash
+```text
 first
 -
 ```
 
-By default the `$by_category` projection will link existing events from a stream `id` with a name such as `account-1` to a stream called `$ce-account`. You can configure the separator as well as where to split the stream `id`. You can edit the projection and provide your own values if the defaults don't fit your particular scenario.
+You can configure the separator, as well as where to split the stream `id`. You can edit the projection and provide your own values if the defaults don't fit your particular scenario.
 
-The first parameter specifies how the separator will be used and the possible values for that parameter is first or last. The separator can be any character.
+The first parameter specifies how the separator is used, and the possible values for that parameter is `first` or `last`. The second parameter is the separator, and can be any character.
 
-For example:
+For example, if the body of the projection is `first` and `-`, for a stream id of `account-1`, the stream name the projection creates is `$ce-account`.
 
-If the body of the projection is first and `-`, for a stream id of `account-1`, the resulting stream name from the projection will be `$ce-account`.
-
-If the body of the projection is last and `-`, for a stream id of `shopping-cart-1`, the resulting stream name from the projection will be `$ce-shopping-cart`.
-
-> [!NOTE]
-> This particular projection enables the use of the `byCategory` selector for user defined projections which we will discuss in the `User defined projections` section.
-
+If the body of the projection is last and `-`, for a stream id of `shopping-cart-1`, the stream name the projection creates is `$ce-shopping-cart`.
 
 ## By Event Type
 
-This projection links existing events from streams to a new stream with a stream id in the format `$et-{event-type}`.
-
-`$by_event_type`
+The `$by_event_type` (_http://127.0.0.1:2113/projection/$by_event_type_) projection links existing events from streams to a new stream with a stream id in the format `$et-{event-type}`.
 
 You cannot configure this projection.
 
-## Stream By Category
+## By Correlation ID
 
-This projection links existing events from streams to a new stream with a `$category` prefix by splitting a stream `id` by a configurable separator.
+The `$by_correlation_id` (_http://127.0.0.1:2113/projection/$by_correlation_id_) projection links existing events from projections to a new stream with a stream id in the format `$bc-<correlation id>`.
 
-<!-- TODO: Again, what is this? -->
-
-`$stream_by_category`
+The projection takes one parameter, a JSON string as a projection source:
 
 ```json
+{"correlationIdProperty":"$myCorrelationId"}
+```
+
+## Stream By Category
+
+The `$stream_by_category` (_http://127.0.0.1:2113/projection/$by_category_) projection links existing events from streams to a new stream with a `$category` prefix by splitting a stream `id` by a configurable separator.
+
+```text
 first
 -
 ```
 
-By default the `$stream_by_category` projection will link existing events from a stream id with a name such as `account-1` to a stream called `$category-account`. You can configure the separator as well as where to split the stream `id`. You can edit the projection and provide your own values if the defaults don't fit your particular scenario.
+By default the `$stream_by_category` projection links existing events from a stream id with a name such as `account-1` to a stream called `$category-account`. You can configure the separator as well as where to split the stream `id`. You can edit the projection and provide your own values if the defaults don't fit your particular scenario.
 
-The first parameter specifies how the separator will be used and the possible values for that parameter is first or last. The separator can be any character.
+The first parameter specifies how the separator is used, and the possible values for that parameter is `first` or `last`. The second parameter is the separator, and can be any character.
 
-For example:
+For example, if the body of the projection is `first` and `-`, for a stream id of `account-1`, the stream name the projection creates is `$category-account`.
 
-If the body of the projection is first and -, for a stream id of `account-1`, the resulting stream name from the projection will be `$category-account`.
-
-If the body of the projection is last and -, for a stream id of `shopping-cart-1`, the resulting stream name from the projection will be `$category-shopping-cart`.
+If the body of the projection is last and `-`, for a stream id of `shopping-cart-1`, the stream name the projection creates is `$category-shopping-cart`.
 
 ## Streams
 
-This projection links existing events from streams to a stream named `$streams`
-
-_$streams_
+The `$streams` (_http://127.0.0.1:2113/projection/$streams_) projection links existing events from streams to a stream named `$streams`
 
 You cannot configure this projection.
