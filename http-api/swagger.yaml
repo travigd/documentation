@@ -1625,36 +1625,6 @@ paths:
           description: OK
         '404':
           description: Not found
-  /stats/replication:
-    get:
-      tags:
-        - Stats
-      summary: Get replication stats
-      description: Returns all replication stats for Event Store between the master and slave nodes.
-      operationId: Get replication stats
-      produces:
-        - application/json
-        - application/xml
-      responses:
-        '200':
-          description: OK
-        '404':
-          description: Not found
-  /stats/tcp:
-    get:
-      tags:
-        - Stats
-      summary: Get TCP connection stats
-      description: Returns all active TCP connection stats for Event Store.
-      operationId: Get TCP connection stats
-      produces:
-        - application/json
-        - application/xml
-      responses:
-        '200':
-          description: OK
-        '404':
-          description: Not found
   '/stats/{statPath}':
     get:
       tags:
