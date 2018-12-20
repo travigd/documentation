@@ -18,7 +18,7 @@ This information is not part of the actual event but is metadata associated with
 
 ### Read Stream Metadata
 
-<!-- TODO: What's the difference? -->
+<!-- TODO: Link or embed to ref docs -->
 
 ```csharp
 Task<StreamMetadataResult> GetStreamMetadataAsync(string stream, UserCredentials userCredentials = null)
@@ -30,7 +30,7 @@ Task<RawStreamMetadataResult> GetStreamMetadataAsRawBytesAsync(string stream, Us
 
 ### Write Stream Metadata
 
-<!-- TODO: What's the difference? -->
+<!-- TODO: Link or embed to ref docs -->
 
 ```csharp
 Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)

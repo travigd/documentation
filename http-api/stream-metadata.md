@@ -36,59 +36,12 @@ You should not access metadata by constructing this URL yourself, as the right t
 
 * * *
 
-Once you have the URI of the metadata stream, a issue `GET` request to retrieve the metadata:
+Once you have the URI of the metadata stream, issue a `GET` request to retrieve the metadata:
 
 ### [Request](#tab/tabid-3)
 
 ```bash
-curl -i http://127.0.0.1:2113/streams/%24users/metadata --user admin:changeit
-```
-
-### [Response](#tab/tabid-4)
-
-<!-- TODO: Incorrect -->
-
-```http
-HTTP/1.1 200 OK
-Cache-Control: max-age=31536000, public
-Content-Length: 652
-Content-Type: application/vnd.eventstore.atom+json; charset: utf-8
-Vary: Accept
-Server: Microsoft-HTTPAPI/2.0
-Access-Control-Allow-Methods: GET, POST, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-PINGOTHER
-Access-Control-Allow-Origin: *
-Date: Sun, 16 Jun 2013 13:18:29 GMT
-
-{
-  "title": "0@$$$users",
-  "id": "<http://127.0.0.1:2113/streams/%24%24%24users/0">,
-  "updated": "2013-06-16T12:25:13.8428624Z",
-  "author": {
-    "name": "EventStore"
-  },
-  "summary": "$metadata",
-  "content": {
-    "eventStreamId": "$$$users",
-    "eventNumber": 0,
-    "eventType": "$metadata",
-    "data": {
-      "readRole": "$all",
-      "metaReadRole": "$all"
-    },
-    "metadata": ""
-  },
-  "links": [
-    {
-      "uri": "http://127.0.0.1:2113/streams/%24%24%24users/0",
-      "relation": "edit"
-    },
-    {
-      "uri": "http://127.0.0.1:2113/streams/%24%24%24users/0",
-      "relation": "alternate"
-    }
-  ]
-}
+curl -i -H "Accept:application/vnd.eventstore.atom+json" http://127.0.0.1:2113/streams/%24users/metadata --user admin:changeit
 ```
 
 * * *

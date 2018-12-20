@@ -10,11 +10,10 @@ i.e., "A write can succeed if I have seen everyone else's writes."
 
 You set `ExpectedVersion` with the syntax `ES-ExpectedVersion: #`, where `#` is an integer version number. There are other special values available:
 
-- `-1`, the stream should not exist when processing (e.g., you are creating it).
-- `-2`, or append writes. The **default** value.
-- `-4`, the stream should exist with any number of events in it.
-
-<!-- TODO: Is there a -3? -->
+- `0`, the stream should exist but be empty when writing.
+- `-1`, the stream should not exist when writing.
+- `-2`, the write should not conflict with anything and should always succeed.
+- `-4`, the stream or a metadata stream should exist when writing.
 
 If the `ExpectedVersion` does not match the version of the stream, Event Store returns an HTTP 400 `Wrong expected EventNumber` response. This response contains the current version of the stream in an `ES-CurrentVersion` header.
 

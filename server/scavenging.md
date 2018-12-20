@@ -63,8 +63,6 @@ curl -i -X DELETE http://localhost:2113/admin/scavenge/{scavengeId} -u "admin:ch
 
 You can also stop scavenges from the _Admin_ page of the Admin UI.
 
-<!-- TODO: Scavenge with .NET API? -->
-
 > [!TIP]
 > Each node in a cluster has its own independent database. As such, when you run a scavenge, you need to issue a scavenge request to each node.
 
