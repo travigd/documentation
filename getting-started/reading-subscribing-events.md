@@ -77,7 +77,9 @@ To use the Java client, use the following method passing the stream name, the ev
 
 ## Paginating through Events
 
-For longer feeds of events than this example, you need to paginate through the feed, reading a certain number of events at a time. For the HTTP API [you paginate](~/http-api/reading-streams.md#feed-paging) through the feed using _previous_ and _next_ links within the stream. For the .NET API (and JVM client), [you use a read method](~/dotnet-api/reading-events.md#example-read-an-entire-stream-forwards-from-start-to-end) to loop through events a certain number at a time.
+For longer feeds of events than this example, you need to paginate through the feed, reading a certain number of events at a time.
+
+You can use the HTTP API [to paginate](~/http-api/reading-streams.md#feed-paging) through the feed using _previous_ and _next_ links within the stream. Or you can [use a read method](~/dotnet-api/reading-events.md#example-read-an-entire-stream-forwards-from-start-to-end) of the .NET API (and JVM client), to loop through events a certain number at a time.
 
 ## Subscribing to Receive Stream Updates
 
