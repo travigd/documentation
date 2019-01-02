@@ -124,6 +124,32 @@
         ]
       }
     },
+    "/admin/mergeindexes": {
+      "delete": {
+        "description": "Manually merge indexes after a scavenge operation",
+        "summary": "Merge indexes",
+        "tags": [
+          "Admin"
+        ],
+        "operationId": "Merge Indexes",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
     "/info": {
       "get": {
         "description": "Returns information about node.",

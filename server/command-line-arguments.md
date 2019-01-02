@@ -105,6 +105,7 @@ Event Store supports the following parameters.
 | -GossipIntervalMs<br/>--gossip-interval-ms=VALUE<br/>                    | GOSSIP_INTERVAL_MS                             | GossipIntervalMs          | The interval, in ms, nodes should try to gossip with each other. (Default: 1000)                        |
 | -GossipAllowedDifferenceMs<br/>--gossip-allowed-difference-ms=VALUE<br/> | GOSSIP_ALLOWED_DIFFERENCE_MS                   | GossipAllowedDifferenceMs | The amount of drift, in ms, between clocks on nodes allowed before gossip is rejected. (Default: 60000) |
 | -GossipTimeoutMs<br/>--gossip-timeout-ms=VALUE<br/>                      | GOSSIP_TIMEOUT_MS                              | GossipTimeoutMs           | The timeout, in ms, on gossip to another node. (Default: 500)                                           |
+| -AutomergeIndexes<br/>--auto-merge-indexes=VALUE | AUTO_MERGE_INDEXES | AutomergeIndexes | Whether to automatically merge indexes during scavenge operations. (Default: True) |
 
 ### Database Options
 
