@@ -10,7 +10,7 @@ We distribute an [open source version of Event Store](https://eventstore.org/dow
 
 [!include[<Getting Started Install and run>](~/partials/_install-run.md)]
 
-## Solving 503 errors from the web admin UI
+## Solving 503 errors from the Admin UI
 
 There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-a-httplistener-http-503-error) with the .NET `HTTPListener` class (which Event Store uses) and bad URL ACL registrations which can cause servers to return 503 errors for every request. If you see this, you can issue the following commands:
 
@@ -34,7 +34,7 @@ These steps should resolve the issue.
 
 ## Shutting down an Event Store node
 
-Event Store is designed to be safe by default, and it is expected that it will be shut down using `kill -9`. It is also possible to initiate a shutdown via the web admin UI, by clicking on the _Shutdown Server_ button located on the _Admin_ page. This may be useful if you do not have console access to the node or need to script initiating a shutdown.
+Event Store is designed to be safe by default, and it is expected that it will be shut down using `kill -9`. It is also possible to initiate a shutdown via the Admin UI, by clicking on the _Shutdown Server_ button located on the _Admin_ page. This may be useful if you do not have console access to the node or need to script initiating a shutdown.
 
 ## Securing Event Store
 

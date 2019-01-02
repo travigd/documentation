@@ -53,7 +53,7 @@ docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 -e EVENTSTORE_RU
 
 * * *
 
-You then see new tabs enabled in the Web admin UI with the 4 system projections in a `Stopped` state:
+You then see new tabs enabled in the Admin UI with the 4 system projections in a `Stopped` state:
 
 ![Projections tab](~/images/projections-menu-item.png)
 
@@ -99,7 +99,7 @@ Add the sample data to four different streams:
 * * *
 
 > [!NOTE]
-> While it's not the fastest method, you can also use the web admin interface for creating the streams, and all the tasks in this step, as we saw in [step 1](~/getting-started/index.md).
+> While it's not the fastest method, you can also use the Admin UI for creating the streams, and all the tasks in this step, as we saw in [step 1](~/getting-started/index.md).
 
 ## Writing your first projection
 
@@ -116,9 +116,9 @@ Here is the projection, you can download it as a file [here](~/code-examples/get
 
 [!code-json[getting-started-projections-projection](~/code-examples/getting-started/xbox-one-s-counter.json)]
 
-You create a projection by calling the projection API and providing it with the definition of the projection. Here you decide how to run the projection, declaring that you want the projection to start from the beginning and keep running. You can create a projection using the web admin interface by opening the _Projections_ tab, clicking the _New Projection_ button and filling in the details of your projection.
+You create a projection by calling the projection API and providing it with the definition of the projection. Here you decide how to run the projection, declaring that you want the projection to start from the beginning and keep running. You can create a projection using the Admin UI by opening the _Projections_ tab, clicking the _New Projection_ button and filling in the details of your projection.
 
-![Creating a projection with the Event Store Web admin interface](~/assets/getting-started-create-projection.png)
+![Creating a projection with the Event Store Admin UI](~/assets/getting-started-create-projection.png)
 
 And to use the HTTP or .NET API:
 
@@ -168,7 +168,7 @@ Below is the updated projection, you can download it as a file [here](~/code-exa
 
 [!code-json[getting-started-projections-output-state](~/code-examples/getting-started/xbox-one-s-counter-outputState.json)]
 
-To update the projection, edit the projection definition in the web admin UI, or issue the following request:
+To update the projection, edit the projection definition in the Admin UI, or issue the following request:
 
 ### [HTTP API](#tab/tabid-update-proj-http)
 

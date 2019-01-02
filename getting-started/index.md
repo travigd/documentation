@@ -14,7 +14,7 @@ This first step covers installation and running Event Store, and writing your fi
 
 There are three ways to interact with Event Store:
 
-1.  With the admin web interface (more details link).
+1.  With the Admin UI (more details link).
 2.  [With the HTTP API](~/http-api/index.md).
 3.  With a Client API, which you need to install first. Our documentation covers the [.NET Core client API](~/dotnet-api/index.md) and the [JVM client](https://github.com/EventStore/EventStore.JVM) but [others](~/getting-started/which-api-sdk.md) are available.
 
@@ -54,12 +54,12 @@ import eventstore.*;
 
 ## Connecting to Event Store
 
-If you want to use the admin web interface or the HTTP API, then you use port `2113`, for example, <http://127.0.0.1:2113/> in your web browser, or `curl -i http://127.0.0.1:2113` for the HTTP API.
+If you want to use the Admin UI or the HTTP API, then you use port `2113`. For example, <http://127.0.0.1:2113/> in your web browser, or `curl -i http://127.0.0.1:2113` for the HTTP API.
 
 > [!TIP]
 > The default username and password is `admin:changeit`
 
-![The Web Admin Dashboard](~/images/es-web-admin-dashboard.png)
+![The Admin UI Dashboard](~/images/es-web-admin-dashboard.png)
 
 To use a client API, you use port `1113` and create a connection:
 
@@ -87,9 +87,9 @@ Event Store operates on a concept of Event Streams, and the first operation we l
 
 If you post to a stream that doesn't exist, Event Store creates it before adding the events.
 
-You can write events using the admin web interface by clicking the _Stream Browser_ tab, the _Add Event_ button, filling in the form with relevant values and clicking the _Add_ button at the bottom of the page.
+You can write events using the Admin UI by clicking the _Stream Browser_ tab, the _Add Event_ button, filling in the form with relevant values and clicking the _Add_ button at the bottom of the page.
 
-![Creating an event with the web admin interface](~/images/getting-started-add-event.gif)
+![Creating an event with the Admin UI interface](~/images/getting-started-add-event.gif)
 
 Open a text editor, copy and paste the following event definition, and save it as _event.json_.
 

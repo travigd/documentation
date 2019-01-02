@@ -11,7 +11,6 @@ If you prefer to use only 64-bit indexes immediately you can force this change. 
 
 If you have a large database, or it's stored in remote storage, and you can't lose downtime, you can run this operation offline on another node with the following steps:
 
-
 1.  [Take a back up](~/server/database-backup.md).
 2.  [Restore the backup](~/server/database-backup.md) to fast local disks.
 3.  Delete the _index_ folder from back up.

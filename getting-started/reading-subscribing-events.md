@@ -10,9 +10,9 @@ This second step covers reading events from a stream and subscribing to changes 
 
 ## Read a Stream of Events
 
-Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc4287), and you can read data from the stream by navigating to the _head URI_ of the stream <http://127.0.0.1:2113/streams/<STREAM_ID>> with cURL, or click the _Stream Browser_ tab in the admin web interface and you see the stream you created in step 1.
+Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc4287), and you can read data from the stream by navigating to the _head URI_ of the stream <http://127.0.0.1:2113/streams/<STREAM_ID>> with cURL, or click the _Stream Browser_ tab in the Admin UI and you see the stream you created in step 1.
 
-![The Web Admin Dashboard](~/images/es-web-admin-stream-browser.png)
+![The Admin UI Dashboard](~/images/es-web-admin-stream-browser.png)
 
 ### [Request](#tab/tabid-6)
 
@@ -46,7 +46,7 @@ To use the JVM client, use the following method passing the stream name, the sta
 
 ## Read a Single Event
 
-The feed has a single item inside of it, the one you posted in [part 1](~/getting-started/index.md). You can see details of the event in the _Stream Browser_ tab in the admin web interface by clicking a stream to see its events, and then clicking an event. Or with cURL, issue a `GET` to the `alternate` URI value from the response above.
+The feed has a single item inside of it, the one you posted in [part 1](~/getting-started/index.md). You can see details of the event in the _Stream Browser_ tab in the Admin UI by clicking a stream to see its events, and then clicking an event. Or with cURL, issue a `GET` to the `alternate` URI value from the response above.
 
 ### [Request](#tab/tabid-8)
 
@@ -87,7 +87,7 @@ A common operation is to subscribe to a stream and receive notifications for cha
 
 You can create subscriptions and watch events as they arrive under the _Persistent Subscriptions_ tab, or use an API method:
 
-![Subscriptions in the web admin UI](~/images/getting-started-subscriptions.png)
+![Subscriptions in the Admin UI](~/images/getting-started-subscriptions.png)
 
 ### [HTTP API](#tab/tabid-create-sub-http)
 
