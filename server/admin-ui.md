@@ -71,9 +71,11 @@ On the left is the projection definition, and on the right, the stats, results a
 - _Reset_: Reset a projection.
 - _Back_: Returns you to the parent screen.
 
-<!-- ## Query
+## Query
 
-The _Query_ tab shows -->
+The _Query_ tab a code editor field where you can create transient and short-lived projections for quick analysis of your event streams.
+
+![Web admin interface query details](~/assets/wai-query-details.png)
 
 ## Persistent Subscriptions
 
