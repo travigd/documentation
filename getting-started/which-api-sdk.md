@@ -24,9 +24,7 @@ Event Store offers a low-level protocol in the form of an asynchronous TCP proto
 -   [Haskell](https://github.com/YoEight/eventstore)
 -   [Erlang](https://bitbucket.org/anakryiko/erles)
 -   [F#](https://github.com/haf/EventStore.Client.FSharp)
--   [PHP](https://github.com/dbellettini/php-eventstore-client)
 -   [Elixir](https://github.com/exponentially/extreme)
--   [Python](https://github.com/madedotcom/atomicpuppy)
 -   [Java 8](https://github.com/msemys/esjc)
 -   [Maven plugin](https://github.com/fuinorg/event-store-maven-plugin)
 -   [Rust](https://gitlab.com/YoEight/eventstore-rs)
@@ -41,6 +39,8 @@ Event Store also offers an HTTP-based interface, based specifically on the [Atom
 
 ### Community Developed Clients
 
+-   [PHP](https://github.com/dbellettini/php-eventstore-client)
+-   [Python](https://github.com/madedotcom/atomicpuppy)
 -   [Ruby](https://github.com/arkency/http_eventstore)
 -   [Go](https://github.com/jetbasrawi/go.geteventstore)
 
