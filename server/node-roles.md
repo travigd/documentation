@@ -19,3 +19,16 @@ A cluster assigns the `Slave` role based on an election process. A cluster uses 
 If you add nodes to a cluster beyond the number of nodes specified in the `ClusterSize` setting the cluster automatically assigns them the `Clone` role.
 
 A cluster asynchronously replicates data one way to a node with the `Clone` role. You don't need to wait for an acknowledgement message as the node is not part of the quorum. For this reason a node with a `Clone` role does not add much overhead to the other nodes.
+
+If a cluster loses nodes to take it below `ClusterSize`, then the cluster can promote a `Clone` to a `Master` or `Slave` role.
+
+You can control which clones the cluster promotes with the `NodePriority` [command line option](~/server/command-line-arguments.md). The default value is `0`, and the cluster is more likely to promote clones with higher values.
+
+> [!NOTE]
+> Changing `NodePriority` doesn't guarantee that the cluster won't promote the clone. It's only one of the criteria that the Election Service considers.
+
+## Non Promotable Clone
+
+If you want the cluster to never promote a node with the `Clone` role, set the `--is-promotable` [command line option](~/server/command-line-arguments.md) to `false` when starting a clone node. The node never acknowledges any writes and is never part of the quorum until you change the option to `true`.
+
+Non promotable clones are best used for data redundancy, or for locally hosted nodes you use for application testing.
